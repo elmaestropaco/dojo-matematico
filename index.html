@@ -1,0 +1,402 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dojo Matemático</title>
+  <meta name="theme-color" content="#da291c" />
+  <meta name="application-name" content="Dojo Matemático" />
+  <meta name="apple-mobile-web-app-title" content="Dojo Matemático" />
+  <link rel="icon" href="assets/branding/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="assets/branding/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/branding/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/branding/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/branding/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="theme-panel" aria-label="Selector de tema">
+    <div class="theme-label">Modo</div>
+    <div class="theme-icons">
+      <button class="btn-theme js-theme" data-theme="light" style="background:#f8c94d;" title="Tema claro">☀️</button>
+      <button class="btn-theme js-theme" data-theme="default" style="background:#da291c;" title="Tema ninja">🥷</button>
+      <button class="btn-theme js-theme" data-theme="dark" style="background:#151826;" title="Tema oscuro">🌙</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <header class="hero-head">
+      <button id="helpBtn" class="help-btn" type="button" aria-label="Cómo funciona">❓</button>
+      <div class="logo-wrap">
+        <img class="brand-logo" src="assets/branding/Logo.png" alt="Logo Dojo Matemático" />
+      </div>
+      <h1 class="app-title">DOJO MATEMÁTICO</h1>
+      <p class="subtitle">⚡ ¡Acierta rápido, compite y sube al Cuadro de los Grandes Maestros! ⚡</p>
+    </header>
+
+    <section id="dojoScreen" class="panel dojo-screen active" aria-label="Configuración de partida">
+      <div class="settings-grid">
+        <div class="config-box">
+          <p class="label">Modo</p>
+          <div class="mode-buttons" role="radiogroup" aria-label="Modo de juego">
+            <button class="mode-btn active" type="button" data-mode="single">👤 Entrenamiento</button>
+            <button class="mode-btn" type="button" data-mode="duel">⚔️ Batalla</button>
+          </div>
+        </div>
+
+        <div class="config-box">
+          <p class="label">👥 Nombre de jugadores</p>
+          <div class="name-grid">
+            <input id="player1Input" type="text" maxlength="16" placeholder="Ninja 1" value="Ninja" />
+            <input id="player2Input" class="duel-only hidden" type="text" maxlength="16" placeholder="Ninja 2" value="Ninja Azul" />
+          </div>
+        </div>
+
+        <div class="config-box">
+          <div class="inline-field duration-inline">
+            <p class="label">⏱️ Duración</p>
+            <select id="timePresetSelect">
+              <option value="60" selected>1 minuto</option>
+              <option value="120">2 minutos</option>
+              <option value="180">3 minutos</option>
+              <option value="custom">Personalizado</option>
+            </select>
+          </div>
+          <div id="customTimeWrap" class="custom-time-wrap hidden">
+            <label>Min <input id="customMinInput" type="number" min="0" max="30" value="1" /></label>
+            <label>Seg <input id="customSecInput" type="number" min="0" max="59" value="0" /></label>
+          </div>
+        </div>
+
+        <div class="config-box">
+          <details id="opsDropdown" class="ops-dropdown">
+            <summary id="opsSummary">🧮 Operaciones (0 activas)</summary>
+            <p class="hint">Marca lo que quieres practicar y las cifras de cada número.</p>
+            <div class="operation-grid">
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="addNoCarry" />
+                <span class="op-name">➕ Sumas sin llevadas</span>
+                <select class="op-config-select digits-select" data-setting-op="addNoCarry" data-setting-key="digits">
+                  <option value="1">1 cifra</option>
+                  <option value="2" selected>2 cifras</option>
+                  <option value="3">3 cifras</option>
+                  <option value="4">4 cifras</option>
+                  <option value="5">5 cifras</option>
+                  <option value="6">6 cifras</option>
+                  <option value="7">7 cifras</option>
+                  <option value="8">8 cifras</option>
+                  <option value="9">9 cifras</option>
+                </select>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="addCarry" />
+                <span class="op-name">➕ Sumas con llevadas</span>
+                <select class="op-config-select digits-select" data-setting-op="addCarry" data-setting-key="digits">
+                  <option value="1">1 cifra</option>
+                  <option value="2" selected>2 cifras</option>
+                  <option value="3">3 cifras</option>
+                  <option value="4">4 cifras</option>
+                  <option value="5">5 cifras</option>
+                  <option value="6">6 cifras</option>
+                  <option value="7">7 cifras</option>
+                  <option value="8">8 cifras</option>
+                  <option value="9">9 cifras</option>
+                </select>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="subNoBorrow" />
+                <span class="op-name">➖ Restas sin llevadas</span>
+                <select class="op-config-select digits-select" data-setting-op="subNoBorrow" data-setting-key="digits">
+                  <option value="1">1 cifra</option>
+                  <option value="2" selected>2 cifras</option>
+                  <option value="3">3 cifras</option>
+                  <option value="4">4 cifras</option>
+                  <option value="5">5 cifras</option>
+                  <option value="6">6 cifras</option>
+                  <option value="7">7 cifras</option>
+                  <option value="8">8 cifras</option>
+                  <option value="9">9 cifras</option>
+                </select>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="subBorrow" />
+                <span class="op-name">➖ Restas con llevadas</span>
+                <select class="op-config-select digits-select" data-setting-op="subBorrow" data-setting-key="digits">
+                  <option value="1">1 cifra</option>
+                  <option value="2" selected>2 cifras</option>
+                  <option value="3">3 cifras</option>
+                  <option value="4">4 cifras</option>
+                  <option value="5">5 cifras</option>
+                  <option value="6">6 cifras</option>
+                  <option value="7">7 cifras</option>
+                  <option value="8">8 cifras</option>
+                  <option value="9">9 cifras</option>
+                </select>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="mul" />
+                <span class="op-name">✖️ Multiplicaciones</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="mul" data-setting-key="multiplicandMax" title="Multiplicando">
+                    <option value="1">Multiplicando 1 cifra</option><option value="2" selected>Multiplicando 2 cifras</option><option value="3">Multiplicando 3 cifras</option>
+                    <option value="4">Multiplicando 4 cifras</option><option value="5">Multiplicando 5 cifras</option><option value="6">Multiplicando 6 cifras</option>
+                    <option value="7">Multiplicando 7 cifras</option><option value="8">Multiplicando 8 cifras</option><option value="9">Multiplicando 9 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="mul" data-setting-key="factorMax" title="Factor">
+                    <option value="1">Factor 1 cifra</option><option value="2" selected>Factor 2 cifras</option><option value="3">Factor 3 cifras</option>
+                    <option value="4">Factor 4 cifras</option><option value="5">Factor 5 cifras</option><option value="6">Factor 6 cifras</option>
+                    <option value="7">Factor 7 cifras</option><option value="8">Factor 8 cifras</option><option value="9">Factor 9 cifras</option>
+                  </select>
+                </span>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="div" />
+                <span class="op-name">➗ Divisiones</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="div" data-setting-key="dividendMax" title="Dividendo">
+                    <option value="1">Dividendo 1 cifra</option><option value="2" selected>Dividendo 2 cifras</option><option value="3">Dividendo 3 cifras</option>
+                    <option value="4">Dividendo 4 cifras</option><option value="5">Dividendo 5 cifras</option><option value="6">Dividendo 6 cifras</option>
+                    <option value="7">Dividendo 7 cifras</option><option value="8">Dividendo 8 cifras</option><option value="9">Dividendo 9 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="div" data-setting-key="divisorMax" title="Divisor">
+                    <option value="1">Divisor 1 cifra</option><option value="2" selected>Divisor 2 cifras</option><option value="3">Divisor 3 cifras</option>
+                    <option value="4">Divisor 4 cifras</option><option value="5">Divisor 5 cifras</option><option value="6">Divisor 6 cifras</option>
+                    <option value="7">Divisor 7 cifras</option><option value="8">Divisor 8 cifras</option><option value="9">Divisor 9 cifras</option>
+                  </select>
+                </span>
+              </label>
+              <p id="divisionHint" class="op-inline-note" aria-live="polite"></p>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="divHard" />
+                <span class="op-name">🧪 Divisiones difíciles (decimales)</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="divHard" data-setting-key="divisorMax" title="Divisor">
+                    <option value="1">Divisor 1 cifra</option><option value="2" selected>Divisor 2 cifras</option><option value="3">Divisor 3 cifras</option>
+                    <option value="4">Divisor 4 cifras</option><option value="5">Divisor 5 cifras</option><option value="6">Divisor 6 cifras</option>
+                    <option value="7">Divisor 7 cifras</option><option value="8">Divisor 8 cifras</option><option value="9">Divisor 9 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="divHard" data-setting-key="maxDecimals" title="Máximo decimales del cociente">
+                    <option value="1">Máx 1 dec.</option>
+                    <option value="2" selected>Máx 2 dec.</option>
+                    <option value="3">Máx 3 dec.</option>
+                  </select>
+                </span>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="combined" />
+                <span class="op-name">🧩 Operaciones combinadas (fácil)</span>
+                <select class="op-config-select digits-select" data-setting-op="combined" data-setting-key="digits">
+                  <option value="1">1 cifra</option>
+                  <option value="2" selected>2 cifras</option>
+                  <option value="3">3 cifras</option>
+                </select>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="combinedAdv" />
+                <span class="op-name">🧠 Operaciones combinadas (avanzado)</span>
+                <select class="op-config-select digits-select" data-setting-op="combinedAdv" data-setting-key="digits">
+                  <option value="1">1 cifra</option>
+                  <option value="2" selected>2 cifras</option>
+                  <option value="3">3 cifras</option>
+                </select>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="fraction" />
+                <span class="op-name">🍰 Fracciones (operador)</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="fraction" data-setting-key="numeratorMax" title="Numerador">
+                    <option value="1">Numerador 1 cifra</option><option value="2" selected>Numerador 2 cifras</option><option value="3">Numerador 3 cifras</option>
+                    <option value="4">Numerador 4 cifras</option><option value="5">Numerador 5 cifras</option><option value="6">Numerador 6 cifras</option>
+                    <option value="7">Numerador 7 cifras</option><option value="8">Numerador 8 cifras</option><option value="9">Numerador 9 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="fraction" data-setting-key="denominatorMax" title="Denominador">
+                    <option value="1">Denominador 1 cifra</option><option value="2" selected>Denominador 2 cifras</option><option value="3">Denominador 3 cifras</option>
+                    <option value="4">Denominador 4 cifras</option><option value="5">Denominador 5 cifras</option><option value="6">Denominador 6 cifras</option>
+                    <option value="7">Denominador 7 cifras</option><option value="8">Denominador 8 cifras</option><option value="9">Denominador 9 cifras</option>
+                  </select>
+                </span>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="percent" />
+                <span class="op-name">📊 Porcentajes</span>
+                <select class="op-config-select digits-select" data-setting-op="percent" data-setting-key="digits">
+                  <option value="1">1 cifra</option>
+                  <option value="2" selected>2 cifras</option>
+                  <option value="3">3 cifras</option>
+                </select>
+              </label>
+            </div>
+          </details>
+          <div id="opsChips" class="ops-chips" aria-live="polite"></div>
+        </div>
+
+        <div class="config-box">
+          <div class="inline-field">
+            <p class="label">🧠 Formato de operaciones</p>
+            <select id="displayModeSelect">
+              <option value="horizontal" selected>Horizontal</option>
+              <option value="vertical">Vertical</option>
+              <option value="mixed">Mixto</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="config-box duel-only hidden" id="orientationBox">
+          <p class="label">🧭 Disposición del duelo</p>
+          <div class="mode-buttons" role="radiogroup" aria-label="Orientación duelo">
+            <button class="orientation-btn active" type="button" data-orientation="vertical">↔️ Mitades laterales</button>
+            <button class="orientation-btn" type="button" data-orientation="face">↕️ Cara a cara</button>
+          </div>
+        </div>
+
+        <div class="config-box">
+          <label class="toggle-line"><input id="muteToggle" type="checkbox" /> 🔇 Silenciar sonidos</label>
+          <label class="toggle-line"><input id="streakToggle" type="checkbox" checked /> 🔥 Activar rachas + eventos sorpresa</label>
+          <label class="toggle-line"><input id="decimalsToggle" type="checkbox" /> 🔢 Activar decimales</label>
+          <div id="decimalPlacesWrap" class="inline-field hidden">
+            <p class="label">🎚️ Cantidad de decimales</p>
+            <select id="decimalPlacesSelect">
+              <option value="1" selected>1 decimal</option>
+              <option value="2">2 decimales</option>
+              <option value="3">3 decimales</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button id="startBtn" class="btn-main start-combat-btn" type="button">
+        <span class="sword-ico left">⚔️</span>
+        <span class="start-text">¡EMPIEZA EL COMBATE!</span>
+        <span class="sword-ico right">⚔️</span>
+      </button>
+
+      <div class="config-box hall-box">
+        <div class="hall-head">
+          <p class="label hall-title">🏆 Cuadro de los Grandes Maestros 🏆</p>
+          <button id="clearHallBtn" class="btn-mini" type="button">🧹 Limpiar</button>
+        </div>
+        <div class="hall-filters">
+          <select id="hallModeFilter">
+            <option value="all" selected>Todos los modos</option>
+            <option value="Entrenamiento">Solo entrenamiento</option>
+            <option value="Batalla">Solo batalla</option>
+          </select>
+          <select id="hallTimeFilter">
+            <option value="all" selected>Todo el histórico</option>
+            <option value="7">Últimos 7 días</option>
+            <option value="30">Últimos 30 días</option>
+          </select>
+          <select id="hallSortFilter">
+            <option value="score_desc" selected>Top puntuación</option>
+            <option value="date_desc">Más recientes</option>
+          </select>
+        </div>
+        <div class="hall-table-wrap">
+          <table class="hall-table" aria-label="Cuadro de los Grandes Maestros">
+            <thead>
+              <tr><th>#</th><th>Nombre</th><th>Puntos</th><th>Modo</th><th>Tiempo</th><th>Fecha</th></tr>
+            </thead>
+            <tbody id="hallBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="arenaScreen" class="panel arena-screen hidden" aria-label="Arena de cálculo">
+      <div class="arena-top">
+        <button id="backBtn" class="btn-mini" type="button">🏠 Volver</button>
+        <div class="arena-spacer" aria-hidden="true"></div>
+        <div id="matchBadge" class="match-badge">Entrenamiento</div>
+      </div>
+      <div id="eventRoulette" class="event-roulette hidden" aria-live="polite">
+        <img class="roulette-brand" src="assets/branding/Logo.png" alt="Logo Dojo Matemático" />
+        <div class="roulette-pointer">▼</div>
+        <div id="rouletteWheel" class="roulette-wheel">
+          <span class="segment-icon s1">🎉</span>
+          <span class="segment-icon s2">🛡️</span>
+          <span class="segment-icon s3">⏱️</span>
+          <span class="segment-icon s4">💥</span>
+          <span class="segment-icon s5">🧮</span>
+          <span class="segment-icon s6">😵</span>
+          <span class="segment-icon s7">☠️</span>
+          <div id="wheelCenter" class="wheel-center">🎰</div>
+        </div>
+        <div id="rouletteLabel" class="roulette-label">Evento</div>
+      </div>
+
+      <div id="duelLead" class="duel-lead hidden">
+        <div class="duel-names"><span id="duelLeftName">Ninja Rojo</span><span id="duelRightName">Ninja Azul</span></div>
+        <div class="duel-track"><div id="duelNinja" class="duel-ninja">🥷</div></div>
+      </div>
+      <div id="playersWrap" class="players-wrap single-layout"></div>
+    </section>
+  </main>
+
+  <div id="startOverlay" class="start-overlay hidden" aria-live="assertive">
+    <div id="countdownNumber" class="countdown-number">5</div>
+    <div class="sword sword-left">⚔️</div>
+    <div class="sword sword-right">⚔️</div>
+  </div>
+
+  <dialog id="helpDialog" class="help-dialog">
+    <h3>❓ Cómo funciona</h3>
+    <ol>
+      <li>Elige modo, tiempo y operaciones con sus cifras.</li>
+      <li>Pulsa <strong>¡EMPEZAR EL COMBATE!</strong>.</li>
+      <li>Escribe con el teclado y pulsa <strong>🚀 ¡ATACAR!</strong>.</li>
+      <li>Acierto: <strong>+10</strong> puntos. Fallo: <strong>-5</strong>.</li>
+      <li>⏭️ Si te atascas, usa <strong>Saltar</strong>: cambia de operación y resta <strong>-3</strong> puntos.</li>
+      <li>🧠 En combinadas <strong>avanzado</strong>, cada acierto vale <strong>+20</strong> puntos.</li>
+      <li>🔥 Si las rachas están activas, pueden aparecer eventos sorpresa aleatorios durante la partida.</li>
+      <li>😈 Algunos eventos son trampa: pueden subir penalización o incluso dejar puntos a 0 si fallas.</li>
+      <li>🔢 Usa la coma <strong>,</strong> para decimales (teclado en pantalla y físico).</li>
+      <li>⌨️ Teclado físico: en duelo, jugador 1 usa teclas numéricas y jugador 2 el teclado numérico.</li>
+      <li>Cuando acaba el tiempo, el resultado se guarda en el Cuadro de los Grandes Maestros.</li>
+    </ol>
+    <button id="helpCloseBtn" class="btn-mini" type="button">Cerrar</button>
+  </dialog>
+
+  <section id="resultsOverlay" class="results-overlay hidden" aria-live="polite">
+    <div class="results-card">
+      <img class="results-logo" src="assets/branding/Logo.png" alt="Logo Dojo Matemático" />
+      <h3 id="resultsTitle">¡Tiempo!</h3>
+      <p id="resultsSubtitle" class="results-subtitle"></p>
+      <div id="resultsScores" class="results-scores"></div>
+      <div class="results-actions">
+        <button id="rematchBtn" class="btn-main" type="button">🔄 Revancha</button>
+        <button id="homeBtn" class="btn-mini" type="button">🏠 Volver al Dojo</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="consentBanner" class="consent-banner hidden" role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
+    <p>
+      🍪 Usamos analítica opcional para mejorar la app. Si aceptas, activamos Google Analytics.
+      Además, la app guarda en este dispositivo tus ajustes y el Cuadro de los Grandes Maestros (localStorage).
+    </p>
+    <div class="consent-actions">
+      <button id="acceptAnalyticsBtn" class="btn-mini" type="button">Aceptar analítica</button>
+      <button id="rejectAnalyticsBtn" class="btn-mini" type="button">Rechazar</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <strong>Profe Paco</strong>
+      <span> | </span>
+      <span>© 2026 Francisco Serrano Jiménez. Todos los derechos reservados.</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://sites.google.com/view/elprofepaco/inicio" target="_blank" rel="noopener noreferrer">Web</a>
+      <a href="https://www.instagram.com/tecnoyedu/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://tecnologiayeducacion.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+      <a href="mailto:pacoserrano.edu@gmail.com">Contacto</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
