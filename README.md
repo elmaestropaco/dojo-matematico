@@ -32,7 +32,7 @@ La app guarda en `localStorage`:
 
 ## Analítica y cookies
 
-- La integración de Google Analytics (`G-5XSQG511V6`) se carga **solo si el usuario acepta** en el banner de consentimiento.
+- La integración de Google Analytics se carga **solo si el usuario acepta** en el banner de consentimiento.
 - Si el usuario rechaza, no se carga el script de Analytics.
 
 ## Responsive
