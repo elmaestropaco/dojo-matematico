@@ -62,14 +62,38 @@ En `Modo Maestro`, el profesor crea la sala y comparte el codigo generado automa
 5. Activa `Realtime Database`.
 6. Elige ubicacion europea si esta disponible.
 7. En `Realtime Database > Rules`, pega el contenido de `firebase/database.rules.json` y publica.
-8. Duplica `firebase-config.example.js` como `firebase-config.js`.
+8. Para trabajar en local, duplica `firebase-config.example.js` como `firebase-config.js`.
 9. Rellena `firebase-config.js` con los datos de tu app web Firebase.
 
-`firebase-config.js` se puede subir a GitHub Pages: la configuracion web de Firebase es publica. No subas nunca claves privadas de servidor ni cuentas de servicio.
+`firebase-config.js` es solo para desarrollo local y esta ignorado por Git. No lo subas al repositorio.
+
+### GitHub Pages con Firebase
+
+El repositorio incluye `.github/workflows/deploy-pages.yml`. Ese workflow crea `firebase-config.js` automaticamente durante el despliegue usando secretos y variables de GitHub.
+
+En GitHub, entra en `Settings > Secrets and variables > Actions` y crea:
+
+Secret:
+
+- `FIREBASE_API_KEY`
+
+Variables:
+
+- `FIREBASE_AUTH_DOMAIN`
+- `FIREBASE_DATABASE_URL`
+- `FIREBASE_PROJECT_ID`
+- `FIREBASE_STORAGE_BUCKET`
+- `FIREBASE_MESSAGING_SENDER_ID`
+- `FIREBASE_APP_ID`
+- `FIREBASE_MEASUREMENT_ID`
+
+Despues entra en `Settings > Pages` y selecciona `Build and deployment > Source: GitHub Actions`.
+
+La clave web de Firebase no es una clave privada de servidor, pero GitHub puede marcarla como secreto. Protege el proyecto con reglas correctas de Realtime Database y, si quieres mas seguridad, restringe la API key en Google Cloud a los dominios donde publiques la app.
 
 ### Hosting
 
-Puedes seguir usando GitHub Pages, Netlify o Vercel para alojar la web.
+Puedes seguir usando GitHub Pages, Netlify o Vercel para alojar la web. En GitHub Pages se recomienda desplegar con el workflow incluido para no versionar `firebase-config.js`.
 
 Firebase se usa para sincronizacion en tiempo real:
 
