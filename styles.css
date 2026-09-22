@@ -1088,6 +1088,42 @@ input[type="number"] {
   padding-right: 2px;
 }
 
+.teacher-dashboard.many-players .teacher-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 6px;
+}
+
+.teacher-dashboard.many-players .teacher-card,
+.teacher-dashboard.many-players .teacher-empty {
+  padding: 7px;
+}
+
+.teacher-dashboard.many-players .teacher-medal {
+  font-size: 1.05rem;
+}
+
+.teacher-dashboard.many-players .teacher-card-top {
+  gap: 5px;
+  font-size: 0.82rem;
+}
+
+.teacher-dashboard.many-players .teacher-progress {
+  height: 8px;
+  margin: 6px 0;
+}
+
+.teacher-dashboard.many-players .teacher-last {
+  font-size: 0.66rem;
+  padding: 3px 6px;
+  margin-bottom: 5px;
+}
+
+.teacher-dashboard.many-players .teacher-stats {
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 0.66rem;
+  gap: 3px;
+}
+
 .teacher-card,
 .teacher-empty {
   border: 1px solid var(--border);

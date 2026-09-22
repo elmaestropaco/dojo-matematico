@@ -533,6 +533,10 @@ async function createTeacherRoom(enabledKeys, duration) {
 
 async function startHostedOnlineRoom() {
   if (!state.online?.code || !state.online?.isHost || !window.NinjaOnline?.enabled) return;
+  if (state.online.isTeacher && state.online.room?.status === "finished") {
+    await resetHostedOnlineRoom();
+    return;
+  }
   try {
     refs.startOnlineHostBtn.disabled = true;
     refs.teacherStartBtn.disabled = true;
@@ -545,7 +549,7 @@ async function startHostedOnlineRoom() {
 }
 
 async function handleRematch() {
-  if (state.mode === "online" && state.online?.code && state.online?.isHost && window.NinjaOnline?.enabled) {
+  if ((state.mode === "online" || state.mode === "teacher") && state.online?.code && state.online?.isHost && window.NinjaOnline?.enabled) {
     await resetHostedOnlineRoom();
     return;
   }
@@ -574,7 +578,11 @@ async function resetHostedOnlineRoom() {
     refs.playersWrap.classList.remove("hidden");
     refs.dojoScreen.classList.remove("hidden");
     applyModeDependentUI();
-    showOnlineHostLobby(state.online.code);
+    if (state.online.isTeacher) {
+      showTeacherDashboard();
+    } else {
+      showOnlineHostLobby(state.online.code);
+    }
   } catch (error) {
     alert(formatOnlineError("No se pudo preparar la revancha", error));
   }
@@ -895,9 +903,12 @@ function renderTeacherDashboard(room) {
     : room.status === "finished" ? "Combate terminado"
     : "Esperando";
   refs.teacherClock.textContent = statusText;
-  refs.teacherStartBtn.classList.toggle("hidden", room.status !== "lobby");
+  refs.teacherStartBtn.classList.toggle("hidden", room.status !== "lobby" && room.status !== "finished");
+  refs.teacherStartBtn.textContent = room.status === "finished" ? "🔄 Revancha" : "⚔️ Empezar sala";
+  refs.teacherStartBtn.disabled = false;
   refs.matchBadge.textContent = `🧑‍🏫 Sala ${state.online?.code || ""} · ${players.length} participantes`;
   updateFloatingRoomCode();
+  refs.teacherDashboard.classList.toggle("many-players", players.length >= 12);
 
   const totalCorrect = players.reduce((sum, p) => sum + Number(p.correctCount || 0), 0);
   const totalWrong = players.reduce((sum, p) => sum + Number(p.wrongCount || 0), 0);
@@ -907,7 +918,10 @@ function renderTeacherDashboard(room) {
   const lastAction = players
     .filter((p) => p.lastResult)
     .sort((a, b) => Number(b.lastActionAt || 0) - Number(a.lastActionAt || 0))[0];
-  const lastText = lastAction
+  const winner = players[0];
+  const lastText = room.status === "finished" && winner
+    ? `🏆 ${escapeHtml(winner.name || "Ninja")}`
+    : lastAction
     ? `${lastResultIcon(lastAction.lastResult)} ${escapeHtml(lastAction.name || "Ninja")}`
     : (room.status === "running" ? "En juego" : "Esperando");
 
@@ -2041,20 +2055,39 @@ function finishGame() {
 }
 
 function showResults() {
-  const scores = [...state.players].sort((a, b) => b.score - a.score);
   refs.resultsScores.innerHTML = "";
 
-  state.players.forEach((player) => {
-    const row = document.createElement("div");
-    row.className = "results-score-item";
-    row.textContent = `${player.name}: ${player.score} puntos`;
-    refs.resultsScores.appendChild(row);
-  });
-
   if (state.mode === "online") {
+    const onlinePlayers = Object.values(state.online?.room?.players || {});
+    const scores = (onlinePlayers.length ? onlinePlayers : state.players)
+      .map((player) => ({
+        name: player.name || "Ninja",
+        score: Number(player.score || 0),
+        correctCount: Number(player.correctCount || 0),
+        wrongCount: Number(player.wrongCount || 0)
+      }))
+      .sort((a, b) => b.score - a.score || b.correctCount - a.correctCount);
+
+    scores.forEach((player, index) => {
+      const row = document.createElement("div");
+      row.className = "results-score-item";
+      const medal = index === 0 ? "🏆" : index === 1 ? "🥈" : index === 2 ? "🥉" : "🥷";
+      row.textContent = `${medal} ${index + 1}. ${player.name}: ${player.score} puntos · ✅ ${player.correctCount} · ❌ ${player.wrongCount}`;
+      refs.resultsScores.appendChild(row);
+    });
+
     refs.resultsTitle.textContent = "🌐 ¡PARTIDA ONLINE TERMINADA!";
-    refs.resultsSubtitle.textContent = "El ranking se ha sincronizado con la sala.";
+    refs.resultsSubtitle.textContent = scores[0]
+      ? `Ganador/a: ${scores[0].name}. Ranking completo de la sala.`
+      : "Ranking sincronizado con la sala.";
   } else if (state.mode === "duel") {
+    const scores = [...state.players].sort((a, b) => b.score - a.score);
+    state.players.forEach((player) => {
+      const row = document.createElement("div");
+      row.className = "results-score-item";
+      row.textContent = `${player.name}: ${player.score} puntos`;
+      refs.resultsScores.appendChild(row);
+    });
     if (scores[0].score === scores[1].score) {
       refs.resultsTitle.textContent = "🤝 ¡EMPATE ÉPICO!";
       refs.resultsSubtitle.textContent = "Duelo igualadísimo hasta el final.";
@@ -2063,6 +2096,12 @@ function showResults() {
       refs.resultsSubtitle.textContent = "Golpe final perfecto.";
     }
   } else {
+    state.players.forEach((player) => {
+      const row = document.createElement("div");
+      row.className = "results-score-item";
+      row.textContent = `${player.name}: ${player.score} puntos`;
+      refs.resultsScores.appendChild(row);
+    });
     refs.resultsTitle.textContent = "🎯 ¡COMBATE TERMINADO!";
     refs.resultsSubtitle.textContent = "Tu resultado ya está guardado en el Cuadro de los Grandes Maestros.";
   }
