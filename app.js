@@ -64,7 +64,8 @@ const state = {
   displayMode: "horizontal",
   streaksEnabled: true,
   decimalsEnabled: false,
-  decimalPlaces: 1
+  decimalPlaces: 1,
+  online: null
 };
 
 const refs = {
@@ -78,6 +79,20 @@ const refs = {
   resultsScores: document.getElementById("resultsScores"),
   matchBadge: document.getElementById("matchBadge"),
   orientationBox: document.getElementById("orientationBox"),
+  onlineBox: document.getElementById("onlineBox"),
+  onlineHostLobby: document.getElementById("onlineHostLobby"),
+  onlineRoomCode: document.getElementById("onlineRoomCode"),
+  copyOnlineCodeBtn: document.getElementById("copyOnlineCodeBtn"),
+  startOnlineHostBtn: document.getElementById("startOnlineHostBtn"),
+  teacherBox: document.getElementById("teacherBox"),
+  teacherDashboard: document.getElementById("teacherDashboard"),
+  teacherRoomCode: document.getElementById("teacherRoomCode"),
+  teacherClock: document.getElementById("teacherClock"),
+  copyTeacherCodeBtn: document.getElementById("copyTeacherCodeBtn"),
+  teacherStartBtn: document.getElementById("teacherStartBtn"),
+  teacherRace: document.getElementById("teacherRace"),
+  teacherGrid: document.getElementById("teacherGrid"),
+  joinOnlineBtn: document.getElementById("joinOnlineBtn"),
   muteToggle: document.getElementById("muteToggle"),
   streakToggle: document.getElementById("streakToggle"),
   decimalsToggle: document.getElementById("decimalsToggle"),
@@ -227,6 +242,11 @@ function bindSettingsUI() {
   });
 
   document.getElementById("startBtn").addEventListener("click", startGame);
+  refs.joinOnlineBtn.addEventListener("click", joinOnlineRoom);
+  refs.copyOnlineCodeBtn.addEventListener("click", () => copyRoomCode(state.online?.code));
+  refs.copyTeacherCodeBtn.addEventListener("click", () => copyRoomCode(state.online?.code));
+  refs.startOnlineHostBtn.addEventListener("click", startHostedOnlineRoom);
+  refs.teacherStartBtn.addEventListener("click", startHostedOnlineRoom);
   document.getElementById("backBtn").addEventListener("click", goHome);
   document.getElementById("homeBtn").addEventListener("click", goHome);
   document.getElementById("rematchBtn").addEventListener("click", startGame);
@@ -235,8 +255,12 @@ function bindSettingsUI() {
 
 function applyModeDependentUI() {
   const isDuel = state.mode === "duel";
+  const isOnline = state.mode === "online";
+  const isTeacher = state.mode === "teacher";
   refs.orientationBox.classList.toggle("hidden", !isDuel);
   refs.player2Input.classList.toggle("hidden", !isDuel);
+  refs.onlineBox.classList.toggle("hidden", !isOnline);
+  refs.teacherBox.classList.toggle("hidden", !isTeacher);
 }
 
 function applySavedTheme() {
@@ -421,9 +445,144 @@ function startGame() {
     return;
   }
 
+  if (state.mode === "online") {
+    createOnlineRoom(enabledKeys, duration);
+    return;
+  }
+
+  if (state.mode === "teacher") {
+    createTeacherRoom(enabledKeys, duration);
+    return;
+  }
+
   runStartSequence(() => {
     launchGame(enabledKeys, duration);
   });
+}
+
+async function createOnlineRoom(enabledKeys, duration) {
+  try {
+    const ready = await window.NinjaOnline?.init();
+    if (!ready) {
+      alert("Firebase no está configurado todavía. Revisa firebase-config.js y Realtime Database.");
+      return;
+    }
+
+    const config = buildOnlineConfig();
+    const hostName = safeName(refs.player1Input.value, "Profe");
+    const { code } = await window.NinjaOnline.createRoom({
+      mode: "duel_online",
+      config,
+      durationSeconds: duration,
+      hostName
+    });
+    const joined = await window.NinjaOnline.joinRoom(code, hostName);
+    attachOnlineSession({
+      code,
+      playerId: joined.playerId,
+      isHost: true,
+      playerName: hostName,
+      config,
+      durationSeconds: duration
+    });
+
+    showOnlineHostLobby(code);
+    alert(`Sala creada: ${code}\n\nComparte el código y pulsa "Empezar" cuando todos hayan entrado.`);
+  } catch (error) {
+    alert(`No se pudo crear la sala online: ${error.message}`);
+  }
+}
+
+async function createTeacherRoom(enabledKeys, duration) {
+  try {
+    const ready = await window.NinjaOnline?.init();
+    if (!ready) {
+      alert("Firebase no está configurado todavía. Revisa firebase-config.js y Realtime Database.");
+      return;
+    }
+
+    const config = buildOnlineConfig();
+    const hostName = safeName(refs.player1Input.value, "Profe");
+    const { code } = await window.NinjaOnline.createRoom({
+      mode: "teacher",
+      config,
+      durationSeconds: duration,
+      hostName
+    });
+
+    attachOnlineSession({
+      code,
+      playerId: null,
+      isHost: true,
+      isTeacher: true,
+      playerName: hostName,
+      config,
+      durationSeconds: duration
+    });
+
+    showTeacherDashboard();
+  } catch (error) {
+    alert(`No se pudo crear la sala maestro: ${error.message}`);
+  }
+}
+
+async function startHostedOnlineRoom() {
+  if (!state.online?.code || !state.online?.isHost || !window.NinjaOnline?.enabled) return;
+  try {
+    refs.startOnlineHostBtn.disabled = true;
+    refs.teacherStartBtn.disabled = true;
+    await window.NinjaOnline.startRoom(state.online.code);
+  } catch (error) {
+    refs.startOnlineHostBtn.disabled = false;
+    refs.teacherStartBtn.disabled = false;
+    alert(`No se pudo empezar la sala: ${error.message}`);
+  }
+}
+
+async function copyRoomCode(code) {
+  if (!code) return;
+  try {
+    await navigator.clipboard.writeText(code);
+    alert(`Código copiado: ${code}`);
+  } catch {
+    prompt("Copia el código de sala:", code);
+  }
+}
+
+function showOnlineHostLobby(code) {
+  refs.onlineRoomCode.textContent = code || "------";
+  refs.onlineHostLobby.classList.remove("hidden");
+  refs.startOnlineHostBtn.disabled = false;
+}
+
+function hideOnlineHostLobby() {
+  refs.onlineHostLobby.classList.add("hidden");
+  refs.startOnlineHostBtn.disabled = false;
+}
+
+async function joinOnlineRoom() {
+  try {
+    const code = prompt("Código de sala:");
+    if (!code) return;
+    const playerName = safeName(refs.player1Input.value, "Ninja");
+    const ready = await window.NinjaOnline?.init();
+    if (!ready) {
+      alert("Firebase no está configurado todavía. Revisa firebase-config.js y Realtime Database.");
+      return;
+    }
+
+    const joined = await window.NinjaOnline.joinRoom(code, playerName);
+    hideOnlineHostLobby();
+    attachOnlineSession({
+      code: joined.code,
+      playerId: joined.playerId,
+      isHost: false,
+      playerName
+    });
+    alert(`Te has unido a la sala ${joined.code}. Espera a que quien creó la sala empiece la partida.`);
+  } catch (error) {
+    alert(`No se pudo unir a la sala: ${error.message}`);
+  }
 }
 
 function ensureDecimalResultModeCompatibility() {
@@ -457,12 +616,224 @@ function requiresDecimalResultMode() {
   return false;
 }
 
+function buildOnlineConfig() {
+  return {
+    operationSettings: clonePlain(state.operationSettings),
+    displayMode: state.displayMode,
+    streaksEnabled: state.streaksEnabled,
+    decimalsEnabled: state.decimalsEnabled,
+    decimalPlaces: state.decimalPlaces,
+    enabledKeys: getEnabledOperationKeys()
+  };
+}
+
+function attachOnlineSession(session) {
+  detachOnlineSession(false);
+  state.online = {
+    ...session,
+    active: false,
+    room: null,
+    currentOperationIndex: 0,
+    correctCount: 0,
+    wrongCount: 0,
+    unsubscribe: null
+  };
+  state.mode = session.isTeacher ? "teacher" : "online";
+  setActiveByData(".mode-btn", "mode", state.mode);
+  applyModeDependentUI();
+
+  state.online.unsubscribe = window.NinjaOnline.subscribeRoom(session.code, (room) => {
+    handleOnlineRoomUpdate(room);
+  });
+}
+
+function detachOnlineSession(markOffline = true) {
+  if (!state.online) return;
+  if (typeof state.online.unsubscribe === "function") state.online.unsubscribe();
+  if (markOffline && state.online.code && state.online.playerId && window.NinjaOnline?.enabled) {
+    window.NinjaOnline.updatePlayer(state.online.code, state.online.playerId, { isConnected: false }).catch(() => {});
+  }
+  state.online = null;
+}
+
+function handleOnlineRoomUpdate(room) {
+  if (!state.online || !room) return;
+  state.online.room = room;
+
+  if (!state.online.config && room.config) {
+    try {
+      state.online.config = JSON.parse(room.config);
+    } catch {
+      state.online.config = {};
+    }
+  }
+  if (!state.online.durationSeconds) state.online.durationSeconds = Number(room.durationSeconds || 60);
+
+  if (room.status === "running" && !state.online.active) {
+    if (state.online.isTeacher) startTeacherMonitor(room);
+    else launchOnlineGame(room);
+  }
+
+  if (state.online.isTeacher) renderTeacherDashboard(room);
+  else if (state.online.active) updateOnlineLeaderboard(room);
+
+  if (room.status === "finished" && state.online.isTeacher) {
+    renderTeacherDashboard(room);
+  } else if (room.status === "finished" && state.isRunning) {
+    finishGame();
+  }
+}
+
+function showTeacherDashboard() {
+  refs.body.classList.add("game-running");
+  refs.resultsOverlay.classList.add("hidden");
+  refs.dojoScreen.classList.add("hidden");
+  refs.arenaScreen.classList.remove("hidden");
+  refs.arenaScreen.classList.add("teacher-mode");
+  refs.playersWrap.classList.add("hidden");
+  refs.duelLead.classList.add("hidden");
+  refs.eventRoulette.classList.add("hidden");
+  refs.teacherDashboard.classList.remove("hidden");
+  refs.matchBadge.textContent = `🧑‍🏫 Sala ${state.online?.code || ""} · esperando alumnos`;
+  refs.teacherRoomCode.textContent = `Código ${state.online?.code || "---"}`;
+  refs.teacherClock.textContent = "Esperando";
+  refs.teacherStartBtn.disabled = false;
+  refs.teacherStartBtn.classList.remove("hidden");
+  refs.teacherRace.innerHTML = "";
+  refs.teacherGrid.innerHTML = "<div class='teacher-empty'>Esperando ninjas...</div>";
+}
+
+function startTeacherMonitor(room) {
+  state.online.active = true;
+  refs.teacherStartBtn.classList.add("hidden");
+  state.online.startedAt = Number(room.startedAt || Date.now());
+  state.gameDuration = Number(room.durationSeconds || state.online.durationSeconds || 60);
+  state.timeLeft = state.gameDuration;
+  state.isRunning = true;
+  stopTimer();
+  state.timerId = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - Number(room.startedAt || Date.now())) / 1000);
+    state.timeLeft = Math.max(0, state.gameDuration - elapsed);
+    refs.teacherClock.textContent = formatSeconds(state.timeLeft);
+    if (state.timeLeft <= 0) {
+      stopTimer();
+      state.isRunning = false;
+      if (state.online?.isHost && window.NinjaOnline?.enabled) {
+        window.NinjaOnline.finishRoom(state.online.code).catch(() => {});
+      }
+    }
+  }, 1000);
+}
+
+function launchOnlineGame(room) {
+  hideOnlineHostLobby();
+  applyOnlineConfig(state.online.config || {});
+  state.online.active = true;
+  state.online.seed = Number(room.seed || 1);
+  state.online.currentOperationIndex = 0;
+  state.online.correctCount = 0;
+  state.online.wrongCount = 0;
+
+  const totalDuration = Number(room.durationSeconds || state.online.durationSeconds || 60);
+  const elapsed = Number(room.startedAt) ? Math.floor((Date.now() - Number(room.startedAt)) / 1000) : 0;
+  const duration = Math.max(1, totalDuration - Math.max(0, elapsed));
+  runStartSequence(() => {
+    launchGame(getEnabledOperationKeys(), duration);
+  });
+}
+
+function applyOnlineConfig(config) {
+  if (config.operationSettings) state.operationSettings = mergeOperationSettings(config.operationSettings);
+  if (["horizontal", "vertical", "mixed"].includes(config.displayMode)) state.displayMode = config.displayMode;
+  if (typeof config.streaksEnabled === "boolean") state.streaksEnabled = config.streaksEnabled;
+  if (typeof config.decimalsEnabled === "boolean") state.decimalsEnabled = config.decimalsEnabled;
+  if (Number.isFinite(Number(config.decimalPlaces))) state.decimalPlaces = clamp(Number(config.decimalPlaces), 1, 3);
+  syncSettingsUIFromState();
+  updateOpsSummary();
+}
+
+function mergeOperationSettings(saved) {
+  const base = clonePlain(state.operationSettings);
+  Object.keys(base).forEach((key) => {
+    if (!saved[key]) return;
+    base[key] = { ...base[key], ...saved[key] };
+  });
+  return base;
+}
+
+function clonePlain(value) {
+  return JSON.parse(JSON.stringify(value));
+}
+
+function updateOnlineLeaderboard(room) {
+  const players = Object.values(room.players || {}).sort((a, b) => (b.score || 0) - (a.score || 0));
+  if (players.length === 0) return;
+  refs.matchBadge.textContent = `🌐 Sala ${state.online.code} · ${players.map((p) => `${p.name}: ${p.score || 0}`).join(" · ")}`;
+}
+
+function renderTeacherDashboard(room) {
+  if (!refs.teacherDashboard || refs.teacherDashboard.classList.contains("hidden")) return;
+  const players = Object.entries(room.players || {})
+    .map(([id, player]) => ({ id, ...player }))
+    .sort((a, b) => (b.score || 0) - (a.score || 0) || (b.operationIndex || 0) - (a.operationIndex || 0));
+
+  refs.teacherRoomCode.textContent = `Código ${state.online?.code || "---"}`;
+  const statusText = room.status === "running" ? `En marcha · ${formatSeconds(Math.max(0, state.timeLeft || 0))}`
+    : room.status === "finished" ? "Combate terminado"
+    : "Esperando";
+  refs.teacherClock.textContent = statusText;
+  refs.teacherStartBtn.classList.toggle("hidden", room.status !== "lobby");
+  refs.matchBadge.textContent = `🧑‍🏫 Sala ${state.online?.code || ""} · ${players.length} participantes`;
+
+  if (players.length === 0) {
+    refs.teacherRace.innerHTML = "";
+    refs.teacherGrid.innerHTML = "<div class='teacher-empty'>Esperando ninjas...</div>";
+    return;
+  }
+
+  const maxProgress = Math.max(10, ...players.map((p) => Number(p.operationIndex || 0)));
+  refs.teacherRace.innerHTML = players.slice(0, 8).map((player, index) => {
+    const pct = Math.min(100, ((Number(player.operationIndex || 0) / maxProgress) * 100));
+    return `
+      <div class="race-lane">
+        <span class="race-rank">${index + 1}</span>
+        <span class="race-name">${escapeHtml(player.name || "Ninja")}</span>
+        <div class="race-track"><span class="race-runner" style="left:${pct}%">🥷</span></div>
+        <span class="race-score">${Number(player.score || 0)}</span>
+      </div>
+    `;
+  }).join("");
+
+  refs.teacherGrid.innerHTML = players.map((player, index) => {
+    const progressPct = Math.min(100, (Number(player.operationIndex || 0) / maxProgress) * 100);
+    const streak = Number(player.streak || 0);
+    const medal = index === 0 ? "🏆" : index === 1 ? "🥈" : index === 2 ? "🥉" : "🥷";
+    return `
+      <article class="teacher-card ${index === 0 ? "leader" : ""}">
+        <div class="teacher-card-top">
+          <span class="teacher-medal">${medal}</span>
+          <strong>${escapeHtml(player.name || "Ninja")}</strong>
+          <span>${Number(player.score || 0)} pts</span>
+        </div>
+        <div class="teacher-progress"><span style="width:${progressPct}%"></span></div>
+        <div class="teacher-stats">
+          <span>✅ ${Number(player.correctCount || 0)}</span>
+          <span>❌ ${Number(player.wrongCount || 0)}</span>
+          <span>🔥 x${streak}</span>
+          <span>📍 ${Number(player.operationIndex || 0)}</span>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
 function launchGame(enabledKeys, duration) {
 
   initAudio();
   playGong();
   stopTimer();
   stopEventSystem();
+  refs.body.classList.add("game-running");
 
   state.gameDuration = duration;
   state.timeLeft = duration;
@@ -473,6 +844,10 @@ function launchGame(enabledKeys, duration) {
   refs.resultsOverlay.classList.add("hidden");
   refs.dojoScreen.classList.add("hidden");
   refs.arenaScreen.classList.remove("hidden");
+  refs.arenaScreen.classList.remove("teacher-mode");
+  refs.teacherDashboard.classList.add("hidden");
+  refs.playersWrap.classList.remove("hidden");
+  hideOnlineHostLobby();
 
   state.players = buildPlayersForMode();
   renderArena();
@@ -488,7 +863,7 @@ function launchGame(enabledKeys, duration) {
     updateDuelLeadBar();
   }
 
-  if (state.streaksEnabled) scheduleNextEvent();
+  if (state.streaksEnabled && state.mode !== "online") scheduleNextEvent();
 
   state.timerId = setInterval(() => {
     state.timeLeft -= 1;
@@ -545,7 +920,7 @@ function getSelectedDurationSeconds() {
 
 function buildPlayersForMode() {
   const p1 = safeName(refs.player1Input.value, "Ninja");
-  if (state.mode === "single") {
+  if (state.mode === "single" || state.mode === "online") {
     return [{ id: 0, name: p1, score: 0, input: "", streak: 0, color: "red" }];
   }
 
@@ -598,7 +973,7 @@ function renderArena() {
   });
 
   refs.playersWrap.querySelectorAll("button[data-action], .key-btn").forEach((button) => {
-    button.addEventListener("click", handleButtonAction);
+    button.addEventListener("pointerdown", handleButtonAction);
   });
 
   repaintPlayers();
@@ -667,6 +1042,7 @@ function buildNumpad(numpadEl, playerId) {
 
 function handleButtonAction(event) {
   if (!state.isRunning) return;
+  event.preventDefault();
 
   const button = event.currentTarget;
   const playerId = Number(button.dataset.player);
@@ -715,6 +1091,10 @@ function skipCurrentOperation(playerId) {
   player.input = "";
   flashPlayer(player.id, false);
   playSkip();
+  if (state.mode === "online" && state.online?.active) {
+    state.online.currentOperationIndex += 1;
+    updateOnlinePlayerProgress(player);
+  }
   generateNewOperationForPlayer(player.id, true);
   repaintPlayers();
 }
@@ -809,6 +1189,11 @@ function submitPlayerAnswer(playerId) {
     flashPlayer(player.id, true);
     playSuccess();
     triggerStreakEffect(player.id);
+    if (state.mode === "online" && state.online?.active) {
+      state.online.currentOperationIndex += 1;
+      state.online.correctCount += 1;
+      updateOnlinePlayerProgress(player);
+    }
     generateNewOperationForPlayer(player.id, true);
   } else {
     applyWrongOutcome(player);
@@ -816,13 +1201,17 @@ function submitPlayerAnswer(playerId) {
     player.input = "";
     flashPlayer(player.id, false);
     playFail();
+    if (state.mode === "online" && state.online?.active) {
+      state.online.wrongCount += 1;
+      updateOnlinePlayerProgress(player);
+    }
   }
 
   repaintPlayers();
 }
 
 function assignInitialOperations() {
-  if (state.mode === "single") {
+  if (state.mode === "single" || state.mode === "online") {
     generateNewOperationForPlayer(0, false);
     repaintPlayers();
     return;
@@ -846,6 +1235,11 @@ function assignInitialOperations() {
 function generateNewOperationForPlayer(playerId, enforceDifferentInDuel) {
   const enabledKeys = getEnabledOperationKeys();
   if (enabledKeys.length === 0) return;
+
+  if (state.mode === "online" && state.online?.active) {
+    state.operationsByPlayer.set(playerId, createOnlineOperation(state.online.currentOperationIndex));
+    return;
+  }
 
   let operation = createOperation(randomFrom(enabledKeys));
 
@@ -885,6 +1279,49 @@ function createOperation(kind) {
   else base = generateDivision(cfg);
 
   return decorateOperation(base);
+}
+
+function createOnlineOperation(index) {
+  const enabledKeys = getEnabledOperationKeys();
+  const seed = Number(state.online?.seed || 1);
+  return withSeededRandom(seed + (index * 9973), () => {
+    const kind = randomFrom(enabledKeys);
+    return createOperation(kind);
+  });
+}
+
+function withSeededRandom(seed, callback) {
+  const originalRandom = Math.random;
+  Math.random = mulberry32(seed);
+  try {
+    return callback();
+  } finally {
+    Math.random = originalRandom;
+  }
+}
+
+function mulberry32(seed) {
+  let t = Math.floor(seed) || 1;
+  return function seededRandom() {
+    t += 0x6D2B79F5;
+    let x = t;
+    x = Math.imul(x ^ (x >>> 15), x | 1);
+    x ^= x + Math.imul(x ^ (x >>> 7), x | 61);
+    return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function updateOnlinePlayerProgress(player) {
+  if (!state.online?.code || !state.online?.playerId || !window.NinjaOnline?.enabled) return;
+  window.NinjaOnline.updatePlayer(state.online.code, state.online.playerId, {
+    name: player.name,
+    score: player.score,
+    streak: player.streak,
+    operationIndex: state.online.currentOperationIndex,
+    correctCount: state.online.correctCount,
+    wrongCount: state.online.wrongCount,
+    isConnected: true
+  }).catch(() => {});
 }
 
 function generateDecimalOperation(kind, cfg) {
@@ -1298,7 +1735,9 @@ function getEnabledOperationKeys() {
 }
 
 function buildMatchBadge(enabledKeys) {
-  const modeText = state.mode === "single" ? "👤 Entrenamiento" : "⚔️ Batalla";
+  const modeText = state.mode === "single" ? "👤 Entrenamiento"
+    : state.mode === "online" ? `🌐 Sala ${state.online?.code || ""}`
+    : "⚔️ Batalla";
   return `${modeText} · ${enabledKeys.length} operaciones activas`;
 }
 
@@ -1329,6 +1768,7 @@ function repaintPlayers() {
       opEl.offsetHeight;
       opEl.classList.add("pop");
       opEl.innerHTML = op.html;
+      fitOperationElement(opEl);
     }
 
     const decimalHintEl = document.getElementById(`decimalHint-${player.id}`);
@@ -1340,6 +1780,26 @@ function repaintPlayers() {
   });
 
   if (state.mode === "duel") updateDuelLeadBar();
+}
+
+function fitOperationElement(opEl) {
+  if (!opEl) return;
+  opEl.style.fontSize = "";
+  const computed = window.getComputedStyle(opEl);
+  let size = Number.parseFloat(computed.fontSize);
+  if (!Number.isFinite(size)) return;
+
+  const minSize = refs.body.classList.contains("game-running") ? 15 : 18;
+  let attempts = 0;
+  while (
+    attempts < 18 &&
+    size > minSize &&
+    (opEl.scrollWidth > opEl.clientWidth || opEl.scrollHeight > opEl.clientHeight)
+  ) {
+    size -= 2;
+    opEl.style.fontSize = `${size}px`;
+    attempts += 1;
+  }
 }
 
 function triggerStreakEffect(playerId) {
@@ -1390,6 +1850,14 @@ function flashPlayer(playerId, success) {
 
 function finishGame() {
   state.isRunning = false;
+  refs.body.classList.remove("game-running");
+  if (state.mode === "online" && state.online?.active) {
+    const player = state.players[0];
+    if (player) updateOnlinePlayerProgress(player);
+    if (state.online.isHost && window.NinjaOnline?.enabled) {
+      window.NinjaOnline.finishRoom(state.online.code).catch(() => {});
+    }
+  }
   stopTimer();
   stopEventSystem();
   playGong();
@@ -1414,7 +1882,10 @@ function showResults() {
     refs.resultsScores.appendChild(row);
   });
 
-  if (state.mode === "duel") {
+  if (state.mode === "online") {
+    refs.resultsTitle.textContent = "🌐 ¡PARTIDA ONLINE TERMINADA!";
+    refs.resultsSubtitle.textContent = "El ranking se ha sincronizado con la sala.";
+  } else if (state.mode === "duel") {
     if (scores[0].score === scores[1].score) {
       refs.resultsTitle.textContent = "🤝 ¡EMPATE ÉPICO!";
       refs.resultsSubtitle.textContent = "Duelo igualadísimo hasta el final.";
@@ -1433,7 +1904,9 @@ function showResults() {
 function saveResultsToHall() {
   const hall = readHall();
   const now = new Date();
-  const modeLabel = state.mode === "single" ? "Entrenamiento" : "Batalla";
+  const modeLabel = state.mode === "single" ? "Entrenamiento"
+    : state.mode === "online" ? "Batalla online"
+    : "Batalla";
   const timeLabel = formatSeconds(state.gameDuration);
 
   state.players.forEach((player) => {
@@ -1467,7 +1940,7 @@ function applySavedPreferences() {
   const prefs = readPreferences();
   if (!prefs) return;
 
-  if (prefs.mode === "single" || prefs.mode === "duel") state.mode = prefs.mode;
+  if (["single", "duel", "online", "teacher"].includes(prefs.mode)) state.mode = prefs.mode;
   if (prefs.orientation === "vertical" || prefs.orientation === "face") state.orientation = prefs.orientation;
   if (typeof prefs.muted === "boolean") state.muted = prefs.muted;
   if (typeof prefs.streaksEnabled === "boolean") state.streaksEnabled = prefs.streaksEnabled;
@@ -1590,9 +2063,14 @@ function clearHallOfFame() {
 function goHome() {
   stopTimer();
   stopEventSystem();
+  detachOnlineSession();
   state.isRunning = false;
+  refs.body.classList.remove("game-running");
   refs.resultsOverlay.classList.add("hidden");
   refs.arenaScreen.classList.add("hidden");
+  refs.arenaScreen.classList.remove("teacher-mode");
+  refs.teacherDashboard.classList.add("hidden");
+  refs.playersWrap.classList.remove("hidden");
   refs.dojoScreen.classList.remove("hidden");
 }
 

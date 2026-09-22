@@ -44,7 +44,30 @@
           <div class="mode-buttons" role="radiogroup" aria-label="Modo de juego">
             <button class="mode-btn active" type="button" data-mode="single">👤 Entrenamiento</button>
             <button class="mode-btn" type="button" data-mode="duel">⚔️ Batalla</button>
+            <button class="mode-btn" type="button" data-mode="online">🌐 Batalla online</button>
+            <button class="mode-btn" type="button" data-mode="teacher">🧑‍🏫 Modo Maestro</button>
           </div>
+        </div>
+
+        <div class="config-box online-only hidden" id="onlineBox">
+          <p class="label">🌐 Partida online</p>
+          <div class="mode-buttons">
+            <button id="joinOnlineBtn" class="btn-mini" type="button">🔑 Unirse con código</button>
+          </div>
+          <p class="hint">Para crear sala, configura operaciones y pulsa el botón grande de empezar. Comparte el código con tus compañeros.</p>
+          <div id="onlineHostLobby" class="room-code-card hidden" aria-live="polite">
+            <span class="room-code-label">Código de sala</span>
+            <strong id="onlineRoomCode">------</strong>
+            <div class="room-code-actions">
+              <button id="copyOnlineCodeBtn" class="btn-mini" type="button">📋 Copiar</button>
+              <button id="startOnlineHostBtn" class="btn-mini start-room-btn" type="button">⚔️ Empezar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="config-box teacher-only hidden" id="teacherBox">
+          <p class="label">🧑‍🏫 Panel del maestro</p>
+          <p class="hint">Crea una sala, proyecta esta pantalla y deja que los alumnos entren con el código. Verás ranking, avance y rachas en directo.</p>
         </div>
 
         <div class="config-box">
@@ -331,6 +354,21 @@
         <div class="duel-names"><span id="duelLeftName">Ninja Rojo</span><span id="duelRightName">Ninja Azul</span></div>
         <div class="duel-track"><div id="duelNinja" class="duel-ninja">🥷</div></div>
       </div>
+      <section id="teacherDashboard" class="teacher-dashboard hidden" aria-live="polite">
+        <div class="teacher-hero">
+          <div>
+            <p class="teacher-kicker">Sala del maestro</p>
+            <h2 id="teacherRoomCode">Código ---</h2>
+          </div>
+          <div class="teacher-actions">
+            <div class="teacher-clock" id="teacherClock">Esperando</div>
+            <button id="copyTeacherCodeBtn" class="btn-mini" type="button">📋 Copiar código</button>
+            <button id="teacherStartBtn" class="btn-mini start-room-btn hidden" type="button">⚔️ Empezar sala</button>
+          </div>
+        </div>
+        <div class="teacher-race" id="teacherRace"></div>
+        <div class="teacher-grid" id="teacherGrid"></div>
+      </section>
       <div id="playersWrap" class="players-wrap single-layout"></div>
     </section>
   </main>
@@ -390,13 +428,14 @@
       <span>© 2026 Francisco Serrano Jiménez. Todos los derechos reservados.</span>
     </div>
     <div class="footer-links">
-      <a href="https://sites.google.com/view/elmaestropaco/inicio" target="_blank" rel="noopener noreferrer">Web</a>
+      <a href="https://sites.google.com/view/elprofepaco/inicio" target="_blank" rel="noopener noreferrer">Web</a>
       <a href="https://www.instagram.com/tecnoyedu/" target="_blank" rel="noopener noreferrer">Instagram</a>
       <a href="https://tecnologiayeducacion.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
       <a href="mailto:pacoserrano.edu@gmail.com">Contacto</a>
     </div>
   </footer>
 
+  <script src="firebase-online.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

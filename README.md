@@ -1,51 +1,92 @@
-# Dojo Matemático
+# Dojo Matematico
 
-Web app educativa de cálculo mental (modo individual y VS) con teclado táctil, operaciones configurables, eventos sorpresa y cuadro de puntuaciones local.
+Web app educativa de calculo mental con modo individual, batalla local, teclado tactil, operaciones configurables, eventos sorpresa y cuadro de puntuaciones local.
 
 ## Ejecutar en local
 
 1. Abre la carpeta del proyecto.
-2. Lanza un servidor estático (por ejemplo con Live Server en VS Code).
+2. Lanza un servidor estatico, por ejemplo Live Server en VS Code.
 3. Abre `index.html` en el navegador.
 
-No requiere backend.
+La app funciona sin backend para los modos locales.
 
 ## Funciones principales
 
-- Modo `👤 Entrenamiento` y `⚔️ Batalla`.
-- Operaciones configurables: sumas, restas, multiplicaciones, divisiones, divisiones difíciles, combinadas, fracciones y porcentajes.
-- Selector de cifras por tipo de operación.
-- Formato de operación horizontal/vertical/mixto.
-- Teclado táctil y soporte de teclado físico.
-- Temporizador configurable y cuenta atrás visual/sonora.
-- Sistema de puntos, rachas y eventos sorpresa.
-- `🏆 Cuadro de los Grandes Maestros` con filtros.
+- Modo entrenamiento y batalla local.
+- Operaciones configurables: sumas, restas, multiplicaciones, divisiones, divisiones dificiles, combinadas, fracciones y porcentajes.
+- Selector de cifras por tipo de operacion.
+- Operaciones horizontales, verticales o mixtas.
+- Teclado tactil y soporte de teclado fisico.
+- Temporizador configurable.
+- Rachas, eventos sorpresa y sonidos.
+- Cuadro de los Grandes Maestros guardado en el navegador.
+- Batalla Online con codigo de sala y Firebase Realtime Database.
+- Modo Maestro con sala proyectable, ranking en directo, carrera visual y tarjetas de progreso por alumno.
 
-## Persistencia (navegador)
+## Persistencia local
 
 La app guarda en `localStorage`:
 
-- Preferencias de juego (modo, operaciones, duración, etc.).
+- Preferencias de juego.
 - Resultados del Cuadro de los Grandes Maestros.
 - Tema visual.
-- Consentimiento de analítica.
+- Consentimiento de analitica.
 
-## Analítica y cookies
+## Analitica y cookies
 
-- La integración de Google Analytics se carga **solo si el usuario acepta** en el banner de consentimiento.
-- Si el usuario rechaza, no se carga el script de Analytics.
+Google Analytics (`G-5XSQG511V6`) solo se carga si el usuario acepta el banner de consentimiento. Si rechaza, no se carga Analytics.
 
-## Responsive
+## Firebase / modo online
 
-La interfaz incluye breakpoints para móvil, tablet y pantallas pequeñas/landscape, manteniendo:
+La app usa Firebase Realtime Database como backend de `Batalla Online` y `Modo Maestro`.
 
-- Teclado visible.
-- Operación y temporizador legibles.
-- Distribución equilibrada en modo VS.
+La version online permite:
 
-## Estructura
+- crear una sala con codigo,
+- generar automaticamente un codigo de sala para el host,
+- unirse desde otro ordenador,
+- competir con la misma secuencia de operaciones,
+- sincronizar puntuacion y progreso basico en vivo.
+- crear una sala de maestro para proyectar un ranking animado con todos los alumnos conectados.
+
+En `Batalla online`, el host configura la partida y pulsa `Empezar`: la app crea un codigo automatico, muestra una lobby con boton de copiar y permite iniciar cuando todos hayan entrado.
+
+En `Modo Maestro`, el profesor crea la sala y comparte el codigo generado automaticamente. Los alumnos entran desde `Batalla online > Unirse con codigo`.
+
+### Pasos en Firebase
+
+1. Entra en Firebase Console.
+2. Crea un proyecto nuevo.
+3. Anade una app web al proyecto.
+4. Copia la configuracion web de Firebase.
+5. Activa `Realtime Database`.
+6. Elige ubicacion europea si esta disponible.
+7. En `Realtime Database > Rules`, pega el contenido de `firebase/database.rules.json` y publica.
+8. Duplica `firebase-config.example.js` como `firebase-config.js`.
+9. Rellena `firebase-config.js` con los datos de tu app web Firebase.
+
+`firebase-config.js` se puede subir a GitHub Pages: la configuracion web de Firebase es publica. No subas nunca claves privadas de servidor ni cuentas de servicio.
+
+### Hosting
+
+Puedes seguir usando GitHub Pages, Netlify o Vercel para alojar la web.
+
+Firebase se usa para sincronizacion en tiempo real:
+
+- salas con codigo,
+- jugadores conectados,
+- puntuaciones,
+- progreso,
+- eventos de partida.
+
+No necesitas alojar la web en Firebase Hosting, aunque tambien seria posible.
+
+## Archivos importantes
 
 - `index.html`: estructura de la app.
 - `styles.css`: estilos y responsive.
-- `app.js`: lógica de juego, generación de operaciones, puntuación, eventos, persistencia y consentimiento.
-- `assets/branding/`: favicon, logo e iconos PWA.
+- `app.js`: logica del juego local.
+- `firebase-online.js`: cargador y cliente base para Firebase.
+- `firebase-config.example.js`: plantilla de configuracion Firebase.
+- `firebase/database.rules.json`: reglas iniciales para Realtime Database.
+- `assets/branding/`: favicon, logo e iconos.
