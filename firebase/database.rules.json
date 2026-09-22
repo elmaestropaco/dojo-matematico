@@ -1,75 +1,8 @@
 {
   "rules": {
     "rooms": {
-      "$roomCode": {
-        ".read": true,
-        ".write": true,
-        ".validate": "newData.hasChildren(['mode', 'status', 'seed', 'durationSeconds', 'createdAt'])",
-        "mode": {
-          ".validate": "newData.val() === 'duel_online' || newData.val() === 'teacher'"
-        },
-        "status": {
-          ".validate": "newData.val() === 'lobby' || newData.val() === 'running' || newData.val() === 'finished'"
-        },
-        "seed": {
-          ".validate": "newData.isNumber()"
-        },
-        "durationSeconds": {
-          ".validate": "newData.isNumber() && newData.val() >= 5 && newData.val() <= 1800"
-        },
-        "createdAt": {
-          ".validate": "newData.isNumber()"
-        },
-        "config": {
-          ".validate": "newData.isString() && newData.val().length <= 12000"
-        },
-        "players": {
-          "$playerId": {
-            ".validate": "newData.hasChildren(['name', 'score', 'operationIndex', 'lastSeenAt'])",
-            "name": {
-              ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 24"
-            },
-            "score": {
-              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 99999"
-            },
-            "streak": {
-              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 999"
-            },
-            "operationIndex": {
-              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 9999"
-            },
-            "correctCount": {
-              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 9999"
-            },
-            "wrongCount": {
-              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 9999"
-            },
-            "lastSeenAt": {
-              ".validate": "newData.isNumber()"
-            },
-            "$other": {
-              ".validate": true
-            }
-          }
-        },
-        "events": {
-          "$eventId": {
-            ".validate": "newData.hasChildren(['type', 'createdAt'])",
-            "type": {
-              ".validate": "newData.isString() && newData.val().length <= 40"
-            },
-            "createdAt": {
-              ".validate": "newData.isNumber()"
-            },
-            "$other": {
-              ".validate": true
-            }
-          }
-        },
-        "$other": {
-          ".validate": true
-        }
-      }
+      ".read": true,
+      ".write": true
     }
   }
 }

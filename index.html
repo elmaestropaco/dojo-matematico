@@ -56,11 +56,26 @@
           </div>
           <p class="hint">Para crear sala, configura operaciones y pulsa el botón grande de empezar. Comparte el código con tus compañeros.</p>
           <div id="onlineHostLobby" class="room-code-card hidden" aria-live="polite">
-            <span class="room-code-label">Código de sala</span>
-            <strong id="onlineRoomCode">------</strong>
+            <div class="lobby-hero-row">
+              <div class="lobby-hero-copy">
+                <span class="room-code-label">Sala online lista</span>
+                <h2>⚔️ Esperando ninjas</h2>
+                <p>Comparte este código. Cuando veas a todos en la lista, empieza el combate.</p>
+              </div>
+              <button id="copyOnlineCodeBtn" class="room-ticket" type="button" aria-label="Copiar código de sala">
+                <span>Código</span>
+                <strong id="onlineRoomCode">------</strong>
+                <small>📋 Toca para copiar</small>
+              </button>
+            </div>
             <div class="room-code-actions">
-              <button id="copyOnlineCodeBtn" class="btn-mini" type="button">📋 Copiar</button>
-              <button id="startOnlineHostBtn" class="btn-mini start-room-btn" type="button">⚔️ Empezar</button>
+              <button id="startOnlineHostBtn" class="btn-mini start-room-btn" type="button">⚔️ Empezar combate</button>
+            </div>
+            <div class="online-lobby">
+              <p class="online-lobby-title">🥷 Ninjas en la sala <span id="onlineLobbyCount">0</span></p>
+              <div id="onlineLobbyPlayers" class="online-lobby-players">
+                <span class="online-lobby-empty">Esperando jugadores...</span>
+              </div>
             </div>
           </div>
         </div>
@@ -334,6 +349,10 @@
         <div class="arena-spacer" aria-hidden="true"></div>
         <div id="matchBadge" class="match-badge">Entrenamiento</div>
       </div>
+      <button id="floatingRoomCode" class="floating-room-code hidden" type="button" aria-label="Copiar código de sala">
+        <span>🔑 Sala</span>
+        <strong id="floatingRoomCodeText">------</strong>
+      </button>
       <div id="eventRoulette" class="event-roulette hidden" aria-live="polite">
         <img class="roulette-brand" src="assets/branding/Logo.png" alt="Logo Dojo Matemático" />
         <div class="roulette-pointer">▼</div>
@@ -366,6 +385,7 @@
             <button id="teacherStartBtn" class="btn-mini start-room-btn hidden" type="button">⚔️ Empezar sala</button>
           </div>
         </div>
+        <div class="teacher-summary" id="teacherSummary"></div>
         <div class="teacher-race" id="teacherRace"></div>
         <div class="teacher-grid" id="teacherGrid"></div>
       </section>

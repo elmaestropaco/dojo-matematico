@@ -105,6 +105,8 @@ Firebase se usa para sincronizacion en tiempo real:
 
 No necesitas alojar la web en Firebase Hosting, aunque tambien seria posible.
 
+Las reglas incluidas permiten leer y escribir en `rooms` sin login para que los alumnos puedan unirse con codigo desde distintos dispositivos. Es adecuado para una primera version educativa, pero si la app se abre mucho al publico conviene anadir autenticacion anonima, limpieza automatica de salas antiguas o App Check.
+
 ## Archivos importantes
 
 - `index.html`: estructura de la app.
