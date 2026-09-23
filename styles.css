@@ -1824,11 +1824,15 @@ body.game-running .action-row {
 
 .results-card {
   width: min(560px, 100%);
+  max-height: calc(100dvh - 28px);
   border-radius: 18px;
   border: 1px solid var(--border);
   background: var(--panel);
   padding: 14px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .results-card h3 {
@@ -1855,6 +1859,9 @@ body.game-running .action-row {
   margin: 10px 0;
   display: grid;
   gap: 7px;
+  overflow: auto;
+  padding-right: 4px;
+  min-height: 0;
 }
 
 .results-score-item {
@@ -1862,6 +1869,13 @@ body.game-running .action-row {
   border-radius: 12px;
   padding: 8px;
   font-weight: 700;
+}
+
+.results-actions {
+  position: sticky;
+  bottom: 0;
+  background: var(--panel);
+  padding-top: 8px;
 }
 
 .help-dialog {

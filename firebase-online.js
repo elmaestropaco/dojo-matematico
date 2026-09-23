@@ -41,18 +41,32 @@
       const roomSnap = await this.db.ref(`rooms/${cleanCode}`).get();
       if (!roomSnap.exists()) throw new Error("La sala no existe.");
 
-      const playerRef = this.db.ref(`rooms/${cleanCode}/players`).push();
+      const safePlayerName = truncateGraphemes(String(playerName || "Ninja").trim() || "Ninja", 24);
+      const playerId = playerKeyFromName(safePlayerName);
+      const playerRef = this.db.ref(`rooms/${cleanCode}/players/${playerId}`);
+      const playerSnap = await playerRef.get();
+
+      if (playerSnap.exists()) {
+        await playerRef.update({
+          name: safePlayerName,
+          isConnected: true,
+          lastSeenAt: Date.now()
+        });
+        return { code: cleanCode, playerId };
+      }
+
       const player = {
-        name: String(playerName || "Ninja").slice(0, 24),
+        name: safePlayerName,
         score: 0,
         streak: 0,
         operationIndex: 0,
         correctCount: 0,
         wrongCount: 0,
+        isConnected: true,
         lastSeenAt: Date.now()
       };
       await playerRef.set(player);
-      return { code: cleanCode, playerId: playerRef.key };
+      return { code: cleanCode, playerId };
     },
     async startRoom(code) {
       await requireOnline(this);
@@ -97,6 +111,11 @@
         status: "finished"
       });
     },
+    async getRoom(code) {
+      await requireOnline(this);
+      const snap = await this.db.ref(`rooms/${normalizeRoomCode(code)}`).get();
+      return snap.val();
+    },
     async updatePlayer(code, playerId, patch) {
       await requireOnline(this);
       await this.db.ref(`rooms/${normalizeRoomCode(code)}/players/${playerId}`).update({
@@ -116,6 +135,20 @@
 
   function normalizeRoomCode(code) {
     return String(code || "").trim().toUpperCase();
+  }
+
+  function truncateGraphemes(value, maxLength) {
+    return Array.from(String(value || "")).slice(0, maxLength).join("");
+  }
+
+  function playerKeyFromName(name) {
+    const normalized = String(name || "Ninja").trim().toLocaleLowerCase("es");
+    let hash = 5381;
+    for (const char of Array.from(normalized)) {
+      hash = ((hash << 5) + hash) + char.codePointAt(0);
+      hash >>>= 0;
+    }
+    return `p_${hash.toString(36)}`;
   }
 
   async function requireOnline(client) {

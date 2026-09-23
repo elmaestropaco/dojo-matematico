@@ -1494,7 +1494,7 @@ function mulberry32(seed) {
 
 function updateOnlinePlayerProgress(player, extra = {}) {
   if (!state.online?.code || !state.online?.playerId || !window.NinjaOnline?.enabled) return;
-  window.NinjaOnline.updatePlayer(state.online.code, state.online.playerId, {
+  return window.NinjaOnline.updatePlayer(state.online.code, state.online.playerId, {
     name: player.name,
     score: player.score,
     streak: player.streak,
@@ -2030,14 +2030,25 @@ function flashPlayer(playerId, success) {
   }
 }
 
-function finishGame() {
+async function finishGame() {
   state.isRunning = false;
   refs.body.classList.remove("game-running", "online-lobby-running");
+  stopTimer();
   if (state.mode === "online" && state.online?.active) {
     const player = state.players[0];
-    if (player) updateOnlinePlayerProgress(player);
+    if (player) {
+      await updateOnlinePlayerProgress(player, {
+        lastResult: "finished",
+        lastActionAt: Date.now()
+      });
+    }
     if (state.online.isHost && window.NinjaOnline?.enabled) {
-      window.NinjaOnline.finishRoom(state.online.code).catch(() => {});
+      await window.NinjaOnline.finishRoom(state.online.code).catch(() => {});
+    }
+    if (window.NinjaOnline?.enabled) {
+      await wait(650);
+      const latestRoom = await window.NinjaOnline.getRoom(state.online.code).catch(() => null);
+      if (latestRoom) state.online.room = latestRoom;
     }
     state.online.active = false;
   }
@@ -2179,8 +2190,8 @@ function applySavedPreferences() {
     });
   }
 
-  if (typeof prefs.player1Name === "string") refs.player1Input.value = prefs.player1Name.slice(0, 16);
-  if (typeof prefs.player2Name === "string") refs.player2Input.value = prefs.player2Name.slice(0, 16);
+  if (typeof prefs.player1Name === "string") refs.player1Input.value = truncateGraphemes(prefs.player1Name, 16);
+  if (typeof prefs.player2Name === "string") refs.player2Input.value = truncateGraphemes(prefs.player2Name, 16);
 
   const timePreset = String(prefs.timePreset || "");
   if (["60", "120", "180", "custom"].includes(timePreset)) refs.timePresetSelect.value = timePreset;
@@ -2499,7 +2510,15 @@ function refreshOperationDisplays() {
 
 function safeName(value, fallback) {
   const text = String(value || "").trim();
-  return text || fallback;
+  return truncateGraphemes(text || fallback, 24);
+}
+
+function truncateGraphemes(value, maxLength) {
+  return Array.from(String(value || "")).slice(0, maxLength).join("");
+}
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function formatSeconds(total) {
