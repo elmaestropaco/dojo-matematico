@@ -43,7 +43,7 @@
 
 body {
   margin: 0;
-  font-family: "Lexend", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   color: var(--text-main);
   background:
     radial-gradient(75rem 35rem at 0% -10%, rgba(74, 214, 255, 0.25), transparent 68%),
@@ -181,7 +181,7 @@ body.game-running .container {
 
 .app-title {
   margin: 0;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   letter-spacing: 0.06em;
   font-size: clamp(1.35rem, 3.8vw, 2.6rem);
   text-shadow: 0 0 18px rgba(218, 41, 28, 0.45);
@@ -225,7 +225,7 @@ body.game-running .arena-top {
 
 .dojo-screen h2 {
   margin: 4px 0 12px;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   text-align: center;
 }
 
@@ -554,6 +554,73 @@ input[type="number"] {
   font-size: 0.92rem;
 }
 
+.online-create-panel {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 10px;
+  background:
+    linear-gradient(135deg, rgba(248, 201, 77, 0.18), rgba(74, 214, 255, 0.14)),
+    var(--panel);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+.online-create-panel summary {
+  cursor: pointer;
+  list-style: none;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-weight: 900;
+  text-align: center;
+  background: linear-gradient(120deg, #ff7f66, #ffd166, #7dd3fc, #ff9ec5);
+  color: #241b2d;
+  box-shadow: 0 10px 22px rgba(255, 127, 102, 0.22);
+}
+
+.online-create-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.online-create-panel summary::after {
+  content: "  ▾";
+}
+
+.online-create-panel[open] summary::after {
+  content: "  ▴";
+}
+
+.online-create-mount {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.online-create-mount .config-box {
+  margin: 0;
+}
+
+.online-create-mount .start-combat-btn {
+  width: 100%;
+  margin-top: 2px;
+}
+
+.online-name-mount {
+  margin: 8px 0 12px;
+}
+
+.online-name-mount .config-box {
+  margin: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.08), rgba(74, 214, 255, 0.1)),
+    rgba(255, 255, 255, 0.04);
+}
+
+.online-name-mount .label::after {
+  content: " · primero escribe tu nombre";
+  color: var(--text-soft);
+  font-size: 0.78em;
+  font-weight: 700;
+}
+
 .room-code-card {
   margin-top: 10px;
   border: 1px solid var(--border);
@@ -578,7 +645,7 @@ input[type="number"] {
 
 .lobby-hero-copy h2 {
   margin: 4px 0 6px;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(1.35rem, 4vw, 2.6rem);
 }
 
@@ -629,7 +696,7 @@ input[type="number"] {
 .room-ticket strong {
   display: block;
   margin: 4px 0 8px;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(1.45rem, 4.5vw, 2.7rem);
   letter-spacing: 0.025em;
   color: #111827;
@@ -704,7 +771,7 @@ input[type="number"] {
   border-radius: 999px;
   background: var(--accent-gold);
   color: #170d08;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
 }
 
 .online-lobby-players {
@@ -803,7 +870,7 @@ input[type="number"] {
   margin: 0;
   width: 100%;
   text-align: center;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(1rem, 2.8vw, 1.45rem);
   letter-spacing: 0.03em;
   color: var(--text-main);
@@ -859,7 +926,7 @@ input[type="number"] {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(1.35rem, 3.3vw, 2.1rem);
   color: var(--accent-cyan);
   text-shadow: 0 0 16px rgba(74, 214, 255, 0.45);
@@ -923,7 +990,7 @@ input[type="number"] {
 }
 
 .floating-room-code strong {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   letter-spacing: 0.08em;
   color: var(--accent-gold);
 }
@@ -936,14 +1003,14 @@ input[type="number"] {
   min-height: 0;
   height: 100%;
   display: grid;
-  grid-template-rows: auto auto minmax(130px, 0.9fr) minmax(210px, 1.2fr);
+  grid-template-rows: auto minmax(0, auto) auto minmax(120px, 0.8fr) minmax(200px, 1.2fr);
   gap: 10px;
   overflow: hidden;
 }
 
 .teacher-hero {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(160px, 1fr);
   align-items: center;
   gap: 14px;
   border: 1px solid var(--border);
@@ -961,23 +1028,89 @@ input[type="number"] {
   font-weight: 700;
 }
 
-.teacher-hero h2 {
+.teacher-room-code-btn {
   margin: 0;
-  font-family: "Orbitron", sans-serif;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text-main);
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(1.5rem, 4vw, 3.2rem);
+  font-weight: 900;
   letter-spacing: 0.04em;
+  cursor: pointer;
+  text-align: left;
+}
+
+.teacher-room-code-btn::after {
+  content: " 📋";
+  font-size: 0.55em;
+  opacity: 0.8;
+}
+
+.teacher-room-code-btn:focus-visible {
+  outline: 3px solid rgba(74, 214, 255, 0.75);
+  outline-offset: 4px;
+  border-radius: 10px;
 }
 
 .teacher-clock {
+  --teacher-countdown-progress: 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 10px 12px;
-  min-width: 150px;
+  border-radius: 50%;
+  width: clamp(112px, 13vw, 154px);
+  height: clamp(112px, 13vw, 154px);
+  padding: 12px;
   text-align: center;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-weight: 800;
   color: var(--accent-gold);
-  background: rgba(0, 0, 0, 0.2);
+  background:
+    radial-gradient(circle, rgba(9, 14, 26, 0.95) 0 62%, transparent 63%),
+    conic-gradient(
+      #43d16f calc(var(--teacher-countdown-progress) * 360deg),
+      rgba(255, 95, 95, 0.2) 0
+    );
+  box-shadow:
+    0 0 0 8px rgba(255, 255, 255, 0.05) inset,
+    0 14px 30px rgba(0, 0, 0, 0.24);
+}
+
+.teacher-clock span {
+  font-size: clamp(0.66rem, 1vw, 0.88rem);
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.teacher-clock strong {
+  font-size: clamp(1.9rem, 4vw, 3.35rem);
+  line-height: 0.95;
+  color: var(--accent-gold);
+  text-shadow: 0 0 18px rgba(248, 201, 77, 0.32);
+}
+
+.teacher-clock.waiting {
+  background:
+    radial-gradient(circle, rgba(9, 14, 26, 0.95) 0 62%, transparent 63%),
+    conic-gradient(rgba(248, 201, 77, 0.8), rgba(74, 214, 255, 0.65), rgba(248, 201, 77, 0.8));
+}
+
+.teacher-clock.warning strong {
+  color: var(--accent-gold);
+}
+
+.teacher-clock.danger strong {
+  color: #ff5f5f;
+}
+
+.teacher-clock.last-ten {
+  animation: timerUrgent 1s linear infinite;
 }
 
 .teacher-actions {
@@ -985,6 +1118,138 @@ input[type="number"] {
   grid-template-columns: 1fr;
   gap: 6px;
   justify-items: stretch;
+  justify-self: end;
+  width: min(220px, 100%);
+}
+
+.teacher-settings-btn {
+  background: linear-gradient(120deg, #ff7f66, #ffd166, #7dd3fc);
+  color: #211728;
+  font-weight: 900;
+}
+
+.teacher-config-panel {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(248, 201, 77, 0.3), transparent 34%),
+    linear-gradient(120deg, rgba(74, 214, 255, 0.18), rgba(67, 209, 111, 0.12)),
+    rgba(7, 11, 22, 0.82);
+  color: var(--text-main);
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-config-title {
+  width: 100%;
+  border: 0;
+  border-radius: 11px;
+  padding: 9px 12px;
+  text-align: center;
+  font-weight: 900;
+  font-family: inherit;
+  cursor: pointer;
+  background: linear-gradient(120deg, #ff7f66, #ffd166, #7dd3fc);
+  color: #211728;
+  box-shadow: 0 8px 18px rgba(255, 127, 102, 0.18);
+}
+
+.teacher-config-title:focus-visible {
+  outline: 3px solid rgba(74, 214, 255, 0.75);
+  outline-offset: 3px;
+}
+
+.teacher-config-body {
+  display: none;
+}
+
+.teacher-config-panel.expanded .teacher-config-body {
+  display: block;
+}
+
+.teacher-config-panel.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(1120px, calc(100vw - 32px));
+  height: min(82dvh, calc(100dvh - 92px));
+  transform: translate(-50%, -50%);
+  z-index: 1600;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(12px, 1.8vw, 18px);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(248, 201, 77, 0.42), transparent 34%),
+    radial-gradient(circle at 100% 100%, rgba(74, 214, 255, 0.3), transparent 38%),
+    linear-gradient(145deg, rgba(12, 18, 34, 0.98), rgba(10, 37, 45, 0.98));
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.55),
+    0 0 0 9999px rgba(2, 5, 12, 0.38);
+}
+
+.teacher-config-panel.expanded .teacher-config-body {
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.teacher-config-panel .hint {
+  margin: 7px 0;
+  text-align: center;
+  color: var(--text-soft);
+  font-weight: 800;
+}
+
+.teacher-config-mount {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 6px;
+  max-height: min(38vh, 320px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.teacher-config-panel.expanded .teacher-config-mount {
+  flex: 1;
+  max-height: none;
+  min-height: 0;
+  overflow: auto;
+  padding: 2px 16px 10px 2px;
+  scrollbar-gutter: stable;
+}
+
+.teacher-config-panel.expanded .teacher-config-mount::-webkit-scrollbar {
+  width: 12px;
+}
+
+.teacher-config-panel.expanded .teacher-config-mount::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.teacher-config-panel.expanded .teacher-config-mount::-webkit-scrollbar-thumb {
+  border: 3px solid rgba(12, 18, 34, 0.98);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffd166, #7dd3fc);
+}
+
+.teacher-config-mount .config-box {
+  margin: 0;
+}
+
+.teacher-config-mount #operationsBox {
+  grid-column: 1 / -1;
+}
+
+.teacher-medal,
+.teacher-stat-card > span,
+.race-runner,
+.online-lobby-medal {
+  font-family: "Noto Color Emoji", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
 }
 
 .teacher-race {
@@ -1018,7 +1283,7 @@ input[type="number"] {
 }
 
 .teacher-stat-card strong {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.35rem);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1052,7 +1317,7 @@ input[type="number"] {
 
 .race-rank,
 .race-score {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-weight: 800;
   text-align: center;
 }
@@ -1350,7 +1615,7 @@ input[type="number"] {
 }
 
 .countdown-number {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(3rem, 13vw, 8rem);
   font-weight: 800;
   color: #fff;
@@ -1609,7 +1874,7 @@ body.game-running .panel-timer {
 }
 
 .player-score {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(1.1rem, 2.8vw, 1.6rem);
 }
 
@@ -1656,7 +1921,7 @@ body.game-running .panel-timer {
   top: 14px;
   right: 10px;
   z-index: 5;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-weight: 700;
   color: #ffd93b;
   text-shadow: 0 0 8px rgba(255, 217, 59, 0.6);
@@ -1667,7 +1932,7 @@ body.game-running .panel-timer {
 .operation {
   margin: 12px 0 10px;
   text-align: center;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(1.9rem, 5.5vw, 3.4rem);
   letter-spacing: 0.04em;
   min-height: 120px;
@@ -1715,13 +1980,47 @@ body.game-running .operation {
   justify-self: center;
 }
 
+.op-expression {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28em;
+  flex-wrap: wrap;
+}
+
+.fraction-real {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: center;
+  min-width: 1.25em;
+  line-height: 0.92;
+  vertical-align: middle;
+  font-weight: 800;
+}
+
+.fraction-num,
+.fraction-den {
+  display: block;
+  padding: 0 0.12em;
+}
+
+.fraction-num {
+  border-bottom: 0.08em solid currentColor;
+}
+
+.fraction-of {
+  font-size: 0.76em;
+  opacity: 0.86;
+}
+
 .answer-box {
   min-height: 52px;
   border-radius: 12px;
   border: 1px solid var(--border);
   padding: 10px;
   text-align: center;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.08em;
   background: rgba(0, 0, 0, 0.24);
@@ -1837,7 +2136,7 @@ body.game-running .action-row {
 
 .results-card h3 {
   margin: 4px 0 8px;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   font-size: clamp(1.3rem, 3.8vw, 2rem);
 }
 
@@ -2278,23 +2577,41 @@ body.game-running .action-row {
   }
 
   .teacher-dashboard {
-    grid-template-rows: auto auto minmax(96px, 0.7fr) minmax(160px, 1fr);
+    grid-template-rows: auto auto auto minmax(96px, 0.7fr) minmax(160px, 1fr);
     gap: 6px;
   }
 
   .teacher-hero {
+    grid-template-columns: minmax(0, 1fr) auto minmax(120px, 0.7fr);
     padding: 8px;
     gap: 8px;
   }
 
-  .teacher-hero h2 {
+  .teacher-room-code-btn {
     font-size: clamp(1.15rem, 7vw, 1.8rem);
   }
 
   .teacher-clock {
-    min-width: 98px;
-    padding: 8px;
-    font-size: 0.82rem;
+    width: clamp(88px, 18vw, 112px);
+    height: clamp(88px, 18vw, 112px);
+    padding: 10px;
+  }
+
+  .teacher-clock strong {
+    font-size: clamp(1.65rem, 6vw, 2.5rem);
+  }
+
+  .teacher-clock span {
+    font-size: 0.58rem;
+  }
+
+  .teacher-actions {
+    width: min(170px, 100%);
+  }
+
+  .teacher-config-mount {
+    grid-template-columns: 1fr;
+    max-height: min(45vh, 300px);
   }
 
   .floating-room-code {
@@ -2600,6 +2917,7 @@ body.game-running .action-row {
   }
 
   .teacher-hero {
+    grid-template-columns: minmax(0, 1fr) auto minmax(92px, 0.7fr);
     padding: 6px 8px;
   }
 
@@ -2607,14 +2925,42 @@ body.game-running .action-row {
     display: none;
   }
 
-  .teacher-hero h2 {
+  .teacher-room-code-btn {
     font-size: 1.2rem;
   }
 
   .teacher-clock {
-    min-width: 110px;
-    padding: 6px 8px;
-    font-size: 0.78rem;
+    width: 74px;
+    height: 74px;
+    padding: 8px;
+  }
+
+  .teacher-clock strong {
+    font-size: 1.12rem;
+  }
+
+  .teacher-clock span {
+    font-size: 0.52rem;
+    letter-spacing: 0.03em;
+  }
+
+  .teacher-actions {
+    width: 112px;
+  }
+
+  .teacher-config-panel {
+    padding: 6px;
+  }
+
+  .teacher-config-panel.expanded {
+    width: calc(100vw - 12px);
+    height: calc(100dvh - 18px);
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  .teacher-config-panel.expanded .teacher-config-mount {
+    padding-right: 12px;
   }
 
   .floating-room-code {
@@ -2700,3 +3046,5 @@ body.game-running .action-row {
     font-size: 0.86rem;
   }
 }
+
+

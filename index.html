@@ -14,7 +14,7 @@
   <link rel="manifest" href="assets/branding/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -51,6 +51,7 @@
 
         <div class="config-box online-only hidden" id="onlineBox">
           <p class="label">🌐 Partida online</p>
+          <div id="onlineNameMount" class="online-name-mount"></div>
           <div class="mode-buttons">
             <button id="joinOnlineBtn" class="btn-mini" type="button">🔑 Unirse con código</button>
           </div>
@@ -80,12 +81,18 @@
           </div>
         </div>
 
+        <details id="onlineCreatePanel" class="online-create-panel online-only hidden">
+          <summary>⚔️ Crea tu partida online</summary>
+          <p class="hint">Ajusta la próxima ronda sin cambiar de sala. En revancha se usarán estas opciones.</p>
+          <div id="onlineCreateMount" class="online-create-mount"></div>
+        </details>
+
         <div class="config-box teacher-only hidden" id="teacherBox">
           <p class="label">🧑‍🏫 Panel del maestro</p>
           <p class="hint">Crea una sala, proyecta esta pantalla y deja que los alumnos entren con el código. Verás ranking, avance y rachas en directo.</p>
         </div>
 
-        <div class="config-box">
+        <div class="config-box" id="nameBox">
           <p class="label">👥 Nombre de jugadores</p>
           <div class="name-grid">
             <input id="player1Input" type="text" maxlength="16" placeholder="Ninja 1" value="Ninja" />
@@ -93,7 +100,7 @@
           </div>
         </div>
 
-        <div class="config-box">
+        <div class="config-box" id="durationBox">
           <div class="inline-field duration-inline">
             <p class="label">⏱️ Duración</p>
             <select id="timePresetSelect">
@@ -109,7 +116,7 @@
           </div>
         </div>
 
-        <div class="config-box">
+        <div class="config-box" id="operationsBox">
           <details id="opsDropdown" class="ops-dropdown">
             <summary id="opsSummary">🧮 Operaciones (0 activas)</summary>
             <p class="hint">Marca lo que quieres practicar y las cifras de cada número.</p>
@@ -271,7 +278,7 @@
           <div id="opsChips" class="ops-chips" aria-live="polite"></div>
         </div>
 
-        <div class="config-box">
+        <div class="config-box" id="formatBox">
           <div class="inline-field">
             <p class="label">🧠 Formato de operaciones</p>
             <select id="displayModeSelect">
@@ -290,7 +297,7 @@
           </div>
         </div>
 
-        <div class="config-box">
+        <div class="config-box" id="gameOptionsBox">
           <label class="toggle-line"><input id="muteToggle" type="checkbox" /> 🔇 Silenciar sonidos</label>
           <label class="toggle-line"><input id="streakToggle" type="checkbox" checked /> 🔥 Activar rachas + eventos sorpresa</label>
           <label class="toggle-line"><input id="decimalsToggle" type="checkbox" /> 🔢 Activar decimales</label>
@@ -377,14 +384,21 @@
         <div class="teacher-hero">
           <div>
             <p class="teacher-kicker">Sala del maestro</p>
-            <h2 id="teacherRoomCode">Código ---</h2>
+            <button id="teacherRoomCode" class="teacher-room-code-btn" type="button" title="Copiar código de sala">Código ---</button>
           </div>
+          <div class="teacher-clock" id="teacherClock">Esperando</div>
           <div class="teacher-actions">
-            <div class="teacher-clock" id="teacherClock">Esperando</div>
-            <button id="copyTeacherCodeBtn" class="btn-mini" type="button">📋 Copiar código</button>
+            <button id="teacherConfigToggle" class="btn-mini teacher-settings-btn hidden" type="button">⚙️ Ajustes ronda</button>
             <button id="teacherStartBtn" class="btn-mini start-room-btn hidden" type="button">⚔️ Empezar sala</button>
           </div>
         </div>
+        <section id="teacherConfigPanel" class="teacher-config-panel hidden" aria-label="Ajustes de la próxima ronda">
+          <button id="teacherConfigClose" class="teacher-config-title" type="button">⚙️ Cerrar ajustes de la próxima ronda ▴</button>
+          <div id="teacherConfigBody" class="teacher-config-body">
+            <p class="hint">Cambia operaciones, duración o formato. La revancha usará estos ajustes sin generar otro código.</p>
+            <div id="teacherConfigMount" class="teacher-config-mount"></div>
+          </div>
+        </section>
         <div class="teacher-summary" id="teacherSummary"></div>
         <div class="teacher-race" id="teacherRace"></div>
         <div class="teacher-grid" id="teacherGrid"></div>

@@ -82,6 +82,9 @@ const refs = {
   floatingRoomCodeText: document.getElementById("floatingRoomCodeText"),
   orientationBox: document.getElementById("orientationBox"),
   onlineBox: document.getElementById("onlineBox"),
+  onlineNameMount: document.getElementById("onlineNameMount"),
+  onlineCreatePanel: document.getElementById("onlineCreatePanel"),
+  onlineCreateMount: document.getElementById("onlineCreateMount"),
   onlineHostLobby: document.getElementById("onlineHostLobby"),
   onlineRoomCode: document.getElementById("onlineRoomCode"),
   onlineLobbyPlayers: document.getElementById("onlineLobbyPlayers"),
@@ -90,10 +93,14 @@ const refs = {
   startOnlineHostBtn: document.getElementById("startOnlineHostBtn"),
   teacherBox: document.getElementById("teacherBox"),
   teacherDashboard: document.getElementById("teacherDashboard"),
+  teacherConfigPanel: document.getElementById("teacherConfigPanel"),
+  teacherConfigToggle: document.getElementById("teacherConfigToggle"),
+  teacherConfigClose: document.getElementById("teacherConfigClose"),
+  teacherConfigBody: document.getElementById("teacherConfigBody"),
+  teacherConfigMount: document.getElementById("teacherConfigMount"),
   teacherRoomCode: document.getElementById("teacherRoomCode"),
   teacherClock: document.getElementById("teacherClock"),
   teacherSummary: document.getElementById("teacherSummary"),
-  copyTeacherCodeBtn: document.getElementById("copyTeacherCodeBtn"),
   teacherStartBtn: document.getElementById("teacherStartBtn"),
   teacherRace: document.getElementById("teacherRace"),
   teacherGrid: document.getElementById("teacherGrid"),
@@ -109,6 +116,11 @@ const refs = {
   customTimeWrap: document.getElementById("customTimeWrap"),
   customMinInput: document.getElementById("customMinInput"),
   customSecInput: document.getElementById("customSecInput"),
+  nameBox: document.getElementById("nameBox"),
+  durationBox: document.getElementById("durationBox"),
+  operationsBox: document.getElementById("operationsBox"),
+  formatBox: document.getElementById("formatBox"),
+  gameOptionsBox: document.getElementById("gameOptionsBox"),
   displayModeSelect: document.getElementById("displayModeSelect"),
   opsSummary: document.getElementById("opsSummary"),
   opsChips: document.getElementById("opsChips"),
@@ -136,10 +148,14 @@ const refs = {
 };
 
 let audioCtx = null;
+const onlineCreateItems = [];
+const onlineNameItems = [];
 
 init();
 
 function init() {
+  setupOnlineNamePanel();
+  setupOnlineCreatePanel();
   applySavedPreferences();
   bindSettingsUI();
   bindKeyboardSupport();
@@ -249,10 +265,14 @@ function bindSettingsUI() {
   document.getElementById("startBtn").addEventListener("click", startGame);
   refs.joinOnlineBtn.addEventListener("click", joinOnlineRoom);
   refs.copyOnlineCodeBtn.addEventListener("click", () => copyRoomCode(state.online?.code));
-  refs.copyTeacherCodeBtn.addEventListener("click", () => copyRoomCode(state.online?.code));
+  refs.teacherRoomCode.addEventListener("click", () => copyRoomCode(state.online?.code));
   refs.floatingRoomCode.addEventListener("click", () => copyRoomCode(state.online?.code));
   refs.startOnlineHostBtn.addEventListener("click", startHostedOnlineRoom);
   refs.teacherStartBtn.addEventListener("click", startHostedOnlineRoom);
+  refs.teacherConfigToggle?.addEventListener("click", () => {
+    setTeacherConfigExpanded(!refs.teacherConfigPanel?.classList.contains("expanded"));
+  });
+  refs.teacherConfigClose?.addEventListener("click", () => setTeacherConfigExpanded(false));
   document.getElementById("backBtn").addEventListener("click", goHome);
   document.getElementById("homeBtn").addEventListener("click", goHome);
   document.getElementById("rematchBtn").addEventListener("click", handleRematch);
@@ -266,7 +286,81 @@ function applyModeDependentUI() {
   refs.orientationBox.classList.toggle("hidden", !isDuel);
   refs.player2Input.classList.toggle("hidden", !isDuel);
   refs.onlineBox.classList.toggle("hidden", !isOnline);
+  refs.onlineCreatePanel?.classList.toggle("hidden", !isOnline);
   refs.teacherBox.classList.toggle("hidden", !isTeacher);
+  updateOnlineNamePanel(isOnline && !refs.body.classList.contains("online-lobby-running"));
+  updateOnlineCreatePanel(isOnline && !refs.body.classList.contains("online-lobby-running"));
+  updateTeacherCreatePanel(false);
+}
+
+function setupOnlineNamePanel() {
+  const nodes = [refs.nameBox].filter(Boolean);
+  nodes.forEach((node) => {
+    const placeholder = document.createComment(`online-name-placeholder-${node.id || node.tagName}`);
+    node.parentNode.insertBefore(placeholder, node);
+    onlineNameItems.push({ node, placeholder });
+  });
+}
+
+function setupOnlineCreatePanel() {
+  const nodes = [refs.durationBox, refs.operationsBox, refs.formatBox, refs.gameOptionsBox, document.getElementById("startBtn")].filter(Boolean);
+  nodes.forEach((node) => {
+    const placeholder = document.createComment(`online-create-placeholder-${node.id || node.tagName}`);
+    node.parentNode.insertBefore(placeholder, node);
+    onlineCreateItems.push({ node, placeholder });
+  });
+}
+
+function updateOnlineNamePanel(shouldMount) {
+  if (!refs.onlineNameMount || onlineNameItems.length === 0) return;
+  onlineNameItems.forEach(({ node, placeholder }) => {
+    if (shouldMount) {
+      if (node.parentNode !== refs.onlineNameMount) refs.onlineNameMount.appendChild(node);
+      return;
+    }
+
+    if (node.parentNode === refs.onlineNameMount) {
+      placeholder.parentNode.insertBefore(node, placeholder.nextSibling);
+    }
+  });
+}
+
+function updateOnlineCreatePanel(shouldMount) {
+  moveCreateItems(shouldMount ? refs.onlineCreateMount : null, { includeStart: true });
+}
+
+function updateTeacherCreatePanel(shouldMount) {
+  refs.teacherConfigToggle?.classList.toggle("hidden", !shouldMount);
+  if (!shouldMount) setTeacherConfigExpanded(false);
+  moveCreateItems(shouldMount ? refs.teacherConfigMount : null, { includeStart: false });
+}
+
+function setTeacherConfigExpanded(expanded) {
+  if (!refs.teacherConfigPanel || !refs.teacherConfigToggle) return;
+  refs.teacherConfigPanel.classList.toggle("hidden", !expanded);
+  refs.teacherConfigPanel.classList.toggle("expanded", expanded);
+  refs.teacherConfigToggle.textContent = expanded ? "⚙️ Cerrar ajustes" : "⚙️ Ajustes ronda";
+  if (expanded) refs.teacherConfigClose?.focus({ preventScroll: true });
+}
+
+function moveCreateItems(target, { includeStart } = { includeStart: true }) {
+  if (onlineCreateItems.length === 0) return;
+  onlineCreateItems.forEach(({ node, placeholder }) => {
+    const isStartButton = node.id === "startBtn";
+    const destination = (!includeStart && isStartButton) ? null : target;
+
+    if (destination) {
+      if (node.parentNode !== destination) destination.appendChild(node);
+      node.classList.remove("hidden");
+      return;
+    }
+
+    if (node.parentNode !== placeholder.parentNode) {
+      placeholder.parentNode.insertBefore(node, placeholder.nextSibling);
+    }
+
+    node.classList.toggle("hidden", !includeStart && isStartButton && refs.teacherDashboard && !refs.teacherDashboard.classList.contains("hidden"));
+  });
 }
 
 function applySavedTheme() {
@@ -540,6 +634,13 @@ async function startHostedOnlineRoom() {
   try {
     refs.startOnlineHostBtn.disabled = true;
     refs.teacherStartBtn.disabled = true;
+    if (state.online.room?.status === "lobby") {
+      const config = buildOnlineConfig();
+      const duration = getSelectedDurationSeconds();
+      await window.NinjaOnline.resetRoom(state.online.code, { config, durationSeconds: duration });
+      state.online.config = config;
+      state.online.durationSeconds = duration;
+    }
     await window.NinjaOnline.startRoom(state.online.code);
   } catch (error) {
     refs.startOnlineHostBtn.disabled = false;
@@ -559,9 +660,11 @@ async function handleRematch() {
 
 async function resetHostedOnlineRoom() {
   try {
-    const duration = state.online.durationSeconds || state.gameDuration || getSelectedDurationSeconds();
-    const config = state.online.config || buildOnlineConfig();
+    const duration = getSelectedDurationSeconds() || state.gameDuration || state.online.durationSeconds || 60;
+    const config = buildOnlineConfig();
     await window.NinjaOnline.resetRoom(state.online.code, { config, durationSeconds: duration });
+    state.online.config = config;
+    state.online.durationSeconds = duration;
 
     state.online.active = false;
     state.online.currentOperationIndex = 0;
@@ -600,6 +703,9 @@ async function copyRoomCode(code) {
 
 function showOnlineHostLobby(code) {
   refs.body.classList.add("online-lobby-running");
+  updateOnlineNamePanel(false);
+  updateOnlineCreatePanel(true);
+  if (refs.onlineCreatePanel) refs.onlineCreatePanel.open = false;
   refs.dojoScreen.classList.remove("hidden");
   refs.arenaScreen.classList.add("hidden");
   refs.onlineRoomCode.textContent = code || "------";
@@ -613,6 +719,8 @@ function showOnlineHostLobby(code) {
 
 function hideOnlineHostLobby() {
   refs.body.classList.remove("online-lobby-running");
+  updateOnlineNamePanel(state.mode === "online");
+  updateOnlineCreatePanel(state.mode === "online");
   refs.onlineHostLobby.classList.add("hidden");
   refs.startOnlineHostBtn.disabled = false;
 }
@@ -645,7 +753,6 @@ async function joinOnlineRoom() {
       isHost: false,
       playerName
     });
-    alert(`Te has unido a la sala ${joined.code}. Espera a que quien creó la sala empiece la partida.`);
   } catch (error) {
     alert(formatOnlineError("No se pudo unir a la sala", error));
   }
@@ -685,7 +792,6 @@ function requiresDecimalResultMode() {
   }
 
   if (state.operationSettings.divHard?.enabled) return true;
-  if (state.operationSettings.combinedAdv?.enabled) return true;
   if (state.operationSettings.percent?.enabled) return true;
   return false;
 }
@@ -734,14 +840,14 @@ function handleOnlineRoomUpdate(room) {
   if (!state.online || !room) return;
   state.online.room = room;
 
-  if (!state.online.config && room.config) {
+  if (room.config) {
     try {
       state.online.config = JSON.parse(room.config);
     } catch {
       state.online.config = {};
     }
   }
-  if (!state.online.durationSeconds) state.online.durationSeconds = Number(room.durationSeconds || 60);
+  state.online.durationSeconds = Number(room.durationSeconds || state.online.durationSeconds || 60);
 
   if (room.status === "running" && !state.online.active) {
     if (state.online.isTeacher) startTeacherMonitor(room);
@@ -769,10 +875,11 @@ function showTeacherDashboard() {
   refs.duelLead.classList.add("hidden");
   refs.eventRoulette.classList.add("hidden");
   refs.teacherDashboard.classList.remove("hidden");
+  updateTeacherCreatePanel(true);
   updateFloatingRoomCode();
   refs.matchBadge.textContent = `🧑‍🏫 Sala ${state.online?.code || ""} · esperando alumnos`;
   refs.teacherRoomCode.textContent = `Código ${state.online?.code || "---"}`;
-  refs.teacherClock.textContent = "Esperando";
+  updateTeacherClockDisplay(null, "Esperando");
   refs.teacherStartBtn.disabled = false;
   refs.teacherStartBtn.classList.remove("hidden");
   refs.teacherSummary.innerHTML = `
@@ -788,13 +895,14 @@ function showTeacherDashboard() {
 function startTeacherMonitor(room) {
   state.online.active = true;
   state.online.teacherCountdown = true;
+  updateTeacherCreatePanel(false);
   refs.teacherStartBtn.classList.add("hidden");
   state.online.startedAt = Number(room.startedAt || Date.now());
   state.gameDuration = Number(room.durationSeconds || state.online.durationSeconds || 60);
   state.timeLeft = state.gameDuration;
   state.isRunning = false;
   stopTimer();
-  refs.teacherClock.textContent = "Cuenta atrás";
+  updateTeacherClockDisplay(null, "Cuenta atrás");
 
   runStartSequence(() => {
     if (!state.online?.isTeacher) return;
@@ -802,12 +910,12 @@ function startTeacherMonitor(room) {
     state.online.startedAt = Date.now();
     state.timeLeft = state.gameDuration;
     state.isRunning = true;
-    refs.teacherClock.textContent = formatSeconds(state.timeLeft);
+    updateTeacherClockDisplay(state.timeLeft);
 
     state.timerId = setInterval(() => {
       const elapsed = Math.floor((Date.now() - Number(state.online.startedAt || Date.now())) / 1000);
       state.timeLeft = Math.max(0, state.gameDuration - elapsed);
-      refs.teacherClock.textContent = formatSeconds(state.timeLeft);
+      updateTeacherClockDisplay(state.timeLeft);
       if (state.timeLeft <= 0) {
         stopTimer();
         state.isRunning = false;
@@ -898,14 +1006,19 @@ function renderTeacherDashboard(room) {
     .sort((a, b) => (b.score || 0) - (a.score || 0) || (b.operationIndex || 0) - (a.operationIndex || 0));
 
   refs.teacherRoomCode.textContent = `Código ${state.online?.code || "---"}`;
-  const statusText = state.online?.teacherCountdown ? "Cuenta atrás"
-    : room.status === "running" ? `En marcha · ${formatSeconds(Math.max(0, state.timeLeft || 0))}`
-    : room.status === "finished" ? "Combate terminado"
-    : "Esperando";
-  refs.teacherClock.textContent = statusText;
+  if (state.online?.teacherCountdown) {
+    updateTeacherClockDisplay(null, "Cuenta atrás");
+  } else if (room.status === "running") {
+    updateTeacherClockDisplay(Math.max(0, state.timeLeft || 0));
+  } else if (room.status === "finished") {
+    updateTeacherClockDisplay(0, "Finalizado");
+  } else {
+    updateTeacherClockDisplay(null, "Esperando");
+  }
   refs.teacherStartBtn.classList.toggle("hidden", room.status !== "lobby" && room.status !== "finished");
   refs.teacherStartBtn.textContent = room.status === "finished" ? "🔄 Revancha" : "⚔️ Empezar sala";
   refs.teacherStartBtn.disabled = false;
+  updateTeacherCreatePanel(room.status === "lobby" || room.status === "finished");
   refs.matchBadge.textContent = `🧑‍🏫 Sala ${state.online?.code || ""} · ${players.length} participantes`;
   updateFloatingRoomCode();
   refs.teacherDashboard.classList.toggle("many-players", players.length >= 12);
@@ -970,8 +1083,8 @@ function renderTeacherDashboard(room) {
         <div class="teacher-progress"><span style="width:${progressPct}%"></span></div>
         <div class="teacher-last">${lastLabel}</div>
         <div class="teacher-stats">
-          <span>✅ ${Number(player.correctCount || 0)}</span>
-          <span>❌ ${Number(player.wrongCount || 0)}</span>
+          <span>✅ Aciertos ${Number(player.correctCount || 0)}</span>
+          <span>❌ Fallos ${Number(player.wrongCount || 0)}</span>
           <span>🔥 x${streak}</span>
           <span>📍 ${Number(player.operationIndex || 0)}</span>
         </div>
@@ -981,9 +1094,9 @@ function renderTeacherDashboard(room) {
 }
 
 function lastResultIcon(result) {
-  if (result === "correct") return "✅";
-  if (result === "wrong") return "❌";
-  if (result === "skip") return "⏭️";
+  if (result === "correct") return "✅🟢";
+  if (result === "wrong") return "❌🔴";
+  if (result === "skip") return "⏭️🟡";
   return "🕹️";
 }
 
@@ -992,6 +1105,26 @@ function lastResultText(result) {
   if (result === "wrong") return "Fallo";
   if (result === "skip") return "Saltó";
   return "Listo";
+}
+
+function updateTeacherClockDisplay(seconds = null, label = "Tiempo restante") {
+  if (!refs.teacherClock) return;
+  const hasSeconds = Number.isFinite(Number(seconds));
+  const safeSeconds = hasSeconds ? Math.max(0, Math.round(Number(seconds))) : null;
+  const duration = Math.max(1, Number(state.gameDuration || state.online?.durationSeconds || 60));
+  const ratio = hasSeconds ? clamp(safeSeconds / duration, 0, 1) : 0;
+
+  refs.teacherClock.style.setProperty("--teacher-countdown-progress", String(ratio));
+  refs.teacherClock.classList.toggle("waiting", !hasSeconds);
+  refs.teacherClock.classList.toggle("warning", hasSeconds && ratio <= 0.33 && ratio > 0.16);
+  refs.teacherClock.classList.toggle("danger", hasSeconds && ratio <= 0.16);
+  refs.teacherClock.classList.toggle("last-ten", hasSeconds && safeSeconds > 0 && safeSeconds <= 10);
+
+  const timeText = hasSeconds ? formatSeconds(safeSeconds) : "⏳";
+  refs.teacherClock.innerHTML = `
+    <span>${escapeHtml(label)}</span>
+    <strong>${escapeHtml(timeText)}</strong>
+  `;
 }
 
 function launchGame(enabledKeys, duration) {
@@ -1047,7 +1180,7 @@ function launchGame(enabledKeys, duration) {
 function runStartSequence(onFinish) {
   refs.startOverlay.classList.remove("hidden");
   refs.startOverlay.classList.remove("slash");
-  let value = 5;
+  let value = 3;
   refs.countdownNumber.textContent = String(value);
   playStartCountdownTick(value);
   pulseCountdownNumber();
@@ -1074,7 +1207,7 @@ function runStartSequence(onFinish) {
       refs.startOverlay.classList.remove("slash");
       onFinish();
     }, 900);
-  }, 600);
+  }, 1000);
 }
 
 function getSelectedDurationSeconds() {
@@ -1530,6 +1663,14 @@ function generateDecimalOperation(kind, cfg) {
 }
 
 function decorateOperation(base) {
+  if (base.htmlExpression) {
+    return {
+      ...base,
+      html: `<span class="op-expression">${base.htmlExpression} = ?</span>`,
+      signature: base.signature || `${base.kind}:${base.expression || "html"}`
+    };
+  }
+
   if (base.expression) {
     const text = `${base.expression} = ?`;
     return {
@@ -1592,7 +1733,7 @@ function generateCombinedOperationEasy(digits) {
 }
 
 function generateCombinedOperationAdvanced(digits) {
-  const resultPlaces = state.decimalsEnabled ? clamp(state.decimalPlaces, 1, 3) : 2;
+  const resultPlaces = state.decimalsEnabled ? clamp(state.decimalPlaces, 1, 3) : 0;
   const a = randomNDigits(digits);
   const b = randomNDigits(digits);
   const c = randomNDigits(digits);
@@ -1604,17 +1745,27 @@ function generateCombinedOperationAdvanced(digits) {
   const diff2 = Math.max(1, Math.abs(e - f));
   const divA = randomInt(2, 9);
   const divB = randomInt(2, 9);
+  const exactDivisor = randomInt(2, 9);
+  const exactQuotient = randomNDigits(Math.min(digits, 2));
+  const exactDividend = exactDivisor * exactQuotient;
 
-  const builders = [
+  const integerBuilders = [
     () => ({ expression: `(${a} + ${b}) x (${c} - ${d})`, answer: (a + b) * (c - d) }),
     () => ({ expression: `(${a} - ${b}) x (${c} + ${d})`, answer: (a - b) * (c + d) }),
-    () => ({ expression: `(${a} + ${b}) / (${diff1} + ${divA})`, answer: roundTo((a + b) / (diff1 + divA), resultPlaces) }),
-    () => ({ expression: `(${a} x ${b}) + (${c} / ${divA})`, answer: roundTo((a * b) + (c / divA), resultPlaces) }),
     () => ({ expression: `(${a} + ${b}) x ${c} - (${d} + ${e})`, answer: ((a + b) * c) - (d + e) }),
     () => ({ expression: `${a} x (${b} + ${c}) - (${d} x ${Math.min(9, e)})`, answer: (a * (b + c)) - (d * Math.min(9, e)) }),
+    () => ({ expression: `(${exactDividend} / ${exactDivisor}) + (${a} x ${b})`, answer: exactQuotient + (a * b) }),
+    () => ({ expression: `(${a} + ${b}) x (${diff2}) + (${e} - ${Math.min(e, f)})`, answer: ((a + b) * diff2) + (e - Math.min(e, f)) })
+  ];
+
+  const decimalBuilders = [
+    ...integerBuilders,
+    () => ({ expression: `(${a} + ${b}) / (${diff1} + ${divA})`, answer: roundTo((a + b) / (diff1 + divA), resultPlaces) }),
+    () => ({ expression: `(${a} x ${b}) + (${c} / ${divA})`, answer: roundTo((a * b) + (c / divA), resultPlaces) }),
     () => ({ expression: `(${a} + ${b}) x (${diff2}) + (${f} / ${divB})`, answer: roundTo(((a + b) * diff2) + (f / divB), resultPlaces) })
   ];
 
+  const builders = state.decimalsEnabled ? decimalBuilders : integerBuilders;
   let op = randomFrom(builders)();
   if (op.answer < 0) {
     const safeMul = Math.max(1, c - d + 1);
@@ -1623,7 +1774,7 @@ function generateCombinedOperationAdvanced(digits) {
   return {
     kind: "combinedAdv",
     expression: op.expression,
-    answer: roundTo(op.answer, resultPlaces),
+    answer: state.decimalsEnabled ? roundTo(op.answer, resultPlaces) : op.answer,
     signature: `combinedAdv:${op.expression}`
   };
 }
@@ -1642,6 +1793,7 @@ function generateFractionOperatorOperation(cfg) {
   return {
     kind: "fraction",
     expression: `${numerator}/${denominator} de ${base}`,
+    htmlExpression: `<span class="fraction-real"><span class="fraction-num">${escapeHtml(numerator)}</span><span class="fraction-den">${escapeHtml(denominator)}</span></span> <span class="fraction-of">de</span> ${escapeHtml(base)}`,
     answer: roundTo(answer, 2),
     signature: `fraction:${numerator}/${denominator}:${base}`
   };
@@ -2290,6 +2442,7 @@ function goHome() {
   refs.arenaScreen.classList.remove("teacher-mode");
   updateFloatingRoomCode(null);
   refs.teacherDashboard.classList.add("hidden");
+  updateTeacherCreatePanel(false);
   refs.playersWrap.classList.remove("hidden");
   refs.dojoScreen.classList.remove("hidden");
 }
@@ -2500,6 +2653,7 @@ function refreshOperationDisplays() {
       b: op.b,
       answer: op.answer,
       expression: op.expression,
+      htmlExpression: op.htmlExpression,
       signature: op.signature
     };
     const decorated = decorateOperation(base);

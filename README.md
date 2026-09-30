@@ -16,6 +16,8 @@ La app funciona sin backend para los modos locales.
 - Operaciones configurables: sumas, restas, multiplicaciones, divisiones, divisiones dificiles, combinadas, fracciones y porcentajes.
 - Selector de cifras por tipo de operacion.
 - Operaciones horizontales, verticales o mixtas.
+- Fracciones representadas con numerador, barra y denominador.
+- Selector de decimales para resultados y operaciones con coma decimal.
 - Teclado tactil y soporte de teclado fisico.
 - Temporizador configurable.
 - Rachas, eventos sorpresa y sonidos.
@@ -50,8 +52,10 @@ La version online permite:
 - crear una sala de maestro para proyectar un ranking animado con todos los alumnos conectados.
 
 En `Batalla online`, el host configura la partida y pulsa `Empezar`: la app crea un codigo automatico, muestra una lobby con boton de copiar y permite iniciar cuando todos hayan entrado.
+El bloque `Crea tu partida online` agrupa duracion, operaciones, formato y opciones. Desde la misma sala se pueden cambiar esos ajustes antes de empezar la siguiente ronda.
 
 En `Modo Maestro`, el profesor crea la sala y comparte el codigo generado automaticamente. Los alumnos entran desde `Batalla online > Unirse con codigo`.
+Al terminar una ronda, el maestro puede usar `Ajustes de la próxima ronda`, cambiar operaciones/duración/formato y lanzar revancha manteniendo el mismo código.
 
 ### Pasos en Firebase
 
