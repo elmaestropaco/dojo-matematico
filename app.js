@@ -11,6 +11,7 @@ const OPERATION_LABELS = {
   subBorrow: "Restas con llevadas",
   mul: "Multiplicaciones",
   div: "Divisiones",
+  divTables: "Divisiones tipo tablas",
   divHard: "Divisiones difíciles",
   combined: "Operaciones combinadas (fácil)",
   combinedAdv: "Operaciones combinadas (avanzado)",
@@ -55,6 +56,7 @@ const state = {
     subBorrow: { enabled: false, digits: 2 },
     mul: { enabled: false, multiplicandMax: 2, factorMax: 2 },
     div: { enabled: false, dividendMax: 2, divisorMax: 2 },
+    divTables: { enabled: false },
     divHard: { enabled: false, divisorMax: 2, maxDecimals: 2 },
     combined: { enabled: false, digits: 2 },
     combinedAdv: { enabled: false, digits: 2 },
@@ -65,6 +67,8 @@ const state = {
   streaksEnabled: true,
   decimalsEnabled: false,
   decimalPlaces: 1,
+  allowNegative: false,
+  penalizeWrong: false,
   online: null
 };
 
@@ -110,6 +114,8 @@ const refs = {
   decimalsToggle: document.getElementById("decimalsToggle"),
   decimalPlacesWrap: document.getElementById("decimalPlacesWrap"),
   decimalPlacesSelect: document.getElementById("decimalPlacesSelect"),
+  negativeToggle: document.getElementById("negativeToggle"),
+  penaltyToggle: document.getElementById("penaltyToggle"),
   player1Input: document.getElementById("player1Input"),
   player2Input: document.getElementById("player2Input"),
   timePresetSelect: document.getElementById("timePresetSelect"),
@@ -225,6 +231,18 @@ function bindSettingsUI() {
 
   refs.decimalPlacesSelect.addEventListener("change", () => {
     state.decimalPlaces = clamp(Number(refs.decimalPlacesSelect.value), 1, 3);
+    updateOpsSummary();
+    savePreferences();
+  });
+
+  refs.negativeToggle.addEventListener("change", () => {
+    state.allowNegative = refs.negativeToggle.checked;
+    updateOpsSummary();
+    savePreferences();
+  });
+
+  refs.penaltyToggle.addEventListener("change", () => {
+    state.penalizeWrong = refs.penaltyToggle.checked;
     updateOpsSummary();
     savePreferences();
   });
@@ -427,6 +445,8 @@ function syncSettingsUIFromState() {
     if (value !== undefined) select.value = String(value);
   });
   refs.decimalsToggle.checked = state.decimalsEnabled;
+  refs.negativeToggle.checked = state.allowNegative;
+  refs.penaltyToggle.checked = state.penalizeWrong;
   refs.muteToggle.checked = state.muted;
   refs.streakToggle.checked = state.streaksEnabled;
   refs.displayModeSelect.value = state.displayMode;
@@ -440,7 +460,9 @@ function updateOpsSummary() {
   const names = enabled.map((k) => OPERATION_LABELS[k]);
   const text = names.length ? names.join(", ") : "ninguna";
   const decimalTag = state.decimalsEnabled ? ` · 🔢 ${state.decimalPlaces} decimales` : "";
-  refs.opsSummary.textContent = `🧮 Operaciones (${enabled.length} activas): ${text}${decimalTag}`;
+  const negativeTag = state.allowNegative ? " · ➖ negativos" : "";
+  const penaltyTag = state.penalizeWrong ? " · ❌ fallo -5" : "";
+  refs.opsSummary.textContent = `🧮 Operaciones (${enabled.length} activas): ${text}${decimalTag}${negativeTag}${penaltyTag}`;
   updateDivisionConfigHint();
   renderOpsChips(enabled);
 }
@@ -457,6 +479,7 @@ function renderOpsChips(enabledKeys) {
     const emoji = key.startsWith("add") ? "➕"
       : key.startsWith("sub") ? "➖"
       : key === "mul" ? "✖️"
+      : key === "divTables" ? "🔁"
       : key === "divHard" ? "🧪"
       : key === "combined" ? "🧩"
       : key === "combinedAdv" ? "🧠"
@@ -489,6 +512,7 @@ function formatOpConfigLabel(key, cfg) {
   }
   if (key === "mul") return `Multiplicando ${cfg.multiplicandMax} cifras · Factor ${cfg.factorMax} cifras`;
   if (key === "div") return `Dividendo ${cfg.dividendMax} cifras · Divisor ${cfg.divisorMax} cifras`;
+  if (key === "divTables") return "tablas 1-10";
   if (key === "divHard") return `Divisor ${cfg.divisorMax} cifras · máx ${cfg.maxDecimals} dec.`;
   if (key === "fraction") return `Numerador ${cfg.numeratorMax} cifras · Denominador ${cfg.denominatorMax} cifras`;
   if (key === "combined" || key === "combinedAdv" || key === "percent") {
@@ -650,6 +674,11 @@ async function startHostedOnlineRoom() {
 }
 
 async function handleRematch() {
+  if (state.mode === "online" && state.online?.code && !state.online?.isHost) {
+    goHome();
+    return;
+  }
+
   if ((state.mode === "online" || state.mode === "teacher") && state.online?.code && state.online?.isHost && window.NinjaOnline?.enabled) {
     await resetHostedOnlineRoom();
     return;
@@ -701,15 +730,16 @@ async function copyRoomCode(code) {
   }
 }
 
-function showOnlineHostLobby(code) {
+function showOnlineHostLobby(code, isHost = Boolean(state.online?.isHost)) {
   refs.body.classList.add("online-lobby-running");
   updateOnlineNamePanel(false);
-  updateOnlineCreatePanel(true);
+  updateOnlineCreatePanel(isHost);
   if (refs.onlineCreatePanel) refs.onlineCreatePanel.open = false;
   refs.dojoScreen.classList.remove("hidden");
   refs.arenaScreen.classList.add("hidden");
   refs.onlineRoomCode.textContent = code || "------";
   refs.onlineHostLobby.classList.remove("hidden");
+  refs.startOnlineHostBtn.classList.toggle("hidden", !isHost);
   refs.startOnlineHostBtn.disabled = false;
   updateFloatingRoomCode(null);
   if (refs.onlineLobbyPlayers && refs.onlineLobbyPlayers.children.length === 0) {
@@ -803,6 +833,8 @@ function buildOnlineConfig() {
     streaksEnabled: state.streaksEnabled,
     decimalsEnabled: state.decimalsEnabled,
     decimalPlaces: state.decimalPlaces,
+    allowNegative: state.allowNegative,
+    penalizeWrong: state.penalizeWrong,
     enabledKeys: getEnabledOperationKeys()
   };
 }
@@ -889,7 +921,7 @@ function showTeacherDashboard() {
     <div class="teacher-stat-card"><span>⚡</span><strong>Listo</strong><small>estado</small></div>
   `;
   refs.teacherRace.innerHTML = "";
-  refs.teacherGrid.innerHTML = "<div class='teacher-empty'>Esperando ninjas...</div>";
+  refs.teacherGrid.innerHTML = "";
 }
 
 function startTeacherMonitor(room) {
@@ -919,6 +951,8 @@ function startTeacherMonitor(room) {
       if (state.timeLeft <= 0) {
         stopTimer();
         state.isRunning = false;
+        refs.teacherDashboard.classList.add("finished");
+        refs.teacherRace.innerHTML = "";
         if (state.online?.isHost && window.NinjaOnline?.enabled) {
           window.NinjaOnline.finishRoom(state.online.code).catch(() => {});
         }
@@ -951,6 +985,8 @@ function applyOnlineConfig(config) {
   if (typeof config.streaksEnabled === "boolean") state.streaksEnabled = config.streaksEnabled;
   if (typeof config.decimalsEnabled === "boolean") state.decimalsEnabled = config.decimalsEnabled;
   if (Number.isFinite(Number(config.decimalPlaces))) state.decimalPlaces = clamp(Number(config.decimalPlaces), 1, 3);
+  if (typeof config.allowNegative === "boolean") state.allowNegative = config.allowNegative;
+  if (typeof config.penalizeWrong === "boolean") state.penalizeWrong = config.penalizeWrong;
   syncSettingsUIFromState();
   updateOpsSummary();
 }
@@ -976,8 +1012,9 @@ function updateOnlineLeaderboard(room) {
 }
 
 function renderOnlineLobby(room) {
-  if (!state.online?.isHost || !refs.onlineLobbyPlayers) return;
-  showOnlineHostLobby(state.online.code);
+  if (!refs.onlineLobbyPlayers) return;
+  const isHost = Boolean(state.online?.isHost);
+  showOnlineHostLobby(state.online.code, isHost);
   updateFloatingRoomCode(null);
 
   const players = Object.values(room.players || {})
@@ -1001,6 +1038,7 @@ function renderOnlineLobby(room) {
 
 function renderTeacherDashboard(room) {
   if (!refs.teacherDashboard || refs.teacherDashboard.classList.contains("hidden")) return;
+  const isFinished = room.status === "finished" || (!state.online?.teacherCountdown && state.timeLeft <= 0 && !state.isRunning && state.online?.active);
   const players = Object.entries(room.players || {})
     .map(([id, player]) => ({ id, ...player }))
     .sort((a, b) => (b.score || 0) - (a.score || 0) || (b.operationIndex || 0) - (a.operationIndex || 0));
@@ -1010,18 +1048,20 @@ function renderTeacherDashboard(room) {
     updateTeacherClockDisplay(null, "Cuenta atrás");
   } else if (room.status === "running") {
     updateTeacherClockDisplay(Math.max(0, state.timeLeft || 0));
-  } else if (room.status === "finished") {
+  } else if (isFinished) {
     updateTeacherClockDisplay(0, "Finalizado");
   } else {
     updateTeacherClockDisplay(null, "Esperando");
   }
-  refs.teacherStartBtn.classList.toggle("hidden", room.status !== "lobby" && room.status !== "finished");
-  refs.teacherStartBtn.textContent = room.status === "finished" ? "🔄 Revancha" : "⚔️ Empezar sala";
+  refs.teacherStartBtn.classList.toggle("hidden", room.status !== "lobby" && !isFinished);
+  refs.teacherStartBtn.textContent = isFinished ? "🔄 Revancha" : "⚔️ Empezar sala";
   refs.teacherStartBtn.disabled = false;
-  updateTeacherCreatePanel(room.status === "lobby" || room.status === "finished");
+  updateTeacherCreatePanel(room.status === "lobby" || isFinished);
   refs.matchBadge.textContent = `🧑‍🏫 Sala ${state.online?.code || ""} · ${players.length} participantes`;
   updateFloatingRoomCode();
-  refs.teacherDashboard.classList.toggle("many-players", players.length >= 12);
+  refs.teacherDashboard.classList.toggle("many-players", players.length >= 6);
+  refs.teacherDashboard.classList.toggle("mega-players", players.length >= 18);
+  refs.teacherDashboard.classList.toggle("finished", isFinished);
 
   const totalCorrect = players.reduce((sum, p) => sum + Number(p.correctCount || 0), 0);
   const totalWrong = players.reduce((sum, p) => sum + Number(p.wrongCount || 0), 0);
@@ -1032,7 +1072,7 @@ function renderTeacherDashboard(room) {
     .filter((p) => p.lastResult)
     .sort((a, b) => Number(b.lastActionAt || 0) - Number(a.lastActionAt || 0))[0];
   const winner = players[0];
-  const lastText = room.status === "finished" && winner
+  const lastText = isFinished && winner
     ? `🏆 ${escapeHtml(winner.name || "Ninja")}`
     : lastAction
     ? `${lastResultIcon(lastAction.lastResult)} ${escapeHtml(lastAction.name || "Ninja")}`
@@ -1047,22 +1087,12 @@ function renderTeacherDashboard(room) {
 
   if (players.length === 0) {
     refs.teacherRace.innerHTML = "";
-    refs.teacherGrid.innerHTML = "<div class='teacher-empty'>Esperando ninjas...</div>";
+    refs.teacherGrid.innerHTML = "";
     return;
   }
 
   const maxProgress = Math.max(10, ...players.map((p) => Number(p.operationIndex || 0)));
-  refs.teacherRace.innerHTML = players.slice(0, 8).map((player, index) => {
-    const pct = Math.min(100, ((Number(player.operationIndex || 0) / maxProgress) * 100));
-    return `
-      <div class="race-lane">
-        <span class="race-rank">${index + 1}</span>
-        <span class="race-name">${escapeHtml(player.name || "Ninja")}</span>
-        <div class="race-track"><span class="race-runner" style="left:${pct}%">🥷</span></div>
-        <span class="race-score">${Number(player.score || 0)}</span>
-      </div>
-    `;
-  }).join("");
+  refs.teacherRace.innerHTML = "";
 
   refs.teacherGrid.innerHTML = players.map((player, index) => {
     const progressPct = Math.min(100, (Number(player.operationIndex || 0) / maxProgress) * 100);
@@ -1329,7 +1359,9 @@ function placeRouletteForMode() {
 }
 
 function buildNumpad(numpadEl, playerId) {
-  const keys = ["7", "8", "9", "4", "5", "6", "1", "2", "3", DECIMAL_SEPARATOR, "0"];
+  const keys = state.allowNegative
+    ? ["7", "8", "9", "4", "5", "6", "1", "2", "3", "-", DECIMAL_SEPARATOR, "0"]
+    : ["7", "8", "9", "4", "5", "6", "1", "2", "3", DECIMAL_SEPARATOR, "0"];
   keys.forEach((key) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -1411,7 +1443,7 @@ function bindKeyboardSupport() {
     const code = event.code || "";
     const key = event.key || "";
     const isNumpad = code.startsWith("Numpad");
-    const playerId = state.mode === "single" ? 0 : (isNumpad ? 1 : 0);
+    const playerId = (state.mode === "single" || state.mode === "online") ? 0 : (isNumpad ? 1 : 0);
     const player = state.players.find((p) => p.id === playerId);
     if (!player) return;
 
@@ -1444,9 +1476,16 @@ function appendInputChar(player, char) {
   if (!player || typeof char !== "string") return false;
   if (player.input.length >= MAX_INPUT_LENGTH) return false;
 
+  if (char === "-") {
+    if (!state.allowNegative || player.input !== "") return false;
+    player.input = "-";
+    return true;
+  }
+
   if (char === DECIMAL_SEPARATOR) {
     if (player.input.includes(DECIMAL_SEPARATOR)) return false;
     if (player.input === "") player.input = `0${DECIMAL_SEPARATOR}`;
+    else if (player.input === "-") player.input = `-0${DECIMAL_SEPARATOR}`;
     else player.input += DECIMAL_SEPARATOR;
     return true;
   }
@@ -1461,6 +1500,7 @@ function extractInputKey(event) {
   const code = event.code || "";
 
   if (/^[0-9]$/.test(key)) return key;
+  if (key === "-" || code === "NumpadSubtract") return "-";
 
   if (key === DECIMAL_SEPARATOR || key === "." || code === "NumpadDecimal") {
     return DECIMAL_SEPARATOR;
@@ -1579,6 +1619,7 @@ function createOperation(kind) {
   if (kind === "fraction") return decorateOperation(generateFractionOperatorOperation(cfg));
   if (kind === "percent") return decorateOperation(generatePercentOperation(cfg.digits));
   if (kind === "divHard") return decorateOperation(generateHardDivision(cfg));
+  if (kind === "divTables") return decorateOperation(generateDivisionTables());
 
   if (state.decimalsEnabled && ["addNoCarry", "addCarry", "subNoBorrow", "subBorrow", "mul"].includes(kind)) {
     return decorateOperation(generateDecimalOperation(kind, cfg));
@@ -1591,6 +1632,10 @@ function createOperation(kind) {
   else if (kind === "subBorrow") base = generateSubtractionWithBorrow(cfg.digits);
   else if (kind === "mul") base = generateMultiplication(cfg);
   else base = generateDivision(cfg);
+
+  if (state.allowNegative && ["addNoCarry", "addCarry", "subNoBorrow", "subBorrow", "mul", "div"].includes(kind)) {
+    base = withNegativeOperands(base);
+  }
 
   return decorateOperation(base);
 }
@@ -1646,7 +1691,8 @@ function generateDecimalOperation(kind, cfg) {
     const digits = clamp(cfg.digits, 1, 9);
     const a = randomDecimalByDigits(digits, places);
     const b = randomDecimalByDigits(digits, places);
-    return { kind: "add", a, b, answer: roundTo(a + b, places) };
+    const base = { kind: "add", a, b, answer: roundTo(a + b, places) };
+    return state.allowNegative ? withNegativeOperands(base) : base;
   }
 
   if (kind === "subNoBorrow" || kind === "subBorrow") {
@@ -1654,12 +1700,40 @@ function generateDecimalOperation(kind, cfg) {
     let a = randomDecimalByDigits(digits, places);
     let b = randomDecimalByDigits(digits, places);
     if (a < b) [a, b] = [b, a];
-    return { kind: "sub", a, b, answer: roundTo(a - b, places) };
+    const base = { kind: "sub", a, b, answer: roundTo(a - b, places) };
+    return state.allowNegative ? withNegativeOperands(base) : base;
   }
 
   const a = roundTo(randomDecimalByDigits(clamp(cfg.multiplicandMax, 1, 9), places), places);
   const b = roundTo(randomDecimalByDigits(clamp(cfg.factorMax, 1, 9), places), places);
-  return { kind: "mul", a, b, answer: roundTo(a * b, places) };
+  const base = { kind: "mul", a, b, answer: roundTo(a * b, places) };
+  return state.allowNegative ? withNegativeOperands(base) : base;
+}
+
+function withNegativeOperands(base) {
+  if (!base || !["add", "sub", "mul", "div"].includes(base.kind)) return base;
+  let a = maybeNegate(base.a);
+  let b = maybeNegate(base.b);
+  if (base.kind === "div" && b === 0) b = base.b || 1;
+  let answer = base.answer;
+  if (base.kind === "add") answer = a + b;
+  else if (base.kind === "sub") answer = a - b;
+  else if (base.kind === "mul") answer = a * b;
+  else if (base.kind === "div") answer = a / b;
+  const answerPlaces = state.decimalsEnabled ? clamp(state.decimalPlaces, 1, 3) : 2;
+
+  return {
+    ...base,
+    a,
+    b,
+    answer: Number.isInteger(answer) ? answer : roundTo(answer, answerPlaces),
+    signature: `${base.kind}:${numericSignature(a)}:${numericSignature(b)}`
+  };
+}
+
+function maybeNegate(value) {
+  if (value === 0) return value;
+  return Math.random() < 0.5 ? -value : value;
 }
 
 function decorateOperation(base) {
@@ -1691,13 +1765,14 @@ function decorateOperation(base) {
 
   const displayA = formatNumberForDisplay(base.a);
   const displayB = formatNumberForDisplay(base.b);
-  const horizontal = `${displayA} ${symbol} ${displayB} = ?`;
+  const displayBOperand = base.b < 0 ? `(${displayB})` : displayB;
+  const horizontal = `${displayA} ${symbol} ${displayBOperand} = ?`;
   const canVertical = base.kind !== "div";
 
   if (mode === "vertical" && canVertical) {
     return {
       ...base,
-      html: `<div class="op-vertical"><span>${escapeHtml(displayA)}</span><span>${symbol} ${escapeHtml(displayB)}</span><span class="line"></span><span class="q">?</span></div>`,
+      html: `<div class="op-vertical"><span>${escapeHtml(displayA)}</span><span>${symbol} ${escapeHtml(displayBOperand)}</span><span class="line"></span><span class="q">?</span></div>`,
       signature: `${base.kind}:${numericSignature(base.a)}:${numericSignature(base.b)}`
     };
   }
@@ -1714,16 +1789,21 @@ function generateCombinedOperationEasy(digits) {
   const b = randomNDigits(digits);
   const c = randomNDigits(digits);
 
-  const builders = [
+  const builders = state.allowNegative ? [
     () => ({ expression: `${a} x ${b} + ${c}`, answer: (a * b) + c }),
     () => ({ expression: `${a} + ${b} x ${c}`, answer: a + (b * c) }),
     () => ({ expression: `${a} x ${b} - ${c}`, answer: Math.max(0, (a * b) - c) }),
     () => ({ expression: `${a} + ${b} - ${c}`, answer: a + b - c }),
     () => ({ expression: `${a} - ${b} + ${c}`, answer: a - b + c })
+  ] : [
+    () => ({ expression: `${a} x ${b} + ${c}`, answer: (a * b) + c }),
+    () => ({ expression: `${a} + ${b} x ${c}`, answer: a + (b * c) }),
+    () => ({ expression: `${a} x ${b} + ${c}`, answer: (a * b) + c }),
+    () => ({ expression: `${Math.max(a, b)} + ${Math.min(a, b)} - ${Math.min(c, Math.max(a, b) + Math.min(a, b))}`, answer: Math.max(a, b) + Math.min(a, b) - Math.min(c, Math.max(a, b) + Math.min(a, b)) })
   ];
 
   let op = randomFrom(builders)();
-  if (op.answer < 0) op = { expression: `${a} x ${b} + ${c}`, answer: (a * b) + c };
+  if (op.answer < 0 && !state.allowNegative) op = { expression: `${a} x ${b} + ${c}`, answer: (a * b) + c };
   return {
     kind: "combined",
     expression: op.expression,
@@ -1749,13 +1829,20 @@ function generateCombinedOperationAdvanced(digits) {
   const exactQuotient = randomNDigits(Math.min(digits, 2));
   const exactDividend = exactDivisor * exactQuotient;
 
-  const integerBuilders = [
+  const integerBuilders = state.allowNegative ? [
     () => ({ expression: `(${a} + ${b}) x (${c} - ${d})`, answer: (a + b) * (c - d) }),
     () => ({ expression: `(${a} - ${b}) x (${c} + ${d})`, answer: (a - b) * (c + d) }),
     () => ({ expression: `(${a} + ${b}) x ${c} - (${d} + ${e})`, answer: ((a + b) * c) - (d + e) }),
     () => ({ expression: `${a} x (${b} + ${c}) - (${d} x ${Math.min(9, e)})`, answer: (a * (b + c)) - (d * Math.min(9, e)) }),
     () => ({ expression: `(${exactDividend} / ${exactDivisor}) + (${a} x ${b})`, answer: exactQuotient + (a * b) }),
     () => ({ expression: `(${a} + ${b}) x (${diff2}) + (${e} - ${Math.min(e, f)})`, answer: ((a + b) * diff2) + (e - Math.min(e, f)) })
+  ] : [
+    () => ({ expression: `(${a} + ${b}) x (${Math.max(c, d)} - ${Math.min(c, d)})`, answer: (a + b) * (Math.max(c, d) - Math.min(c, d)) }),
+    () => ({ expression: `(${Math.max(a, b)} - ${Math.min(a, b)}) x (${c} + ${d})`, answer: (Math.max(a, b) - Math.min(a, b)) * (c + d) }),
+    () => ({ expression: `(${a} + ${b}) x ${c} + (${d} + ${e})`, answer: ((a + b) * c) + (d + e) }),
+    () => ({ expression: `${a} x (${b} + ${c}) + (${d} x ${Math.min(9, e)})`, answer: (a * (b + c)) + (d * Math.min(9, e)) }),
+    () => ({ expression: `(${exactDividend} / ${exactDivisor}) + (${a} x ${b})`, answer: exactQuotient + (a * b) }),
+    () => ({ expression: `(${a} + ${b}) x ${diff2} + (${e} + ${f})`, answer: ((a + b) * diff2) + e + f })
   ];
 
   const decimalBuilders = [
@@ -1767,7 +1854,7 @@ function generateCombinedOperationAdvanced(digits) {
 
   const builders = state.decimalsEnabled ? decimalBuilders : integerBuilders;
   let op = randomFrom(builders)();
-  if (op.answer < 0) {
+  if (op.answer < 0 && !state.allowNegative) {
     const safeMul = Math.max(1, c - d + 1);
     op = { expression: `(${a} + ${b}) x (${safeMul})`, answer: (a + b) * safeMul };
   }
@@ -1946,6 +2033,19 @@ function generateDivision(cfg) {
   const a = randomInt(dividendMin, dividendMax);
   const b = randomInt(divisorMin, divisorMax);
   return { kind: "div", a, b, answer: state.decimalsEnabled ? a / b : roundTo(a / b, 2) };
+}
+
+function generateDivisionTables() {
+  const divisor = randomInt(1, 10);
+  const quotient = randomInt(1, 10);
+  const dividend = divisor * quotient;
+  return {
+    kind: "div",
+    a: dividend,
+    b: divisor,
+    answer: quotient,
+    signature: `divTables:${dividend}:${divisor}`
+  };
 }
 
 function generateHardDivision(cfg) {
@@ -2219,23 +2319,31 @@ async function finishGame() {
 
 function showResults() {
   refs.resultsScores.innerHTML = "";
+  const rematchBtn = document.getElementById("rematchBtn");
+  if (rematchBtn) {
+    rematchBtn.textContent = state.mode === "online" && state.online?.code && !state.online?.isHost
+      ? "🏠 Salir de la sala"
+      : "🔄 Revancha";
+  }
 
   if (state.mode === "online") {
-    const onlinePlayers = Object.values(state.online?.room?.players || {});
+    const onlinePlayers = Object.entries(state.online?.room?.players || {}).map(([id, player]) => ({ id, ...player }));
     const scores = (onlinePlayers.length ? onlinePlayers : state.players)
       .map((player) => ({
+        id: player.id,
         name: player.name || "Ninja",
         score: Number(player.score || 0),
         correctCount: Number(player.correctCount || 0),
-        wrongCount: Number(player.wrongCount || 0)
+        wrongCount: Number(player.wrongCount || 0),
+        isSelf: String(player.id) === String(state.online?.playerId)
       }))
       .sort((a, b) => b.score - a.score || b.correctCount - a.correctCount);
 
     scores.forEach((player, index) => {
       const row = document.createElement("div");
-      row.className = "results-score-item";
+      row.className = `results-score-item ${player.isSelf ? "is-self" : ""}`;
       const medal = index === 0 ? "🏆" : index === 1 ? "🥈" : index === 2 ? "🥉" : "🥷";
-      row.textContent = `${medal} ${index + 1}. ${player.name}: ${player.score} puntos · ✅ ${player.correctCount} · ❌ ${player.wrongCount}`;
+      row.textContent = `${medal} ${index + 1}. ${player.isSelf ? "👉 " : ""}${player.name}: ${player.score} puntos · ✅ ${player.correctCount} · ❌ ${player.wrongCount}`;
       refs.resultsScores.appendChild(row);
     });
 
@@ -2316,6 +2424,8 @@ function applySavedPreferences() {
   if (typeof prefs.muted === "boolean") state.muted = prefs.muted;
   if (typeof prefs.streaksEnabled === "boolean") state.streaksEnabled = prefs.streaksEnabled;
   if (typeof prefs.decimalsEnabled === "boolean") state.decimalsEnabled = prefs.decimalsEnabled;
+  if (typeof prefs.allowNegative === "boolean") state.allowNegative = prefs.allowNegative;
+  if (typeof prefs.penalizeWrong === "boolean") state.penalizeWrong = prefs.penalizeWrong;
   if (["horizontal", "vertical", "mixed"].includes(prefs.displayMode)) state.displayMode = prefs.displayMode;
 
   const parsedDecimalPlaces = Number(prefs.decimalPlaces);
@@ -2371,6 +2481,8 @@ function savePreferences() {
     streaksEnabled: state.streaksEnabled,
     decimalsEnabled: state.decimalsEnabled,
     decimalPlaces: state.decimalPlaces,
+    allowNegative: state.allowNegative,
+    penalizeWrong: state.penalizeWrong,
     displayMode: state.displayMode,
     operationSettings: state.operationSettings,
     player1Name: refs.player1Input.value || "",
@@ -2466,6 +2578,7 @@ function getCorrectPoints(operation) {
 }
 
 function getWrongPenalty() {
+  if (!state.penalizeWrong) return 0;
   if (state.activeEvent === "no_penalty") return 0;
   if (state.activeEvent === "double_penalty") return 10;
   return 5;
@@ -2477,7 +2590,7 @@ function getBasePoints(operation) {
 }
 
 function applyWrongOutcome(player) {
-  if (state.activeEvent === "fail_reset") {
+  if (state.penalizeWrong && state.activeEvent === "fail_reset") {
     player.score = 0;
     return;
   }

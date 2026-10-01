@@ -14,10 +14,13 @@ La app funciona sin backend para los modos locales.
 
 - Modo entrenamiento y batalla local.
 - Operaciones configurables: sumas, restas, multiplicaciones, divisiones, divisiones dificiles, combinadas, fracciones y porcentajes.
+- Divisiones tipo tablas del 1 al 10.
 - Selector de cifras por tipo de operacion.
 - Operaciones horizontales, verticales o mixtas.
 - Fracciones representadas con numerador, barra y denominador.
 - Selector de decimales para resultados y operaciones con coma decimal.
+- Opcion para permitir o bloquear resultados negativos.
+- Opcion para activar o desactivar penalizacion por fallos.
 - Teclado tactil y soporte de teclado fisico.
 - Temporizador configurable.
 - Rachas, eventos sorpresa y sonidos.
@@ -50,6 +53,7 @@ La version online permite:
 - competir con la misma secuencia de operaciones,
 - sincronizar puntuacion y progreso basico en vivo.
 - crear una sala de maestro para proyectar un ranking animado con todos los alumnos conectados.
+- mostrar a los alumnos una sala de espera tras unirse con codigo.
 
 En `Batalla online`, el host configura la partida y pulsa `Empezar`: la app crea un codigo automatico, muestra una lobby con boton de copiar y permite iniciar cuando todos hayan entrado.
 El bloque `Crea tu partida online` agrupa duracion, operaciones, formato y opciones. Desde la misma sala se pueden cambiar esos ajustes antes de empezar la siguiente ronda.

@@ -215,6 +215,11 @@
               </label>
               <p id="divisionHint" class="op-inline-note" aria-live="polite"></p>
               <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="divTables" />
+                <span class="op-name">🔁 Divisiones tipo tablas</span>
+                <span class="op-configs"><span class="op-inline-note">Ej.: 56 / 7 = ? con tablas del 1 al 10</span></span>
+              </label>
+              <label class="op-row">
                 <input class="op-toggle" type="checkbox" data-op="divHard" />
                 <span class="op-name">🧪 Divisiones difíciles (decimales)</span>
                 <span class="op-configs">
@@ -301,6 +306,8 @@
           <label class="toggle-line"><input id="muteToggle" type="checkbox" /> 🔇 Silenciar sonidos</label>
           <label class="toggle-line"><input id="streakToggle" type="checkbox" checked /> 🔥 Activar rachas + eventos sorpresa</label>
           <label class="toggle-line"><input id="decimalsToggle" type="checkbox" /> 🔢 Activar decimales</label>
+          <label class="toggle-line"><input id="negativeToggle" type="checkbox" /> ➖ Permitir resultados negativos</label>
+          <label class="toggle-line"><input id="penaltyToggle" type="checkbox" /> ❌ Penalizar fallos (-5 puntos)</label>
           <div id="decimalPlacesWrap" class="inline-field hidden">
             <p class="label">🎚️ Cantidad de decimales</p>
             <select id="decimalPlacesSelect">
