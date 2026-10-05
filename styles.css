@@ -811,6 +811,28 @@ input[type="number"] {
   white-space: nowrap;
 }
 
+.remove-player-btn {
+  border: 0;
+  border-radius: 999px;
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff5f5f, #ff9e9e);
+  color: #fff;
+  font-weight: 950;
+  line-height: 1;
+  box-shadow: 0 5px 12px rgba(255, 95, 95, 0.22);
+}
+
+.remove-player-btn:hover,
+.remove-player-btn:focus-visible {
+  transform: scale(1.06);
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
 .online-lobby-player small,
 .online-lobby-empty {
   color: var(--text-soft);
@@ -1360,9 +1382,10 @@ input[type="number"] {
   min-height: 0;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(146px, 1fr));
+  grid-auto-rows: minmax(82px, 1fr);
+  align-content: stretch;
+  gap: 8px;
   padding-right: 0;
 }
 
@@ -1375,8 +1398,9 @@ input[type="number"] {
 }
 
 .teacher-dashboard.many-players .teacher-grid {
-  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
-  grid-auto-rows: minmax(48px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
+  grid-auto-rows: minmax(72px, 1fr);
+  align-content: stretch;
   overflow: hidden;
   gap: 4px;
 }
@@ -1404,6 +1428,10 @@ input[type="number"] {
   opacity: 0.92;
 }
 
+.teacher-dashboard.many-players .teacher-card-top strong {
+  -webkit-line-clamp: 1;
+}
+
 .teacher-dashboard.many-players .teacher-progress {
   height: 5px;
   margin: 4px 0 0;
@@ -1414,20 +1442,24 @@ input[type="number"] {
 }
 
 .teacher-dashboard.many-players .teacher-stats {
-  display: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px;
+  font-size: clamp(0.58rem, 0.95vw, 0.72rem);
 }
 
 .teacher-dashboard.mega-players .teacher-summary {
-  display: none;
+  display: grid;
 }
 
 .teacher-dashboard.mega-players {
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr);
 }
 
 .teacher-dashboard.mega-players .teacher-grid {
-  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
-  grid-auto-rows: minmax(40px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+  grid-auto-rows: minmax(58px, 1fr);
+  align-content: stretch;
   gap: 3px;
 }
 
@@ -1439,8 +1471,16 @@ input[type="number"] {
   display: none;
 }
 
+.teacher-dashboard.mega-players .teacher-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  font-size: 0.58rem;
+}
+
 .teacher-card,
 .teacher-empty {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: 14px;
   background:
@@ -1449,6 +1489,10 @@ input[type="number"] {
   padding: 10px;
   min-height: 0;
   overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  align-content: start;
+  height: 100%;
 }
 
 .teacher-card:nth-child(4n + 1) {
@@ -1486,18 +1530,45 @@ input[type="number"] {
   border-color: rgba(248, 201, 77, 0.72);
 }
 
+.teacher-final-rank {
+  margin: -2px 28px 4px 0;
+  border-radius: 999px;
+  padding: 3px 7px;
+  width: fit-content;
+  max-width: calc(100% - 30px);
+  background: linear-gradient(120deg, rgba(248, 201, 77, 0.32), rgba(67, 209, 111, 0.18));
+  color: var(--text-main);
+  font-family: "Noto Color Emoji", "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 950;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .teacher-card-top {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   min-width: 0;
+  padding-right: 24px;
 }
 
 .teacher-card-top strong {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.05;
+  font-family: "Noto Color Emoji", "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+
+.teacher-rank {
+  color: var(--accent-gold);
+  font-weight: 950;
 }
 
 .teacher-medal {
@@ -1505,8 +1576,8 @@ input[type="number"] {
 }
 
 .teacher-progress {
-  margin: 9px 0;
-  height: 12px;
+  margin: 5px 0 4px;
+  height: 6px;
   border-radius: 999px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.12);
@@ -1522,22 +1593,49 @@ input[type="number"] {
 
 .teacher-last {
   border-radius: 999px;
-  padding: 5px 8px;
-  margin: 2px 0 8px;
-  font-size: 0.78rem;
+  padding: 4px 7px;
+  margin: 1px 0 6px;
+  font-size: 0.72rem;
   font-weight: 900;
   text-align: center;
   background: rgba(255, 255, 255, 0.1);
   color: var(--text-main);
 }
 
+.teacher-card:not(.final-card) .teacher-last {
+  display: none;
+}
+
 .teacher-stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  font-size: 0.82rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px;
+  font-size: clamp(0.68rem, 1vw, 0.8rem);
   color: var(--text-soft);
   text-align: center;
+  align-self: end;
+  margin-top: 2px;
+  font-family: "Noto Color Emoji", "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+
+.teacher-stats span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 8px;
+  padding: 3px 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.teacher-remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  font-size: 0.75rem;
 }
 
 .teacher-empty {
@@ -2254,6 +2352,144 @@ body.game-running .action-row {
   font-weight: 900;
 }
 
+.teacher-results-card {
+  width: min(980px, calc(100vw - 24px));
+  max-height: min(92dvh, 820px);
+  background: #07101f;
+  color: #f8fbff;
+}
+
+.teacher-podium-results {
+  display: grid;
+  gap: 12px;
+  max-height: min(58dvh, 500px);
+  overflow: hidden;
+}
+
+.teacher-podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 10px;
+}
+
+.podium-card {
+  min-height: 154px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 12px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 5px;
+  text-align: center;
+  background: #101d33;
+  color: #f8fbff;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
+  animation: popIn 0.36s ease both;
+  font-family: "Noto Color Emoji", "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+
+.podium-1 {
+  min-height: 196px;
+  border-color: rgba(248, 201, 77, 0.9);
+  background: #1b2637;
+}
+
+.podium-2 {
+  min-height: 170px;
+}
+
+.podium-3 {
+  min-height: 150px;
+}
+
+.podium-medal {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.26));
+}
+
+.podium-card strong {
+  max-width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: clamp(1rem, 2.2vw, 1.45rem);
+  line-height: 1.05;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.podium-rank,
+.podium-points {
+  font-weight: 950;
+}
+
+.podium-points {
+  color: #ffd166;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  text-shadow: none;
+}
+
+.podium-card small {
+  color: #dfe8f5;
+  font-weight: 900;
+}
+
+.teacher-ranking-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 7px;
+  overflow: hidden;
+}
+
+.teacher-ranking-row {
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 8px 10px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  background: #101d33;
+  color: #f8fbff;
+  font-family: "Noto Color Emoji", "Atkinson Hyperlegible", "Lexend", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+
+.teacher-ranking-row strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.teacher-ranking-row small {
+  grid-column: 2 / -1;
+  color: #dfe8f5;
+  font-weight: 900;
+}
+
+.rank-number {
+  color: var(--accent-gold);
+  font-weight: 950;
+}
+
+[data-theme="light"] .teacher-results-card {
+  background: #07101f;
+  color: #f8fbff;
+}
+
+[data-theme="light"] .podium-card,
+[data-theme="light"] .teacher-ranking-row {
+  background: #101d33;
+  color: #f8fbff;
+}
+
+[data-theme="light"] .podium-1 {
+  background: #1b2637;
+}
+
 .results-actions {
   position: sticky;
   bottom: 0;
@@ -2734,7 +2970,8 @@ body.game-running .action-row {
   }
 
   .teacher-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+    align-content: start;
     gap: 6px;
   }
 
@@ -2745,6 +2982,22 @@ body.game-running .action-row {
 
   .teacher-stats {
     font-size: 0.72rem;
+  }
+
+  .teacher-podium {
+    gap: 6px;
+  }
+
+  .podium-card,
+  .podium-1,
+  .podium-2,
+  .podium-3 {
+    min-height: 132px;
+    padding: 8px;
+  }
+
+  .teacher-ranking-list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -3088,7 +3341,8 @@ body.game-running .action-row {
   }
 
   .teacher-grid {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
+    align-content: start;
     gap: 5px;
   }
 

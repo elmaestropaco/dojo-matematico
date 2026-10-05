@@ -45,6 +45,10 @@
       const playerId = playerKeyFromName(safePlayerName);
       const playerRef = this.db.ref(`rooms/${cleanCode}/players/${playerId}`);
       const playerSnap = await playerRef.get();
+      playerRef.onDisconnect().update({
+        isConnected: false,
+        lastSeenAt: window.firebase.database.ServerValue.TIMESTAMP
+      });
 
       if (playerSnap.exists()) {
         await playerRef.update({
@@ -122,6 +126,10 @@
         ...patch,
         lastSeenAt: Date.now()
       });
+    },
+    async removePlayer(code, playerId) {
+      await requireOnline(this);
+      await this.db.ref(`rooms/${normalizeRoomCode(code)}/players/${playerId}`).remove();
     },
     subscribeRoom(code, callback) {
       if (!this.enabled) throw new Error("Firebase no está inicializado.");

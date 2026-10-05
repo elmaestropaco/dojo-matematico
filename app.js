@@ -287,6 +287,8 @@ function bindSettingsUI() {
   refs.floatingRoomCode.addEventListener("click", () => copyRoomCode(state.online?.code));
   refs.startOnlineHostBtn.addEventListener("click", startHostedOnlineRoom);
   refs.teacherStartBtn.addEventListener("click", startHostedOnlineRoom);
+  refs.onlineLobbyPlayers?.addEventListener("click", handleRemovePlayerClick);
+  refs.teacherGrid?.addEventListener("click", handleRemovePlayerClick);
   refs.teacherConfigToggle?.addEventListener("click", () => {
     setTeacherConfigExpanded(!refs.teacherConfigPanel?.classList.contains("expanded"));
   });
@@ -694,24 +696,34 @@ async function resetHostedOnlineRoom() {
     await window.NinjaOnline.resetRoom(state.online.code, { config, durationSeconds: duration });
     state.online.config = config;
     state.online.durationSeconds = duration;
+    state.gameDuration = duration;
+    state.timeLeft = duration;
 
     state.online.active = false;
+    state.online.teacherCountdown = false;
     state.online.currentOperationIndex = 0;
     state.online.correctCount = 0;
     state.online.wrongCount = 0;
+    state.online.teacherResultsShown = false;
     state.isRunning = false;
     stopTimer();
     stopEventSystem();
 
     refs.body.classList.remove("game-running");
     refs.resultsOverlay.classList.add("hidden");
+    refs.resultsScores.classList.remove("teacher-podium-results");
+    refs.resultsOverlay.querySelector(".results-card")?.classList.remove("teacher-results-card");
     refs.arenaScreen.classList.add("hidden");
     refs.teacherDashboard.classList.add("hidden");
+    refs.teacherDashboard.classList.remove("finished", "many-players", "mega-players");
     refs.playersWrap.classList.remove("hidden");
     refs.dojoScreen.classList.remove("hidden");
     applyModeDependentUI();
+    const latestRoom = await window.NinjaOnline.getRoom(state.online.code).catch(() => null);
+    if (latestRoom) state.online.room = latestRoom;
     if (state.online.isTeacher) {
       showTeacherDashboard();
+      if (latestRoom) renderTeacherDashboard(latestRoom);
     } else {
       showOnlineHostLobby(state.online.code);
     }
@@ -848,6 +860,7 @@ function attachOnlineSession(session) {
     currentOperationIndex: 0,
     correctCount: 0,
     wrongCount: 0,
+    teacherResultsShown: false,
     unsubscribe: null
   };
   state.mode = session.isTeacher ? "teacher" : "online";
@@ -900,6 +913,8 @@ function handleOnlineRoomUpdate(room) {
 function showTeacherDashboard() {
   refs.body.classList.add("game-running");
   refs.resultsOverlay.classList.add("hidden");
+  refs.resultsScores.classList.remove("teacher-podium-results");
+  refs.resultsOverlay.querySelector(".results-card")?.classList.remove("teacher-results-card");
   refs.dojoScreen.classList.add("hidden");
   refs.arenaScreen.classList.remove("hidden");
   refs.arenaScreen.classList.add("teacher-mode");
@@ -907,6 +922,7 @@ function showTeacherDashboard() {
   refs.duelLead.classList.add("hidden");
   refs.eventRoulette.classList.add("hidden");
   refs.teacherDashboard.classList.remove("hidden");
+  refs.teacherDashboard.classList.remove("finished", "many-players", "mega-players");
   updateTeacherCreatePanel(true);
   updateFloatingRoomCode();
   refs.matchBadge.textContent = `🧑‍🏫 Sala ${state.online?.code || ""} · esperando alumnos`;
@@ -1017,7 +1033,9 @@ function renderOnlineLobby(room) {
   showOnlineHostLobby(state.online.code, isHost);
   updateFloatingRoomCode(null);
 
-  const players = Object.values(room.players || {})
+  const players = Object.entries(room.players || {})
+    .map(([id, player]) => ({ id, ...player }))
+    .filter(shouldShowOnlinePlayer)
     .sort((a, b) => String(a.name || "").localeCompare(String(b.name || ""), "es"));
   refs.matchBadge.textContent = `🌐 Sala ${state.online.code} · esperando · ${players.length} jugadores`;
   if (refs.onlineLobbyCount) refs.onlineLobbyCount.textContent = String(players.length);
@@ -1032,6 +1050,7 @@ function renderOnlineLobby(room) {
       <span class="online-lobby-medal">${index === 0 ? "👑" : "🥷"}</span>
       <strong>${escapeHtml(player.name || "Ninja")}</strong>
       <small>${player.isConnected === false ? "desconectado" : "listo"} · ${Number(player.score || 0)} pts</small>
+      ${isHost ? `<button class="remove-player-btn" type="button" data-remove-player="${escapeHtml(player.id)}" aria-label="Eliminar a ${escapeHtml(player.name || "Ninja")}">✕</button>` : ""}
     </div>
   `).join("");
 }
@@ -1039,9 +1058,11 @@ function renderOnlineLobby(room) {
 function renderTeacherDashboard(room) {
   if (!refs.teacherDashboard || refs.teacherDashboard.classList.contains("hidden")) return;
   const isFinished = room.status === "finished" || (!state.online?.teacherCountdown && state.timeLeft <= 0 && !state.isRunning && state.online?.active);
-  const players = Object.entries(room.players || {})
+  const rawPlayers = Object.entries(room.players || {})
     .map(([id, player]) => ({ id, ...player }))
+    .filter(shouldShowOnlinePlayer)
     .sort((a, b) => (b.score || 0) - (a.score || 0) || (b.operationIndex || 0) - (a.operationIndex || 0));
+  const players = rawPlayers.map((player, index) => ({ ...player, finalRank: index + 1 }));
 
   refs.teacherRoomCode.textContent = `Código ${state.online?.code || "---"}`;
   if (state.online?.teacherCountdown) {
@@ -1096,31 +1117,106 @@ function renderTeacherDashboard(room) {
 
   refs.teacherGrid.innerHTML = players.map((player, index) => {
     const progressPct = Math.min(100, (Number(player.operationIndex || 0) / maxProgress) * 100);
-    const streak = Number(player.streak || 0);
     const medal = index === 0 ? "🏆" : index === 1 ? "🥈" : index === 2 ? "🥉" : "🥷";
     const lastResult = player.lastResult || "waiting";
     const lastClass = lastResult === "correct" ? "ok" : lastResult === "wrong" ? "bad" : lastResult === "skip" ? "skip" : "";
+    const rank = index + 1;
     const lastLabel = player.lastResult
       ? `${lastResultIcon(lastResult)} ${lastResultText(lastResult)}${player.lastAnswer !== undefined ? ` · ${escapeHtml(player.lastAnswer)}` : ""}`
       : "🕹️ Preparado";
     return `
-      <article class="teacher-card ${index === 0 ? "leader" : ""} ${lastClass}">
+      <article class="teacher-card ${index === 0 ? "leader" : ""} ${lastClass} ${isFinished ? "final-card" : ""}">
+        <button class="remove-player-btn teacher-remove" type="button" data-remove-player="${escapeHtml(player.id)}" aria-label="Eliminar a ${escapeHtml(player.name || "Ninja")}">✕</button>
+        ${isFinished ? `<div class="teacher-final-rank">🏁 Puesto #${rank}</div>` : ""}
         <div class="teacher-card-top">
           <span class="teacher-medal">${medal}</span>
-          <strong>${escapeHtml(player.name || "Ninja")}</strong>
+          <strong><span class="teacher-rank">#${rank}</span> ${escapeHtml(player.name || "Ninja")}</strong>
           <span>${Number(player.score || 0)} pts</span>
         </div>
         <div class="teacher-progress"><span style="width:${progressPct}%"></span></div>
         <div class="teacher-last">${lastLabel}</div>
         <div class="teacher-stats">
-          <span>✅ Aciertos ${Number(player.correctCount || 0)}</span>
-          <span>❌ Fallos ${Number(player.wrongCount || 0)}</span>
-          <span>🔥 x${streak}</span>
-          <span>📍 ${Number(player.operationIndex || 0)}</span>
+          <span title="Aciertos">✅🟢 ${Number(player.correctCount || 0)}</span>
+          <span title="Fallos">❌🔴 ${Number(player.wrongCount || 0)}</span>
         </div>
       </article>
     `;
   }).join("");
+
+  if (isFinished && players.length > 0 && !state.online?.teacherResultsShown) {
+    state.online.teacherResultsShown = true;
+    showTeacherPodiumResults(players);
+  }
+}
+
+function showTeacherPodiumResults(players) {
+  const scores = [...players]
+    .sort((a, b) => Number(b.score || 0) - Number(a.score || 0) || Number(b.correctCount || 0) - Number(a.correctCount || 0))
+    .map((player, index) => ({ ...player, finalRank: index + 1 }));
+  const topThree = scores.slice(0, 3);
+  const podiumOrder = [topThree[1], topThree[0], topThree[2]].filter(Boolean);
+  const rest = scores.slice(3);
+
+  refs.resultsTitle.textContent = "🏆 Clasificación final del Dojo";
+  refs.resultsSubtitle.textContent = scores[0]
+    ? `Ganador/a: ${scores[0].name || "Ninja"} · ${Number(scores[0].score || 0)} puntos`
+    : "Partida terminada.";
+  refs.resultsScores.classList.add("teacher-podium-results");
+  refs.resultsOverlay.querySelector(".results-card")?.classList.add("teacher-results-card");
+  refs.resultsScores.innerHTML = `
+    <div class="teacher-podium">
+      ${podiumOrder.map((player) => {
+        const rank = Number(player.finalRank || 0);
+        const medal = rank === 1 ? "🏆" : rank === 2 ? "🥈" : "🥉";
+        return `
+          <article class="podium-card podium-${rank}">
+            <div class="podium-medal">${medal}</div>
+            <strong>${escapeHtml(player.name || "Ninja")}</strong>
+            <span class="podium-rank">Puesto #${rank}</span>
+            <span class="podium-points">${Number(player.score || 0)} pts</span>
+            <small>✅🟢 ${Number(player.correctCount || 0)} · ❌🔴 ${Number(player.wrongCount || 0)}</small>
+          </article>
+        `;
+      }).join("")}
+    </div>
+    ${rest.length ? `
+      <div class="teacher-ranking-list">
+        ${rest.map((player) => `
+          <div class="teacher-ranking-row">
+            <span class="rank-number">#${Number(player.finalRank || 0)}</span>
+            <strong>${escapeHtml(player.name || "Ninja")}</strong>
+            <span>${Number(player.score || 0)} pts</span>
+            <small>✅ ${Number(player.correctCount || 0)} · ❌ ${Number(player.wrongCount || 0)}</small>
+          </div>
+        `).join("")}
+      </div>
+    ` : ""}
+  `;
+
+  const rematchBtn = document.getElementById("rematchBtn");
+  if (rematchBtn) rematchBtn.textContent = "🔄 Nueva ronda";
+  refs.resultsOverlay.classList.remove("hidden");
+}
+
+function shouldShowOnlinePlayer(player) {
+  if (!player) return false;
+  return player.isConnected !== false;
+}
+
+async function handleRemovePlayerClick(event) {
+  const button = event.target.closest("[data-remove-player]");
+  if (!button || !state.online?.code || !state.online?.isHost || !window.NinjaOnline?.enabled) return;
+  event.preventDefault();
+  event.stopPropagation();
+  const playerId = button.getAttribute("data-remove-player");
+  if (!playerId) return;
+  button.disabled = true;
+  try {
+    await window.NinjaOnline.removePlayer(state.online.code, playerId);
+  } catch (error) {
+    button.disabled = false;
+    alert(formatOnlineError("No se pudo eliminar al alumno", error));
+  }
 }
 
 function lastResultIcon(result) {
@@ -2319,6 +2415,8 @@ async function finishGame() {
 
 function showResults() {
   refs.resultsScores.innerHTML = "";
+  refs.resultsScores.classList.remove("teacher-podium-results");
+  refs.resultsOverlay.querySelector(".results-card")?.classList.remove("teacher-results-card");
   const rematchBtn = document.getElementById("rematchBtn");
   if (rematchBtn) {
     rematchBtn.textContent = state.mode === "online" && state.online?.code && !state.online?.isHost
