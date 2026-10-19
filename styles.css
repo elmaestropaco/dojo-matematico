@@ -204,8 +204,10 @@ body.game-running .container {
 body.game-running .arena-screen:not(.hidden) {
   flex: 1 1 auto;
   min-height: 0;
+  min-width: 0;
   margin-top: 0;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto minmax(0, 1fr);
   gap: 6px;
   overflow: hidden;
@@ -986,6 +988,8 @@ input[type="number"] {
 }
 
 .match-badge {
+  min-width: 0;
+  overflow-wrap: anywhere;
   font-size: 0.86rem;
   color: var(--text-soft);
   text-align: right;
@@ -1863,6 +1867,7 @@ input[type="number"] {
 
 .players-wrap {
   display: grid;
+  min-width: 0;
   gap: 10px;
   min-height: 0;
 }
@@ -2037,9 +2042,27 @@ body.game-running .panel-timer {
 
 .player-head {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
+}
+
+.solution-btn {
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 5px 8px;
+  background: #fff1bf;
+  color: #463000;
+  font: 700 0.75rem "Atkinson Hyperlegible", sans-serif;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.solution-btn:focus-visible {
+  outline: 3px solid #2286d1;
+  outline-offset: 2px;
 }
 
 .player-name {
@@ -2153,6 +2176,34 @@ body.game-running .operation {
 
 .op-vertical .q {
   justify-self: center;
+}
+
+.math-symbol {
+  font-family: "Cambria Math", "STIX Two Math", "DejaVu Sans", sans-serif;
+}
+
+.square-root {
+  display: inline-flex;
+  align-items: stretch;
+  white-space: nowrap;
+  line-height: 1.15;
+}
+
+.square-root-sign {
+  flex: 0 0 auto;
+  width: 0.72em;
+  height: 1.16em;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+}
+
+.square-root-value {
+  border-top: 0.055em solid currentColor;
+  padding: 0.07em 0.12em 0;
 }
 
 .op-expression {

@@ -15,6 +15,10 @@ La app funciona sin backend para los modos locales.
 - Modo entrenamiento y batalla local.
 - Operaciones configurables: sumas, restas, multiplicaciones, divisiones, divisiones dificiles, combinadas, fracciones y porcentajes.
 - Divisiones tipo tablas del 1 al 10.
+- Raices cuadradas exactas con radicandos de 1, 2 o 3 cifras (por ejemplo, raiz de 4, 81 o 144).
+- Simbolo de raiz dibujado en SVG con barra sobre el radicando, independiente de las fuentes del dispositivo.
+- Boton Ver solucion en cada panel: muestra la respuesta y permite pasar sin sumar puntos ni aciertos. Disponible en entrenamiento, duelo y online.
+- Consultar la solucion se mantiene registrado aunque un evento cambie el formato de la operacion.
 - Selector de cifras por tipo de operacion.
 - Operaciones horizontales, verticales o mixtas.
 - Fracciones representadas con numerador, barra y denominador.

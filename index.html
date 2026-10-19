@@ -278,6 +278,15 @@
                   <option value="3">3 cifras</option>
                 </select>
               </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="sqrt" />
+                <span class="op-name"><span class="math-symbol">&#8730;</span> Raíces cuadradas exactas</span>
+                <select class="op-config-select digits-select" data-setting-op="sqrt" data-setting-key="digits" aria-label="Cifras del radicando">
+                  <option value="1">Radicando: 1 cifra</option>
+                  <option value="2" selected>Radicando: 2 cifras</option>
+                  <option value="3">Radicando: 3 cifras</option>
+                </select>
+              </label>
             </div>
           </details>
           <div id="opsChips" class="ops-chips" aria-live="polite"></div>
@@ -432,6 +441,8 @@
       <li>🔥 Si las rachas están activas, pueden aparecer eventos sorpresa aleatorios durante la partida.</li>
       <li>😈 Algunos eventos son trampa: pueden subir penalización o incluso dejar puntos a 0 si fallas.</li>
       <li>🔢 Usa la coma <strong>,</strong> para decimales (teclado en pantalla y físico).</li>
+      <li>Las raíces cuadradas son exactas: las cifras indican el tamaño del número dentro de la raíz (por ejemplo, &#8730;81 tiene 2 cifras).</li>
+      <li>💡 Ver solución muestra la respuesta. Esa pregunta no suma puntos ni aciertos; pulsa Siguiente para continuar.</li>
       <li>⌨️ Teclado físico: en duelo, jugador 1 usa teclas numéricas y jugador 2 el teclado numérico.</li>
       <li>Cuando acaba el tiempo, el resultado se guarda en el Cuadro de los Grandes Maestros.</li>
     </ol>
@@ -476,7 +487,7 @@
     </div>
   </footer>
 
-  <script src="firebase-online.js"></script>
-  <script src="app.js"></script>
+  <script src="firebase-online.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
 </body>
 </html>

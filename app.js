@@ -16,7 +16,8 @@ const OPERATION_LABELS = {
   combined: "Operaciones combinadas (fácil)",
   combinedAdv: "Operaciones combinadas (avanzado)",
   fraction: "Fracciones (operador)",
-  percent: "Porcentajes"
+  percent: "Porcentajes",
+  sqrt: "Raíces cuadradas exactas"
 };
 
 const SCORE_MIN = 0;
@@ -61,7 +62,8 @@ const state = {
     combined: { enabled: false, digits: 2 },
     combinedAdv: { enabled: false, digits: 2 },
     fraction: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
-    percent: { enabled: false, digits: 2 }
+    percent: { enabled: false, digits: 2 },
+    sqrt: { enabled: false, digits: 2 }
   },
   displayMode: "horizontal",
   streaksEnabled: true,
@@ -487,6 +489,7 @@ function renderOpsChips(enabledKeys) {
       : key === "combinedAdv" ? "🧠"
       : key === "fraction" ? "🍰"
       : key === "percent" ? "📊"
+      : key === "sqrt" ? "\u221A"
       : "➗";
     const chip = document.createElement("span");
     chip.className = "ops-chip";
@@ -509,6 +512,7 @@ function renderOpsChips(enabledKeys) {
 
 function formatOpConfigLabel(key, cfg) {
   if (!cfg) return "";
+  if (key === "sqrt") return `Radicando: ${cfg.digits} cifra${cfg.digits > 1 ? "s" : ""}`;
   if (key === "addNoCarry" || key === "addCarry" || key === "subNoBorrow" || key === "subBorrow") {
     return `${cfg.digits} cifra${cfg.digits > 1 ? "s" : ""}`;
   }
@@ -1220,6 +1224,7 @@ async function handleRemovePlayerClick(event) {
 }
 
 function lastResultIcon(result) {
+  if (result === "solution") return "💡";
   if (result === "correct") return "✅🟢";
   if (result === "wrong") return "❌🔴";
   if (result === "skip") return "⏭️🟡";
@@ -1227,6 +1232,7 @@ function lastResultIcon(result) {
 }
 
 function lastResultText(result) {
+  if (result === "solution") return "Solución consultada";
   if (result === "correct") return "Acierto";
   if (result === "wrong") return "Fallo";
   if (result === "skip") return "Saltó";
@@ -1378,6 +1384,7 @@ function renderArena() {
       <div class="player-head">
         <p class="player-name">${escapeHtml(player.name)}</p>
         <div class="player-score" id="score-${player.id}">Puntos: 0</div>
+        <button class="solution-btn" type="button" data-action="solution" data-player="${player.id}">💡 Ver solución</button>
       </div>
       <div class="score-track"><div class="score-ninja" id="scoreNinja-${player.id}">🥷</div></div>
       <div class="score-label">🔴 0 · 🟢 250+</div>
@@ -1487,6 +1494,18 @@ function handleButtonAction(event) {
   }
 
   const action = button.dataset.action;
+  if (action === "solution") {
+    const operation = state.operationsByPlayer.get(playerId);
+    if (!operation) return;
+    if (operation.solutionRevealed) advanceAssistedOperation(player);
+    else {
+      operation.solutionRevealed = true;
+      player.streak = 0;
+      player.input = "";
+      repaintPlayers();
+    }
+    return;
+  }
   if (action === "clear") {
     player.input = "";
     repaintPlayerInput(player.id);
@@ -1499,6 +1518,17 @@ function handleButtonAction(event) {
   }
 
   if (action === "submit") submitPlayerAnswer(player.id);
+}
+
+function advanceAssistedOperation(player) {
+  player.input = "";
+  player.streak = 0;
+  if (state.mode === "online" && state.online?.active) {
+    state.online.currentOperationIndex += 1;
+    updateOnlinePlayerProgress(player, { lastResult: "solution", lastAnswer: "solución consultada", lastActionAt: Date.now() });
+  }
+  generateNewOperationForPlayer(player.id, true);
+  repaintPlayers();
 }
 
 function skipCurrentOperation(playerId) {
@@ -1615,6 +1645,10 @@ function submitPlayerAnswer(playerId) {
   const player = state.players.find((p) => p.id === playerId);
   const operation = state.operationsByPlayer.get(playerId);
   if (!player || !operation || player.input === "") return;
+  if (operation.solutionRevealed) {
+    advanceAssistedOperation(player);
+    return;
+  }
 
   const submittedAnswer = player.input;
   const numericInput = parsePlayerInput(player.input);
@@ -1710,6 +1744,7 @@ function generateNewOperationForPlayer(playerId, enforceDifferentInDuel) {
 function createOperation(kind) {
   const cfg = state.operationSettings[kind];
   if (!cfg) return decorateOperation(generateAdditionWithCarry(2));
+  if (kind === "sqrt") return decorateOperation(generateExactSquareRoot(cfg.digits));
   if (kind === "combined") return decorateOperation(generateCombinedOperationEasy(cfg.digits));
   if (kind === "combinedAdv") return decorateOperation(generateCombinedOperationAdvanced(cfg.digits));
   if (kind === "fraction") return decorateOperation(generateFractionOperatorOperation(cfg));
@@ -1734,6 +1769,21 @@ function createOperation(kind) {
   }
 
   return decorateOperation(base);
+}
+
+function generateExactSquareRoot(digits) {
+  const places = clamp(Math.trunc(Number(digits) || 2), 1, 3);
+  const minRoot = Math.ceil(Math.sqrt(10 ** (places - 1)));
+  const maxRoot = Math.floor(Math.sqrt((10 ** places) - 1));
+  const answer = minRoot + Math.floor(Math.random() * (maxRoot - minRoot + 1));
+  const radicand = answer * answer;
+  return {
+    kind: "sqrt",
+    expression: `\u221A${radicand}`,
+    htmlExpression: `<span class="square-root" role="img" aria-label="Raíz cuadrada de ${radicand}"><svg class="square-root-sign" viewBox="0 0 32 48" aria-hidden="true" focusable="false"><path d="M2 27 L9 23 L17 43 L29 3 L32 3" /></svg><span class="square-root-value" aria-hidden="true">${radicand}</span></span>`,
+    answer,
+    signature: `sqrt:${radicand}`
+  };
 }
 
 function createOnlineOperation(index) {
@@ -2297,8 +2347,15 @@ function repaintPlayers() {
       opEl.classList.remove("pop");
       opEl.offsetHeight;
       opEl.classList.add("pop");
-      opEl.innerHTML = op.html;
+      opEl.innerHTML = op.solutionRevealed
+        ? op.html.replace("?", escapeHtml(String(op.answer).replace(".", DECIMAL_SEPARATOR)))
+        : op.html;
       fitOperationElement(opEl);
+    }
+    const solutionButton = refs.playersWrap.querySelector(`.solution-btn[data-player="${player.id}"]`);
+    if (solutionButton) {
+      solutionButton.textContent = op?.solutionRevealed ? "⏭️ Siguiente (sin puntos)" : "💡 Ver solución";
+      solutionButton.title = "Consultar la solución no suma puntos ni aciertos";
     }
 
     const decimalHintEl = document.getElementById(`decimalHint-${player.id}`);
@@ -2865,7 +2922,8 @@ function refreshOperationDisplays() {
       answer: op.answer,
       expression: op.expression,
       htmlExpression: op.htmlExpression,
-      signature: op.signature
+      signature: op.signature,
+      solutionRevealed: op.solutionRevealed
     };
     const decorated = decorateOperation(base);
     state.operationsByPlayer.set(playerId, decorated);
