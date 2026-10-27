@@ -1,0 +1,2605 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "suma-biblioteca-001",
+      "titulo": "Dos estanterías de libros",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En la biblioteca del colegio hay dos estanterías. En una hay {cantidadA} {unidadA} y en la otra hay {cantidadB} {unidadB}. ¿Cuántos libros hay entre las dos estanterías?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Libros de la primera estantería",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Libros de la segunda estantería",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "suma-cromos-002",
+      "titulo": "La colección crece",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "{nombre1} tiene una colección de {cantidadA} {unidadA}. Por su cumpleaños le regalan {cantidadB} {unidadB} más. ¿Cuántos cromos tiene ahora en su colección?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cromos que tenía",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cromos recibidos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "nombre1": {
+          "tipo": "texto",
+          "valores": [
+            "Alex",
+            "Sam",
+            "Dani"
+          ]
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cromo",
+          "plural": "cromos"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cromo",
+          "plural": "cromos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cromo",
+          "plural": "cromos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 12,
+          "cantidadB": 9,
+          "nombre1": "Alex"
+        },
+        "respuesta": "21"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "suma-ruta-003",
+      "titulo": "Lo recorrido y lo que falta",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Durante una excursión, el grupo ha andado {cantidadA} {unidadA}. Todavía le queda por recorrer una distancia de {cantidadB} {unidadB} para llegar. ¿Cuántos kilómetros tiene el camino completo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Distancia recorrida en kilómetros",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Distancia restante en kilómetros",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "kilómetro",
+          "plural": "kilómetros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "kilómetro",
+          "plural": "kilómetros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "kilómetro",
+          "plural": "kilómetros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 18,
+          "cantidadB": 7
+        },
+        "respuesta": "25"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "suma-comparacion-004",
+      "titulo": "Una colección mayor",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "{nombre1} guarda {cantidadA} {unidadA} en una bolsa. {nombre2} tiene {cantidadB} {unidadB} más que {nombre1}. ¿Cuántas canicas tiene {nombre2}?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Canicas de la primera persona",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Diferencia a favor de la segunda persona",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "nombre1": {
+          "tipo": "texto",
+          "valores": [
+            "Leo",
+            "Hugo",
+            "Sam"
+          ]
+        },
+        "nombre2": {
+          "tipo": "texto",
+          "valores": [
+            "Inés",
+            "Lara",
+            "Noa"
+          ]
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "canica",
+          "plural": "canicas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "canica",
+          "plural": "canicas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "canica",
+          "plural": "canicas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 14,
+          "cantidadB": 8,
+          "nombre1": "Leo",
+          "nombre2": "Inés"
+        },
+        "respuesta": "22"
+      },
+      "dificultad": "media"
+    },
+    {
+      "id": "suma-inicial-005",
+      "titulo": "Antes de abrir la tienda",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Al terminar el día, en una tienda quedan {cantidadA} {unidadA}. Durante ese día han vendido {cantidadB} {unidadB} y no han recibido más. ¿Cuántos cuadernos había antes de abrir la tienda?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cuadernos que quedan al cerrar",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cuadernos vendidos durante el día",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuaderno",
+          "plural": "cuadernos"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuaderno",
+          "plural": "cuadernos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuaderno",
+          "plural": "cuadernos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 17,
+          "cantidadB": 23
+        },
+        "respuesta": "40"
+      },
+      "dificultad": "media"
+    },
+    {
+      "id": "suma-gastos-006",
+      "titulo": "Dos gastos en la excursión",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En una salida del colegio, la entrada cuesta {cantidadA} {unidadA} y la merienda cuesta {cantidadB} {unidadB}. ¿Cuántos euros necesita cada alumno para pagar las dos cosas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Precio entero de la entrada en euros",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio entero de la merienda en euros",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 7,
+          "cantidadB": 5
+        },
+        "respuesta": "12"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "suma-tres-lotes-007",
+      "titulo": "Fichas para una actividad",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para jugar en clase, la maestra prepara tres cajas de fichas. En la primera pone {cantidadA} {unidadA}, en la segunda {cantidadB} {unidadB} y en la tercera {cantidadC} {unidadC}. ¿Cuántas fichas ha preparado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Fichas del primer lote",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Fichas del segundo lote",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Fichas del tercer lote",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "ficha",
+          "plural": "fichas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "suma",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Después sumamos: {resultado1} + {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 16,
+          "cantidadB": 12,
+          "cantidadC": 9
+        },
+        "respuesta": "37"
+      },
+      "dificultad": "avanzada"
+    },
+    {
+      "id": "suma-tres-tramos-008",
+      "titulo": "Del colegio al museo",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para llegar al museo, una clase recorre tres partes del camino. Primero anda {cantidadA} {unidadA}, después {cantidadB} {unidadB} y, por último, {cantidadC} {unidadC}. ¿Cuántos metros ha recorrido la clase en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Metros del primer tramo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Metros del segundo tramo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Metros del tercer tramo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "metro",
+          "plural": "metros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "metro",
+          "plural": "metros"
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "metro",
+          "plural": "metros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "suma",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Después sumamos: {resultado1} + {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "metro",
+          "plural": "metros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 120,
+          "cantidadB": 85,
+          "cantidadC": 95
+        },
+        "respuesta": "300"
+      },
+      "dificultad": "avanzada"
+    },
+    {
+      "id": "suma-capacidad-009",
+      "titulo": "Completar la sala",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En una sala del colegio ya hay {cantidadA} {unidadA}. Para preparar una fiesta, los alumnos colocan {cantidadB} {unidadB} más. ¿Cuántas sillas habrá en la sala cuando terminen?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Sillas colocadas",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Sillas que faltan por colocar",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "silla",
+          "plural": "sillas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "silla",
+          "plural": "sillas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "silla",
+          "plural": "sillas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 48,
+          "cantidadB": 12
+        },
+        "respuesta": "60"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "suma-planetas-010",
+      "titulo": "Habitantes de dos planetas",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En un cuento del espacio aparecen dos planetas. En uno viven {cantidadA} {unidadA} y en el otro viven {cantidadB} {unidadB}. ¿Cuántos habitantes viven entre los dos planetas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Habitantes del primer planeta ficticio",
+          "minimo": 1,
+          "maximo": 999999999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Habitantes del segundo planeta ficticio",
+          "minimo": 1,
+          "maximo": 999999999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "habitante",
+          "plural": "habitantes"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "habitante",
+          "plural": "habitantes"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "habitante",
+          "plural": "habitantes"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 1234567,
+          "cantidadB": 2345678
+        },
+        "respuesta": "3580245"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "suma-biblioteca-individual-011",
+      "titulo": "Biblioteca del barrio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En la biblioteca del barrio hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos libros hay entre las dos cajas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-pintura-individual-012",
+      "titulo": "Taller de pintura",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para organizar una exposición, en el taller de pintura tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos pinceles tienen ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pincel",
+          "plural": "pinceles"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pincel",
+          "plural": "pinceles"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pincel",
+          "plural": "pinceles"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-huerto-individual-013",
+      "titulo": "El huerto escolar",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos semillas tiene el segundo grupo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "semilla",
+          "plural": "semillas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "semilla",
+          "plural": "semillas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "semilla",
+          "plural": "semillas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-merienda-individual-014",
+      "titulo": "La merienda del campamento",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Después de la actividad, en la cocina del campamento quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos magdalenas había al empezar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-torneo-individual-015",
+      "titulo": "El torneo del colegio",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para celebrar un torneo se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos pelotas hay en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pelota",
+          "plural": "pelotas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pelota",
+          "plural": "pelotas"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Tercera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "pelota",
+          "plural": "pelotas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "suma",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Añadimos la tercera cantidad: {resultado1} + {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "pelota",
+          "plural": "pelotas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12,
+          "cantidadC": 9
+        },
+        "respuesta": "45"
+      }
+    },
+    {
+      "id": "suma-fiesta-individual-016",
+      "titulo": "Preparar la fiesta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En la sala de fiestas ya han preparado {cantidadA} {unidadA} para decorar una fiesta. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos globos necesitan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "globo",
+          "plural": "globos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "globo",
+          "plural": "globos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "globo",
+          "plural": "globos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-laboratorio-individual-017",
+      "titulo": "Experimentos en clase",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el laboratorio del colegio hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos frascos hay entre las dos cajas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "frasco",
+          "plural": "frascos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "frasco",
+          "plural": "frascos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "frasco",
+          "plural": "frascos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-mercado-individual-018",
+      "titulo": "El puesto de fruta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para preparar un pedido, en el puesto de fruta tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos peras tienen ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pera",
+          "plural": "peras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-musica-individual-019",
+      "titulo": "El ensayo de música",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos partituras tiene el segundo grupo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "partitura",
+          "plural": "partituras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "partitura",
+          "plural": "partituras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "partitura",
+          "plural": "partituras"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-museo-individual-020",
+      "titulo": "Los recuerdos del museo",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Después de la actividad, en la tienda del museo quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos postales había al empezar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "postal",
+          "plural": "postales"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "postal",
+          "plural": "postales"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "postal",
+          "plural": "postales"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-reciclaje-individual-021",
+      "titulo": "La campaña de reciclaje",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para hacer una actividad con materiales usados se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos botellas hay en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "botella",
+          "plural": "botellas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "botella",
+          "plural": "botellas"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Tercera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "botella",
+          "plural": "botellas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "suma",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Añadimos la tercera cantidad: {resultado1} + {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "botella",
+          "plural": "botellas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12,
+          "cantidadC": 9
+        },
+        "respuesta": "45"
+      }
+    },
+    {
+      "id": "suma-refugio-individual-022",
+      "titulo": "Ayudar al refugio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el refugio de animales ya han preparado {cantidadA} {unidadA} para preparar las camas de los animales. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos mantas necesitan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "manta",
+          "plural": "mantas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "manta",
+          "plural": "mantas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "manta",
+          "plural": "mantas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-comedor-individual-023",
+      "titulo": "La comida de la excursión",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el comedor del colegio hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos bocadillos hay entre las dos cajas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-teatro-individual-024",
+      "titulo": "La función de teatro",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para organizar una función escolar, en el teatro del barrio tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos entradas tienen ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-robotica-individual-025",
+      "titulo": "Construir robots",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos tornillos tiene el segundo grupo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tornillo",
+          "plural": "tornillos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tornillo",
+          "plural": "tornillos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tornillo",
+          "plural": "tornillos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-collares-individual-026",
+      "titulo": "El taller de collares",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Después de la actividad, en el taller de manualidades quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos cuentas había al empezar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuenta",
+          "plural": "cuentas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuenta",
+          "plural": "cuentas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuenta",
+          "plural": "cuentas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-festival-individual-027",
+      "titulo": "El festival del barrio",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para decorar un festival se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos banderines hay en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "banderín",
+          "plural": "banderines"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "banderín",
+          "plural": "banderines"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Tercera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "banderín",
+          "plural": "banderines"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "suma",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Añadimos la tercera cantidad: {resultado1} + {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "banderín",
+          "plural": "banderines"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12,
+          "cantidadC": 9
+        },
+        "respuesta": "45"
+      }
+    },
+    {
+      "id": "suma-exploradores-individual-028",
+      "titulo": "Una ruta de exploradores",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el club de exploradores ya han preparado {cantidadA} {unidadA} para preparar una ruta. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos mapas necesitan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "mapa",
+          "plural": "mapas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mapa",
+          "plural": "mapas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "mapa",
+          "plural": "mapas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-medallas-individual-029",
+      "titulo": "La carrera solidaria",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el polideportivo hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos medallas hay entre las dos cajas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "medalla",
+          "plural": "medallas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "medalla",
+          "plural": "medallas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "medalla",
+          "plural": "medallas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-juegos-individual-030",
+      "titulo": "La tarde de juegos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para organizar una tarde de juegos, en la ludoteca tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos fichas tienen ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "ficha",
+          "plural": "fichas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-planetario-individual-031",
+      "titulo": "El viaje al planetario",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el planetario hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos entradas hay entre las dos cajas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-ajedrez-individual-032",
+      "titulo": "El club de ajedrez",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para organizar un encuentro, en el club de ajedrez tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos fichas tienen ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "ficha",
+          "plural": "fichas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-titeres-individual-033",
+      "titulo": "La función de títeres",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos muñecos tiene el segundo grupo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "muñeco",
+          "plural": "muñecos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "muñeco",
+          "plural": "muñecos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "muñeco",
+          "plural": "muñecos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-invernadero-individual-034",
+      "titulo": "Las plantas del invernadero",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Después de la actividad, en el invernadero escolar quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos macetas había al empezar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "maceta",
+          "plural": "macetas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "maceta",
+          "plural": "macetas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "maceta",
+          "plural": "macetas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-acuarios-individual-035",
+      "titulo": "Los peces del aula",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para preparar una actividad se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos piedras hay en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "piedra",
+          "plural": "piedras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "piedra",
+          "plural": "piedras"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Tercera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "piedra",
+          "plural": "piedras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "suma",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Añadimos la tercera cantidad: {resultado1} + {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "piedra",
+          "plural": "piedras"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12,
+          "cantidadC": 9
+        },
+        "respuesta": "45"
+      }
+    },
+    {
+      "id": "suma-conservas-individual-036",
+      "titulo": "La feria de conservas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el taller de conservas ya han preparado {cantidadA} {unidadA} para preparar una feria. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos tarros necesitan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tarro",
+          "plural": "tarros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tarro",
+          "plural": "tarros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tarro",
+          "plural": "tarros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-carnaval-individual-037",
+      "titulo": "El carnaval del barrio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el taller de carnaval hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos máscaras hay entre las dos cajas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "máscara",
+          "plural": "máscaras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "máscara",
+          "plural": "máscaras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "máscara",
+          "plural": "máscaras"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-encuadernacion-individual-038",
+      "titulo": "Creamos nuestros cuadernos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para hacer unos cuadernos, en el taller de encuadernación tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos hojas tienen ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "hoja",
+          "plural": "hojas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "hoja",
+          "plural": "hojas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "hoja",
+          "plural": "hojas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-colmenar-individual-039",
+      "titulo": "Una visita al colmenar",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos láminas tiene el segundo grupo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lámina",
+          "plural": "láminas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "lámina",
+          "plural": "láminas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "lámina",
+          "plural": "láminas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    },
+    {
+      "id": "suma-aromaticas-individual-040",
+      "titulo": "El jardín de los aromas",
+      "dificultad": "media",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Después de la actividad, en el jardín de plantas aromáticas quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos etiquetas había al empezar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Primera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 12
+        },
+        "respuesta": "36"
+      }
+    }
+  ]
+}

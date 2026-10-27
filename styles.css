@@ -11,6 +11,14 @@
   --border: rgba(248, 201, 77, 0.26);
 }
 
+@font-face {
+  font-family: "Escolar Ligada";
+  src: url("assets/fonts/PlaywriteES.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 400;
+  font-display: swap;
+}
+
 [data-theme="light"] {
   --bg-1: #fff1df;
   --bg-2: #e9f4ff;
@@ -940,9 +948,14 @@ input[type="number"] {
 
 .arena-spacer {
   min-height: 1px;
+  min-width: 0;
+  text-align: center;
 }
 
 .panel-timer {
+  min-width: 5ch;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
   --countdown-progress: 1;
   margin: 6px auto 8px;
   width: clamp(76px, 12vw, 98px);
@@ -2240,6 +2253,28 @@ body.game-running .operation {
   opacity: 0.86;
 }
 
+.fraction-solution {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  max-width: 100%;
+}
+
+.fraction-solution-stage {
+  display: inline-grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.15em;
+}
+
+.fraction-solution-stage small {
+  font-size: 0.4em;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
 .answer-box {
   min-height: 52px;
   border-radius: 12px;
@@ -2299,8 +2334,65 @@ body.game-running .numpad {
   overflow: hidden;
 }
 
+body.game-running .action-row .action-btn {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  padding: 4px;
+  font-size: clamp(0.75rem, 2.8vw, 0.95rem);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .players-wrap.duel-vertical .action-label {
+    display: none;
+  }
+
+  body.game-running .players-wrap.duel-vertical .player-panel {
+    grid-template-rows: auto auto auto 32px minmax(28px, 1fr) auto auto 26px minmax(76px, 1.2fr) 30px;
+    gap: 1px;
+    padding: 4px;
+  }
+
+  body.game-running .duel-vertical .panel-timer {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+    margin: 0 auto;
+  }
+
+  body.game-running .duel-vertical .event-inline:empty {
+    min-height: 0;
+    padding: 0;
+  }
+
+  body.game-running .duel-vertical .decimal-hint {
+    font-size: 0.65rem;
+    margin: 0;
+  }
+
+  body.game-running .duel-vertical .answer-box {
+    min-height: 0;
+    padding: 2px;
+    font-size: 1rem;
+  }
+
+  body.game-running .duel-vertical .action-row {
+    height: 30px;
+  }
+
+  body.game-running .duel-vertical .numpad .key-btn {
+    min-height: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 0.85rem;
+  }
+}
+
 body.game-running .action-row {
   min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
   height: 46px;
   margin-top: 0;
   gap: 5px;
@@ -2335,6 +2427,32 @@ body.game-running .action-row {
 
 .numpad.shake {
   animation: shake 0.26s linear;
+}
+
+body.game-running .numpad.fraction-input,
+.numpad.fraction-input {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+body.game-running .numpad.fraction-input .key-btn {
+  min-height: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.numpad.fraction-input .key-btn[data-key="0"] {
+  grid-row: 4;
+  grid-column: 1 / -1;
+}
+
+.numpad.fraction-input.with-negative .key-btn[data-key="0"] {
+  grid-column: 1 / 4;
+}
+
+.numpad.fraction-input .key-btn[data-key="-"] {
+  grid-row: 4;
+  grid-column: 4;
 }
 
 .results-overlay {
@@ -2414,7 +2532,7 @@ body.game-running .action-row {
   display: grid;
   gap: 12px;
   max-height: min(58dvh, 500px);
-  overflow: hidden;
+  overflow: auto;
 }
 
 .teacher-podium {
@@ -2493,7 +2611,7 @@ body.game-running .action-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 7px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .teacher-ranking-row {
@@ -3434,6 +3552,122 @@ body.game-running .action-row {
   body.game-running .action-btn {
     font-size: 0.86rem;
   }
+}
+
+.problem-categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.problem-category {
+  align-self: start;
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(130deg, rgba(255, 209, 102, 0.14), rgba(74, 214, 255, 0.1));
+}
+
+.problem-category summary { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 700; }
+.problem-category summary::before { content: ">"; }
+.problem-category[open] summary::before { transform: rotate(90deg); }
+.problem-category summary::-webkit-details-marker { display: none; }
+.problem-category-enable { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; font-size: 0.8rem; white-space: nowrap; }
+.problem-category-body > label { display: grid; gap: 5px; margin-top: 10px; }
+.problem-carry { margin-top: 12px; }
+.problem-carry-buttons { display: flex; flex-wrap: wrap; gap: 5px; }
+.problem-carry-buttons button { padding: 7px 9px; border: 1px solid var(--border); border-radius: 9px; background: var(--panel); color: var(--text-main); cursor: pointer; font: inherit; }
+.problem-carry-buttons button[aria-pressed="true"] { background: #ffd166; color: #392600; font-weight: 700; }
+.problem-category select { width: 100%; min-width: 0; }
+.problem-digit-range { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+.problem-digit-range label { display: grid; gap: 5px; }
+.problem-operand-range { min-width: 0; border: 1px solid var(--border); border-radius: 10px; margin: 12px 0 0; padding: 8px; }
+.problem-operand-range legend { font-weight: 700; padding: 0 5px; }
+.problem-operand-range .problem-digit-range { margin-top: 0; }
+#problemsBox { grid-column: 1 / -1; }
+.teacher-config-mount #problemsBox { grid-column: 1 / -1; }
+
+body.game-running .operation.problem-operation {
+  font-size: clamp(1.25rem, 3.7dvh, 2rem);
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-align: left;
+  padding: 4px;
+}
+
+.problem-paper { width: 100%; max-width: 52em; min-width: 0; }
+body[data-problem-font="ligada"] .problem-paper { font-family: "Escolar Ligada", cursive; line-height: 1.55; }
+.problem-reading-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.problem-reading-options label { display: grid; gap: 5px; min-width: 0; }
+.problem-reading-options select { min-width: 0; width: 100%; }
+.problem-kicker { display: block; font-size: 0.72em; font-weight: 700; color: var(--text-soft); margin-bottom: 0.4em; }
+.problem-question { margin: 0; }
+.problem-compact { display: none; }
+.problem-steps { margin: 0; padding-left: 1.4em; }
+.problem-steps li + li { margin-top: 0.3em; }
+.problem-reason, .problem-calculation { display: block; }
+.problem-final { display: block; margin-top: 0.4em; color: var(--text-main); }
+
+body.game-running.problems-running .players-wrap .player-panel {
+  grid-template-rows: auto 0 auto 38px minmax(110px, 1.8fr) auto 0 32px minmax(100px, 1fr) 38px;
+  gap: 2px;
+}
+body.game-running.problems-running .arena-screen:not(.teacher-mode) {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+body.game-running.problems-running .arena-screen:not(.teacher-mode) .players-wrap {
+  grid-row: 2;
+}
+body.game-running.problems-running #duelLead { display: none; }
+body.game-running.problems-running .score-track,
+body.game-running.problems-running .event-inline { display: none; }
+body.game-running.problems-running .panel-timer { width: 36px; height: 36px; font-size: 1rem; margin: 0 auto; }
+body.game-running.problems-running .action-row { height: 38px; }
+body.game-running.problems-running .answer-box { min-height: 0; padding: 3px; font-size: 1.1rem; }
+body.game-running.problems-running .numpad .key-btn { padding: 0; line-height: 1; min-height: 0; }
+
+@media (max-width: 700px) {
+  .problem-categories { grid-template-columns: minmax(0, 1fr); }
+  .problem-reading-options { grid-template-columns: minmax(0, 1fr); }
+  #problemFontBtn { padding: 5px; font-size: 0.7rem; }
+}
+
+@media (max-width: 950px) {
+  body.game-running.problems-running .duel-vertical .problem-full,
+  body.game-running.problems-running .duel-face .problem-full,
+  body.game-running.problems-running .duel-vertical .problem-kicker,
+  body.game-running.problems-running .duel-face .problem-kicker,
+  body.game-running.problems-running .duel-vertical .decimal-hint,
+  body.game-running.problems-running .duel-face .decimal-hint { display: none; }
+  body.game-running.problems-running .duel-vertical .problem-compact,
+  body.game-running.problems-running .duel-face .problem-compact { display: inline; }
+  body.game-running.problems-running .players-wrap.duel-vertical .player-panel,
+  body.game-running.problems-running .players-wrap.duel-face .player-panel {
+    grid-template-rows: auto 0 0 26px minmax(80px, 1.5fr) auto 0 24px minmax(76px, 0.8fr) 26px;
+    padding: 4px;
+    gap: 1px;
+  }
+  body.game-running.problems-running .duel-vertical .streak-badge,
+  body.game-running.problems-running .duel-face .streak-badge { display: none; }
+  body.game-running.problems-running .duel-vertical .panel-timer,
+  body.game-running.problems-running .duel-face .panel-timer { width: 24px; height: 24px; font-size: 0.75rem; }
+  body.game-running.problems-running .duel-vertical .action-row,
+  body.game-running.problems-running .duel-face .action-row { height: 26px; }
+  body.game-running.problems-running .duel-vertical .operation.problem-operation,
+  body.game-running.problems-running .duel-face .operation.problem-operation { font-size: 0.9rem; }
+  body.game-running.problems-running .duel-vertical .player-head,
+  body.game-running.problems-running .duel-face .player-head { gap: 3px; }
+  body.game-running.problems-running .duel-vertical .solution-btn,
+  body.game-running.problems-running .duel-face .solution-btn { padding: 3px 5px; font-size: 0.65rem; }
+  body.game-running.problems-running .duel-vertical .numpad,
+  body.game-running.problems-running .duel-face .numpad { gap: 2px; }
+  body.game-running.problems-running .duel-vertical .key-btn,
+  body.game-running.problems-running .duel-face .key-btn { font-size: 0.8rem; }
+  body.game-running.problems-running .duel-vertical .problem-reason,
+  body.game-running.problems-running .duel-face .problem-reason { display: none; }
 }
 
 

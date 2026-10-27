@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;600;700&family=Noto+Color+Emoji&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="renovacion.css" />
 </head>
 <body>
   <div class="theme-panel" aria-label="Selector de tema">
@@ -38,14 +39,23 @@
     </header>
 
     <section id="dojoScreen" class="panel dojo-screen active" aria-label="Configuración de partida">
+      <div class="dojo-intro"><span class="section-eyebrow">TU ZONA DE ENTRENAMIENTO</span><h2>Un reto a tu medida</h2><p>Elige cómo jugar, prepara tu reto y entra al dojo.</p></div>
       <div class="settings-grid">
         <div class="config-box">
-          <p class="label">Modo</p>
+          <p class="label"><span class="step-marker">1</span> Cómo quieres jugar</p>
           <div class="mode-buttons" role="radiogroup" aria-label="Modo de juego">
             <button class="mode-btn active" type="button" data-mode="single">👤 Entrenamiento</button>
             <button class="mode-btn" type="button" data-mode="duel">⚔️ Batalla</button>
             <button class="mode-btn" type="button" data-mode="online">🌐 Batalla online</button>
             <button class="mode-btn" type="button" data-mode="teacher">🧑‍🏫 Modo Maestro</button>
+          </div>
+        </div>
+
+        <div class="config-box" id="practiceBox">
+          <p class="label"><span class="step-marker">2</span> Qué quieres practicar</p>
+          <div class="mode-buttons" aria-label="Tipo de práctica">
+            <button class="mode-btn activity-btn active" type="button" data-activity="calculo">🧮 Cálculo</button>
+            <button class="mode-btn activity-btn" type="button" data-activity="problemas">📖 Problemas</button>
           </div>
         </div>
 
@@ -55,7 +65,7 @@
           <div class="mode-buttons">
             <button id="joinOnlineBtn" class="btn-mini" type="button">🔑 Unirse con código</button>
           </div>
-          <p class="hint">Para crear sala, configura operaciones y pulsa el botón grande de empezar. Comparte el código con tus compañeros.</p>
+          <p class="hint">Para crear sala, elige cálculo o problemas, ajusta la actividad y pulsa el botón grande de empezar. Comparte el código con tus compañeros.</p>
           <div id="onlineHostLobby" class="room-code-card hidden" aria-live="polite">
             <div class="lobby-hero-row">
               <div class="lobby-hero-copy">
@@ -114,6 +124,55 @@
             <label>Min <input id="customMinInput" type="number" min="0" max="30" value="1" /></label>
             <label>Seg <input id="customSecInput" type="number" min="0" max="59" value="0" /></label>
           </div>
+        </div>
+
+        <div class="config-box hidden" id="problemsBox">
+          <p class="label">📖 Banco de problemas</p>
+          <p class="hint">1320 plantillas con soluciones: enteros, fracciones y MCM/MCD. Escoge una familia y los tipos que quieres practicar.</p>
+          <label class="problem-family-label">Familia de problemas<select data-problem-extra="_family"><option value="enteros">🔢 Números enteros</option><option value="fracciones">🍰 Fracciones</option><option value="mcmMcd">🔁 MCM y MCD</option></select></label>
+          <div class="problem-extra-options problem-digit-range" data-problem-families="fracciones"><label>Cifras del numerador<select data-problem-extra="_fractionNumerator"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select></label><label>Cifras del denominador<select data-problem-extra="_fractionDenominator"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select></label><p class="hint">Responde con una fracción como 3/4. Se aceptan fracciones equivalentes. Las restas no dan resultados negativos.</p></div>
+          <div class="problem-extra-options" data-problem-families="mcmMcd"><div class="theory-type-buttons"><label><input type="checkbox" data-problem-extra="_mcmEnabled" checked /> 🔁 Mínimo común múltiplo</label><label><input type="checkbox" data-problem-extra="_mcdEnabled" checked /> 📦 Máximo común divisor</label></div><div class="problem-digit-range"><label>Cifras por número<select data-problem-extra="_theoryDigits"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select></label><label>Cantidad de números<select data-problem-extra="_theoryCount"><option value="2">2 números distintos</option><option value="3">3 números distintos</option><option value="4">4 números distintos</option></select></label></div><p class="hint">40 problemas de MCM, 40 de MCD y 40 que utilizan ambos. En combinados se aplican las cifras a los datos dados, no a los resultados intermedios.</p></div>
+          <div class="problem-reading-options">
+            <label>Qu&eacute; problemas aparecen <select id="problemMixSelect"><option value="individuales">Solo individuales: un tipo en cada problema</option><option value="combinados">Solo combinados: todos los tipos marcados</option><option value="mixto">Individuales y combinados</option></select></label>
+            <label>Letra del enunciado <select id="problemFontSelect"><option value="imprenta">Imprenta</option><option value="ligada">Ligada escolar</option></select></label>
+          </div>
+          <p class="hint" data-problem-families="enteros">M&iacute;nimo y m&aacute;ximo iguales = cifras fijas. Si son distintos, se genera un intervalo. Los combinados incluyen todos los tipos marcados y tienen al menos dos pasos; la dificultad por categor&iacute;a se aplica a los individuales.</p>
+          <div class="problem-categories" data-problem-families="enteros fracciones">
+            <details class="problem-category">
+              <summary><span>&#10133; Problemas de sumas</span><label class="problem-category-enable"><input type="checkbox" data-problem-kind="suma" data-problem-key="enabled" checked /> Activar</label></summary>
+              <div class="problem-category-body"><p class="hint" data-problem-families="fracciones">Junta cantidades expresadas en fracciones.</p>
+                <label>Dificultad (individuales) <select data-problem-kind="suma" data-problem-key="difficulty"><option value="facil">F&aacute;cil &middot; frases cortas, un paso</option><option value="media">Media &middot; razonar un paso</option><option value="avanzada">Avanzada &middot; dos pasos</option><option value="todas">Todas</option></select></label>
+                <div class="problem-digit-range"><label>M&iacute;nimo <select data-problem-kind="suma" data-problem-key="minDigits" aria-label="Cifras m&iacute;nimas en sumas"></select></label><label>M&aacute;ximo <select data-problem-kind="suma" data-problem-key="maxDigits" aria-label="Cifras m&aacute;ximas en sumas"></select></label></div>
+                <div class="problem-carry"><p class="label">Llevadas</p><div class="problem-carry-buttons" role="group" aria-label="Llevadas en sumas"><button type="button" data-problem-kind="suma" data-problem-carry="ambas">Ambas</button><button type="button" data-problem-kind="suma" data-problem-carry="sin">Sin llevadas</button><button type="button" data-problem-kind="suma" data-problem-carry="con">Con llevadas</button></div></div>
+              </div>
+            </details>
+            <details class="problem-category">
+              <summary><span>&#10134; Problemas de restas</span><label class="problem-category-enable"><input type="checkbox" data-problem-kind="resta" data-problem-key="enabled" checked /> Activar</label></summary>
+              <div class="problem-category-body"><p class="hint" data-problem-families="fracciones">Calcula la cantidad que queda; el resultado no es negativo.</p>
+                <label>Dificultad (individuales) <select data-problem-kind="resta" data-problem-key="difficulty"><option value="facil">F&aacute;cil &middot; frases cortas, un paso</option><option value="media">Media &middot; razonar un paso</option><option value="avanzada">Avanzada &middot; dos pasos</option><option value="todas">Todas</option></select></label>
+                <div class="problem-digit-range"><label>M&iacute;nimo <select data-problem-kind="resta" data-problem-key="minDigits" aria-label="Cifras m&iacute;nimas en restas"></select></label><label>M&aacute;ximo <select data-problem-kind="resta" data-problem-key="maxDigits" aria-label="Cifras m&aacute;ximas en restas"></select></label></div>
+                <div class="problem-carry"><p class="label">Llevadas / pr&eacute;stamos</p><div class="problem-carry-buttons" role="group" aria-label="Llevadas en restas"><button type="button" data-problem-kind="resta" data-problem-carry="ambas">Ambas</button><button type="button" data-problem-kind="resta" data-problem-carry="sin">Sin llevadas</button><button type="button" data-problem-kind="resta" data-problem-carry="con">Con llevadas</button></div></div>
+              </div>
+            </details>
+            <details class="problem-category">
+              <summary><span>&#10006; Problemas de multiplicaci&oacute;n</span><label class="problem-category-enable"><input type="checkbox" data-problem-kind="multiplicacion" data-problem-key="enabled" /> Activar</label></summary>
+              <div class="problem-category-body"><p class="hint" data-problem-families="fracciones">Calcula una cantidad proporcional a otra.</p>
+                <label>Dificultad (individuales) <select data-problem-kind="multiplicacion" data-problem-key="difficulty"><option value="facil">F&aacute;cil &middot; frases cortas, un paso</option><option value="media">Media &middot; razonar un paso</option><option value="avanzada">Avanzada &middot; dos pasos</option><option value="todas">Todas</option></select></label>
+                <fieldset class="problem-operand-range"><legend>Multiplicador 1</legend><div class="problem-digit-range"><label>M&iacute;nimo <select data-problem-kind="multiplicacion" data-problem-operand="first" data-problem-key="minDigits" aria-label="Cifras m&iacute;nimas: Multiplicador 1"></select></label><label>M&aacute;ximo <select data-problem-kind="multiplicacion" data-problem-operand="first" data-problem-key="maxDigits" aria-label="Cifras m&aacute;ximas: Multiplicador 1"></select></label></div></fieldset><fieldset class="problem-operand-range"><legend>Multiplicador 2</legend><div class="problem-digit-range"><label>M&iacute;nimo <select data-problem-kind="multiplicacion" data-problem-operand="second" data-problem-key="minDigits" aria-label="Cifras m&iacute;nimas: Multiplicador 2"></select></label><label>M&aacute;ximo <select data-problem-kind="multiplicacion" data-problem-operand="second" data-problem-key="maxDigits" aria-label="Cifras m&aacute;ximas: Multiplicador 2"></select></label></div></fieldset>
+                <p class="hint" data-problem-families="enteros">Grupos iguales y problemas de dos pasos.</p>
+              </div>
+            </details>
+            <details class="problem-category">
+              <summary><span>&#10135; Problemas de divisi&oacute;n</span><label class="problem-category-enable"><input type="checkbox" data-problem-kind="division" data-problem-key="enabled" /> Activar</label></summary>
+              <div class="problem-category-body"><p class="hint" data-problem-families="fracciones">Averigua el total a partir de una parte conocida.</p>
+                <label>Dificultad (individuales) <select data-problem-kind="division" data-problem-key="difficulty"><option value="facil">F&aacute;cil &middot; frases cortas, un paso</option><option value="media">Media &middot; razonar un paso</option><option value="avanzada">Avanzada &middot; dos pasos</option><option value="todas">Todas</option></select></label>
+                <fieldset class="problem-operand-range"><legend>Dividendo</legend><div class="problem-digit-range"><label>M&iacute;nimo <select data-problem-kind="division" data-problem-operand="first" data-problem-key="minDigits" aria-label="Cifras m&iacute;nimas: Dividendo"></select></label><label>M&aacute;ximo <select data-problem-kind="division" data-problem-operand="first" data-problem-key="maxDigits" aria-label="Cifras m&aacute;ximas: Dividendo"></select></label></div></fieldset><fieldset class="problem-operand-range"><legend>Divisor</legend><div class="problem-digit-range"><label>M&iacute;nimo <select data-problem-kind="division" data-problem-operand="second" data-problem-key="minDigits" aria-label="Cifras m&iacute;nimas: Divisor"></select></label><label>M&aacute;ximo <select data-problem-kind="division" data-problem-operand="second" data-problem-key="maxDigits" aria-label="Cifras m&aacute;ximas: Divisor"></select></label></div></fieldset>
+                <p class="hint" data-problem-families="enteros">Repartos exactos, sin resto.</p>
+              </div>
+            </details>
+          </div>
+          <p id="problemsSummary" class="hint" aria-live="polite"></p>
+          <p class="hint">En enteros se respetan los límites del contexto y se excluyen las plantillas incompatibles. Responde sin separadores de miles; en fracciones puedes escribir 3/4 o una fracción equivalente. «Ver solución» explica los pasos y no da puntos.</p>
         </div>
 
         <div class="config-box" id="operationsBox">
@@ -270,6 +329,86 @@
                 </span>
               </label>
               <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="fractionAdd" />
+                <span class="op-name">+ Sumas de fracciones</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="fractionAdd" data-setting-key="numeratorMax" aria-label="Cifras del numerador en sumas de fracciones">
+                    <option value="1">Numerador: 1 cifra</option>
+                    <option value="2" selected>Numerador: 2 cifras</option>
+                    <option value="3">Numerador: 3 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="fractionAdd" data-setting-key="denominatorMax" aria-label="Cifras del denominador en sumas de fracciones">
+                    <option value="1">Denominador: 1 cifra</option>
+                    <option value="2" selected>Denominador: 2 cifras</option>
+                    <option value="3">Denominador: 3 cifras</option>
+                  </select>
+                </span>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="fractionSub" />
+                <span class="op-name">- Restas de fracciones</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="fractionSub" data-setting-key="numeratorMax" aria-label="Cifras del numerador en restas de fracciones">
+                    <option value="1">Numerador: 1 cifra</option>
+                    <option value="2" selected>Numerador: 2 cifras</option>
+                    <option value="3">Numerador: 3 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="fractionSub" data-setting-key="denominatorMax" aria-label="Cifras del denominador en restas de fracciones">
+                    <option value="1">Denominador: 1 cifra</option>
+                    <option value="2" selected>Denominador: 2 cifras</option>
+                    <option value="3">Denominador: 3 cifras</option>
+                  </select>
+                </span>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="fractionMul" />
+                <span class="op-name">&#215; Multiplicaciones de fracciones</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="fractionMul" data-setting-key="numeratorMax" aria-label="Cifras del numerador en multiplicaciones de fracciones">
+                    <option value="1">Numerador: 1 cifra</option>
+                    <option value="2" selected>Numerador: 2 cifras</option>
+                    <option value="3">Numerador: 3 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="fractionMul" data-setting-key="denominatorMax" aria-label="Cifras del denominador en multiplicaciones de fracciones">
+                    <option value="1">Denominador: 1 cifra</option>
+                    <option value="2" selected>Denominador: 2 cifras</option>
+                    <option value="3">Denominador: 3 cifras</option>
+                  </select>
+                </span>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="fractionDiv" />
+                <span class="op-name">&#247; Divisiones de fracciones</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="fractionDiv" data-setting-key="numeratorMax" aria-label="Cifras del numerador en divisiones de fracciones">
+                    <option value="1">Numerador: 1 cifra</option>
+                    <option value="2" selected>Numerador: 2 cifras</option>
+                    <option value="3">Numerador: 3 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="fractionDiv" data-setting-key="denominatorMax" aria-label="Cifras del denominador en divisiones de fracciones">
+                    <option value="1">Denominador: 1 cifra</option>
+                    <option value="2" selected>Denominador: 2 cifras</option>
+                    <option value="3">Denominador: 3 cifras</option>
+                  </select>
+                </span>
+              </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="fractionCombined" />
+                <span class="op-name">&#129513; Combinadas con fracciones</span>
+                <span class="op-configs">
+                  <select class="op-config-select digits-select" data-setting-op="fractionCombined" data-setting-key="numeratorMax" aria-label="Cifras del numerador en combinadas con fracciones">
+                    <option value="1">Numerador: 1 cifra</option>
+                    <option value="2" selected>Numerador: 2 cifras</option>
+                    <option value="3">Numerador: 3 cifras</option>
+                  </select>
+                  <select class="op-config-select digits-select" data-setting-op="fractionCombined" data-setting-key="denominatorMax" aria-label="Cifras del denominador en combinadas con fracciones">
+                    <option value="1">Denominador: 1 cifra</option>
+                    <option value="2" selected>Denominador: 2 cifras</option>
+                    <option value="3">Denominador: 3 cifras</option>
+                  </select>
+                </span>
+              </label>
+              <label class="op-row">
                 <input class="op-toggle" type="checkbox" data-op="percent" />
                 <span class="op-name">📊 Porcentajes</span>
                 <select class="op-config-select digits-select" data-setting-op="percent" data-setting-key="digits">
@@ -287,6 +426,17 @@
                   <option value="3">Radicando: 3 cifras</option>
                 </select>
               </label>
+              <label class="op-row">
+                <input class="op-toggle" type="checkbox" data-op="primeFactors" />
+                <span class="op-name">🧩 Descomposición en factores primos</span>
+                <select class="op-config-select digits-select" data-setting-op="primeFactors" data-setting-key="digits" aria-label="Cifras del número a factorizar">
+                  <option value="1">Número: 1 cifra</option>
+                  <option value="2" selected>Número: 2 cifras</option>
+                  <option value="3">Número: 3 cifras</option>
+                </select>
+              </label>
+<label class="op-row"><input class="op-toggle" type="checkbox" data-op="mcm" /><span class="op-name">🔁 Mínimo común múltiplo</span><span class="op-configs"><select class="op-config-select" data-setting-op="mcm" data-setting-key="digits" aria-label="Cifras por número en MCM"><option value="1" >1 cifra</option><option value="2" selected>2 cifras</option><option value="3" >3 cifras</option></select><select class="op-config-select" data-setting-op="mcm" data-setting-key="count" aria-label="Cantidad de números en MCM"><option value="2">2 números</option><option value="3">3 números</option><option value="4">4 números</option></select></span></label>
+<label class="op-row"><input class="op-toggle" type="checkbox" data-op="mcd" /><span class="op-name">📦 Máximo común divisor</span><span class="op-configs"><select class="op-config-select" data-setting-op="mcd" data-setting-key="digits" aria-label="Cifras por número en MCD"><option value="1" >1 cifra</option><option value="2" selected>2 cifras</option><option value="3" >3 cifras</option></select><select class="op-config-select" data-setting-op="mcd" data-setting-key="count" aria-label="Cantidad de números en MCD"><option value="2">2 números</option><option value="3">3 números</option><option value="4">4 números</option></select></span></label>
             </div>
           </details>
           <div id="opsChips" class="ops-chips" aria-live="polite"></div>
@@ -311,7 +461,7 @@
           </div>
         </div>
 
-        <div class="config-box" id="gameOptionsBox">
+        <details class="config-box advanced-options" id="gameOptionsBox"><summary>⚙️ Personaliza tu partida <span>Sonidos, rachas y reglas</span></summary><div class="advanced-options-body">
           <label class="toggle-line"><input id="muteToggle" type="checkbox" /> 🔇 Silenciar sonidos</label>
           <label class="toggle-line"><input id="streakToggle" type="checkbox" checked /> 🔥 Activar rachas + eventos sorpresa</label>
           <label class="toggle-line"><input id="decimalsToggle" type="checkbox" /> 🔢 Activar decimales</label>
@@ -325,7 +475,7 @@
               <option value="3">3 decimales</option>
             </select>
           </div>
-        </div>
+        </div></details>
       </div>
 
       <button id="startBtn" class="btn-main start-combat-btn" type="button">
@@ -334,7 +484,7 @@
         <span class="sword-ico right">⚔️</span>
       </button>
 
-      <div class="config-box hall-box">
+      <details class="hall-archive"><summary>🏆 Cuadro de los Grandes Maestros <span>Ver tus marcas</span></summary><div class="config-box hall-box">
         <div class="hall-head">
           <p class="label hall-title">🏆 Cuadro de los Grandes Maestros 🏆</p>
           <button id="clearHallBtn" class="btn-mini" type="button">🧹 Limpiar</button>
@@ -363,13 +513,13 @@
             <tbody id="hallBody"></tbody>
           </table>
         </div>
-      </div>
+      </div></details>
     </section>
 
-    <section id="arenaScreen" class="panel arena-screen hidden" aria-label="Arena de cálculo">
+    <section id="arenaScreen" class="panel arena-screen hidden" aria-label="Arena de juego">
       <div class="arena-top">
         <button id="backBtn" class="btn-mini" type="button">🏠 Volver</button>
-        <div class="arena-spacer" aria-hidden="true"></div>
+        <div class="arena-spacer"><button id="problemFontBtn" class="btn-mini hidden" type="button" aria-label="Cambiar entre letra de imprenta y ligada escolar">Aa &middot; Imprenta</button></div>
         <div id="matchBadge" class="match-badge">Entrenamiento</div>
       </div>
       <button id="floatingRoomCode" class="floating-room-code hidden" type="button" aria-label="Copiar código de sala">
@@ -433,16 +583,24 @@
     <h3>❓ Cómo funciona</h3>
     <ol>
       <li>Elige modo, tiempo y operaciones con sus cifras.</li>
+      <li>📖 Elige Problemas y marca los tipos que quieres practicar. Puedes jugar con individuales (un tipo por problema), combinados (todos los tipos marcados en cada problema) o ambos. Los combinados necesitan al menos dos tipos.</li>
+      <li>Usa mínimo y máximo de cifras: si coinciden, las cifras son fijas. Elige letra de imprenta o ligada escolar; el botón Aa también permite cambiarla durante la partida.</li>
+      <li>En sumas y restas puedes elegir con llevadas, sin llevadas o ambas. Para empezar con 6 años, prueba Fácil y 1 cifra. Las restas con llevadas necesitan al menos 2 cifras. El reloj se lee como minutos:segundos, por ejemplo 2:50.</li>
+      <li>En problemas elige una familia: enteros, fracciones o MCM/MCD. Responde sin separadores de miles; en fracciones utiliza, por ejemplo, 3/4. «Ver solución» muestra los pasos sin sumar puntos. Dale más tiempo a la partida para poder leer.</li>
       <li>Pulsa <strong>¡EMPEZAR EL COMBATE!</strong>.</li>
       <li>Escribe con el teclado y pulsa <strong>🚀 ¡ATACAR!</strong>.</li>
-      <li>Acierto: <strong>+10</strong> puntos. Fallo: <strong>-5</strong>.</li>
+      <li>Acierto: <strong>+10</strong> puntos. Fallo: <strong>-5</strong> si activas Penalizar fallos. Los puntos nunca bajan de cero.</li>
       <li>⏭️ Si te atascas, usa <strong>Saltar</strong>: cambia de operación y resta <strong>-3</strong> puntos.</li>
-      <li>🧠 En combinadas <strong>avanzado</strong>, cada acierto vale <strong>+20</strong> puntos.</li>
+      <li>🧠 En combinadas <strong>avanzado</strong> y <strong>combinadas con fracciones</strong>, cada acierto vale <strong>+20</strong> puntos.</li>
       <li>🔥 Si las rachas están activas, pueden aparecer eventos sorpresa aleatorios durante la partida.</li>
       <li>😈 Algunos eventos son trampa: pueden subir penalización o incluso dejar puntos a 0 si fallas.</li>
       <li>🔢 Usa la coma <strong>,</strong> para decimales (teclado en pantalla y físico).</li>
       <li>Las raíces cuadradas son exactas: las cifras indican el tamaño del número dentro de la raíz (por ejemplo, &#8730;81 tiene 2 cifras).</li>
-      <li>💡 Ver solución muestra la respuesta. Esa pregunta no suma puntos ni aciertos; pulsa Siguiente para continuar.</li>
+      <li>🍰 Suma, resta, multiplica, divide o combina fracciones. Elige de 1 a 3 cifras en numeradores y denominadores. Responde con / (por ejemplo, 3/4); también valen las fracciones equivalentes, como 6/8. Puedes pulsar <strong>F</strong> o <strong>:</strong> para escribir /. Los resultados se calculan exactamente, sin redondear.</li>
+      <li>🧩 En factores primos escribe el producto completo: para 12, responde <strong>2 x 2 x 3</strong>. Usa la tecla táctil &#215;, la letra X o el asterisco *. El orden de los factores no importa y todos deben ser primos.</li>
+      <li>🔁 MCM y MCD: elige 2, 3 o 4 números distintos de 1, 2 o 3 cifras. El MCM es el menor múltiplo positivo común; el MCD, el mayor divisor común. También tienen problemas individuales y combinados.</li>
+      <li>⚙️ Abre Personaliza tu partida para cambiar sonidos, rachas y reglas. El cuadro de marcas se despliega al pulsar su título.</li>
+      <li>💡 Ver solución muestra la respuesta. En fracciones verás el resultado y su simplificación; ambas formas son válidas. Esa pregunta no suma puntos ni aciertos; pulsa Siguiente para continuar.</li>
       <li>⌨️ Teclado físico: en duelo, jugador 1 usa teclas numéricas y jugador 2 el teclado numérico.</li>
       <li>Cuando acaba el tiempo, el resultado se guarda en el Cuadro de los Grandes Maestros.</li>
     </ol>
@@ -488,6 +646,10 @@
   </footer>
 
   <script src="firebase-online.js" charset="utf-8"></script>
+  <script src="banco-problemas/datos.js" charset="utf-8"></script>
+  <script src="problemas.js" charset="utf-8"></script>
+  <script src="banco-problemas/ampliado-datos.js" charset="utf-8"></script>
+  <script src="matematicas-extra.js" charset="utf-8"></script>
   <script src="app.js" charset="utf-8"></script>
 </body>
 </html>

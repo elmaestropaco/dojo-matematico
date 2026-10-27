@@ -16,15 +16,24 @@ const OPERATION_LABELS = {
   combined: "Operaciones combinadas (fácil)",
   combinedAdv: "Operaciones combinadas (avanzado)",
   fraction: "Fracciones (operador)",
+  fractionAdd: "Sumas de fracciones",
+  fractionSub: "Restas de fracciones",
+  fractionMul: "Multiplicaciones de fracciones",
+  fractionDiv: "Divisiones de fracciones",
+  fractionCombined: "Combinadas con fracciones",
   percent: "Porcentajes",
-  sqrt: "Raíces cuadradas exactas"
+  sqrt: "Raíces cuadradas exactas",
+  primeFactors: "Descomposición en factores primos",
+  mcm: "Mínimo común múltiplo",
+  mcd: "Máximo común divisor"
 };
 
 const SCORE_MIN = 0;
 const SCORE_MAX = 250;
 const SKIP_PENALTY = 3;
 const DECIMAL_SEPARATOR = ",";
-const MAX_INPUT_LENGTH = 12;
+const MAX_INPUT_LENGTH = 32;
+const FRACTION_OPERATION_KEYS = ["fractionAdd", "fractionSub", "fractionMul", "fractionDiv", "fractionCombined"];
 const EVENT_POOL = [
   "double_points",
   "no_penalty",
@@ -37,6 +46,12 @@ const EVENT_POOL = [
 
 const state = {
   mode: "single",
+  activity: "calculo",
+  problemMix: "individuales",
+  problemFont: "imprenta",
+  problemSettings: { suma: { enabled: true, difficulty: "facil", digitMode: "fijas", minDigits: 2, maxDigits: 2, carryMode: "ambas" }, resta: { enabled: true, difficulty: "facil", digitMode: "fijas", minDigits: 2, maxDigits: 2, carryMode: "ambas" }, multiplicacion: { enabled: false, difficulty: "facil", digitMode: "fijas", minDigits: 2, maxDigits: 2 }, division: { enabled: false, difficulty: "facil", digitMode: "fijas", minDigits: 2, maxDigits: 2 } },
+  problemIndex: 0,
+  problemSeed: 1,
   orientation: "vertical",
   muted: false,
   isRunning: false,
@@ -62,8 +77,16 @@ const state = {
     combined: { enabled: false, digits: 2 },
     combinedAdv: { enabled: false, digits: 2 },
     fraction: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
+    fractionAdd: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
+    fractionSub: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
+    fractionMul: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
+    fractionDiv: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
+    fractionCombined: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
     percent: { enabled: false, digits: 2 },
-    sqrt: { enabled: false, digits: 2 }
+    sqrt: { enabled: false, digits: 2 },
+    primeFactors: { enabled: false, digits: 2 },
+    mcm: { enabled: false, digits: 2, count: 2 },
+    mcd: { enabled: false, digits: 2, count: 2 }
   },
   displayMode: "horizontal",
   streaksEnabled: true,
@@ -76,6 +99,12 @@ const state = {
 
 const refs = {
   body: document.body,
+  practiceBox: document.getElementById("practiceBox"),
+  problemsBox: document.getElementById("problemsBox"),
+  problemsSummary: document.getElementById("problemsSummary"),
+  problemMixSelect: document.getElementById("problemMixSelect"),
+  problemFontSelect: document.getElementById("problemFontSelect"),
+  problemFontBtn: document.getElementById("problemFontBtn"),
   dojoScreen: document.getElementById("dojoScreen"),
   arenaScreen: document.getElementById("arenaScreen"),
   playersWrap: document.getElementById("playersWrap"),
@@ -162,9 +191,11 @@ const onlineNameItems = [];
 init();
 
 function init() {
+  document.querySelector('.hero-head').appendChild(document.querySelector('.theme-panel'));
   setupOnlineNamePanel();
   setupOnlineCreatePanel();
   applySavedPreferences();
+  state.problemSettings = window.NinjaProblems.normalize(state.problemSettings);
   bindSettingsUI();
   bindKeyboardSupport();
   applySavedTheme();
@@ -173,17 +204,71 @@ function init() {
   applyModeDependentUI();
   updateOpsSummary();
   renderHallOfFame();
+  if (window.ResizeObserver) new ResizeObserver(fitTeacherGrid).observe(refs.teacherGrid);
+  window.addEventListener('resize', fitTeacherGrid);
 }
 
 function bindSettingsUI() {
-  document.querySelectorAll(".mode-btn").forEach((button) => {
+  document.querySelectorAll('[data-problem-extra]').forEach(control => control.addEventListener('change', () => {
+    state.problemSettings[control.dataset.problemExtra] = control.type === 'checkbox' ? control.checked : control.value;
+    state.problemSettings = window.NinjaProblems.normalize(state.problemSettings);
+    syncProblemControls();
+    savePreferences();
+  }));
+  document.fonts?.addEventListener("loadingdone", () => { refs.playersWrap.querySelectorAll(".operation").forEach(fitOperationElement); fitTeacherGrid(); });
+  document.querySelectorAll(".mode-btn[data-mode]").forEach((button) => {
     button.addEventListener("click", () => {
       state.mode = button.dataset.mode;
-      setActiveByData(".mode-btn", "mode", state.mode);
+      setActiveByData(".mode-btn[data-mode]", "mode", state.mode);
       applyModeDependentUI();
       savePreferences();
     });
   });
+
+  document.querySelectorAll(".activity-btn").forEach(button => button.addEventListener("click", () => {
+    state.activity = button.dataset.activity;
+    syncProblemControls();
+    savePreferences();
+  }));
+  refs.problemMixSelect.addEventListener("change", () => {
+    state.problemMix = refs.problemMixSelect.value;
+    syncProblemControls();
+    savePreferences();
+  });
+  const setProblemFont = font => {
+    state.problemFont = font;
+    syncProblemControls();
+    savePreferences();
+    if (state.isRunning) repaintPlayers();
+    document.fonts?.load('400 20px "Escolar Ligada"').then(() => refs.playersWrap.querySelectorAll(".operation").forEach(fitOperationElement));
+  };
+  refs.problemFontSelect.addEventListener("change", () => setProblemFont(refs.problemFontSelect.value));
+  refs.problemFontBtn.addEventListener("click", () => setProblemFont(state.problemFont === "imprenta" ? "ligada" : "imprenta"));
+  document.querySelectorAll("[data-problem-key]").forEach(control => {
+    if (["minDigits", "maxDigits"].includes(control.dataset.problemKey)) {
+      control.innerHTML = Array.from({ length: 9 }, (_, i) => `<option value="${i + 1}">${i + 1} cifra${i ? "s" : ""}</option>`).join("");
+    }
+    control.addEventListener("change", () => {
+      const key = control.dataset.problemKey;
+      const base = state.problemSettings[control.dataset.problemKind];
+      const cfg = control.dataset.problemOperand ? base.operandDigits[control.dataset.problemOperand] : base;
+      cfg[key] = key === "enabled" ? control.checked : ["minDigits", "maxDigits"].includes(key) ? Number(control.value) : control.value;
+      delete cfg.digitMode;
+      if (key === "minDigits" && cfg.minDigits > cfg.maxDigits) cfg.maxDigits = cfg.minDigits;
+      if (key === "maxDigits") {
+        if (cfg.maxDigits < cfg.minDigits) cfg.minDigits = cfg.maxDigits;
+      }
+      state.problemSettings = window.NinjaProblems.normalize(state.problemSettings);
+      syncProblemControls();
+      savePreferences();
+    });
+  });
+
+  document.querySelectorAll("[data-problem-carry]").forEach(button => button.addEventListener("click", () => {
+    state.problemSettings[button.dataset.problemKind].carryMode = button.dataset.problemCarry;
+    syncProblemControls();
+    savePreferences();
+  }));
 
   document.querySelectorAll(".orientation-btn").forEach((button) => {
     button.addEventListener("click", () => {
@@ -311,8 +396,8 @@ function applyModeDependentUI() {
   refs.onlineCreatePanel?.classList.toggle("hidden", !isOnline);
   refs.teacherBox.classList.toggle("hidden", !isTeacher);
   updateOnlineNamePanel(isOnline && !refs.body.classList.contains("online-lobby-running"));
-  updateOnlineCreatePanel(isOnline && !refs.body.classList.contains("online-lobby-running"));
   updateTeacherCreatePanel(false);
+  updateOnlineCreatePanel(isOnline && !refs.body.classList.contains("online-lobby-running"));
 }
 
 function setupOnlineNamePanel() {
@@ -325,7 +410,7 @@ function setupOnlineNamePanel() {
 }
 
 function setupOnlineCreatePanel() {
-  const nodes = [refs.durationBox, refs.operationsBox, refs.formatBox, refs.gameOptionsBox, document.getElementById("startBtn")].filter(Boolean);
+  const nodes = [refs.durationBox, refs.practiceBox, refs.problemsBox, refs.operationsBox, refs.formatBox, refs.gameOptionsBox, document.getElementById("startBtn")].filter(Boolean);
   nodes.forEach((node) => {
     const placeholder = document.createComment(`online-create-placeholder-${node.id || node.tagName}`);
     node.parentNode.insertBefore(placeholder, node);
@@ -383,6 +468,49 @@ function moveCreateItems(target, { includeStart } = { includeStart: true }) {
 
     node.classList.toggle("hidden", !includeStart && isStartButton && refs.teacherDashboard && !refs.teacherDashboard.classList.contains("hidden"));
   });
+  syncProblemControls();
+}
+
+function syncProblemControls() {
+  const problems = state.activity === "problemas";
+  const family = state.problemSettings._family || 'enteros';
+  document.querySelectorAll('[data-problem-extra]').forEach(control => {
+    const value = state.problemSettings[control.dataset.problemExtra];
+    if (control.type === 'checkbox') control.checked = Boolean(value);
+    else control.value = String(value);
+  });
+  document.querySelectorAll('[data-problem-families]').forEach(element => element.classList.toggle('hidden', !element.dataset.problemFamilies.split(' ').includes(family)));
+  document.querySelectorAll('.problem-categories .problem-carry, .problem-categories .problem-digit-range, .problem-categories .problem-operand-range').forEach(element => element.classList.toggle('hidden', family !== 'enteros'));
+  document.querySelectorAll('.problem-category-body > label').forEach(element => element.classList.toggle('hidden', family !== 'enteros'));
+  setActiveByData(".activity-btn", "activity", state.activity);
+  refs.problemsBox.classList.toggle("hidden", !problems);
+  refs.operationsBox.classList.toggle("hidden", problems);
+  refs.formatBox.classList.toggle("hidden", problems);
+  refs.problemMixSelect.value = state.problemMix;
+  refs.problemFontSelect.value = state.problemFont;
+  refs.body.dataset.problemFont = state.problemFont;
+  refs.problemFontBtn.classList.toggle("hidden", !problems || state.mode === "teacher");
+  refs.problemFontBtn.textContent = state.problemFont === "ligada" ? "Aa · Ligada" : "Aa · Imprenta";
+  for (const control of document.querySelectorAll("[data-problem-key]")) {
+    const base = state.problemSettings[control.dataset.problemKind];
+    const cfg = control.dataset.problemOperand ? base.operandDigits[control.dataset.problemOperand] : base;
+    const key = control.dataset.problemKey;
+    if (key === "enabled") control.checked = cfg.enabled;
+    else control.value = String(cfg[key]);
+    control.disabled = key !== "enabled" && (!base.enabled || (key === "difficulty" && state.problemMix === "combinados"));
+  }
+  document.querySelectorAll("[data-problem-carry]").forEach(button => {
+    const cfg = state.problemSettings[button.dataset.problemKind];
+    button.disabled = !cfg.enabled;
+    button.setAttribute("aria-pressed", String(cfg.carryMode === button.dataset.problemCarry));
+  });
+  [refs.decimalsToggle, refs.negativeToggle, refs.streakToggle].forEach(control => control.closest("label").classList.toggle("hidden", problems));
+  refs.decimalPlacesWrap.classList.toggle("hidden", problems || !state.decimalsEnabled);
+  const pool = window.NinjaProblems?.compatible(state.problemSettings, { mix: state.problemMix }) || [];
+  const count = pool.length;
+  const combinedCount = pool.filter(template => (template.etiquetas || template.categories).length > 1).length;
+  const carryWarning = family === 'enteros' && state.problemSettings.resta.enabled && state.problemSettings.resta.carryMode === "con" && (state.problemSettings.resta.digitMode === "fijas" ? state.problemSettings.resta.minDigits : state.problemSettings.resta.maxDigits) === 1;
+  refs.problemsSummary.textContent = (count ? `✅ ${count} plantillas compatibles · Individuales: ${count - combinedCount} · Combinados: ${combinedCount}.` : "⚠️ Sin plantillas compatibles. Revisa los tipos seleccionados, cifras, dificultad o llevadas. Para combinar, marca al menos dos tipos.") + (carryWarning && state.problemMix === "individuales" ? " Las restas con llevadas necesitan al menos 2 cifras." : "");
 }
 
 function applySavedTheme() {
@@ -436,7 +564,7 @@ function loadAnalytics() {
 }
 
 function syncSettingsUIFromState() {
-  setActiveByData(".mode-btn", "mode", state.mode);
+  setActiveByData(".mode-btn[data-mode]", "mode", state.mode);
   setActiveByData(".orientation-btn", "orientation", state.orientation);
   document.querySelectorAll(".op-toggle").forEach((input) => {
     input.checked = state.operationSettings[input.dataset.op].enabled;
@@ -457,9 +585,11 @@ function syncSettingsUIFromState() {
   refs.decimalPlacesSelect.value = String(state.decimalPlaces);
   refs.decimalPlacesWrap.classList.toggle("hidden", !state.decimalsEnabled);
   refs.customTimeWrap.classList.toggle("hidden", refs.timePresetSelect.value !== "custom");
+  syncProblemControls();
 }
 
 function updateOpsSummary() {
+  if (state.activity === "problemas") { syncProblemControls(); return; }
   const enabled = getEnabledOperationKeys();
   const names = enabled.map((k) => OPERATION_LABELS[k]);
   const text = names.length ? names.join(", ") : "ninguna";
@@ -487,9 +617,10 @@ function renderOpsChips(enabledKeys) {
       : key === "divHard" ? "🧪"
       : key === "combined" ? "🧩"
       : key === "combinedAdv" ? "🧠"
-      : key === "fraction" ? "🍰"
+      : key.startsWith("fraction") ? "🍰"
       : key === "percent" ? "📊"
       : key === "sqrt" ? "\u221A"
+      : key === "primeFactors" ? "🧩"
       : "➗";
     const chip = document.createElement("span");
     chip.className = "ops-chip";
@@ -513,6 +644,8 @@ function renderOpsChips(enabledKeys) {
 function formatOpConfigLabel(key, cfg) {
   if (!cfg) return "";
   if (key === "sqrt") return `Radicando: ${cfg.digits} cifra${cfg.digits > 1 ? "s" : ""}`;
+  if (key === "primeFactors") return `Número: ${cfg.digits} cifra${cfg.digits > 1 ? "s" : ""}`;
+  if (key === 'mcm' || key === 'mcd') return `${cfg.count} números distintos · ${cfg.digits} cifra${cfg.digits > 1 ? 's' : ''}`;
   if (key === "addNoCarry" || key === "addCarry" || key === "subNoBorrow" || key === "subBorrow") {
     return `${cfg.digits} cifra${cfg.digits > 1 ? "s" : ""}`;
   }
@@ -520,7 +653,7 @@ function formatOpConfigLabel(key, cfg) {
   if (key === "div") return `Dividendo ${cfg.dividendMax} cifras · Divisor ${cfg.divisorMax} cifras`;
   if (key === "divTables") return "tablas 1-10";
   if (key === "divHard") return `Divisor ${cfg.divisorMax} cifras · máx ${cfg.maxDecimals} dec.`;
-  if (key === "fraction") return `Numerador ${cfg.numeratorMax} cifras · Denominador ${cfg.denominatorMax} cifras`;
+  if (key.startsWith("fraction")) return `Numerador ${cfg.numeratorMax} cifras · Denominador ${cfg.denominatorMax} cifras`;
   if (key === "combined" || key === "combinedAdv" || key === "percent") {
     return `${cfg.digits} cifra${cfg.digits > 1 ? "s" : ""}`;
   }
@@ -563,7 +696,7 @@ function updateDivisionConfigHint() {
 function startGame() {
   const enabledKeys = getEnabledOperationKeys();
   if (enabledKeys.length === 0) {
-    alert("Activa al menos un tipo de operación para empezar.");
+    alert(state.activity === "problemas" ? "No hay problemas compatibles. Revisa categorías, cifras y dificultad." : "Activa al menos un tipo de operación para empezar.");
     return;
   }
 
@@ -657,6 +790,10 @@ async function createTeacherRoom(enabledKeys, duration) {
 
 async function startHostedOnlineRoom() {
   if (!state.online?.code || !state.online?.isHost || !window.NinjaOnline?.enabled) return;
+  if (getEnabledOperationKeys().length === 0) {
+    alert("No hay actividades compatibles. Revisa las operaciones o los ajustes de problemas.");
+    return;
+  }
   if (state.online.isTeacher && state.online.room?.status === "finished") {
     await resetHostedOnlineRoom();
     return;
@@ -830,6 +967,7 @@ function ensureDecimalResultModeCompatibility() {
 }
 
 function requiresDecimalResultMode() {
+  if (state.activity === "problemas") return false;
   const divCfg = state.operationSettings.div;
   if (divCfg?.enabled) {
     const dividendDigits = clamp(Number(divCfg.dividendMax), 1, 9);
@@ -844,6 +982,9 @@ function requiresDecimalResultMode() {
 
 function buildOnlineConfig() {
   return {
+    activity: state.activity,
+    problemMix: state.problemMix,
+    problemSettings: clonePlain(state.problemSettings),
     operationSettings: clonePlain(state.operationSettings),
     displayMode: state.displayMode,
     streaksEnabled: state.streaksEnabled,
@@ -868,7 +1009,7 @@ function attachOnlineSession(session) {
     unsubscribe: null
   };
   state.mode = session.isTeacher ? "teacher" : "online";
-  setActiveByData(".mode-btn", "mode", state.mode);
+  setActiveByData(".mode-btn[data-mode]", "mode", state.mode);
   applyModeDependentUI();
 
   state.online.unsubscribe = window.NinjaOnline.subscribeRoom(session.code, (room) => {
@@ -887,6 +1028,7 @@ function detachOnlineSession(markOffline = true) {
 
 function handleOnlineRoomUpdate(room) {
   if (!state.online || !room) return;
+  const previousStatus = state.online.room?.status;
   state.online.room = room;
 
   if (room.config) {
@@ -897,6 +1039,20 @@ function handleOnlineRoomUpdate(room) {
     }
   }
   state.online.durationSeconds = Number(room.durationSeconds || state.online.durationSeconds || 60);
+
+  if (room.status === "lobby" && previousStatus && previousStatus !== "lobby") {
+    stopTimer();
+    stopEventSystem();
+    state.isRunning = false;
+    state.timeLeft = state.online.durationSeconds;
+    state.online.active = false;
+    state.online.teacherCountdown = false;
+    state.online.teacherResultsShown = false;
+    refs.startOverlay.classList.add("hidden");
+    refs.resultsOverlay.classList.add("hidden");
+    refs.body.classList.remove("game-running");
+    if (state.online.isTeacher) showTeacherDashboard();
+  }
 
   if (room.status === "running" && !state.online.active) {
     if (state.online.isTeacher) startTeacherMonitor(room);
@@ -1000,6 +1156,9 @@ function launchOnlineGame(room) {
 }
 
 function applyOnlineConfig(config) {
+  state.activity = config.activity === "problemas" ? "problemas" : "calculo";
+  state.problemMix = ["combinados", "mixto"].includes(config.problemMix) ? config.problemMix : "individuales";
+  if (config.problemSettings && window.NinjaProblems) state.problemSettings = window.NinjaProblems.normalize(config.problemSettings);
   if (config.operationSettings) state.operationSettings = mergeOperationSettings(config.operationSettings);
   if (["horizontal", "vertical", "mixed"].includes(config.displayMode)) state.displayMode = config.displayMode;
   if (typeof config.streaksEnabled === "boolean") state.streaksEnabled = config.streaksEnabled;
@@ -1014,6 +1173,7 @@ function applyOnlineConfig(config) {
 function mergeOperationSettings(saved) {
   const base = clonePlain(state.operationSettings);
   Object.keys(base).forEach((key) => {
+    base[key].enabled = false;
     if (!saved[key]) return;
     base[key] = { ...base[key], ...saved[key] };
   });
@@ -1059,13 +1219,52 @@ function renderOnlineLobby(room) {
   `).join("");
 }
 
+function compareMatchPlayers(a, b) {
+  return Number(b.score || 0) - Number(a.score || 0) || Number(b.correctCount || 0) - Number(a.correctCount || 0)
+    || Number(b.operationIndex || 0) - Number(a.operationIndex || 0) || String(a.name || '').localeCompare(String(b.name || ''), 'es');
+}
+
+function fitTeacherGrid() {
+  const grid = refs.teacherGrid;
+  if (!grid || refs.teacherDashboard.classList.contains('hidden') || !grid.children.length) return;
+  const width = grid.clientWidth, height = grid.clientHeight, count = grid.children.length;
+  if (!width || !height) return;
+  const gap = width < 600 ? 4 : 7;
+  let best;
+  for (let columns = 1; columns <= count; columns++) {
+    const rows = Math.ceil(count / columns), w = (width - gap * (columns - 1)) / columns, h = (height - gap * (rows - 1)) / rows;
+    if (w <= 0 || h <= 0) continue;
+    const score = Math.min(w / 210, h / 120) - Math.abs(Math.log(w / h)) * 0.04 - (rows * columns - count) * 0.015;
+    if (!best || score > best.score) best = { columns, rows, w, h, score };
+  }
+  if (!best) return;
+  const rowHeight = Math.min(best.h, Math.max(100, best.w * 0.75), 250);
+  grid.style.gridTemplateColumns = `repeat(${best.columns}, minmax(0, 1fr))`;
+  grid.style.gridTemplateRows = `repeat(${best.rows}, ${rowHeight}px)`;
+  grid.style.gap = `${gap}px`;
+  grid.dataset.density = rowHeight < 140 || best.w < 180 ? 'compact' : 'normal';
+  grid.style.setProperty('--teacher-detail-size', `${Math.max(7, Math.min(15, rowHeight * 0.12))}px`);
+  grid.dataset.space = rowHeight < 75 ? 'tight' : 'regular';
+  grid.style.setProperty('--teacher-card-pad', `${rowHeight < 75 ? 2 : rowHeight < 110 ? 6 : 10}px`);
+  for (const card of grid.children) {
+    const name = card.querySelector('.teacher-student-name');
+    if (!name) continue;
+    let size = Math.max(9, Math.min(22, rowHeight * 0.17, best.w * 0.1));
+    name.style.fontSize = `${size}px`;
+    const minimum = rowHeight < 60 ? 5 : 7;
+    while (size > minimum && (card.scrollHeight > card.clientHeight + 1 || name.scrollWidth > name.clientWidth + 1)) {
+      size -= 0.5; name.style.fontSize = `${size}px`;
+    }
+  }
+}
+
 function renderTeacherDashboard(room) {
   if (!refs.teacherDashboard || refs.teacherDashboard.classList.contains("hidden")) return;
   const isFinished = room.status === "finished" || (!state.online?.teacherCountdown && state.timeLeft <= 0 && !state.isRunning && state.online?.active);
   const rawPlayers = Object.entries(room.players || {})
     .map(([id, player]) => ({ id, ...player }))
     .filter(shouldShowOnlinePlayer)
-    .sort((a, b) => (b.score || 0) - (a.score || 0) || (b.operationIndex || 0) - (a.operationIndex || 0));
+    .sort(compareMatchPlayers);
   const players = rawPlayers.map((player, index) => ({ ...player, finalRank: index + 1 }));
 
   refs.teacherRoomCode.textContent = `Código ${state.online?.code || "---"}`;
@@ -1131,11 +1330,10 @@ function renderTeacherDashboard(room) {
     return `
       <article class="teacher-card ${index === 0 ? "leader" : ""} ${lastClass} ${isFinished ? "final-card" : ""}">
         <button class="remove-player-btn teacher-remove" type="button" data-remove-player="${escapeHtml(player.id)}" aria-label="Eliminar a ${escapeHtml(player.name || "Ninja")}">✕</button>
-        ${isFinished ? `<div class="teacher-final-rank">🏁 Puesto #${rank}</div>` : ""}
         <div class="teacher-card-top">
-          <span class="teacher-medal">${medal}</span>
-          <strong><span class="teacher-rank">#${rank}</span> ${escapeHtml(player.name || "Ninja")}</strong>
-          <span>${Number(player.score || 0)} pts</span>
+          <strong class="teacher-student-name" title="${escapeHtml(player.name || 'Ninja')}">${escapeHtml(player.name || "Ninja")}</strong>
+          <span class="teacher-medal" aria-label="Puesto ${rank}">${medal} <b class="teacher-rank">#${rank}</b></span>
+          <span class="teacher-points">${Number(player.score || 0)} pts</span>
         </div>
         <div class="teacher-progress"><span style="width:${progressPct}%"></span></div>
         <div class="teacher-last">${lastLabel}</div>
@@ -1146,6 +1344,8 @@ function renderTeacherDashboard(room) {
       </article>
     `;
   }).join("");
+  fitTeacherGrid();
+  requestAnimationFrame(fitTeacherGrid);
 
   if (isFinished && players.length > 0 && !state.online?.teacherResultsShown) {
     state.online.teacherResultsShown = true;
@@ -1155,7 +1355,7 @@ function renderTeacherDashboard(room) {
 
 function showTeacherPodiumResults(players) {
   const scores = [...players]
-    .sort((a, b) => Number(b.score || 0) - Number(a.score || 0) || Number(b.correctCount || 0) - Number(a.correctCount || 0))
+    .sort(compareMatchPlayers)
     .map((player, index) => ({ ...player, finalRank: index + 1 }));
   const topThree = scores.slice(0, 3);
   const podiumOrder = [topThree[1], topThree[0], topThree[2]].filter(Boolean);
@@ -1241,7 +1441,7 @@ function lastResultText(result) {
 
 function updateTeacherClockDisplay(seconds = null, label = "Tiempo restante") {
   if (!refs.teacherClock) return;
-  const hasSeconds = Number.isFinite(Number(seconds));
+  const hasSeconds = seconds !== null && Number.isFinite(Number(seconds));
   const safeSeconds = hasSeconds ? Math.max(0, Math.round(Number(seconds))) : null;
   const duration = Math.max(1, Number(state.gameDuration || state.online?.durationSeconds || 60));
   const ratio = hasSeconds ? clamp(safeSeconds / duration, 0, 1) : 0;
@@ -1260,6 +1460,9 @@ function updateTeacherClockDisplay(seconds = null, label = "Tiempo restante") {
 }
 
 function launchGame(enabledKeys, duration) {
+  state.problemIndex = 0;
+  state.problemSeed = Math.floor(Math.random() * 2147483647);
+  refs.body.classList.toggle("problems-running", state.activity === "problemas");
 
   initAudio();
   playGong();
@@ -1296,7 +1499,7 @@ function launchGame(enabledKeys, duration) {
     updateDuelLeadBar();
   }
 
-  if (state.streaksEnabled && state.mode !== "online") scheduleNextEvent();
+  if (state.streaksEnabled && state.mode !== "online" && state.activity !== "problemas") scheduleNextEvent();
 
   state.timerId = setInterval(() => {
     state.timeLeft -= 1;
@@ -1397,8 +1600,8 @@ function renderArena() {
       <div class="numpad" id="numpad-${player.id}"></div>
       <div class="action-row">
         <button class="action-btn clear" type="button" data-action="clear" data-player="${player.id}">C</button>
-        <button class="action-btn skip" type="button" data-action="skip" data-player="${player.id}">⏭️ Saltar</button>
-        <button class="action-btn submit" type="button" data-action="submit" data-player="${player.id}">🚀 ¡ATACAR!</button>
+        <button class="action-btn skip" type="button" data-action="skip" data-player="${player.id}" aria-label="Saltar pregunta">⏭️<span class="action-label"> Saltar</span></button>
+        <button class="action-btn submit" type="button" data-action="submit" data-player="${player.id}" aria-label="Enviar respuesta">🚀<span class="action-label"> ¡ATACAR!</span></button>
       </div>
     `;
 
@@ -1421,7 +1624,7 @@ function updatePanelTimersDisplay() {
   const countdownProgress = clamp(state.timeLeft / 10, 0, 1);
 
   refs.playersWrap.querySelectorAll(".panel-timer").forEach((timerEl) => {
-    timerEl.textContent = String(safeTime);
+    timerEl.textContent = formatSeconds(safeTime);
     timerEl.classList.toggle("warning", ratio <= 0.33 && ratio > 0.16);
     timerEl.classList.toggle("danger", ratio <= 0.16);
     timerEl.classList.toggle("last-ten", state.timeLeft > 0 && state.timeLeft <= 10);
@@ -1462,16 +1665,27 @@ function placeRouletteForMode() {
 }
 
 function buildNumpad(numpadEl, playerId) {
-  const keys = state.allowNegative
+  const fractionsEnabled = (state.activity === 'problemas' && state.problemSettings._family === 'fracciones') || getEnabledOperationKeys().some((key) => FRACTION_OPERATION_KEYS.includes(key));
+  const factorsEnabled = state.activity !== "problemas" && Boolean(state.operationSettings.primeFactors.enabled);
+  numpadEl.classList.toggle("fraction-input", fractionsEnabled || factorsEnabled);
+  const negatives = state.activity !== "problemas" && state.allowNegative;
+  numpadEl.classList.toggle("with-negative", negatives);
+  let keys = negatives
     ? ["7", "8", "9", "4", "5", "6", "1", "2", "3", "-", DECIMAL_SEPARATOR, "0"]
     : ["7", "8", "9", "4", "5", "6", "1", "2", "3", DECIMAL_SEPARATOR, "0"];
+  if (fractionsEnabled || factorsEnabled) {
+    const both = fractionsEnabled && factorsEnabled;
+    keys = ["7", "8", "9", fractionsEnabled ? "/" : "x", "4", "5", "6", both ? "x" : DECIMAL_SEPARATOR, "1", "2", "3", ...(both ? [DECIMAL_SEPARATOR] : []), "0", ...(negatives ? ["-"] : [])];
+  }
   keys.forEach((key) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "key-btn";
     button.dataset.player = String(playerId);
     button.dataset.key = key;
-    button.textContent = key;
+    button.textContent = key === "x" ? "\u00D7" : key;
+    if (key === "/") button.title = "Fracción: también puedes pulsar F o :";
+    if (key === "x") button.title = "Producto: también puedes pulsar X o *";
     numpadEl.appendChild(button);
   });
 }
@@ -1565,6 +1779,7 @@ function skipCurrentOperation(playerId) {
 function bindKeyboardSupport() {
   window.addEventListener("keydown", (event) => {
     if (!state.isRunning) return;
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
 
     const code = event.code || "";
     const key = event.key || "";
@@ -1602,6 +1817,19 @@ function appendInputChar(player, char) {
   if (!player || typeof char !== "string") return false;
   if (player.input.length >= MAX_INPUT_LENGTH) return false;
 
+  if (char === "x") {
+    const operation = state.operationsByPlayer.get(player.id);
+    if (!operation?.primeFactors || !/^\d+(?:x\d+)*$/.test(player.input)) return false;
+    player.input += "x";
+    return true;
+  }
+
+  if (char === "/") {
+    if (!/^-?\d+$/.test(player.input)) return false;
+    player.input += "/";
+    return true;
+  }
+
   if (char === "-") {
     if (!state.allowNegative || player.input !== "") return false;
     player.input = "-";
@@ -1609,7 +1837,7 @@ function appendInputChar(player, char) {
   }
 
   if (char === DECIMAL_SEPARATOR) {
-    if (player.input.includes(DECIMAL_SEPARATOR)) return false;
+    if (player.input.includes(DECIMAL_SEPARATOR) || player.input.includes("/")) return false;
     if (player.input === "") player.input = `0${DECIMAL_SEPARATOR}`;
     else if (player.input === "-") player.input = `-0${DECIMAL_SEPARATOR}`;
     else player.input += DECIMAL_SEPARATOR;
@@ -1626,6 +1854,8 @@ function extractInputKey(event) {
   const code = event.code || "";
 
   if (/^[0-9]$/.test(key)) return key;
+  if (key === "/" || key === ":" || key.toLowerCase() === "f" || code === "NumpadDivide") return "/";
+  if (key.toLowerCase() === "x" || key === "*" || key === "\u00D7" || key === "\u00B7" || code === "NumpadMultiply") return "x";
   if (key === "-" || code === "NumpadSubtract") return "-";
 
   if (key === DECIMAL_SEPARATOR || key === "." || code === "NumpadDecimal") {
@@ -1652,13 +1882,13 @@ function submitPlayerAnswer(playerId) {
 
   const submittedAnswer = player.input;
   const numericInput = parsePlayerInput(player.input);
-  if (Number.isNaN(numericInput)) {
+  if (!operation.primeFactors && Number.isNaN(numericInput)) {
     player.input = "";
     repaintPlayerInput(player.id);
     return;
   }
 
-  if (isCorrectAnswer(numericInput, operation.answer)) {
+  if (isCorrectOperationAnswer(submittedAnswer, operation)) {
     player.score += getCorrectPoints(operation);
     player.streak += 1;
     player.input = "";
@@ -1742,12 +1972,16 @@ function generateNewOperationForPlayer(playerId, enforceDifferentInDuel) {
 }
 
 function createOperation(kind) {
+  if (kind === "problem") return decorateOperation(window.NinjaProblems.generate(state.problemSettings, state.problemIndex++, state.problemSeed, { mix: state.problemMix }));
   const cfg = state.operationSettings[kind];
   if (!cfg) return decorateOperation(generateAdditionWithCarry(2));
   if (kind === "sqrt") return decorateOperation(generateExactSquareRoot(cfg.digits));
+  if (kind === "primeFactors") return decorateOperation(generatePrimeFactorization(cfg.digits));
+  if (kind === 'mcm' || kind === 'mcd') return decorateOperation(globalThis.NinjaMathExtra.generateNumberTheory(kind, cfg));
   if (kind === "combined") return decorateOperation(generateCombinedOperationEasy(cfg.digits));
   if (kind === "combinedAdv") return decorateOperation(generateCombinedOperationAdvanced(cfg.digits));
   if (kind === "fraction") return decorateOperation(generateFractionOperatorOperation(cfg));
+  if (FRACTION_OPERATION_KEYS.includes(kind)) return decorateOperation(generateFractionArithmetic(kind, cfg));
   if (kind === "percent") return decorateOperation(generatePercentOperation(cfg.digits));
   if (kind === "divHard") return decorateOperation(generateHardDivision(cfg));
   if (kind === "divTables") return decorateOperation(generateDivisionTables());
@@ -1771,6 +2005,48 @@ function createOperation(kind) {
   return decorateOperation(base);
 }
 
+function isPrimeInteger(value) {
+  if (!Number.isSafeInteger(value) || value < 2) return false;
+  for (let divisor = 2; divisor * divisor <= value; divisor++) {
+    if (value % divisor === 0) return false;
+  }
+  return true;
+}
+
+function generatePrimeFactorization(digits) {
+  const places = clamp(Math.trunc(Number(digits) || 2), 1, 3);
+  const candidates = [];
+  for (let n = Math.max(4, 10 ** (places - 1)); n < 10 ** places; n++) {
+    if (!isPrimeInteger(n)) candidates.push(n);
+  }
+  const number = randomFrom(candidates);
+  const primeFactors = [];
+  let remaining = number;
+  for (let prime = 2; prime * prime <= remaining; prime++) {
+    while (remaining % prime === 0) {
+      primeFactors.push(prime);
+      remaining /= prime;
+    }
+  }
+  if (remaining > 1) primeFactors.push(remaining);
+  return { kind: "primeFactors", expression: String(number), answer: number, primeFactors, signature: `primeFactors:${number}` };
+}
+
+function isCorrectPrimeFactorization(text, target) {
+  if (typeof text !== "string" || text.length > MAX_INPUT_LENGTH) return false;
+  const normalized = text.trim().toLowerCase().replace(/[\u00D7*\u00B7]/g, "x").replace(/\s+/g, "");
+  if (!/^\d+(?:x\d+)+$/.test(normalized)) return false;
+  let product = 1n;
+  for (const token of normalized.split("x")) {
+    const factor = Number(token);
+    // Bound user input before testing primality.
+    if (factor > target || !isPrimeInteger(factor)) return false;
+    product *= BigInt(factor);
+    if (product > BigInt(target)) return false;
+  }
+  return product === BigInt(target);
+}
+
 function generateExactSquareRoot(digits) {
   const places = clamp(Math.trunc(Number(digits) || 2), 1, 3);
   const minRoot = Math.ceil(Math.sqrt(10 ** (places - 1)));
@@ -1787,6 +2063,7 @@ function generateExactSquareRoot(digits) {
 }
 
 function createOnlineOperation(index) {
+  if (state.activity === "problemas") return decorateOperation(window.NinjaProblems.generate(state.problemSettings, index, Number(state.online?.seed || 1), { mix: state.problemMix }));
   const enabledKeys = getEnabledOperationKeys();
   const seed = Number(state.online?.seed || 1);
   return withSeededRandom(seed + (index * 9973), () => {
@@ -1882,7 +2159,28 @@ function maybeNegate(value) {
   return Math.random() < 0.5 ? -value : value;
 }
 
+function renderProblemText(text) {
+  return escapeHtml(text).replace(/(\d+)\/(\d+)/g, (_, numerator, denominator) => fractionHtml({ numerator, denominator }));
+}
+
+function renderProblem(operation) {
+  const p = operation.problem;
+  const levels = { facil: "Fácil", media: "Media", avanzada: "Avanzada" };
+  const question = `<p class="problem-question"><span class="problem-full">${renderProblemText(p.text)}</span><span class="problem-compact">${renderProblemText(p.compactText)}</span></p>`;
+  if (operation.solutionRevealed) {
+    return `<div class="problem-paper problem-review ${p.family ? 'advanced-paper' : ''}"><section class="problem-review-reading"><span class="problem-review-label">📖 Enunciado</span>${question}</section><section class="problem-review-working"><span class="problem-review-label">💡 Solución paso a paso</span><ol class="problem-steps">${p.steps.map((step, index) => {
+      const equation = p.calculations[index];
+      const compact = index === p.steps.length - 1 ? equation.split('=').slice(1).join('=') || equation : equation.split('=').at(-1);
+      return `<li data-step-kind="${step.startsWith('Descomponemos') ? 'factors' : 'calculation'}" title="${escapeHtml(step)}"><span class="problem-reason">${escapeHtml(step.split(':')[0])}.</span><span class="problem-calculation"><span class="problem-math-full">${renderProblemText(equation)}</span><span class="problem-math-compact">${escapeHtml(compact)}</span></span></li>`;
+    }).join('')}</ol><strong class="problem-final">${operation.answerFraction ? fractionHtml(operation.answerFraction) : escapeHtml(BigInt(operation.answerExact).toLocaleString("es-ES"))} ${escapeHtml(p.unit)}</strong></section></div>`;
+  }
+  const categories = { suma: "➕ Sumas", resta: "➖ Restas", multiplicacion: "✖️ Multiplicaciones", division: "➗ Divisiones", mcm: '🔁 Mínimo común múltiplo', mcd: '📦 Máximo común divisor' };
+  const type = p.categories.length > 1 ? `🧩 Combinado · ${p.steps.length} pasos` : `${categories[p.category]} · ${levels[p.difficulty] || "Fácil"}`;
+  return `<div class="problem-paper"><span class="problem-kicker">${type}${p.family === 'fracciones' ? ' · Fracciones' : ''}</span>${question}</div>`;
+}
+
 function decorateOperation(base) {
+  if (base.problem) return { ...base, html: renderProblem(base) };
   if (base.htmlExpression) {
     return {
       ...base,
@@ -2010,6 +2308,113 @@ function generateCombinedOperationAdvanced(digits) {
     answer: state.decimalsEnabled ? roundTo(op.answer, resultPlaces) : op.answer,
     signature: `combinedAdv:${op.expression}`
   };
+}
+
+function simplifyFraction(numerator, denominator) {
+  let n = BigInt(numerator);
+  let d = BigInt(denominator);
+  if (d === 0n) throw new Error("El denominador no puede ser cero");
+  if (d < 0n) { n = -n; d = -d; }
+  let a = n < 0n ? -n : n;
+  let b = d;
+  while (b !== 0n) [a, b] = [b, a % b];
+  return { numerator: String(n / a), denominator: String(d / a) };
+}
+
+function calculateFraction(left, operator, right) {
+  const result = calculateFractionBeforeSimplifying(left, operator, right);
+  return simplifyFraction(result.numerator, result.denominator);
+}
+
+function calculateFractionBeforeSimplifying(left, operator, right) {
+  let a = BigInt(left.numerator), b = BigInt(left.denominator);
+  let c = BigInt(right.numerator), d = BigInt(right.denominator);
+  if (b === 0n || d === 0n) throw new Error("El denominador no puede ser cero");
+  if (b < 0n) { a = -a; b = -b; }
+  if (d < 0n) { c = -c; d = -d; }
+  let numerator, denominator;
+  if (operator === "+" || operator === "-") {
+    // Use the least common denominator without reducing the resulting fraction.
+    denominator = BigInt(simplifyFraction(b, d).numerator) * d;
+    numerator = a * (denominator / b) + (operator === "+" ? c : -c) * (denominator / d);
+  } else if (operator === "x") {
+    numerator = a * c; denominator = b * d;
+  } else if (operator === "/") {
+    numerator = a * d; denominator = b * c;
+  } else throw new Error("Operacion de fracciones desconocida");
+  if (denominator === 0n) throw new Error("No se puede dividir entre cero");
+  if (denominator < 0n) { numerator = -numerator; denominator = -denominator; }
+  return { numerator: String(numerator), denominator: String(denominator) };
+}
+
+function fractionHtml(fraction) {
+  return `<span class="fraction-real"><span class="fraction-num">${escapeHtml(fraction.numerator)}</span><span class="fraction-den">${escapeHtml(fraction.denominator)}</span></span>`;
+}
+
+function generateFractionArithmetic(kind, cfg) {
+  const makeOperand = () => {
+    const numerator = randomNDigits(clamp(cfg.numeratorMax, 1, 3));
+    return {
+      numerator: String(state.allowNegative && Math.random() < 0.35 ? -numerator : numerator),
+      denominator: String(randomNDigits(clamp(cfg.denominatorMax, 1, 3)))
+    };
+  };
+  const operands = [makeOperand(), makeOperand()];
+  const operators = { fractionAdd: "+", fractionSub: "-", fractionMul: "x", fractionDiv: "/" };
+  const operator = operators[kind];
+  // Keep the generated operand sizes, reducing only the computed result.
+  const text = (f) => `(${f.numerator}/${f.denominator})`;
+  const html = (f) => BigInt(f.numerator) < 0n ? `<span>(</span>${fractionHtml(f)}<span>)</span>` : fractionHtml(f);
+  const symbol = (op) => op === "/" ? "&#247;" : op === "x" ? "&#215;" : op;
+  let answerFraction;
+  let unsimplifiedAnswer;
+  const solve = (left, op, right) => {
+    unsimplifiedAnswer = calculateFractionBeforeSimplifying(left, op, right);
+    return simplifyFraction(unsimplifiedAnswer.numerator, unsimplifiedAnswer.denominator);
+  };
+  let expression;
+  let htmlExpression;
+  if (kind === "fractionCombined") {
+    operands.push(makeOperand());
+    const pattern = randomInt(0, 3);
+    if (pattern < 2) {
+      const op = pattern === 0 ? "x" : "/";
+      answerFraction = solve(operands[0], "+", calculateFraction(operands[1], op, operands[2]));
+      expression = `${text(operands[0])} + ${text(operands[1])} ${op} ${text(operands[2])}`;
+      htmlExpression = `${html(operands[0])} + ${html(operands[1])} ${symbol(op)} ${html(operands[2])}`;
+    } else {
+      const op = pattern === 2 ? "+" : "-";
+      if (op === "-" && !state.allowNegative && BigInt(calculateFraction(operands[0], "-", operands[1]).numerator) < 0n) {
+        [operands[0], operands[1]] = [operands[1], operands[0]];
+      }
+      answerFraction = solve(calculateFraction(operands[0], op, operands[1]), "/", operands[2]);
+      expression = `(${text(operands[0])} ${op} ${text(operands[1])}) / ${text(operands[2])}`;
+      htmlExpression = `<span>(</span>${html(operands[0])} ${op} ${html(operands[1])}<span>)</span> &#247; ${html(operands[2])}`;
+    }
+  } else {
+    if (operator === "-" && !state.allowNegative && BigInt(calculateFraction(operands[0], "-", operands[1]).numerator) < 0n) {
+      [operands[0], operands[1]] = [operands[1], operands[0]];
+    }
+    answerFraction = solve(operands[0], operator, operands[1]);
+    expression = `${text(operands[0])} ${operator} ${text(operands[1])}`;
+    htmlExpression = `${html(operands[0])} ${symbol(operator)} ${html(operands[1])}`;
+  }
+  return {
+    kind, expression, htmlExpression, operands, answerFraction, unsimplifiedAnswer,
+    answer: Number(answerFraction.numerator) / Number(answerFraction.denominator),
+    signature: `${kind}:${expression}`
+  };
+}
+
+function operationSolutionHtml(operation) {
+  if (operation.primeFactors) return operation.primeFactors.join(" &#215; ");
+  const fraction = operation.answerFraction;
+  if (fraction) {
+    const raw = operation.unsimplifiedAnswer || fraction;
+    const simplified = fraction.denominator === "1" ? escapeHtml(fraction.numerator) : fractionHtml(fraction);
+    return `<span class="fraction-solution"><span class="fraction-solution-stage"><small>Resultado</small>${fractionHtml(raw)}</span><span aria-hidden="true">=</span><span class="fraction-solution-stage"><small>Simplificada</small>${simplified}</span></span>`;
+  }
+  return escapeHtml(String(operation.answer).replace(".", DECIMAL_SEPARATOR));
 }
 
 function generateFractionOperatorOperation(cfg) {
@@ -2311,6 +2716,7 @@ function gcdInt(a, b) {
 }
 
 function getEnabledOperationKeys() {
+  if (state.activity === "problemas") return window.NinjaProblems?.compatible(state.problemSettings, { mix: state.problemMix }).length ? ["problem"] : [];
   return Object.keys(state.operationSettings).filter((key) => state.operationSettings[key].enabled);
 }
 
@@ -2318,7 +2724,7 @@ function buildMatchBadge(enabledKeys) {
   const modeText = state.mode === "single" ? "👤 Entrenamiento"
     : state.mode === "online" ? `🌐 Sala ${state.online?.code || ""}`
     : "⚔️ Batalla";
-  return `${modeText} · ${enabledKeys.length} operaciones activas`;
+  return state.activity === "problemas" ? `${modeText} · 📖 Problemas` : `${modeText} · ${enabledKeys.length} operaciones activas`;
 }
 
 function repaintPlayers() {
@@ -2344,28 +2750,37 @@ function repaintPlayers() {
     const opEl = document.getElementById(`operation-${player.id}`);
     const op = state.operationsByPlayer.get(player.id);
     if (opEl && op) {
+      opEl.closest('.player-panel').classList.toggle('reviewing-problem', Boolean(op.problem && op.solutionRevealed));
+      opEl.classList.toggle("problem-operation", Boolean(op.problem));
       opEl.classList.remove("pop");
       opEl.offsetHeight;
       opEl.classList.add("pop");
-      opEl.innerHTML = op.solutionRevealed
-        ? op.html.replace("?", escapeHtml(String(op.answer).replace(".", DECIMAL_SEPARATOR)))
+      opEl.innerHTML = op.problem ? renderProblem(op) : op.solutionRevealed
+        ? op.answerFraction ? operationSolutionHtml(op) : op.html.replace("?", operationSolutionHtml(op))
         : op.html;
-      fitOperationElement(opEl);
+      opEl.title = op.solutionRevealed ? (op.expression || "") : "";
     }
     const solutionButton = refs.playersWrap.querySelector(`.solution-btn[data-player="${player.id}"]`);
     if (solutionButton) {
-      solutionButton.textContent = op?.solutionRevealed ? "⏭️ Siguiente (sin puntos)" : "💡 Ver solución";
+      solutionButton.textContent = op?.solutionRevealed ? "⏭️ Siguiente" : "💡 Ver solución";
       solutionButton.title = "Consultar la solución no suma puntos ni aciertos";
     }
 
     const decimalHintEl = document.getElementById(`decimalHint-${player.id}`);
     if (decimalHintEl) {
-      const show = state.decimalsEnabled;
+      const show = Boolean(op?.problem) || state.decimalsEnabled || Boolean(op?.answerFraction) || Boolean(op?.primeFactors);
       decimalHintEl.classList.toggle("hidden", !show);
-      decimalHintEl.textContent = `🔢 Máx ${state.decimalPlaces} dec.`;
+      decimalHintEl.textContent = op?.problem ? op.answerFraction ? `🍰 Responde como 3/4 · ${op.problem.unit} · tecla F o :` : `📖 Respuesta en ${op.problem.unit}` : op?.primeFactors
+        ? "🧩 Producto de primos: 2 x 2 x 3. Usa X o *."
+        : op?.answerFraction
+        ? "🍰 Responde como 3/4. Usa F o : para escribir /."
+        : `🔢 Máx ${state.decimalPlaces} dec.`;
     }
   });
 
+  // Hints and labels affect the available height; fit after updating every panel.
+  refs.playersWrap.querySelectorAll(".operation").forEach(fitOperationElement);
+  requestAnimationFrame(() => refs.playersWrap.querySelectorAll(".operation").forEach(fitOperationElement));
   if (state.mode === "duel") updateDuelLeadBar();
 }
 
@@ -2376,7 +2791,7 @@ function fitOperationElement(opEl) {
   let size = Number.parseFloat(computed.fontSize);
   if (!Number.isFinite(size)) return;
 
-  const minSize = refs.body.classList.contains("game-running") ? 15 : 18;
+  const minSize = opEl.classList.contains("problem-operation") ? 11 : refs.body.classList.contains("game-running") ? 15 : 18;
   let attempts = 0;
   while (
     attempts < 18 &&
@@ -2436,6 +2851,8 @@ function flashPlayer(playerId, success) {
 }
 
 async function finishGame() {
+  const finishingSession = state.online;
+  const finishingRound = finishingSession?.room?.rematchAt;
   state.isRunning = false;
   refs.body.classList.remove("game-running", "online-lobby-running");
   stopTimer();
@@ -2447,12 +2864,16 @@ async function finishGame() {
         lastActionAt: Date.now()
       });
     }
+    if (state.online !== finishingSession || state.online?.room?.rematchAt !== finishingRound) return;
     if (state.online.isHost && window.NinjaOnline?.enabled) {
       await window.NinjaOnline.finishRoom(state.online.code).catch(() => {});
     }
     if (window.NinjaOnline?.enabled) {
       await wait(650);
+      if (state.online !== finishingSession || state.online?.room?.rematchAt !== finishingRound) return;
       const latestRoom = await window.NinjaOnline.getRoom(state.online.code).catch(() => null);
+      if (state.online !== finishingSession || state.online?.room?.rematchAt !== finishingRound) return;
+      if (latestRoom && latestRoom.rematchAt !== finishingRound) return;
       if (latestRoom) state.online.room = latestRoom;
     }
     state.online.active = false;
@@ -2492,7 +2913,7 @@ function showResults() {
         wrongCount: Number(player.wrongCount || 0),
         isSelf: String(player.id) === String(state.online?.playerId)
       }))
-      .sort((a, b) => b.score - a.score || b.correctCount - a.correctCount);
+      .sort(compareMatchPlayers);
 
     scores.forEach((player, index) => {
       const row = document.createElement("div");
@@ -2545,6 +2966,7 @@ function saveResultsToHall() {
 
   state.players.forEach((player) => {
     hall.push({
+      activity: state.activity,
       name: player.name,
       score: player.score,
       mode: modeLabel,
@@ -2573,6 +2995,10 @@ function writeHall(items) {
 function applySavedPreferences() {
   const prefs = readPreferences();
   if (!prefs) return;
+  state.activity = prefs.activity === "problemas" ? "problemas" : "calculo";
+  state.problemMix = ["combinados", "mixto"].includes(prefs.problemMix) ? prefs.problemMix : "individuales";
+  state.problemFont = prefs.problemFont === "ligada" ? "ligada" : "imprenta";
+  if (prefs.problemSettings && window.NinjaProblems) state.problemSettings = window.NinjaProblems.normalize(prefs.problemSettings);
 
   if (["single", "duel", "online", "teacher"].includes(prefs.mode)) state.mode = prefs.mode;
   if (prefs.orientation === "vertical" || prefs.orientation === "face") state.orientation = prefs.orientation;
@@ -2630,6 +3056,10 @@ function readPreferences() {
 
 function savePreferences() {
   const prefs = {
+    problemMix: state.problemMix,
+    problemFont: state.problemFont,
+    activity: state.activity,
+    problemSettings: state.problemSettings,
     mode: state.mode,
     orientation: state.orientation,
     muted: state.muted,
@@ -2686,7 +3116,7 @@ function renderHallOfFame() {
 
   hall.slice(0, 20).forEach((row, index) => {
     const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${index + 1}</td><td>${escapeHtml(row.name)}</td><td>${row.score}</td><td>${escapeHtml(row.mode)}</td><td>${escapeHtml(row.time)}</td><td>${escapeHtml(row.date)}</td>`;
+    tr.innerHTML = `<td>${index + 1}</td><td>${escapeHtml(row.name)}</td><td>${row.score}</td><td>${escapeHtml(row.mode)}${row.activity === "problemas" ? " · Problemas" : ""}</td><td>${escapeHtml(row.time)}</td><td>${escapeHtml(row.date)}</td>`;
     refs.hallBody.appendChild(tr);
   });
 }
@@ -2740,7 +3170,7 @@ function getWrongPenalty() {
 }
 
 function getBasePoints(operation) {
-  if (operation?.kind === "combinedAdv") return 20;
+  if (operation?.kind === "combinedAdv" || operation?.kind === "fractionCombined") return 20;
   return 10;
 }
 
@@ -2923,7 +3353,12 @@ function refreshOperationDisplays() {
       expression: op.expression,
       htmlExpression: op.htmlExpression,
       signature: op.signature,
-      solutionRevealed: op.solutionRevealed
+      answerFraction: op.answerFraction,
+      unsimplifiedAnswer: op.unsimplifiedAnswer,
+      primeFactors: op.primeFactors,
+      solutionRevealed: op.solutionRevealed,
+      problem: op.problem,
+      answerExact: op.answerExact
     };
     const decorated = decorateOperation(base);
     state.operationsByPlayer.set(playerId, decorated);
@@ -2970,8 +3405,30 @@ function clamp(value, min, max) {
 
 function parsePlayerInput(text) {
   if (typeof text !== "string") return NaN;
+  if (!/^-?\d+(?:[,.]\d+|\/\d+)?$/.test(text)) return NaN;
+  if (text.includes("/")) {
+    const [n, d] = text.split("/").map(Number);
+    return d !== 0 ? n / d : NaN;
+  }
   const normalized = text.replace(",", ".");
   return Number(normalized);
+}
+
+function isCorrectOperationAnswer(text, operation) {
+  if (operation.answerExact && !operation.answerFraction) return /^\d+$/.test(text) && BigInt(text) === BigInt(operation.answerExact);
+  if (operation.primeFactors) return isCorrectPrimeFactorization(text, operation.answer);
+  if (!operation.answerFraction) return isCorrectAnswer(parsePlayerInput(text), operation.answer);
+  if (!/^-?\d+(?:[,.]\d+|\/\d+)?$/.test(text)) return false;
+  let numerator, denominator;
+  if (text.includes("/")) [numerator, denominator] = text.split("/");
+  else {
+    const parts = text.replace(",", ".").split(".");
+    numerator = parts.join("");
+    denominator = "1" + "0".repeat(parts[1]?.length || 0);
+  }
+  if (BigInt(denominator) === 0n) return false;
+  return BigInt(numerator) * BigInt(operation.answerFraction.denominator)
+    === BigInt(operation.answerFraction.numerator) * BigInt(denominator);
 }
 
 function isCorrectAnswer(input, answer) {

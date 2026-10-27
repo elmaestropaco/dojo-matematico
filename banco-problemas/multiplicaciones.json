@@ -1,0 +1,2708 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "multiplicacion-001",
+      "titulo": "Lápices en cajas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "La maestra prepara {cantidadA} {unidadA} de material para la clase. En cada caja pone {cantidadB} {unidadB}. ¿Cuántos lápices ha preparado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caja",
+          "plural": "cajas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "lápiz",
+          "plural": "lápices"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "lápiz",
+          "plural": "lápices"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicacion-002",
+      "titulo": "Peras en bolsas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En una frutería preparan {cantidadA} {unidadA} para una entrega. En cada bolsa ponen {cantidadB} {unidadB}. ¿Cuántas peras necesitan para preparar todas las bolsas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "bolsa",
+          "plural": "bolsas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 3,
+          "cantidadB": 8
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicacion-003",
+      "titulo": "Sillas en filas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para una función del colegio se colocan {cantidadA} {unidadA} de sillas. En cada fila hay {cantidadB} {unidadB}. ¿Cuántas sillas se han colocado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "fila",
+          "plural": "filas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "silla",
+          "plural": "sillas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "silla",
+          "plural": "sillas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 5,
+          "cantidadB": 7
+        },
+        "respuesta": "35"
+      }
+    },
+    {
+      "id": "multiplicacion-004",
+      "titulo": "Cromos en sobres",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Alex compra {cantidadA} {unidadA} de cromos. Al abrirlos, ve que cada sobre contiene {cantidadB} {unidadB}. ¿Cuántos cromos ha comprado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "sobre",
+          "plural": "sobres"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cromo",
+          "plural": "cromos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cromo",
+          "plural": "cromos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 5
+        },
+        "respuesta": "30"
+      }
+    },
+    {
+      "id": "multiplicacion-005",
+      "titulo": "Fotos del álbum",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Lara está preparando un álbum con {cantidadA} {unidadA}. En cada página coloca {cantidadB} {unidadB}. ¿Cuántas fotos necesita para completar el álbum?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "página",
+          "plural": "páginas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "foto",
+          "plural": "fotos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "foto",
+          "plural": "fotos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 8,
+          "cantidadB": 4
+        },
+        "respuesta": "32"
+      }
+    },
+    {
+      "id": "multiplicacion-006",
+      "titulo": "Dinero de las entradas",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para una actividad del colegio se venden {cantidadA} {unidadA}. Cada entrada cuesta {cantidadB} {unidadB}. ¿Cuántos euros se consiguen al vender todas las entradas?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 12,
+          "cantidadB": 5
+        },
+        "respuesta": "60"
+      }
+    },
+    {
+      "id": "multiplicacion-007",
+      "titulo": "Leer cada día",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Sam lee {cantidadB} {unidadB} cada día. Si mantiene ese ritmo durante {cantidadA} {unidadA}, ¿cuántas páginas habrá leído al terminar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "día",
+          "plural": "días"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "página",
+          "plural": "páginas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "página",
+          "plural": "páginas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 7,
+          "cantidadB": 9
+        },
+        "respuesta": "63"
+      }
+    },
+    {
+      "id": "multiplicacion-008",
+      "titulo": "Cajas y lápices sueltos",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "multiplicacion",
+        "suma"
+      ],
+      "enunciado": "En clase hay {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada una. Además, la maestra guarda {cantidadC} {unidadC} fuera de las cajas. ¿Cuántos lápices hay en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Tercera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caja",
+          "plural": "cajas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "lápiz",
+          "plural": "lápices"
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "lápiz",
+          "plural": "lápices"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "suma",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Después sumamos: {resultado1} + {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "lápiz",
+          "plural": "lápices"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8,
+          "cantidadC": 5
+        },
+        "respuesta": "53"
+      }
+    },
+    {
+      "id": "multiplicacion-009",
+      "titulo": "Repartir pegatinas",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "multiplicacion",
+        "resta"
+      ],
+      "enunciado": "Para una fiesta tienes {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada uno. Regalas {cantidadC} {unidadC} antes de empezar. ¿Cuántas pegatinas te quedan para la fiesta?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Tercera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "sobre",
+          "plural": "sobres"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pegatina",
+          "plural": "pegatinas"
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "pegatina",
+          "plural": "pegatinas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "resta",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Después restamos: {resultado1} - {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "pegatina",
+          "plural": "pegatinas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 5,
+          "cantidadB": 6,
+          "cantidadC": 12
+        },
+        "respuesta": "18"
+      }
+    },
+    {
+      "id": "multiplicacion-010",
+      "titulo": "Cajas de una nave",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En un cuento del espacio, una nave lleva {cantidadA} {unidadA} de repuestos. Cada caja contiene {cantidadB} {unidadB}. ¿Cuántas piezas de repuesto lleva la nave en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 999999999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999999999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caja",
+          "plural": "cajas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pieza",
+          "plural": "piezas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pieza",
+          "plural": "piezas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 1234,
+          "cantidadB": 5678
+        },
+        "respuesta": "7006652"
+      }
+    },
+    {
+      "id": "multiplicacion-biblioteca-individual-009",
+      "titulo": "Biblioteca del barrio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En la biblioteca del barrio preparan {cantidadA} {unidadA} para preparar las lecturas del mes. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos libros preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-pintura-individual-010",
+      "titulo": "Taller de pintura",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para organizar una exposición, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos pinceles han colocado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de filas",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "fila",
+          "plural": "filas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pincel",
+          "plural": "pinceles"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pincel",
+          "plural": "pinceles"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-huerto-individual-011",
+      "titulo": "El huerto escolar",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para sembrar las nuevas plantas, en el huerto del colegio compran {cantidadA} {unidadA}. El precio de cada semilla es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se compran",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "semilla",
+          "plural": "semillas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio de cada unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos la cantidad por el precio: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 4
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicacion-merienda-individual-012",
+      "titulo": "La merienda del campamento",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En la cocina del campamento preparan {cantidadB} {unidadB} al día para preparar la merienda. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos magdalenas preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Días de preparación",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "día",
+          "plural": "días"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades preparadas cada día",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los días por la cantidad diaria: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 5,
+          "cantidadB": 8
+        },
+        "respuesta": "40"
+      }
+    },
+    {
+      "id": "multiplicacion-torneo-individual-013",
+      "titulo": "El torneo del colegio",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para celebrar un torneo llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos pelotas han llegado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cajas grandes",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caja",
+          "plural": "cajas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Paquetes por caja",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "paquete",
+          "plural": "paquetes"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Unidades por paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "pelota",
+          "plural": "pelotas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Calculamos cuántos paquetes hay: {cantidadA} × {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Calculamos el contenido de todos los paquetes: {resultado1} × {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "pelota",
+          "plural": "pelotas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 3,
+          "cantidadB": 4,
+          "cantidadC": 5
+        },
+        "respuesta": "60"
+      }
+    },
+    {
+      "id": "multiplicacion-fiesta-individual-014",
+      "titulo": "Preparar la fiesta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En la sala de fiestas quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos globos necesitan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "globo",
+          "plural": "globos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "globo",
+          "plural": "globos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-laboratorio-individual-015",
+      "titulo": "Experimentos en clase",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el laboratorio del colegio preparan {cantidadA} {unidadA} para hacer unos experimentos. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos frascos preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "frasco",
+          "plural": "frascos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "frasco",
+          "plural": "frascos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-mercado-individual-016",
+      "titulo": "El puesto de fruta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para preparar un pedido, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos peras han colocado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de filas",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "fila",
+          "plural": "filas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-musica-individual-017",
+      "titulo": "El ensayo de música",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para preparar un concierto, en la escuela de música compran {cantidadA} {unidadA}. El precio de cada partitura es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se compran",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "partitura",
+          "plural": "partituras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio de cada unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos la cantidad por el precio: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 4
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicacion-museo-individual-018",
+      "titulo": "Los recuerdos del museo",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En la tienda del museo preparan {cantidadB} {unidadB} al día para preparar las visitas escolares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos postales preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Días de preparación",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "día",
+          "plural": "días"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades preparadas cada día",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "postal",
+          "plural": "postales"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los días por la cantidad diaria: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "postal",
+          "plural": "postales"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 5,
+          "cantidadB": 8
+        },
+        "respuesta": "40"
+      }
+    },
+    {
+      "id": "multiplicacion-reciclaje-individual-019",
+      "titulo": "La campaña de reciclaje",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para hacer una actividad con materiales usados llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos botellas han llegado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cajas grandes",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caja",
+          "plural": "cajas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Paquetes por caja",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "paquete",
+          "plural": "paquetes"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Unidades por paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "botella",
+          "plural": "botellas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Calculamos cuántos paquetes hay: {cantidadA} × {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Calculamos el contenido de todos los paquetes: {resultado1} × {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "botella",
+          "plural": "botellas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 3,
+          "cantidadB": 4,
+          "cantidadC": 5
+        },
+        "respuesta": "60"
+      }
+    },
+    {
+      "id": "multiplicacion-refugio-individual-020",
+      "titulo": "Ayudar al refugio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el refugio de animales quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos mantas necesitan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "manta",
+          "plural": "mantas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "manta",
+          "plural": "mantas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-comedor-individual-021",
+      "titulo": "La comida de la excursión",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el comedor del colegio preparan {cantidadA} {unidadA} para preparar una excursión. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos bocadillos preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-teatro-individual-022",
+      "titulo": "La función de teatro",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para organizar una función escolar, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos entradas han colocado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de filas",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "fila",
+          "plural": "filas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-robotica-individual-023",
+      "titulo": "Construir robots",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para construir unos robots, en el taller de robótica compran {cantidadA} {unidadA}. El precio de cada tornillo es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se compran",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tornillo",
+          "plural": "tornillos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio de cada unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos la cantidad por el precio: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 4
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicacion-collares-individual-024",
+      "titulo": "El taller de collares",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el taller de manualidades preparan {cantidadB} {unidadB} al día para hacer unos collares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos cuentas preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Días de preparación",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "día",
+          "plural": "días"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades preparadas cada día",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuenta",
+          "plural": "cuentas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los días por la cantidad diaria: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuenta",
+          "plural": "cuentas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 5,
+          "cantidadB": 8
+        },
+        "respuesta": "40"
+      }
+    },
+    {
+      "id": "multiplicacion-festival-individual-025",
+      "titulo": "El festival del barrio",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para decorar un festival llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos banderines han llegado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cajas grandes",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caja",
+          "plural": "cajas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Paquetes por caja",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "paquete",
+          "plural": "paquetes"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Unidades por paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "banderín",
+          "plural": "banderines"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Calculamos cuántos paquetes hay: {cantidadA} × {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Calculamos el contenido de todos los paquetes: {resultado1} × {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "banderín",
+          "plural": "banderines"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 3,
+          "cantidadB": 4,
+          "cantidadC": 5
+        },
+        "respuesta": "60"
+      }
+    },
+    {
+      "id": "multiplicacion-exploradores-individual-026",
+      "titulo": "Una ruta de exploradores",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el club de exploradores quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos mapas necesitan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mapa",
+          "plural": "mapas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "mapa",
+          "plural": "mapas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-medallas-individual-027",
+      "titulo": "La carrera solidaria",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el polideportivo preparan {cantidadA} {unidadA} para organizar una carrera solidaria. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos medallas preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "medalla",
+          "plural": "medallas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "medalla",
+          "plural": "medallas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-juegos-individual-028",
+      "titulo": "La tarde de juegos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para organizar una tarde de juegos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos fichas han colocado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de filas",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "fila",
+          "plural": "filas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-costura-individual-029",
+      "titulo": "Arreglar los disfraces",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para arreglar unos disfraces, en el taller de costura compran {cantidadA} {unidadA}. El precio de cada botón es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se compran",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "botón",
+          "plural": "botones"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio de cada unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos la cantidad por el precio: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 4
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicacion-papel-individual-030",
+      "titulo": "El concurso de dibujo",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En la clase de dibujo preparan {cantidadB} {unidadB} al día para preparar un concurso. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos folios preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Días de preparación",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "día",
+          "plural": "días"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades preparadas cada día",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "folio",
+          "plural": "folios"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los días por la cantidad diaria: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "folio",
+          "plural": "folios"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 5,
+          "cantidadB": 8
+        },
+        "respuesta": "40"
+      }
+    },
+    {
+      "id": "multiplicacion-planetario-individual-031",
+      "titulo": "El viaje al planetario",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el planetario preparan {cantidadA} {unidadA} para preparar una visita escolar. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos entradas preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-ajedrez-individual-032",
+      "titulo": "El club de ajedrez",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para organizar un encuentro, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos fichas han colocado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de filas",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "fila",
+          "plural": "filas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-titeres-individual-033",
+      "titulo": "La función de títeres",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para montar un escenario, en el taller de títeres compran {cantidadA} {unidadA}. El precio de cada muñeco es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se compran",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "muñeco",
+          "plural": "muñecos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio de cada unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos la cantidad por el precio: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 4
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicacion-invernadero-individual-034",
+      "titulo": "Las plantas del invernadero",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el invernadero escolar preparan {cantidadB} {unidadB} al día para trasplantar las plantas. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos macetas preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Días de preparación",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "día",
+          "plural": "días"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades preparadas cada día",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "maceta",
+          "plural": "macetas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los días por la cantidad diaria: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "maceta",
+          "plural": "macetas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 5,
+          "cantidadB": 8
+        },
+        "respuesta": "40"
+      }
+    },
+    {
+      "id": "multiplicacion-acuarios-individual-035",
+      "titulo": "Los peces del aula",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para preparar una actividad llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos piedras han llegado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cajas grandes",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caja",
+          "plural": "cajas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Paquetes por caja",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "paquete",
+          "plural": "paquetes"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Unidades por paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "piedra",
+          "plural": "piedras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Calculamos cuántos paquetes hay: {cantidadA} × {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Calculamos el contenido de todos los paquetes: {resultado1} × {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "piedra",
+          "plural": "piedras"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 3,
+          "cantidadB": 4,
+          "cantidadC": 5
+        },
+        "respuesta": "60"
+      }
+    },
+    {
+      "id": "multiplicacion-conservas-individual-036",
+      "titulo": "La feria de conservas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el taller de conservas quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos tarros necesitan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tarro",
+          "plural": "tarros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tarro",
+          "plural": "tarros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-carnaval-individual-037",
+      "titulo": "El carnaval del barrio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el taller de carnaval preparan {cantidadA} {unidadA} para preparar el desfile. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos máscaras preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos iguales",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lote",
+          "plural": "lotes"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "máscara",
+          "plural": "máscaras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "máscara",
+          "plural": "máscaras"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-encuadernacion-individual-038",
+      "titulo": "Creamos nuestros cuadernos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para hacer unos cuadernos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos hojas han colocado en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de filas",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "fila",
+          "plural": "filas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades en cada grupo",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "hoja",
+          "plural": "hojas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los grupos por su contenido: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "hoja",
+          "plural": "hojas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 8
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "multiplicacion-colmenar-individual-039",
+      "titulo": "Una visita al colmenar",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para preparar los materiales de una visita, en el aula del colmenar compran {cantidadA} {unidadA}. El precio de cada lámina es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se compran",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lámina",
+          "plural": "láminas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio de cada unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos la cantidad por el precio: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 6,
+          "cantidadB": 4
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicacion-aromaticas-individual-040",
+      "titulo": "El jardín de los aromas",
+      "dificultad": "media",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el jardín de plantas aromáticas preparan {cantidadB} {unidadB} al día para plantar nuevas flores. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos etiquetas preparan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Días de preparación",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "día",
+          "plural": "días"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Unidades preparadas cada día",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos los días por la cantidad diaria: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 5,
+          "cantidadB": 8
+        },
+        "respuesta": "40"
+      }
+    }
+  ]
+}

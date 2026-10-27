@@ -1,0 +1,164 @@
+/* The visual refresh leaves the arena's fixed-height grid intact. */
+[data-theme="light"] {
+  --bg-1: #f4f5ed;
+  --bg-2: #edf5f3;
+  --border: #d7e2df;
+  --text-main: #203d3b;
+  --text-soft: #526c69;
+  --accent-cyan: #168778;
+  --accent-gold: #f4bd45;
+}
+body:not(.game-running) {
+  background: radial-gradient(ellipse at 4% 0%, #f4bd4518, transparent 48%), linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  padding: 24px 18px;
+}
+.container { box-shadow: 0 12px 42px #081c2012; }
+.hero-head, [data-theme="light"] .hero-head {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 16px;
+  padding: 18px 20px;
+  text-align: left;
+  background: var(--panel);
+  border-bottom: 3px solid var(--accent-gold);
+}
+.hero-head .logo-wrap { grid-column: 1; grid-row: 1 / 3; margin: 0; width: 72px; height: 72px; background: transparent; box-shadow: none; }
+.hero-head .app-title { grid-column: 2; grid-row: 1; font-size: clamp(1.2rem, 3vw, 1.8rem); margin: 0; letter-spacing: 0.02em; text-align: left; text-shadow: none; }
+.hero-head .subtitle { grid-column: 2; grid-row: 2; margin: 4px 0 0; font-size: 0.88rem; text-align: left; max-width: 42em; }
+.hero-head .theme-panel { position: static; grid-column: 3; grid-row: 2; padding: 3px; border: 0; background: transparent; }
+.theme-label { display: none; }
+.hero-head .help-btn { position: static; grid-column: 3; grid-row: 1; justify-self: end; background: var(--panel); width: 34px; height: 34px; }
+.dojo-screen { padding: clamp(12px, 2.5vw, 28px); }
+.dojo-intro { margin-bottom: 22px; }
+body.online-lobby-running :is(.dojo-intro, .hall-archive) { display: none; }
+.section-eyebrow { font-size: 0.68rem; letter-spacing: 0.13em; font-weight: 700; color: var(--text-soft); }
+.dojo-intro h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 5px 0; text-align: left; }
+.dojo-intro p { color: var(--text-soft); margin: 0; }
+.dojo-screen > .settings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.dojo-screen > .settings-grid > :is(#operationsBox, #problemsBox, #formatBox, #gameOptionsBox, #orientationBox, #onlineBox, #onlineCreatePanel, #teacherBox) { grid-column: 1 / -1; }
+.config-box { padding: 16px; border-radius: 16px; background: var(--panel); }
+.config-box .label { font-weight: 700; color: var(--text-main); }
+.step-marker { display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 5px; background: var(--accent-gold); color: #3d300b; border-radius: 8px; font-size: 0.8rem; }
+.mode-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.online-only .mode-buttons { grid-template-columns: minmax(0, 1fr); }
+.mode-btn { min-height: 46px; padding: 10px; box-shadow: none; border-radius: 10px; transition: background-color 160ms, border-color 160ms; }
+.mode-btn.active { box-shadow: none; }
+[data-theme="light"] .mode-btn { color: #284b47; background: #f5f8f6; border-color: #d7e2df; }
+[data-theme="light"] .mode-btn.active { color: #135b50; background: #e2f3ec; border: 2px solid #25816c; }
+.name-grid input, .config-box select { min-height: 42px; border-radius: 9px; }
+.config-box input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #259baf; outline-offset: 3px; }
+.problem-family-label, .problem-extra-options label { display: grid; gap: 6px; min-width: 0; font-weight: 700; }
+.problem-family-label { margin: 16px 0; }
+.problem-extra-options { margin: 12px 0; padding: 14px; background: #44a58c0b; border: 1px solid var(--border); border-radius: 12px; }
+.problem-extra-options .hint { grid-column: 1 / -1; font-weight: 400; }
+.theory-type-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.theory-type-buttons label { display: flex; align-items: center; font-size: 0.9rem; }
+.problem-extra-options select { width: 100%; min-width: 0; }
+.problem-category { background: var(--panel); border-left: 3px solid #54a892; }
+.problem-category:nth-child(2) { border-left-color: #e1a444; }
+.problem-category:nth-child(3) { border-left-color: #5b9dc5; }
+.problem-category:nth-child(4) { border-left-color: #ce7c64; }
+.advanced-options > summary, .hall-archive > summary { cursor: pointer; font-weight: 700; padding: 4px 0; }
+.advanced-options > summary span, .hall-archive > summary span { display: inline-block; font-size: 0.8rem; color: var(--text-soft); font-weight: 400; margin-left: 10px; }
+.advanced-options-body { display: grid; gap: 10px; padding-top: 16px; }
+.advanced-options .toggle-line { min-height: 30px; margin: 0; }
+.hall-archive { margin-top: 24px; border-top: 1px solid var(--border); padding-top: 18px; }
+.hall-archive .hall-box { margin-top: 16px; }
+.start-combat-btn { margin-top: 22px; min-height: 62px; border-radius: 14px; animation: startReady 3s ease-in-out infinite; }
+@keyframes startReady { 0%, 100% { box-shadow: 0 5px 16px #16877820; } 50% { box-shadow: 0 5px 22px #eebf4560; } }
+.start-combat-btn .sword-ico { animation: none; }
+.start-combat-btn:hover .sword-ico { transform: rotate(-10deg); }
+.operation .fraction-real { font-size: 0.85em; vertical-align: middle; margin: 0 0.07em; }
+.problem-question .fraction-real { display: inline-flex; }
+.problem-math-compact { display: none; }
+.problem-review { display: grid; gap: 0.65em; }
+.problem-review-reading, .problem-review-working { min-width: 0; }
+.problem-review-label { display: block; font-size: 0.7em; font-weight: 700; color: var(--text-soft); margin-bottom: 0.35em; }
+.problem-review-working { border-top: 1px solid var(--border); padding-top: 0.5em; }
+/* An assisted question cannot score; use the keypad area for reading until Next. */
+body.game-running.problems-running .players-wrap .player-panel.reviewing-problem {
+  grid-template-rows: auto 0 auto 38px minmax(0, 1fr);
+}
+body.game-running .reviewing-problem :is(.numpad, .answer-box, .action-row, .decimal-hint) { display: none; }
+@media (min-width: 1100px) {
+  .single-layout .problem-review { grid-template-columns: 1.15fr 1fr; gap: 1em; }
+  .single-layout .problem-review-working { border-top: 0; border-left: 1px solid var(--border); padding-top: 0; padding-left: 1em; }
+}
+@media (max-width: 950px) {
+  body.game-running.problems-running .players-wrap:is(.duel-vertical, .duel-face) .player-panel.reviewing-problem { grid-template-rows: auto 0 0 26px minmax(0, 1fr); }
+}
+.results-score-item { border-radius: 12px; }
+body.game-running .player-panel { box-shadow: none; }
+[data-theme="light"].game-running .player-panel { background: #fcfefd; border-color: #b5d3cb; }
+[data-theme="light"].game-running .key-btn { background: #f3f8f6; color: #203d3b; border-color: #bfd4ce; }
+[data-theme="light"].game-running .key-btn:active { background: #d3ecdf; }
+[data-theme="light"].game-running .action-btn { color: #203d3b; }
+body.game-running .pop { animation-duration: 180ms; }
+.hidden { display: none !important; }
+/* Shared form rhythm also applies when settings move into an online/teacher panel. */
+.config-box > .hint { margin: 10px 0; line-height: 1.45; }
+.config-box > .label { margin-bottom: 12px; }
+.problem-reading-options { gap: 14px; margin: 16px 0; }
+.problem-category-body { padding-top: 4px; }
+.problem-category-body > label { margin-top: 12px; }
+.problem-operand-range { margin-top: 14px; padding: 10px; }
+.problem-operand-range .problem-digit-range { gap: 10px; }
+.problem-reading-options label, .problem-family-label, .problem-digit-range label { gap: 7px; }
+.problem-carry { margin-top: 14px; }
+.inline-field { gap: 12px; }
+.teacher-config-mount { gap: 14px; }
+.teacher-config-panel .config-box { padding: 14px; }
+.teacher-clock span { color: #d5e9e3; }
+@media (min-width: 768px) {
+  .teacher-hero { padding: 8px 12px; }
+  .teacher-room-code-btn { font-size: clamp(1.5rem, 3.2vw, 2.5rem); }
+  .teacher-clock { width: clamp(100px, 14dvh, 132px); height: clamp(100px, 14dvh, 132px); padding: 8px; }
+  .teacher-clock strong { font-size: clamp(2rem, 4.8dvh, 3rem); }
+  .teacher-clock span { font-size: 0.62rem; }
+}
+#teacherGrid { grid-auto-rows: minmax(0, 1fr); align-content: start; overflow: hidden; min-width: 0; }
+#teacherGrid .teacher-card { display: flex; flex-direction: column; gap: 5px; padding: var(--teacher-card-pad, 8px); min-height: 0; height: 100%; }
+#teacherGrid .teacher-card-top { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 8px; padding: 0; flex-shrink: 0; }
+#teacherGrid .teacher-card-top .teacher-student-name { grid-column: 1 / -1; grid-row: 1; display: block; -webkit-line-clamp: unset; white-space: normal; overflow: visible; overflow-wrap: anywhere; text-overflow: clip; line-height: 1.16; padding-right: 22px; }
+#teacherGrid .teacher-card-top .teacher-medal { grid-column: 1; grid-row: 2; font-size: var(--teacher-detail-size, 13px); white-space: nowrap; }
+#teacherGrid .teacher-card-top .teacher-points { grid-column: 2; grid-row: 2; justify-self: end; font-size: var(--teacher-detail-size, 13px); font-weight: 700; white-space: nowrap; }
+#teacherGrid .teacher-rank { color: var(--text-main); }
+#teacherGrid .teacher-stats { display: flex; justify-content: space-between; gap: 6px; margin-top: auto; font-size: var(--teacher-detail-size, 13px); flex-shrink: 0; }
+#teacherGrid .teacher-stats span { white-space: nowrap; }
+#teacherGrid .teacher-progress { flex-shrink: 0; margin: 0; }
+#teacherGrid .teacher-last { margin: 0; }
+#teacherGrid[data-density="compact"] .teacher-card { gap: 3px; }
+#teacherGrid[data-density="compact"] .teacher-card-top { gap: 3px 5px; }
+#teacherGrid[data-density="compact"] .teacher-stats span { padding: 1px 2px; }
+#teacherGrid[data-density="compact"] :is(.teacher-progress, .teacher-last) { display: none; }
+#teacherGrid[data-space="tight"] .teacher-card { gap: 1px; }
+#teacherGrid[data-space="tight"] .teacher-card-top { row-gap: 1px; }
+#teacherGrid[data-space="tight"] .teacher-stats span { padding: 0 1px; }
+@media (max-width: 650px) {
+  body.game-running .problem-reason { display: none; }
+  body:not(.game-running) { padding: 10px; }
+  .container { padding: 8px; border-radius: 16px; }
+  .hero-head, [data-theme="light"] .hero-head { grid-template-columns: 48px minmax(0, 1fr) auto; gap: 5px 8px; padding: 12px; }
+  .hero-head .logo-wrap { width: 46px; height: 46px; }
+  .hero-head .app-title { font-size: 1rem; }
+  .hero-head .subtitle { font-size: 0.7rem; }
+  .hero-head .theme-icons { gap: 2px; }
+  .hero-head .btn-theme { width: 23px; height: 23px; font-size: 0.75rem; }
+  .dojo-screen > .settings-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .dojo-intro { margin-bottom: 16px; }
+  .dojo-intro p { font-size: 0.9rem; }
+  .config-box { padding: 12px; }
+  .advanced-options > summary span, .hall-archive > summary span { display: block; margin: 6px 0 0 18px; }
+  .problem-extra-options { padding: 10px; }
+  body.game-running .container { padding: 6px; border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 950px) {
+  body.game-running .players-wrap:is(.duel-vertical, .duel-face) .advanced-paper .problem-math-full { display: none; }
+  body.game-running .players-wrap:is(.duel-vertical, .duel-face) .advanced-paper .problem-math-compact { display: inline; overflow-wrap: anywhere; }
+  body.game-running .players-wrap:is(.duel-vertical, .duel-face) .advanced-paper li[data-step-kind="factors"] { display: none; }
+}

@@ -1,0 +1,2848 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "resta-biblioteca-001",
+      "titulo": "Libros que quedan",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En una estantería hay {cantidadA} {unidadA} y un alumno se lleva {cantidadB} {unidadB} a casa. ¿Cuántos libros quedan en la estantería ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "resta-comparacion-002",
+      "titulo": "Comparar colecciones",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Leo tiene una colección de {cantidadA} {unidadA} y Ana tiene {cantidadB} {unidadB}. ¿Cuántas canicas más tiene Leo que Ana?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "canica",
+          "plural": "canicas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "canica",
+          "plural": "canicas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "canica",
+          "plural": "canicas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 42,
+          "cantidadB": 17
+        },
+        "respuesta": "25"
+      }
+    },
+    {
+      "id": "resta-completar-003",
+      "titulo": "Lo que falta para completar",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En la sala de una fiesta hay sitio para {cantidadA} {unidadA}. Los alumnos ya han colocado {cantidadB} {unidadB}. ¿Cuántas sillas les faltan por colocar para completar la sala?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "silla",
+          "plural": "sillas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "silla",
+          "plural": "sillas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "silla",
+          "plural": "sillas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 80,
+          "cantidadB": 54
+        },
+        "respuesta": "26"
+      }
+    },
+    {
+      "id": "resta-gastado-004",
+      "titulo": "Averiguar el gasto",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Alex sale de casa con {cantidadA} {unidadA} para hacer una compra. Cuando vuelve, le quedan {cantidadB} {unidadB}. ¿Cuántos euros ha gastado en la compra?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 60,
+          "cantidadB": 23
+        },
+        "respuesta": "37"
+      }
+    },
+    {
+      "id": "resta-inicial-005",
+      "titulo": "Antes del regalo",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Sam recibe un regalo de {cantidadB} {unidadB}. Al juntarlos con los que ya tenía, cuenta {cantidadA} {unidadA}. ¿Cuántos cromos tenía Sam antes de recibir el regalo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cromo",
+          "plural": "cromos"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cromo",
+          "plural": "cromos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cromo",
+          "plural": "cromos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 51,
+          "cantidadB": 18
+        },
+        "respuesta": "33"
+      }
+    },
+    {
+      "id": "resta-distancia-006",
+      "titulo": "Distancia pendiente",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Una clase va de excursión por un camino de {cantidadA} {unidadA}. Después de andar {cantidadB} {unidadB}, el grupo se para a descansar. ¿Cuántos metros le faltan para terminar el camino?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "metro",
+          "plural": "metros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "metro",
+          "plural": "metros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "metro",
+          "plural": "metros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 850,
+          "cantidadB": 325
+        },
+        "respuesta": "525"
+      }
+    },
+    {
+      "id": "resta-cambio-007",
+      "titulo": "El cambio de una compra",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Dani hace una compra que cuesta {cantidadB} {unidadB} y entrega {cantidadA} {unidadA} para pagar. ¿Cuántos euros le tienen que devolver?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 50,
+          "cantidadB": 32
+        },
+        "respuesta": "18"
+      }
+    },
+    {
+      "id": "resta-dos-ventas-008",
+      "titulo": "Dos ventas de cuadernos",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Al abrir una tienda hay {cantidadA} {unidadA}. Por la mañana venden {cantidadB} {unidadB} y por la tarde venden {cantidadC} {unidadC}. Si no reciben más cuadernos, ¿cuántos quedan al cerrar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad que se retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuaderno",
+          "plural": "cuadernos"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuaderno",
+          "plural": "cuadernos"
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "cuaderno",
+          "plural": "cuadernos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "resta",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Después restamos: {resultado1} - {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "cuaderno",
+          "plural": "cuadernos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 120,
+          "cantidadB": 35,
+          "cantidadC": 22
+        },
+        "respuesta": "63"
+      }
+    },
+    {
+      "id": "resta-dos-tramos-009",
+      "titulo": "Lo que falta tras dos tramos",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Un camino mide {cantidadA} {unidadA}. Antes de descansar, un grupo anda {cantidadB} {unidadB} y después recorre {cantidadC} {unidadC} más. ¿Cuántos metros le faltan para terminar el camino?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad que se retira",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "metro",
+          "plural": "metros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "metro",
+          "plural": "metros"
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "metro",
+          "plural": "metros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "resta",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Después restamos: {resultado1} - {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "metro",
+          "plural": "metros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 950,
+          "cantidadB": 240,
+          "cantidadC": 310
+        },
+        "respuesta": "400"
+      }
+    },
+    {
+      "id": "resta-planeta-010",
+      "titulo": "Un traslado espacial",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En un planeta de un cuento viven {cantidadA} {unidadA}. Un grupo de {cantidadB} {unidadB} se muda a otro planeta. Si no hay más cambios, ¿cuántos habitantes quedan en el primer planeta?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o inicial",
+          "minimo": 1,
+          "maximo": 999999999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se compara o se retira",
+          "minimo": 1,
+          "maximo": 999999999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "habitante",
+          "plural": "habitantes"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "habitante",
+          "plural": "habitantes"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "habitante",
+          "plural": "habitantes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4567890,
+          "cantidadB": 1234567
+        },
+        "respuesta": "3333323"
+      }
+    },
+    {
+      "id": "resta-biblioteca-individual-011",
+      "titulo": "Biblioteca del barrio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En la biblioteca del barrio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar las lecturas del mes. ¿Cuántos libros les quedan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-pintura-individual-012",
+      "titulo": "Taller de pintura",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el taller de pintura necesitan {cantidadA} {unidadA} para organizar una exposición, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos pinceles les faltan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pincel",
+          "plural": "pinceles"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pincel",
+          "plural": "pinceles"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pincel",
+          "plural": "pinceles"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-huerto-individual-013",
+      "titulo": "El huerto escolar",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos semillas más ha preparado la primera clase?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "semilla",
+          "plural": "semillas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "semilla",
+          "plural": "semillas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "semilla",
+          "plural": "semillas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-merienda-individual-014",
+      "titulo": "La merienda del campamento",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en la cocina del campamento tienen {cantidadA} {unidadA}. ¿Cuántos magdalenas tenían antes de recibir el pedido?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-torneo-individual-015",
+      "titulo": "El torneo del colegio",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el gimnasio del colegio tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos pelotas quedan al terminar el día?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pelota",
+          "plural": "pelotas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pelota",
+          "plural": "pelotas"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad utilizada",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "pelota",
+          "plural": "pelotas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "resta",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Descontamos también la segunda cantidad: {resultado1} - {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "pelota",
+          "plural": "pelotas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24,
+          "cantidadC": 18
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "resta-fiesta-individual-016",
+      "titulo": "Preparar la fiesta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Al principio había {cantidadA} {unidadA} en la sala de fiestas. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos globos han utilizado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "globo",
+          "plural": "globos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "globo",
+          "plural": "globos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "globo",
+          "plural": "globos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-laboratorio-individual-017",
+      "titulo": "Experimentos en clase",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el laboratorio del colegio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para hacer unos experimentos. ¿Cuántos frascos les quedan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "frasco",
+          "plural": "frascos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "frasco",
+          "plural": "frascos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "frasco",
+          "plural": "frascos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-mercado-individual-018",
+      "titulo": "El puesto de fruta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el puesto de fruta necesitan {cantidadA} {unidadA} para preparar un pedido, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos peras les faltan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pera",
+          "plural": "peras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-musica-individual-019",
+      "titulo": "El ensayo de música",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos partituras más ha preparado la primera clase?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "partitura",
+          "plural": "partituras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "partitura",
+          "plural": "partituras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "partitura",
+          "plural": "partituras"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-museo-individual-020",
+      "titulo": "Los recuerdos del museo",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en la tienda del museo tienen {cantidadA} {unidadA}. ¿Cuántos postales tenían antes de recibir el pedido?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "postal",
+          "plural": "postales"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "postal",
+          "plural": "postales"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "postal",
+          "plural": "postales"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-reciclaje-individual-021",
+      "titulo": "La campaña de reciclaje",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el punto de reciclaje tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos botellas quedan al terminar el día?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "botella",
+          "plural": "botellas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "botella",
+          "plural": "botellas"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad utilizada",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "botella",
+          "plural": "botellas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "resta",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Descontamos también la segunda cantidad: {resultado1} - {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "botella",
+          "plural": "botellas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24,
+          "cantidadC": 18
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "resta-refugio-individual-022",
+      "titulo": "Ayudar al refugio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Al principio había {cantidadA} {unidadA} en el refugio de animales. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos mantas han utilizado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "manta",
+          "plural": "mantas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "manta",
+          "plural": "mantas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "manta",
+          "plural": "mantas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-comedor-individual-023",
+      "titulo": "La comida de la excursión",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el comedor del colegio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar una excursión. ¿Cuántos bocadillos les quedan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-teatro-individual-024",
+      "titulo": "La función de teatro",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el teatro del barrio necesitan {cantidadA} {unidadA} para organizar una función escolar, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos entradas les faltan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-robotica-individual-025",
+      "titulo": "Construir robots",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos tornillos más ha preparado la primera clase?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tornillo",
+          "plural": "tornillos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tornillo",
+          "plural": "tornillos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tornillo",
+          "plural": "tornillos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-collares-individual-026",
+      "titulo": "El taller de collares",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el taller de manualidades tienen {cantidadA} {unidadA}. ¿Cuántos cuentas tenían antes de recibir el pedido?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuenta",
+          "plural": "cuentas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuenta",
+          "plural": "cuentas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuenta",
+          "plural": "cuentas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-festival-individual-027",
+      "titulo": "El festival del barrio",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el centro del barrio tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos banderines quedan al terminar el día?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "banderín",
+          "plural": "banderines"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "banderín",
+          "plural": "banderines"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad utilizada",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "banderín",
+          "plural": "banderines"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "resta",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Descontamos también la segunda cantidad: {resultado1} - {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "banderín",
+          "plural": "banderines"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24,
+          "cantidadC": 18
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "resta-exploradores-individual-028",
+      "titulo": "Una ruta de exploradores",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Al principio había {cantidadA} {unidadA} en el club de exploradores. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos mapas han utilizado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "mapa",
+          "plural": "mapas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mapa",
+          "plural": "mapas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "mapa",
+          "plural": "mapas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-medallas-individual-029",
+      "titulo": "La carrera solidaria",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el polideportivo tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para organizar una carrera solidaria. ¿Cuántos medallas les quedan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "medalla",
+          "plural": "medallas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "medalla",
+          "plural": "medallas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "medalla",
+          "plural": "medallas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-juegos-individual-030",
+      "titulo": "La tarde de juegos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En la ludoteca necesitan {cantidadA} {unidadA} para organizar una tarde de juegos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos fichas les faltan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "ficha",
+          "plural": "fichas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-planetario-individual-031",
+      "titulo": "El viaje al planetario",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el planetario tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar una visita escolar. ¿Cuántos entradas les quedan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-ajedrez-individual-032",
+      "titulo": "El club de ajedrez",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el club de ajedrez necesitan {cantidadA} {unidadA} para organizar un encuentro, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos fichas les faltan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "ficha",
+          "plural": "fichas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-titeres-individual-033",
+      "titulo": "La función de títeres",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos muñecos más ha preparado la primera clase?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "muñeco",
+          "plural": "muñecos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "muñeco",
+          "plural": "muñecos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "muñeco",
+          "plural": "muñecos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-invernadero-individual-034",
+      "titulo": "Las plantas del invernadero",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el invernadero escolar tienen {cantidadA} {unidadA}. ¿Cuántos macetas tenían antes de recibir el pedido?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "maceta",
+          "plural": "macetas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "maceta",
+          "plural": "macetas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "maceta",
+          "plural": "macetas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-acuarios-individual-035",
+      "titulo": "Los peces del aula",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el taller de acuarios tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos piedras quedan al terminar el día?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "piedra",
+          "plural": "piedras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "piedra",
+          "plural": "piedras"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Segunda cantidad utilizada",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "piedra",
+          "plural": "piedras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "resta",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Descontamos también la segunda cantidad: {resultado1} - {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "piedra",
+          "plural": "piedras"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24,
+          "cantidadC": 18
+        },
+        "respuesta": "48"
+      }
+    },
+    {
+      "id": "resta-conservas-individual-036",
+      "titulo": "La feria de conservas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Al principio había {cantidadA} {unidadA} en el taller de conservas. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos tarros han utilizado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tarro",
+          "plural": "tarros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tarro",
+          "plural": "tarros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tarro",
+          "plural": "tarros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-carnaval-individual-037",
+      "titulo": "El carnaval del barrio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el taller de carnaval tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar el desfile. ¿Cuántos máscaras les quedan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "máscara",
+          "plural": "máscaras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "máscara",
+          "plural": "máscaras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "máscara",
+          "plural": "máscaras"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-encuadernacion-individual-038",
+      "titulo": "Creamos nuestros cuadernos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el taller de encuadernación necesitan {cantidadA} {unidadA} para hacer unos cuadernos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos hojas les faltan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "hoja",
+          "plural": "hojas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "hoja",
+          "plural": "hojas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "hoja",
+          "plural": "hojas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-colmenar-individual-039",
+      "titulo": "Una visita al colmenar",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos láminas más ha preparado la primera clase?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lámina",
+          "plural": "láminas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "lámina",
+          "plural": "láminas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "lámina",
+          "plural": "láminas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    },
+    {
+      "id": "resta-aromaticas-individual-040",
+      "titulo": "El jardín de los aromas",
+      "dificultad": "media",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el jardín de plantas aromáticas tienen {cantidadA} {unidadA}. ¿Cuántos etiquetas tenían antes de recibir el pedido?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se quita o compara",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 90,
+          "cantidadB": 24
+        },
+        "respuesta": "66"
+      }
+    }
+  ]
+}

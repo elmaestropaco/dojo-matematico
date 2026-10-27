@@ -1,0 +1,2979 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "division-001",
+      "titulo": "Repartir caramelos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para una fiesta hay {cantidadA} {unidadA} y se reparten por igual entre {cantidadB} {unidadB}. ¿Cuántos caramelos recibe cada niño?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caramelo",
+          "plural": "caramelos"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "niño",
+          "plural": "niños"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "caramelo",
+          "plural": "caramelos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "division-002",
+      "titulo": "Guardar lápices",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "La maestra guarda {cantidadA} {unidadA} en {cantidadB} {unidadB}. Quiere que todas las cajas tengan la misma cantidad. ¿Cuántos lápices debe poner en cada caja?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lápiz",
+          "plural": "lápices"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "caja",
+          "plural": "cajas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "lápiz",
+          "plural": "lápices"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 36,
+          "cantidadB": 4
+        },
+        "respuesta": "9"
+      }
+    },
+    {
+      "id": "division-003",
+      "titulo": "Libros en estantes",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En una biblioteca colocan {cantidadA} {unidadA} en {cantidadB} {unidadB}, con la misma cantidad en cada uno. ¿Cuántos libros ponen en cada estante?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "estante",
+          "plural": "estantes"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 45,
+          "cantidadB": 5
+        },
+        "respuesta": "9"
+      }
+    },
+    {
+      "id": "division-004",
+      "titulo": "Bolsas de galletas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para una merienda se preparan {cantidadB} {unidadB} iguales con un total de {cantidadA} {unidadA}. ¿Cuántas galletas hay que poner en cada bolsa?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "galleta",
+          "plural": "galletas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "bolsa",
+          "plural": "bolsas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "galleta",
+          "plural": "galletas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 42,
+          "cantidadB": 7
+        },
+        "respuesta": "6"
+      }
+    },
+    {
+      "id": "division-005",
+      "titulo": "Sobres de cromos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Sam quiere guardar sus {cantidadA} {unidadA} en {cantidadB} {unidadB}, poniendo la misma cantidad en todos. ¿Cuántos cromos tendrá cada sobre?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cromo",
+          "plural": "cromos"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "sobre",
+          "plural": "sobres"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cromo",
+          "plural": "cromos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 56,
+          "cantidadB": 8
+        },
+        "respuesta": "7"
+      }
+    },
+    {
+      "id": "division-006",
+      "titulo": "Compartir el dinero",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Un grupo de {cantidadB} {unidadB} ha conseguido {cantidadA} {unidadA} en una actividad. Deciden compartir el dinero a partes iguales. ¿Cuántos euros recibe cada amigo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "amigo",
+          "plural": "amigos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 9
+        },
+        "respuesta": "8"
+      }
+    },
+    {
+      "id": "division-007",
+      "titulo": "Llenar bolsas",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En una caja hay {cantidadA} {unidadA}. Para guardarlos, se preparan bolsas con {cantidadB} {unidadB} en cada una. ¿Cuántas bolsas se pueden llenar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "botón",
+          "plural": "botones"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "botón",
+          "plural": "botones"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "bolsa",
+          "plural": "bolsas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 60,
+          "cantidadB": 12
+        },
+        "respuesta": "5"
+      }
+    },
+    {
+      "id": "division-008",
+      "titulo": "Guardar y repartir",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "division",
+        "resta"
+      ],
+      "enunciado": "La maestra tiene {cantidadA} {unidadA} y guarda {cantidadB} {unidadB} para otro día. Reparte los demás por igual entre {cantidadC} {unidadC}. ¿Cuántos lápices recibe cada niño?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Tercera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lápiz",
+          "plural": "lápices"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "lápiz",
+          "plural": "lápices"
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "niño",
+          "plural": "niños"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "division",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Después repartimos: {resultado1} ÷ {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "lápiz",
+          "plural": "lápices"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "division_exacta",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 50,
+          "cantidadB": 14,
+          "cantidadC": 6
+        },
+        "respuesta": "6"
+      }
+    },
+    {
+      "id": "division-009",
+      "titulo": "Juntar y repartir",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "division",
+        "suma"
+      ],
+      "enunciado": "En una caja hay {cantidadA} {unidadA} y en otra hay {cantidadB} {unidadB}. Se juntan todos y se reparten por igual entre {cantidadC} {unidadC}. ¿Cuántos cromos recibe cada niño?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Tercera cantidad",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cromo",
+          "plural": "cromos"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cromo",
+          "plural": "cromos"
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "niño",
+          "plural": "niños"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "division",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Después repartimos: {resultado1} ÷ {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "cromo",
+          "plural": "cromos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 18,
+          "cantidadC": 7
+        },
+        "respuesta": "6"
+      }
+    },
+    {
+      "id": "division-010",
+      "titulo": "Piezas para las naves",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En un cuento del espacio hay {cantidadA} {unidadA} de repuesto para {cantidadB} {unidadB}. Todas deben recibir la misma cantidad. ¿Cuántas piezas recibe cada nave?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total o número de grupos",
+          "minimo": 1,
+          "maximo": 999999999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad por grupo o número de grupos",
+          "minimo": 1,
+          "maximo": 999999999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pieza",
+          "plural": "piezas"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "nave",
+          "plural": "naves"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pieza",
+          "plural": "piezas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 987654321,
+          "cantidadB": 9
+        },
+        "respuesta": "109739369"
+      }
+    },
+    {
+      "id": "division-biblioteca-individual-009",
+      "titulo": "Biblioteca del barrio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En la biblioteca del barrio tienen {cantidadA} {unidadA} para preparar las lecturas del mes. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos libros recibe cada clase?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "clase",
+          "plural": "clases"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-pintura-individual-010",
+      "titulo": "Taller de pintura",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller de pintura tienen {cantidadA} {unidadA}. Para organizar una exposición, guardan {cantidadB} {unidadB} en cada paquete. ¿Cuántos paquetes pueden preparar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pincel",
+          "plural": "pinceles"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pincel",
+          "plural": "pinceles"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-huerto-individual-011",
+      "titulo": "El huerto escolar",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para sembrar las nuevas plantas se preparan paquetes iguales con {cantidadB} {unidadB} en cada uno. Si en total se utilizan {cantidadA} {unidadA}, ¿cuántos paquetes se han preparado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "semilla",
+          "plural": "semillas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "semilla",
+          "plural": "semillas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-merienda-individual-012",
+      "titulo": "La merienda del campamento",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En la cocina del campamento disponen de {cantidadA} {unidadA} para preparar la merienda. Cada magdalena cuesta {cantidadB} {unidadB}. ¿Cuántos magdalenas pueden comprar con ese dinero?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Dinero disponible",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio por unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el dinero entre el precio de cada unidad: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "magdalena",
+          "plural": "magdalenas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-torneo-individual-013",
+      "titulo": "El torneo del colegio",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Hay {cantidadA} {unidadA} para celebrar un torneo. Se reparten por igual entre {cantidadB} {unidadB}. En cada mesa hay {cantidadC} {unidadC} que comparten su parte por igual. ¿Cuántos pelotas recibe cada persona?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se reparten",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pelota",
+          "plural": "pelotas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Mesas del primer reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mesa",
+          "plural": "mesas"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Personas por mesa",
+          "minimo": 1,
+          "maximo": 30
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "persona",
+          "plural": "personas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos primero entre las mesas: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "division",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Repartimos después entre las personas de cada mesa: {resultado1} ÷ {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "pelota",
+          "plural": "pelotas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "division_exacta",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 3,
+          "cantidadC": 2
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-fiesta-individual-014",
+      "titulo": "Preparar la fiesta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En la sala de fiestas tienen {cantidadA} {unidadA} para decorar una fiesta. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos globos recibe cada clase?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "globo",
+          "plural": "globos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "clase",
+          "plural": "clases"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "globo",
+          "plural": "globos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-laboratorio-individual-015",
+      "titulo": "Experimentos en clase",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el laboratorio del colegio tienen {cantidadA} {unidadA} para hacer unos experimentos. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos frascos recibe cada mesa?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "frasco",
+          "plural": "frascos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mesa",
+          "plural": "mesas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "frasco",
+          "plural": "frascos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-mercado-individual-016",
+      "titulo": "El puesto de fruta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el puesto de fruta tienen {cantidadA} {unidadA}. Para preparar un pedido, guardan {cantidadB} {unidadB} en cada paquete. ¿Cuántos paquetes pueden preparar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pera",
+          "plural": "peras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pera",
+          "plural": "peras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-musica-individual-017",
+      "titulo": "El ensayo de música",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para preparar un concierto se preparan paquetes iguales con {cantidadB} {unidadB} en cada uno. Si en total se utilizan {cantidadA} {unidadA}, ¿cuántos paquetes se han preparado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "partitura",
+          "plural": "partituras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "partitura",
+          "plural": "partituras"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-museo-individual-018",
+      "titulo": "Los recuerdos del museo",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En la tienda del museo disponen de {cantidadA} {unidadA} para preparar las visitas escolares. Cada postal cuesta {cantidadB} {unidadB}. ¿Cuántos postales pueden comprar con ese dinero?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Dinero disponible",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio por unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el dinero entre el precio de cada unidad: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "postal",
+          "plural": "postales"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-reciclaje-individual-019",
+      "titulo": "La campaña de reciclaje",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Hay {cantidadA} {unidadA} para hacer una actividad con materiales usados. Se reparten por igual entre {cantidadB} {unidadB}. En cada mesa hay {cantidadC} {unidadC} que comparten su parte por igual. ¿Cuántos botellas recibe cada persona?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se reparten",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "botella",
+          "plural": "botellas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Mesas del primer reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mesa",
+          "plural": "mesas"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Personas por mesa",
+          "minimo": 1,
+          "maximo": 30
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "persona",
+          "plural": "personas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos primero entre las mesas: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "division",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Repartimos después entre las personas de cada mesa: {resultado1} ÷ {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "botella",
+          "plural": "botellas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "division_exacta",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 3,
+          "cantidadC": 2
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-refugio-individual-020",
+      "titulo": "Ayudar al refugio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el refugio de animales tienen {cantidadA} {unidadA} para preparar las camas de los animales. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos mantas recibe cada zona?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "manta",
+          "plural": "mantas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "zona",
+          "plural": "zonas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "manta",
+          "plural": "mantas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-comedor-individual-021",
+      "titulo": "La comida de la excursión",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el comedor del colegio tienen {cantidadA} {unidadA} para preparar una excursión. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos bocadillos recibe cada grupo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "grupo",
+          "plural": "grupos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "bocadillo",
+          "plural": "bocadillos"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-teatro-individual-022",
+      "titulo": "La función de teatro",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el teatro del barrio tienen {cantidadA} {unidadA}. Para organizar una función escolar, guardan {cantidadB} {unidadB} en cada paquete. ¿Cuántos paquetes pueden preparar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-robotica-individual-023",
+      "titulo": "Construir robots",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para construir unos robots se preparan paquetes iguales con {cantidadB} {unidadB} en cada uno. Si en total se utilizan {cantidadA} {unidadA}, ¿cuántos paquetes se han preparado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tornillo",
+          "plural": "tornillos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tornillo",
+          "plural": "tornillos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-collares-individual-024",
+      "titulo": "El taller de collares",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller de manualidades disponen de {cantidadA} {unidadA} para hacer unos collares. Cada cuenta cuesta {cantidadB} {unidadB}. ¿Cuántos cuentas pueden comprar con ese dinero?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Dinero disponible",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio por unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el dinero entre el precio de cada unidad: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuenta",
+          "plural": "cuentas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-festival-individual-025",
+      "titulo": "El festival del barrio",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Hay {cantidadA} {unidadA} para decorar un festival. Se reparten por igual entre {cantidadB} {unidadB}. En cada mesa hay {cantidadC} {unidadC} que comparten su parte por igual. ¿Cuántos banderines recibe cada persona?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se reparten",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "banderín",
+          "plural": "banderines"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Mesas del primer reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mesa",
+          "plural": "mesas"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Personas por mesa",
+          "minimo": 1,
+          "maximo": 30
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "persona",
+          "plural": "personas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos primero entre las mesas: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "division",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Repartimos después entre las personas de cada mesa: {resultado1} ÷ {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "banderín",
+          "plural": "banderines"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "division_exacta",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 3,
+          "cantidadC": 2
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-exploradores-individual-026",
+      "titulo": "Una ruta de exploradores",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el club de exploradores tienen {cantidadA} {unidadA} para preparar una ruta. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos mapas recibe cada grupo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "mapa",
+          "plural": "mapas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "grupo",
+          "plural": "grupos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "mapa",
+          "plural": "mapas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-medallas-individual-027",
+      "titulo": "La carrera solidaria",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el polideportivo tienen {cantidadA} {unidadA} para organizar una carrera solidaria. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos medallas recibe cada equipo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "medalla",
+          "plural": "medallas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "equipo",
+          "plural": "equipos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "medalla",
+          "plural": "medallas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-juegos-individual-028",
+      "titulo": "La tarde de juegos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En la ludoteca tienen {cantidadA} {unidadA}. Para organizar una tarde de juegos, guardan {cantidadB} {unidadB} en cada paquete. ¿Cuántos paquetes pueden preparar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "ficha",
+          "plural": "fichas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-costura-individual-029",
+      "titulo": "Arreglar los disfraces",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para arreglar unos disfraces se preparan paquetes iguales con {cantidadB} {unidadB} en cada uno. Si en total se utilizan {cantidadA} {unidadA}, ¿cuántos paquetes se han preparado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "botón",
+          "plural": "botones"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "botón",
+          "plural": "botones"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-papel-individual-030",
+      "titulo": "El concurso de dibujo",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En la clase de dibujo disponen de {cantidadA} {unidadA} para preparar un concurso. Cada folio cuesta {cantidadB} {unidadB}. ¿Cuántos folios pueden comprar con ese dinero?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Dinero disponible",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio por unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el dinero entre el precio de cada unidad: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "folio",
+          "plural": "folios"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-planetario-individual-031",
+      "titulo": "El viaje al planetario",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el planetario tienen {cantidadA} {unidadA} para preparar una visita escolar. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos entradas recibe cada clase?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "clase",
+          "plural": "clases"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-ajedrez-individual-032",
+      "titulo": "El club de ajedrez",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el club de ajedrez tienen {cantidadA} {unidadA}. Para organizar un encuentro, guardan {cantidadB} {unidadB} en cada paquete. ¿Cuántos paquetes pueden preparar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "ficha",
+          "plural": "fichas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "ficha",
+          "plural": "fichas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-titeres-individual-033",
+      "titulo": "La función de títeres",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para montar un escenario se preparan paquetes iguales con {cantidadB} {unidadB} en cada uno. Si en total se utilizan {cantidadA} {unidadA}, ¿cuántos paquetes se han preparado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "muñeco",
+          "plural": "muñecos"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "muñeco",
+          "plural": "muñecos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-invernadero-individual-034",
+      "titulo": "Las plantas del invernadero",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el invernadero escolar disponen de {cantidadA} {unidadA} para trasplantar las plantas. Cada maceta cuesta {cantidadB} {unidadB}. ¿Cuántos macetas pueden comprar con ese dinero?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Dinero disponible",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio por unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el dinero entre el precio de cada unidad: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "maceta",
+          "plural": "macetas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-acuarios-individual-035",
+      "titulo": "Los peces del aula",
+      "dificultad": "avanzada",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Hay {cantidadA} {unidadA} para preparar una actividad. Se reparten por igual entre {cantidadB} {unidadB}. En cada mesa hay {cantidadC} {unidadC} que comparten su parte por igual. ¿Cuántos piedras recibe cada persona?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Unidades que se reparten",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "piedra",
+          "plural": "piedras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Mesas del primer reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mesa",
+          "plural": "mesas"
+        },
+        "cantidadC": {
+          "tipo": "entero",
+          "descripcion": "Personas por mesa",
+          "minimo": 1,
+          "maximo": 30
+        },
+        "unidadC": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadC",
+          "singular": "persona",
+          "plural": "personas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos primero entre las mesas: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        },
+        {
+          "id": "resultado2",
+          "operacion": "division",
+          "operandos": [
+            "resultado1",
+            "cantidadC"
+          ],
+          "explicacion": "Repartimos después entre las personas de cada mesa: {resultado1} ÷ {cantidadC} = {resultado2}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado2",
+        "unidad": {
+          "singular": "piedra",
+          "plural": "piedras"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        },
+        {
+          "tipo": "division_exacta",
+          "izquierda": "resultado1",
+          "derecha": "cantidadC"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 3,
+          "cantidadC": 2
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-conservas-individual-036",
+      "titulo": "La feria de conservas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller de conservas tienen {cantidadA} {unidadA} para preparar una feria. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos tarros recibe cada puesto?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tarro",
+          "plural": "tarros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "puesto",
+          "plural": "puestos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tarro",
+          "plural": "tarros"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-carnaval-individual-037",
+      "titulo": "El carnaval del barrio",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller de carnaval tienen {cantidadA} {unidadA} para preparar el desfile. Reparten esa cantidad a partes iguales entre {cantidadB} {unidadB}. ¿Cuántos máscaras recibe cada grupo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total que se reparte",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "máscara",
+          "plural": "máscaras"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos del reparto",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "grupo",
+          "plural": "grupos"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos el total en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "máscara",
+          "plural": "máscaras"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-encuadernacion-individual-038",
+      "titulo": "Creamos nuestros cuadernos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller de encuadernación tienen {cantidadA} {unidadA}. Para hacer unos cuadernos, guardan {cantidadB} {unidadB} en cada paquete. ¿Cuántos paquetes pueden preparar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "hoja",
+          "plural": "hojas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "hoja",
+          "plural": "hojas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-colmenar-individual-039",
+      "titulo": "Una visita al colmenar",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para preparar los materiales de una visita se preparan paquetes iguales con {cantidadB} {unidadB} en cada uno. Si en total se utilizan {cantidadA} {unidadA}, ¿cuántos paquetes se han preparado?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "lámina",
+          "plural": "láminas"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad en cada paquete",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "lámina",
+          "plural": "láminas"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el total entre la cantidad de cada paquete: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "paquete",
+          "plural": "paquetes"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    },
+    {
+      "id": "division-aromaticas-individual-040",
+      "titulo": "El jardín de los aromas",
+      "dificultad": "media",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el jardín de plantas aromáticas disponen de {cantidadA} {unidadA} para plantar nuevas flores. Cada etiqueta cuesta {cantidadB} {unidadB}. ¿Cuántos etiquetas pueden comprar con ese dinero?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Dinero disponible",
+          "minimo": 1,
+          "maximo": 99999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "euro",
+          "plural": "euros"
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Precio por unidad",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "euro",
+          "plural": "euros"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Dividimos el dinero entre el precio de cada unidad: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "etiqueta",
+          "plural": "etiquetas"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 72,
+          "cantidadB": 6
+        },
+        "respuesta": "12"
+      }
+    }
+  ]
+}
