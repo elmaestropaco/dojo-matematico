@@ -198,6 +198,11 @@
           values[key] = BigInt(pickInt(Math.max(range.min, 10 ** (digits - 1)), Math.min(range.max, 10 ** digits - 1)));
         } else if (variable.tipo === 'texto') values[key] = variable.valores[pickInt(0, variable.valores.length - 1)];
       }
+      if (values.nombre1 && values.nombre2 === values.nombre1) {
+        const alternatives = template.variables.nombre2.valores.filter(name => name !== values.nombre1);
+        if (!alternatives.length) throw new Error('Una comparación necesita dos personajes diferentes.');
+        values.nombre2 = alternatives[pickInt(0, alternatives.length - 1)];
+      }
       if (template.etiquetas.length === 1 && config.carryMode === 'sin' && !withoutCarry(template, values, config, pickInt)) { values = null; continue; }
       if (!prepareDivisions(template, values, normalized, pickInt)) { values = null; continue; }
       let valid = true;

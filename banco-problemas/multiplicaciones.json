@@ -27,13 +27,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "caja",
-          "plural": "cajas"
+          "plural": "cajas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "lápiz",
-          "plural": "lápices"
+          "plural": "lápices",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -51,7 +53,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "lápiz",
-          "plural": "lápices"
+          "plural": "lápices",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -70,7 +73,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En una frutería preparan {cantidadA} {unidadA} para una entrega. En cada bolsa ponen {cantidadB} {unidadB}. ¿Cuántas peras necesitan para preparar todas las bolsas?",
+      "enunciado": "En una frutería preparan {cantidadA} {unidadA} para una entrega. En cada bolsa ponen {cantidadB} {unidadB}. ¿Cuántas peras necesitan para todas las bolsas?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -88,13 +91,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "bolsa",
-          "plural": "bolsas"
+          "plural": "bolsas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -112,7 +117,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -131,7 +137,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para una función del colegio se colocan {cantidadA} {unidadA} de sillas. En cada fila hay {cantidadB} {unidadB}. ¿Cuántas sillas se han colocado en total?",
+      "enunciado": "Para una función del colegio colocan {cantidadA} {unidadA} de sillas. En cada fila hay {cantidadB} {unidadB}. ¿Cuántas sillas han colocado en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -149,13 +155,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "fila",
-          "plural": "filas"
+          "plural": "filas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "silla",
-          "plural": "sillas"
+          "plural": "sillas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -173,7 +181,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "silla",
-          "plural": "sillas"
+          "plural": "sillas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -192,7 +201,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Alex compra {cantidadA} {unidadA} de cromos. Al abrirlos, ve que cada sobre contiene {cantidadB} {unidadB}. ¿Cuántos cromos ha comprado en total?",
+      "enunciado": "Alex compra {cantidadA} {unidadA} de cromos. Cada sobre contiene {cantidadB} {unidadB}. ¿Cuántos cromos ha comprado en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -210,13 +219,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "sobre",
-          "plural": "sobres"
+          "plural": "sobres",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "cromo",
-          "plural": "cromos"
+          "plural": "cromos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -234,7 +245,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "cromo",
-          "plural": "cromos"
+          "plural": "cromos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -271,13 +283,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "página",
-          "plural": "páginas"
+          "plural": "páginas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "foto",
-          "plural": "fotos"
+          "plural": "fotos",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -295,7 +309,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "foto",
-          "plural": "fotos"
+          "plural": "fotos",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -314,7 +329,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para una actividad del colegio se venden {cantidadA} {unidadA}. Cada entrada cuesta {cantidadB} {unidadB}. ¿Cuántos euros se consiguen al vender todas las entradas?",
+      "enunciado": "Para una actividad del colegio venden {cantidadA} {unidadA}. Cada entrada cuesta {cantidadB} {unidadB}. ¿Cuántos euros se consiguen al vender todas las entradas?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -332,13 +347,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -356,7 +373,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -393,13 +411,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "día",
-          "plural": "días"
+          "plural": "días",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "página",
-          "plural": "páginas"
+          "plural": "páginas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -417,7 +437,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "página",
-          "plural": "páginas"
+          "plural": "páginas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -461,19 +482,22 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "caja",
-          "plural": "cajas"
+          "plural": "cajas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "lápiz",
-          "plural": "lápices"
+          "plural": "lápices",
+          "genero": "masculino"
         },
         "unidadC": {
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "lápiz",
-          "plural": "lápices"
+          "plural": "lápices",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -500,7 +524,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "lápiz",
-          "plural": "lápices"
+          "plural": "lápices",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -545,19 +570,22 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "sobre",
-          "plural": "sobres"
+          "plural": "sobres",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pegatina",
-          "plural": "pegatinas"
+          "plural": "pegatinas",
+          "genero": "femenino"
         },
         "unidadC": {
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "pegatina",
-          "plural": "pegatinas"
+          "plural": "pegatinas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -584,7 +612,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "pegatina",
-          "plural": "pegatinas"
+          "plural": "pegatinas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -628,13 +657,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "caja",
-          "plural": "cajas"
+          "plural": "cajas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pieza",
-          "plural": "piezas"
+          "plural": "piezas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -652,7 +683,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "pieza",
-          "plural": "piezas"
+          "plural": "piezas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -671,7 +703,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En la biblioteca del barrio preparan {cantidadA} {unidadA} para preparar las lecturas del mes. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos libros preparan en total?",
+      "enunciado": "En la biblioteca del barrio preparan {cantidadA} {unidadA} para las lecturas del mes. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos libros preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -683,7 +715,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -695,7 +728,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -713,7 +747,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -744,7 +779,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "fila",
-          "plural": "filas"
+          "plural": "filas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -756,7 +792,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pincel",
-          "plural": "pinceles"
+          "plural": "pinceles",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -774,7 +811,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "pincel",
-          "plural": "pinceles"
+          "plural": "pinceles",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -805,7 +843,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "semilla",
-          "plural": "semillas"
+          "plural": "semillas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -817,7 +856,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -835,7 +875,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -854,7 +895,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En la cocina del campamento preparan {cantidadB} {unidadB} al día para preparar la merienda. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos magdalenas preparan en total?",
+      "enunciado": "En la cocina del campamento preparan {cantidadB} {unidadB} al día para la merienda. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas magdalenas preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -866,7 +907,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "día",
-          "plural": "días"
+          "plural": "días",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -878,7 +920,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "magdalena",
-          "plural": "magdalenas"
+          "plural": "magdalenas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -896,7 +939,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "magdalena",
-          "plural": "magdalenas"
+          "plural": "magdalenas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -915,7 +959,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para celebrar un torneo llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos pelotas han llegado?",
+      "enunciado": "Para celebrar un torneo reciben {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántas pelotas han llegado?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -927,7 +971,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "caja",
-          "plural": "cajas"
+          "plural": "cajas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -939,7 +984,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "paquete",
-          "plural": "paquetes"
+          "plural": "paquetes",
+          "genero": "masculino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -951,7 +997,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -978,7 +1025,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -998,7 +1046,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En la sala de fiestas quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos globos necesitan?",
+      "enunciado": "Para cada lote de una actividad necesitan {cantidadB} {unidadB}. En la sala de fiestas quieren preparar {cantidadA} {unidadA} con el mismo contenido. ¿Cuántos globos necesitan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1010,7 +1058,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1022,7 +1071,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "globo",
-          "plural": "globos"
+          "plural": "globos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1040,7 +1090,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "globo",
-          "plural": "globos"
+          "plural": "globos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1071,7 +1122,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1083,7 +1135,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "frasco",
-          "plural": "frascos"
+          "plural": "frascos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1101,7 +1154,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "frasco",
-          "plural": "frascos"
+          "plural": "frascos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1120,7 +1174,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para preparar un pedido, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos peras han colocado en total?",
+      "enunciado": "Para un pedido, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas peras han colocado en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1132,7 +1186,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "fila",
-          "plural": "filas"
+          "plural": "filas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1144,7 +1199,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1162,7 +1218,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1181,7 +1238,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para preparar un concierto, en la escuela de música compran {cantidadA} {unidadA}. El precio de cada partitura es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
+      "enunciado": "Para un concierto, en la escuela de música compran {cantidadA} {unidadA}. El precio de cada partitura es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1193,7 +1250,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "partitura",
-          "plural": "partituras"
+          "plural": "partituras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1205,7 +1263,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1223,7 +1282,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1242,7 +1302,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En la tienda del museo preparan {cantidadB} {unidadB} al día para preparar las visitas escolares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos postales preparan en total?",
+      "enunciado": "En la tienda del museo preparan {cantidadB} {unidadB} al día para las visitas escolares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas postales preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1254,7 +1314,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "día",
-          "plural": "días"
+          "plural": "días",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1266,7 +1327,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "postal",
-          "plural": "postales"
+          "plural": "postales",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1284,7 +1346,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "postal",
-          "plural": "postales"
+          "plural": "postales",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1303,7 +1366,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para hacer una actividad con materiales usados llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos botellas han llegado?",
+      "enunciado": "Para hacer una actividad con materiales usados reciben {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántas botellas han llegado?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1315,7 +1378,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "caja",
-          "plural": "cajas"
+          "plural": "cajas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1327,7 +1391,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "paquete",
-          "plural": "paquetes"
+          "plural": "paquetes",
+          "genero": "masculino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -1339,7 +1404,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1366,7 +1432,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1386,7 +1453,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el refugio de animales quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos mantas necesitan?",
+      "enunciado": "Para cada lote de una actividad necesitan {cantidadB} {unidadB}. En el refugio de animales quieren preparar {cantidadA} {unidadA} con el mismo contenido. ¿Cuántas mantas necesitan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1398,7 +1465,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1410,7 +1478,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "manta",
-          "plural": "mantas"
+          "plural": "mantas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1428,7 +1497,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "manta",
-          "plural": "mantas"
+          "plural": "mantas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1447,7 +1517,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En el comedor del colegio preparan {cantidadA} {unidadA} para preparar una excursión. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos bocadillos preparan en total?",
+      "enunciado": "En el comedor del colegio preparan {cantidadA} {unidadA} para una excursión. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos bocadillos preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1459,7 +1529,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1471,7 +1542,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "bocadillo",
-          "plural": "bocadillos"
+          "plural": "bocadillos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1489,7 +1561,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "bocadillo",
-          "plural": "bocadillos"
+          "plural": "bocadillos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1508,7 +1581,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para organizar una función escolar, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos entradas han colocado en total?",
+      "enunciado": "Para organizar una función escolar, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas entradas han colocado en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1520,7 +1593,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "fila",
-          "plural": "filas"
+          "plural": "filas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1532,7 +1606,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1550,7 +1625,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1581,7 +1657,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "tornillo",
-          "plural": "tornillos"
+          "plural": "tornillos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1593,7 +1670,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1611,7 +1689,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1630,7 +1709,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En el taller de manualidades preparan {cantidadB} {unidadB} al día para hacer unos collares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos cuentas preparan en total?",
+      "enunciado": "En el taller de manualidades preparan {cantidadB} {unidadB} al día para hacer unos collares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas cuentas preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1642,7 +1721,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "día",
-          "plural": "días"
+          "plural": "días",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1654,7 +1734,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "cuenta",
-          "plural": "cuentas"
+          "plural": "cuentas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1672,7 +1753,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "cuenta",
-          "plural": "cuentas"
+          "plural": "cuentas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1691,7 +1773,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para decorar un festival llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos banderines han llegado?",
+      "enunciado": "Para decorar un festival reciben {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos banderines han llegado?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1703,7 +1785,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "caja",
-          "plural": "cajas"
+          "plural": "cajas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1715,7 +1798,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "paquete",
-          "plural": "paquetes"
+          "plural": "paquetes",
+          "genero": "masculino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -1727,7 +1811,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1754,7 +1839,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1774,7 +1860,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el club de exploradores quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos mapas necesitan?",
+      "enunciado": "Para cada lote de una actividad necesitan {cantidadB} {unidadB}. En el club de exploradores quieren preparar {cantidadA} {unidadA} con el mismo contenido. ¿Cuántos mapas necesitan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1786,7 +1872,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1798,7 +1885,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "mapa",
-          "plural": "mapas"
+          "plural": "mapas",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1816,7 +1904,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "mapa",
-          "plural": "mapas"
+          "plural": "mapas",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1835,7 +1924,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En el polideportivo preparan {cantidadA} {unidadA} para organizar una carrera solidaria. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos medallas preparan en total?",
+      "enunciado": "En el polideportivo preparan {cantidadA} {unidadA} para organizar una carrera solidaria. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántas medallas preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1847,7 +1936,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1859,7 +1949,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "medalla",
-          "plural": "medallas"
+          "plural": "medallas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1877,7 +1968,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "medalla",
-          "plural": "medallas"
+          "plural": "medallas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1896,7 +1988,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para organizar una tarde de juegos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos fichas han colocado en total?",
+      "enunciado": "Para organizar una tarde de juegos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas fichas han colocado en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1908,7 +2000,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "fila",
-          "plural": "filas"
+          "plural": "filas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1920,7 +2013,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1938,7 +2032,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1969,7 +2064,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "botón",
-          "plural": "botones"
+          "plural": "botones",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1981,7 +2077,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1999,7 +2096,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -2018,7 +2116,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En la clase de dibujo preparan {cantidadB} {unidadB} al día para preparar un concurso. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos folios preparan en total?",
+      "enunciado": "En la clase de dibujo preparan {cantidadB} {unidadB} al día para un concurso. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos folios preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2030,7 +2128,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "día",
-          "plural": "días"
+          "plural": "días",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2042,7 +2141,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "folio",
-          "plural": "folios"
+          "plural": "folios",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -2060,7 +2160,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "folio",
-          "plural": "folios"
+          "plural": "folios",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -2079,7 +2180,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En el planetario preparan {cantidadA} {unidadA} para preparar una visita escolar. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos entradas preparan en total?",
+      "enunciado": "En el planetario preparan {cantidadA} {unidadA} para una visita escolar. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántas entradas preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2091,7 +2192,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2103,7 +2205,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2121,7 +2224,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2140,7 +2244,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para organizar un encuentro, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos fichas han colocado en total?",
+      "enunciado": "Para organizar un encuentro, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas fichas han colocado en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2152,7 +2256,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "fila",
-          "plural": "filas"
+          "plural": "filas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2164,7 +2269,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2182,7 +2288,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2213,7 +2320,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "muñeco",
-          "plural": "muñecos"
+          "plural": "muñecos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2225,7 +2333,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -2243,7 +2352,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -2262,7 +2372,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En el invernadero escolar preparan {cantidadB} {unidadB} al día para trasplantar las plantas. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos macetas preparan en total?",
+      "enunciado": "En el invernadero escolar preparan {cantidadB} {unidadB} al día para trasplantar las plantas. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas macetas preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2274,7 +2384,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "día",
-          "plural": "días"
+          "plural": "días",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2286,7 +2397,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "maceta",
-          "plural": "macetas"
+          "plural": "macetas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2304,7 +2416,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "maceta",
-          "plural": "macetas"
+          "plural": "macetas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2323,7 +2436,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para preparar una actividad llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos piedras han llegado?",
+      "enunciado": "Para una actividad reciben {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántas piedras han llegado?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2335,7 +2448,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "caja",
-          "plural": "cajas"
+          "plural": "cajas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2347,7 +2461,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "paquete",
-          "plural": "paquetes"
+          "plural": "paquetes",
+          "genero": "masculino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -2359,7 +2474,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2386,7 +2502,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2406,7 +2523,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el taller de conservas quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos tarros necesitan?",
+      "enunciado": "Para cada lote de una actividad necesitan {cantidadB} {unidadB}. En el taller de conservas quieren preparar {cantidadA} {unidadA} con el mismo contenido. ¿Cuántos tarros necesitan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2418,7 +2535,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2430,7 +2548,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "tarro",
-          "plural": "tarros"
+          "plural": "tarros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -2448,7 +2567,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "tarro",
-          "plural": "tarros"
+          "plural": "tarros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -2467,7 +2587,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En el taller de carnaval preparan {cantidadA} {unidadA} para preparar el desfile. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos máscaras preparan en total?",
+      "enunciado": "En el taller de carnaval preparan {cantidadA} {unidadA} para el desfile. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántas máscaras preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2479,7 +2599,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lote",
-          "plural": "lotes"
+          "plural": "lotes",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2491,7 +2612,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "máscara",
-          "plural": "máscaras"
+          "plural": "máscaras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2509,7 +2631,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "máscara",
-          "plural": "máscaras"
+          "plural": "máscaras",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2528,7 +2651,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para hacer unos cuadernos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos hojas han colocado en total?",
+      "enunciado": "Para hacer unos cuadernos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas hojas han colocado en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2540,7 +2663,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "fila",
-          "plural": "filas"
+          "plural": "filas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2552,7 +2676,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "hoja",
-          "plural": "hojas"
+          "plural": "hojas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2570,7 +2695,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "hoja",
-          "plural": "hojas"
+          "plural": "hojas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2589,7 +2715,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "Para preparar los materiales de una visita, en el aula del colmenar compran {cantidadA} {unidadA}. El precio de cada lámina es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
+      "enunciado": "Para los materiales de una visita, en el aula del colmenar compran {cantidadA} {unidadA}. El precio de cada lámina es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2601,7 +2727,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lámina",
-          "plural": "láminas"
+          "plural": "láminas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2613,7 +2740,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -2631,7 +2759,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -2650,7 +2779,7 @@
       "etiquetas": [
         "multiplicacion"
       ],
-      "enunciado": "En el jardín de plantas aromáticas preparan {cantidadB} {unidadB} al día para plantar nuevas flores. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos etiquetas preparan en total?",
+      "enunciado": "En el jardín de plantas aromáticas preparan {cantidadB} {unidadB} al día para plantar nuevas flores. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas etiquetas preparan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2662,7 +2791,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "día",
-          "plural": "días"
+          "plural": "días",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2674,7 +2804,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "etiqueta",
-          "plural": "etiquetas"
+          "plural": "etiquetas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2692,7 +2823,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "etiqueta",
-          "plural": "etiquetas"
+          "plural": "etiquetas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],

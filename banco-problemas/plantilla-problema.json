@@ -6,26 +6,79 @@
       "id": "resta-tu-identificador-001",
       "titulo": "EDITAR: libros que quedan",
       "dificultad": "facil",
-      "etiquetas": ["resta"],
+      "etiquetas": [
+        "resta"
+      ],
       "enunciado": "En {lugar} había {cantidadA} {unidadA}. Se realiza un préstamo de {cantidadB} {unidadB}. ¿Cuántos libros quedan?",
       "variables": {
-        "cantidadA": {"tipo": "entero", "descripcion": "Libros iniciales", "minimo": 1, "maximo": 9999},
-        "cantidadB": {"tipo": "entero", "descripcion": "Libros prestados", "minimo": 1, "maximo": 9999},
-        "lugar": {"tipo": "texto", "valores": ["la biblioteca", "la sala de lectura"]},
-        "unidadA": {"tipo": "concordancia", "cantidad": "cantidadA", "singular": "libro", "plural": "libros"},
-        "unidadB": {"tipo": "concordancia", "cantidad": "cantidadB", "singular": "libro", "plural": "libros"}
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Libros iniciales",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Libros prestados",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "lugar": {
+          "tipo": "texto",
+          "valores": [
+            "la biblioteca",
+            "la sala de lectura"
+          ]
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
       },
       "pasos": [
         {
           "id": "resultado1",
           "operacion": "resta",
-          "operandos": ["cantidadA", "cantidadB"],
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
           "explicacion": "A los libros iniciales les quitamos los prestados: {cantidadA} − {cantidadB} = {resultado1}."
         }
       ],
-      "respuesta": {"valor": "resultado1", "unidad": {"singular": "libro", "plural": "libros"}},
-      "restricciones": [{"tipo": "mayor_o_igual", "izquierda": "cantidadA", "derecha": "cantidadB"}],
-      "ejemplo": {"valores": {"cantidadA": 25, "cantidadB": 12, "lugar": "la biblioteca"}, "respuesta": "13"}
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 12,
+          "lugar": "la biblioteca"
+        },
+        "respuesta": "13"
+      }
     }
   ]
 }

@@ -38,6 +38,14 @@ Tras editar los JSON ejecuta `node banco-problemas/compilar-banco.cjs` y sube ta
 
 El banco ampliado se edita en `banco-problemas/ampliado.json`; el compilador tambien reconstruye `ampliado-datos.js`. `matematicas-extra.js` contiene el motor racional exacto y MCM/MCD, y debe cargarse despues de `problemas.js` y antes de `app.js`. Ejecuta `node tests/advanced-math.test.cjs` para comprobar las nuevas familias y `node tests/browser-smoke.cjs --advanced-only` para sus vistas. El constructor `crear-banco-ampliado.cjs` reconstruye el catalogo inicial; no lo ejecutes sobre un banco ampliado editado sin guardar antes tus cambios.
 
+## Revision del lenguaje
+
+Las unidades del banco de enteros incluyen `genero` (femenino o masculino), ademas del singular y plural. El compilador comprueba las preguntas para evitar errores como Cuantos hojas y rechaza algunas construcciones que fallan si una cantidad vale 1. El genero no se deduce por la terminacion: mapa y dia son masculinos, mientras que foto es femenino. Las comparaciones no usan el mismo nombre para los dos personajes.
+
+Las escenas de fracciones declaran `unitGender` y `unitSingular`. Los generadores de MCM/MCD ajustan minuto/minutos, tarjeta/tarjetas, alumno/alumnos y unidad/unidades. Los repartos repetidos indican expresamente cada dia. En fracciones se distingue la cantidad que tienen de la cantidad que necesitan para otra actividad.
+
+`node tests/problem-language.test.cjs` comprueba las 1320 plantillas, cantidades singulares y plurales, las preguntas completas y compactas, personajes diferentes y el caso de 87 hojas necesarias y 71 disponibles. Son comprobaciones concretas de regresion, no una certificacion automatica de cualquier texto nuevo. `revisar-lenguaje.cjs` aplica las correcciones de esta revision al banco existente; no sustituye la lectura y revision de nuevos enunciados.
+
 ## Renovacion visual y copias
 
 La pantalla inicial separa modo y actividad de las opciones avanzadas, que estan plegadas en Personaliza tu partida. El archivo `renovacion.css` unifica el aspecto sin sustituir la cuadricula de altura fija de las partidas. El cuadro de marcas se despliega cuando hace falta. Se mantienen los temas claro, ninja y oscuro y se respeta la preferencia del sistema de reducir movimiento.

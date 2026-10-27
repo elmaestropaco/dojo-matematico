@@ -19,6 +19,10 @@ El banco de enteros conserva el formato 1 descrito abajo. La app incluye tambien
 
 Puedes escribir los enunciados y explicaciones con tildes y signos habituales. Guarda los JSON como UTF-8. Las comillas, comas, nombres de campos y palabras reservadas deben conservar el formato indicado.
 
+Cada unidad de concordancia y la unidad de respuesta pueden indicar `genero`: `femenino` o `masculino`. Incluyelo siempre al crear problemas nuevos, especialmente si el sustantivo no figura en el vocabulario del validador. Ejemplo: `{"tipo":"concordancia","cantidad":"cantidadA","singular":"hoja","plural":"hojas","genero":"femenino"}`. La pregunta debe decir Cuantas hojas, no Cuantos hojas. Evita ligar verbos o adjetivos plurales a una cantidad que pueda valer 1: tienen 1 hoja funciona; quedan 1 hoja no. Usa formulaciones como tienen, reciben o hay.
+
+En las escenas de fracciones, declara tambien `unitSingular` (por ejemplo, litro de agua) y `unitGender` (masculino o femenino). No basta con cambiar el objeto: revisa unidades, pronombres, concordancia y que cada paso se deduzca del texto. Si se multiplica por dias, el enunciado debe indicar la cantidad que se recibe cada dia, no solo una entrega durante varios dias.
+
 ## Que debes rellenar
 
 1. El identificador `id`: unico, sin espacios ni tildes; por ejemplo, `resta-biblioteca-001`.

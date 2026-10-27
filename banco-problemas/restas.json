@@ -27,13 +27,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -51,7 +53,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -94,13 +97,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "canica",
-          "plural": "canicas"
+          "plural": "canicas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "canica",
-          "plural": "canicas"
+          "plural": "canicas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -118,7 +123,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "canica",
-          "plural": "canicas"
+          "plural": "canicas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -161,13 +167,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "silla",
-          "plural": "sillas"
+          "plural": "sillas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "silla",
-          "plural": "sillas"
+          "plural": "sillas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -185,7 +193,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "silla",
-          "plural": "sillas"
+          "plural": "sillas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -210,7 +219,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Alex sale de casa con {cantidadA} {unidadA} para hacer una compra. Cuando vuelve, le quedan {cantidadB} {unidadB}. ¿Cuántos euros ha gastado en la compra?",
+      "enunciado": "Alex sale de casa con {cantidadA} {unidadA} para hacer una compra. Cuando vuelve, le tienen todavía {cantidadB} {unidadB}. ¿Cuántos euros ha gastado en la compra?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -228,13 +237,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -252,7 +263,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -277,7 +289,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Sam recibe un regalo de {cantidadB} {unidadB}. Al juntarlos con los que ya tenía, cuenta {cantidadA} {unidadA}. ¿Cuántos cromos tenía Sam antes de recibir el regalo?",
+      "enunciado": "Sam recibe un regalo de {cantidadB} {unidadB}. Después del regalo tiene {cantidadA} {unidadA} en total. ¿Cuántos cromos tenía Sam antes de recibir el regalo?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -295,13 +307,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "cromo",
-          "plural": "cromos"
+          "plural": "cromos",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "cromo",
-          "plural": "cromos"
+          "plural": "cromos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -319,7 +333,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "cromo",
-          "plural": "cromos"
+          "plural": "cromos",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -362,13 +377,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -386,7 +403,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -429,13 +447,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -453,7 +473,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -502,19 +523,22 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "cuaderno",
-          "plural": "cuadernos"
+          "plural": "cuadernos",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "cuaderno",
-          "plural": "cuadernos"
+          "plural": "cuadernos",
+          "genero": "masculino"
         },
         "unidadC": {
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "cuaderno",
-          "plural": "cuadernos"
+          "plural": "cuadernos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -541,7 +565,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "cuaderno",
-          "plural": "cuadernos"
+          "plural": "cuadernos",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -596,19 +621,22 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         },
         "unidadC": {
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -635,7 +663,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -666,7 +695,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En un planeta de un cuento viven {cantidadA} {unidadA}. Un grupo de {cantidadB} {unidadB} se muda a otro planeta. Si no hay más cambios, ¿cuántos habitantes quedan en el primer planeta?",
+      "enunciado": "En un planeta de un cuento hay {cantidadA} {unidadA}. Un grupo de {cantidadB} {unidadB} se muda a otro planeta. Si no hay más cambios, ¿cuántos habitantes quedan en el primer planeta?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -684,13 +713,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "habitante",
-          "plural": "habitantes"
+          "plural": "habitantes",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "habitante",
-          "plural": "habitantes"
+          "plural": "habitantes",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -708,7 +739,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "habitante",
-          "plural": "habitantes"
+          "plural": "habitantes",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -733,7 +765,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En la biblioteca del barrio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar las lecturas del mes. ¿Cuántos libros les quedan?",
+      "enunciado": "En la biblioteca del barrio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para las lecturas del mes. ¿Cuántos libros les quedan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -745,7 +777,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -757,7 +790,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -768,14 +802,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -812,7 +847,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "pincel",
-          "plural": "pinceles"
+          "plural": "pinceles",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -824,7 +860,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pincel",
-          "plural": "pinceles"
+          "plural": "pinceles",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -835,14 +872,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que tienen a lo que necesitan: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "pincel",
-          "plural": "pinceles"
+          "plural": "pinceles",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -867,7 +905,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos semillas más ha preparado la primera clase?",
+      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántas semillas más ha preparado la primera clase?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -879,7 +917,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "semilla",
-          "plural": "semillas"
+          "plural": "semillas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -891,7 +930,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "semilla",
-          "plural": "semillas"
+          "plural": "semillas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -902,14 +942,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos para comparar las dos clases: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "semilla",
-          "plural": "semillas"
+          "plural": "semillas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -934,7 +975,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en la cocina del campamento tienen {cantidadA} {unidadA}. ¿Cuántos magdalenas tenían antes de recibir el pedido?",
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en la cocina del campamento tienen {cantidadA} {unidadA}. ¿Cuántas magdalenas tenían antes de recibir el pedido?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -946,7 +987,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "magdalena",
-          "plural": "magdalenas"
+          "plural": "magdalenas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -958,7 +1000,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "magdalena",
-          "plural": "magdalenas"
+          "plural": "magdalenas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -969,14 +1012,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos el pedido a la cantidad actual: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "magdalena",
-          "plural": "magdalenas"
+          "plural": "magdalenas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1001,7 +1045,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el gimnasio del colegio tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos pelotas quedan al terminar el día?",
+      "enunciado": "En el gimnasio del colegio tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántas pelotas quedan al terminar el día?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1013,7 +1057,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1025,7 +1070,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -1037,7 +1083,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1048,7 +1095,7 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada por la mañana: {cantidadA} - {cantidadB} = {resultado1}."
         },
         {
           "id": "resultado2",
@@ -1064,7 +1111,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1095,7 +1143,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Al principio había {cantidadA} {unidadA} en la sala de fiestas. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos globos han utilizado?",
+      "enunciado": "Al principio había {cantidadA} {unidadA} en la sala de fiestas. Al terminar la actividad tienen todavía {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos globos han utilizado?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1107,7 +1155,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "globo",
-          "plural": "globos"
+          "plural": "globos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1119,7 +1168,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "globo",
-          "plural": "globos"
+          "plural": "globos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1130,14 +1180,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que queda a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "globo",
-          "plural": "globos"
+          "plural": "globos",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -1174,7 +1225,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "frasco",
-          "plural": "frascos"
+          "plural": "frascos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1186,7 +1238,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "frasco",
-          "plural": "frascos"
+          "plural": "frascos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1197,14 +1250,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "frasco",
-          "plural": "frascos"
+          "plural": "frascos",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -1229,7 +1283,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el puesto de fruta necesitan {cantidadA} {unidadA} para preparar un pedido, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos peras les faltan?",
+      "enunciado": "En el puesto de fruta necesitan {cantidadA} {unidadA} para un pedido, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas peras les faltan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1241,7 +1295,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1253,7 +1308,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1264,14 +1320,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que tienen a lo que necesitan: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1296,7 +1353,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos partituras más ha preparado la primera clase?",
+      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántas partituras más ha preparado la primera clase?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1308,7 +1365,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "partitura",
-          "plural": "partituras"
+          "plural": "partituras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1320,7 +1378,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "partitura",
-          "plural": "partituras"
+          "plural": "partituras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1331,14 +1390,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos para comparar las dos clases: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "partitura",
-          "plural": "partituras"
+          "plural": "partituras",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1363,7 +1423,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en la tienda del museo tienen {cantidadA} {unidadA}. ¿Cuántos postales tenían antes de recibir el pedido?",
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en la tienda del museo tienen {cantidadA} {unidadA}. ¿Cuántas postales tenían antes de recibir el pedido?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1375,7 +1435,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "postal",
-          "plural": "postales"
+          "plural": "postales",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1387,7 +1448,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "postal",
-          "plural": "postales"
+          "plural": "postales",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1398,14 +1460,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos el pedido a la cantidad actual: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "postal",
-          "plural": "postales"
+          "plural": "postales",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1430,7 +1493,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el punto de reciclaje tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos botellas quedan al terminar el día?",
+      "enunciado": "En el punto de reciclaje tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántas botellas quedan al terminar el día?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1442,7 +1505,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1454,7 +1518,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -1466,7 +1531,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1477,7 +1543,7 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada por la mañana: {cantidadA} - {cantidadB} = {resultado1}."
         },
         {
           "id": "resultado2",
@@ -1493,7 +1559,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1524,7 +1591,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Al principio había {cantidadA} {unidadA} en el refugio de animales. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos mantas han utilizado?",
+      "enunciado": "Al principio había {cantidadA} {unidadA} en el refugio de animales. Al terminar la actividad tienen todavía {cantidadB} {unidadB}. Si no han recibido más, ¿cuántas mantas han utilizado?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1536,7 +1603,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "manta",
-          "plural": "mantas"
+          "plural": "mantas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1548,7 +1616,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "manta",
-          "plural": "mantas"
+          "plural": "mantas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1559,14 +1628,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que queda a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "manta",
-          "plural": "mantas"
+          "plural": "mantas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1591,7 +1661,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el comedor del colegio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar una excursión. ¿Cuántos bocadillos les quedan?",
+      "enunciado": "En el comedor del colegio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para una excursión. ¿Cuántos bocadillos les quedan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1603,7 +1673,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "bocadillo",
-          "plural": "bocadillos"
+          "plural": "bocadillos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1615,7 +1686,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "bocadillo",
-          "plural": "bocadillos"
+          "plural": "bocadillos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1626,14 +1698,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "bocadillo",
-          "plural": "bocadillos"
+          "plural": "bocadillos",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -1658,7 +1731,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el teatro del barrio necesitan {cantidadA} {unidadA} para organizar una función escolar, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos entradas les faltan?",
+      "enunciado": "En el teatro del barrio necesitan {cantidadA} {unidadA} para organizar una función escolar, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas entradas les faltan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1670,7 +1743,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1682,7 +1756,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1693,14 +1768,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que tienen a lo que necesitan: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1737,7 +1813,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "tornillo",
-          "plural": "tornillos"
+          "plural": "tornillos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1749,7 +1826,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "tornillo",
-          "plural": "tornillos"
+          "plural": "tornillos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1760,14 +1838,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos para comparar las dos clases: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "tornillo",
-          "plural": "tornillos"
+          "plural": "tornillos",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -1792,7 +1871,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el taller de manualidades tienen {cantidadA} {unidadA}. ¿Cuántos cuentas tenían antes de recibir el pedido?",
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el taller de manualidades tienen {cantidadA} {unidadA}. ¿Cuántas cuentas tenían antes de recibir el pedido?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1804,7 +1883,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "cuenta",
-          "plural": "cuentas"
+          "plural": "cuentas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1816,7 +1896,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "cuenta",
-          "plural": "cuentas"
+          "plural": "cuentas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1827,14 +1908,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos el pedido a la cantidad actual: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "cuenta",
-          "plural": "cuentas"
+          "plural": "cuentas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -1871,7 +1953,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1883,7 +1966,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -1895,7 +1979,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1906,7 +1991,7 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada por la mañana: {cantidadA} - {cantidadB} = {resultado1}."
         },
         {
           "id": "resultado2",
@@ -1922,7 +2007,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -1953,7 +2039,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Al principio había {cantidadA} {unidadA} en el club de exploradores. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos mapas han utilizado?",
+      "enunciado": "Al principio había {cantidadA} {unidadA} en el club de exploradores. Al terminar la actividad tienen todavía {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos mapas han utilizado?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1965,7 +2051,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "mapa",
-          "plural": "mapas"
+          "plural": "mapas",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1977,7 +2064,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "mapa",
-          "plural": "mapas"
+          "plural": "mapas",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1988,14 +2076,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que queda a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "mapa",
-          "plural": "mapas"
+          "plural": "mapas",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -2020,7 +2109,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el polideportivo tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para organizar una carrera solidaria. ¿Cuántos medallas les quedan?",
+      "enunciado": "En el polideportivo tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para organizar una carrera solidaria. ¿Cuántas medallas les quedan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2032,7 +2121,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "medalla",
-          "plural": "medallas"
+          "plural": "medallas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2044,7 +2134,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "medalla",
-          "plural": "medallas"
+          "plural": "medallas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2055,14 +2146,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "medalla",
-          "plural": "medallas"
+          "plural": "medallas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2087,7 +2179,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En la ludoteca necesitan {cantidadA} {unidadA} para organizar una tarde de juegos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos fichas les faltan?",
+      "enunciado": "En la ludoteca necesitan {cantidadA} {unidadA} para organizar una tarde de juegos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas fichas les faltan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2099,7 +2191,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2111,7 +2204,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2122,14 +2216,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que tienen a lo que necesitan: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2154,7 +2249,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el planetario tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar una visita escolar. ¿Cuántos entradas les quedan?",
+      "enunciado": "En el planetario tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para una visita escolar. ¿Cuántas entradas les quedan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2166,7 +2261,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2178,7 +2274,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2189,14 +2286,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2221,7 +2319,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el club de ajedrez necesitan {cantidadA} {unidadA} para organizar un encuentro, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos fichas les faltan?",
+      "enunciado": "En el club de ajedrez necesitan {cantidadA} {unidadA} para organizar un encuentro, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas fichas les faltan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2233,7 +2331,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2245,7 +2344,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2256,14 +2356,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que tienen a lo que necesitan: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2300,7 +2401,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "muñeco",
-          "plural": "muñecos"
+          "plural": "muñecos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2312,7 +2414,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "muñeco",
-          "plural": "muñecos"
+          "plural": "muñecos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -2323,14 +2426,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos para comparar las dos clases: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "muñeco",
-          "plural": "muñecos"
+          "plural": "muñecos",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -2355,7 +2459,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el invernadero escolar tienen {cantidadA} {unidadA}. ¿Cuántos macetas tenían antes de recibir el pedido?",
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el invernadero escolar tienen {cantidadA} {unidadA}. ¿Cuántas macetas tenían antes de recibir el pedido?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2367,7 +2471,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "maceta",
-          "plural": "macetas"
+          "plural": "macetas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2379,7 +2484,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "maceta",
-          "plural": "macetas"
+          "plural": "macetas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2390,14 +2496,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos el pedido a la cantidad actual: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "maceta",
-          "plural": "macetas"
+          "plural": "macetas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2422,7 +2529,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el taller de acuarios tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos piedras quedan al terminar el día?",
+      "enunciado": "En el taller de acuarios tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántas piedras quedan al terminar el día?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2434,7 +2541,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2446,7 +2554,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -2458,7 +2567,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2469,7 +2579,7 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada por la mañana: {cantidadA} - {cantidadB} = {resultado1}."
         },
         {
           "id": "resultado2",
@@ -2485,7 +2595,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2516,7 +2627,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Al principio había {cantidadA} {unidadA} en el taller de conservas. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos tarros han utilizado?",
+      "enunciado": "Al principio había {cantidadA} {unidadA} en el taller de conservas. Al terminar la actividad tienen todavía {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos tarros han utilizado?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2528,7 +2639,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "tarro",
-          "plural": "tarros"
+          "plural": "tarros",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2540,7 +2652,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "tarro",
-          "plural": "tarros"
+          "plural": "tarros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -2551,14 +2664,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que queda a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "tarro",
-          "plural": "tarros"
+          "plural": "tarros",
+          "genero": "masculino"
         }
       },
       "restricciones": [
@@ -2583,7 +2697,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el taller de carnaval tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar el desfile. ¿Cuántos máscaras les quedan?",
+      "enunciado": "En el taller de carnaval tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para el desfile. ¿Cuántas máscaras les quedan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2595,7 +2709,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "máscara",
-          "plural": "máscaras"
+          "plural": "máscaras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2607,7 +2722,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "máscara",
-          "plural": "máscaras"
+          "plural": "máscaras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2618,14 +2734,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos la cantidad utilizada a la cantidad inicial: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "máscara",
-          "plural": "máscaras"
+          "plural": "máscaras",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2650,7 +2767,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "En el taller de encuadernación necesitan {cantidadA} {unidadA} para hacer unos cuadernos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos hojas les faltan?",
+      "enunciado": "En el taller de encuadernación necesitan {cantidadA} {unidadA} para hacer unos cuadernos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas hojas les faltan?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2662,7 +2779,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "hoja",
-          "plural": "hojas"
+          "plural": "hojas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2674,7 +2792,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "hoja",
-          "plural": "hojas"
+          "plural": "hojas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2685,14 +2804,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos lo que tienen a lo que necesitan: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "hoja",
-          "plural": "hojas"
+          "plural": "hojas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2717,7 +2837,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos láminas más ha preparado la primera clase?",
+      "enunciado": "Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántas láminas más ha preparado la primera clase?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2729,7 +2849,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lámina",
-          "plural": "láminas"
+          "plural": "láminas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2741,7 +2862,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "lámina",
-          "plural": "láminas"
+          "plural": "láminas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2752,14 +2874,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos para comparar las dos clases: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "lámina",
-          "plural": "láminas"
+          "plural": "láminas",
+          "genero": "femenino"
         }
       },
       "restricciones": [
@@ -2784,7 +2907,7 @@
       "etiquetas": [
         "resta"
       ],
-      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el jardín de plantas aromáticas tienen {cantidadA} {unidadA}. ¿Cuántos etiquetas tenían antes de recibir el pedido?",
+      "enunciado": "Después de recibir un pedido de {cantidadB} {unidadB}, en el jardín de plantas aromáticas tienen {cantidadA} {unidadA}. ¿Cuántas etiquetas tenían antes de recibir el pedido?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2796,7 +2919,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "etiqueta",
-          "plural": "etiquetas"
+          "plural": "etiquetas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2808,7 +2932,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "etiqueta",
-          "plural": "etiquetas"
+          "plural": "etiquetas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2819,14 +2944,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Restamos para encontrar la cantidad que falta: {cantidadA} - {cantidadB} = {resultado1}."
+          "explicacion": "Restamos el pedido a la cantidad actual: {cantidadA} - {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "etiqueta",
-          "plural": "etiquetas"
+          "plural": "etiquetas",
+          "genero": "femenino"
         }
       },
       "restricciones": [

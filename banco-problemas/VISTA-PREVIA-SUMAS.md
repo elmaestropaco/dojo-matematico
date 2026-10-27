@@ -88,7 +88,7 @@ Respuesta: **22 canicas**.
 ## 5. Antes de abrir la tienda
 ID: suma-inicial-005 | Dificultad: media
 
-Al terminar el día, en una tienda quedan {cantidadA} {unidadA}. Durante ese día han vendido {cantidadB} {unidadB} y no han recibido más. ¿Cuántos cuadernos había antes de abrir la tienda?
+Al terminar el día, en una tienda tienen todavía {cantidadA} {unidadA}. Durante ese día han vendido {cantidadB} {unidadB} y no han recibido más. ¿Cuántos cuadernos había antes de abrir la tienda?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -99,7 +99,7 @@ Al terminar el día, en una tienda quedan {cantidadA} {unidadA}. Durante ese dí
 
 ### Ejemplo resuelto
 
-Al terminar el día, en una tienda quedan 17 cuadernos. Durante ese día han vendido 23 cuadernos y no han recibido más. ¿Cuántos cuadernos había antes de abrir la tienda?
+Al terminar el día, en una tienda tienen todavía 17 cuadernos. Durante ese día han vendido 23 cuadernos y no han recibido más. ¿Cuántos cuadernos había antes de abrir la tienda?
 
 - Primero sumamos: 17 + 23 = 40.
 
@@ -174,7 +174,7 @@ Respuesta: **300 metros**.
 ## 9. Completar la sala
 ID: suma-capacidad-009 | Dificultad: facil
 
-En una sala del colegio ya hay {cantidadA} {unidadA}. Para preparar una fiesta, los alumnos colocan {cantidadB} {unidadB} más. ¿Cuántas sillas habrá en la sala cuando terminen?
+En una sala del colegio ya hay {cantidadA} {unidadA}. Para una fiesta, los alumnos colocan {cantidadB} {unidadB} más. ¿Cuántas sillas habrá en la sala cuando terminen?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -185,7 +185,7 @@ En una sala del colegio ya hay {cantidadA} {unidadA}. Para preparar una fiesta, 
 
 ### Ejemplo resuelto
 
-En una sala del colegio ya hay 48 sillas. Para preparar una fiesta, los alumnos colocan 12 sillas más. ¿Cuántas sillas habrá en la sala cuando terminen?
+En una sala del colegio ya hay 48 sillas. Para una fiesta, los alumnos colocan 12 sillas más. ¿Cuántas sillas habrá en la sala cuando terminen?
 
 - Primero sumamos: 48 + 12 = 60.
 
@@ -194,7 +194,7 @@ Respuesta: **60 sillas**.
 ## 10. Habitantes de dos planetas
 ID: suma-planetas-010 | Dificultad: facil
 
-En un cuento del espacio aparecen dos planetas. En uno viven {cantidadA} {unidadA} y en el otro viven {cantidadB} {unidadB}. ¿Cuántos habitantes viven entre los dos planetas?
+En un cuento del espacio aparecen dos planetas. En uno hay {cantidadA} {unidadA} y en el otro hay {cantidadB} {unidadB}. ¿Cuántos habitantes viven entre los dos planetas?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -205,7 +205,7 @@ En un cuento del espacio aparecen dos planetas. En uno viven {cantidadA} {unidad
 
 ### Ejemplo resuelto
 
-En un cuento del espacio aparecen dos planetas. En uno viven 1234567 habitantes y en el otro viven 2345678 habitantes. ¿Cuántos habitantes viven entre los dos planetas?
+En un cuento del espacio aparecen dos planetas. En uno hay 1234567 habitantes y en el otro hay 2345678 habitantes. ¿Cuántos habitantes viven entre los dos planetas?
 
 - Primero sumamos: 1234567 + 2345678 = 3580245.
 
@@ -227,7 +227,7 @@ En la biblioteca del barrio hay {cantidadA} {unidadA} en una caja y {cantidadB} 
 
 En la biblioteca del barrio hay 24 libros en una caja y 12 libros en otra. ¿Cuántos libros hay entre las dos cajas?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 libros**.
 
@@ -247,14 +247,14 @@ Para organizar una exposición, en el taller de pintura tienen {cantidadA} {unid
 
 Para organizar una exposición, en el taller de pintura tienen 24 pinceles. Una familia les regala 12 pinceles más. ¿Cuántos pinceles tienen ahora?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 pinceles**.
 
 ## 13. El huerto escolar
 ID: suma-huerto-individual-013 | Dificultad: media
 
-Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos semillas tiene el segundo grupo?
+Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántas semillas tiene el segundo grupo?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -265,16 +265,16 @@ Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} má
 
 ### Ejemplo resuelto
 
-Un grupo tiene 24 semillas. Otro grupo tiene 12 semillas más que el primero. ¿Cuántos semillas tiene el segundo grupo?
+Un grupo tiene 24 semillas. Otro grupo tiene 12 semillas más que el primero. ¿Cuántas semillas tiene el segundo grupo?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad del primer grupo y la diferencia: 24 + 12 = 36.
 
 Respuesta: **36 semillas**.
 
 ## 14. La merienda del campamento
 ID: suma-merienda-individual-014 | Dificultad: media
 
-Después de la actividad, en la cocina del campamento quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos magdalenas había al empezar?
+Después de la actividad, en la cocina del campamento tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas magdalenas había al empezar?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -285,16 +285,16 @@ Después de la actividad, en la cocina del campamento quedan {cantidadA} {unidad
 
 ### Ejemplo resuelto
 
-Después de la actividad, en la cocina del campamento quedan 24 magdalenas. Durante la actividad se han utilizado 12 magdalenas. ¿Cuántos magdalenas había al empezar?
+Después de la actividad, en la cocina del campamento tienen todavía 24 magdalenas. Durante la actividad han utilizado 12 magdalenas. ¿Cuántas magdalenas había al empezar?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad que queda y la que se utilizó: 24 + 12 = 36.
 
 Respuesta: **36 magdalenas**.
 
 ## 15. El torneo del colegio
 ID: suma-torneo-individual-015 | Dificultad: avanzada
 
-Para celebrar un torneo se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos pelotas hay en total?
+Para celebrar un torneo se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántas pelotas hay en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -307,9 +307,9 @@ Para celebrar un torneo se preparan tres lotes. El primero tiene {cantidadA} {un
 
 ### Ejemplo resuelto
 
-Para celebrar un torneo se preparan tres lotes. El primero tiene 24 pelotas, el segundo 12 pelotas y el tercero 9 pelotas. ¿Cuántos pelotas hay en total?
+Para celebrar un torneo se preparan tres lotes. El primero tiene 24 pelotas, el segundo 12 pelotas y el tercero 9 pelotas. ¿Cuántas pelotas hay en total?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 - Añadimos la tercera cantidad: 36 + 9 = 45.
 
 Respuesta: **45 pelotas**.
@@ -330,7 +330,7 @@ En la sala de fiestas ya han preparado {cantidadA} {unidadA} para decorar una fi
 
 En la sala de fiestas ya han preparado 24 globos para decorar una fiesta. Todavía necesitan 12 globos más. ¿Cuántos globos necesitan en total?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos lo que tienen y lo que todavía necesitan: 24 + 12 = 36.
 
 Respuesta: **36 globos**.
 
@@ -350,14 +350,14 @@ En el laboratorio del colegio hay {cantidadA} {unidadA} en una caja y {cantidadB
 
 En el laboratorio del colegio hay 24 frascos en una caja y 12 frascos en otra. ¿Cuántos frascos hay entre las dos cajas?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 frascos**.
 
 ## 18. El puesto de fruta
 ID: suma-mercado-individual-018 | Dificultad: facil
 
-Para preparar un pedido, en el puesto de fruta tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos peras tienen ahora?
+Para un pedido, en el puesto de fruta tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas peras tienen ahora?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -368,16 +368,16 @@ Para preparar un pedido, en el puesto de fruta tienen {cantidadA} {unidadA}. Una
 
 ### Ejemplo resuelto
 
-Para preparar un pedido, en el puesto de fruta tienen 24 peras. Una familia les regala 12 peras más. ¿Cuántos peras tienen ahora?
+Para un pedido, en el puesto de fruta tienen 24 peras. Una familia les regala 12 peras más. ¿Cuántas peras tienen ahora?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 peras**.
 
 ## 19. El ensayo de música
 ID: suma-musica-individual-019 | Dificultad: media
 
-Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos partituras tiene el segundo grupo?
+Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántas partituras tiene el segundo grupo?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -388,16 +388,16 @@ Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} má
 
 ### Ejemplo resuelto
 
-Un grupo tiene 24 partituras. Otro grupo tiene 12 partituras más que el primero. ¿Cuántos partituras tiene el segundo grupo?
+Un grupo tiene 24 partituras. Otro grupo tiene 12 partituras más que el primero. ¿Cuántas partituras tiene el segundo grupo?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad del primer grupo y la diferencia: 24 + 12 = 36.
 
 Respuesta: **36 partituras**.
 
 ## 20. Los recuerdos del museo
 ID: suma-museo-individual-020 | Dificultad: media
 
-Después de la actividad, en la tienda del museo quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos postales había al empezar?
+Después de la actividad, en la tienda del museo tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas postales había al empezar?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -408,16 +408,16 @@ Después de la actividad, en la tienda del museo quedan {cantidadA} {unidadA}. D
 
 ### Ejemplo resuelto
 
-Después de la actividad, en la tienda del museo quedan 24 postales. Durante la actividad se han utilizado 12 postales. ¿Cuántos postales había al empezar?
+Después de la actividad, en la tienda del museo tienen todavía 24 postales. Durante la actividad han utilizado 12 postales. ¿Cuántas postales había al empezar?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad que queda y la que se utilizó: 24 + 12 = 36.
 
 Respuesta: **36 postales**.
 
 ## 21. La campaña de reciclaje
 ID: suma-reciclaje-individual-021 | Dificultad: avanzada
 
-Para hacer una actividad con materiales usados se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos botellas hay en total?
+Para hacer una actividad con materiales usados se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántas botellas hay en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -430,9 +430,9 @@ Para hacer una actividad con materiales usados se preparan tres lotes. El primer
 
 ### Ejemplo resuelto
 
-Para hacer una actividad con materiales usados se preparan tres lotes. El primero tiene 24 botellas, el segundo 12 botellas y el tercero 9 botellas. ¿Cuántos botellas hay en total?
+Para hacer una actividad con materiales usados se preparan tres lotes. El primero tiene 24 botellas, el segundo 12 botellas y el tercero 9 botellas. ¿Cuántas botellas hay en total?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 - Añadimos la tercera cantidad: 36 + 9 = 45.
 
 Respuesta: **45 botellas**.
@@ -440,7 +440,7 @@ Respuesta: **45 botellas**.
 ## 22. Ayudar al refugio
 ID: suma-refugio-individual-022 | Dificultad: facil
 
-En el refugio de animales ya han preparado {cantidadA} {unidadA} para preparar las camas de los animales. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos mantas necesitan en total?
+En el refugio de animales ya han preparado {cantidadA} {unidadA} para las camas de los animales. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántas mantas necesitan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -451,9 +451,9 @@ En el refugio de animales ya han preparado {cantidadA} {unidadA} para preparar l
 
 ### Ejemplo resuelto
 
-En el refugio de animales ya han preparado 24 mantas para preparar las camas de los animales. Todavía necesitan 12 mantas más. ¿Cuántos mantas necesitan en total?
+En el refugio de animales ya han preparado 24 mantas para las camas de los animales. Todavía necesitan 12 mantas más. ¿Cuántas mantas necesitan en total?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos lo que tienen y lo que todavía necesitan: 24 + 12 = 36.
 
 Respuesta: **36 mantas**.
 
@@ -473,14 +473,14 @@ En el comedor del colegio hay {cantidadA} {unidadA} en una caja y {cantidadB} {u
 
 En el comedor del colegio hay 24 bocadillos en una caja y 12 bocadillos en otra. ¿Cuántos bocadillos hay entre las dos cajas?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 bocadillos**.
 
 ## 24. La función de teatro
 ID: suma-teatro-individual-024 | Dificultad: facil
 
-Para organizar una función escolar, en el teatro del barrio tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos entradas tienen ahora?
+Para organizar una función escolar, en el teatro del barrio tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas entradas tienen ahora?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -491,9 +491,9 @@ Para organizar una función escolar, en el teatro del barrio tienen {cantidadA} 
 
 ### Ejemplo resuelto
 
-Para organizar una función escolar, en el teatro del barrio tienen 24 entradas. Una familia les regala 12 entradas más. ¿Cuántos entradas tienen ahora?
+Para organizar una función escolar, en el teatro del barrio tienen 24 entradas. Una familia les regala 12 entradas más. ¿Cuántas entradas tienen ahora?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 entradas**.
 
@@ -513,14 +513,14 @@ Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} má
 
 Un grupo tiene 24 tornillos. Otro grupo tiene 12 tornillos más que el primero. ¿Cuántos tornillos tiene el segundo grupo?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad del primer grupo y la diferencia: 24 + 12 = 36.
 
 Respuesta: **36 tornillos**.
 
 ## 26. El taller de collares
 ID: suma-collares-individual-026 | Dificultad: media
 
-Después de la actividad, en el taller de manualidades quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos cuentas había al empezar?
+Después de la actividad, en el taller de manualidades tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas cuentas había al empezar?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -531,9 +531,9 @@ Después de la actividad, en el taller de manualidades quedan {cantidadA} {unida
 
 ### Ejemplo resuelto
 
-Después de la actividad, en el taller de manualidades quedan 24 cuentas. Durante la actividad se han utilizado 12 cuentas. ¿Cuántos cuentas había al empezar?
+Después de la actividad, en el taller de manualidades tienen todavía 24 cuentas. Durante la actividad han utilizado 12 cuentas. ¿Cuántas cuentas había al empezar?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad que queda y la que se utilizó: 24 + 12 = 36.
 
 Respuesta: **36 cuentas**.
 
@@ -555,7 +555,7 @@ Para decorar un festival se preparan tres lotes. El primero tiene {cantidadA} {u
 
 Para decorar un festival se preparan tres lotes. El primero tiene 24 banderines, el segundo 12 banderines y el tercero 9 banderines. ¿Cuántos banderines hay en total?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 - Añadimos la tercera cantidad: 36 + 9 = 45.
 
 Respuesta: **45 banderines**.
@@ -563,7 +563,7 @@ Respuesta: **45 banderines**.
 ## 28. Una ruta de exploradores
 ID: suma-exploradores-individual-028 | Dificultad: facil
 
-En el club de exploradores ya han preparado {cantidadA} {unidadA} para preparar una ruta. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos mapas necesitan en total?
+En el club de exploradores ya han preparado {cantidadA} {unidadA} para una ruta. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos mapas necesitan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -574,16 +574,16 @@ En el club de exploradores ya han preparado {cantidadA} {unidadA} para preparar 
 
 ### Ejemplo resuelto
 
-En el club de exploradores ya han preparado 24 mapas para preparar una ruta. Todavía necesitan 12 mapas más. ¿Cuántos mapas necesitan en total?
+En el club de exploradores ya han preparado 24 mapas para una ruta. Todavía necesitan 12 mapas más. ¿Cuántos mapas necesitan en total?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos lo que tienen y lo que todavía necesitan: 24 + 12 = 36.
 
 Respuesta: **36 mapas**.
 
 ## 29. La carrera solidaria
 ID: suma-medallas-individual-029 | Dificultad: facil
 
-En el polideportivo hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos medallas hay entre las dos cajas?
+En el polideportivo hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántas medallas hay entre las dos cajas?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -594,16 +594,16 @@ En el polideportivo hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB
 
 ### Ejemplo resuelto
 
-En el polideportivo hay 24 medallas en una caja y 12 medallas en otra. ¿Cuántos medallas hay entre las dos cajas?
+En el polideportivo hay 24 medallas en una caja y 12 medallas en otra. ¿Cuántas medallas hay entre las dos cajas?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 medallas**.
 
 ## 30. La tarde de juegos
 ID: suma-juegos-individual-030 | Dificultad: facil
 
-Para organizar una tarde de juegos, en la ludoteca tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos fichas tienen ahora?
+Para organizar una tarde de juegos, en la ludoteca tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas fichas tienen ahora?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -614,16 +614,16 @@ Para organizar una tarde de juegos, en la ludoteca tienen {cantidadA} {unidadA}.
 
 ### Ejemplo resuelto
 
-Para organizar una tarde de juegos, en la ludoteca tienen 24 fichas. Una familia les regala 12 fichas más. ¿Cuántos fichas tienen ahora?
+Para organizar una tarde de juegos, en la ludoteca tienen 24 fichas. Una familia les regala 12 fichas más. ¿Cuántas fichas tienen ahora?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 fichas**.
 
 ## 31. El viaje al planetario
 ID: suma-planetario-individual-031 | Dificultad: facil
 
-En el planetario hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos entradas hay entre las dos cajas?
+En el planetario hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántas entradas hay entre las dos cajas?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -634,16 +634,16 @@ En el planetario hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} e
 
 ### Ejemplo resuelto
 
-En el planetario hay 24 entradas en una caja y 12 entradas en otra. ¿Cuántos entradas hay entre las dos cajas?
+En el planetario hay 24 entradas en una caja y 12 entradas en otra. ¿Cuántas entradas hay entre las dos cajas?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 entradas**.
 
 ## 32. El club de ajedrez
 ID: suma-ajedrez-individual-032 | Dificultad: facil
 
-Para organizar un encuentro, en el club de ajedrez tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos fichas tienen ahora?
+Para organizar un encuentro, en el club de ajedrez tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas fichas tienen ahora?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -654,9 +654,9 @@ Para organizar un encuentro, en el club de ajedrez tienen {cantidadA} {unidadA}.
 
 ### Ejemplo resuelto
 
-Para organizar un encuentro, en el club de ajedrez tienen 24 fichas. Una familia les regala 12 fichas más. ¿Cuántos fichas tienen ahora?
+Para organizar un encuentro, en el club de ajedrez tienen 24 fichas. Una familia les regala 12 fichas más. ¿Cuántas fichas tienen ahora?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 fichas**.
 
@@ -676,14 +676,14 @@ Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} má
 
 Un grupo tiene 24 muñecos. Otro grupo tiene 12 muñecos más que el primero. ¿Cuántos muñecos tiene el segundo grupo?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad del primer grupo y la diferencia: 24 + 12 = 36.
 
 Respuesta: **36 muñecos**.
 
 ## 34. Las plantas del invernadero
 ID: suma-invernadero-individual-034 | Dificultad: media
 
-Después de la actividad, en el invernadero escolar quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos macetas había al empezar?
+Después de la actividad, en el invernadero escolar tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas macetas había al empezar?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -694,16 +694,16 @@ Después de la actividad, en el invernadero escolar quedan {cantidadA} {unidadA}
 
 ### Ejemplo resuelto
 
-Después de la actividad, en el invernadero escolar quedan 24 macetas. Durante la actividad se han utilizado 12 macetas. ¿Cuántos macetas había al empezar?
+Después de la actividad, en el invernadero escolar tienen todavía 24 macetas. Durante la actividad han utilizado 12 macetas. ¿Cuántas macetas había al empezar?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad que queda y la que se utilizó: 24 + 12 = 36.
 
 Respuesta: **36 macetas**.
 
 ## 35. Los peces del aula
 ID: suma-acuarios-individual-035 | Dificultad: avanzada
 
-Para preparar una actividad se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos piedras hay en total?
+Para una actividad se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántas piedras hay en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -716,9 +716,9 @@ Para preparar una actividad se preparan tres lotes. El primero tiene {cantidadA}
 
 ### Ejemplo resuelto
 
-Para preparar una actividad se preparan tres lotes. El primero tiene 24 piedras, el segundo 12 piedras y el tercero 9 piedras. ¿Cuántos piedras hay en total?
+Para una actividad se preparan tres lotes. El primero tiene 24 piedras, el segundo 12 piedras y el tercero 9 piedras. ¿Cuántas piedras hay en total?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 - Añadimos la tercera cantidad: 36 + 9 = 45.
 
 Respuesta: **45 piedras**.
@@ -726,7 +726,7 @@ Respuesta: **45 piedras**.
 ## 36. La feria de conservas
 ID: suma-conservas-individual-036 | Dificultad: facil
 
-En el taller de conservas ya han preparado {cantidadA} {unidadA} para preparar una feria. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos tarros necesitan en total?
+En el taller de conservas ya han preparado {cantidadA} {unidadA} para una feria. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos tarros necesitan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -737,16 +737,16 @@ En el taller de conservas ya han preparado {cantidadA} {unidadA} para preparar u
 
 ### Ejemplo resuelto
 
-En el taller de conservas ya han preparado 24 tarros para preparar una feria. Todavía necesitan 12 tarros más. ¿Cuántos tarros necesitan en total?
+En el taller de conservas ya han preparado 24 tarros para una feria. Todavía necesitan 12 tarros más. ¿Cuántos tarros necesitan en total?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos lo que tienen y lo que todavía necesitan: 24 + 12 = 36.
 
 Respuesta: **36 tarros**.
 
 ## 37. El carnaval del barrio
 ID: suma-carnaval-individual-037 | Dificultad: facil
 
-En el taller de carnaval hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos máscaras hay entre las dos cajas?
+En el taller de carnaval hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántas máscaras hay entre las dos cajas?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -757,16 +757,16 @@ En el taller de carnaval hay {cantidadA} {unidadA} en una caja y {cantidadB} {un
 
 ### Ejemplo resuelto
 
-En el taller de carnaval hay 24 máscaras en una caja y 12 máscaras en otra. ¿Cuántos máscaras hay entre las dos cajas?
+En el taller de carnaval hay 24 máscaras en una caja y 12 máscaras en otra. ¿Cuántas máscaras hay entre las dos cajas?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 máscaras**.
 
 ## 38. Creamos nuestros cuadernos
 ID: suma-encuadernacion-individual-038 | Dificultad: facil
 
-Para hacer unos cuadernos, en el taller de encuadernación tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos hojas tienen ahora?
+Para hacer unos cuadernos, en el taller de encuadernación tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas hojas tienen ahora?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -777,16 +777,16 @@ Para hacer unos cuadernos, en el taller de encuadernación tienen {cantidadA} {u
 
 ### Ejemplo resuelto
 
-Para hacer unos cuadernos, en el taller de encuadernación tienen 24 hojas. Una familia les regala 12 hojas más. ¿Cuántos hojas tienen ahora?
+Para hacer unos cuadernos, en el taller de encuadernación tienen 24 hojas. Una familia les regala 12 hojas más. ¿Cuántas hojas tienen ahora?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos las cantidades: 24 + 12 = 36.
 
 Respuesta: **36 hojas**.
 
 ## 39. Una visita al colmenar
 ID: suma-colmenar-individual-039 | Dificultad: media
 
-Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos láminas tiene el segundo grupo?
+Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántas láminas tiene el segundo grupo?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -797,16 +797,16 @@ Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} má
 
 ### Ejemplo resuelto
 
-Un grupo tiene 24 láminas. Otro grupo tiene 12 láminas más que el primero. ¿Cuántos láminas tiene el segundo grupo?
+Un grupo tiene 24 láminas. Otro grupo tiene 12 láminas más que el primero. ¿Cuántas láminas tiene el segundo grupo?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad del primer grupo y la diferencia: 24 + 12 = 36.
 
 Respuesta: **36 láminas**.
 
 ## 40. El jardín de los aromas
 ID: suma-aromaticas-individual-040 | Dificultad: media
 
-Después de la actividad, en el jardín de plantas aromáticas quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos etiquetas había al empezar?
+Después de la actividad, en el jardín de plantas aromáticas tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas etiquetas había al empezar?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -817,8 +817,8 @@ Después de la actividad, en el jardín de plantas aromáticas quedan {cantidadA
 
 ### Ejemplo resuelto
 
-Después de la actividad, en el jardín de plantas aromáticas quedan 24 etiquetas. Durante la actividad se han utilizado 12 etiquetas. ¿Cuántos etiquetas había al empezar?
+Después de la actividad, en el jardín de plantas aromáticas tienen todavía 24 etiquetas. Durante la actividad han utilizado 12 etiquetas. ¿Cuántas etiquetas había al empezar?
 
-- Juntamos las dos cantidades: 24 + 12 = 36.
+- Sumamos la cantidad que queda y la que se utilizó: 24 + 12 = 36.
 
 Respuesta: **36 etiquetas**.

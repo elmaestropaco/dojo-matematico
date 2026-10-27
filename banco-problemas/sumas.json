@@ -26,13 +26,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -50,7 +52,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -95,13 +98,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "cromo",
-          "plural": "cromos"
+          "plural": "cromos",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "cromo",
-          "plural": "cromos"
+          "plural": "cromos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -119,7 +124,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "cromo",
-          "plural": "cromos"
+          "plural": "cromos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -157,13 +163,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "kilómetro",
-          "plural": "kilómetros"
+          "plural": "kilómetros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "kilómetro",
-          "plural": "kilómetros"
+          "plural": "kilómetros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -181,7 +189,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "kilómetro",
-          "plural": "kilómetros"
+          "plural": "kilómetros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -234,13 +243,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "canica",
-          "plural": "canicas"
+          "plural": "canicas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "canica",
-          "plural": "canicas"
+          "plural": "canicas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -258,7 +269,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "canica",
-          "plural": "canicas"
+          "plural": "canicas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -279,7 +291,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Al terminar el día, en una tienda quedan {cantidadA} {unidadA}. Durante ese día han vendido {cantidadB} {unidadB} y no han recibido más. ¿Cuántos cuadernos había antes de abrir la tienda?",
+      "enunciado": "Al terminar el día, en una tienda tienen todavía {cantidadA} {unidadA}. Durante ese día han vendido {cantidadB} {unidadB} y no han recibido más. ¿Cuántos cuadernos había antes de abrir la tienda?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -297,13 +309,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "cuaderno",
-          "plural": "cuadernos"
+          "plural": "cuadernos",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "cuaderno",
-          "plural": "cuadernos"
+          "plural": "cuadernos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -321,7 +335,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "cuaderno",
-          "plural": "cuadernos"
+          "plural": "cuadernos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -358,13 +373,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -382,7 +399,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "euro",
-          "plural": "euros"
+          "plural": "euros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -425,19 +443,22 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         },
         "unidadC": {
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -464,7 +485,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -508,19 +530,22 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         },
         "unidadC": {
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -547,7 +572,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "metro",
-          "plural": "metros"
+          "plural": "metros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -567,7 +593,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "En una sala del colegio ya hay {cantidadA} {unidadA}. Para preparar una fiesta, los alumnos colocan {cantidadB} {unidadB} más. ¿Cuántas sillas habrá en la sala cuando terminen?",
+      "enunciado": "En una sala del colegio ya hay {cantidadA} {unidadA}. Para una fiesta, los alumnos colocan {cantidadB} {unidadB} más. ¿Cuántas sillas habrá en la sala cuando terminen?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -585,13 +611,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "silla",
-          "plural": "sillas"
+          "plural": "sillas",
+          "genero": "femenino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "silla",
-          "plural": "sillas"
+          "plural": "sillas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -609,7 +637,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "silla",
-          "plural": "sillas"
+          "plural": "sillas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -628,7 +657,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "En un cuento del espacio aparecen dos planetas. En uno viven {cantidadA} {unidadA} y en el otro viven {cantidadB} {unidadB}. ¿Cuántos habitantes viven entre los dos planetas?",
+      "enunciado": "En un cuento del espacio aparecen dos planetas. En uno hay {cantidadA} {unidadA} y en el otro hay {cantidadB} {unidadB}. ¿Cuántos habitantes viven entre los dos planetas?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -646,13 +675,15 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "habitante",
-          "plural": "habitantes"
+          "plural": "habitantes",
+          "genero": "masculino"
         },
         "unidadB": {
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "habitante",
-          "plural": "habitantes"
+          "plural": "habitantes",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -670,7 +701,8 @@
         "valor": "resultado1",
         "unidad": {
           "singular": "habitante",
-          "plural": "habitantes"
+          "plural": "habitantes",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -702,7 +734,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -714,7 +747,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -725,14 +759,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "libro",
-          "plural": "libros"
+          "plural": "libros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -763,7 +798,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "pincel",
-          "plural": "pinceles"
+          "plural": "pinceles",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -775,7 +811,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pincel",
-          "plural": "pinceles"
+          "plural": "pinceles",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -786,14 +823,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "pincel",
-          "plural": "pinceles"
+          "plural": "pinceles",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -812,7 +850,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos semillas tiene el segundo grupo?",
+      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántas semillas tiene el segundo grupo?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -824,7 +862,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "semilla",
-          "plural": "semillas"
+          "plural": "semillas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -836,7 +875,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "semilla",
-          "plural": "semillas"
+          "plural": "semillas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -847,14 +887,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad del primer grupo y la diferencia: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "semilla",
-          "plural": "semillas"
+          "plural": "semillas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -873,7 +914,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Después de la actividad, en la cocina del campamento quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos magdalenas había al empezar?",
+      "enunciado": "Después de la actividad, en la cocina del campamento tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas magdalenas había al empezar?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -885,7 +926,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "magdalena",
-          "plural": "magdalenas"
+          "plural": "magdalenas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -897,7 +939,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "magdalena",
-          "plural": "magdalenas"
+          "plural": "magdalenas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -908,14 +951,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad que queda y la que se utilizó: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "magdalena",
-          "plural": "magdalenas"
+          "plural": "magdalenas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -934,7 +978,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Para celebrar un torneo se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos pelotas hay en total?",
+      "enunciado": "Para celebrar un torneo se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántas pelotas hay en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -946,7 +990,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -958,7 +1003,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -970,7 +1016,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -981,7 +1028,7 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         },
         {
           "id": "resultado2",
@@ -997,7 +1044,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "pelota",
-          "plural": "pelotas"
+          "plural": "pelotas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1029,7 +1077,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "globo",
-          "plural": "globos"
+          "plural": "globos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1041,7 +1090,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "globo",
-          "plural": "globos"
+          "plural": "globos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1052,14 +1102,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos lo que tienen y lo que todavía necesitan: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "globo",
-          "plural": "globos"
+          "plural": "globos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1090,7 +1141,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "frasco",
-          "plural": "frascos"
+          "plural": "frascos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1102,7 +1154,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "frasco",
-          "plural": "frascos"
+          "plural": "frascos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1113,14 +1166,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "frasco",
-          "plural": "frascos"
+          "plural": "frascos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1139,7 +1193,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Para preparar un pedido, en el puesto de fruta tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos peras tienen ahora?",
+      "enunciado": "Para un pedido, en el puesto de fruta tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas peras tienen ahora?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1151,7 +1205,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1163,7 +1218,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1174,14 +1230,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "pera",
-          "plural": "peras"
+          "plural": "peras",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1200,7 +1257,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos partituras tiene el segundo grupo?",
+      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántas partituras tiene el segundo grupo?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1212,7 +1269,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "partitura",
-          "plural": "partituras"
+          "plural": "partituras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1224,7 +1282,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "partitura",
-          "plural": "partituras"
+          "plural": "partituras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1235,14 +1294,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad del primer grupo y la diferencia: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "partitura",
-          "plural": "partituras"
+          "plural": "partituras",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1261,7 +1321,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Después de la actividad, en la tienda del museo quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos postales había al empezar?",
+      "enunciado": "Después de la actividad, en la tienda del museo tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas postales había al empezar?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1273,7 +1333,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "postal",
-          "plural": "postales"
+          "plural": "postales",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1285,7 +1346,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "postal",
-          "plural": "postales"
+          "plural": "postales",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1296,14 +1358,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad que queda y la que se utilizó: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "postal",
-          "plural": "postales"
+          "plural": "postales",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1322,7 +1385,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Para hacer una actividad con materiales usados se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos botellas hay en total?",
+      "enunciado": "Para hacer una actividad con materiales usados se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántas botellas hay en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1334,7 +1397,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1346,7 +1410,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -1358,7 +1423,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1369,7 +1435,7 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         },
         {
           "id": "resultado2",
@@ -1385,7 +1451,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "botella",
-          "plural": "botellas"
+          "plural": "botellas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1405,7 +1472,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "En el refugio de animales ya han preparado {cantidadA} {unidadA} para preparar las camas de los animales. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos mantas necesitan en total?",
+      "enunciado": "En el refugio de animales ya han preparado {cantidadA} {unidadA} para las camas de los animales. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántas mantas necesitan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1417,7 +1484,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "manta",
-          "plural": "mantas"
+          "plural": "mantas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1429,7 +1497,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "manta",
-          "plural": "mantas"
+          "plural": "mantas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1440,14 +1509,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos lo que tienen y lo que todavía necesitan: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "manta",
-          "plural": "mantas"
+          "plural": "mantas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1478,7 +1548,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "bocadillo",
-          "plural": "bocadillos"
+          "plural": "bocadillos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1490,7 +1561,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "bocadillo",
-          "plural": "bocadillos"
+          "plural": "bocadillos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1501,14 +1573,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "bocadillo",
-          "plural": "bocadillos"
+          "plural": "bocadillos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1527,7 +1600,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Para organizar una función escolar, en el teatro del barrio tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos entradas tienen ahora?",
+      "enunciado": "Para organizar una función escolar, en el teatro del barrio tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas entradas tienen ahora?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1539,7 +1612,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1551,7 +1625,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1562,14 +1637,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1600,7 +1676,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "tornillo",
-          "plural": "tornillos"
+          "plural": "tornillos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1612,7 +1689,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "tornillo",
-          "plural": "tornillos"
+          "plural": "tornillos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1623,14 +1701,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad del primer grupo y la diferencia: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "tornillo",
-          "plural": "tornillos"
+          "plural": "tornillos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1649,7 +1728,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Después de la actividad, en el taller de manualidades quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos cuentas había al empezar?",
+      "enunciado": "Después de la actividad, en el taller de manualidades tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas cuentas había al empezar?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1661,7 +1740,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "cuenta",
-          "plural": "cuentas"
+          "plural": "cuentas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1673,7 +1753,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "cuenta",
-          "plural": "cuentas"
+          "plural": "cuentas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1684,14 +1765,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad que queda y la que se utilizó: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "cuenta",
-          "plural": "cuentas"
+          "plural": "cuentas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1722,7 +1804,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1734,7 +1817,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -1746,7 +1830,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1757,7 +1842,7 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         },
         {
           "id": "resultado2",
@@ -1773,7 +1858,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "banderín",
-          "plural": "banderines"
+          "plural": "banderines",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1793,7 +1879,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "En el club de exploradores ya han preparado {cantidadA} {unidadA} para preparar una ruta. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos mapas necesitan en total?",
+      "enunciado": "En el club de exploradores ya han preparado {cantidadA} {unidadA} para una ruta. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos mapas necesitan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1805,7 +1891,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "mapa",
-          "plural": "mapas"
+          "plural": "mapas",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1817,7 +1904,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "mapa",
-          "plural": "mapas"
+          "plural": "mapas",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -1828,14 +1916,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos lo que tienen y lo que todavía necesitan: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "mapa",
-          "plural": "mapas"
+          "plural": "mapas",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -1854,7 +1943,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "En el polideportivo hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos medallas hay entre las dos cajas?",
+      "enunciado": "En el polideportivo hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántas medallas hay entre las dos cajas?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1866,7 +1955,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "medalla",
-          "plural": "medallas"
+          "plural": "medallas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1878,7 +1968,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "medalla",
-          "plural": "medallas"
+          "plural": "medallas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1889,14 +1980,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "medalla",
-          "plural": "medallas"
+          "plural": "medallas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1915,7 +2007,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Para organizar una tarde de juegos, en la ludoteca tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos fichas tienen ahora?",
+      "enunciado": "Para organizar una tarde de juegos, en la ludoteca tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas fichas tienen ahora?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1927,7 +2019,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -1939,7 +2032,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -1950,14 +2044,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -1976,7 +2071,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "En el planetario hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos entradas hay entre las dos cajas?",
+      "enunciado": "En el planetario hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántas entradas hay entre las dos cajas?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -1988,7 +2083,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2000,7 +2096,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2011,14 +2108,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "entrada",
-          "plural": "entradas"
+          "plural": "entradas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2037,7 +2135,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Para organizar un encuentro, en el club de ajedrez tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos fichas tienen ahora?",
+      "enunciado": "Para organizar un encuentro, en el club de ajedrez tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas fichas tienen ahora?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2049,7 +2147,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2061,7 +2160,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2072,14 +2172,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "ficha",
-          "plural": "fichas"
+          "plural": "fichas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2110,7 +2211,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "muñeco",
-          "plural": "muñecos"
+          "plural": "muñecos",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2122,7 +2224,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "muñeco",
-          "plural": "muñecos"
+          "plural": "muñecos",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -2133,14 +2236,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad del primer grupo y la diferencia: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "muñeco",
-          "plural": "muñecos"
+          "plural": "muñecos",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -2159,7 +2263,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Después de la actividad, en el invernadero escolar quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos macetas había al empezar?",
+      "enunciado": "Después de la actividad, en el invernadero escolar tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas macetas había al empezar?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2171,7 +2275,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "maceta",
-          "plural": "macetas"
+          "plural": "macetas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2183,7 +2288,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "maceta",
-          "plural": "macetas"
+          "plural": "macetas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2194,14 +2300,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad que queda y la que se utilizó: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "maceta",
-          "plural": "macetas"
+          "plural": "macetas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2220,7 +2327,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Para preparar una actividad se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántos piedras hay en total?",
+      "enunciado": "Para una actividad se preparan tres lotes. El primero tiene {cantidadA} {unidadA}, el segundo {cantidadB} {unidadB} y el tercero {cantidadC} {unidadC}. ¿Cuántas piedras hay en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2232,7 +2339,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2244,7 +2352,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         },
         "cantidadC": {
           "tipo": "entero",
@@ -2256,7 +2365,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadC",
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2267,7 +2377,7 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         },
         {
           "id": "resultado2",
@@ -2283,7 +2393,8 @@
         "valor": "resultado2",
         "unidad": {
           "singular": "piedra",
-          "plural": "piedras"
+          "plural": "piedras",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2303,7 +2414,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "En el taller de conservas ya han preparado {cantidadA} {unidadA} para preparar una feria. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos tarros necesitan en total?",
+      "enunciado": "En el taller de conservas ya han preparado {cantidadA} {unidadA} para una feria. Todavía necesitan {cantidadB} {unidadB} más. ¿Cuántos tarros necesitan en total?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2315,7 +2426,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "tarro",
-          "plural": "tarros"
+          "plural": "tarros",
+          "genero": "masculino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2327,7 +2439,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "tarro",
-          "plural": "tarros"
+          "plural": "tarros",
+          "genero": "masculino"
         }
       },
       "pasos": [
@@ -2338,14 +2451,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos lo que tienen y lo que todavía necesitan: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "tarro",
-          "plural": "tarros"
+          "plural": "tarros",
+          "genero": "masculino"
         }
       },
       "restricciones": [],
@@ -2364,7 +2478,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "En el taller de carnaval hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántos máscaras hay entre las dos cajas?",
+      "enunciado": "En el taller de carnaval hay {cantidadA} {unidadA} en una caja y {cantidadB} {unidadB} en otra. ¿Cuántas máscaras hay entre las dos cajas?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2376,7 +2490,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "máscara",
-          "plural": "máscaras"
+          "plural": "máscaras",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2388,7 +2503,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "máscara",
-          "plural": "máscaras"
+          "plural": "máscaras",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2399,14 +2515,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "máscara",
-          "plural": "máscaras"
+          "plural": "máscaras",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2425,7 +2542,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Para hacer unos cuadernos, en el taller de encuadernación tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántos hojas tienen ahora?",
+      "enunciado": "Para hacer unos cuadernos, en el taller de encuadernación tienen {cantidadA} {unidadA}. Una familia les regala {cantidadB} {unidadB} más. ¿Cuántas hojas tienen ahora?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2437,7 +2554,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "hoja",
-          "plural": "hojas"
+          "plural": "hojas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2449,7 +2567,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "hoja",
-          "plural": "hojas"
+          "plural": "hojas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2460,14 +2579,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos las cantidades: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "hoja",
-          "plural": "hojas"
+          "plural": "hojas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2486,7 +2606,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántos láminas tiene el segundo grupo?",
+      "enunciado": "Un grupo tiene {cantidadA} {unidadA}. Otro grupo tiene {cantidadB} {unidadB} más que el primero. ¿Cuántas láminas tiene el segundo grupo?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2498,7 +2618,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "lámina",
-          "plural": "láminas"
+          "plural": "láminas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2510,7 +2631,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "lámina",
-          "plural": "láminas"
+          "plural": "láminas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2521,14 +2643,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad del primer grupo y la diferencia: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "lámina",
-          "plural": "láminas"
+          "plural": "láminas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],
@@ -2547,7 +2670,7 @@
       "etiquetas": [
         "suma"
       ],
-      "enunciado": "Después de la actividad, en el jardín de plantas aromáticas quedan {cantidadA} {unidadA}. Durante la actividad se han utilizado {cantidadB} {unidadB}. ¿Cuántos etiquetas había al empezar?",
+      "enunciado": "Después de la actividad, en el jardín de plantas aromáticas tienen todavía {cantidadA} {unidadA}. Durante la actividad han utilizado {cantidadB} {unidadB}. ¿Cuántas etiquetas había al empezar?",
       "variables": {
         "cantidadA": {
           "tipo": "entero",
@@ -2559,7 +2682,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadA",
           "singular": "etiqueta",
-          "plural": "etiquetas"
+          "plural": "etiquetas",
+          "genero": "femenino"
         },
         "cantidadB": {
           "tipo": "entero",
@@ -2571,7 +2695,8 @@
           "tipo": "concordancia",
           "cantidad": "cantidadB",
           "singular": "etiqueta",
-          "plural": "etiquetas"
+          "plural": "etiquetas",
+          "genero": "femenino"
         }
       },
       "pasos": [
@@ -2582,14 +2707,15 @@
             "cantidadA",
             "cantidadB"
           ],
-          "explicacion": "Juntamos las dos cantidades: {cantidadA} + {cantidadB} = {resultado1}."
+          "explicacion": "Sumamos la cantidad que queda y la que se utilizó: {cantidadA} + {cantidadB} = {resultado1}."
         }
       ],
       "respuesta": {
         "valor": "resultado1",
         "unidad": {
           "singular": "etiqueta",
-          "plural": "etiquetas"
+          "plural": "etiquetas",
+          "genero": "femenino"
         }
       },
       "restricciones": [],

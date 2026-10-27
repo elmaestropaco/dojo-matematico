@@ -65,7 +65,7 @@ Respuesta: **26 sillas**.
 ## 4. Averiguar el gasto
 ID: resta-gastado-004 | Dificultad: media
 
-Alex sale de casa con {cantidadA} {unidadA} para hacer una compra. Cuando vuelve, le quedan {cantidadB} {unidadB}. ¿Cuántos euros ha gastado en la compra?
+Alex sale de casa con {cantidadA} {unidadA} para hacer una compra. Cuando vuelve, le tienen todavía {cantidadB} {unidadB}. ¿Cuántos euros ha gastado en la compra?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -76,7 +76,7 @@ Alex sale de casa con {cantidadA} {unidadA} para hacer una compra. Cuando vuelve
 
 ### Ejemplo resuelto
 
-Alex sale de casa con 60 euros para hacer una compra. Cuando vuelve, le quedan 23 euros. ¿Cuántos euros ha gastado en la compra?
+Alex sale de casa con 60 euros para hacer una compra. Cuando vuelve, le tienen todavía 23 euros. ¿Cuántos euros ha gastado en la compra?
 
 - Primero restamos: 60 - 23 = 37.
 
@@ -85,7 +85,7 @@ Respuesta: **37 euros**.
 ## 5. Antes del regalo
 ID: resta-inicial-005 | Dificultad: media
 
-Sam recibe un regalo de {cantidadB} {unidadB}. Al juntarlos con los que ya tenía, cuenta {cantidadA} {unidadA}. ¿Cuántos cromos tenía Sam antes de recibir el regalo?
+Sam recibe un regalo de {cantidadB} {unidadB}. Después del regalo tiene {cantidadA} {unidadA} en total. ¿Cuántos cromos tenía Sam antes de recibir el regalo?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -96,7 +96,7 @@ Sam recibe un regalo de {cantidadB} {unidadB}. Al juntarlos con los que ya tení
 
 ### Ejemplo resuelto
 
-Sam recibe un regalo de 18 cromos. Al juntarlos con los que ya tenía, cuenta 51 cromos. ¿Cuántos cromos tenía Sam antes de recibir el regalo?
+Sam recibe un regalo de 18 cromos. Después del regalo tiene 51 cromos en total. ¿Cuántos cromos tenía Sam antes de recibir el regalo?
 
 - Primero restamos: 51 - 18 = 33.
 
@@ -191,7 +191,7 @@ Respuesta: **400 metros**.
 ## 10. Un traslado espacial
 ID: resta-planeta-010 | Dificultad: facil
 
-En un planeta de un cuento viven {cantidadA} {unidadA}. Un grupo de {cantidadB} {unidadB} se muda a otro planeta. Si no hay más cambios, ¿cuántos habitantes quedan en el primer planeta?
+En un planeta de un cuento hay {cantidadA} {unidadA}. Un grupo de {cantidadB} {unidadB} se muda a otro planeta. Si no hay más cambios, ¿cuántos habitantes quedan en el primer planeta?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -202,7 +202,7 @@ En un planeta de un cuento viven {cantidadA} {unidadA}. Un grupo de {cantidadB} 
 
 ### Ejemplo resuelto
 
-En un planeta de un cuento viven 4567890 habitantes. Un grupo de 1234567 habitantes se muda a otro planeta. Si no hay más cambios, ¿cuántos habitantes quedan en el primer planeta?
+En un planeta de un cuento hay 4567890 habitantes. Un grupo de 1234567 habitantes se muda a otro planeta. Si no hay más cambios, ¿cuántos habitantes quedan en el primer planeta?
 
 - Primero restamos: 4567890 - 1234567 = 3333323.
 
@@ -211,7 +211,7 @@ Respuesta: **3333323 habitantes**.
 ## 11. Biblioteca del barrio
 ID: resta-biblioteca-individual-011 | Dificultad: facil
 
-En la biblioteca del barrio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar las lecturas del mes. ¿Cuántos libros les quedan?
+En la biblioteca del barrio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para las lecturas del mes. ¿Cuántos libros les quedan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -222,9 +222,9 @@ En la biblioteca del barrio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {
 
 ### Ejemplo resuelto
 
-En la biblioteca del barrio tienen 90 libros. Utilizan 24 libros para preparar las lecturas del mes. ¿Cuántos libros les quedan?
+En la biblioteca del barrio tienen 90 libros. Utilizan 24 libros para las lecturas del mes. ¿Cuántos libros les quedan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 libros**.
 
@@ -244,14 +244,14 @@ En el taller de pintura necesitan {cantidadA} {unidadA} para organizar una expos
 
 En el taller de pintura necesitan 90 pinceles para organizar una exposición, pero solo tienen 24 pinceles. ¿Cuántos pinceles les faltan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que tienen a lo que necesitan: 90 - 24 = 66.
 
 Respuesta: **66 pinceles**.
 
 ## 13. El huerto escolar
 ID: resta-huerto-individual-013 | Dificultad: media
 
-Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos semillas más ha preparado la primera clase?
+Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántas semillas más ha preparado la primera clase?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -262,16 +262,16 @@ Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidad
 
 ### Ejemplo resuelto
 
-Una clase ha preparado 90 semillas y otra clase ha preparado 24 semillas. ¿Cuántos semillas más ha preparado la primera clase?
+Una clase ha preparado 90 semillas y otra clase ha preparado 24 semillas. ¿Cuántas semillas más ha preparado la primera clase?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos para comparar las dos clases: 90 - 24 = 66.
 
 Respuesta: **66 semillas**.
 
 ## 14. La merienda del campamento
 ID: resta-merienda-individual-014 | Dificultad: media
 
-Después de recibir un pedido de {cantidadB} {unidadB}, en la cocina del campamento tienen {cantidadA} {unidadA}. ¿Cuántos magdalenas tenían antes de recibir el pedido?
+Después de recibir un pedido de {cantidadB} {unidadB}, en la cocina del campamento tienen {cantidadA} {unidadA}. ¿Cuántas magdalenas tenían antes de recibir el pedido?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -282,16 +282,16 @@ Después de recibir un pedido de {cantidadB} {unidadB}, en la cocina del campame
 
 ### Ejemplo resuelto
 
-Después de recibir un pedido de 24 magdalenas, en la cocina del campamento tienen 90 magdalenas. ¿Cuántos magdalenas tenían antes de recibir el pedido?
+Después de recibir un pedido de 24 magdalenas, en la cocina del campamento tienen 90 magdalenas. ¿Cuántas magdalenas tenían antes de recibir el pedido?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos el pedido a la cantidad actual: 90 - 24 = 66.
 
 Respuesta: **66 magdalenas**.
 
 ## 15. El torneo del colegio
 ID: resta-torneo-individual-015 | Dificultad: avanzada
 
-En el gimnasio del colegio tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos pelotas quedan al terminar el día?
+En el gimnasio del colegio tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántas pelotas quedan al terminar el día?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -304,9 +304,9 @@ En el gimnasio del colegio tienen {cantidadA} {unidadA}. Por la mañana utilizan
 
 ### Ejemplo resuelto
 
-En el gimnasio del colegio tienen 90 pelotas. Por la mañana utilizan 24 pelotas y por la tarde 18 pelotas. ¿Cuántos pelotas quedan al terminar el día?
+En el gimnasio del colegio tienen 90 pelotas. Por la mañana utilizan 24 pelotas y por la tarde 18 pelotas. ¿Cuántas pelotas quedan al terminar el día?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada por la mañana: 90 - 24 = 66.
 - Descontamos también la segunda cantidad: 66 - 18 = 48.
 
 Respuesta: **48 pelotas**.
@@ -314,7 +314,7 @@ Respuesta: **48 pelotas**.
 ## 16. Preparar la fiesta
 ID: resta-fiesta-individual-016 | Dificultad: facil
 
-Al principio había {cantidadA} {unidadA} en la sala de fiestas. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos globos han utilizado?
+Al principio había {cantidadA} {unidadA} en la sala de fiestas. Al terminar la actividad tienen todavía {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos globos han utilizado?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -325,9 +325,9 @@ Al principio había {cantidadA} {unidadA} en la sala de fiestas. Al terminar la 
 
 ### Ejemplo resuelto
 
-Al principio había 90 globos en la sala de fiestas. Al terminar la actividad quedan 24 globos. Si no han recibido más, ¿cuántos globos han utilizado?
+Al principio había 90 globos en la sala de fiestas. Al terminar la actividad tienen todavía 24 globos. Si no han recibido más, ¿cuántos globos han utilizado?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que queda a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 globos**.
 
@@ -347,14 +347,14 @@ En el laboratorio del colegio tienen {cantidadA} {unidadA}. Utilizan {cantidadB}
 
 En el laboratorio del colegio tienen 90 frascos. Utilizan 24 frascos para hacer unos experimentos. ¿Cuántos frascos les quedan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 frascos**.
 
 ## 18. El puesto de fruta
 ID: resta-mercado-individual-018 | Dificultad: facil
 
-En el puesto de fruta necesitan {cantidadA} {unidadA} para preparar un pedido, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos peras les faltan?
+En el puesto de fruta necesitan {cantidadA} {unidadA} para un pedido, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas peras les faltan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -365,16 +365,16 @@ En el puesto de fruta necesitan {cantidadA} {unidadA} para preparar un pedido, p
 
 ### Ejemplo resuelto
 
-En el puesto de fruta necesitan 90 peras para preparar un pedido, pero solo tienen 24 peras. ¿Cuántos peras les faltan?
+En el puesto de fruta necesitan 90 peras para un pedido, pero solo tienen 24 peras. ¿Cuántas peras les faltan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que tienen a lo que necesitan: 90 - 24 = 66.
 
 Respuesta: **66 peras**.
 
 ## 19. El ensayo de música
 ID: resta-musica-individual-019 | Dificultad: media
 
-Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos partituras más ha preparado la primera clase?
+Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántas partituras más ha preparado la primera clase?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -385,16 +385,16 @@ Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidad
 
 ### Ejemplo resuelto
 
-Una clase ha preparado 90 partituras y otra clase ha preparado 24 partituras. ¿Cuántos partituras más ha preparado la primera clase?
+Una clase ha preparado 90 partituras y otra clase ha preparado 24 partituras. ¿Cuántas partituras más ha preparado la primera clase?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos para comparar las dos clases: 90 - 24 = 66.
 
 Respuesta: **66 partituras**.
 
 ## 20. Los recuerdos del museo
 ID: resta-museo-individual-020 | Dificultad: media
 
-Después de recibir un pedido de {cantidadB} {unidadB}, en la tienda del museo tienen {cantidadA} {unidadA}. ¿Cuántos postales tenían antes de recibir el pedido?
+Después de recibir un pedido de {cantidadB} {unidadB}, en la tienda del museo tienen {cantidadA} {unidadA}. ¿Cuántas postales tenían antes de recibir el pedido?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -405,16 +405,16 @@ Después de recibir un pedido de {cantidadB} {unidadB}, en la tienda del museo t
 
 ### Ejemplo resuelto
 
-Después de recibir un pedido de 24 postales, en la tienda del museo tienen 90 postales. ¿Cuántos postales tenían antes de recibir el pedido?
+Después de recibir un pedido de 24 postales, en la tienda del museo tienen 90 postales. ¿Cuántas postales tenían antes de recibir el pedido?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos el pedido a la cantidad actual: 90 - 24 = 66.
 
 Respuesta: **66 postales**.
 
 ## 21. La campaña de reciclaje
 ID: resta-reciclaje-individual-021 | Dificultad: avanzada
 
-En el punto de reciclaje tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos botellas quedan al terminar el día?
+En el punto de reciclaje tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántas botellas quedan al terminar el día?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -427,9 +427,9 @@ En el punto de reciclaje tienen {cantidadA} {unidadA}. Por la mañana utilizan {
 
 ### Ejemplo resuelto
 
-En el punto de reciclaje tienen 90 botellas. Por la mañana utilizan 24 botellas y por la tarde 18 botellas. ¿Cuántos botellas quedan al terminar el día?
+En el punto de reciclaje tienen 90 botellas. Por la mañana utilizan 24 botellas y por la tarde 18 botellas. ¿Cuántas botellas quedan al terminar el día?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada por la mañana: 90 - 24 = 66.
 - Descontamos también la segunda cantidad: 66 - 18 = 48.
 
 Respuesta: **48 botellas**.
@@ -437,7 +437,7 @@ Respuesta: **48 botellas**.
 ## 22. Ayudar al refugio
 ID: resta-refugio-individual-022 | Dificultad: facil
 
-Al principio había {cantidadA} {unidadA} en el refugio de animales. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos mantas han utilizado?
+Al principio había {cantidadA} {unidadA} en el refugio de animales. Al terminar la actividad tienen todavía {cantidadB} {unidadB}. Si no han recibido más, ¿cuántas mantas han utilizado?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -448,16 +448,16 @@ Al principio había {cantidadA} {unidadA} en el refugio de animales. Al terminar
 
 ### Ejemplo resuelto
 
-Al principio había 90 mantas en el refugio de animales. Al terminar la actividad quedan 24 mantas. Si no han recibido más, ¿cuántos mantas han utilizado?
+Al principio había 90 mantas en el refugio de animales. Al terminar la actividad tienen todavía 24 mantas. Si no han recibido más, ¿cuántas mantas han utilizado?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que queda a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 mantas**.
 
 ## 23. La comida de la excursión
 ID: resta-comedor-individual-023 | Dificultad: facil
 
-En el comedor del colegio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar una excursión. ¿Cuántos bocadillos les quedan?
+En el comedor del colegio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para una excursión. ¿Cuántos bocadillos les quedan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -468,16 +468,16 @@ En el comedor del colegio tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {un
 
 ### Ejemplo resuelto
 
-En el comedor del colegio tienen 90 bocadillos. Utilizan 24 bocadillos para preparar una excursión. ¿Cuántos bocadillos les quedan?
+En el comedor del colegio tienen 90 bocadillos. Utilizan 24 bocadillos para una excursión. ¿Cuántos bocadillos les quedan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 bocadillos**.
 
 ## 24. La función de teatro
 ID: resta-teatro-individual-024 | Dificultad: facil
 
-En el teatro del barrio necesitan {cantidadA} {unidadA} para organizar una función escolar, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos entradas les faltan?
+En el teatro del barrio necesitan {cantidadA} {unidadA} para organizar una función escolar, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas entradas les faltan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -488,9 +488,9 @@ En el teatro del barrio necesitan {cantidadA} {unidadA} para organizar una funci
 
 ### Ejemplo resuelto
 
-En el teatro del barrio necesitan 90 entradas para organizar una función escolar, pero solo tienen 24 entradas. ¿Cuántos entradas les faltan?
+En el teatro del barrio necesitan 90 entradas para organizar una función escolar, pero solo tienen 24 entradas. ¿Cuántas entradas les faltan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que tienen a lo que necesitan: 90 - 24 = 66.
 
 Respuesta: **66 entradas**.
 
@@ -510,14 +510,14 @@ Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidad
 
 Una clase ha preparado 90 tornillos y otra clase ha preparado 24 tornillos. ¿Cuántos tornillos más ha preparado la primera clase?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos para comparar las dos clases: 90 - 24 = 66.
 
 Respuesta: **66 tornillos**.
 
 ## 26. El taller de collares
 ID: resta-collares-individual-026 | Dificultad: media
 
-Después de recibir un pedido de {cantidadB} {unidadB}, en el taller de manualidades tienen {cantidadA} {unidadA}. ¿Cuántos cuentas tenían antes de recibir el pedido?
+Después de recibir un pedido de {cantidadB} {unidadB}, en el taller de manualidades tienen {cantidadA} {unidadA}. ¿Cuántas cuentas tenían antes de recibir el pedido?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -528,9 +528,9 @@ Después de recibir un pedido de {cantidadB} {unidadB}, en el taller de manualid
 
 ### Ejemplo resuelto
 
-Después de recibir un pedido de 24 cuentas, en el taller de manualidades tienen 90 cuentas. ¿Cuántos cuentas tenían antes de recibir el pedido?
+Después de recibir un pedido de 24 cuentas, en el taller de manualidades tienen 90 cuentas. ¿Cuántas cuentas tenían antes de recibir el pedido?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos el pedido a la cantidad actual: 90 - 24 = 66.
 
 Respuesta: **66 cuentas**.
 
@@ -552,7 +552,7 @@ En el centro del barrio tienen {cantidadA} {unidadA}. Por la mañana utilizan {c
 
 En el centro del barrio tienen 90 banderines. Por la mañana utilizan 24 banderines y por la tarde 18 banderines. ¿Cuántos banderines quedan al terminar el día?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada por la mañana: 90 - 24 = 66.
 - Descontamos también la segunda cantidad: 66 - 18 = 48.
 
 Respuesta: **48 banderines**.
@@ -560,7 +560,7 @@ Respuesta: **48 banderines**.
 ## 28. Una ruta de exploradores
 ID: resta-exploradores-individual-028 | Dificultad: facil
 
-Al principio había {cantidadA} {unidadA} en el club de exploradores. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos mapas han utilizado?
+Al principio había {cantidadA} {unidadA} en el club de exploradores. Al terminar la actividad tienen todavía {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos mapas han utilizado?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -571,16 +571,16 @@ Al principio había {cantidadA} {unidadA} en el club de exploradores. Al termina
 
 ### Ejemplo resuelto
 
-Al principio había 90 mapas en el club de exploradores. Al terminar la actividad quedan 24 mapas. Si no han recibido más, ¿cuántos mapas han utilizado?
+Al principio había 90 mapas en el club de exploradores. Al terminar la actividad tienen todavía 24 mapas. Si no han recibido más, ¿cuántos mapas han utilizado?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que queda a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 mapas**.
 
 ## 29. La carrera solidaria
 ID: resta-medallas-individual-029 | Dificultad: facil
 
-En el polideportivo tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para organizar una carrera solidaria. ¿Cuántos medallas les quedan?
+En el polideportivo tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para organizar una carrera solidaria. ¿Cuántas medallas les quedan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -591,16 +591,16 @@ En el polideportivo tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB}
 
 ### Ejemplo resuelto
 
-En el polideportivo tienen 90 medallas. Utilizan 24 medallas para organizar una carrera solidaria. ¿Cuántos medallas les quedan?
+En el polideportivo tienen 90 medallas. Utilizan 24 medallas para organizar una carrera solidaria. ¿Cuántas medallas les quedan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 medallas**.
 
 ## 30. La tarde de juegos
 ID: resta-juegos-individual-030 | Dificultad: facil
 
-En la ludoteca necesitan {cantidadA} {unidadA} para organizar una tarde de juegos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos fichas les faltan?
+En la ludoteca necesitan {cantidadA} {unidadA} para organizar una tarde de juegos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas fichas les faltan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -611,16 +611,16 @@ En la ludoteca necesitan {cantidadA} {unidadA} para organizar una tarde de juego
 
 ### Ejemplo resuelto
 
-En la ludoteca necesitan 90 fichas para organizar una tarde de juegos, pero solo tienen 24 fichas. ¿Cuántos fichas les faltan?
+En la ludoteca necesitan 90 fichas para organizar una tarde de juegos, pero solo tienen 24 fichas. ¿Cuántas fichas les faltan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que tienen a lo que necesitan: 90 - 24 = 66.
 
 Respuesta: **66 fichas**.
 
 ## 31. El viaje al planetario
 ID: resta-planetario-individual-031 | Dificultad: facil
 
-En el planetario tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar una visita escolar. ¿Cuántos entradas les quedan?
+En el planetario tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para una visita escolar. ¿Cuántas entradas les quedan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -631,16 +631,16 @@ En el planetario tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} pa
 
 ### Ejemplo resuelto
 
-En el planetario tienen 90 entradas. Utilizan 24 entradas para preparar una visita escolar. ¿Cuántos entradas les quedan?
+En el planetario tienen 90 entradas. Utilizan 24 entradas para una visita escolar. ¿Cuántas entradas les quedan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 entradas**.
 
 ## 32. El club de ajedrez
 ID: resta-ajedrez-individual-032 | Dificultad: facil
 
-En el club de ajedrez necesitan {cantidadA} {unidadA} para organizar un encuentro, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos fichas les faltan?
+En el club de ajedrez necesitan {cantidadA} {unidadA} para organizar un encuentro, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas fichas les faltan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -651,9 +651,9 @@ En el club de ajedrez necesitan {cantidadA} {unidadA} para organizar un encuentr
 
 ### Ejemplo resuelto
 
-En el club de ajedrez necesitan 90 fichas para organizar un encuentro, pero solo tienen 24 fichas. ¿Cuántos fichas les faltan?
+En el club de ajedrez necesitan 90 fichas para organizar un encuentro, pero solo tienen 24 fichas. ¿Cuántas fichas les faltan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que tienen a lo que necesitan: 90 - 24 = 66.
 
 Respuesta: **66 fichas**.
 
@@ -673,14 +673,14 @@ Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidad
 
 Una clase ha preparado 90 muñecos y otra clase ha preparado 24 muñecos. ¿Cuántos muñecos más ha preparado la primera clase?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos para comparar las dos clases: 90 - 24 = 66.
 
 Respuesta: **66 muñecos**.
 
 ## 34. Las plantas del invernadero
 ID: resta-invernadero-individual-034 | Dificultad: media
 
-Después de recibir un pedido de {cantidadB} {unidadB}, en el invernadero escolar tienen {cantidadA} {unidadA}. ¿Cuántos macetas tenían antes de recibir el pedido?
+Después de recibir un pedido de {cantidadB} {unidadB}, en el invernadero escolar tienen {cantidadA} {unidadA}. ¿Cuántas macetas tenían antes de recibir el pedido?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -691,16 +691,16 @@ Después de recibir un pedido de {cantidadB} {unidadB}, en el invernadero escola
 
 ### Ejemplo resuelto
 
-Después de recibir un pedido de 24 macetas, en el invernadero escolar tienen 90 macetas. ¿Cuántos macetas tenían antes de recibir el pedido?
+Después de recibir un pedido de 24 macetas, en el invernadero escolar tienen 90 macetas. ¿Cuántas macetas tenían antes de recibir el pedido?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos el pedido a la cantidad actual: 90 - 24 = 66.
 
 Respuesta: **66 macetas**.
 
 ## 35. Los peces del aula
 ID: resta-acuarios-individual-035 | Dificultad: avanzada
 
-En el taller de acuarios tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántos piedras quedan al terminar el día?
+En el taller de acuarios tienen {cantidadA} {unidadA}. Por la mañana utilizan {cantidadB} {unidadB} y por la tarde {cantidadC} {unidadC}. ¿Cuántas piedras quedan al terminar el día?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -713,9 +713,9 @@ En el taller de acuarios tienen {cantidadA} {unidadA}. Por la mañana utilizan {
 
 ### Ejemplo resuelto
 
-En el taller de acuarios tienen 90 piedras. Por la mañana utilizan 24 piedras y por la tarde 18 piedras. ¿Cuántos piedras quedan al terminar el día?
+En el taller de acuarios tienen 90 piedras. Por la mañana utilizan 24 piedras y por la tarde 18 piedras. ¿Cuántas piedras quedan al terminar el día?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada por la mañana: 90 - 24 = 66.
 - Descontamos también la segunda cantidad: 66 - 18 = 48.
 
 Respuesta: **48 piedras**.
@@ -723,7 +723,7 @@ Respuesta: **48 piedras**.
 ## 36. La feria de conservas
 ID: resta-conservas-individual-036 | Dificultad: facil
 
-Al principio había {cantidadA} {unidadA} en el taller de conservas. Al terminar la actividad quedan {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos tarros han utilizado?
+Al principio había {cantidadA} {unidadA} en el taller de conservas. Al terminar la actividad tienen todavía {cantidadB} {unidadB}. Si no han recibido más, ¿cuántos tarros han utilizado?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -734,16 +734,16 @@ Al principio había {cantidadA} {unidadA} en el taller de conservas. Al terminar
 
 ### Ejemplo resuelto
 
-Al principio había 90 tarros en el taller de conservas. Al terminar la actividad quedan 24 tarros. Si no han recibido más, ¿cuántos tarros han utilizado?
+Al principio había 90 tarros en el taller de conservas. Al terminar la actividad tienen todavía 24 tarros. Si no han recibido más, ¿cuántos tarros han utilizado?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que queda a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 tarros**.
 
 ## 37. El carnaval del barrio
 ID: resta-carnaval-individual-037 | Dificultad: facil
 
-En el taller de carnaval tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para preparar el desfile. ¿Cuántos máscaras les quedan?
+En el taller de carnaval tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {unidadB} para el desfile. ¿Cuántas máscaras les quedan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -754,16 +754,16 @@ En el taller de carnaval tienen {cantidadA} {unidadA}. Utilizan {cantidadB} {uni
 
 ### Ejemplo resuelto
 
-En el taller de carnaval tienen 90 máscaras. Utilizan 24 máscaras para preparar el desfile. ¿Cuántos máscaras les quedan?
+En el taller de carnaval tienen 90 máscaras. Utilizan 24 máscaras para el desfile. ¿Cuántas máscaras les quedan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos la cantidad utilizada a la cantidad inicial: 90 - 24 = 66.
 
 Respuesta: **66 máscaras**.
 
 ## 38. Creamos nuestros cuadernos
 ID: resta-encuadernacion-individual-038 | Dificultad: facil
 
-En el taller de encuadernación necesitan {cantidadA} {unidadA} para hacer unos cuadernos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántos hojas les faltan?
+En el taller de encuadernación necesitan {cantidadA} {unidadA} para hacer unos cuadernos, pero solo tienen {cantidadB} {unidadB}. ¿Cuántas hojas les faltan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -774,16 +774,16 @@ En el taller de encuadernación necesitan {cantidadA} {unidadA} para hacer unos 
 
 ### Ejemplo resuelto
 
-En el taller de encuadernación necesitan 90 hojas para hacer unos cuadernos, pero solo tienen 24 hojas. ¿Cuántos hojas les faltan?
+En el taller de encuadernación necesitan 90 hojas para hacer unos cuadernos, pero solo tienen 24 hojas. ¿Cuántas hojas les faltan?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos lo que tienen a lo que necesitan: 90 - 24 = 66.
 
 Respuesta: **66 hojas**.
 
 ## 39. Una visita al colmenar
 ID: resta-colmenar-individual-039 | Dificultad: media
 
-Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántos láminas más ha preparado la primera clase?
+Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidadB} {unidadB}. ¿Cuántas láminas más ha preparado la primera clase?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -794,16 +794,16 @@ Una clase ha preparado {cantidadA} {unidadA} y otra clase ha preparado {cantidad
 
 ### Ejemplo resuelto
 
-Una clase ha preparado 90 láminas y otra clase ha preparado 24 láminas. ¿Cuántos láminas más ha preparado la primera clase?
+Una clase ha preparado 90 láminas y otra clase ha preparado 24 láminas. ¿Cuántas láminas más ha preparado la primera clase?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos para comparar las dos clases: 90 - 24 = 66.
 
 Respuesta: **66 láminas**.
 
 ## 40. El jardín de los aromas
 ID: resta-aromaticas-individual-040 | Dificultad: media
 
-Después de recibir un pedido de {cantidadB} {unidadB}, en el jardín de plantas aromáticas tienen {cantidadA} {unidadA}. ¿Cuántos etiquetas tenían antes de recibir el pedido?
+Después de recibir un pedido de {cantidadB} {unidadB}, en el jardín de plantas aromáticas tienen {cantidadA} {unidadA}. ¿Cuántas etiquetas tenían antes de recibir el pedido?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -814,8 +814,8 @@ Después de recibir un pedido de {cantidadB} {unidadB}, en el jardín de plantas
 
 ### Ejemplo resuelto
 
-Después de recibir un pedido de 24 etiquetas, en el jardín de plantas aromáticas tienen 90 etiquetas. ¿Cuántos etiquetas tenían antes de recibir el pedido?
+Después de recibir un pedido de 24 etiquetas, en el jardín de plantas aromáticas tienen 90 etiquetas. ¿Cuántas etiquetas tenían antes de recibir el pedido?
 
-- Restamos para encontrar la cantidad que falta: 90 - 24 = 66.
+- Restamos el pedido a la cantidad actual: 90 - 24 = 66.
 
 Respuesta: **66 etiquetas**.

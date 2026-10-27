@@ -41,7 +41,7 @@ const scenes = [
   ['comparsas', 'La comparsa del colegio', 'En el taller de carnaval', 'metros de cinta'],
   ['sopa', 'La sopa del comedor', 'En la cocina del comedor', 'litros de caldo'],
   ['panales', 'Una visita al colmenar', 'En el taller del colmenar', 'kilos de miel']
-].map(([key, title, intro, unit]) => ({ key, title, intro, unit }));
+].map(([key, title, intro, unit]) => ({ key, title, intro, unit, unitGender: 'masculino', unitSingular: unit.replace(/^(litros|kilos|metros)/, word => ({ litros: 'litro', kilos: 'kilo', metros: 'metro' })[word]) }));
 const categories = ['suma', 'resta', 'multiplicacion', 'division'];
 const plantillas = [];
 for (let mask = 1; mask < 16; mask++) {

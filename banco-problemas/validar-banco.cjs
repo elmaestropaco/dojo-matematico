@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
+const { validateLanguage } = require('./lenguaje.cjs');
 
 const OPERATIONS = ['suma', 'resta', 'multiplicacion', 'division'];
 const NUMBER_NAME = /^cantidad[A-F]$/;
@@ -52,7 +53,7 @@ function validateTemplate(template) {
       variable.valores.forEach(value => { nonempty(value, name); assert.ok(!/[{}]/.test(value), 'Las palabras no pueden contener variables'); });
     } else if (variable.tipo === 'concordancia') {
       assert.match(name, UNIT_NAME, `Nombre de concordancia no permitido: ${name}`);
-      fields(variable, ['tipo', 'cantidad', 'singular', 'plural']);
+      fields(variable, ['tipo', 'cantidad', 'singular', 'plural', 'genero'], ['tipo', 'cantidad', 'singular', 'plural']);
       nonempty(variable.singular, name);
       nonempty(variable.plural, name);
       assert.equal(template.variables[variable.cantidad]?.tipo, 'entero', `${name}: debe referirse a una cantidad declarada`);
@@ -104,7 +105,7 @@ function validateTemplate(template) {
   }
   assert.deepEqual([...usedOperations].sort(), [...template.etiquetas].sort(), 'Las etiquetas no coinciden con las operaciones de los pasos');
   fields(template.respuesta, ['valor', 'unidad']);
-  fields(template.respuesta.unidad, ['singular', 'plural']);
+  fields(template.respuesta.unidad, ['singular', 'plural', 'genero'], ['singular', 'plural']);
   nonempty(template.respuesta.unidad.singular, 'Unidad singular');
   nonempty(template.respuesta.unidad.plural, 'Unidad plural');
   assert.equal(template.respuesta.valor, template.pasos.at(-1).id, 'La respuesta debe ser el resultado del ultimo paso');
@@ -125,6 +126,7 @@ function validateTemplate(template) {
   for (const step of template.pasos.filter(step => step.operacion === 'division')) {
     assert.ok(template.restricciones.some(rule => rule.tipo === 'division_exacta' && rule.izquierda === step.operandos[0] && rule.derecha === step.operandos[1]), 'Cada division necesita una restriccion division_exacta para sus operandos');
   }
+  validateLanguage(template);
   return { id: template.id, enunciado: render(template.enunciado), explicaciones: explanations, respuesta: `${answer} ${answer === 1n ? template.respuesta.unidad.singular : template.respuesta.unidad.plural}` };
 }
 

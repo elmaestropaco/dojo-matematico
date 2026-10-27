@@ -35,6 +35,7 @@ const ids = new Set();
 for (const t of advanced.plantillas) {
   if (!t.id || ids.has(t.id) || !['fracciones', 'mcmMcd'].includes(t.family) || !t.scene?.intro || !t.scene?.unit || !t.categories?.length) throw Error('Plantilla ampliada no valida: ' + t.id);
   ids.add(t.id);
+  if (t.family === 'fracciones' && (!['femenino', 'masculino'].includes(t.scene.unitGender) || typeof t.scene.unitSingular !== 'string' || !t.scene.unitSingular.trim())) throw Error('Indica unitGender y unitSingular en la escena: ' + t.id);
   if (t.family === 'fracciones' && (t.categories.some(k => !categories.includes(k)) || t.order.length !== t.categories.length || new Set(t.order).size !== t.categories.length || t.order.some(k => !t.categories.includes(k)))) throw Error('Operaciones no validas: ' + t.id);
   if (t.family === 'mcmMcd' && t.categories.some(k => !['mcm', 'mcd'].includes(k))) throw Error('Tipos MCM/MCD no validos');
 }

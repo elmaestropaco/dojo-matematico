@@ -67,8 +67,9 @@
       (t.categories.length === 1 ? mix !== 'combinados' : mix !== 'individuales' && t.categories.length === selected.length));
   }
   function generateFractionProblem(t, cfg, rng) {
-    const singularUnit = t.scene.unit.replace(/^(litros|kilos|metros)/, word => ({ litros: 'litro', kilos: 'kilo', metros: 'metro' })[word]);
+    const singularUnit = t.scene.unitSingular || t.scene.unit.replace(/^(litros|kilos|metros)/, word => ({ litros: 'litro', kilos: 'kilo', metros: 'metro' })[word]);
     const quantity = f => `${textFraction(f)} ${f.denominator === '1' ? f.numerator === '1' ? singularUnit : t.scene.unit : 'de ' + singularUnit}`;
+    const compactQuantity = f => `${textFraction(f)} ${f.denominator === '1' ? f.numerator === '1' ? singularUnit.split(' ')[0] : t.scene.unit.split(' ')[0] : 'de ' + singularUnit.split(' ')[0]}`;
     const pickFraction = () => {
       const pick = d => 10 ** (d - 1) + Math.floor(rng() * (9 * 10 ** (d - 1)));
       // Keep the written operands unsimplified so the requested digit counts remain visible.
@@ -101,13 +102,14 @@
     let compact = `Hay ${quantity(a)}.`;
     t.order.forEach((op, i) => {
       const b = textFraction(operands[i + 1]);
-      const sentence = op === 'suma' ? ` Añaden ${quantity(operands[i + 1])} más.` : op === 'resta' ? ` Utilizan ${quantity(operands[i + 1])}.` : op === 'multiplicacion' ? ` Para la siguiente actividad preparan una cantidad igual a ${b} veces la cantidad anterior.` : ` La cantidad calculada representa ${b} de lo necesario; averiguan la cantidad necesaria.`;
+      const times = b === '1' ? 'vez' : 'veces';
+      const sentence = op === 'suma' ? ` Añaden ${quantity(operands[i + 1])} más.` : op === 'resta' ? ` Utilizan ${quantity(operands[i + 1])}.` : op === 'multiplicacion' ? ` Para la siguiente actividad preparan ${b} ${times} la cantidad anterior.` : ` La cantidad que tienen representa ${b} de lo que necesitan para otra actividad.`;
       text += sentence;
-      compact += op === 'suma' ? ` Añaden ${b} más.` : op === 'resta' ? ` Utilizan ${b}.` : op === 'multiplicacion' ? ` Después preparan ${b} veces esa cantidad.` : ` Lo calculado es ${b} de lo necesario.`;
+      compact += op === 'suma' ? ` Añaden ${compactQuantity(operands[i + 1])} más.` : op === 'resta' ? ` Utilizan ${compactQuantity(operands[i + 1])}.` : op === 'multiplicacion' ? ` Después preparan ${b} ${times} esa cantidad.` : ` Lo que tienen es ${b} de lo que necesitan.`;
     });
-    const question = ` ¿Qué cantidad, en ${t.scene.unit}, resulta al terminar?`;
+    const question = ` ¿${t.scene.unitGender === 'femenino' ? 'Cuántas' : 'Cuántos'} ${t.scene.unit} ${t.order.includes('division') ? 'necesitan para esa otra actividad' : 'tienen al terminar'}?`;
     return { kind: 'problem', expression: text + question, answer: Number(result.numerator) / Number(result.denominator), answerFraction: result,
-      problem: { templateId: t.id, title: t.title, family: t.family, category: t.categories[0], categories: t.categories, difficulty: t.order.length > 1 ? 'avanzada' : 'facil', text: text + question, compactText: compact + ` ¿Cuál es la cantidad final, en ${t.scene.unit}?`, steps: reasons, calculations, unit: result.numerator === result.denominator ? singularUnit : t.scene.unit, values: operands },
+      problem: { templateId: t.id, title: t.title, family: t.family, category: t.categories[0], categories: t.categories, difficulty: t.order.length > 1 ? 'avanzada' : 'facil', text: text + question, compactText: compact + ` ¿${t.scene.unitGender === 'femenino' ? 'Cuántas' : 'Cuántos'} ${t.scene.unit.split(' ')[0]} ${t.order.includes('division') ? 'necesitan' : 'tienen al terminar'}?`, steps: reasons, calculations, unit: result.numerator === result.denominator ? singularUnit : t.scene.unit, values: operands },
       signature: `problem:${t.id}:${operands.map(textFraction).join(':')}` };
   }
   function generateTheoryProblem(t, cfg, rng) {
@@ -123,16 +125,17 @@
     const joined = a.join(', '), steps = [], calculations = [];
     const ordinals = ['primera', 'segunda', 'tercera', 'cuarta'];
     const describe = (values, sentence) => values.map((value, index) => sentence(value, ordinals[index])).join(' ');
-    const activities = describe(a, (n, order) => `La ${order} actividad se repite cada ${n} minutos.`);
-    const collections = values => describe(values, (n, order) => `La ${order} colección tiene ${n} tarjetas.`);
+    const measured = (n, singular, plural) => `${n} ${n === 1 ? singular : plural}`;
+    const activities = describe(a, (n, order) => `La ${order} actividad se repite cada ${measured(n, 'minuto', 'minutos')}.`);
+    const collections = values => describe(values, (n, order) => `La ${order} colección tiene ${measured(n, 'tarjeta', 'tarjetas')}.`);
     const list = values => values.length === 1 ? values[0] : values.slice(0, -1).join(', ') + ' y ' + values.at(-1);
     const periods = list(a.map(n => `${n} min`));
-    const cards = values => list(values.map(n => `${n} tarjetas`));
+    const cards = values => list(values.map(n => measured(n, 'tarjeta', 'tarjetas')));
     let answer, text, compactText, values = a, unit;
     if (t.categories.length > 1) {
       const time = fold(a, 'mcm'), b = numbers(cfg._theoryDigits, cfg._theoryCount - 1, rng, [Number(time)]);
       const quantities = [time, ...b]; answer = fold(quantities, 'mcd'); values = [...a, ...b];
-      text = `${t.scene.intro} organizan ${a.length} actividades. ${activities} Todas empiezan juntas. Hasta que vuelvan a coincidir, una máquina prepara una tarjeta por minuto. Tienen también otras colecciones. ${collections(b)} Reparten por igual las tarjetas de cada colección, incluida la de la máquina, en sobres. Todas deben dar el mismo número de sobres, el máximo posible y sin sobras. ¿Cuántos sobres pueden hacer de cada colección?`;
+      text = `${t.scene.intro} organizan ${a.length} actividades. ${activities} Todas empiezan juntas. Hasta que vuelvan a coincidir, una máquina prepara una tarjeta por minuto. Tienen también ${b.length === 1 ? 'otra colección' : 'otras colecciones'}. ${collections(b)} Reparten por igual las tarjetas de cada colección, incluida la de la máquina, en sobres. Todas deben dar el mismo número de sobres, el máximo posible y sin sobras. ¿Cuántos sobres pueden hacer de cada colección?`;
       compactText = `Las actividades se repiten cada ${periods} y coinciden ahora. Una máquina hace una tarjeta por minuto hasta el reencuentro. Esa colección y otras de ${cards(b)} se reparten por igual en el máximo número común de sobres, sin sobras. ¿Cuántos sobres por colección?`;
       steps.push(...theorySteps(a, 'mcm'), `Al cabo de ${time} minutos, la máquina ha preparado ${time} tarjetas.`, ...theorySteps(quantities, 'mcd'));
       calculations.push(a.map(n => `${n} = ${factorization(n)}`).join('; '), `MCM (${joined}) = ${time}`, `Tarjetas = ${time}`, quantities.map(n => `${n} = ${factorization(n)}`).join('; '), `MCD (${quantities.join(', ')}) = ${answer}`);
@@ -161,14 +164,14 @@
     } else if (t.categories.length === 1 && t.variant === 2) {
       if (t.categories[0] === 'mcm') {
         unit = 'pegatinas por tipo';
-        const packs = describe(a, (n, order) => `Las pegatinas de la ${order} clase vienen en paquetes de ${n} unidades.`);
+        const packs = describe(a, (n, order) => `Las pegatinas de la ${order} clase vienen en paquetes de ${measured(n, 'unidad', 'unidades')}.`);
         text = `${t.scene.intro} compran ${a.length} clases de pegatinas. ${packs} Quieren tener la misma cantidad de cada clase, comprando paquetes completos. ¿Cuál es la menor cantidad de pegatinas de cada clase que pueden comprar?`;
-        compactText = `Cada clase de pegatinas tiene paquetes distintos: ${list(a.map(n => `${n} unidades por paquete`))}. Compran paquetes enteros hasta tener la misma cantidad de cada clase. ¿Cuál es la menor cantidad por clase?`;
+        compactText = `Una clase de pegatinas viene en paquetes de ${measured(a[0], 'unidad', 'unidades')}${a.slice(1).map(n => `; otra, de ${measured(n, 'unidad', 'unidades')}`).join('')}. Compran paquetes enteros hasta tener la misma cantidad de cada clase. ¿Cuál es la menor cantidad por clase?`;
       } else {
         unit = 'alumnos por equipo';
-        const groups = describe(a, (n, order) => `La ${order} escuela participa con ${n} alumnos.`);
-        text = `${t.scene.intro} organizan un torneo entre ${a.length} escuelas. ${groups} Cada escuela forma equipos sin mezclar alumnos con otras escuelas ni dejar a nadie fuera. Todos los equipos deben tener el mismo tamaño. ¿Cuál es el mayor número posible de alumnos por equipo?`;
-        compactText = `Participan escuelas con ${list(a.map(n => `${n} alumnos`))}. Forman equipos sin mezclar escuelas ni dejar a nadie fuera. ¿Cuál es el mayor número de alumnos por equipo, igual para todos?`;
+        const groups = describe(a, (n, order) => `La ${order} escuela participa con ${measured(n, 'alumno', 'alumnos')}.`);
+        text = `Para la actividad «${t.scene.title}» colaboran ${a.length} escuelas. ${groups} Cada escuela forma equipos sin mezclar alumnos con otras escuelas ni dejar a nadie fuera. Todos los equipos deben tener el mismo tamaño. ¿Cuál es el mayor número posible de alumnos por equipo?`;
+        compactText = `Participan escuelas con ${list(a.map(n => measured(n, 'alumno', 'alumnos')))}. Forman equipos sin mezclar escuelas ni dejar a nadie fuera. ¿Cuál es el mayor número de alumnos por equipo, igual para todos?`;
       }
     }
     const answerExact = String(answer);

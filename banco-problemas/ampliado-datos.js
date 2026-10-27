@@ -17,7 +17,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -34,7 +36,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -51,7 +55,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -68,7 +74,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -85,7 +93,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -102,7 +112,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -119,7 +131,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -136,7 +150,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -153,7 +169,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -170,7 +188,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -187,7 +207,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -204,7 +226,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -221,7 +245,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -238,7 +264,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -255,7 +283,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -272,7 +302,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -289,7 +321,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -306,7 +340,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -323,7 +359,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -340,7 +378,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -357,7 +397,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -374,7 +416,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -391,7 +435,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -408,7 +454,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -425,7 +473,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -442,7 +492,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -459,7 +511,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -476,7 +530,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -493,7 +549,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -510,7 +568,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -527,7 +587,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -544,7 +606,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -561,7 +625,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -578,7 +644,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -595,7 +663,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -612,7 +682,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -629,7 +701,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -646,7 +720,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -663,7 +739,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -680,7 +758,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -697,7 +777,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -714,7 +796,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -731,7 +815,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -748,7 +834,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -765,7 +853,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -782,7 +872,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -799,7 +891,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -816,7 +910,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -833,7 +929,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -850,7 +948,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -867,7 +967,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -884,7 +986,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -901,7 +1005,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -918,7 +1024,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -935,7 +1043,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -952,7 +1062,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -969,7 +1081,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -986,7 +1100,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -1003,7 +1119,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -1020,7 +1138,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -1037,7 +1157,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -1054,7 +1176,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -1071,7 +1195,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -1088,7 +1214,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -1105,7 +1233,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -1122,7 +1252,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -1139,7 +1271,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -1156,7 +1290,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -1173,7 +1309,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -1190,7 +1328,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -1207,7 +1347,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -1224,7 +1366,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -1241,7 +1385,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -1258,7 +1404,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -1275,7 +1423,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -1292,7 +1442,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -1309,7 +1461,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -1326,7 +1480,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -1343,7 +1499,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -1360,7 +1518,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -1379,7 +1539,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -1398,7 +1560,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -1417,7 +1581,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -1436,7 +1602,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -1455,7 +1623,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -1474,7 +1644,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -1493,7 +1665,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -1512,7 +1686,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -1531,7 +1707,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -1550,7 +1728,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -1569,7 +1749,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -1588,7 +1770,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -1607,7 +1791,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -1626,7 +1812,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -1645,7 +1833,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -1664,7 +1854,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -1683,7 +1875,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -1702,7 +1896,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -1721,7 +1917,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -1740,7 +1938,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -1759,7 +1959,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -1778,7 +1980,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -1797,7 +2001,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -1816,7 +2022,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -1835,7 +2043,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -1854,7 +2064,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -1873,7 +2085,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -1892,7 +2106,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -1911,7 +2127,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -1930,7 +2148,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -1949,7 +2169,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -1968,7 +2190,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -1987,7 +2211,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -2006,7 +2232,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -2025,7 +2253,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2044,7 +2274,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -2063,7 +2295,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -2082,7 +2316,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -2101,7 +2337,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -2120,7 +2358,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -2137,7 +2377,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -2154,7 +2396,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2171,7 +2415,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -2188,7 +2434,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -2205,7 +2453,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -2222,7 +2472,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -2239,7 +2491,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -2256,7 +2510,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2273,7 +2529,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -2290,7 +2548,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -2307,7 +2567,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -2324,7 +2586,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -2341,7 +2605,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -2358,7 +2624,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -2375,7 +2643,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2392,7 +2662,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -2409,7 +2681,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -2426,7 +2700,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2443,7 +2719,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -2460,7 +2738,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -2477,7 +2757,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -2494,7 +2776,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -2511,7 +2795,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -2528,7 +2814,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -2545,7 +2833,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -2562,7 +2852,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -2579,7 +2871,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -2596,7 +2890,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -2613,7 +2909,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -2630,7 +2928,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -2647,7 +2947,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -2664,7 +2966,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2681,7 +2985,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -2698,7 +3004,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -2715,7 +3023,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2732,7 +3042,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -2749,7 +3061,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -2766,7 +3080,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -2783,7 +3099,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -2800,7 +3118,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -2819,7 +3139,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -2838,7 +3160,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2857,7 +3181,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -2876,7 +3202,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -2895,7 +3223,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -2914,7 +3244,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -2933,7 +3265,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -2952,7 +3286,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -2971,7 +3307,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -2990,7 +3328,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -3009,7 +3349,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -3028,7 +3370,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -3047,7 +3391,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -3066,7 +3412,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -3085,7 +3433,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -3104,7 +3454,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -3123,7 +3475,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -3142,7 +3496,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -3161,7 +3517,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -3180,7 +3538,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -3199,7 +3559,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -3218,7 +3580,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -3237,7 +3601,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -3256,7 +3622,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -3275,7 +3643,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -3294,7 +3664,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -3313,7 +3685,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -3332,7 +3706,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -3351,7 +3727,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -3370,7 +3748,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -3389,7 +3769,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -3408,7 +3790,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -3427,7 +3811,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -3446,7 +3832,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -3465,7 +3853,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -3484,7 +3874,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -3503,7 +3895,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -3522,7 +3916,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -3541,7 +3937,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -3560,7 +3958,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -3579,7 +3979,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -3598,7 +4000,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -3617,7 +4021,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -3636,7 +4042,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -3655,7 +4063,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -3674,7 +4084,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -3693,7 +4105,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -3712,7 +4126,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -3731,7 +4147,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -3750,7 +4168,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -3769,7 +4189,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -3788,7 +4210,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -3807,7 +4231,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -3826,7 +4252,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -3845,7 +4273,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -3864,7 +4294,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -3883,7 +4315,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -3902,7 +4336,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -3921,7 +4357,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -3940,7 +4378,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -3959,7 +4399,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -3978,7 +4420,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -3997,7 +4441,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -4016,7 +4462,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -4035,7 +4483,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -4054,7 +4504,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -4073,7 +4525,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -4092,7 +4546,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -4111,7 +4567,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -4130,7 +4588,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -4149,7 +4609,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -4168,7 +4630,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -4187,7 +4651,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -4206,7 +4672,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -4225,7 +4693,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -4244,7 +4714,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -4263,7 +4735,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -4282,7 +4756,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -4301,7 +4777,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -4320,7 +4798,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -4341,7 +4821,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -4362,7 +4844,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -4383,7 +4867,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -4404,7 +4890,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -4425,7 +4913,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -4446,7 +4936,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -4467,7 +4959,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -4488,7 +4982,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -4509,7 +5005,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -4530,7 +5028,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -4551,7 +5051,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -4572,7 +5074,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -4593,7 +5097,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -4614,7 +5120,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -4635,7 +5143,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -4656,7 +5166,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -4677,7 +5189,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -4698,7 +5212,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -4719,7 +5235,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -4740,7 +5258,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -4761,7 +5281,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -4782,7 +5304,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -4803,7 +5327,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -4824,7 +5350,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -4845,7 +5373,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -4866,7 +5396,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -4887,7 +5419,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -4908,7 +5442,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -4929,7 +5465,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -4950,7 +5488,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -4971,7 +5511,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -4992,7 +5534,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5013,7 +5557,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -5034,7 +5580,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -5055,7 +5603,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5076,7 +5626,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -5097,7 +5649,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -5118,7 +5672,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -5139,7 +5695,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -5160,7 +5718,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -5177,7 +5737,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -5194,7 +5756,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5211,7 +5775,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -5228,7 +5794,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -5245,7 +5813,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -5262,7 +5832,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -5279,7 +5851,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -5296,7 +5870,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5313,7 +5889,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -5330,7 +5908,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -5347,7 +5927,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -5364,7 +5946,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -5381,7 +5965,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -5398,7 +5984,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -5415,7 +6003,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5432,7 +6022,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -5449,7 +6041,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -5466,7 +6060,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5483,7 +6079,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -5500,7 +6098,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -5517,7 +6117,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -5534,7 +6136,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -5551,7 +6155,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -5568,7 +6174,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -5585,7 +6193,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -5602,7 +6212,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -5619,7 +6231,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -5636,7 +6250,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -5653,7 +6269,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -5670,7 +6288,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -5687,7 +6307,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -5704,7 +6326,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5721,7 +6345,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -5738,7 +6364,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -5755,7 +6383,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5772,7 +6402,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -5789,7 +6421,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -5806,7 +6440,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -5823,7 +6459,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -5840,7 +6478,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -5859,7 +6499,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -5878,7 +6520,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -5897,7 +6541,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -5916,7 +6562,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -5935,7 +6583,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -5954,7 +6604,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -5973,7 +6625,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -5992,7 +6646,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6011,7 +6667,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -6030,7 +6688,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -6049,7 +6709,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -6068,7 +6730,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -6087,7 +6751,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -6106,7 +6772,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -6125,7 +6793,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6144,7 +6814,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -6163,7 +6835,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -6182,7 +6856,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6201,7 +6877,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -6220,7 +6898,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -6239,7 +6919,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -6258,7 +6940,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -6277,7 +6961,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -6296,7 +6982,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -6315,7 +7003,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -6334,7 +7024,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -6353,7 +7045,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -6372,7 +7066,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -6391,7 +7087,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -6410,7 +7108,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -6429,7 +7129,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -6448,7 +7150,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6467,7 +7171,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -6486,7 +7192,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -6505,7 +7213,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6524,7 +7234,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -6543,7 +7255,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -6562,7 +7276,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -6581,7 +7297,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -6600,7 +7318,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -6619,7 +7339,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -6638,7 +7360,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6657,7 +7381,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -6676,7 +7402,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -6695,7 +7423,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -6714,7 +7444,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -6733,7 +7465,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -6752,7 +7486,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6771,7 +7507,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -6790,7 +7528,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -6809,7 +7549,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -6828,7 +7570,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -6847,7 +7591,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -6866,7 +7612,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -6885,7 +7633,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6904,7 +7654,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -6923,7 +7675,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -6942,7 +7696,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -6961,7 +7717,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -6980,7 +7738,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -6999,7 +7759,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -7018,7 +7780,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -7037,7 +7801,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -7056,7 +7822,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -7075,7 +7843,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -7094,7 +7864,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -7113,7 +7885,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -7132,7 +7906,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -7151,7 +7927,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -7170,7 +7948,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -7189,7 +7969,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -7208,7 +7990,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -7227,7 +8011,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -7246,7 +8032,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -7265,7 +8053,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -7284,7 +8074,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -7303,7 +8095,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -7322,7 +8116,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -7341,7 +8137,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -7360,7 +8158,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -7381,7 +8181,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -7402,7 +8204,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -7423,7 +8227,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -7444,7 +8250,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -7465,7 +8273,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -7486,7 +8296,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -7507,7 +8319,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -7528,7 +8342,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -7549,7 +8365,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -7570,7 +8388,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -7591,7 +8411,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -7612,7 +8434,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -7633,7 +8457,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -7654,7 +8480,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -7675,7 +8503,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -7696,7 +8526,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -7717,7 +8549,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -7738,7 +8572,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -7759,7 +8595,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -7780,7 +8618,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -7801,7 +8641,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -7822,7 +8664,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -7843,7 +8687,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -7864,7 +8710,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -7885,7 +8733,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -7906,7 +8756,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -7927,7 +8779,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -7948,7 +8802,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -7969,7 +8825,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -7990,7 +8848,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -8011,7 +8871,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -8032,7 +8894,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -8053,7 +8917,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -8074,7 +8940,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -8095,7 +8963,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -8116,7 +8986,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -8137,7 +9009,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -8158,7 +9032,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -8179,7 +9055,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -8200,7 +9078,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -8219,7 +9099,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -8238,7 +9120,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -8257,7 +9141,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -8276,7 +9162,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -8295,7 +9183,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -8314,7 +9204,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -8333,7 +9225,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -8352,7 +9246,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -8371,7 +9267,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -8390,7 +9288,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -8409,7 +9309,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -8428,7 +9330,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -8447,7 +9351,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -8466,7 +9372,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -8485,7 +9393,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -8504,7 +9414,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -8523,7 +9435,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -8542,7 +9456,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -8561,7 +9477,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -8580,7 +9498,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -8599,7 +9519,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -8618,7 +9540,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -8637,7 +9561,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -8656,7 +9582,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -8675,7 +9603,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -8694,7 +9624,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -8713,7 +9645,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -8732,7 +9666,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -8751,7 +9687,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -8770,7 +9708,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -8789,7 +9729,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -8808,7 +9750,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -8827,7 +9771,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -8846,7 +9792,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -8865,7 +9813,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -8884,7 +9834,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -8903,7 +9855,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -8922,7 +9876,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -8941,7 +9897,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -8960,7 +9918,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -8981,7 +9941,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -9002,7 +9964,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -9023,7 +9987,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -9044,7 +10010,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -9065,7 +10033,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -9086,7 +10056,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -9107,7 +10079,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -9128,7 +10102,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -9149,7 +10125,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -9170,7 +10148,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -9191,7 +10171,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -9212,7 +10194,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -9233,7 +10217,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -9254,7 +10240,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -9275,7 +10263,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -9296,7 +10286,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -9317,7 +10309,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -9338,7 +10332,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -9359,7 +10355,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -9380,7 +10378,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -9401,7 +10401,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -9422,7 +10424,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -9443,7 +10447,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -9464,7 +10470,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -9485,7 +10493,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -9506,7 +10516,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -9527,7 +10539,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -9548,7 +10562,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -9569,7 +10585,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -9590,7 +10608,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -9611,7 +10631,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -9632,7 +10654,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -9653,7 +10677,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -9674,7 +10700,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -9695,7 +10723,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -9716,7 +10746,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -9737,7 +10769,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -9758,7 +10792,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -9779,7 +10815,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -9800,7 +10838,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -9821,7 +10861,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -9842,7 +10884,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -9863,7 +10907,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -9884,7 +10930,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -9905,7 +10953,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -9926,7 +10976,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -9947,7 +10999,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -9968,7 +11022,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -9989,7 +11045,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -10010,7 +11068,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -10031,7 +11091,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -10052,7 +11114,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -10073,7 +11137,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -10094,7 +11160,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -10115,7 +11183,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -10136,7 +11206,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -10157,7 +11229,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -10178,7 +11252,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -10199,7 +11275,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -10220,7 +11298,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -10241,7 +11321,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -10262,7 +11344,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -10283,7 +11367,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -10304,7 +11390,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -10325,7 +11413,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -10346,7 +11436,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -10367,7 +11459,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -10388,7 +11482,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -10409,7 +11505,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -10430,7 +11528,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -10451,7 +11551,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -10472,7 +11574,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -10493,7 +11597,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -10514,7 +11620,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -10535,7 +11643,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -10556,7 +11666,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -10577,7 +11689,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -10598,7 +11712,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -10619,7 +11735,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -10640,7 +11758,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -10663,7 +11783,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -10686,7 +11808,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -10709,7 +11833,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -10732,7 +11858,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -10755,7 +11883,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -10778,7 +11908,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -10801,7 +11933,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -10824,7 +11958,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -10847,7 +11983,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -10870,7 +12008,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -10893,7 +12033,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -10916,7 +12058,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -10939,7 +12083,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -10962,7 +12108,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -10985,7 +12133,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -11008,7 +12158,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -11031,7 +12183,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -11054,7 +12208,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -11077,7 +12233,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -11100,7 +12258,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -11123,7 +12283,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -11146,7 +12308,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -11169,7 +12333,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -11192,7 +12358,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -11215,7 +12383,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -11238,7 +12408,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -11261,7 +12433,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -11284,7 +12458,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -11307,7 +12483,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -11330,7 +12508,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -11353,7 +12533,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -11376,7 +12558,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -11399,7 +12583,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -11422,7 +12608,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -11445,7 +12633,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -11468,7 +12658,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -11491,7 +12683,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -11514,7 +12708,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -11537,7 +12733,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -11560,7 +12758,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -11575,7 +12775,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -11590,7 +12792,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -11605,7 +12809,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -11620,7 +12826,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -11635,7 +12843,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -11650,7 +12860,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -11665,7 +12877,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -11680,7 +12894,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -11695,7 +12911,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -11710,7 +12928,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -11725,7 +12945,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -11740,7 +12962,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -11755,7 +12979,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -11770,7 +12996,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -11785,7 +13013,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -11800,7 +13030,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -11815,7 +13047,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -11830,7 +13064,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -11845,7 +13081,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -11860,7 +13098,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -11875,7 +13115,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -11890,7 +13132,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -11905,7 +13149,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -11920,7 +13166,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -11935,7 +13183,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -11950,7 +13200,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -11965,7 +13217,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -11980,7 +13234,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -11995,7 +13251,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -12010,7 +13268,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -12025,7 +13285,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -12040,7 +13302,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12055,7 +13319,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -12070,7 +13336,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -12085,7 +13353,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12100,7 +13370,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -12115,7 +13387,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -12130,7 +13404,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -12145,7 +13421,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -12160,7 +13438,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -12175,7 +13455,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -12190,7 +13472,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12205,7 +13489,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -12220,7 +13506,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -12235,7 +13523,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -12250,7 +13540,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -12265,7 +13557,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -12280,7 +13574,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12295,7 +13591,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -12310,7 +13608,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -12325,7 +13625,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -12340,7 +13642,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -12355,7 +13659,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -12370,7 +13676,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -12385,7 +13693,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12400,7 +13710,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -12415,7 +13727,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -12430,7 +13744,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12445,7 +13761,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -12460,7 +13778,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -12475,7 +13795,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -12490,7 +13812,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -12505,7 +13829,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -12520,7 +13846,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -12535,7 +13863,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -12550,7 +13880,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -12565,7 +13897,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -12580,7 +13914,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -12595,7 +13931,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -12610,7 +13948,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -12625,7 +13965,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -12640,7 +13982,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12655,7 +13999,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -12670,7 +14016,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -12685,7 +14033,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12700,7 +14050,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -12715,7 +14067,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -12730,7 +14084,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -12745,7 +14101,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -12760,7 +14118,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     },
     {
@@ -12776,7 +14136,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pintura",
         "title": "Colores para un mural",
         "intro": "En el taller de pintura",
-        "unit": "litros de pintura"
+        "unit": "litros de pintura",
+        "unitGender": "masculino",
+        "unitSingular": "litro de pintura"
       }
     },
     {
@@ -12792,7 +14154,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "huerto",
         "title": "El riego del huerto",
         "intro": "En el huerto del colegio",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12808,7 +14172,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "pan",
         "title": "Pan para compartir",
         "intro": "En la panadería del barrio",
-        "unit": "kilos de harina"
+        "unit": "kilos de harina",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de harina"
       }
     },
     {
@@ -12824,7 +14190,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "zumo",
         "title": "Una merienda saludable",
         "intro": "En la cocina del colegio",
-        "unit": "litros de zumo"
+        "unit": "litros de zumo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de zumo"
       }
     },
     {
@@ -12840,7 +14208,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cintas",
         "title": "Cintas para decorar",
         "intro": "En el taller de decoración",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -12856,7 +14226,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cocina",
         "title": "Una receta para todos",
         "intro": "En el taller de cocina",
-        "unit": "kilos de arroz"
+        "unit": "kilos de arroz",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de arroz"
       }
     },
     {
@@ -12872,7 +14244,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "barro",
         "title": "Figuras de barro",
         "intro": "En el taller de cerámica",
-        "unit": "kilos de barro"
+        "unit": "kilos de barro",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de barro"
       }
     },
     {
@@ -12888,7 +14262,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuarela",
         "title": "Una tarde de acuarelas",
         "intro": "En la clase de plástica",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -12904,7 +14280,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "costura",
         "title": "Disfraces de teatro",
         "intro": "En el taller de costura",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -12920,7 +14298,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "refugio",
         "title": "Ayuda para los animales",
         "intro": "En el refugio de animales",
-        "unit": "kilos de pienso"
+        "unit": "kilos de pienso",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pienso"
       }
     },
     {
@@ -12936,7 +14316,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "granja",
         "title": "Cuidamos la granja",
         "intro": "En la granja escuela",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -12952,7 +14334,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "batidos",
         "title": "Batidos de fruta",
         "intro": "En el puesto de batidos",
-        "unit": "litros de leche"
+        "unit": "litros de leche",
+        "unitGender": "masculino",
+        "unitSingular": "litro de leche"
       }
     },
     {
@@ -12968,7 +14352,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jardin",
         "title": "Flores en el colegio",
         "intro": "En el jardín del colegio",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -12984,7 +14370,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "cometa",
         "title": "Cometas de colores",
         "intro": "En el taller de cometas",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -13000,7 +14388,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "deporte",
         "title": "Una mañana de deporte",
         "intro": "En el polideportivo",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -13016,7 +14406,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "museo",
         "title": "Preparamos una exposición",
         "intro": "En el taller del museo",
-        "unit": "metros de papel"
+        "unit": "metros de papel",
+        "unitGender": "masculino",
+        "unitSingular": "metro de papel"
       }
     },
     {
@@ -13032,7 +14424,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "galletas",
         "title": "Galletas para la fiesta",
         "intro": "En el taller de repostería",
-        "unit": "kilos de masa"
+        "unit": "kilos de masa",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de masa"
       }
     },
     {
@@ -13048,7 +14442,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "acuario",
         "title": "Cuidamos el acuario",
         "intro": "En el aula de ciencias",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -13064,7 +14460,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "campamento",
         "title": "La cena del campamento",
         "intro": "En el campamento de verano",
-        "unit": "kilos de pasta"
+        "unit": "kilos de pasta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de pasta"
       }
     },
     {
@@ -13080,7 +14478,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fotografia",
         "title": "Un álbum de recuerdos",
         "intro": "En el taller de fotografía",
-        "unit": "metros de cartulina"
+        "unit": "metros de cartulina",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cartulina"
       }
     },
     {
@@ -13096,7 +14496,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "jabones",
         "title": "Jabones artesanales",
         "intro": "En el taller de jabones",
-        "unit": "litros de aceite"
+        "unit": "litros de aceite",
+        "unitGender": "masculino",
+        "unitSingular": "litro de aceite"
       }
     },
     {
@@ -13112,7 +14514,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "musica",
         "title": "Decoramos el concierto",
         "intro": "En la escuela de música",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -13128,7 +14532,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mercado",
         "title": "El mercado del barrio",
         "intro": "En el puesto del mercado",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -13144,7 +14550,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "biblioteca",
         "title": "Protegemos los libros",
         "intro": "En la biblioteca del colegio",
-        "unit": "metros de forro"
+        "unit": "metros de forro",
+        "unitGender": "masculino",
+        "unitSingular": "metro de forro"
       }
     },
     {
@@ -13160,7 +14568,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "maquetas",
         "title": "Maquetas del barrio",
         "intro": "En el taller de maquetas",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -13176,7 +14586,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "helados",
         "title": "Helados para la feria",
         "intro": "En el puesto de helados",
-        "unit": "litros de nata"
+        "unit": "litros de nata",
+        "unitGender": "masculino",
+        "unitSingular": "litro de nata"
       }
     },
     {
@@ -13192,7 +14604,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "chocolate",
         "title": "Una taza calentita",
         "intro": "En la cocina del albergue",
-        "unit": "litros de chocolate"
+        "unit": "litros de chocolate",
+        "unitGender": "masculino",
+        "unitSingular": "litro de chocolate"
       }
     },
     {
@@ -13208,7 +14622,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "recreo",
         "title": "Un recreo con juegos",
         "intro": "En el patio del colegio",
-        "unit": "metros de cuerda"
+        "unit": "metros de cuerda",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cuerda"
       }
     },
     {
@@ -13224,7 +14640,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "semillas",
         "title": "Semillas para el futuro",
         "intro": "En el club de naturaleza",
-        "unit": "kilos de semillas"
+        "unit": "kilos de semillas",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de semillas"
       }
     },
     {
@@ -13240,7 +14658,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "fiesta",
         "title": "La fiesta de fin de curso",
         "intro": "En la sala de fiestas",
-        "unit": "litros de limonada"
+        "unit": "litros de limonada",
+        "unitGender": "masculino",
+        "unitSingular": "litro de limonada"
       }
     },
     {
@@ -13256,7 +14676,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "titeres",
         "title": "Un escenario de títeres",
         "intro": "En el taller de títeres",
-        "unit": "metros de tela"
+        "unit": "metros de tela",
+        "unitGender": "masculino",
+        "unitSingular": "metro de tela"
       }
     },
     {
@@ -13272,7 +14694,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "invernadero",
         "title": "Las plantas del invernadero",
         "intro": "En el invernadero escolar",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -13288,7 +14712,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "mermelada",
         "title": "Mermelada para compartir",
         "intro": "En el taller de conservas",
-        "unit": "kilos de fruta"
+        "unit": "kilos de fruta",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de fruta"
       }
     },
     {
@@ -13304,7 +14730,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "velas",
         "title": "Velas para decorar",
         "intro": "En el taller de velas",
-        "unit": "kilos de cera"
+        "unit": "kilos de cera",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de cera"
       }
     },
     {
@@ -13320,7 +14748,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "piscina",
         "title": "Preparamos los juegos de agua",
         "intro": "En la piscina municipal",
-        "unit": "litros de agua"
+        "unit": "litros de agua",
+        "unitGender": "masculino",
+        "unitSingular": "litro de agua"
       }
     },
     {
@@ -13336,7 +14766,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "encuadernacion",
         "title": "Cuadernos hechos a mano",
         "intro": "En el taller de encuadernación",
-        "unit": "metros de hilo"
+        "unit": "metros de hilo",
+        "unitGender": "masculino",
+        "unitSingular": "metro de hilo"
       }
     },
     {
@@ -13352,7 +14784,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "aromaticas",
         "title": "Un jardín de plantas aromáticas",
         "intro": "En el jardín de plantas aromáticas",
-        "unit": "kilos de tierra"
+        "unit": "kilos de tierra",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de tierra"
       }
     },
     {
@@ -13368,7 +14802,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "comparsas",
         "title": "La comparsa del colegio",
         "intro": "En el taller de carnaval",
-        "unit": "metros de cinta"
+        "unit": "metros de cinta",
+        "unitGender": "masculino",
+        "unitSingular": "metro de cinta"
       }
     },
     {
@@ -13384,7 +14820,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "sopa",
         "title": "La sopa del comedor",
         "intro": "En la cocina del comedor",
-        "unit": "litros de caldo"
+        "unit": "litros de caldo",
+        "unitGender": "masculino",
+        "unitSingular": "litro de caldo"
       }
     },
     {
@@ -13400,7 +14838,9 @@ globalThis.NinjaAdvancedProblemBank = {
         "key": "panales",
         "title": "Una visita al colmenar",
         "intro": "En el taller del colmenar",
-        "unit": "kilos de miel"
+        "unit": "kilos de miel",
+        "unitGender": "masculino",
+        "unitSingular": "kilo de miel"
       }
     }
   ]

@@ -25,7 +25,7 @@ Respuesta: **24 lápices**.
 ## 2. Peras en bolsas
 ID: multiplicacion-002 | Dificultad: facil
 
-En una frutería preparan {cantidadA} {unidadA} para una entrega. En cada bolsa ponen {cantidadB} {unidadB}. ¿Cuántas peras necesitan para preparar todas las bolsas?
+En una frutería preparan {cantidadA} {unidadA} para una entrega. En cada bolsa ponen {cantidadB} {unidadB}. ¿Cuántas peras necesitan para todas las bolsas?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -36,7 +36,7 @@ En una frutería preparan {cantidadA} {unidadA} para una entrega. En cada bolsa 
 
 ### Ejemplo resuelto
 
-En una frutería preparan 3 bolsas para una entrega. En cada bolsa ponen 8 peras. ¿Cuántas peras necesitan para preparar todas las bolsas?
+En una frutería preparan 3 bolsas para una entrega. En cada bolsa ponen 8 peras. ¿Cuántas peras necesitan para todas las bolsas?
 
 - Multiplicamos: 3 × 8 = 24.
 
@@ -45,7 +45,7 @@ Respuesta: **24 peras**.
 ## 3. Sillas en filas
 ID: multiplicacion-003 | Dificultad: facil
 
-Para una función del colegio se colocan {cantidadA} {unidadA} de sillas. En cada fila hay {cantidadB} {unidadB}. ¿Cuántas sillas se han colocado en total?
+Para una función del colegio colocan {cantidadA} {unidadA} de sillas. En cada fila hay {cantidadB} {unidadB}. ¿Cuántas sillas han colocado en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -56,7 +56,7 @@ Para una función del colegio se colocan {cantidadA} {unidadA} de sillas. En cad
 
 ### Ejemplo resuelto
 
-Para una función del colegio se colocan 5 filas de sillas. En cada fila hay 7 sillas. ¿Cuántas sillas se han colocado en total?
+Para una función del colegio colocan 5 filas de sillas. En cada fila hay 7 sillas. ¿Cuántas sillas han colocado en total?
 
 - Multiplicamos: 5 × 7 = 35.
 
@@ -65,7 +65,7 @@ Respuesta: **35 sillas**.
 ## 4. Cromos en sobres
 ID: multiplicacion-004 | Dificultad: facil
 
-Alex compra {cantidadA} {unidadA} de cromos. Al abrirlos, ve que cada sobre contiene {cantidadB} {unidadB}. ¿Cuántos cromos ha comprado en total?
+Alex compra {cantidadA} {unidadA} de cromos. Cada sobre contiene {cantidadB} {unidadB}. ¿Cuántos cromos ha comprado en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -76,7 +76,7 @@ Alex compra {cantidadA} {unidadA} de cromos. Al abrirlos, ve que cada sobre cont
 
 ### Ejemplo resuelto
 
-Alex compra 6 sobres de cromos. Al abrirlos, ve que cada sobre contiene 5 cromos. ¿Cuántos cromos ha comprado en total?
+Alex compra 6 sobres de cromos. Cada sobre contiene 5 cromos. ¿Cuántos cromos ha comprado en total?
 
 - Multiplicamos: 6 × 5 = 30.
 
@@ -105,7 +105,7 @@ Respuesta: **32 fotos**.
 ## 6. Dinero de las entradas
 ID: multiplicacion-006 | Dificultad: media
 
-Para una actividad del colegio se venden {cantidadA} {unidadA}. Cada entrada cuesta {cantidadB} {unidadB}. ¿Cuántos euros se consiguen al vender todas las entradas?
+Para una actividad del colegio venden {cantidadA} {unidadA}. Cada entrada cuesta {cantidadB} {unidadB}. ¿Cuántos euros se consiguen al vender todas las entradas?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -116,7 +116,7 @@ Para una actividad del colegio se venden {cantidadA} {unidadA}. Cada entrada cue
 
 ### Ejemplo resuelto
 
-Para una actividad del colegio se venden 12 entradas. Cada entrada cuesta 5 euros. ¿Cuántos euros se consiguen al vender todas las entradas?
+Para una actividad del colegio venden 12 entradas. Cada entrada cuesta 5 euros. ¿Cuántos euros se consiguen al vender todas las entradas?
 
 - Multiplicamos: 12 × 5 = 60.
 
@@ -211,7 +211,7 @@ Respuesta: **7006652 piezas**.
 ## 11. Biblioteca del barrio
 ID: multiplicacion-biblioteca-individual-009 | Dificultad: facil
 
-En la biblioteca del barrio preparan {cantidadA} {unidadA} para preparar las lecturas del mes. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos libros preparan en total?
+En la biblioteca del barrio preparan {cantidadA} {unidadA} para las lecturas del mes. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos libros preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -222,7 +222,7 @@ En la biblioteca del barrio preparan {cantidadA} {unidadA} para preparar las lec
 
 ### Ejemplo resuelto
 
-En la biblioteca del barrio preparan 6 lotes para preparar las lecturas del mes. Cada lote contiene 8 libros. ¿Cuántos libros preparan en total?
+En la biblioteca del barrio preparan 6 lotes para las lecturas del mes. Cada lote contiene 8 libros. ¿Cuántos libros preparan en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -271,7 +271,7 @@ Respuesta: **24 euros**.
 ## 14. La merienda del campamento
 ID: multiplicacion-merienda-individual-012 | Dificultad: media
 
-En la cocina del campamento preparan {cantidadB} {unidadB} al día para preparar la merienda. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos magdalenas preparan en total?
+En la cocina del campamento preparan {cantidadB} {unidadB} al día para la merienda. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas magdalenas preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -282,7 +282,7 @@ En la cocina del campamento preparan {cantidadB} {unidadB} al día para preparar
 
 ### Ejemplo resuelto
 
-En la cocina del campamento preparan 8 magdalenas al día para preparar la merienda. Si trabajan así durante 5 días, ¿cuántos magdalenas preparan en total?
+En la cocina del campamento preparan 8 magdalenas al día para la merienda. Si trabajan así durante 5 días, ¿cuántas magdalenas preparan en total?
 
 - Multiplicamos los días por la cantidad diaria: 5 × 8 = 40.
 
@@ -291,7 +291,7 @@ Respuesta: **40 magdalenas**.
 ## 15. El torneo del colegio
 ID: multiplicacion-torneo-individual-013 | Dificultad: avanzada
 
-Para celebrar un torneo llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos pelotas han llegado?
+Para celebrar un torneo reciben {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántas pelotas han llegado?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -304,7 +304,7 @@ Para celebrar un torneo llegan {cantidadA} {unidadA}. Cada caja contiene {cantid
 
 ### Ejemplo resuelto
 
-Para celebrar un torneo llegan 3 cajas. Cada caja contiene 4 paquetes y cada paquete tiene 5 pelotas. ¿Cuántos pelotas han llegado?
+Para celebrar un torneo reciben 3 cajas. Cada caja contiene 4 paquetes y cada paquete tiene 5 pelotas. ¿Cuántas pelotas han llegado?
 
 - Calculamos cuántos paquetes hay: 3 × 4 = 12.
 - Calculamos el contenido de todos los paquetes: 12 × 5 = 60.
@@ -314,7 +314,7 @@ Respuesta: **60 pelotas**.
 ## 16. Preparar la fiesta
 ID: multiplicacion-fiesta-individual-014 | Dificultad: facil
 
-Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En la sala de fiestas quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos globos necesitan?
+Para cada lote de una actividad necesitan {cantidadB} {unidadB}. En la sala de fiestas quieren preparar {cantidadA} {unidadA} con el mismo contenido. ¿Cuántos globos necesitan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -325,7 +325,7 @@ Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En la sala de
 
 ### Ejemplo resuelto
 
-Para cada lote de una actividad hacen falta 8 globos. En la sala de fiestas quieren preparar 6 lotes iguales. ¿Cuántos globos necesitan?
+Para cada lote de una actividad necesitan 8 globos. En la sala de fiestas quieren preparar 6 lotes con el mismo contenido. ¿Cuántos globos necesitan?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -354,7 +354,7 @@ Respuesta: **48 frascos**.
 ## 18. El puesto de fruta
 ID: multiplicacion-mercado-individual-016 | Dificultad: facil
 
-Para preparar un pedido, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos peras han colocado en total?
+Para un pedido, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas peras han colocado en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -365,7 +365,7 @@ Para preparar un pedido, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB}
 
 ### Ejemplo resuelto
 
-Para preparar un pedido, colocan 6 filas con 8 peras en cada fila. ¿Cuántos peras han colocado en total?
+Para un pedido, colocan 6 filas con 8 peras en cada fila. ¿Cuántas peras han colocado en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -374,7 +374,7 @@ Respuesta: **48 peras**.
 ## 19. El ensayo de música
 ID: multiplicacion-musica-individual-017 | Dificultad: media
 
-Para preparar un concierto, en la escuela de música compran {cantidadA} {unidadA}. El precio de cada partitura es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?
+Para un concierto, en la escuela de música compran {cantidadA} {unidadA}. El precio de cada partitura es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -385,7 +385,7 @@ Para preparar un concierto, en la escuela de música compran {cantidadA} {unidad
 
 ### Ejemplo resuelto
 
-Para preparar un concierto, en la escuela de música compran 6 partituras. El precio de cada partitura es de 4 euros. ¿Cuántos euros cuesta toda la compra?
+Para un concierto, en la escuela de música compran 6 partituras. El precio de cada partitura es de 4 euros. ¿Cuántos euros cuesta toda la compra?
 
 - Multiplicamos la cantidad por el precio: 6 × 4 = 24.
 
@@ -394,7 +394,7 @@ Respuesta: **24 euros**.
 ## 20. Los recuerdos del museo
 ID: multiplicacion-museo-individual-018 | Dificultad: media
 
-En la tienda del museo preparan {cantidadB} {unidadB} al día para preparar las visitas escolares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos postales preparan en total?
+En la tienda del museo preparan {cantidadB} {unidadB} al día para las visitas escolares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas postales preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -405,7 +405,7 @@ En la tienda del museo preparan {cantidadB} {unidadB} al día para preparar las 
 
 ### Ejemplo resuelto
 
-En la tienda del museo preparan 8 postales al día para preparar las visitas escolares. Si trabajan así durante 5 días, ¿cuántos postales preparan en total?
+En la tienda del museo preparan 8 postales al día para las visitas escolares. Si trabajan así durante 5 días, ¿cuántas postales preparan en total?
 
 - Multiplicamos los días por la cantidad diaria: 5 × 8 = 40.
 
@@ -414,7 +414,7 @@ Respuesta: **40 postales**.
 ## 21. La campaña de reciclaje
 ID: multiplicacion-reciclaje-individual-019 | Dificultad: avanzada
 
-Para hacer una actividad con materiales usados llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos botellas han llegado?
+Para hacer una actividad con materiales usados reciben {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántas botellas han llegado?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -427,7 +427,7 @@ Para hacer una actividad con materiales usados llegan {cantidadA} {unidadA}. Cad
 
 ### Ejemplo resuelto
 
-Para hacer una actividad con materiales usados llegan 3 cajas. Cada caja contiene 4 paquetes y cada paquete tiene 5 botellas. ¿Cuántos botellas han llegado?
+Para hacer una actividad con materiales usados reciben 3 cajas. Cada caja contiene 4 paquetes y cada paquete tiene 5 botellas. ¿Cuántas botellas han llegado?
 
 - Calculamos cuántos paquetes hay: 3 × 4 = 12.
 - Calculamos el contenido de todos los paquetes: 12 × 5 = 60.
@@ -437,7 +437,7 @@ Respuesta: **60 botellas**.
 ## 22. Ayudar al refugio
 ID: multiplicacion-refugio-individual-020 | Dificultad: facil
 
-Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el refugio de animales quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos mantas necesitan?
+Para cada lote de una actividad necesitan {cantidadB} {unidadB}. En el refugio de animales quieren preparar {cantidadA} {unidadA} con el mismo contenido. ¿Cuántas mantas necesitan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -448,7 +448,7 @@ Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el refugio
 
 ### Ejemplo resuelto
 
-Para cada lote de una actividad hacen falta 8 mantas. En el refugio de animales quieren preparar 6 lotes iguales. ¿Cuántos mantas necesitan?
+Para cada lote de una actividad necesitan 8 mantas. En el refugio de animales quieren preparar 6 lotes con el mismo contenido. ¿Cuántas mantas necesitan?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -457,7 +457,7 @@ Respuesta: **48 mantas**.
 ## 23. La comida de la excursión
 ID: multiplicacion-comedor-individual-021 | Dificultad: facil
 
-En el comedor del colegio preparan {cantidadA} {unidadA} para preparar una excursión. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos bocadillos preparan en total?
+En el comedor del colegio preparan {cantidadA} {unidadA} para una excursión. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos bocadillos preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -468,7 +468,7 @@ En el comedor del colegio preparan {cantidadA} {unidadA} para preparar una excur
 
 ### Ejemplo resuelto
 
-En el comedor del colegio preparan 6 lotes para preparar una excursión. Cada lote contiene 8 bocadillos. ¿Cuántos bocadillos preparan en total?
+En el comedor del colegio preparan 6 lotes para una excursión. Cada lote contiene 8 bocadillos. ¿Cuántos bocadillos preparan en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -477,7 +477,7 @@ Respuesta: **48 bocadillos**.
 ## 24. La función de teatro
 ID: multiplicacion-teatro-individual-022 | Dificultad: facil
 
-Para organizar una función escolar, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos entradas han colocado en total?
+Para organizar una función escolar, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas entradas han colocado en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -488,7 +488,7 @@ Para organizar una función escolar, colocan {cantidadA} {unidadA} con {cantidad
 
 ### Ejemplo resuelto
 
-Para organizar una función escolar, colocan 6 filas con 8 entradas en cada fila. ¿Cuántos entradas han colocado en total?
+Para organizar una función escolar, colocan 6 filas con 8 entradas en cada fila. ¿Cuántas entradas han colocado en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -517,7 +517,7 @@ Respuesta: **24 euros**.
 ## 26. El taller de collares
 ID: multiplicacion-collares-individual-024 | Dificultad: media
 
-En el taller de manualidades preparan {cantidadB} {unidadB} al día para hacer unos collares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos cuentas preparan en total?
+En el taller de manualidades preparan {cantidadB} {unidadB} al día para hacer unos collares. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas cuentas preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -528,7 +528,7 @@ En el taller de manualidades preparan {cantidadB} {unidadB} al día para hacer u
 
 ### Ejemplo resuelto
 
-En el taller de manualidades preparan 8 cuentas al día para hacer unos collares. Si trabajan así durante 5 días, ¿cuántos cuentas preparan en total?
+En el taller de manualidades preparan 8 cuentas al día para hacer unos collares. Si trabajan así durante 5 días, ¿cuántas cuentas preparan en total?
 
 - Multiplicamos los días por la cantidad diaria: 5 × 8 = 40.
 
@@ -537,7 +537,7 @@ Respuesta: **40 cuentas**.
 ## 27. El festival del barrio
 ID: multiplicacion-festival-individual-025 | Dificultad: avanzada
 
-Para decorar un festival llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos banderines han llegado?
+Para decorar un festival reciben {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos banderines han llegado?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -550,7 +550,7 @@ Para decorar un festival llegan {cantidadA} {unidadA}. Cada caja contiene {canti
 
 ### Ejemplo resuelto
 
-Para decorar un festival llegan 3 cajas. Cada caja contiene 4 paquetes y cada paquete tiene 5 banderines. ¿Cuántos banderines han llegado?
+Para decorar un festival reciben 3 cajas. Cada caja contiene 4 paquetes y cada paquete tiene 5 banderines. ¿Cuántos banderines han llegado?
 
 - Calculamos cuántos paquetes hay: 3 × 4 = 12.
 - Calculamos el contenido de todos los paquetes: 12 × 5 = 60.
@@ -560,7 +560,7 @@ Respuesta: **60 banderines**.
 ## 28. Una ruta de exploradores
 ID: multiplicacion-exploradores-individual-026 | Dificultad: facil
 
-Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el club de exploradores quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos mapas necesitan?
+Para cada lote de una actividad necesitan {cantidadB} {unidadB}. En el club de exploradores quieren preparar {cantidadA} {unidadA} con el mismo contenido. ¿Cuántos mapas necesitan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -571,7 +571,7 @@ Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el club de
 
 ### Ejemplo resuelto
 
-Para cada lote de una actividad hacen falta 8 mapas. En el club de exploradores quieren preparar 6 lotes iguales. ¿Cuántos mapas necesitan?
+Para cada lote de una actividad necesitan 8 mapas. En el club de exploradores quieren preparar 6 lotes con el mismo contenido. ¿Cuántos mapas necesitan?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -580,7 +580,7 @@ Respuesta: **48 mapas**.
 ## 29. La carrera solidaria
 ID: multiplicacion-medallas-individual-027 | Dificultad: facil
 
-En el polideportivo preparan {cantidadA} {unidadA} para organizar una carrera solidaria. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos medallas preparan en total?
+En el polideportivo preparan {cantidadA} {unidadA} para organizar una carrera solidaria. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántas medallas preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -591,7 +591,7 @@ En el polideportivo preparan {cantidadA} {unidadA} para organizar una carrera so
 
 ### Ejemplo resuelto
 
-En el polideportivo preparan 6 lotes para organizar una carrera solidaria. Cada lote contiene 8 medallas. ¿Cuántos medallas preparan en total?
+En el polideportivo preparan 6 lotes para organizar una carrera solidaria. Cada lote contiene 8 medallas. ¿Cuántas medallas preparan en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -600,7 +600,7 @@ Respuesta: **48 medallas**.
 ## 30. La tarde de juegos
 ID: multiplicacion-juegos-individual-028 | Dificultad: facil
 
-Para organizar una tarde de juegos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos fichas han colocado en total?
+Para organizar una tarde de juegos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas fichas han colocado en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -611,7 +611,7 @@ Para organizar una tarde de juegos, colocan {cantidadA} {unidadA} con {cantidadB
 
 ### Ejemplo resuelto
 
-Para organizar una tarde de juegos, colocan 6 filas con 8 fichas en cada fila. ¿Cuántos fichas han colocado en total?
+Para organizar una tarde de juegos, colocan 6 filas con 8 fichas en cada fila. ¿Cuántas fichas han colocado en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -640,7 +640,7 @@ Respuesta: **24 euros**.
 ## 32. El concurso de dibujo
 ID: multiplicacion-papel-individual-030 | Dificultad: media
 
-En la clase de dibujo preparan {cantidadB} {unidadB} al día para preparar un concurso. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos folios preparan en total?
+En la clase de dibujo preparan {cantidadB} {unidadB} al día para un concurso. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos folios preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -651,7 +651,7 @@ En la clase de dibujo preparan {cantidadB} {unidadB} al día para preparar un co
 
 ### Ejemplo resuelto
 
-En la clase de dibujo preparan 8 folios al día para preparar un concurso. Si trabajan así durante 5 días, ¿cuántos folios preparan en total?
+En la clase de dibujo preparan 8 folios al día para un concurso. Si trabajan así durante 5 días, ¿cuántos folios preparan en total?
 
 - Multiplicamos los días por la cantidad diaria: 5 × 8 = 40.
 
@@ -660,7 +660,7 @@ Respuesta: **40 folios**.
 ## 33. El viaje al planetario
 ID: multiplicacion-planetario-individual-031 | Dificultad: facil
 
-En el planetario preparan {cantidadA} {unidadA} para preparar una visita escolar. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos entradas preparan en total?
+En el planetario preparan {cantidadA} {unidadA} para una visita escolar. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántas entradas preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -671,7 +671,7 @@ En el planetario preparan {cantidadA} {unidadA} para preparar una visita escolar
 
 ### Ejemplo resuelto
 
-En el planetario preparan 6 lotes para preparar una visita escolar. Cada lote contiene 8 entradas. ¿Cuántos entradas preparan en total?
+En el planetario preparan 6 lotes para una visita escolar. Cada lote contiene 8 entradas. ¿Cuántas entradas preparan en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -680,7 +680,7 @@ Respuesta: **48 entradas**.
 ## 34. El club de ajedrez
 ID: multiplicacion-ajedrez-individual-032 | Dificultad: facil
 
-Para organizar un encuentro, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos fichas han colocado en total?
+Para organizar un encuentro, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas fichas han colocado en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -691,7 +691,7 @@ Para organizar un encuentro, colocan {cantidadA} {unidadA} con {cantidadB} {unid
 
 ### Ejemplo resuelto
 
-Para organizar un encuentro, colocan 6 filas con 8 fichas en cada fila. ¿Cuántos fichas han colocado en total?
+Para organizar un encuentro, colocan 6 filas con 8 fichas en cada fila. ¿Cuántas fichas han colocado en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -720,7 +720,7 @@ Respuesta: **24 euros**.
 ## 36. Las plantas del invernadero
 ID: multiplicacion-invernadero-individual-034 | Dificultad: media
 
-En el invernadero escolar preparan {cantidadB} {unidadB} al día para trasplantar las plantas. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos macetas preparan en total?
+En el invernadero escolar preparan {cantidadB} {unidadB} al día para trasplantar las plantas. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas macetas preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -731,7 +731,7 @@ En el invernadero escolar preparan {cantidadB} {unidadB} al día para trasplanta
 
 ### Ejemplo resuelto
 
-En el invernadero escolar preparan 8 macetas al día para trasplantar las plantas. Si trabajan así durante 5 días, ¿cuántos macetas preparan en total?
+En el invernadero escolar preparan 8 macetas al día para trasplantar las plantas. Si trabajan así durante 5 días, ¿cuántas macetas preparan en total?
 
 - Multiplicamos los días por la cantidad diaria: 5 × 8 = 40.
 
@@ -740,7 +740,7 @@ Respuesta: **40 macetas**.
 ## 37. Los peces del aula
 ID: multiplicacion-acuarios-individual-035 | Dificultad: avanzada
 
-Para preparar una actividad llegan {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántos piedras han llegado?
+Para una actividad reciben {cantidadA} {unidadA}. Cada caja contiene {cantidadB} {unidadB} y cada paquete tiene {cantidadC} {unidadC}. ¿Cuántas piedras han llegado?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -753,7 +753,7 @@ Para preparar una actividad llegan {cantidadA} {unidadA}. Cada caja contiene {ca
 
 ### Ejemplo resuelto
 
-Para preparar una actividad llegan 3 cajas. Cada caja contiene 4 paquetes y cada paquete tiene 5 piedras. ¿Cuántos piedras han llegado?
+Para una actividad reciben 3 cajas. Cada caja contiene 4 paquetes y cada paquete tiene 5 piedras. ¿Cuántas piedras han llegado?
 
 - Calculamos cuántos paquetes hay: 3 × 4 = 12.
 - Calculamos el contenido de todos los paquetes: 12 × 5 = 60.
@@ -763,7 +763,7 @@ Respuesta: **60 piedras**.
 ## 38. La feria de conservas
 ID: multiplicacion-conservas-individual-036 | Dificultad: facil
 
-Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el taller de conservas quieren preparar {cantidadA} {unidadA} iguales. ¿Cuántos tarros necesitan?
+Para cada lote de una actividad necesitan {cantidadB} {unidadB}. En el taller de conservas quieren preparar {cantidadA} {unidadA} con el mismo contenido. ¿Cuántos tarros necesitan?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -774,7 +774,7 @@ Para cada lote de una actividad hacen falta {cantidadB} {unidadB}. En el taller 
 
 ### Ejemplo resuelto
 
-Para cada lote de una actividad hacen falta 8 tarros. En el taller de conservas quieren preparar 6 lotes iguales. ¿Cuántos tarros necesitan?
+Para cada lote de una actividad necesitan 8 tarros. En el taller de conservas quieren preparar 6 lotes con el mismo contenido. ¿Cuántos tarros necesitan?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -783,7 +783,7 @@ Respuesta: **48 tarros**.
 ## 39. El carnaval del barrio
 ID: multiplicacion-carnaval-individual-037 | Dificultad: facil
 
-En el taller de carnaval preparan {cantidadA} {unidadA} para preparar el desfile. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántos máscaras preparan en total?
+En el taller de carnaval preparan {cantidadA} {unidadA} para el desfile. Cada lote contiene {cantidadB} {unidadB}. ¿Cuántas máscaras preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -794,7 +794,7 @@ En el taller de carnaval preparan {cantidadA} {unidadA} para preparar el desfile
 
 ### Ejemplo resuelto
 
-En el taller de carnaval preparan 6 lotes para preparar el desfile. Cada lote contiene 8 máscaras. ¿Cuántos máscaras preparan en total?
+En el taller de carnaval preparan 6 lotes para el desfile. Cada lote contiene 8 máscaras. ¿Cuántas máscaras preparan en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -803,7 +803,7 @@ Respuesta: **48 máscaras**.
 ## 40. Creamos nuestros cuadernos
 ID: multiplicacion-encuadernacion-individual-038 | Dificultad: facil
 
-Para hacer unos cuadernos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántos hojas han colocado en total?
+Para hacer unos cuadernos, colocan {cantidadA} {unidadA} con {cantidadB} {unidadB} en cada fila. ¿Cuántas hojas han colocado en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -814,7 +814,7 @@ Para hacer unos cuadernos, colocan {cantidadA} {unidadA} con {cantidadB} {unidad
 
 ### Ejemplo resuelto
 
-Para hacer unos cuadernos, colocan 6 filas con 8 hojas en cada fila. ¿Cuántos hojas han colocado en total?
+Para hacer unos cuadernos, colocan 6 filas con 8 hojas en cada fila. ¿Cuántas hojas han colocado en total?
 
 - Multiplicamos los grupos por su contenido: 6 × 8 = 48.
 
@@ -823,7 +823,7 @@ Respuesta: **48 hojas**.
 ## 41. Una visita al colmenar
 ID: multiplicacion-colmenar-individual-039 | Dificultad: media
 
-Para preparar los materiales de una visita, en el aula del colmenar compran {cantidadA} {unidadA}. El precio de cada lámina es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?
+Para los materiales de una visita, en el aula del colmenar compran {cantidadA} {unidadA}. El precio de cada lámina es de {cantidadB} {unidadB}. ¿Cuántos euros cuesta toda la compra?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -834,7 +834,7 @@ Para preparar los materiales de una visita, en el aula del colmenar compran {can
 
 ### Ejemplo resuelto
 
-Para preparar los materiales de una visita, en el aula del colmenar compran 6 láminas. El precio de cada lámina es de 4 euros. ¿Cuántos euros cuesta toda la compra?
+Para los materiales de una visita, en el aula del colmenar compran 6 láminas. El precio de cada lámina es de 4 euros. ¿Cuántos euros cuesta toda la compra?
 
 - Multiplicamos la cantidad por el precio: 6 × 4 = 24.
 
@@ -843,7 +843,7 @@ Respuesta: **24 euros**.
 ## 42. El jardín de los aromas
 ID: multiplicacion-aromaticas-individual-040 | Dificultad: media
 
-En el jardín de plantas aromáticas preparan {cantidadB} {unidadB} al día para plantar nuevas flores. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántos etiquetas preparan en total?
+En el jardín de plantas aromáticas preparan {cantidadB} {unidadB} al día para plantar nuevas flores. Si trabajan así durante {cantidadA} {unidadA}, ¿cuántas etiquetas preparan en total?
 
 | Variable | Valores o significado |
 | --- | --- |
@@ -854,7 +854,7 @@ En el jardín de plantas aromáticas preparan {cantidadB} {unidadB} al día para
 
 ### Ejemplo resuelto
 
-En el jardín de plantas aromáticas preparan 8 etiquetas al día para plantar nuevas flores. Si trabajan así durante 5 días, ¿cuántos etiquetas preparan en total?
+En el jardín de plantas aromáticas preparan 8 etiquetas al día para plantar nuevas flores. Si trabajan así durante 5 días, ¿cuántas etiquetas preparan en total?
 
 - Multiplicamos los días por la cantidad diaria: 5 × 8 = 40.
 
