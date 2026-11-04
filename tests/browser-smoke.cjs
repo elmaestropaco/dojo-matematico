@@ -52,7 +52,10 @@ async function main() {
       await new Promise(r => setTimeout(r, 100));
     }
     const sizes = [[360, 740], [390, 844], [768, 1024], [1366, 768], [1920, 1080]];
-    const controlsOnly = process.argv.includes('--controls-only');
+    const percentagesOnly = process.argv.includes('--percentages-only');
+    const unitsOnly = process.argv.includes('--units-only');
+    const learningOnly = process.argv.includes('--learning-only');
+    const controlsOnly = process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly;
     const advancedOnly = process.argv.includes('--advanced-only');
     const calculationsOnly = process.argv.includes('--calculations-only');
     const integerOnly = process.argv.includes('--integer-only');
@@ -106,11 +109,11 @@ async function main() {
       if(buildOnlineConfig().problemMix!=='combinados'||state.problemMix!=='combinados')throw Error('Problem mix not synchronized');
       refs.problemMixSelect.value='individuales';refs.problemMixSelect.dispatchEvent(new Event('change',{bubbles:true}));
       savePreferences();if(readPreferences().activity!=='problemas')throw Error('Problem preferences not persisted');
-      if(document.querySelectorAll('details.problem-category').length!==4||[...document.querySelectorAll('details.problem-category')].some(e=>e.open))throw Error('Problem categories must start collapsed');
-      const firstCategory=document.querySelector('details.problem-category');
-      const closedHeight=document.querySelectorAll('details.problem-category')[1].getBoundingClientRect().height;
+      if(document.querySelectorAll('.problem-categories details.problem-category').length!==4||[...document.querySelectorAll('details.problem-category')].some(e=>e.open))throw Error('Problem categories must start collapsed');
+      const firstCategory=document.querySelector('.problem-categories details.problem-category');
+      const closedHeight=document.querySelectorAll('.problem-categories details.problem-category')[1].getBoundingClientRect().height;
       firstCategory.querySelector('summary span').click();if(!firstCategory.open)throw Error('Category title does not expand');
-      if(document.querySelectorAll('details.problem-category')[1].getBoundingClientRect().height!==closedHeight)throw Error('Closed category stretches with its neighbor');
+      if(document.querySelectorAll('.problem-categories details.problem-category')[1].getBoundingClientRect().height!==closedHeight)throw Error('Closed category stretches with its neighbor');
       firstCategory.querySelector('summary span').click();if(firstCategory.open)throw Error('Category title does not collapse');
       const min=document.querySelector('[data-problem-kind="suma"][data-problem-key="minDigits"]');
       const max=document.querySelector('[data-problem-kind="suma"][data-problem-key="maxDigits"]');
@@ -343,13 +346,316 @@ async function main() {
       if(refs.onlineHostLobby.classList.contains('hidden'))throw Error('Rematch lobby missing');
       if(state.online.active||state.isRunning)throw Error('Rematch did not reset running state');
     `);
+    if (percentagesOnly || process.argv.length === 2) {
+      await evaluate(`(() => {
+        state.online=null;goHome();hideOnlineHostLobby();state.mode='single';state.activity='problemas';state.problemMix='individuales';syncProblemControls();
+        const set=(key,value)=>{const e=document.querySelector('[data-problem-extra="'+key+'"]');if(!e)throw Error('Missing percentage control '+key);if(e.type==='checkbox')e.checked=value;else e.value=String(value);e.dispatchEvent(new Event('change',{bubbles:true}));};
+        set('_family','porcentajes');
+        const box=document.querySelector('[data-problem-families="porcentajes"]');
+        if(box.classList.contains('hidden')||box.querySelector('details').open)throw Error('Percentage controls must be visible and collapsed');
+        box.querySelectorAll('details').forEach(d=>d.open=true);
+        for(const label of box.querySelectorAll('label:not(#percentagePlacesWrap)'))if(label.classList.contains('hidden'))throw Error('Percentage labels hidden by integer controls');
+        set('_percentageMinDigits',4);set('_percentageMinDigits',1);set('_percentageMaxDigits',1);
+        if(state.problemSettings._percentageMaxDigits!==1||state.problemSettings._percentageMinDigits!==1)throw Error('Percentage range remained locked');
+        set('_percentageDecimals',true);set('_percentagePlaces',1);set('_percentageBasic',false);
+        if(document.getElementById('percentagePlacesWrap').classList.contains('hidden'))throw Error('Missing percentage decimals control');
+        const cfg=buildOnlineConfig();
+        if(cfg.problemSettings._percentagePlaces!==1||readPreferences().problemSettings._family!=='porcentajes')throw Error('Percentage settings not saved/shared');
+        set('_family','enteros');applyOnlineConfig(cfg);
+        if(state.problemSettings._family!=='porcentajes'||state.problemSettings._percentagePlaces!==1)throw Error('Percentage config lost on room update');
+        if(NinjaProblems.compatible(state.problemSettings).length!==160)throw Error('Percentage pool missing');
+        for(const op of ['suma','resta','multiplicacion','division'])set('_percentage_'+op,true);
+        if(NinjaProblems.compatible(state.problemSettings,{mix:'combinados'}).length!==160)throw Error('Combined percentage pool missing');
+        state.mode='teacher';refs.teacherDashboard.classList.remove('hidden');updateTeacherCreatePanel(true);setTeacherConfigExpanded(true);
+        if(!refs.teacherConfigMount.querySelector('[data-problem-extra="_percentageBasic"]'))throw Error('Teacher cannot edit percentage settings');
+        updateTeacherCreatePanel(false);refs.teacherDashboard.classList.add('hidden');state.mode='single';applyModeDependentUI();
+        document.querySelector('[data-mode="online"]').click();
+        if(!refs.onlineCreateMount.querySelector('[data-problem-extra="_percentageBasic"]'))throw Error('Online create panel missing percentage settings');
+        document.querySelector('[data-mode="single"]').click();
+      })()`);
+      for(const [width,height] of sizes) {
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        const errors=await evaluate(`(async()=>{await new Promise(r=>requestAnimationFrame(r));const failures=[];if(document.documentElement.scrollWidth>innerWidth+1)failures.push('page overflow');for(const e of document.querySelectorAll('[data-problem-families="porcentajes"] select')){const b=e.getBoundingClientRect();if(b.right>innerWidth+1||b.left<0)failures.push('percentage control overflow');}return failures;})()`);
+        assert.deepEqual(errors,[],`Percentage controls ${width}x${height}`);
+        if(width===360){const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true},sessionId);fs.writeFileSync(path.join(work,'percentage-controls-mobile.png'),Buffer.from(shot.data,'base64'));}
+      }
+      const previews=await evaluate(`(() => {
+        globalThis.percentagePreviews=[];
+        for(const mix of ['individuales','combinados']){
+          const cfg=NinjaProblems.normalize({...state.problemSettings,_family:'porcentajes',_percentageMinDigits:9,_percentageMaxDigits:9,_percentageDecimals:true,_percentagePlaces:2});
+          const pool=NinjaProblems.compatible(cfg,{mix});
+          for(let i=0;i<pool.length;i++)percentagePreviews.push({cfg,mix,op:NinjaProblems.generate(cfg,i,125,{mix})});
+        }
+        return percentagePreviews.map((p,i)=>({i,length:p.op.problem.text.length,type:p.op.problem.category,mix:p.mix}));
+      })()`);
+      const representatives=[];
+      for(const mix of ['individuales','combinados'])for(const type of ['parte','descuento','aumento','relacion'])representatives.push(previews.filter(p=>p.mix===mix&&p.type===type).sort((a,b)=>b.length-a.length)[0].i);
+      let views=0;
+      for(const [width,height] of sizes) {
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const font of ['imprenta','ligada']) {
+          await evaluate(`state.online=null;state.activity='problemas';state.mode=${JSON.stringify(mode)};state.problemFont=${JSON.stringify(font)};state.problemSettings=percentagePreviews[0].cfg;state.problemMix='individuales';launchGame(['problem'],180);stopTimer();refs.consentBanner.classList.add('hidden');syncProblemControls();document.fonts.load('400 20px "Escolar Ligada"')`);
+          const indexes=width===1366&&mode==='single'&&font==='imprenta'?previews.map(p=>p.i):representatives;
+          for(const i of indexes)for(const solution of [false,true]){
+            const failures=await evaluate(`(async()=>{
+              const preview=percentagePreviews[${i}];state.problemSettings=preview.cfg;state.problemMix=preview.mix;
+              state.players.forEach(p=>state.operationsByPlayer.set(p.id,decorateOperation({...preview.op,solutionRevealed:${solution}})));repaintPlayers();
+              await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+              const errors=[];
+              if(document.documentElement.scrollHeight>innerHeight+2||document.documentElement.scrollWidth>innerWidth+2)errors.push('game page scrolls');
+              for(const panel of document.querySelectorAll('.player-panel')){
+                const box=panel.getBoundingClientRect();
+                for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),b=e.getBoundingClientRect();if(b.right>box.right+1||b.bottom>box.bottom+1)errors.push(q+' outside panel');if(e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2)errors.push(q+' clipped');}
+                if(${solution}&&(!panel.querySelector('.problem-review-reading .problem-question')||!panel.querySelector('.problem-final').textContent.includes(preview.op.answerDisplay)))errors.push('question or decimal solution missing');
+                if(!panel.querySelector('.decimal-hint').textContent.includes('💯'))errors.push('wrong answer format hint');
+              }
+              return errors;
+            })()`);
+            if(failures.length){
+              const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'percentage-failure.png'),Buffer.from(shot.data,'base64'));
+              console.log(path.join(work,'percentage-failure.png'));
+              console.log(await evaluate(`[...document.querySelectorAll('.player-panel .operation')].map(e=>({width:e.clientWidth,scrollWidth:e.scrollWidth,height:e.clientHeight,scrollHeight:e.scrollHeight,font:getComputedStyle(e).fontSize,text:e.innerText}))`));
+            }
+            assert.deepEqual(failures,[],`Percentages ${width}x${height} ${mode} ${font} ${i} solution ${solution}: ${failures.join(', ')}`);
+            views++;
+          }
+          if((width===1366&&mode==='single'&&font==='imprenta')||(width===360&&mode==='duel'&&font==='ligada')){
+            const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'percentage-solution-'+width+'-'+mode+'.png'),Buffer.from(shot.data,'base64'));
+          }
+        }
+        console.log('Percentage layouts checked: '+width+'x'+height);
+      }
+      await evaluate(`(() => {
+        state.online=null;state.mode='single';state.activity='problemas';state.problemSettings=percentagePreviews[0].cfg;state.problemMix='individuales';launchGame(['problem'],180);stopTimer();
+        const op=state.operationsByPlayer.get(0);
+        if(!document.querySelector('.numpad [data-key=","]'))throw Error('Percentage decimal key missing');
+        state.players[0].input=op.answerDisplay;submitPlayerAnswer(0);
+        if(state.players[0].score!==10)throw Error('Exact percentage answer not accepted');
+        document.querySelector('.solution-btn').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));refreshOperationDisplays();
+        const shown=state.operationsByPlayer.get(0);
+        if(!document.querySelector('.problem-final').textContent.includes(shown.answerDisplay))throw Error('Decimal display lost on refresh');
+        document.querySelector('.solution-btn').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));
+        if(state.players[0].score!==10)throw Error('Percentage assisted answer gave points');
+        state.online={seed:42,active:true,currentOperationIndex:0};
+        if(JSON.stringify(createOnlineOperation(5))!==JSON.stringify(createOnlineOperation(5)))throw Error('Percentage sequence differs between room participants');
+        state.online=null;goHome();
+      })()`);
+      console.log('OK: '+views+' percentage layouts; all 160 templates, combined variants, both fonts, decimal answers, persistence and room configuration.');
+    }
+    if (unitsOnly || process.argv.length === 2) {
+      await evaluate(`(() => {
+        state.online=null;goHome();hideOnlineHostLobby();state.mode='single';state.activity='calculo';applyModeDependentUI();syncSettingsUIFromState();
+        Object.values(state.operationSettings).forEach(c=>c.enabled=false);
+        const set=(op,key,value)=>{const e=document.querySelector('[data-setting-op="'+op+'"][data-setting-key="'+key+'"]');if(!e)throw Error('Missing unit control');e.value=String(value);e.dispatchEvent(new Event('change',{bubbles:true}));};
+        state.operationSettings.convertLength.enabled=true;set('convertLength','digits',2);set('convertLength','from',6);set('convertLength','to',4);
+        state.decimalsEnabled=true;state.decimalPlaces=2;syncSettingsUIFromState();updateOpsSummary();savePreferences();
+        if(readPreferences().operationSettings.convertLength.from!==6)throw Error('Conversion units not saved');
+        state.operationSettings.convertLength.from=0;applySavedPreferences();
+        if(state.operationSettings.convertLength.from!==6)throw Error('Conversion source not restored');
+        set('convertLength','from',0);savePreferences();state.operationSettings.convertLength.from=2;applySavedPreferences();
+        if(state.operationSettings.convertLength.from!==0)throw Error('Random source not restored');
+        set('convertLength','from',6);
+        const cfg=buildOnlineConfig();state.operationSettings.convertLength.to=0;applyOnlineConfig(cfg);
+        if(state.operationSettings.convertLength.to!==4)throw Error('Conversion destination lost online');
+        const c=createOperation('convertLength');if(!c.conversion||c.conversion.to!=='m'||!isCorrectOperationAnswer(c.answerDisplay,c))throw Error('Conversion calculation does not work');
+        set('convertLength','from',4);set('convertLength','to',4);
+        const alert=window.alert;let warned=false;window.alert=()=>warned=true;
+        try{if(ensureConversionSettings()!==false||!warned||!document.getElementById('conversionConfigHint').textContent.includes('⚠️'))throw Error('Invalid conversion not blocked');}finally{window.alert=alert;}
+        for(const key of Object.keys(NinjaUnits.kinds)){state.operationSettings[key]={enabled:true,digits:9,from:0,to:0};}
+        state.online={seed:123,active:true};
+        if(JSON.stringify(createOnlineOperation(8))!==JSON.stringify(createOnlineOperation(8)))throw Error('Online unit sequence not reproducible');state.online=null;
+        syncSettingsUIFromState();document.querySelector('.conversion-config').open=true;
+      })()`);
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        const errors=await evaluate(`(async()=>{await new Promise(r=>requestAnimationFrame(r));const errors=[];if(document.documentElement.scrollWidth>innerWidth+1)errors.push('horizontal overflow');for(const e of document.querySelectorAll('#measureCalculationRows select')){const b=e.getBoundingClientRect();if(b.right>innerWidth+1||b.left<0)errors.push('unit selector outside viewport');}return errors;})()`);
+        assert.deepEqual(errors,[],`Conversion controls ${width}x${height}`);
+      }
+      let views=0;
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const key of ['convertLength','convertMass','convertCapacity','convertTime'])for(const places of [0,3]){
+          await evaluate(`state.online=null;state.activity='calculo';state.mode=${JSON.stringify(mode)};state.decimalsEnabled=${places>0};state.decimalPlaces=${places||1};launchGame([${JSON.stringify(key)}],60);stopTimer();refs.consentBanner.classList.add('hidden')`);
+          for(const solution of [false,true]){
+            const errors=await evaluate(`(async()=>{state.operationsByPlayer.forEach(op=>op.solutionRevealed=${solution});repaintPlayers();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];if(document.documentElement.scrollHeight>innerHeight+2||document.documentElement.scrollWidth>innerWidth+2)errors.push('page scrolls');for(const panel of document.querySelectorAll('.player-panel')){const box=panel.getBoundingClientRect();for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),b=e.getBoundingClientRect();if(b.right>box.right+1||b.bottom>box.bottom+1||e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2)errors.push(q+' clipped');}if(${solution}&&!panel.querySelector('.conversion-solution'))errors.push('missing conversion explanation');if(!panel.querySelector('.decimal-hint').textContent.includes('Responde solo'))errors.push('wrong unit hint');}return errors;})()`);
+            assert.deepEqual(errors,[],`Conversion ${width}x${height} ${mode} ${key} ${places} solution ${solution}: ${errors.join(', ')}`);views++;
+          }
+        }
+      }
+      await evaluate(`(() => {
+        state.online=null;goHome();hideOnlineHostLobby();state.mode='single';state.activity='problemas';state.problemMix='individuales';syncProblemControls();
+        const set=(key,value)=>{const e=document.querySelector('[data-problem-extra="'+key+'"]');if(e.type==='checkbox')e.checked=value;else e.value=String(value);e.dispatchEvent(new Event('change',{bubbles:true}));};
+        set('_family','medidas');set('_measureMinDigits',9);set('_measureMinDigits',1);set('_measureMaxDigits',1);
+        if(state.problemSettings._measureMaxDigits!==1||state.problemSettings._measureMinDigits!==1)throw Error('Measure range remained locked');
+        set('_measureDecimals',true);set('_measurePlaces',3);set('_measure_longitudFrom',4);set('_measure_longitudTo',6);
+        const cfg=buildOnlineConfig();set('_family','enteros');applyOnlineConfig(cfg);
+        if(state.problemSettings._family!=='medidas'||state.problemSettings._measure_longitudTo!==6||readPreferences().problemSettings._measurePlaces!==3)throw Error('Measure config lost');
+        const box=document.querySelector('[data-problem-families="medidas"]');box.querySelectorAll('details').forEach(d=>d.open=true);
+        state.mode='teacher';refs.teacherDashboard.classList.remove('hidden');updateTeacherCreatePanel(true);setTeacherConfigExpanded(true);
+        if(!refs.teacherConfigMount.querySelector('[data-problem-extra="_measure_longitudFrom"]'))throw Error('Teacher measure settings missing');
+        updateTeacherCreatePanel(false);refs.teacherDashboard.classList.add('hidden');state.mode='single';applyModeDependentUI();
+        document.querySelector('[data-mode="online"]').click();
+        if(!refs.onlineCreateMount.querySelector('[data-problem-extra="_measure_longitudFrom"]'))throw Error('Online measure settings missing');
+        document.querySelector('[data-mode="single"]').click();
+        for(const kind of ['longitud','masa','capacidad','tiempo']){set('_measure_'+kind+'From',0);set('_measure_'+kind+'To',0);}
+        for(const op of ['suma','resta','multiplicacion','division'])set('_measure_'+op,true);
+      })()`);
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        const errors=await evaluate(`(async()=>{await new Promise(r=>requestAnimationFrame(r));const errors=[];if(document.documentElement.scrollWidth>innerWidth+1)errors.push('horizontal overflow');for(const e of document.querySelectorAll('[data-problem-families="medidas"] select')){const b=e.getBoundingClientRect();if(b.right>innerWidth+1||b.left<0)errors.push('measure selector outside viewport');}return errors;})()`);
+        assert.deepEqual(errors,[],`Measure controls ${width}x${height}`);
+        if(width===360){const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true},sessionId);fs.writeFileSync(path.join(work,'measure-controls-mobile.png'),Buffer.from(shot.data,'base64'));}
+      }
+      const previews=await evaluate(`(() => {
+        globalThis.measurePreviews=[];
+        for(const mix of ['individuales','combinados']){
+          const cfg=NinjaProblems.normalize({...state.problemSettings,_family:'medidas',_measureMinDigits:9,_measureMaxDigits:9,_measureDecimals:true,_measurePlaces:3});
+          const pool=NinjaProblems.compatible(cfg,{mix});
+          for(let i=0;i<pool.length;i++)measurePreviews.push({cfg,mix,op:NinjaProblems.generate(cfg,i,125,{mix})});
+        }
+        return measurePreviews.map((p,i)=>({i,length:p.op.problem.text.length,type:p.op.problem.category,mix:p.mix}));
+      })()`);
+      const representatives=[];
+      for(const mix of ['individuales','combinados'])for(const type of ['longitud','masa','capacidad','tiempo'])representatives.push(previews.filter(p=>p.mix===mix&&p.type===type).sort((a,b)=>b.length-a.length)[0].i);
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const font of ['imprenta','ligada']){
+          await evaluate(`state.online=null;state.activity='problemas';state.mode=${JSON.stringify(mode)};state.problemFont=${JSON.stringify(font)};state.problemSettings=measurePreviews[0].cfg;state.problemMix='individuales';launchGame(['problem'],180);stopTimer();refs.consentBanner.classList.add('hidden');syncProblemControls();document.fonts.load('400 20px "Escolar Ligada"')`);
+          const indexes=width===1366&&mode==='single'&&font==='imprenta'?previews.map(p=>p.i):representatives;
+          for(const i of indexes)for(const solution of [false,true]){
+            const errors=await evaluate(`(async()=>{const preview=measurePreviews[${i}];state.problemSettings=preview.cfg;state.problemMix=preview.mix;state.players.forEach(p=>state.operationsByPlayer.set(p.id,decorateOperation({...preview.op,solutionRevealed:${solution}})));repaintPlayers();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];if(document.documentElement.scrollHeight>innerHeight+2||document.documentElement.scrollWidth>innerWidth+2)errors.push('page scrolls');for(const panel of document.querySelectorAll('.player-panel')){const box=panel.getBoundingClientRect();for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),b=e.getBoundingClientRect();if(b.right>box.right+1||b.bottom>box.bottom+1||e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2)errors.push(q+' clipped');}if(${solution}&&(!panel.querySelector('.problem-question')||!panel.querySelector('.problem-final').textContent.includes(preview.op.answerDisplay)))errors.push('missing reading or answer');}return errors;})()`);
+            if(errors.length){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'measure-failure.png'),Buffer.from(shot.data,'base64'));console.log(path.join(work,'measure-failure.png'));}
+            assert.deepEqual(errors,[],`Measure ${width}x${height} ${mode} ${font} ${i} solution ${solution}: ${errors.join(', ')}`);views++;
+          }
+          if((width===1366&&mode==='single'&&font==='imprenta')||(width===360&&mode==='duel'&&font==='ligada')){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'measure-solution-'+width+'-'+mode+'.png'),Buffer.from(shot.data,'base64'));}
+        }
+        console.log('Measure layouts checked: '+width+'x'+height);
+      }
+      await evaluate(`(() => {
+        state.online=null;state.activity='calculo';state.mode='single';state.decimalsEnabled=true;state.decimalPlaces=2;
+        state.operationSettings.convertLength={enabled:true,digits:2,from:6,to:4};launchGame(['convertLength'],60);stopTimer();
+        const op=state.operationsByPlayer.get(0);for(const key of op.answerDisplay)window.dispatchEvent(new KeyboardEvent('keydown',{key}));window.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',code:'Enter'}));
+        if(state.players[0].score!==10)throw Error('Conversion physical keyboard answer failed');
+        document.querySelector('.solution-btn').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));refreshOperationDisplays();
+        if(!document.querySelector('.conversion-solution'))throw Error('Conversion lost on refresh');
+        document.querySelector('.solution-btn').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));if(state.players[0].score!==10)throw Error('Assisted conversion awarded points');
+        state.activity='problemas';state.problemSettings=measurePreviews[0].cfg;state.problemMix='individuales';launchGame(['problem'],180);stopTimer();
+        state.players[0].input=state.operationsByPlayer.get(0).answerDisplay;submitPlayerAnswer(0);if(state.players[0].score!==10)throw Error('Measure problem answer failed');
+        state.online={seed:42,active:true};if(JSON.stringify(createOnlineOperation(5))!==JSON.stringify(createOnlineOperation(5)))throw Error('Measure room sequence differs');state.online=null;goHome();
+      })()`);
+      console.log('OK: '+views+' unit/measure layouts, all 160 templates, both fonts, exact answers, keyboard, persistence and online/teacher settings.');
+    }
+    if (learningOnly || process.argv.length === 2) {
+      const previews = await evaluate(`(() => {
+        globalThis.learningPreviews=[];
+        for(const family of Object.keys(NinjaExpansion.families)){
+          const cfg=NinjaProblems.normalize({_family:family,_newDigits:3,_newDecimals:true});
+          for(let i=0;i<NinjaProblems.compatible(cfg).length;i++){const op=NinjaProblems.generate(cfg,i,123);learningPreviews.push({cfg,op});if(op.followUp)learningPreviews.push({cfg,op:op.followUp});}
+        }
+        return learningPreviews.map((p,i)=>({i,family:p.op.problem.family,template:p.op.problem.templateId,length:p.op.problem.text.length}));
+      })()`);
+      const representatives=Object.keys({razonamiento:1,geometria:1,compras:1,proporcionalidad:1}).flatMap(f=>previews.filter(p=>p.family===f).sort((a,b)=>b.length-a.length).slice(0,2).map(p=>p.i));
+      for(let v=1;v<=14;v++){const p=previews.find(p=>p.family==='geometria'&&p.template.endsWith('-'+v));if(p&&!representatives.includes(p.i))representatives.push(p.i);}
+      let views=0;
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const font of ['imprenta','ligada']){
+          await evaluate(`state.online=null;state.endCondition='time';state.activity='problemas';state.mode=${JSON.stringify(mode)};state.problemFont=${JSON.stringify(font)};state.problemSettings=learningPreviews[0].cfg;state.problemMix='individuales';launchGame(['problem'],180);stopTimer();refs.consentBanner.classList.add('hidden');syncProblemControls();document.fonts.load('400 20px "Escolar Ligada"')`);
+          const indexes=width===1366&&mode==='single'&&font==='imprenta'?previews.map(p=>p.i):representatives;
+          for(const i of indexes)for(const solution of [false,true]){
+            const errors=await evaluate(`(async()=>{const preview=learningPreviews[${i}];state.problemSettings=preview.cfg;state.players.forEach(p=>state.operationsByPlayer.set(p.id,decorateOperation({...preview.op,solutionRevealed:${solution}})));repaintPlayers();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];if(document.documentElement.scrollHeight>innerHeight+2||document.documentElement.scrollWidth>innerWidth+2)errors.push('page scrolls');for(const panel of document.querySelectorAll('.player-panel')){const box=panel.getBoundingClientRect();for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),b=e.getBoundingClientRect();if(b.right>box.right+1||b.bottom>box.bottom+1||e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2)errors.push(q+' clipped');}if(!${solution}&&panel.querySelector('.problem-kicker')&&!panel.querySelector('.problem-kicker').textContent.includes('Lee y resuelve'))errors.push('operation leaked');}return errors;})()`);
+            if(errors.length){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'learning-failure.png'),Buffer.from(shot.data,'base64'));console.log(path.join(work,'learning-failure.png'));}
+            assert.deepEqual(errors,[],`Learning ${width}x${height} ${mode} ${font} ${i} solution ${solution}: ${errors.join(', ')}`); views++;
+          }
+        }
+        for(const mode of ['single','duel'])for(const key of ['missing','compare','power','round'])for(const solution of [false,true]){
+          const errors=await evaluate(`(async()=>{state.online=null;state.endCondition='time';state.mode=${JSON.stringify(mode)};state.activity='calculo';Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings[${JSON.stringify(key)}]={...state.operationSettings[${JSON.stringify(key)}],enabled:true,digits:${key==='round'?6:3},operator:3,variant:1,exponentMax:5,place:-3};launchGame([${JSON.stringify(key)}],60);stopTimer();state.operationsByPlayer.forEach(op=>op.solutionRevealed=${solution});repaintPlayers();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];for(const panel of document.querySelectorAll('.player-panel')){const box=panel.getBoundingClientRect();for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),b=e.getBoundingClientRect();if(b.right>box.right+1||b.bottom>box.bottom+1||e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2)errors.push(q+' clipped');}if(${JSON.stringify(key)}==='compare'&&panel.querySelectorAll('.numpad [data-key]').length!==3)errors.push('comparison keypad missing');}return errors;})()`);
+          if(errors.length){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'calculation-failure.png'),Buffer.from(shot.data,'base64'));console.log(path.join(work,'calculation-failure.png'));console.log(await evaluate(`[...document.querySelectorAll('.player-panel .operation')].map(e=>({width:e.clientWidth,height:e.clientHeight,sw:e.scrollWidth,sh:e.scrollHeight,text:e.innerText,font:getComputedStyle(e).fontSize}))`));}
+          assert.deepEqual(errors,[],`New calculation ${width}x${height} ${mode} ${key} solution ${solution}`);views++;
+        }
+        console.log('Learning layouts checked: '+width+'x'+height);
+      }
+      await evaluate(`(async()=>{
+        state.online=null;goHome();hideOnlineHostLobby();state.mode='single';state.endCondition='unlimited';state.activity='calculo';state.operationSettings.missing={enabled:true,digits:1,operator:1};Object.entries(state.operationSettings).forEach(([k,c])=>c.enabled=k==='missing');
+        launchGame(['missing'],0);state.timeLeft=1;await new Promise(r=>setTimeout(r,1100));if(!state.isRunning||state.timeLeft!==1)throw Error('Untimed game finished or counted down');stopTimer();
+        state.endCondition='correct';state.goalCount=2;launchGame(['missing'],0);stopTimer();
+        if(!document.getElementById('finishRoundBtn').classList.contains('hidden'))throw Error('A pupil can bypass a goal with Finish');
+        state.players[0].input='-1';submitPlayerAnswer(0);if(state.reviewErrors.length!==1||state.players[0].wrongCount!==1)throw Error('Wrong answer not recorded');
+        for(let i=0;i<2;i++){state.players[0].input=state.operationsByPlayer.get(0).answerDisplay;submitPlayerAnswer(0);}
+        if(state.isRunning||refs.resultsOverlay.classList.contains('hidden')||state.players[0].correctCount!==2)throw Error('Correct-answer goal did not finish');
+        const score=state.players[0].score,err=state.reviewErrors[0];document.getElementById('reviewErrorsBtn').click();
+        document.querySelector('[data-review-input="0"]').value=err.operation.answerDisplay;document.querySelector('[data-review-check="0"]').click();
+        if(!document.querySelector('[data-review-message="0"]').textContent.includes('Ahora sí')||state.players[0].score!==score)throw Error('Error review failed or changed score');document.getElementById('closeReviewBtn').click();
+        state.endCondition='questions';state.goalCount=1;state.activity='problemas';state.problemSettings=NinjaProblems.normalize({_family:'geometria',_geometryVariant:1,_newDigits:1});launchGame(['problem'],0);stopTimer();
+        document.querySelector('.hint-btn').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));if(!document.getElementById('hintDialog').open||state.operationsByPlayer.get(0).hintStage!==1)throw Error('First hint failed');
+        document.getElementById('nextHintBtn').click();if(state.operationsByPlayer.get(0).hintStage!==2)throw Error('Second hint failed');document.getElementById('nextHintBtn').click();
+        if(!state.operationsByPlayer.get(0).solutionRevealed||!document.querySelector('.problem-review-reading'))throw Error('Hint solution lost reading');
+        document.querySelector('.solution-btn').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));if(state.isRunning||state.players[0].score!==0||state.players[0].resolvedCount!==1)throw Error('Assisted question goal failed');
+        state.endCondition='time';launchGame(['problem'],60);stopTimer();showProgressiveHint(0);await finishGame();if(document.getElementById('hintDialog').open)throw Error('Expired game left the hint dialog covering results');
+        state.endCondition='unlimited';state.activity='calculo';state.operationSettings.compare={enabled:true,digits:1,variant:0};Object.entries(state.operationSettings).forEach(([k,c])=>c.enabled=k==='compare');launchGame(['compare'],0);stopTimer();
+        let op=state.operationsByPlayer.get(0);window.dispatchEvent(new KeyboardEvent('keydown',{key:op.answerSymbol}));window.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter'}));if(state.players[0].score!==10)throw Error('Physical comparison key failed');
+        op=state.operationsByPlayer.get(0);document.querySelector('.numpad [data-key="'+op.answerSymbol+'"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));document.querySelector('[data-action="submit"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));if(state.players[0].score!==20)throw Error('Tactile comparison key failed');
+        state.activity='problemas';state.problemSettings=NinjaProblems.normalize({_family:'razonamiento',_reasonVariant:2,_newDigits:1});launchGame(['problem'],0);stopTimer();
+        op=state.operationsByPlayer.get(0);const next=op.followUp;state.players[0].input=op.answerDisplay;submitPlayerAnswer(0);if(state.operationsByPlayer.get(0).signature!==next.signature)throw Error('Linked question lost its context');
+        goHome();state.mode='single';state.endCondition='questions';state.goalCount=17;syncLearningControls();savePreferences();const cfg=buildOnlineConfig();state.endCondition='time';applyOnlineConfig(cfg);if(state.endCondition!=='questions'||state.goalCount!==17)throw Error('Goal config lost online');
+        applySavedPreferences();if(state.endCondition!=='questions'||state.goalCount!==17)throw Error('Goal preference lost');
+      })()`);
+      await evaluate(`(async()=>{
+        globalThis.savedOnline={...NinjaOnline};NinjaOnline.enabled=true;globalThis.finishCalls=0;globalThis.mockRoom={mode:'teacher',seed:456,startedAt:Date.now()-5000,status:'running',config:JSON.stringify({activity:'calculo',endCondition:'correct',goalCount:2}),players:{p1:{name:'Paco 🥷',score:10,correctCount:1,wrongCount:0,operationIndex:1,roundSeed:456}}};
+        NinjaOnline.updatePlayer=async(code,id,patch)=>{Object.assign(mockRoom.players[id],patch);};NinjaOnline.getRoom=async()=>mockRoom;NinjaOnline.finishRoom=async()=>{finishCalls++;};
+        state.mode='online';state.activity='calculo';state.endCondition='correct';state.goalCount=2;Object.entries(state.operationSettings).forEach(([k,c])=>c.enabled=k==='missing');
+        state.online={code:'123456',playerId:'p1',isHost:false,isTeacher:false,active:true,seed:456,currentOperationIndex:1,correctCount:1,wrongCount:0,room:mockRoom,config:{activity:'calculo',endCondition:'correct',goalCount:2}};
+        launchGame(['missing'],0);stopTimer();state.players[0].input=state.operationsByPlayer.get(0).answerDisplay;submitPlayerAnswer(0);await new Promise(r=>setTimeout(r,800));
+        if(state.isRunning||finishCalls||!mockRoom.players.p1.isFinished)throw Error('Student goal incorrectly closed room or lost completion');handleOnlineRoomUpdate(mockRoom);if(state.isRunning)throw Error('Completed goal restarted on room update');
+        state.online.connected=false;updateConnectionIndicator();if(!document.getElementById('connectionIndicator').textContent.includes('Sin conexión'))throw Error('Offline indicator missing');
+        const offlineScore=state.players[0].score;state.isRunning=true;state.players[0].input=state.operationsByPlayer.get(0).answerDisplay;submitPlayerAnswer(0);state.isRunning=false;if(state.players[0].score!==offlineScore)throw Error('Offline answer changed score');
+        state.online.connected=true;updateConnectionIndicator();if(!document.getElementById('connectionIndicator').textContent.includes('Conectado'))throw Error('Reconnect indicator missing');
+        state.online.isHost=true;mockRoom.players.p2={name:'Ana 🌟',score:20,correctCount:2,wrongCount:1,isFinished:false};handleOnlineRoomUpdate(mockRoom);if(finishCalls)throw Error('Room closed before all reached goal');mockRoom.players.p2.isFinished=true;handleOnlineRoomUpdate(mockRoom);if(finishCalls!==1)throw Error('Room did not finish after all completed');
+        NinjaLearning.clear();mockRoom.startedAt=Date.now()+1;mockRoom.status='finished';captureLearningRound(mockRoom);captureLearningRound(mockRoom);if(NinjaLearning.read().length!==1)throw Error('Duplicate round in report');
+        captureLearningRound({...mockRoom,seed:457,startedAt:mockRoom.startedAt+1000,mode:'duel_online'});if(NinjaLearning.read().length!==2||NinjaLearning.aggregate()[0].rounds!==2)throw Error('Multi-round report lost pupils');
+        showLearningReports();if(!document.getElementById('reportsDialog').open||!document.getElementById('reportsContent').textContent.includes('Paco'))throw Error('Report dialog missing pupils');
+        if(NinjaLearning.workbook()[0]!==80||!NinjaLearning.printHtml().includes('Guardar como PDF'))throw Error('Report export failed');
+        document.getElementById('closeReportsBtn').click();
+        mockRoom.status='running';state.activity='problemas';state.endCondition='unlimited';state.problemSettings=NinjaProblems.normalize({_family:'razonamiento',_reasonVariant:2,_newDigits:1});state.online.active=true;state.online.currentOperationIndex=0;state.online.seed=456;state.online.correctCount=0;state.online.wrongCount=0;mockRoom.players.p1={name:'Paco 🥷',score:0,correctCount:0,wrongCount:0,operationIndex:0};
+        launchGame(['problem'],0);stopTimer();const parent=state.operationsByPlayer.get(0),expectedNext=parent.followUp.signature;state.players[0].input=parent.answerDisplay;submitPlayerAnswer(0);
+        if(mockRoom.players.p1.pendingFollowUpFrom!==0)throw Error('Linked question resume index not saved');launchGame(['problem'],0);stopTimer();if(state.operationsByPlayer.get(0).signature!==expectedNext||state.players[0].score!==10)throw Error('Rejoin lost linked question or score');
+        Object.assign(NinjaOnline,savedOnline);state.online=null;state.endCondition='time';state.goalCount=10;goHome();hideOnlineHostLobby();
+      })()`);
+      await send('Emulation.setDeviceMetricsOverride',{width:1366,height:768,deviceScaleFactor:1,mobile:false},sessionId);
+      await evaluate('showLearningReports();new Promise(r=>requestAnimationFrame(r))');
+      const reportShot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'learning-report.png'),Buffer.from(reportShot.data,'base64'));
+      await evaluate(`document.getElementById('reportsDialog').close();state.mode='single';state.activity='problemas';state.endCondition='unlimited';state.problemSettings=NinjaProblems.normalize({_family:'geometria',_geometryVariant:3,_newDigits:2});launchGame(['problem'],0);stopTimer();new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))`);
+      const geometryShot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'learning-geometry.png'),Buffer.from(geometryShot.data,'base64'));
+      await evaluate(`goHome();state.endCondition='time';syncLearningControls()`);
+      const {targetId:pdfTarget}=await send('Target.createTarget',{url:'about:blank'});
+      const {sessionId:pdfSession}=await send('Target.attachToTarget',{targetId:pdfTarget,flatten:true});
+      const {frameTree}=await send('Page.getFrameTree',{},pdfSession);
+      const reportHtml=await evaluate('NinjaLearning.printHtml()');
+      await send('Page.setDocumentContent',{frameId:frameTree.frame.id,html:reportHtml},pdfSession);
+      const pdf=await send('Page.printToPDF',{landscape:true,printBackground:true},pdfSession);
+      assert.ok(Buffer.from(pdf.data,'base64').length>1000);fs.writeFileSync(path.join(work,'seguimiento.pdf'),Buffer.from(pdf.data,'base64'));await send('Target.closeTarget',{targetId:pdfTarget});
+      console.log('OK: '+views+' learning layouts, goals, untimed, progressive hints, error review, comparison keyboards, linked questions, connection indicators, multi-round reports, XLSX and printed PDF.');
+    }
+    for (const [width,height] of sizes) {
+      await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+      const errors=await evaluate(`(async()=>{
+        goHome();state.mode='online';state.online={code:'W8K7N9X2',isHost:true,isTeacher:false,active:false};
+        showOnlineHostLobby('W8K7N9X2',true);
+        await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+        const e=refs.onlineRoomCode,b=e.getBoundingClientRect(),parent=e.parentElement.getBoundingClientRect(),errors=[];
+        if(e.scrollWidth>e.clientWidth+2||b.right>parent.right+1||b.left<parent.left-1)errors.push('eight-character room code clipped');
+        if(document.documentElement.scrollWidth>innerWidth+2)errors.push('lobby horizontal scroll');
+        goHome();return errors;
+      })()`);
+      assert.deepEqual(errors,[],`Room code ${width}x${height}`);
+    }
     let teacherViews = 0;
     for(const [width,height] of [[360,740],[768,1024],[1024,768],[1366,768],[1920,1080]]) {
       await send('Emulation.setDeviceMetricsOverride', {width,height,deviceScaleFactor:1,mobile:false},sessionId);
       for(const count of [0,1,4,12,20,30,40,60].filter(n=>width>=768||n<=30)) for(const phase of ['lobby','running','finished']) {
         const errors=await evaluate(`(async()=>{
           goHome();state.mode='teacher';state.timeLeft=90;state.isRunning=${phase === 'running'};
-          state.online={code:'123456',isTeacher:true,isHost:true,active:true,teacherResultsShown:true,durationSeconds:120};
+          state.online={code:'W8K7N9X2',isTeacher:true,isHost:true,active:true,teacherResultsShown:true,durationSeconds:120};
           showTeacherDashboard();
           const names=['María del Carmen 🦊🌈','Alejandro Fernández ⚡','Valentina Rodríguez 🐱','NinjaSinEspaciosLargoooo🥷'];
           const players=Object.fromEntries(Array.from({length:${count}},(_,i)=>['p'+i,{id:'p'+i,name:names[i%4]+i,score:200-i,correctCount:20-i%10,wrongCount:i%5,operationIndex:20-i%10,isConnected:true,lastResult:i%2?'wrong':'correct',lastAnswer:'15/8',lastActionAt:100+i}]));

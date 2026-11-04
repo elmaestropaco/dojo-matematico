@@ -43,5 +43,19 @@ Generado con `node banco-problemas/compilar-banco.cjs`. Cada plantilla se cuenta
 | mcmMcd: mcm | 40 |
 | mcmMcd: mcd | 40 |
 | mcmMcd: mcd + mcm | 40 |
+| porcentajes: parte | 40 |
+| porcentajes: descuento | 40 |
+| porcentajes: aumento | 40 |
+| porcentajes: relacion | 40 |
+| medidas: longitud | 40 |
+| medidas: masa | 40 |
+| medidas: capacidad | 40 |
+| medidas: tiempo | 40 |
+| aprendizaje: razonamiento | 40 |
+| aprendizaje: geometria | 140 |
+| aprendizaje: compras | 40 |
+| aprendizaje: proporcionalidad | 40 |
 
-Total de la app: **1320 plantillas**.
+Total de la app: **1900 plantillas**.
+
+Las plantillas de porcentajes y medidas también permiten variantes combinadas con las operaciones adicionales seleccionadas. Estas variantes no se cuentan como nuevas plantillas.

@@ -1,0 +1,9 @@
+{
+  "version": "10.12.5",
+  "source": "https://www.gstatic.com/firebasejs/10.12.5/",
+  "files": {
+    "firebase-app-compat.js": "8912da846b0424822a8ca681e0021bc9281a089313966c5f97bad82d02cb9f65",
+    "firebase-auth-compat.js": "d08600699f3d17864b1e133b8d4e0a5a94ac62756b6ffdd9e4516b457800de61",
+    "firebase-database-compat.js": "f95f56f0317409ef36dc04e3d0cde031ff3d2b9303f3d2f654fb7199342a042c"
+  }
+}

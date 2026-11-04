@@ -1,0 +1,1606 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "medidas-longitud-costura",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de costura",
+      "scene": {
+        "key": "costura",
+        "intro": "En el taller de costura"
+      }
+    },
+    {
+      "id": "medidas-longitud-huerto",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el huerto del colegio",
+      "scene": {
+        "key": "huerto",
+        "intro": "En el huerto del colegio"
+      }
+    },
+    {
+      "id": "medidas-longitud-biblioteca",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la biblioteca",
+      "scene": {
+        "key": "biblioteca",
+        "intro": "En la biblioteca"
+      }
+    },
+    {
+      "id": "medidas-longitud-pintura",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de pintura",
+      "scene": {
+        "key": "pintura",
+        "intro": "En el taller de pintura"
+      }
+    },
+    {
+      "id": "medidas-longitud-teatro",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el grupo de teatro",
+      "scene": {
+        "key": "teatro",
+        "intro": "En el grupo de teatro"
+      }
+    },
+    {
+      "id": "medidas-longitud-cocina",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de cocina",
+      "scene": {
+        "key": "cocina",
+        "intro": "En el taller de cocina"
+      }
+    },
+    {
+      "id": "medidas-longitud-deporte",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el club de deporte",
+      "scene": {
+        "key": "deporte",
+        "intro": "En el club de deporte"
+      }
+    },
+    {
+      "id": "medidas-longitud-campamento",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el campamento",
+      "scene": {
+        "key": "campamento",
+        "intro": "En el campamento"
+      }
+    },
+    {
+      "id": "medidas-longitud-ciencia",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la clase de ciencias",
+      "scene": {
+        "key": "ciencia",
+        "intro": "En la clase de ciencias"
+      }
+    },
+    {
+      "id": "medidas-longitud-manualidades",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de manualidades",
+      "scene": {
+        "key": "manualidades",
+        "intro": "En el taller de manualidades"
+      }
+    },
+    {
+      "id": "medidas-longitud-musica",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la escuela de música",
+      "scene": {
+        "key": "musica",
+        "intro": "En la escuela de música"
+      }
+    },
+    {
+      "id": "medidas-longitud-jardin",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el jardín del colegio",
+      "scene": {
+        "key": "jardin",
+        "intro": "En el jardín del colegio"
+      }
+    },
+    {
+      "id": "medidas-longitud-reciclaje",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de reciclaje",
+      "scene": {
+        "key": "reciclaje",
+        "intro": "En el taller de reciclaje"
+      }
+    },
+    {
+      "id": "medidas-longitud-fiesta",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la fiesta del colegio",
+      "scene": {
+        "key": "fiesta",
+        "intro": "En la fiesta del colegio"
+      }
+    },
+    {
+      "id": "medidas-longitud-excursion",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la salida de la clase",
+      "scene": {
+        "key": "excursion",
+        "intro": "En la salida de la clase"
+      }
+    },
+    {
+      "id": "medidas-longitud-robotica",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de robótica",
+      "scene": {
+        "key": "robotica",
+        "intro": "En el taller de robótica"
+      }
+    },
+    {
+      "id": "medidas-longitud-astronomia",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el club de astronomía",
+      "scene": {
+        "key": "astronomia",
+        "intro": "En el club de astronomía"
+      }
+    },
+    {
+      "id": "medidas-longitud-lectura",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el club de lectura",
+      "scene": {
+        "key": "lectura",
+        "intro": "En el club de lectura"
+      }
+    },
+    {
+      "id": "medidas-longitud-ceramica",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de cerámica",
+      "scene": {
+        "key": "ceramica",
+        "intro": "En el taller de cerámica"
+      }
+    },
+    {
+      "id": "medidas-longitud-cometas",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de cometas",
+      "scene": {
+        "key": "cometas",
+        "intro": "En el taller de cometas"
+      }
+    },
+    {
+      "id": "medidas-longitud-granja",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la granja escuela",
+      "scene": {
+        "key": "granja",
+        "intro": "En la granja escuela"
+      }
+    },
+    {
+      "id": "medidas-longitud-museo",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller del museo",
+      "scene": {
+        "key": "museo",
+        "intro": "En el taller del museo"
+      }
+    },
+    {
+      "id": "medidas-longitud-acuario",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller del acuario",
+      "scene": {
+        "key": "acuario",
+        "intro": "En el taller del acuario"
+      }
+    },
+    {
+      "id": "medidas-longitud-solidaridad",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la jornada solidaria",
+      "scene": {
+        "key": "solidaridad",
+        "intro": "En la jornada solidaria"
+      }
+    },
+    {
+      "id": "medidas-longitud-fotografia",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de fotografía",
+      "scene": {
+        "key": "fotografia",
+        "intro": "En el taller de fotografía"
+      }
+    },
+    {
+      "id": "medidas-longitud-cine",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de cine",
+      "scene": {
+        "key": "cine",
+        "intro": "En el taller de cine"
+      }
+    },
+    {
+      "id": "medidas-longitud-radio",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de radio escolar",
+      "scene": {
+        "key": "radio",
+        "intro": "En el taller de radio escolar"
+      }
+    },
+    {
+      "id": "medidas-longitud-circo",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de circo",
+      "scene": {
+        "key": "circo",
+        "intro": "En el taller de circo"
+      }
+    },
+    {
+      "id": "medidas-longitud-danza",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la escuela de danza",
+      "scene": {
+        "key": "danza",
+        "intro": "En la escuela de danza"
+      }
+    },
+    {
+      "id": "medidas-longitud-ajedrez",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el club de ajedrez",
+      "scene": {
+        "key": "ajedrez",
+        "intro": "En el club de ajedrez"
+      }
+    },
+    {
+      "id": "medidas-longitud-naturaleza",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el aula de naturaleza",
+      "scene": {
+        "key": "naturaleza",
+        "intro": "En el aula de naturaleza"
+      }
+    },
+    {
+      "id": "medidas-longitud-verano",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la escuela de verano",
+      "scene": {
+        "key": "verano",
+        "intro": "En la escuela de verano"
+      }
+    },
+    {
+      "id": "medidas-longitud-inventos",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de inventos",
+      "scene": {
+        "key": "inventos",
+        "intro": "En el taller de inventos"
+      }
+    },
+    {
+      "id": "medidas-longitud-papel",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de papel",
+      "scene": {
+        "key": "papel",
+        "intro": "En el taller de papel"
+      }
+    },
+    {
+      "id": "medidas-longitud-decoracion",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de decoración",
+      "scene": {
+        "key": "decoracion",
+        "intro": "En el taller de decoración"
+      }
+    },
+    {
+      "id": "medidas-longitud-artesania",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el taller de artesanía",
+      "scene": {
+        "key": "artesania",
+        "intro": "En el taller de artesanía"
+      }
+    },
+    {
+      "id": "medidas-longitud-barrio",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En el centro cultural del barrio",
+      "scene": {
+        "key": "barrio",
+        "intro": "En el centro cultural del barrio"
+      }
+    },
+    {
+      "id": "medidas-longitud-familias",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la jornada de las familias",
+      "scene": {
+        "key": "familias",
+        "intro": "En la jornada de las familias"
+      }
+    },
+    {
+      "id": "medidas-longitud-cooperativa",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la cooperativa escolar",
+      "scene": {
+        "key": "cooperativa",
+        "intro": "En la cooperativa escolar"
+      }
+    },
+    {
+      "id": "medidas-longitud-convivencia",
+      "family": "medidas",
+      "type": "longitud",
+      "title": "Longitud: En la jornada de convivencia",
+      "scene": {
+        "key": "convivencia",
+        "intro": "En la jornada de convivencia"
+      }
+    },
+    {
+      "id": "medidas-masa-costura",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de costura",
+      "scene": {
+        "key": "costura",
+        "intro": "En el taller de costura"
+      }
+    },
+    {
+      "id": "medidas-masa-huerto",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el huerto del colegio",
+      "scene": {
+        "key": "huerto",
+        "intro": "En el huerto del colegio"
+      }
+    },
+    {
+      "id": "medidas-masa-biblioteca",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la biblioteca",
+      "scene": {
+        "key": "biblioteca",
+        "intro": "En la biblioteca"
+      }
+    },
+    {
+      "id": "medidas-masa-pintura",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de pintura",
+      "scene": {
+        "key": "pintura",
+        "intro": "En el taller de pintura"
+      }
+    },
+    {
+      "id": "medidas-masa-teatro",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el grupo de teatro",
+      "scene": {
+        "key": "teatro",
+        "intro": "En el grupo de teatro"
+      }
+    },
+    {
+      "id": "medidas-masa-cocina",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de cocina",
+      "scene": {
+        "key": "cocina",
+        "intro": "En el taller de cocina"
+      }
+    },
+    {
+      "id": "medidas-masa-deporte",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el club de deporte",
+      "scene": {
+        "key": "deporte",
+        "intro": "En el club de deporte"
+      }
+    },
+    {
+      "id": "medidas-masa-campamento",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el campamento",
+      "scene": {
+        "key": "campamento",
+        "intro": "En el campamento"
+      }
+    },
+    {
+      "id": "medidas-masa-ciencia",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la clase de ciencias",
+      "scene": {
+        "key": "ciencia",
+        "intro": "En la clase de ciencias"
+      }
+    },
+    {
+      "id": "medidas-masa-manualidades",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de manualidades",
+      "scene": {
+        "key": "manualidades",
+        "intro": "En el taller de manualidades"
+      }
+    },
+    {
+      "id": "medidas-masa-musica",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la escuela de música",
+      "scene": {
+        "key": "musica",
+        "intro": "En la escuela de música"
+      }
+    },
+    {
+      "id": "medidas-masa-jardin",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el jardín del colegio",
+      "scene": {
+        "key": "jardin",
+        "intro": "En el jardín del colegio"
+      }
+    },
+    {
+      "id": "medidas-masa-reciclaje",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de reciclaje",
+      "scene": {
+        "key": "reciclaje",
+        "intro": "En el taller de reciclaje"
+      }
+    },
+    {
+      "id": "medidas-masa-fiesta",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la fiesta del colegio",
+      "scene": {
+        "key": "fiesta",
+        "intro": "En la fiesta del colegio"
+      }
+    },
+    {
+      "id": "medidas-masa-excursion",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la salida de la clase",
+      "scene": {
+        "key": "excursion",
+        "intro": "En la salida de la clase"
+      }
+    },
+    {
+      "id": "medidas-masa-robotica",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de robótica",
+      "scene": {
+        "key": "robotica",
+        "intro": "En el taller de robótica"
+      }
+    },
+    {
+      "id": "medidas-masa-astronomia",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el club de astronomía",
+      "scene": {
+        "key": "astronomia",
+        "intro": "En el club de astronomía"
+      }
+    },
+    {
+      "id": "medidas-masa-lectura",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el club de lectura",
+      "scene": {
+        "key": "lectura",
+        "intro": "En el club de lectura"
+      }
+    },
+    {
+      "id": "medidas-masa-ceramica",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de cerámica",
+      "scene": {
+        "key": "ceramica",
+        "intro": "En el taller de cerámica"
+      }
+    },
+    {
+      "id": "medidas-masa-cometas",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de cometas",
+      "scene": {
+        "key": "cometas",
+        "intro": "En el taller de cometas"
+      }
+    },
+    {
+      "id": "medidas-masa-granja",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la granja escuela",
+      "scene": {
+        "key": "granja",
+        "intro": "En la granja escuela"
+      }
+    },
+    {
+      "id": "medidas-masa-museo",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller del museo",
+      "scene": {
+        "key": "museo",
+        "intro": "En el taller del museo"
+      }
+    },
+    {
+      "id": "medidas-masa-acuario",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller del acuario",
+      "scene": {
+        "key": "acuario",
+        "intro": "En el taller del acuario"
+      }
+    },
+    {
+      "id": "medidas-masa-solidaridad",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la jornada solidaria",
+      "scene": {
+        "key": "solidaridad",
+        "intro": "En la jornada solidaria"
+      }
+    },
+    {
+      "id": "medidas-masa-fotografia",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de fotografía",
+      "scene": {
+        "key": "fotografia",
+        "intro": "En el taller de fotografía"
+      }
+    },
+    {
+      "id": "medidas-masa-cine",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de cine",
+      "scene": {
+        "key": "cine",
+        "intro": "En el taller de cine"
+      }
+    },
+    {
+      "id": "medidas-masa-radio",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de radio escolar",
+      "scene": {
+        "key": "radio",
+        "intro": "En el taller de radio escolar"
+      }
+    },
+    {
+      "id": "medidas-masa-circo",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de circo",
+      "scene": {
+        "key": "circo",
+        "intro": "En el taller de circo"
+      }
+    },
+    {
+      "id": "medidas-masa-danza",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la escuela de danza",
+      "scene": {
+        "key": "danza",
+        "intro": "En la escuela de danza"
+      }
+    },
+    {
+      "id": "medidas-masa-ajedrez",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el club de ajedrez",
+      "scene": {
+        "key": "ajedrez",
+        "intro": "En el club de ajedrez"
+      }
+    },
+    {
+      "id": "medidas-masa-naturaleza",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el aula de naturaleza",
+      "scene": {
+        "key": "naturaleza",
+        "intro": "En el aula de naturaleza"
+      }
+    },
+    {
+      "id": "medidas-masa-verano",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la escuela de verano",
+      "scene": {
+        "key": "verano",
+        "intro": "En la escuela de verano"
+      }
+    },
+    {
+      "id": "medidas-masa-inventos",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de inventos",
+      "scene": {
+        "key": "inventos",
+        "intro": "En el taller de inventos"
+      }
+    },
+    {
+      "id": "medidas-masa-papel",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de papel",
+      "scene": {
+        "key": "papel",
+        "intro": "En el taller de papel"
+      }
+    },
+    {
+      "id": "medidas-masa-decoracion",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de decoración",
+      "scene": {
+        "key": "decoracion",
+        "intro": "En el taller de decoración"
+      }
+    },
+    {
+      "id": "medidas-masa-artesania",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el taller de artesanía",
+      "scene": {
+        "key": "artesania",
+        "intro": "En el taller de artesanía"
+      }
+    },
+    {
+      "id": "medidas-masa-barrio",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En el centro cultural del barrio",
+      "scene": {
+        "key": "barrio",
+        "intro": "En el centro cultural del barrio"
+      }
+    },
+    {
+      "id": "medidas-masa-familias",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la jornada de las familias",
+      "scene": {
+        "key": "familias",
+        "intro": "En la jornada de las familias"
+      }
+    },
+    {
+      "id": "medidas-masa-cooperativa",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la cooperativa escolar",
+      "scene": {
+        "key": "cooperativa",
+        "intro": "En la cooperativa escolar"
+      }
+    },
+    {
+      "id": "medidas-masa-convivencia",
+      "family": "medidas",
+      "type": "masa",
+      "title": "Masa: En la jornada de convivencia",
+      "scene": {
+        "key": "convivencia",
+        "intro": "En la jornada de convivencia"
+      }
+    },
+    {
+      "id": "medidas-capacidad-costura",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de costura",
+      "scene": {
+        "key": "costura",
+        "intro": "En el taller de costura"
+      }
+    },
+    {
+      "id": "medidas-capacidad-huerto",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el huerto del colegio",
+      "scene": {
+        "key": "huerto",
+        "intro": "En el huerto del colegio"
+      }
+    },
+    {
+      "id": "medidas-capacidad-biblioteca",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la biblioteca",
+      "scene": {
+        "key": "biblioteca",
+        "intro": "En la biblioteca"
+      }
+    },
+    {
+      "id": "medidas-capacidad-pintura",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de pintura",
+      "scene": {
+        "key": "pintura",
+        "intro": "En el taller de pintura"
+      }
+    },
+    {
+      "id": "medidas-capacidad-teatro",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el grupo de teatro",
+      "scene": {
+        "key": "teatro",
+        "intro": "En el grupo de teatro"
+      }
+    },
+    {
+      "id": "medidas-capacidad-cocina",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de cocina",
+      "scene": {
+        "key": "cocina",
+        "intro": "En el taller de cocina"
+      }
+    },
+    {
+      "id": "medidas-capacidad-deporte",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el club de deporte",
+      "scene": {
+        "key": "deporte",
+        "intro": "En el club de deporte"
+      }
+    },
+    {
+      "id": "medidas-capacidad-campamento",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el campamento",
+      "scene": {
+        "key": "campamento",
+        "intro": "En el campamento"
+      }
+    },
+    {
+      "id": "medidas-capacidad-ciencia",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la clase de ciencias",
+      "scene": {
+        "key": "ciencia",
+        "intro": "En la clase de ciencias"
+      }
+    },
+    {
+      "id": "medidas-capacidad-manualidades",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de manualidades",
+      "scene": {
+        "key": "manualidades",
+        "intro": "En el taller de manualidades"
+      }
+    },
+    {
+      "id": "medidas-capacidad-musica",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la escuela de música",
+      "scene": {
+        "key": "musica",
+        "intro": "En la escuela de música"
+      }
+    },
+    {
+      "id": "medidas-capacidad-jardin",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el jardín del colegio",
+      "scene": {
+        "key": "jardin",
+        "intro": "En el jardín del colegio"
+      }
+    },
+    {
+      "id": "medidas-capacidad-reciclaje",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de reciclaje",
+      "scene": {
+        "key": "reciclaje",
+        "intro": "En el taller de reciclaje"
+      }
+    },
+    {
+      "id": "medidas-capacidad-fiesta",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la fiesta del colegio",
+      "scene": {
+        "key": "fiesta",
+        "intro": "En la fiesta del colegio"
+      }
+    },
+    {
+      "id": "medidas-capacidad-excursion",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la salida de la clase",
+      "scene": {
+        "key": "excursion",
+        "intro": "En la salida de la clase"
+      }
+    },
+    {
+      "id": "medidas-capacidad-robotica",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de robótica",
+      "scene": {
+        "key": "robotica",
+        "intro": "En el taller de robótica"
+      }
+    },
+    {
+      "id": "medidas-capacidad-astronomia",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el club de astronomía",
+      "scene": {
+        "key": "astronomia",
+        "intro": "En el club de astronomía"
+      }
+    },
+    {
+      "id": "medidas-capacidad-lectura",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el club de lectura",
+      "scene": {
+        "key": "lectura",
+        "intro": "En el club de lectura"
+      }
+    },
+    {
+      "id": "medidas-capacidad-ceramica",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de cerámica",
+      "scene": {
+        "key": "ceramica",
+        "intro": "En el taller de cerámica"
+      }
+    },
+    {
+      "id": "medidas-capacidad-cometas",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de cometas",
+      "scene": {
+        "key": "cometas",
+        "intro": "En el taller de cometas"
+      }
+    },
+    {
+      "id": "medidas-capacidad-granja",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la granja escuela",
+      "scene": {
+        "key": "granja",
+        "intro": "En la granja escuela"
+      }
+    },
+    {
+      "id": "medidas-capacidad-museo",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller del museo",
+      "scene": {
+        "key": "museo",
+        "intro": "En el taller del museo"
+      }
+    },
+    {
+      "id": "medidas-capacidad-acuario",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller del acuario",
+      "scene": {
+        "key": "acuario",
+        "intro": "En el taller del acuario"
+      }
+    },
+    {
+      "id": "medidas-capacidad-solidaridad",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la jornada solidaria",
+      "scene": {
+        "key": "solidaridad",
+        "intro": "En la jornada solidaria"
+      }
+    },
+    {
+      "id": "medidas-capacidad-fotografia",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de fotografía",
+      "scene": {
+        "key": "fotografia",
+        "intro": "En el taller de fotografía"
+      }
+    },
+    {
+      "id": "medidas-capacidad-cine",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de cine",
+      "scene": {
+        "key": "cine",
+        "intro": "En el taller de cine"
+      }
+    },
+    {
+      "id": "medidas-capacidad-radio",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de radio escolar",
+      "scene": {
+        "key": "radio",
+        "intro": "En el taller de radio escolar"
+      }
+    },
+    {
+      "id": "medidas-capacidad-circo",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de circo",
+      "scene": {
+        "key": "circo",
+        "intro": "En el taller de circo"
+      }
+    },
+    {
+      "id": "medidas-capacidad-danza",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la escuela de danza",
+      "scene": {
+        "key": "danza",
+        "intro": "En la escuela de danza"
+      }
+    },
+    {
+      "id": "medidas-capacidad-ajedrez",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el club de ajedrez",
+      "scene": {
+        "key": "ajedrez",
+        "intro": "En el club de ajedrez"
+      }
+    },
+    {
+      "id": "medidas-capacidad-naturaleza",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el aula de naturaleza",
+      "scene": {
+        "key": "naturaleza",
+        "intro": "En el aula de naturaleza"
+      }
+    },
+    {
+      "id": "medidas-capacidad-verano",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la escuela de verano",
+      "scene": {
+        "key": "verano",
+        "intro": "En la escuela de verano"
+      }
+    },
+    {
+      "id": "medidas-capacidad-inventos",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de inventos",
+      "scene": {
+        "key": "inventos",
+        "intro": "En el taller de inventos"
+      }
+    },
+    {
+      "id": "medidas-capacidad-papel",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de papel",
+      "scene": {
+        "key": "papel",
+        "intro": "En el taller de papel"
+      }
+    },
+    {
+      "id": "medidas-capacidad-decoracion",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de decoración",
+      "scene": {
+        "key": "decoracion",
+        "intro": "En el taller de decoración"
+      }
+    },
+    {
+      "id": "medidas-capacidad-artesania",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el taller de artesanía",
+      "scene": {
+        "key": "artesania",
+        "intro": "En el taller de artesanía"
+      }
+    },
+    {
+      "id": "medidas-capacidad-barrio",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En el centro cultural del barrio",
+      "scene": {
+        "key": "barrio",
+        "intro": "En el centro cultural del barrio"
+      }
+    },
+    {
+      "id": "medidas-capacidad-familias",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la jornada de las familias",
+      "scene": {
+        "key": "familias",
+        "intro": "En la jornada de las familias"
+      }
+    },
+    {
+      "id": "medidas-capacidad-cooperativa",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la cooperativa escolar",
+      "scene": {
+        "key": "cooperativa",
+        "intro": "En la cooperativa escolar"
+      }
+    },
+    {
+      "id": "medidas-capacidad-convivencia",
+      "family": "medidas",
+      "type": "capacidad",
+      "title": "Capacidad: En la jornada de convivencia",
+      "scene": {
+        "key": "convivencia",
+        "intro": "En la jornada de convivencia"
+      }
+    },
+    {
+      "id": "medidas-tiempo-costura",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de costura",
+      "scene": {
+        "key": "costura",
+        "intro": "En el taller de costura"
+      }
+    },
+    {
+      "id": "medidas-tiempo-huerto",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el huerto del colegio",
+      "scene": {
+        "key": "huerto",
+        "intro": "En el huerto del colegio"
+      }
+    },
+    {
+      "id": "medidas-tiempo-biblioteca",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la biblioteca",
+      "scene": {
+        "key": "biblioteca",
+        "intro": "En la biblioteca"
+      }
+    },
+    {
+      "id": "medidas-tiempo-pintura",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de pintura",
+      "scene": {
+        "key": "pintura",
+        "intro": "En el taller de pintura"
+      }
+    },
+    {
+      "id": "medidas-tiempo-teatro",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el grupo de teatro",
+      "scene": {
+        "key": "teatro",
+        "intro": "En el grupo de teatro"
+      }
+    },
+    {
+      "id": "medidas-tiempo-cocina",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de cocina",
+      "scene": {
+        "key": "cocina",
+        "intro": "En el taller de cocina"
+      }
+    },
+    {
+      "id": "medidas-tiempo-deporte",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el club de deporte",
+      "scene": {
+        "key": "deporte",
+        "intro": "En el club de deporte"
+      }
+    },
+    {
+      "id": "medidas-tiempo-campamento",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el campamento",
+      "scene": {
+        "key": "campamento",
+        "intro": "En el campamento"
+      }
+    },
+    {
+      "id": "medidas-tiempo-ciencia",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la clase de ciencias",
+      "scene": {
+        "key": "ciencia",
+        "intro": "En la clase de ciencias"
+      }
+    },
+    {
+      "id": "medidas-tiempo-manualidades",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de manualidades",
+      "scene": {
+        "key": "manualidades",
+        "intro": "En el taller de manualidades"
+      }
+    },
+    {
+      "id": "medidas-tiempo-musica",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la escuela de música",
+      "scene": {
+        "key": "musica",
+        "intro": "En la escuela de música"
+      }
+    },
+    {
+      "id": "medidas-tiempo-jardin",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el jardín del colegio",
+      "scene": {
+        "key": "jardin",
+        "intro": "En el jardín del colegio"
+      }
+    },
+    {
+      "id": "medidas-tiempo-reciclaje",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de reciclaje",
+      "scene": {
+        "key": "reciclaje",
+        "intro": "En el taller de reciclaje"
+      }
+    },
+    {
+      "id": "medidas-tiempo-fiesta",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la fiesta del colegio",
+      "scene": {
+        "key": "fiesta",
+        "intro": "En la fiesta del colegio"
+      }
+    },
+    {
+      "id": "medidas-tiempo-excursion",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la salida de la clase",
+      "scene": {
+        "key": "excursion",
+        "intro": "En la salida de la clase"
+      }
+    },
+    {
+      "id": "medidas-tiempo-robotica",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de robótica",
+      "scene": {
+        "key": "robotica",
+        "intro": "En el taller de robótica"
+      }
+    },
+    {
+      "id": "medidas-tiempo-astronomia",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el club de astronomía",
+      "scene": {
+        "key": "astronomia",
+        "intro": "En el club de astronomía"
+      }
+    },
+    {
+      "id": "medidas-tiempo-lectura",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el club de lectura",
+      "scene": {
+        "key": "lectura",
+        "intro": "En el club de lectura"
+      }
+    },
+    {
+      "id": "medidas-tiempo-ceramica",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de cerámica",
+      "scene": {
+        "key": "ceramica",
+        "intro": "En el taller de cerámica"
+      }
+    },
+    {
+      "id": "medidas-tiempo-cometas",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de cometas",
+      "scene": {
+        "key": "cometas",
+        "intro": "En el taller de cometas"
+      }
+    },
+    {
+      "id": "medidas-tiempo-granja",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la granja escuela",
+      "scene": {
+        "key": "granja",
+        "intro": "En la granja escuela"
+      }
+    },
+    {
+      "id": "medidas-tiempo-museo",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller del museo",
+      "scene": {
+        "key": "museo",
+        "intro": "En el taller del museo"
+      }
+    },
+    {
+      "id": "medidas-tiempo-acuario",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller del acuario",
+      "scene": {
+        "key": "acuario",
+        "intro": "En el taller del acuario"
+      }
+    },
+    {
+      "id": "medidas-tiempo-solidaridad",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la jornada solidaria",
+      "scene": {
+        "key": "solidaridad",
+        "intro": "En la jornada solidaria"
+      }
+    },
+    {
+      "id": "medidas-tiempo-fotografia",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de fotografía",
+      "scene": {
+        "key": "fotografia",
+        "intro": "En el taller de fotografía"
+      }
+    },
+    {
+      "id": "medidas-tiempo-cine",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de cine",
+      "scene": {
+        "key": "cine",
+        "intro": "En el taller de cine"
+      }
+    },
+    {
+      "id": "medidas-tiempo-radio",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de radio escolar",
+      "scene": {
+        "key": "radio",
+        "intro": "En el taller de radio escolar"
+      }
+    },
+    {
+      "id": "medidas-tiempo-circo",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de circo",
+      "scene": {
+        "key": "circo",
+        "intro": "En el taller de circo"
+      }
+    },
+    {
+      "id": "medidas-tiempo-danza",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la escuela de danza",
+      "scene": {
+        "key": "danza",
+        "intro": "En la escuela de danza"
+      }
+    },
+    {
+      "id": "medidas-tiempo-ajedrez",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el club de ajedrez",
+      "scene": {
+        "key": "ajedrez",
+        "intro": "En el club de ajedrez"
+      }
+    },
+    {
+      "id": "medidas-tiempo-naturaleza",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el aula de naturaleza",
+      "scene": {
+        "key": "naturaleza",
+        "intro": "En el aula de naturaleza"
+      }
+    },
+    {
+      "id": "medidas-tiempo-verano",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la escuela de verano",
+      "scene": {
+        "key": "verano",
+        "intro": "En la escuela de verano"
+      }
+    },
+    {
+      "id": "medidas-tiempo-inventos",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de inventos",
+      "scene": {
+        "key": "inventos",
+        "intro": "En el taller de inventos"
+      }
+    },
+    {
+      "id": "medidas-tiempo-papel",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de papel",
+      "scene": {
+        "key": "papel",
+        "intro": "En el taller de papel"
+      }
+    },
+    {
+      "id": "medidas-tiempo-decoracion",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de decoración",
+      "scene": {
+        "key": "decoracion",
+        "intro": "En el taller de decoración"
+      }
+    },
+    {
+      "id": "medidas-tiempo-artesania",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el taller de artesanía",
+      "scene": {
+        "key": "artesania",
+        "intro": "En el taller de artesanía"
+      }
+    },
+    {
+      "id": "medidas-tiempo-barrio",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En el centro cultural del barrio",
+      "scene": {
+        "key": "barrio",
+        "intro": "En el centro cultural del barrio"
+      }
+    },
+    {
+      "id": "medidas-tiempo-familias",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la jornada de las familias",
+      "scene": {
+        "key": "familias",
+        "intro": "En la jornada de las familias"
+      }
+    },
+    {
+      "id": "medidas-tiempo-cooperativa",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la cooperativa escolar",
+      "scene": {
+        "key": "cooperativa",
+        "intro": "En la cooperativa escolar"
+      }
+    },
+    {
+      "id": "medidas-tiempo-convivencia",
+      "family": "medidas",
+      "type": "tiempo",
+      "title": "Tiempo: En la jornada de convivencia",
+      "scene": {
+        "key": "convivencia",
+        "intro": "En la jornada de convivencia"
+      }
+    }
+  ]
+}

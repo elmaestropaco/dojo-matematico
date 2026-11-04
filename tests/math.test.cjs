@@ -12,6 +12,7 @@ vm.runInContext(source.replace(/^init\(\);/m, '') + '\nglobalThis.gameState = st
 const state = context.gameState;
 vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'problemas.js'), 'utf8'), context);
 vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'matematicas-extra.js'), 'utf8'), context);
+for (const file of ['porcentajes.js', 'magnitudes.js', 'geometria.js', 'ampliacion.js', 'seguimiento.js']) vm.runInContext(fs.readFileSync(path.join(__dirname, '..', file), 'utf8'), context);
 const fraction = (n, d) => ({ numerator: String(n), denominator: String(d) });
 const teachingProblem = { answerExact: '5', solutionRevealed: true, problem: {
   title: 'Lectura y explicacion', text: 'Hay 2 libros y llegan 3. Cuantos hay?', compactText: 'Hay 2 libros y llegan 3. Cuantos hay?',

@@ -25,7 +25,12 @@ const OPERATION_LABELS = {
   sqrt: "Raíces cuadradas exactas",
   primeFactors: "Descomposición en factores primos",
   mcm: "Mínimo común múltiplo",
-  mcd: "Máximo común divisor"
+  mcd: "Máximo común divisor",
+  convertLength: "Conversión de longitud",
+  convertMass: "Conversión de masa",
+  convertCapacity: "Conversión de capacidad",
+  convertTime: "Conversión de tiempo",
+  missing: 'Completar huecos', compare: 'Comparar cantidades', power: 'Potencias', round: 'Redondeo'
 };
 
 const SCORE_MIN = 0;
@@ -57,6 +62,7 @@ const state = {
   isRunning: false,
   timeLeft: 60,
   gameDuration: 60,
+  endCondition: 'time', goalCount: 10, reviewErrors: [], finishing: false, roundCompleted: false,
   timerId: null,
   players: [],
   operationsByPlayer: new Map(),
@@ -86,7 +92,13 @@ const state = {
     sqrt: { enabled: false, digits: 2 },
     primeFactors: { enabled: false, digits: 2 },
     mcm: { enabled: false, digits: 2, count: 2 },
-    mcd: { enabled: false, digits: 2, count: 2 }
+    mcd: { enabled: false, digits: 2, count: 2 },
+    convertLength: { enabled: false, digits: 2, from: 0, to: 0 },
+    convertMass: { enabled: false, digits: 2, from: 0, to: 0 },
+    convertCapacity: { enabled: false, digits: 2, from: 0, to: 0 },
+    convertTime: { enabled: false, digits: 2, from: 0, to: 0 },
+    missing: { enabled: false, digits: 2, operator: 0 }, compare: { enabled: false, digits: 2, variant: 0 },
+    power: { enabled: false, digits: 2, exponentMax: 3 }, round: { enabled: false, digits: 2, place: 1 }
   },
   displayMode: "horizontal",
   streaksEnabled: true,
@@ -191,6 +203,7 @@ const onlineNameItems = [];
 init();
 
 function init() {
+  populateMeasureControls();
   document.querySelector('.hero-head').appendChild(document.querySelector('.theme-panel'));
   setupOnlineNamePanel();
   setupOnlineCreatePanel();
@@ -198,6 +211,7 @@ function init() {
   state.problemSettings = window.NinjaProblems.normalize(state.problemSettings);
   bindSettingsUI();
   bindKeyboardSupport();
+  bindLearningUI();
   applySavedTheme();
   initConsentManager();
   syncSettingsUIFromState();
@@ -208,9 +222,21 @@ function init() {
   window.addEventListener('resize', fitTeacherGrid);
 }
 
+function populateMeasureControls() {
+  const api = globalThis.NinjaUnits;
+  const emojis = { longitud: '📏', masa: '⚖️', capacidad: '🧪', tiempo: '⏱️' };
+  const unitOptions = kind => '<option value="0">Aleatoria</option>' + api.units[kind].map((u, i) => `<option value="${i + 1}">${u.plural} (${u.symbol})</option>`).join('');
+  const digitOptions = Array.from({ length: 9 }, (_, i) => `<option value="${i + 1}">${i + 1} cifra${i ? 's' : ''}</option>`).join('');
+  document.querySelectorAll('[data-measure-unit]').forEach(e => e.innerHTML = unitOptions(e.dataset.measureUnit));
+  document.getElementById('measureCategories').innerHTML = Object.keys(api.units).map(kind => `<details class="problem-category"><summary><span>${emojis[kind]} ${api.labels[kind]}</span></summary><div class="problem-category-body"><label class="measure-enable"><input type="checkbox" data-problem-extra="_measure_${kind}" checked /> Activar ${api.labels[kind].toLowerCase()}</label><div class="measure-fields"><label>De<select data-problem-extra="_measure_${kind}From">${unitOptions(kind)}</select></label><label>A<select data-problem-extra="_measure_${kind}To">${unitOptions(kind)}</select></label></div></div></details>`).join('');
+  document.querySelectorAll('[data-measure-digits]').forEach(e => e.innerHTML = digitOptions);
+}
+
 function bindSettingsUI() {
   document.querySelectorAll('[data-problem-extra]').forEach(control => control.addEventListener('change', () => {
     state.problemSettings[control.dataset.problemExtra] = control.type === 'checkbox' ? control.checked : control.value;
+    if (control.dataset.problemExtra === '_percentageMaxDigits' && Number(control.value) < Number(state.problemSettings._percentageMinDigits)) state.problemSettings._percentageMinDigits = control.value;
+    if (control.dataset.problemExtra === '_measureMaxDigits' && Number(control.value) < Number(state.problemSettings._measureMinDigits)) state.problemSettings._measureMinDigits = control.value;
     state.problemSettings = window.NinjaProblems.normalize(state.problemSettings);
     syncProblemControls();
     savePreferences();
@@ -480,8 +506,10 @@ function syncProblemControls() {
     else control.value = String(value);
   });
   document.querySelectorAll('[data-problem-families]').forEach(element => element.classList.toggle('hidden', !element.dataset.problemFamilies.split(' ').includes(family)));
+  document.getElementById('percentagePlacesWrap').classList.toggle('hidden', !state.problemSettings._percentageDecimals);
+  document.getElementById('measurePlacesWrap').classList.toggle('hidden', !state.problemSettings._measureDecimals);
   document.querySelectorAll('.problem-categories .problem-carry, .problem-categories .problem-digit-range, .problem-categories .problem-operand-range').forEach(element => element.classList.toggle('hidden', family !== 'enteros'));
-  document.querySelectorAll('.problem-category-body > label').forEach(element => element.classList.toggle('hidden', family !== 'enteros'));
+  document.querySelectorAll('.problem-categories .problem-category-body > label').forEach(element => element.classList.toggle('hidden', family !== 'enteros'));
   setActiveByData(".activity-btn", "activity", state.activity);
   refs.problemsBox.classList.toggle("hidden", !problems);
   refs.operationsBox.classList.toggle("hidden", problems);
@@ -490,6 +518,7 @@ function syncProblemControls() {
   refs.problemFontSelect.value = state.problemFont;
   refs.body.dataset.problemFont = state.problemFont;
   refs.problemFontBtn.classList.toggle("hidden", !problems || state.mode === "teacher");
+  refs.problemMixSelect.closest('label').classList.toggle('hidden', Boolean(globalThis.NinjaExpansion?.families[family]));
   refs.problemFontBtn.textContent = state.problemFont === "ligada" ? "Aa · Ligada" : "Aa · Imprenta";
   for (const control of document.querySelectorAll("[data-problem-key]")) {
     const base = state.problemSettings[control.dataset.problemKind];
@@ -510,7 +539,7 @@ function syncProblemControls() {
   const count = pool.length;
   const combinedCount = pool.filter(template => (template.etiquetas || template.categories).length > 1).length;
   const carryWarning = family === 'enteros' && state.problemSettings.resta.enabled && state.problemSettings.resta.carryMode === "con" && (state.problemSettings.resta.digitMode === "fijas" ? state.problemSettings.resta.minDigits : state.problemSettings.resta.maxDigits) === 1;
-  refs.problemsSummary.textContent = (count ? `✅ ${count} plantillas compatibles · Individuales: ${count - combinedCount} · Combinados: ${combinedCount}.` : "⚠️ Sin plantillas compatibles. Revisa los tipos seleccionados, cifras, dificultad o llevadas. Para combinar, marca al menos dos tipos.") + (carryWarning && state.problemMix === "individuales" ? " Las restas con llevadas necesitan al menos 2 cifras." : "");
+  refs.problemsSummary.textContent = (count ? `✅ ${count} ${['porcentajes', 'medidas'].includes(family) ? 'variantes' : 'plantillas'} compatibles · Individuales: ${count - combinedCount} · Combinados: ${combinedCount}.` : family === 'medidas' ? "⚠️ Sin problemas compatibles. Revisa las unidades, cifras y decimales. Para combinar, activa también una operación adicional." : family === 'porcentajes' ? "⚠️ Marca un tipo de porcentaje. Para combinar, activa también una operación adicional." : "⚠️ Sin plantillas compatibles. Revisa los tipos seleccionados, cifras, dificultad o llevadas. Para combinar, marca al menos dos tipos.") + (carryWarning && state.problemMix === "individuales" ? " Las restas con llevadas necesitan al menos 2 cifras." : "");
 }
 
 function applySavedTheme() {
@@ -589,6 +618,7 @@ function syncSettingsUIFromState() {
 }
 
 function updateOpsSummary() {
+  syncLearningControls();
   if (state.activity === "problemas") { syncProblemControls(); return; }
   const enabled = getEnabledOperationKeys();
   const names = enabled.map((k) => OPERATION_LABELS[k]);
@@ -598,6 +628,8 @@ function updateOpsSummary() {
   const penaltyTag = state.penalizeWrong ? " · ❌ fallo -5" : "";
   refs.opsSummary.textContent = `🧮 Operaciones (${enabled.length} activas): ${text}${decimalTag}${negativeTag}${penaltyTag}`;
   updateDivisionConfigHint();
+  const incompatible = Object.keys(globalThis.NinjaUnits.kinds).filter(key => state.operationSettings[key].enabled && !globalThis.NinjaUnits.pairs(globalThis.NinjaUnits.kinds[key], state.operationSettings[key], state.decimalsEnabled ? state.decimalPlaces : 0).length);
+  document.getElementById('conversionConfigHint').textContent = incompatible.length ? `⚠️ ${incompatible.map(key => OPERATION_LABELS[key]).join(', ')}: no hay conversiones exactas con esas unidades y cifras. Usa unidades distintas, aumenta las cifras o permite más decimales. Corrige estos ajustes antes de empezar.` : '';
   renderOpsChips(enabled);
 }
 
@@ -621,6 +653,10 @@ function renderOpsChips(enabledKeys) {
       : key === "percent" ? "📊"
       : key === "sqrt" ? "\u221A"
       : key === "primeFactors" ? "🧩"
+      : key === "convertMass" ? "⚖️"
+      : key === "convertCapacity" ? "🧪"
+      : key === "convertTime" ? "⏱️"
+      : key === "convertLength" ? "📏"
       : "➗";
     const chip = document.createElement("span");
     chip.className = "ops-chip";
@@ -643,6 +679,11 @@ function renderOpsChips(enabledKeys) {
 
 function formatOpConfigLabel(key, cfg) {
   if (!cfg) return "";
+  if (['missing', 'compare', 'power', 'round'].includes(key)) return `${cfg.digits} cifra${cfg.digits === 1 ? '' : 's'}`;
+  if (globalThis.NinjaUnits?.kinds[key]) {
+    const list = globalThis.NinjaUnits.units[globalThis.NinjaUnits.kinds[key]];
+    return `${cfg.digits} cifra${cfg.digits === 1 ? '' : 's'} · ${cfg.from ? list[cfg.from - 1]?.symbol : 'Aleatoria'} → ${cfg.to ? list[cfg.to - 1]?.symbol : 'Aleatoria'}`;
+  }
   if (key === "sqrt") return `Radicando: ${cfg.digits} cifra${cfg.digits > 1 ? "s" : ""}`;
   if (key === "primeFactors") return `Número: ${cfg.digits} cifra${cfg.digits > 1 ? "s" : ""}`;
   if (key === 'mcm' || key === 'mcd') return `${cfg.count} números distintos · ${cfg.digits} cifra${cfg.digits > 1 ? 's' : ''}`;
@@ -693,7 +734,16 @@ function updateDivisionConfigHint() {
   refs.divisionHint.textContent = "⚠️ Con esta combinación no hay enteras exactas. Activa 'decimales'.";
 }
 
+function ensureConversionSettings() {
+  if (state.activity !== 'problemas' && Object.entries(globalThis.NinjaUnits.kinds).some(([key, kind]) => state.operationSettings[key].enabled && !globalThis.NinjaUnits.pairs(kind, state.operationSettings[key], state.decimalsEnabled ? state.decimalPlaces : 0).length)) {
+    alert('Hay una conversión sin resultados exactos posibles. Revisa sus unidades, cifras y decimales antes de empezar.');
+    return false;
+  }
+  return true;
+}
+
 function startGame() {
+  if (!ensureConversionSettings()) return;
   const enabledKeys = getEnabledOperationKeys();
   if (enabledKeys.length === 0) {
     alert(state.activity === "problemas" ? "No hay problemas compatibles. Revisa categorías, cifras y dificultad." : "Activa al menos un tipo de operación para empezar.");
@@ -703,7 +753,7 @@ function startGame() {
   if (!ensureDecimalResultModeCompatibility()) return;
 
   const duration = getSelectedDurationSeconds();
-  if (duration < 5) {
+  if (state.endCondition === 'time' && duration < 5) {
     alert("El tiempo mínimo es 5 segundos.");
     return;
   }
@@ -789,6 +839,8 @@ async function createTeacherRoom(enabledKeys, duration) {
 }
 
 async function startHostedOnlineRoom() {
+  if (!ensureConversionSettings()) return;
+  if (state.endCondition === 'time' && getSelectedDurationSeconds() < 5) { alert('El tiempo mínimo es 5 segundos.'); return; }
   if (!state.online?.code || !state.online?.isHost || !window.NinjaOnline?.enabled) return;
   if (getEnabledOperationKeys().length === 0) {
     alert("No hay actividades compatibles. Revisa las operaciones o los ajustes de problemas.");
@@ -831,8 +883,19 @@ async function handleRematch() {
 }
 
 async function resetHostedOnlineRoom() {
+  captureLearningRound();
+  if (!ensureConversionSettings()) return;
+  if (state.endCondition === 'time' && getSelectedDurationSeconds() < 5) { alert('El tiempo mínimo es 5 segundos.'); return; }
+  if (state.resettingRoom) return;
+  state.resettingRoom = true;
   try {
-    const duration = getSelectedDurationSeconds() || state.gameDuration || state.online.durationSeconds || 60;
+    let finalRoom = await window.NinjaOnline.getRoom(state.online.code).catch(() => state.online.room);
+    if (finalRoom?.status === 'finished' && Object.values(finalRoom.players || {}).some(p => p.isConnected !== false && !p.isFinished)) {
+      await wait(400);
+      finalRoom = await window.NinjaOnline.getRoom(state.online.code).catch(() => finalRoom);
+    }
+    captureLearningRound(finalRoom);
+    const duration = state.endCondition === 'time' ? getSelectedDurationSeconds() || state.gameDuration || state.online.durationSeconds || 60 : 0;
     const config = buildOnlineConfig();
     await window.NinjaOnline.resetRoom(state.online.code, { config, durationSeconds: duration });
     state.online.config = config;
@@ -870,6 +933,8 @@ async function resetHostedOnlineRoom() {
     }
   } catch (error) {
     alert(formatOnlineError("No se pudo preparar la revancha", error));
+  } finally {
+    state.resettingRoom = false;
   }
 }
 
@@ -919,7 +984,7 @@ function updateFloatingRoomCode(code = state.online?.code) {
 
 async function joinOnlineRoom() {
   try {
-    const code = prompt("Código de sala:");
+    const code = prompt("Código seguro de sala (8 letras o números):");
     if (!code) return;
     const playerName = safeName(refs.player1Input.value, "Ninja");
     const ready = await window.NinjaOnline?.init();
@@ -933,9 +998,11 @@ async function joinOnlineRoom() {
     attachOnlineSession({
       code: joined.code,
       playerId: joined.playerId,
-      isHost: false,
+      isHost: joined.isHost === true,
+      isTeacher: joined.isTeacher === true,
       playerName
     });
+    if (joined.isTeacher) showTeacherDashboard();
   } catch (error) {
     alert(formatOnlineError("No se pudo unir a la sala", error));
   }
@@ -943,8 +1010,9 @@ async function joinOnlineRoom() {
 
 function formatOnlineError(prefix, error) {
   const message = error?.message || String(error || "Error desconocido");
+  if (/auth\/operation-not-allowed|configuration-not-found/i.test(error?.code || message)) return `${prefix}: activa Authentication > Métodos de acceso > Anónimo en Firebase y recarga la app.`;
   if (/permission denied/i.test(message)) {
-    return `${prefix}: Permission denied\n\nFirebase ha rechazado la operación. Revisa que hayas publicado en Realtime Database las reglas de firebase/database.rules.json y que la base de datos sea la del proyecto correcto.`;
+    return `${prefix}: acceso denegado. La sala puede haber caducado o el anfitrión puede haber retirado tu acceso. Usa la versión actual y un código seguro de 8 caracteres. El anfitrión debe tener Authentication anónima y las reglas actuales publicadas.`;
   }
   return `${prefix}: ${message}`;
 }
@@ -982,6 +1050,7 @@ function requiresDecimalResultMode() {
 
 function buildOnlineConfig() {
   return {
+    endCondition: state.endCondition, goalCount: state.goalCount,
     activity: state.activity,
     problemMix: state.problemMix,
     problemSettings: clonePlain(state.problemSettings),
@@ -1014,16 +1083,27 @@ function attachOnlineSession(session) {
 
   state.online.unsubscribe = window.NinjaOnline.subscribeRoom(session.code, (room) => {
     handleOnlineRoomUpdate(room);
+  }, error => {
+    if (state.online?.code !== session.code) return;
+    goHome(); alert(formatOnlineError('Se ha cerrado el acceso a esta sala', error));
+  });
+  const activeSession = state.online;
+  if (window.NinjaOnline.watchConnection) state.online.unsubscribeConnection = window.NinjaOnline.watchConnection(connected => {
+    if (state.online !== activeSession) return;
+    state.online.connected = connected; updateConnectionIndicator();
+    if (connected && activeSession.playerId) window.NinjaOnline.setPresence(activeSession.code, activeSession.playerId).catch(() => {});
   });
 }
 
 function detachOnlineSession(markOffline = true) {
   if (!state.online) return;
   if (typeof state.online.unsubscribe === "function") state.online.unsubscribe();
+  if (typeof state.online.unsubscribeConnection === 'function') state.online.unsubscribeConnection();
   if (markOffline && state.online.code && state.online.playerId && window.NinjaOnline?.enabled) {
-    window.NinjaOnline.updatePlayer(state.online.code, state.online.playerId, { isConnected: false }).catch(() => {});
+    window.NinjaOnline.updatePlayer(state.online.code, state.online.playerId, { isConnected: false }, state.online.room?.seed).catch(() => {});
   }
   state.online = null;
+  updateConnectionIndicator();
 }
 
 function handleOnlineRoomUpdate(room) {
@@ -1039,8 +1119,10 @@ function handleOnlineRoomUpdate(room) {
     }
   }
   state.online.durationSeconds = Number(room.durationSeconds || state.online.durationSeconds || 60);
+  if (state.online.isHost && room.status === 'finished') captureLearningRound(room);
 
   if (room.status === "lobby" && previousStatus && previousStatus !== "lobby") {
+    state.finishing = false; state.roundCompleted = false;
     stopTimer();
     stopEventSystem();
     state.isRunning = false;
@@ -1048,14 +1130,16 @@ function handleOnlineRoomUpdate(room) {
     state.online.active = false;
     state.online.teacherCountdown = false;
     state.online.teacherResultsShown = false;
+    state.online.completedRound = null;
     refs.startOverlay.classList.add("hidden");
     refs.resultsOverlay.classList.add("hidden");
     refs.body.classList.remove("game-running");
     if (state.online.isTeacher) showTeacherDashboard();
   }
 
-  if (room.status === "running" && !state.online.active) {
-    if (state.online.isTeacher) startTeacherMonitor(room);
+  if (room.status === "running" && !state.online.active && state.online.completedRound !== roundKey(room)) {
+    if (!state.online.isTeacher && room.players?.[state.online.playerId]?.isFinished) { state.online.completedRound = roundKey(room); showResults(); }
+    else if (state.online.isTeacher) startTeacherMonitor(room);
     else launchOnlineGame(room);
   }
 
@@ -1065,9 +1149,13 @@ function handleOnlineRoomUpdate(room) {
 
   if (room.status === "finished" && state.online.isTeacher) {
     renderTeacherDashboard(room);
-  } else if (room.status === "finished" && state.isRunning) {
+  } else if (room.status === "finished" && (state.isRunning || state.online.active)) {
     finishGame();
+  } else if (room.status === 'finished' && state.mode === 'online' && state.online.completedRound === roundKey(room)) {
+    showResults();
   }
+  const connected = Object.values(room.players || {}).filter(shouldShowOnlinePlayer);
+  if (room.status === 'running' && state.online.isHost && state.online.config?.endCondition && state.online.config.endCondition !== 'time' && connected.length && connected.every(p => p.isFinished)) window.NinjaOnline.finishRoom(state.online.code).catch(() => {});
 }
 
 function showTeacherDashboard() {
@@ -1098,9 +1186,11 @@ function showTeacherDashboard() {
   `;
   refs.teacherRace.innerHTML = "";
   refs.teacherGrid.innerHTML = "";
+  syncLearningControls();
 }
 
 function startTeacherMonitor(room) {
+  applyOnlineConfig(state.online.config || {});
   state.online.active = true;
   state.online.teacherCountdown = true;
   updateTeacherCreatePanel(false);
@@ -1113,14 +1203,16 @@ function startTeacherMonitor(room) {
   updateTeacherClockDisplay(null, "Cuenta atrás");
 
   runStartSequence(() => {
-    if (!state.online?.isTeacher) return;
+    if (!state.online?.isTeacher || state.online.room?.status === 'finished' || state.online.room?.status === 'lobby') return;
     state.online.teacherCountdown = false;
-    state.online.startedAt = Date.now();
+    state.online.startedAt = Number(room.startedAt || Date.now());
     state.timeLeft = state.gameDuration;
     state.isRunning = true;
+    syncLearningControls();
     updateTeacherClockDisplay(state.timeLeft);
 
     state.timerId = setInterval(() => {
+      if (state.endCondition !== 'time') { updateTeacherClockDisplay(null); return; }
       const elapsed = Math.floor((Date.now() - Number(state.online.startedAt || Date.now())) / 1000);
       state.timeLeft = Math.max(0, state.gameDuration - elapsed);
       updateTeacherClockDisplay(state.timeLeft);
@@ -1138,24 +1230,28 @@ function startTeacherMonitor(room) {
 }
 
 function launchOnlineGame(room) {
+  state.finishing = false; state.roundCompleted = false; state.isRunning = false; state.players = []; state.operationsByPlayer = new Map();
   hideOnlineHostLobby();
   updateFloatingRoomCode();
   applyOnlineConfig(state.online.config || {});
   state.online.active = true;
   state.online.seed = Number(room.seed || 1);
-  state.online.currentOperationIndex = 0;
-  state.online.correctCount = 0;
-  state.online.wrongCount = 0;
+  const saved = room.players?.[state.online.playerId] || {};
+  state.online.currentOperationIndex = Number(saved.operationIndex || 0);
+  state.online.correctCount = Number(saved.correctCount || 0);
+  state.online.wrongCount = Number(saved.wrongCount || 0);
 
   const totalDuration = Number(room.durationSeconds || state.online.durationSeconds || 60);
-  const elapsed = Number(room.startedAt) ? Math.floor((Date.now() - Number(room.startedAt)) / 1000) : 0;
-  const duration = Math.max(1, totalDuration - Math.max(0, elapsed));
   runStartSequence(() => {
-    launchGame(getEnabledOperationKeys(), duration);
+    if (!state.online || state.online.room?.status === 'finished' || state.online.room?.status === 'lobby') return;
+    const remaining = state.endCondition === 'time' ? Math.max(1, totalDuration - Math.max(0, Math.floor((Date.now() - Number(room.startedAt || Date.now())) / 1000))) : 0;
+    launchGame(getEnabledOperationKeys(), remaining);
   });
 }
 
 function applyOnlineConfig(config) {
+  state.endCondition = ['unlimited', 'questions', 'correct'].includes(config.endCondition) ? config.endCondition : 'time';
+  state.goalCount = clamp(Math.trunc(Number(config.goalCount)) || 10, 1, 1000);
   state.activity = config.activity === "problemas" ? "problemas" : "calculo";
   state.problemMix = ["combinados", "mixto"].includes(config.problemMix) ? config.problemMix : "individuales";
   if (config.problemSettings && window.NinjaProblems) state.problemSettings = window.NinjaProblems.normalize(config.problemSettings);
@@ -1260,7 +1356,7 @@ function fitTeacherGrid() {
 
 function renderTeacherDashboard(room) {
   if (!refs.teacherDashboard || refs.teacherDashboard.classList.contains("hidden")) return;
-  const isFinished = room.status === "finished" || (!state.online?.teacherCountdown && state.timeLeft <= 0 && !state.isRunning && state.online?.active);
+  const isFinished = room.status === "finished" || (state.endCondition === 'time' && !state.online?.teacherCountdown && state.timeLeft <= 0 && !state.isRunning && state.online?.active);
   const rawPlayers = Object.entries(room.players || {})
     .map(([id, player]) => ({ id, ...player }))
     .filter(shouldShowOnlinePlayer)
@@ -1332,7 +1428,7 @@ function renderTeacherDashboard(room) {
         <button class="remove-player-btn teacher-remove" type="button" data-remove-player="${escapeHtml(player.id)}" aria-label="Eliminar a ${escapeHtml(player.name || "Ninja")}">✕</button>
         <div class="teacher-card-top">
           <strong class="teacher-student-name" title="${escapeHtml(player.name || 'Ninja')}">${escapeHtml(player.name || "Ninja")}</strong>
-          <span class="teacher-medal" aria-label="Puesto ${rank}">${medal} <b class="teacher-rank">#${rank}</b></span>
+          <span class="teacher-medal" aria-label="Puesto ${rank}">${player.isFinished ? '🏁' : '🟢'} ${medal} <b class="teacher-rank">#${rank}</b></span>
           <span class="teacher-points">${Number(player.score || 0)} pts</span>
         </div>
         <div class="teacher-progress"><span style="width:${progressPct}%"></span></div>
@@ -1347,7 +1443,7 @@ function renderTeacherDashboard(room) {
   fitTeacherGrid();
   requestAnimationFrame(fitTeacherGrid);
 
-  if (isFinished && players.length > 0 && !state.online?.teacherResultsShown) {
+  if (isFinished && players.length > 0 && (!state.online?.teacherResultsShown || !refs.resultsOverlay.classList.contains('hidden'))) {
     state.online.teacherResultsShown = true;
     showTeacherPodiumResults(players);
   }
@@ -1414,6 +1510,7 @@ async function handleRemovePlayerClick(event) {
   event.stopPropagation();
   const playerId = button.getAttribute("data-remove-player");
   if (!playerId) return;
+  captureLearningRound();
   button.disabled = true;
   try {
     await window.NinjaOnline.removePlayer(state.online.code, playerId);
@@ -1441,6 +1538,7 @@ function lastResultText(result) {
 
 function updateTeacherClockDisplay(seconds = null, label = "Tiempo restante") {
   if (!refs.teacherClock) return;
+  if (state.endCondition !== 'time' && label === 'Tiempo restante') { refs.teacherClock.classList.remove('warning', 'danger', 'last-ten', 'waiting'); refs.teacherClock.innerHTML = `<span>${state.endCondition === 'unlimited' ? 'Sin tiempo' : 'Objetivo por alumno'}</span><strong>${state.endCondition === 'unlimited' ? 'Libre' : state.goalCount}</strong>`; return; }
   const hasSeconds = seconds !== null && Number.isFinite(Number(seconds));
   const safeSeconds = hasSeconds ? Math.max(0, Math.round(Number(seconds))) : null;
   const duration = Math.max(1, Number(state.gameDuration || state.online?.durationSeconds || 60));
@@ -1460,6 +1558,8 @@ function updateTeacherClockDisplay(seconds = null, label = "Tiempo restante") {
 }
 
 function launchGame(enabledKeys, duration) {
+  ['hintDialog', 'reviewDialog'].forEach(id => document.getElementById(id)?.close());
+  state.finishing = false; state.roundCompleted = false; state.reviewErrors = []; state.roundStartedAt = Date.now();
   state.problemIndex = 0;
   state.problemSeed = Math.floor(Math.random() * 2147483647);
   refs.body.classList.toggle("problems-running", state.activity === "problemas");
@@ -1486,11 +1586,23 @@ function launchGame(enabledKeys, duration) {
   updateFloatingRoomCode(state.mode === "online" ? state.online?.code : null);
 
   state.players = buildPlayersForMode();
+  state.players.forEach(p => { p.correctCount = 0; p.wrongCount = 0; p.resolvedCount = 0; p.learningStats = {}; });
+  if (state.mode === 'online' && state.online?.active) {
+    const saved = state.online.room?.players?.[state.online.playerId];
+    if (saved && state.players[0]) Object.assign(state.players[0], { name: saved.name || state.players[0].name, score: Number(saved.score || 0), correctCount: Number(saved.correctCount || 0), wrongCount: Number(saved.wrongCount || 0), resolvedCount: Number(saved.resolvedCount || 0), learningStats: clonePlain(saved.learningStats || {}) });
+  }
   renderArena();
   placeRouletteForMode();
   assignInitialOperations();
+  const resume = state.mode === 'online' ? state.online?.room?.players?.[state.online.playerId] : null;
+  if (resume?.pendingFollowUpFrom !== undefined && resume.pendingFollowUpFrom !== null) {
+    const parent = createOnlineOperation(Number(resume.pendingFollowUpFrom));
+    if (parent.followUp) state.operationsByPlayer.set(0, decorateOperation({ ...parent.followUp, parentOperationIndex: Number(resume.pendingFollowUpFrom) }));
+    repaintPlayers();
+  }
   updateTimerStyles();
   refs.matchBadge.textContent = buildMatchBadge(enabledKeys);
+  syncLearningControls();
 
   refs.duelLead.classList.toggle("hidden", state.mode !== "duel");
   if (state.mode === "duel") {
@@ -1502,6 +1614,7 @@ function launchGame(enabledKeys, duration) {
   if (state.streaksEnabled && state.mode !== "online" && state.activity !== "problemas") scheduleNextEvent();
 
   state.timerId = setInterval(() => {
+    if (state.endCondition !== 'time') { updatePanelTimersDisplay(); return; }
     state.timeLeft -= 1;
     const safeTime = Math.max(0, state.timeLeft);
     if (safeTime > 0 && safeTime <= 10) {
@@ -1546,6 +1659,7 @@ function runStartSequence(onFinish) {
 }
 
 function getSelectedDurationSeconds() {
+  if (state.endCondition !== 'time') return 0;
   const preset = refs.timePresetSelect.value;
   if (preset !== "custom") return Number(preset);
 
@@ -1587,7 +1701,7 @@ function renderArena() {
       <div class="player-head">
         <p class="player-name">${escapeHtml(player.name)}</p>
         <div class="player-score" id="score-${player.id}">Puntos: 0</div>
-        <button class="solution-btn" type="button" data-action="solution" data-player="${player.id}">💡 Ver solución</button>
+        <div class="learning-actions"><button class="hint-btn" type="button" data-action="hint" data-player="${player.id}" aria-label="Pistas progresivas">🧭<span> Pista</span></button><button class="solution-btn" type="button" data-action="solution" data-player="${player.id}">💡 Ver solución</button></div>
       </div>
       <div class="score-track"><div class="score-ninja" id="scoreNinja-${player.id}">🥷</div></div>
       <div class="score-label">🔴 0 · 🟢 250+</div>
@@ -1609,7 +1723,7 @@ function renderArena() {
     buildNumpad(panel.querySelector(`#numpad-${player.id}`), player.id);
   });
 
-  refs.playersWrap.querySelectorAll("button[data-action], .key-btn").forEach((button) => {
+  refs.playersWrap.querySelectorAll("button[data-action]").forEach((button) => {
     button.addEventListener("pointerdown", handleButtonAction);
   });
 
@@ -1624,6 +1738,14 @@ function updatePanelTimersDisplay() {
   const countdownProgress = clamp(state.timeLeft / 10, 0, 1);
 
   refs.playersWrap.querySelectorAll(".panel-timer").forEach((timerEl) => {
+    timerEl.dataset.mode = state.endCondition;
+    timerEl.title = state.endCondition === 'time' ? 'Tiempo restante' : state.endCondition === 'unlimited' ? 'Sin límite de tiempo' : state.endCondition === 'correct' ? 'Aciertos sin ver solución / objetivo' : 'Preguntas resueltas, con o sin solución / objetivo';
+    if (state.endCondition !== 'time') {
+      const player = state.players.find(p => String(p.id) === timerEl.id.split('-').at(-1));
+      const current = state.endCondition === 'correct' ? player?.correctCount || 0 : player?.resolvedCount || 0;
+      timerEl.textContent = state.endCondition === 'unlimited' ? 'Sin tiempo' : `${current}/${state.goalCount}`;
+      timerEl.classList.remove('warning', 'danger', 'last-ten'); timerEl.style.setProperty('--countdown-progress', '0'); return;
+    }
     timerEl.textContent = formatSeconds(safeTime);
     timerEl.classList.toggle("warning", ratio <= 0.33 && ratio > 0.16);
     timerEl.classList.toggle("danger", ratio <= 0.16);
@@ -1665,6 +1787,8 @@ function placeRouletteForMode() {
 }
 
 function buildNumpad(numpadEl, playerId) {
+  const comparison = Boolean(state.operationsByPlayer.get(playerId)?.comparison);
+  numpadEl.classList.toggle('comparison-input', comparison);
   const fractionsEnabled = (state.activity === 'problemas' && state.problemSettings._family === 'fracciones') || getEnabledOperationKeys().some((key) => FRACTION_OPERATION_KEYS.includes(key));
   const factorsEnabled = state.activity !== "problemas" && Boolean(state.operationSettings.primeFactors.enabled);
   numpadEl.classList.toggle("fraction-input", fractionsEnabled || factorsEnabled);
@@ -1677,6 +1801,7 @@ function buildNumpad(numpadEl, playerId) {
     const both = fractionsEnabled && factorsEnabled;
     keys = ["7", "8", "9", fractionsEnabled ? "/" : "x", "4", "5", "6", both ? "x" : DECIMAL_SEPARATOR, "1", "2", "3", ...(both ? [DECIMAL_SEPARATOR] : []), "0", ...(negatives ? ["-"] : [])];
   }
+  if (comparison) { keys = ['<', '=', '>']; numpadEl.classList.remove('fraction-input', 'with-negative'); }
   keys.forEach((key) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -1684,6 +1809,7 @@ function buildNumpad(numpadEl, playerId) {
     button.dataset.player = String(playerId);
     button.dataset.key = key;
     button.textContent = key === "x" ? "\u00D7" : key;
+    button.addEventListener('pointerdown', handleButtonAction);
     if (key === "/") button.title = "Fracción: también puedes pulsar F o :";
     if (key === "x") button.title = "Producto: también puedes pulsar X o *";
     numpadEl.appendChild(button);
@@ -1708,11 +1834,13 @@ function handleButtonAction(event) {
   }
 
   const action = button.dataset.action;
+  if (action === 'hint') { showProgressiveHint(player.id); return; }
   if (action === "solution") {
     const operation = state.operationsByPlayer.get(playerId);
     if (!operation) return;
     if (operation.solutionRevealed) advanceAssistedOperation(player);
     else {
+      globalThis.NinjaLearning.record(player, operation, 'solution');
       operation.solutionRevealed = true;
       player.streak = 0;
       player.input = "";
@@ -1735,6 +1863,7 @@ function handleButtonAction(event) {
 }
 
 function advanceAssistedOperation(player) {
+  player.resolvedCount = (player.resolvedCount || 0) + 1;
   player.input = "";
   player.streak = 0;
   if (state.mode === "online" && state.online?.active) {
@@ -1743,6 +1872,7 @@ function advanceAssistedOperation(player) {
   }
   generateNewOperationForPlayer(player.id, true);
   repaintPlayers();
+  checkLearningGoal(player);
 }
 
 function skipCurrentOperation(playerId) {
@@ -1760,6 +1890,7 @@ function skipCurrentOperation(playerId) {
   }
 
   player.score = Math.max(0, player.score - SKIP_PENALTY);
+  globalThis.NinjaLearning.record(player, state.operationsByPlayer.get(playerId), 'skip');
   player.streak = 0;
   player.input = "";
   flashPlayer(player.id, false);
@@ -1779,6 +1910,7 @@ function skipCurrentOperation(playerId) {
 function bindKeyboardSupport() {
   window.addEventListener("keydown", (event) => {
     if (!state.isRunning) return;
+    if (document.querySelector('dialog[open]')) return;
     if (event.ctrlKey || event.metaKey || event.altKey) return;
 
     const code = event.code || "";
@@ -1788,7 +1920,8 @@ function bindKeyboardSupport() {
     const player = state.players.find((p) => p.id === playerId);
     if (!player) return;
 
-    const inputKey = extractInputKey(event);
+    const comparison = state.operationsByPlayer.get(playerId)?.comparison;
+    const inputKey = comparison && isNumpad && ['NumpadSubtract', 'NumpadMultiply', 'NumpadAdd'].includes(code) ? ({ NumpadSubtract: '<', NumpadMultiply: '=', NumpadAdd: '>' })[code] : extractInputKey(event);
     if (inputKey !== null) {
       event.preventDefault();
       if (!appendInputChar(player, inputKey)) return;
@@ -1815,6 +1948,7 @@ function bindKeyboardSupport() {
 
 function appendInputChar(player, char) {
   if (!player || typeof char !== "string") return false;
+  if (/^[<=>]$/.test(char)) { if (!state.operationsByPlayer.get(player.id)?.comparison) return false; player.input = char; return true; }
   if (player.input.length >= MAX_INPUT_LENGTH) return false;
 
   if (char === "x") {
@@ -1852,6 +1986,7 @@ function appendInputChar(player, char) {
 function extractInputKey(event) {
   const key = event.key || "";
   const code = event.code || "";
+  if (/^[<=>]$/.test(key) || code === 'NumpadEqual') return code === 'NumpadEqual' ? '=' : key;
 
   if (/^[0-9]$/.test(key)) return key;
   if (key === "/" || key === ":" || key.toLowerCase() === "f" || code === "NumpadDivide") return "/";
@@ -1871,24 +2006,28 @@ function extractInputKey(event) {
 
 function submitPlayerAnswer(playerId) {
   if (!state.isRunning) return;
+  if (state.online?.connected === false) { showEventBanner('📡 Sin conexión. Espera a que se reconecte antes de responder.'); return; }
 
   const player = state.players.find((p) => p.id === playerId);
   const operation = state.operationsByPlayer.get(playerId);
-  if (!player || !operation || player.input === "") return;
+  if (!player || !operation) return;
   if (operation.solutionRevealed) {
     advanceAssistedOperation(player);
     return;
   }
+  if (player.input === '') return;
 
   const submittedAnswer = player.input;
   const numericInput = parsePlayerInput(player.input);
-  if (!operation.primeFactors && Number.isNaN(numericInput)) {
+  if (!operation.primeFactors && !operation.comparison && Number.isNaN(numericInput)) {
     player.input = "";
     repaintPlayerInput(player.id);
     return;
   }
 
   if (isCorrectOperationAnswer(submittedAnswer, operation)) {
+    player.correctCount = (player.correctCount || 0) + 1; player.resolvedCount = (player.resolvedCount || 0) + 1;
+    globalThis.NinjaLearning.record(player, operation, 'correct');
     player.score += getCorrectPoints(operation);
     player.streak += 1;
     player.input = "";
@@ -1906,6 +2045,9 @@ function submitPlayerAnswer(playerId) {
     }
     generateNewOperationForPlayer(player.id, true);
   } else {
+    player.wrongCount = (player.wrongCount || 0) + 1;
+    globalThis.NinjaLearning.record(player, operation, 'wrong');
+    if (!state.reviewErrors.some(e => e.playerId === player.id && e.operation.signature === operation.signature)) state.reviewErrors.push({ playerId: player.id, name: player.name, answer: submittedAnswer, operation: clonePlain(operation) });
     applyWrongOutcome(player);
     player.streak = 0;
     player.input = "";
@@ -1922,6 +2064,7 @@ function submitPlayerAnswer(playerId) {
   }
 
   repaintPlayers();
+  checkLearningGoal(player);
 }
 
 function assignInitialOperations() {
@@ -1947,6 +2090,8 @@ function assignInitialOperations() {
 }
 
 function generateNewOperationForPlayer(playerId, enforceDifferentInDuel) {
+  const previous = state.operationsByPlayer.get(playerId);
+  if (enforceDifferentInDuel && previous?.followUp) { state.operationsByPlayer.set(playerId, decorateOperation({ ...previous.followUp, parentOperationIndex: state.mode === 'online' ? state.online.currentOperationIndex - 1 : undefined })); return; }
   const enabledKeys = getEnabledOperationKeys();
   if (enabledKeys.length === 0) return;
 
@@ -1975,6 +2120,8 @@ function createOperation(kind) {
   if (kind === "problem") return decorateOperation(window.NinjaProblems.generate(state.problemSettings, state.problemIndex++, state.problemSeed, { mix: state.problemMix }));
   const cfg = state.operationSettings[kind];
   if (!cfg) return decorateOperation(generateAdditionWithCarry(2));
+  if (['missing', 'compare', 'power', 'round'].includes(kind)) return decorateOperation(globalThis.NinjaExpansion.newCalculation(kind, cfg));
+  if (globalThis.NinjaUnits?.kinds[kind]) return decorateOperation(globalThis.NinjaUnits.generateConversion(globalThis.NinjaUnits.kinds[kind], cfg, state.decimalsEnabled ? state.decimalPlaces : 0));
   if (kind === "sqrt") return decorateOperation(generateExactSquareRoot(cfg.digits));
   if (kind === "primeFactors") return decorateOperation(generatePrimeFactorization(cfg.digits));
   if (kind === 'mcm' || kind === 'mcd') return decorateOperation(globalThis.NinjaMathExtra.generateNumberTheory(kind, cfg));
@@ -1987,7 +2134,7 @@ function createOperation(kind) {
   if (kind === "divTables") return decorateOperation(generateDivisionTables());
 
   if (state.decimalsEnabled && ["addNoCarry", "addCarry", "subNoBorrow", "subBorrow", "mul"].includes(kind)) {
-    return decorateOperation(generateDecimalOperation(kind, cfg));
+    return decorateOperation({ ...generateDecimalOperation(kind, cfg), skillKind: kind });
   }
 
   let base;
@@ -2002,7 +2149,7 @@ function createOperation(kind) {
     base = withNegativeOperands(base);
   }
 
-  return decorateOperation(base);
+  return decorateOperation({ ...base, skillKind: kind });
 }
 
 function isPrimeInteger(value) {
@@ -2095,6 +2242,8 @@ function mulberry32(seed) {
 
 function updateOnlinePlayerProgress(player, extra = {}) {
   if (!state.online?.code || !state.online?.playerId || !window.NinjaOnline?.enabled) return;
+  const current = state.operationsByPlayer.get(player.id), advances = ['correct', 'solution', 'skip'].includes(extra.lastResult);
+  const pendingFollowUpFrom = advances ? current?.followUp ? state.online.currentOperationIndex - 1 : null : current?.parentOperationIndex ?? null;
   return window.NinjaOnline.updatePlayer(state.online.code, state.online.playerId, {
     name: player.name,
     score: player.score,
@@ -2102,9 +2251,11 @@ function updateOnlinePlayerProgress(player, extra = {}) {
     operationIndex: state.online.currentOperationIndex,
     correctCount: state.online.correctCount,
     wrongCount: state.online.wrongCount,
+    resolvedCount: player.resolvedCount || 0, learningStats: player.learningStats || {},
+    pendingFollowUpFrom,
     isConnected: true,
     ...extra
-  }).catch(() => {});
+  }, state.online.room?.seed).catch(() => {});
 }
 
 function generateDecimalOperation(kind, cfg) {
@@ -2165,22 +2316,22 @@ function renderProblemText(text) {
 
 function renderProblem(operation) {
   const p = operation.problem;
-  const levels = { facil: "Fácil", media: "Media", avanzada: "Avanzada" };
-  const question = `<p class="problem-question"><span class="problem-full">${renderProblemText(p.text)}</span><span class="problem-compact">${renderProblemText(p.compactText)}</span></p>`;
+  const question = `<p class="problem-question"><span class="problem-full">${renderProblemText(p.text)}</span><span class="problem-compact">${renderProblemText(p.compactText)}</span></p>${p.diagram || ''}`;
   if (operation.solutionRevealed) {
-    return `<div class="problem-paper problem-review ${p.family ? 'advanced-paper' : ''}"><section class="problem-review-reading"><span class="problem-review-label">📖 Enunciado</span>${question}</section><section class="problem-review-working"><span class="problem-review-label">💡 Solución paso a paso</span><ol class="problem-steps">${p.steps.map((step, index) => {
+    return `<div class="problem-paper problem-review ${p.family ? 'advanced-paper' : ''}" data-family="${escapeHtml(p.family || 'enteros')}"><section class="problem-review-reading"><span class="problem-review-label">📖 Enunciado</span>${question}</section><section class="problem-review-working"><span class="problem-review-label">💡 Solución paso a paso</span><ol class="problem-steps">${p.steps.map((step, index) => {
       const equation = p.calculations[index];
       const compact = index === p.steps.length - 1 ? equation.split('=').slice(1).join('=') || equation : equation.split('=').at(-1);
       return `<li data-step-kind="${step.startsWith('Descomponemos') ? 'factors' : 'calculation'}" title="${escapeHtml(step)}"><span class="problem-reason">${escapeHtml(step.split(':')[0])}.</span><span class="problem-calculation"><span class="problem-math-full">${renderProblemText(equation)}</span><span class="problem-math-compact">${escapeHtml(compact)}</span></span></li>`;
-    }).join('')}</ol><strong class="problem-final">${operation.answerFraction ? fractionHtml(operation.answerFraction) : escapeHtml(BigInt(operation.answerExact).toLocaleString("es-ES"))} ${escapeHtml(p.unit)}</strong></section></div>`;
+    }).join('')}</ol><strong class="problem-final">${operation.answerDisplay !== undefined ? escapeHtml(operation.answerDisplay) : operation.answerFraction ? fractionHtml(operation.answerFraction) : escapeHtml(BigInt(operation.answerExact).toLocaleString("es-ES"))} ${escapeHtml(p.unit)}</strong></section></div>`;
   }
-  const categories = { suma: "➕ Sumas", resta: "➖ Restas", multiplicacion: "✖️ Multiplicaciones", division: "➗ Divisiones", mcm: '🔁 Mínimo común múltiplo', mcd: '📦 Máximo común divisor' };
-  const type = p.categories.length > 1 ? `🧩 Combinado · ${p.steps.length} pasos` : `${categories[p.category]} · ${levels[p.difficulty] || "Fácil"}`;
-  return `<div class="problem-paper"><span class="problem-kicker">${type}${p.family === 'fracciones' ? ' · Fracciones' : ''}</span>${question}</div>`;
+  return `<div class="problem-paper"><span class="problem-kicker">📖 Lee y resuelve</span>${question}</div>`;
 }
 
 function decorateOperation(base) {
   if (base.problem) return { ...base, html: renderProblem(base) };
+  if (base.comparison) return { ...base, html: `<span class="comparison-expression">${renderProblemText(base.comparison.left)} <b>?</b> ${renderProblemText(base.comparison.right)}</span>` };
+  if (base.kind === 'missing') return { ...base, html: escapeHtml(base.expression) };
+  if (base.conversion) return { ...base, html: `<span class="conversion-expression">${escapeHtml(base.conversion.initial)} ${escapeHtml(base.conversion.from)} = ? ${escapeHtml(base.conversion.to)}</span>` };
   if (base.htmlExpression) {
     return {
       ...base,
@@ -2407,6 +2558,8 @@ function generateFractionArithmetic(kind, cfg) {
 }
 
 function operationSolutionHtml(operation) {
+  if (operation.explanation) return `<span class="teaching-explanation">${escapeHtml(operation.explanation)}</span>`;
+  if (operation.conversion && !operation.problem) return `<span class="conversion-solution"><small>${escapeHtml(operation.conversion.equivalence)}</small><strong>${escapeHtml(operation.conversion.equation)}</strong></span>`;
   if (operation.primeFactors) return operation.primeFactors.join(" &#215; ");
   const fraction = operation.answerFraction;
   if (fraction) {
@@ -2755,7 +2908,9 @@ function repaintPlayers() {
       opEl.classList.remove("pop");
       opEl.offsetHeight;
       opEl.classList.add("pop");
-      opEl.innerHTML = op.problem ? renderProblem(op) : op.solutionRevealed
+      const pad = document.getElementById(`numpad-${player.id}`);
+      if (pad && pad.classList.contains('comparison-input') !== Boolean(op.comparison)) { pad.innerHTML = ''; buildNumpad(pad, player.id); }
+      opEl.innerHTML = op.problem ? renderProblem(op) : op.solutionRevealed && (op.conversion || op.explanation) ? operationSolutionHtml(op) : op.solutionRevealed
         ? op.answerFraction ? operationSolutionHtml(op) : op.html.replace("?", operationSolutionHtml(op))
         : op.html;
       opEl.title = op.solutionRevealed ? (op.expression || "") : "";
@@ -2768,13 +2923,15 @@ function repaintPlayers() {
 
     const decimalHintEl = document.getElementById(`decimalHint-${player.id}`);
     if (decimalHintEl) {
-      const show = Boolean(op?.problem) || state.decimalsEnabled || Boolean(op?.answerFraction) || Boolean(op?.primeFactors);
+      const show = Boolean(op?.problem) || state.decimalsEnabled || Boolean(op?.answerFraction) || Boolean(op?.primeFactors) || Boolean(op?.comparison);
       decimalHintEl.classList.toggle("hidden", !show);
-      decimalHintEl.textContent = op?.problem ? op.answerFraction ? `🍰 Responde como 3/4 · ${op.problem.unit} · tecla F o :` : `📖 Respuesta en ${op.problem.unit}` : op?.primeFactors
+      decimalHintEl.textContent = op?.conversion ? `📏 Responde solo el número en ${op.conversion.to} · ${op.conversion.decimalPlaces ? `Máx. ${op.conversion.decimalPlaces} dec. · usa coma` : 'Sin decimales'}` : op?.problem?.family === 'porcentajes' ? `💯 ${op.problem.unit === '%' ? 'Porcentaje: solo el número, sin %' : 'Respuesta en euros'} · ${op.problem.decimalPlaces ? `Máx. ${op.problem.decimalPlaces} dec. · usa coma` : 'Sin decimales'}` : op?.problem ? op.answerFraction ? `🍰 Responde como 3/4 · ${op.problem.unit} · tecla F o :` : `📖 Respuesta en ${op.problem.unit}` : op?.primeFactors
         ? "🧩 Producto de primos: 2 x 2 x 3. Usa X o *."
         : op?.answerFraction
         ? "🍰 Responde como 3/4. Usa F o : para escribir /."
         : `🔢 Máx ${state.decimalPlaces} dec.`;
+      if (op?.explanation) decimalHintEl.textContent = op.comparison ? '⚖️ Responde <, = o >' : op.kind === 'missing' ? '🧩 Escribe solo el número que falta' : op.kind === 'round' ? '🎯 Escribe el redondeo pedido, con coma si hace falta' : '🔢 Escribe el valor de la potencia';
+      if (globalThis.NinjaExpansion?.families[op?.problem?.family]) decimalHintEl.textContent = `📖 Responde solo el número · ${op.problem.unit}`;
     }
   });
 
@@ -2851,21 +3008,26 @@ function flashPlayer(playerId, success) {
 }
 
 async function finishGame() {
+  if (state.finishing || state.roundCompleted) return;
+  document.getElementById('hintDialog')?.close();
+  state.finishing = true;
   const finishingSession = state.online;
   const finishingRound = finishingSession?.room?.rematchAt;
   state.isRunning = false;
   refs.body.classList.remove("game-running", "online-lobby-running");
   stopTimer();
   if (state.mode === "online" && state.online?.active) {
+    state.online.completedRound = roundKey(state.online.room);
     const player = state.players[0];
     if (player) {
       await updateOnlinePlayerProgress(player, {
         lastResult: "finished",
+        isFinished: true,
         lastActionAt: Date.now()
       });
     }
     if (state.online !== finishingSession || state.online?.room?.rematchAt !== finishingRound) return;
-    if (state.online.isHost && window.NinjaOnline?.enabled) {
+    if (state.online.isHost && window.NinjaOnline?.enabled && state.endCondition === 'time') {
       await window.NinjaOnline.finishRoom(state.online.code).catch(() => {});
     }
     if (window.NinjaOnline?.enabled) {
@@ -2889,9 +3051,12 @@ async function finishGame() {
   saveResultsToHall();
   showResults();
   renderHallOfFame();
+  state.roundCompleted = true; state.finishing = false;
+  syncLearningControls();
 }
 
 function showResults() {
+  syncLearningControls();
   refs.resultsScores.innerHTML = "";
   refs.resultsScores.classList.remove("teacher-podium-results");
   refs.resultsOverlay.querySelector(".results-card")?.classList.remove("teacher-results-card");
@@ -2962,7 +3127,7 @@ function saveResultsToHall() {
   const modeLabel = state.mode === "single" ? "Entrenamiento"
     : state.mode === "online" ? "Batalla online"
     : "Batalla";
-  const timeLabel = formatSeconds(state.gameDuration);
+  const timeLabel = state.endCondition === 'time' ? formatSeconds(state.gameDuration) : state.endCondition === 'unlimited' ? 'Sin tiempo' : `${state.goalCount} ${state.endCondition === 'correct' ? 'aciertos' : 'preguntas'}`;
 
   state.players.forEach((player) => {
     hall.push({
@@ -2995,6 +3160,8 @@ function writeHall(items) {
 function applySavedPreferences() {
   const prefs = readPreferences();
   if (!prefs) return;
+  state.endCondition = ['unlimited', 'questions', 'correct'].includes(prefs.endCondition) ? prefs.endCondition : 'time';
+  state.goalCount = clamp(Math.trunc(Number(prefs.goalCount)) || 10, 1, 1000);
   state.activity = prefs.activity === "problemas" ? "problemas" : "calculo";
   state.problemMix = ["combinados", "mixto"].includes(prefs.problemMix) ? prefs.problemMix : "individuales";
   state.problemFont = prefs.problemFont === "ligada" ? "ligada" : "imprenta";
@@ -3056,6 +3223,7 @@ function readPreferences() {
 
 function savePreferences() {
   const prefs = {
+    endCondition: state.endCondition, goalCount: state.goalCount,
     problemMix: state.problemMix,
     problemFont: state.problemFont,
     activity: state.activity,
@@ -3081,6 +3249,11 @@ function savePreferences() {
 }
 
 function sanitizeOpSettingValue(settingKey, value) {
+  if (settingKey === 'place') return clamp(Math.trunc(value), -3, 6);
+  if (settingKey === 'operator') return clamp(Math.trunc(value), 0, 4);
+  if (settingKey === 'variant') return clamp(Math.trunc(value), 0, 2);
+  if (settingKey === 'exponentMax') return clamp(Math.trunc(value), 2, 5);
+  if (settingKey === 'from' || settingKey === 'to') return clamp(value, 0, 7);
   if (settingKey === "maxDecimals") return clamp(value, 1, 3);
   return clamp(value, 1, 9);
 }
@@ -3129,6 +3302,11 @@ function clearHallOfFame() {
 }
 
 function goHome() {
+  captureLearningRound();
+  if (state.online?.isHost && state.online.room?.status === 'running' && window.NinjaOnline?.enabled) {
+    const closing = state.online;
+    window.NinjaOnline.finishRoom(closing.code).then(() => wait(250)).then(() => window.NinjaOnline.getRoom(closing.code)).then(room => { if (room) NinjaLearning.capture(closing.code, room, closing.config || {}); }).catch(() => {});
+  }
   stopTimer();
   stopEventSystem();
   detachOnlineSession();
@@ -3142,6 +3320,8 @@ function goHome() {
   updateTeacherCreatePanel(false);
   refs.playersWrap.classList.remove("hidden");
   refs.dojoScreen.classList.remove("hidden");
+  hideOnlineHostLobby();
+  syncLearningControls();
 }
 
 function updateTimerStyles() {
@@ -3196,7 +3376,7 @@ function triggerRandomEvent() {
     return;
   }
 
-  const eventType = randomFrom(EVENT_POOL);
+  const eventType = randomFrom(state.endCondition === 'time' ? EVENT_POOL : EVENT_POOL.filter(k => k !== 'plus_time'));
   spinRouletteAndApply(eventType);
 }
 
@@ -3354,11 +3534,20 @@ function refreshOperationDisplays() {
       htmlExpression: op.htmlExpression,
       signature: op.signature,
       answerFraction: op.answerFraction,
+      answerDisplay: op.answerDisplay,
+      conversion: op.conversion,
       unsimplifiedAnswer: op.unsimplifiedAnswer,
       primeFactors: op.primeFactors,
       solutionRevealed: op.solutionRevealed,
       problem: op.problem,
-      answerExact: op.answerExact
+      answerExact: op.answerExact,
+      comparison: op.comparison,
+      answerSymbol: op.answerSymbol,
+      explanation: op.explanation,
+      followUp: op.followUp,
+      hintStage: op.hintStage,
+      skillKind: op.skillKind,
+      parentOperationIndex: op.parentOperationIndex
     };
     const decorated = decorateOperation(base);
     state.operationsByPlayer.set(playerId, decorated);
@@ -3415,6 +3604,7 @@ function parsePlayerInput(text) {
 }
 
 function isCorrectOperationAnswer(text, operation) {
+  if (operation.comparison) return text === operation.answerSymbol;
   if (operation.answerExact && !operation.answerFraction) return /^\d+$/.test(text) && BigInt(text) === BigInt(operation.answerExact);
   if (operation.primeFactors) return isCorrectPrimeFactorization(text, operation.answer);
   if (!operation.answerFraction) return isCorrectAnswer(parsePlayerInput(text), operation.answer);

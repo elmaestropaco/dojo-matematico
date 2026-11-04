@@ -1,0 +1,2086 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "porcentajes-parte-papeleria",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material escolar",
+      "variant": 0,
+      "scene": {
+        "key": "papeleria",
+        "intro": "En la papelería del barrio",
+        "item": "una mochila",
+        "purpose": "material escolar"
+      }
+    },
+    {
+      "id": "porcentajes-parte-libreria",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: libros para la biblioteca",
+      "variant": 1,
+      "scene": {
+        "key": "libreria",
+        "intro": "En la librería de la plaza",
+        "item": "un libro de aventuras",
+        "purpose": "libros para la biblioteca"
+      }
+    },
+    {
+      "id": "porcentajes-parte-deporte",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material deportivo",
+      "variant": 2,
+      "scene": {
+        "key": "deporte",
+        "intro": "En la tienda de deportes",
+        "item": "un balón",
+        "purpose": "material deportivo"
+      }
+    },
+    {
+      "id": "porcentajes-parte-juguetes",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: juegos para el aula",
+      "variant": 3,
+      "scene": {
+        "key": "juguetes",
+        "intro": "En la juguetería",
+        "item": "un juego de mesa",
+        "purpose": "juegos para el aula"
+      }
+    },
+    {
+      "id": "porcentajes-parte-musica",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: instrumentos para la clase",
+      "variant": 0,
+      "scene": {
+        "key": "musica",
+        "intro": "En la tienda de música",
+        "item": "una flauta",
+        "purpose": "instrumentos para la clase"
+      }
+    },
+    {
+      "id": "porcentajes-parte-bicicletas",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: cascos para una salida",
+      "variant": 1,
+      "scene": {
+        "key": "bicicletas",
+        "intro": "En el taller de bicicletas",
+        "item": "un casco",
+        "purpose": "cascos para una salida"
+      }
+    },
+    {
+      "id": "porcentajes-parte-pintura",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: pintura para un mural",
+      "variant": 2,
+      "scene": {
+        "key": "pintura",
+        "intro": "En la tienda de pintura",
+        "item": "un estuche de pinceles",
+        "purpose": "pintura para un mural"
+      }
+    },
+    {
+      "id": "porcentajes-parte-jardin",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: plantas para el patio",
+      "variant": 3,
+      "scene": {
+        "key": "jardin",
+        "intro": "En el centro de jardinería",
+        "item": "una regadera",
+        "purpose": "plantas para el patio"
+      }
+    },
+    {
+      "id": "porcentajes-parte-teatro",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: vestuario para la función",
+      "variant": 0,
+      "scene": {
+        "key": "teatro",
+        "intro": "En el taller de teatro",
+        "item": "un disfraz",
+        "purpose": "vestuario para la función"
+      }
+    },
+    {
+      "id": "porcentajes-parte-costura",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: tela para disfraces",
+      "variant": 1,
+      "scene": {
+        "key": "costura",
+        "intro": "En la mercería",
+        "item": "un costurero",
+        "purpose": "tela para disfraces"
+      }
+    },
+    {
+      "id": "porcentajes-parte-ceramica",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: barro para modelar",
+      "variant": 2,
+      "scene": {
+        "key": "ceramica",
+        "intro": "En el taller de cerámica",
+        "item": "una caja de herramientas",
+        "purpose": "barro para modelar"
+      }
+    },
+    {
+      "id": "porcentajes-parte-fotografia",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: fotos para una exposición",
+      "variant": 3,
+      "scene": {
+        "key": "fotografia",
+        "intro": "En la tienda de fotografía",
+        "item": "un álbum",
+        "purpose": "fotos para una exposición"
+      }
+    },
+    {
+      "id": "porcentajes-parte-informatica",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: equipos para el aula",
+      "variant": 0,
+      "scene": {
+        "key": "informatica",
+        "intro": "En la tienda de informática",
+        "item": "un teclado",
+        "purpose": "equipos para el aula"
+      }
+    },
+    {
+      "id": "porcentajes-parte-campamento",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material para el campamento",
+      "variant": 1,
+      "scene": {
+        "key": "campamento",
+        "intro": "En la tienda de acampada",
+        "item": "una linterna",
+        "purpose": "material para el campamento"
+      }
+    },
+    {
+      "id": "porcentajes-parte-natacion",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material de natación",
+      "variant": 2,
+      "scene": {
+        "key": "natacion",
+        "intro": "En la tienda de la piscina",
+        "item": "unas gafas de natación",
+        "purpose": "material de natación"
+      }
+    },
+    {
+      "id": "porcentajes-parte-patinaje",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: protecciones para patinar",
+      "variant": 3,
+      "scene": {
+        "key": "patinaje",
+        "intro": "En la tienda de patinaje",
+        "item": "un par de patines",
+        "purpose": "protecciones para patinar"
+      }
+    },
+    {
+      "id": "porcentajes-parte-excursion",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: entradas para una visita",
+      "variant": 0,
+      "scene": {
+        "key": "excursion",
+        "intro": "En la oficina de excursiones",
+        "item": "una entrada para el parque",
+        "purpose": "entradas para una visita"
+      }
+    },
+    {
+      "id": "porcentajes-parte-museo",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: recuerdos de la visita",
+      "variant": 1,
+      "scene": {
+        "key": "museo",
+        "intro": "En la tienda del museo",
+        "item": "un puzle",
+        "purpose": "recuerdos de la visita"
+      }
+    },
+    {
+      "id": "porcentajes-parte-ciencia",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material para experimentos",
+      "variant": 2,
+      "scene": {
+        "key": "ciencia",
+        "intro": "En la tienda de ciencias",
+        "item": "una lupa",
+        "purpose": "material para experimentos"
+      }
+    },
+    {
+      "id": "porcentajes-parte-astronomia",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material de astronomía",
+      "variant": 3,
+      "scene": {
+        "key": "astronomia",
+        "intro": "En la tienda del planetario",
+        "item": "un mapa del cielo",
+        "purpose": "material de astronomía"
+      }
+    },
+    {
+      "id": "porcentajes-parte-ajedrez",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: tableros para el torneo",
+      "variant": 0,
+      "scene": {
+        "key": "ajedrez",
+        "intro": "En el club de ajedrez",
+        "item": "un tablero",
+        "purpose": "tableros para el torneo"
+      }
+    },
+    {
+      "id": "porcentajes-parte-cometas",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material para hacer cometas",
+      "variant": 1,
+      "scene": {
+        "key": "cometas",
+        "intro": "En el taller de cometas",
+        "item": "una cometa",
+        "purpose": "material para hacer cometas"
+      }
+    },
+    {
+      "id": "porcentajes-parte-robots",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: piezas de robótica",
+      "variant": 2,
+      "scene": {
+        "key": "robots",
+        "intro": "En el taller de robótica",
+        "item": "un pequeño robot",
+        "purpose": "piezas de robótica"
+      }
+    },
+    {
+      "id": "porcentajes-parte-huerto",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: semillas para el huerto",
+      "variant": 3,
+      "scene": {
+        "key": "huerto",
+        "intro": "En la cooperativa del huerto",
+        "item": "una pala",
+        "purpose": "semillas para el huerto"
+      }
+    },
+    {
+      "id": "porcentajes-parte-cocina",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: utensilios para cocinar",
+      "variant": 0,
+      "scene": {
+        "key": "cocina",
+        "intro": "En la tienda de cocina",
+        "item": "un molde",
+        "purpose": "utensilios para cocinar"
+      }
+    },
+    {
+      "id": "porcentajes-parte-panaderia",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: pan para la merienda",
+      "variant": 1,
+      "scene": {
+        "key": "panaderia",
+        "intro": "En la panadería",
+        "item": "una bandeja de magdalenas",
+        "purpose": "pan para la merienda"
+      }
+    },
+    {
+      "id": "porcentajes-parte-fruteria",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: fruta para una fiesta",
+      "variant": 2,
+      "scene": {
+        "key": "fruteria",
+        "intro": "En la frutería",
+        "item": "una cesta de fruta",
+        "purpose": "fruta para una fiesta"
+      }
+    },
+    {
+      "id": "porcentajes-parte-mercado",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: alimentos para una actividad",
+      "variant": 3,
+      "scene": {
+        "key": "mercado",
+        "intro": "En el mercado del barrio",
+        "item": "una cesta de productos",
+        "purpose": "alimentos para una actividad"
+      }
+    },
+    {
+      "id": "porcentajes-parte-refugio",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: comida para el refugio",
+      "variant": 0,
+      "scene": {
+        "key": "refugio",
+        "intro": "En la tienda de animales",
+        "item": "un transportín",
+        "purpose": "comida para el refugio"
+      }
+    },
+    {
+      "id": "porcentajes-parte-acuario",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material para cuidar el acuario",
+      "variant": 1,
+      "scene": {
+        "key": "acuario",
+        "intro": "En la tienda de acuarios",
+        "item": "un filtro",
+        "purpose": "material para cuidar el acuario"
+      }
+    },
+    {
+      "id": "porcentajes-parte-radio",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material de grabación",
+      "variant": 2,
+      "scene": {
+        "key": "radio",
+        "intro": "En el taller de radio escolar",
+        "item": "un micrófono",
+        "purpose": "material de grabación"
+      }
+    },
+    {
+      "id": "porcentajes-parte-cine",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material para un cortometraje",
+      "variant": 3,
+      "scene": {
+        "key": "cine",
+        "intro": "En el taller de cine",
+        "item": "un trípode",
+        "purpose": "material para un cortometraje"
+      }
+    },
+    {
+      "id": "porcentajes-parte-encuadernacion",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: papel para hacer cuadernos",
+      "variant": 0,
+      "scene": {
+        "key": "encuadernacion",
+        "intro": "En el taller de encuadernación",
+        "item": "un cuaderno artesanal",
+        "purpose": "papel para hacer cuadernos"
+      }
+    },
+    {
+      "id": "porcentajes-parte-comic",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: cómics para un rincón de lectura",
+      "variant": 1,
+      "scene": {
+        "key": "comic",
+        "intro": "En la tienda de cómics",
+        "item": "un cómic",
+        "purpose": "cómics para un rincón de lectura"
+      }
+    },
+    {
+      "id": "porcentajes-parte-manualidades",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material para decorar la clase",
+      "variant": 2,
+      "scene": {
+        "key": "manualidades",
+        "intro": "En la tienda de manualidades",
+        "item": "un estuche de rotuladores",
+        "purpose": "material para decorar la clase"
+      }
+    },
+    {
+      "id": "porcentajes-parte-fiesta",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: adornos para la fiesta",
+      "variant": 3,
+      "scene": {
+        "key": "fiesta",
+        "intro": "En la tienda de celebraciones",
+        "item": "una guirnalda",
+        "purpose": "adornos para la fiesta"
+      }
+    },
+    {
+      "id": "porcentajes-parte-calzado",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: calzado para una actividad",
+      "variant": 0,
+      "scene": {
+        "key": "calzado",
+        "intro": "En la zapatería",
+        "item": "un par de zapatillas",
+        "purpose": "calzado para una actividad"
+      }
+    },
+    {
+      "id": "porcentajes-parte-ropa",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: camisetas para el equipo",
+      "variant": 1,
+      "scene": {
+        "key": "ropa",
+        "intro": "En la tienda de ropa",
+        "item": "una camiseta",
+        "purpose": "camisetas para el equipo"
+      }
+    },
+    {
+      "id": "porcentajes-parte-viaje",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: equipaje para un viaje",
+      "variant": 2,
+      "scene": {
+        "key": "viaje",
+        "intro": "En la tienda de equipaje",
+        "item": "una maleta",
+        "purpose": "equipaje para un viaje"
+      }
+    },
+    {
+      "id": "porcentajes-parte-solidaridad",
+      "family": "porcentajes",
+      "type": "parte",
+      "title": "Calcula una parte: material para una campaña solidaria",
+      "variant": 3,
+      "scene": {
+        "key": "solidaridad",
+        "intro": "En el mercadillo solidario",
+        "item": "una pulsera artesanal",
+        "purpose": "material para una campaña solidaria"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-papeleria",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material escolar",
+      "variant": 0,
+      "scene": {
+        "key": "papeleria",
+        "intro": "En la papelería del barrio",
+        "item": "una mochila",
+        "purpose": "material escolar"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-libreria",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: libros para la biblioteca",
+      "variant": 1,
+      "scene": {
+        "key": "libreria",
+        "intro": "En la librería de la plaza",
+        "item": "un libro de aventuras",
+        "purpose": "libros para la biblioteca"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-deporte",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material deportivo",
+      "variant": 2,
+      "scene": {
+        "key": "deporte",
+        "intro": "En la tienda de deportes",
+        "item": "un balón",
+        "purpose": "material deportivo"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-juguetes",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: juegos para el aula",
+      "variant": 3,
+      "scene": {
+        "key": "juguetes",
+        "intro": "En la juguetería",
+        "item": "un juego de mesa",
+        "purpose": "juegos para el aula"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-musica",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: instrumentos para la clase",
+      "variant": 0,
+      "scene": {
+        "key": "musica",
+        "intro": "En la tienda de música",
+        "item": "una flauta",
+        "purpose": "instrumentos para la clase"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-bicicletas",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: cascos para una salida",
+      "variant": 1,
+      "scene": {
+        "key": "bicicletas",
+        "intro": "En el taller de bicicletas",
+        "item": "un casco",
+        "purpose": "cascos para una salida"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-pintura",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: pintura para un mural",
+      "variant": 2,
+      "scene": {
+        "key": "pintura",
+        "intro": "En la tienda de pintura",
+        "item": "un estuche de pinceles",
+        "purpose": "pintura para un mural"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-jardin",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: plantas para el patio",
+      "variant": 3,
+      "scene": {
+        "key": "jardin",
+        "intro": "En el centro de jardinería",
+        "item": "una regadera",
+        "purpose": "plantas para el patio"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-teatro",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: vestuario para la función",
+      "variant": 0,
+      "scene": {
+        "key": "teatro",
+        "intro": "En el taller de teatro",
+        "item": "un disfraz",
+        "purpose": "vestuario para la función"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-costura",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: tela para disfraces",
+      "variant": 1,
+      "scene": {
+        "key": "costura",
+        "intro": "En la mercería",
+        "item": "un costurero",
+        "purpose": "tela para disfraces"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-ceramica",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: barro para modelar",
+      "variant": 2,
+      "scene": {
+        "key": "ceramica",
+        "intro": "En el taller de cerámica",
+        "item": "una caja de herramientas",
+        "purpose": "barro para modelar"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-fotografia",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: fotos para una exposición",
+      "variant": 3,
+      "scene": {
+        "key": "fotografia",
+        "intro": "En la tienda de fotografía",
+        "item": "un álbum",
+        "purpose": "fotos para una exposición"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-informatica",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: equipos para el aula",
+      "variant": 0,
+      "scene": {
+        "key": "informatica",
+        "intro": "En la tienda de informática",
+        "item": "un teclado",
+        "purpose": "equipos para el aula"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-campamento",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material para el campamento",
+      "variant": 1,
+      "scene": {
+        "key": "campamento",
+        "intro": "En la tienda de acampada",
+        "item": "una linterna",
+        "purpose": "material para el campamento"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-natacion",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material de natación",
+      "variant": 2,
+      "scene": {
+        "key": "natacion",
+        "intro": "En la tienda de la piscina",
+        "item": "unas gafas de natación",
+        "purpose": "material de natación"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-patinaje",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: protecciones para patinar",
+      "variant": 3,
+      "scene": {
+        "key": "patinaje",
+        "intro": "En la tienda de patinaje",
+        "item": "un par de patines",
+        "purpose": "protecciones para patinar"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-excursion",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: entradas para una visita",
+      "variant": 0,
+      "scene": {
+        "key": "excursion",
+        "intro": "En la oficina de excursiones",
+        "item": "una entrada para el parque",
+        "purpose": "entradas para una visita"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-museo",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: recuerdos de la visita",
+      "variant": 1,
+      "scene": {
+        "key": "museo",
+        "intro": "En la tienda del museo",
+        "item": "un puzle",
+        "purpose": "recuerdos de la visita"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-ciencia",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material para experimentos",
+      "variant": 2,
+      "scene": {
+        "key": "ciencia",
+        "intro": "En la tienda de ciencias",
+        "item": "una lupa",
+        "purpose": "material para experimentos"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-astronomia",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material de astronomía",
+      "variant": 3,
+      "scene": {
+        "key": "astronomia",
+        "intro": "En la tienda del planetario",
+        "item": "un mapa del cielo",
+        "purpose": "material de astronomía"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-ajedrez",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: tableros para el torneo",
+      "variant": 0,
+      "scene": {
+        "key": "ajedrez",
+        "intro": "En el club de ajedrez",
+        "item": "un tablero",
+        "purpose": "tableros para el torneo"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-cometas",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material para hacer cometas",
+      "variant": 1,
+      "scene": {
+        "key": "cometas",
+        "intro": "En el taller de cometas",
+        "item": "una cometa",
+        "purpose": "material para hacer cometas"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-robots",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: piezas de robótica",
+      "variant": 2,
+      "scene": {
+        "key": "robots",
+        "intro": "En el taller de robótica",
+        "item": "un pequeño robot",
+        "purpose": "piezas de robótica"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-huerto",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: semillas para el huerto",
+      "variant": 3,
+      "scene": {
+        "key": "huerto",
+        "intro": "En la cooperativa del huerto",
+        "item": "una pala",
+        "purpose": "semillas para el huerto"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-cocina",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: utensilios para cocinar",
+      "variant": 0,
+      "scene": {
+        "key": "cocina",
+        "intro": "En la tienda de cocina",
+        "item": "un molde",
+        "purpose": "utensilios para cocinar"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-panaderia",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: pan para la merienda",
+      "variant": 1,
+      "scene": {
+        "key": "panaderia",
+        "intro": "En la panadería",
+        "item": "una bandeja de magdalenas",
+        "purpose": "pan para la merienda"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-fruteria",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: fruta para una fiesta",
+      "variant": 2,
+      "scene": {
+        "key": "fruteria",
+        "intro": "En la frutería",
+        "item": "una cesta de fruta",
+        "purpose": "fruta para una fiesta"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-mercado",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: alimentos para una actividad",
+      "variant": 3,
+      "scene": {
+        "key": "mercado",
+        "intro": "En el mercado del barrio",
+        "item": "una cesta de productos",
+        "purpose": "alimentos para una actividad"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-refugio",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: comida para el refugio",
+      "variant": 0,
+      "scene": {
+        "key": "refugio",
+        "intro": "En la tienda de animales",
+        "item": "un transportín",
+        "purpose": "comida para el refugio"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-acuario",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material para cuidar el acuario",
+      "variant": 1,
+      "scene": {
+        "key": "acuario",
+        "intro": "En la tienda de acuarios",
+        "item": "un filtro",
+        "purpose": "material para cuidar el acuario"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-radio",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material de grabación",
+      "variant": 2,
+      "scene": {
+        "key": "radio",
+        "intro": "En el taller de radio escolar",
+        "item": "un micrófono",
+        "purpose": "material de grabación"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-cine",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material para un cortometraje",
+      "variant": 3,
+      "scene": {
+        "key": "cine",
+        "intro": "En el taller de cine",
+        "item": "un trípode",
+        "purpose": "material para un cortometraje"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-encuadernacion",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: papel para hacer cuadernos",
+      "variant": 0,
+      "scene": {
+        "key": "encuadernacion",
+        "intro": "En el taller de encuadernación",
+        "item": "un cuaderno artesanal",
+        "purpose": "papel para hacer cuadernos"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-comic",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: cómics para un rincón de lectura",
+      "variant": 1,
+      "scene": {
+        "key": "comic",
+        "intro": "En la tienda de cómics",
+        "item": "un cómic",
+        "purpose": "cómics para un rincón de lectura"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-manualidades",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material para decorar la clase",
+      "variant": 2,
+      "scene": {
+        "key": "manualidades",
+        "intro": "En la tienda de manualidades",
+        "item": "un estuche de rotuladores",
+        "purpose": "material para decorar la clase"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-fiesta",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: adornos para la fiesta",
+      "variant": 3,
+      "scene": {
+        "key": "fiesta",
+        "intro": "En la tienda de celebraciones",
+        "item": "una guirnalda",
+        "purpose": "adornos para la fiesta"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-calzado",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: calzado para una actividad",
+      "variant": 0,
+      "scene": {
+        "key": "calzado",
+        "intro": "En la zapatería",
+        "item": "un par de zapatillas",
+        "purpose": "calzado para una actividad"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-ropa",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: camisetas para el equipo",
+      "variant": 1,
+      "scene": {
+        "key": "ropa",
+        "intro": "En la tienda de ropa",
+        "item": "una camiseta",
+        "purpose": "camisetas para el equipo"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-viaje",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: equipaje para un viaje",
+      "variant": 2,
+      "scene": {
+        "key": "viaje",
+        "intro": "En la tienda de equipaje",
+        "item": "una maleta",
+        "purpose": "equipaje para un viaje"
+      }
+    },
+    {
+      "id": "porcentajes-descuento-solidaridad",
+      "family": "porcentajes",
+      "type": "descuento",
+      "title": "Precio con descuento: material para una campaña solidaria",
+      "variant": 3,
+      "scene": {
+        "key": "solidaridad",
+        "intro": "En el mercadillo solidario",
+        "item": "una pulsera artesanal",
+        "purpose": "material para una campaña solidaria"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-papeleria",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material escolar",
+      "variant": 0,
+      "scene": {
+        "key": "papeleria",
+        "intro": "En la papelería del barrio",
+        "item": "una mochila",
+        "purpose": "material escolar"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-libreria",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: libros para la biblioteca",
+      "variant": 1,
+      "scene": {
+        "key": "libreria",
+        "intro": "En la librería de la plaza",
+        "item": "un libro de aventuras",
+        "purpose": "libros para la biblioteca"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-deporte",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material deportivo",
+      "variant": 2,
+      "scene": {
+        "key": "deporte",
+        "intro": "En la tienda de deportes",
+        "item": "un balón",
+        "purpose": "material deportivo"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-juguetes",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: juegos para el aula",
+      "variant": 3,
+      "scene": {
+        "key": "juguetes",
+        "intro": "En la juguetería",
+        "item": "un juego de mesa",
+        "purpose": "juegos para el aula"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-musica",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: instrumentos para la clase",
+      "variant": 0,
+      "scene": {
+        "key": "musica",
+        "intro": "En la tienda de música",
+        "item": "una flauta",
+        "purpose": "instrumentos para la clase"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-bicicletas",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: cascos para una salida",
+      "variant": 1,
+      "scene": {
+        "key": "bicicletas",
+        "intro": "En el taller de bicicletas",
+        "item": "un casco",
+        "purpose": "cascos para una salida"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-pintura",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: pintura para un mural",
+      "variant": 2,
+      "scene": {
+        "key": "pintura",
+        "intro": "En la tienda de pintura",
+        "item": "un estuche de pinceles",
+        "purpose": "pintura para un mural"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-jardin",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: plantas para el patio",
+      "variant": 3,
+      "scene": {
+        "key": "jardin",
+        "intro": "En el centro de jardinería",
+        "item": "una regadera",
+        "purpose": "plantas para el patio"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-teatro",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: vestuario para la función",
+      "variant": 0,
+      "scene": {
+        "key": "teatro",
+        "intro": "En el taller de teatro",
+        "item": "un disfraz",
+        "purpose": "vestuario para la función"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-costura",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: tela para disfraces",
+      "variant": 1,
+      "scene": {
+        "key": "costura",
+        "intro": "En la mercería",
+        "item": "un costurero",
+        "purpose": "tela para disfraces"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-ceramica",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: barro para modelar",
+      "variant": 2,
+      "scene": {
+        "key": "ceramica",
+        "intro": "En el taller de cerámica",
+        "item": "una caja de herramientas",
+        "purpose": "barro para modelar"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-fotografia",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: fotos para una exposición",
+      "variant": 3,
+      "scene": {
+        "key": "fotografia",
+        "intro": "En la tienda de fotografía",
+        "item": "un álbum",
+        "purpose": "fotos para una exposición"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-informatica",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: equipos para el aula",
+      "variant": 0,
+      "scene": {
+        "key": "informatica",
+        "intro": "En la tienda de informática",
+        "item": "un teclado",
+        "purpose": "equipos para el aula"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-campamento",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material para el campamento",
+      "variant": 1,
+      "scene": {
+        "key": "campamento",
+        "intro": "En la tienda de acampada",
+        "item": "una linterna",
+        "purpose": "material para el campamento"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-natacion",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material de natación",
+      "variant": 2,
+      "scene": {
+        "key": "natacion",
+        "intro": "En la tienda de la piscina",
+        "item": "unas gafas de natación",
+        "purpose": "material de natación"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-patinaje",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: protecciones para patinar",
+      "variant": 3,
+      "scene": {
+        "key": "patinaje",
+        "intro": "En la tienda de patinaje",
+        "item": "un par de patines",
+        "purpose": "protecciones para patinar"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-excursion",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: entradas para una visita",
+      "variant": 0,
+      "scene": {
+        "key": "excursion",
+        "intro": "En la oficina de excursiones",
+        "item": "una entrada para el parque",
+        "purpose": "entradas para una visita"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-museo",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: recuerdos de la visita",
+      "variant": 1,
+      "scene": {
+        "key": "museo",
+        "intro": "En la tienda del museo",
+        "item": "un puzle",
+        "purpose": "recuerdos de la visita"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-ciencia",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material para experimentos",
+      "variant": 2,
+      "scene": {
+        "key": "ciencia",
+        "intro": "En la tienda de ciencias",
+        "item": "una lupa",
+        "purpose": "material para experimentos"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-astronomia",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material de astronomía",
+      "variant": 3,
+      "scene": {
+        "key": "astronomia",
+        "intro": "En la tienda del planetario",
+        "item": "un mapa del cielo",
+        "purpose": "material de astronomía"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-ajedrez",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: tableros para el torneo",
+      "variant": 0,
+      "scene": {
+        "key": "ajedrez",
+        "intro": "En el club de ajedrez",
+        "item": "un tablero",
+        "purpose": "tableros para el torneo"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-cometas",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material para hacer cometas",
+      "variant": 1,
+      "scene": {
+        "key": "cometas",
+        "intro": "En el taller de cometas",
+        "item": "una cometa",
+        "purpose": "material para hacer cometas"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-robots",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: piezas de robótica",
+      "variant": 2,
+      "scene": {
+        "key": "robots",
+        "intro": "En el taller de robótica",
+        "item": "un pequeño robot",
+        "purpose": "piezas de robótica"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-huerto",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: semillas para el huerto",
+      "variant": 3,
+      "scene": {
+        "key": "huerto",
+        "intro": "En la cooperativa del huerto",
+        "item": "una pala",
+        "purpose": "semillas para el huerto"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-cocina",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: utensilios para cocinar",
+      "variant": 0,
+      "scene": {
+        "key": "cocina",
+        "intro": "En la tienda de cocina",
+        "item": "un molde",
+        "purpose": "utensilios para cocinar"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-panaderia",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: pan para la merienda",
+      "variant": 1,
+      "scene": {
+        "key": "panaderia",
+        "intro": "En la panadería",
+        "item": "una bandeja de magdalenas",
+        "purpose": "pan para la merienda"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-fruteria",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: fruta para una fiesta",
+      "variant": 2,
+      "scene": {
+        "key": "fruteria",
+        "intro": "En la frutería",
+        "item": "una cesta de fruta",
+        "purpose": "fruta para una fiesta"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-mercado",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: alimentos para una actividad",
+      "variant": 3,
+      "scene": {
+        "key": "mercado",
+        "intro": "En el mercado del barrio",
+        "item": "una cesta de productos",
+        "purpose": "alimentos para una actividad"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-refugio",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: comida para el refugio",
+      "variant": 0,
+      "scene": {
+        "key": "refugio",
+        "intro": "En la tienda de animales",
+        "item": "un transportín",
+        "purpose": "comida para el refugio"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-acuario",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material para cuidar el acuario",
+      "variant": 1,
+      "scene": {
+        "key": "acuario",
+        "intro": "En la tienda de acuarios",
+        "item": "un filtro",
+        "purpose": "material para cuidar el acuario"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-radio",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material de grabación",
+      "variant": 2,
+      "scene": {
+        "key": "radio",
+        "intro": "En el taller de radio escolar",
+        "item": "un micrófono",
+        "purpose": "material de grabación"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-cine",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material para un cortometraje",
+      "variant": 3,
+      "scene": {
+        "key": "cine",
+        "intro": "En el taller de cine",
+        "item": "un trípode",
+        "purpose": "material para un cortometraje"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-encuadernacion",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: papel para hacer cuadernos",
+      "variant": 0,
+      "scene": {
+        "key": "encuadernacion",
+        "intro": "En el taller de encuadernación",
+        "item": "un cuaderno artesanal",
+        "purpose": "papel para hacer cuadernos"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-comic",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: cómics para un rincón de lectura",
+      "variant": 1,
+      "scene": {
+        "key": "comic",
+        "intro": "En la tienda de cómics",
+        "item": "un cómic",
+        "purpose": "cómics para un rincón de lectura"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-manualidades",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material para decorar la clase",
+      "variant": 2,
+      "scene": {
+        "key": "manualidades",
+        "intro": "En la tienda de manualidades",
+        "item": "un estuche de rotuladores",
+        "purpose": "material para decorar la clase"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-fiesta",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: adornos para la fiesta",
+      "variant": 3,
+      "scene": {
+        "key": "fiesta",
+        "intro": "En la tienda de celebraciones",
+        "item": "una guirnalda",
+        "purpose": "adornos para la fiesta"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-calzado",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: calzado para una actividad",
+      "variant": 0,
+      "scene": {
+        "key": "calzado",
+        "intro": "En la zapatería",
+        "item": "un par de zapatillas",
+        "purpose": "calzado para una actividad"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-ropa",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: camisetas para el equipo",
+      "variant": 1,
+      "scene": {
+        "key": "ropa",
+        "intro": "En la tienda de ropa",
+        "item": "una camiseta",
+        "purpose": "camisetas para el equipo"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-viaje",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: equipaje para un viaje",
+      "variant": 2,
+      "scene": {
+        "key": "viaje",
+        "intro": "En la tienda de equipaje",
+        "item": "una maleta",
+        "purpose": "equipaje para un viaje"
+      }
+    },
+    {
+      "id": "porcentajes-aumento-solidaridad",
+      "family": "porcentajes",
+      "type": "aumento",
+      "title": "Precio después de un aumento: material para una campaña solidaria",
+      "variant": 3,
+      "scene": {
+        "key": "solidaridad",
+        "intro": "En el mercadillo solidario",
+        "item": "una pulsera artesanal",
+        "purpose": "material para una campaña solidaria"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-papeleria",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material escolar",
+      "variant": 0,
+      "scene": {
+        "key": "papeleria",
+        "intro": "En la papelería del barrio",
+        "item": "una mochila",
+        "purpose": "material escolar"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-libreria",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: libros para la biblioteca",
+      "variant": 1,
+      "scene": {
+        "key": "libreria",
+        "intro": "En la librería de la plaza",
+        "item": "un libro de aventuras",
+        "purpose": "libros para la biblioteca"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-deporte",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material deportivo",
+      "variant": 2,
+      "scene": {
+        "key": "deporte",
+        "intro": "En la tienda de deportes",
+        "item": "un balón",
+        "purpose": "material deportivo"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-juguetes",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: juegos para el aula",
+      "variant": 3,
+      "scene": {
+        "key": "juguetes",
+        "intro": "En la juguetería",
+        "item": "un juego de mesa",
+        "purpose": "juegos para el aula"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-musica",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: instrumentos para la clase",
+      "variant": 0,
+      "scene": {
+        "key": "musica",
+        "intro": "En la tienda de música",
+        "item": "una flauta",
+        "purpose": "instrumentos para la clase"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-bicicletas",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: cascos para una salida",
+      "variant": 1,
+      "scene": {
+        "key": "bicicletas",
+        "intro": "En el taller de bicicletas",
+        "item": "un casco",
+        "purpose": "cascos para una salida"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-pintura",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: pintura para un mural",
+      "variant": 2,
+      "scene": {
+        "key": "pintura",
+        "intro": "En la tienda de pintura",
+        "item": "un estuche de pinceles",
+        "purpose": "pintura para un mural"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-jardin",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: plantas para el patio",
+      "variant": 3,
+      "scene": {
+        "key": "jardin",
+        "intro": "En el centro de jardinería",
+        "item": "una regadera",
+        "purpose": "plantas para el patio"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-teatro",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: vestuario para la función",
+      "variant": 0,
+      "scene": {
+        "key": "teatro",
+        "intro": "En el taller de teatro",
+        "item": "un disfraz",
+        "purpose": "vestuario para la función"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-costura",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: tela para disfraces",
+      "variant": 1,
+      "scene": {
+        "key": "costura",
+        "intro": "En la mercería",
+        "item": "un costurero",
+        "purpose": "tela para disfraces"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-ceramica",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: barro para modelar",
+      "variant": 2,
+      "scene": {
+        "key": "ceramica",
+        "intro": "En el taller de cerámica",
+        "item": "una caja de herramientas",
+        "purpose": "barro para modelar"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-fotografia",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: fotos para una exposición",
+      "variant": 3,
+      "scene": {
+        "key": "fotografia",
+        "intro": "En la tienda de fotografía",
+        "item": "un álbum",
+        "purpose": "fotos para una exposición"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-informatica",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: equipos para el aula",
+      "variant": 0,
+      "scene": {
+        "key": "informatica",
+        "intro": "En la tienda de informática",
+        "item": "un teclado",
+        "purpose": "equipos para el aula"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-campamento",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material para el campamento",
+      "variant": 1,
+      "scene": {
+        "key": "campamento",
+        "intro": "En la tienda de acampada",
+        "item": "una linterna",
+        "purpose": "material para el campamento"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-natacion",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material de natación",
+      "variant": 2,
+      "scene": {
+        "key": "natacion",
+        "intro": "En la tienda de la piscina",
+        "item": "unas gafas de natación",
+        "purpose": "material de natación"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-patinaje",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: protecciones para patinar",
+      "variant": 3,
+      "scene": {
+        "key": "patinaje",
+        "intro": "En la tienda de patinaje",
+        "item": "un par de patines",
+        "purpose": "protecciones para patinar"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-excursion",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: entradas para una visita",
+      "variant": 0,
+      "scene": {
+        "key": "excursion",
+        "intro": "En la oficina de excursiones",
+        "item": "una entrada para el parque",
+        "purpose": "entradas para una visita"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-museo",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: recuerdos de la visita",
+      "variant": 1,
+      "scene": {
+        "key": "museo",
+        "intro": "En la tienda del museo",
+        "item": "un puzle",
+        "purpose": "recuerdos de la visita"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-ciencia",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material para experimentos",
+      "variant": 2,
+      "scene": {
+        "key": "ciencia",
+        "intro": "En la tienda de ciencias",
+        "item": "una lupa",
+        "purpose": "material para experimentos"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-astronomia",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material de astronomía",
+      "variant": 3,
+      "scene": {
+        "key": "astronomia",
+        "intro": "En la tienda del planetario",
+        "item": "un mapa del cielo",
+        "purpose": "material de astronomía"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-ajedrez",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: tableros para el torneo",
+      "variant": 0,
+      "scene": {
+        "key": "ajedrez",
+        "intro": "En el club de ajedrez",
+        "item": "un tablero",
+        "purpose": "tableros para el torneo"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-cometas",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material para hacer cometas",
+      "variant": 1,
+      "scene": {
+        "key": "cometas",
+        "intro": "En el taller de cometas",
+        "item": "una cometa",
+        "purpose": "material para hacer cometas"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-robots",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: piezas de robótica",
+      "variant": 2,
+      "scene": {
+        "key": "robots",
+        "intro": "En el taller de robótica",
+        "item": "un pequeño robot",
+        "purpose": "piezas de robótica"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-huerto",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: semillas para el huerto",
+      "variant": 3,
+      "scene": {
+        "key": "huerto",
+        "intro": "En la cooperativa del huerto",
+        "item": "una pala",
+        "purpose": "semillas para el huerto"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-cocina",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: utensilios para cocinar",
+      "variant": 0,
+      "scene": {
+        "key": "cocina",
+        "intro": "En la tienda de cocina",
+        "item": "un molde",
+        "purpose": "utensilios para cocinar"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-panaderia",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: pan para la merienda",
+      "variant": 1,
+      "scene": {
+        "key": "panaderia",
+        "intro": "En la panadería",
+        "item": "una bandeja de magdalenas",
+        "purpose": "pan para la merienda"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-fruteria",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: fruta para una fiesta",
+      "variant": 2,
+      "scene": {
+        "key": "fruteria",
+        "intro": "En la frutería",
+        "item": "una cesta de fruta",
+        "purpose": "fruta para una fiesta"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-mercado",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: alimentos para una actividad",
+      "variant": 3,
+      "scene": {
+        "key": "mercado",
+        "intro": "En el mercado del barrio",
+        "item": "una cesta de productos",
+        "purpose": "alimentos para una actividad"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-refugio",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: comida para el refugio",
+      "variant": 0,
+      "scene": {
+        "key": "refugio",
+        "intro": "En la tienda de animales",
+        "item": "un transportín",
+        "purpose": "comida para el refugio"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-acuario",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material para cuidar el acuario",
+      "variant": 1,
+      "scene": {
+        "key": "acuario",
+        "intro": "En la tienda de acuarios",
+        "item": "un filtro",
+        "purpose": "material para cuidar el acuario"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-radio",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material de grabación",
+      "variant": 2,
+      "scene": {
+        "key": "radio",
+        "intro": "En el taller de radio escolar",
+        "item": "un micrófono",
+        "purpose": "material de grabación"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-cine",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material para un cortometraje",
+      "variant": 3,
+      "scene": {
+        "key": "cine",
+        "intro": "En el taller de cine",
+        "item": "un trípode",
+        "purpose": "material para un cortometraje"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-encuadernacion",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: papel para hacer cuadernos",
+      "variant": 0,
+      "scene": {
+        "key": "encuadernacion",
+        "intro": "En el taller de encuadernación",
+        "item": "un cuaderno artesanal",
+        "purpose": "papel para hacer cuadernos"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-comic",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: cómics para un rincón de lectura",
+      "variant": 1,
+      "scene": {
+        "key": "comic",
+        "intro": "En la tienda de cómics",
+        "item": "un cómic",
+        "purpose": "cómics para un rincón de lectura"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-manualidades",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material para decorar la clase",
+      "variant": 2,
+      "scene": {
+        "key": "manualidades",
+        "intro": "En la tienda de manualidades",
+        "item": "un estuche de rotuladores",
+        "purpose": "material para decorar la clase"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-fiesta",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: adornos para la fiesta",
+      "variant": 3,
+      "scene": {
+        "key": "fiesta",
+        "intro": "En la tienda de celebraciones",
+        "item": "una guirnalda",
+        "purpose": "adornos para la fiesta"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-calzado",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: calzado para una actividad",
+      "variant": 0,
+      "scene": {
+        "key": "calzado",
+        "intro": "En la zapatería",
+        "item": "un par de zapatillas",
+        "purpose": "calzado para una actividad"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-ropa",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: camisetas para el equipo",
+      "variant": 1,
+      "scene": {
+        "key": "ropa",
+        "intro": "En la tienda de ropa",
+        "item": "una camiseta",
+        "purpose": "camisetas para el equipo"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-viaje",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: equipaje para un viaje",
+      "variant": 2,
+      "scene": {
+        "key": "viaje",
+        "intro": "En la tienda de equipaje",
+        "item": "una maleta",
+        "purpose": "equipaje para un viaje"
+      }
+    },
+    {
+      "id": "porcentajes-relacion-solidaridad",
+      "family": "porcentajes",
+      "type": "relacion",
+      "title": "Qué porcentaje representa: material para una campaña solidaria",
+      "variant": 3,
+      "scene": {
+        "key": "solidaridad",
+        "intro": "En el mercadillo solidario",
+        "item": "una pulsera artesanal",
+        "purpose": "material para una campaña solidaria"
+      }
+    }
+  ]
+}

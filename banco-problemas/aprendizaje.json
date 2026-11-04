@@ -1,0 +1,1826 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "razonamiento-1-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Razonamiento: la biblioteca"
+    },
+    {
+      "id": "razonamiento-1-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Razonamiento: la biblioteca"
+    },
+    {
+      "id": "razonamiento-1-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Razonamiento: la biblioteca"
+    },
+    {
+      "id": "razonamiento-1-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "La biblioteca",
+      "title": "Razonamiento: la biblioteca"
+    },
+    {
+      "id": "razonamiento-2-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "El huerto",
+      "title": "Razonamiento: el huerto"
+    },
+    {
+      "id": "razonamiento-2-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "El huerto",
+      "title": "Razonamiento: el huerto"
+    },
+    {
+      "id": "razonamiento-2-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "El huerto",
+      "title": "Razonamiento: el huerto"
+    },
+    {
+      "id": "razonamiento-2-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "El huerto",
+      "title": "Razonamiento: el huerto"
+    },
+    {
+      "id": "razonamiento-3-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Razonamiento: la excursión"
+    },
+    {
+      "id": "razonamiento-3-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Razonamiento: la excursión"
+    },
+    {
+      "id": "razonamiento-3-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Razonamiento: la excursión"
+    },
+    {
+      "id": "razonamiento-3-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "La excursión",
+      "title": "Razonamiento: la excursión"
+    },
+    {
+      "id": "razonamiento-4-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "El taller",
+      "title": "Razonamiento: el taller"
+    },
+    {
+      "id": "razonamiento-4-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "El taller",
+      "title": "Razonamiento: el taller"
+    },
+    {
+      "id": "razonamiento-4-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "El taller",
+      "title": "Razonamiento: el taller"
+    },
+    {
+      "id": "razonamiento-4-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "El taller",
+      "title": "Razonamiento: el taller"
+    },
+    {
+      "id": "razonamiento-5-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "La feria",
+      "title": "Razonamiento: la feria"
+    },
+    {
+      "id": "razonamiento-5-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "La feria",
+      "title": "Razonamiento: la feria"
+    },
+    {
+      "id": "razonamiento-5-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "La feria",
+      "title": "Razonamiento: la feria"
+    },
+    {
+      "id": "razonamiento-5-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "La feria",
+      "title": "Razonamiento: la feria"
+    },
+    {
+      "id": "razonamiento-6-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "El club deportivo",
+      "title": "Razonamiento: el club deportivo"
+    },
+    {
+      "id": "razonamiento-6-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "El club deportivo",
+      "title": "Razonamiento: el club deportivo"
+    },
+    {
+      "id": "razonamiento-6-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "El club deportivo",
+      "title": "Razonamiento: el club deportivo"
+    },
+    {
+      "id": "razonamiento-6-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "El club deportivo",
+      "title": "Razonamiento: el club deportivo"
+    },
+    {
+      "id": "razonamiento-7-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "La fiesta",
+      "title": "Razonamiento: la fiesta"
+    },
+    {
+      "id": "razonamiento-7-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "La fiesta",
+      "title": "Razonamiento: la fiesta"
+    },
+    {
+      "id": "razonamiento-7-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "La fiesta",
+      "title": "Razonamiento: la fiesta"
+    },
+    {
+      "id": "razonamiento-7-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "La fiesta",
+      "title": "Razonamiento: la fiesta"
+    },
+    {
+      "id": "razonamiento-8-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "La clase",
+      "title": "Razonamiento: la clase"
+    },
+    {
+      "id": "razonamiento-8-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "La clase",
+      "title": "Razonamiento: la clase"
+    },
+    {
+      "id": "razonamiento-8-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "La clase",
+      "title": "Razonamiento: la clase"
+    },
+    {
+      "id": "razonamiento-8-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "La clase",
+      "title": "Razonamiento: la clase"
+    },
+    {
+      "id": "razonamiento-9-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "El mercadillo",
+      "title": "Razonamiento: el mercadillo"
+    },
+    {
+      "id": "razonamiento-9-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "El mercadillo",
+      "title": "Razonamiento: el mercadillo"
+    },
+    {
+      "id": "razonamiento-9-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "El mercadillo",
+      "title": "Razonamiento: el mercadillo"
+    },
+    {
+      "id": "razonamiento-9-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "El mercadillo",
+      "title": "Razonamiento: el mercadillo"
+    },
+    {
+      "id": "razonamiento-10-1",
+      "family": "razonamiento",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Razonamiento: el campamento"
+    },
+    {
+      "id": "razonamiento-10-2",
+      "family": "razonamiento",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Razonamiento: el campamento"
+    },
+    {
+      "id": "razonamiento-10-3",
+      "family": "razonamiento",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Razonamiento: el campamento"
+    },
+    {
+      "id": "razonamiento-10-4",
+      "family": "razonamiento",
+      "variant": 3,
+      "context": "El campamento",
+      "title": "Razonamiento: el campamento"
+    },
+    {
+      "id": "geometria-1-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Geometría: la biblioteca"
+    },
+    {
+      "id": "geometria-1-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Geometría: la biblioteca"
+    },
+    {
+      "id": "geometria-1-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Geometría: la biblioteca"
+    },
+    {
+      "id": "geometria-1-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "La biblioteca",
+      "title": "Geometría: la biblioteca"
+    },
+    {
+      "id": "geometria-2-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "El huerto",
+      "title": "Geometría: el huerto"
+    },
+    {
+      "id": "geometria-2-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "El huerto",
+      "title": "Geometría: el huerto"
+    },
+    {
+      "id": "geometria-2-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "El huerto",
+      "title": "Geometría: el huerto"
+    },
+    {
+      "id": "geometria-2-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "El huerto",
+      "title": "Geometría: el huerto"
+    },
+    {
+      "id": "geometria-3-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Geometría: la excursión"
+    },
+    {
+      "id": "geometria-3-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Geometría: la excursión"
+    },
+    {
+      "id": "geometria-3-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Geometría: la excursión"
+    },
+    {
+      "id": "geometria-3-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "La excursión",
+      "title": "Geometría: la excursión"
+    },
+    {
+      "id": "geometria-4-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "El taller",
+      "title": "Geometría: el taller"
+    },
+    {
+      "id": "geometria-4-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "El taller",
+      "title": "Geometría: el taller"
+    },
+    {
+      "id": "geometria-4-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "El taller",
+      "title": "Geometría: el taller"
+    },
+    {
+      "id": "geometria-4-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "El taller",
+      "title": "Geometría: el taller"
+    },
+    {
+      "id": "geometria-5-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "La feria",
+      "title": "Geometría: la feria"
+    },
+    {
+      "id": "geometria-5-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "La feria",
+      "title": "Geometría: la feria"
+    },
+    {
+      "id": "geometria-5-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "La feria",
+      "title": "Geometría: la feria"
+    },
+    {
+      "id": "geometria-5-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "La feria",
+      "title": "Geometría: la feria"
+    },
+    {
+      "id": "geometria-6-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "El club deportivo",
+      "title": "Geometría: el club deportivo"
+    },
+    {
+      "id": "geometria-6-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "El club deportivo",
+      "title": "Geometría: el club deportivo"
+    },
+    {
+      "id": "geometria-6-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "El club deportivo",
+      "title": "Geometría: el club deportivo"
+    },
+    {
+      "id": "geometria-6-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "El club deportivo",
+      "title": "Geometría: el club deportivo"
+    },
+    {
+      "id": "geometria-7-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "La fiesta",
+      "title": "Geometría: la fiesta"
+    },
+    {
+      "id": "geometria-7-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "La fiesta",
+      "title": "Geometría: la fiesta"
+    },
+    {
+      "id": "geometria-7-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "La fiesta",
+      "title": "Geometría: la fiesta"
+    },
+    {
+      "id": "geometria-7-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "La fiesta",
+      "title": "Geometría: la fiesta"
+    },
+    {
+      "id": "geometria-8-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "La clase",
+      "title": "Geometría: la clase"
+    },
+    {
+      "id": "geometria-8-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "La clase",
+      "title": "Geometría: la clase"
+    },
+    {
+      "id": "geometria-8-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "La clase",
+      "title": "Geometría: la clase"
+    },
+    {
+      "id": "geometria-8-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "La clase",
+      "title": "Geometría: la clase"
+    },
+    {
+      "id": "geometria-9-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "El mercadillo",
+      "title": "Geometría: el mercadillo"
+    },
+    {
+      "id": "geometria-9-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "El mercadillo",
+      "title": "Geometría: el mercadillo"
+    },
+    {
+      "id": "geometria-9-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "El mercadillo",
+      "title": "Geometría: el mercadillo"
+    },
+    {
+      "id": "geometria-9-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "El mercadillo",
+      "title": "Geometría: el mercadillo"
+    },
+    {
+      "id": "geometria-10-1",
+      "family": "geometria",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Geometría: el campamento"
+    },
+    {
+      "id": "geometria-10-2",
+      "family": "geometria",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Geometría: el campamento"
+    },
+    {
+      "id": "geometria-10-3",
+      "family": "geometria",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Geometría: el campamento"
+    },
+    {
+      "id": "geometria-10-4",
+      "family": "geometria",
+      "variant": 3,
+      "context": "El campamento",
+      "title": "Geometría: el campamento"
+    },
+    {
+      "id": "compras-1-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Dinero y compras: la biblioteca"
+    },
+    {
+      "id": "compras-1-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Dinero y compras: la biblioteca"
+    },
+    {
+      "id": "compras-1-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Dinero y compras: la biblioteca"
+    },
+    {
+      "id": "compras-1-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "La biblioteca",
+      "title": "Dinero y compras: la biblioteca"
+    },
+    {
+      "id": "compras-2-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "El huerto",
+      "title": "Dinero y compras: el huerto"
+    },
+    {
+      "id": "compras-2-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "El huerto",
+      "title": "Dinero y compras: el huerto"
+    },
+    {
+      "id": "compras-2-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "El huerto",
+      "title": "Dinero y compras: el huerto"
+    },
+    {
+      "id": "compras-2-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "El huerto",
+      "title": "Dinero y compras: el huerto"
+    },
+    {
+      "id": "compras-3-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Dinero y compras: la excursión"
+    },
+    {
+      "id": "compras-3-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Dinero y compras: la excursión"
+    },
+    {
+      "id": "compras-3-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Dinero y compras: la excursión"
+    },
+    {
+      "id": "compras-3-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "La excursión",
+      "title": "Dinero y compras: la excursión"
+    },
+    {
+      "id": "compras-4-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "El taller",
+      "title": "Dinero y compras: el taller"
+    },
+    {
+      "id": "compras-4-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "El taller",
+      "title": "Dinero y compras: el taller"
+    },
+    {
+      "id": "compras-4-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "El taller",
+      "title": "Dinero y compras: el taller"
+    },
+    {
+      "id": "compras-4-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "El taller",
+      "title": "Dinero y compras: el taller"
+    },
+    {
+      "id": "compras-5-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "La feria",
+      "title": "Dinero y compras: la feria"
+    },
+    {
+      "id": "compras-5-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "La feria",
+      "title": "Dinero y compras: la feria"
+    },
+    {
+      "id": "compras-5-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "La feria",
+      "title": "Dinero y compras: la feria"
+    },
+    {
+      "id": "compras-5-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "La feria",
+      "title": "Dinero y compras: la feria"
+    },
+    {
+      "id": "compras-6-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "El club deportivo",
+      "title": "Dinero y compras: el club deportivo"
+    },
+    {
+      "id": "compras-6-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "El club deportivo",
+      "title": "Dinero y compras: el club deportivo"
+    },
+    {
+      "id": "compras-6-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "El club deportivo",
+      "title": "Dinero y compras: el club deportivo"
+    },
+    {
+      "id": "compras-6-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "El club deportivo",
+      "title": "Dinero y compras: el club deportivo"
+    },
+    {
+      "id": "compras-7-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "La fiesta",
+      "title": "Dinero y compras: la fiesta"
+    },
+    {
+      "id": "compras-7-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "La fiesta",
+      "title": "Dinero y compras: la fiesta"
+    },
+    {
+      "id": "compras-7-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "La fiesta",
+      "title": "Dinero y compras: la fiesta"
+    },
+    {
+      "id": "compras-7-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "La fiesta",
+      "title": "Dinero y compras: la fiesta"
+    },
+    {
+      "id": "compras-8-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "La clase",
+      "title": "Dinero y compras: la clase"
+    },
+    {
+      "id": "compras-8-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "La clase",
+      "title": "Dinero y compras: la clase"
+    },
+    {
+      "id": "compras-8-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "La clase",
+      "title": "Dinero y compras: la clase"
+    },
+    {
+      "id": "compras-8-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "La clase",
+      "title": "Dinero y compras: la clase"
+    },
+    {
+      "id": "compras-9-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "El mercadillo",
+      "title": "Dinero y compras: el mercadillo"
+    },
+    {
+      "id": "compras-9-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "El mercadillo",
+      "title": "Dinero y compras: el mercadillo"
+    },
+    {
+      "id": "compras-9-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "El mercadillo",
+      "title": "Dinero y compras: el mercadillo"
+    },
+    {
+      "id": "compras-9-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "El mercadillo",
+      "title": "Dinero y compras: el mercadillo"
+    },
+    {
+      "id": "compras-10-1",
+      "family": "compras",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Dinero y compras: el campamento"
+    },
+    {
+      "id": "compras-10-2",
+      "family": "compras",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Dinero y compras: el campamento"
+    },
+    {
+      "id": "compras-10-3",
+      "family": "compras",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Dinero y compras: el campamento"
+    },
+    {
+      "id": "compras-10-4",
+      "family": "compras",
+      "variant": 3,
+      "context": "El campamento",
+      "title": "Dinero y compras: el campamento"
+    },
+    {
+      "id": "proporcionalidad-1-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Proporcionalidad: la biblioteca"
+    },
+    {
+      "id": "proporcionalidad-1-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Proporcionalidad: la biblioteca"
+    },
+    {
+      "id": "proporcionalidad-1-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Proporcionalidad: la biblioteca"
+    },
+    {
+      "id": "proporcionalidad-1-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "La biblioteca",
+      "title": "Proporcionalidad: la biblioteca"
+    },
+    {
+      "id": "proporcionalidad-2-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "El huerto",
+      "title": "Proporcionalidad: el huerto"
+    },
+    {
+      "id": "proporcionalidad-2-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "El huerto",
+      "title": "Proporcionalidad: el huerto"
+    },
+    {
+      "id": "proporcionalidad-2-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "El huerto",
+      "title": "Proporcionalidad: el huerto"
+    },
+    {
+      "id": "proporcionalidad-2-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "El huerto",
+      "title": "Proporcionalidad: el huerto"
+    },
+    {
+      "id": "proporcionalidad-3-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Proporcionalidad: la excursión"
+    },
+    {
+      "id": "proporcionalidad-3-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Proporcionalidad: la excursión"
+    },
+    {
+      "id": "proporcionalidad-3-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Proporcionalidad: la excursión"
+    },
+    {
+      "id": "proporcionalidad-3-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "La excursión",
+      "title": "Proporcionalidad: la excursión"
+    },
+    {
+      "id": "proporcionalidad-4-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "El taller",
+      "title": "Proporcionalidad: el taller"
+    },
+    {
+      "id": "proporcionalidad-4-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "El taller",
+      "title": "Proporcionalidad: el taller"
+    },
+    {
+      "id": "proporcionalidad-4-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "El taller",
+      "title": "Proporcionalidad: el taller"
+    },
+    {
+      "id": "proporcionalidad-4-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "El taller",
+      "title": "Proporcionalidad: el taller"
+    },
+    {
+      "id": "proporcionalidad-5-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "La feria",
+      "title": "Proporcionalidad: la feria"
+    },
+    {
+      "id": "proporcionalidad-5-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "La feria",
+      "title": "Proporcionalidad: la feria"
+    },
+    {
+      "id": "proporcionalidad-5-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "La feria",
+      "title": "Proporcionalidad: la feria"
+    },
+    {
+      "id": "proporcionalidad-5-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "La feria",
+      "title": "Proporcionalidad: la feria"
+    },
+    {
+      "id": "proporcionalidad-6-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "El club deportivo",
+      "title": "Proporcionalidad: el club deportivo"
+    },
+    {
+      "id": "proporcionalidad-6-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "El club deportivo",
+      "title": "Proporcionalidad: el club deportivo"
+    },
+    {
+      "id": "proporcionalidad-6-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "El club deportivo",
+      "title": "Proporcionalidad: el club deportivo"
+    },
+    {
+      "id": "proporcionalidad-6-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "El club deportivo",
+      "title": "Proporcionalidad: el club deportivo"
+    },
+    {
+      "id": "proporcionalidad-7-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "La fiesta",
+      "title": "Proporcionalidad: la fiesta"
+    },
+    {
+      "id": "proporcionalidad-7-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "La fiesta",
+      "title": "Proporcionalidad: la fiesta"
+    },
+    {
+      "id": "proporcionalidad-7-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "La fiesta",
+      "title": "Proporcionalidad: la fiesta"
+    },
+    {
+      "id": "proporcionalidad-7-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "La fiesta",
+      "title": "Proporcionalidad: la fiesta"
+    },
+    {
+      "id": "proporcionalidad-8-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "La clase",
+      "title": "Proporcionalidad: la clase"
+    },
+    {
+      "id": "proporcionalidad-8-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "La clase",
+      "title": "Proporcionalidad: la clase"
+    },
+    {
+      "id": "proporcionalidad-8-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "La clase",
+      "title": "Proporcionalidad: la clase"
+    },
+    {
+      "id": "proporcionalidad-8-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "La clase",
+      "title": "Proporcionalidad: la clase"
+    },
+    {
+      "id": "proporcionalidad-9-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "El mercadillo",
+      "title": "Proporcionalidad: el mercadillo"
+    },
+    {
+      "id": "proporcionalidad-9-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "El mercadillo",
+      "title": "Proporcionalidad: el mercadillo"
+    },
+    {
+      "id": "proporcionalidad-9-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "El mercadillo",
+      "title": "Proporcionalidad: el mercadillo"
+    },
+    {
+      "id": "proporcionalidad-9-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "El mercadillo",
+      "title": "Proporcionalidad: el mercadillo"
+    },
+    {
+      "id": "proporcionalidad-10-1",
+      "family": "proporcionalidad",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Proporcionalidad: el campamento"
+    },
+    {
+      "id": "proporcionalidad-10-2",
+      "family": "proporcionalidad",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Proporcionalidad: el campamento"
+    },
+    {
+      "id": "proporcionalidad-10-3",
+      "family": "proporcionalidad",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Proporcionalidad: el campamento"
+    },
+    {
+      "id": "proporcionalidad-10-4",
+      "family": "proporcionalidad",
+      "variant": 3,
+      "context": "El campamento",
+      "title": "Proporcionalidad: el campamento"
+    },
+    {
+      "id": "geometria-1-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "La biblioteca",
+      "title": "Perímetro del triángulo: la biblioteca"
+    },
+    {
+      "id": "geometria-1-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "La biblioteca",
+      "title": "Área del triángulo: la biblioteca"
+    },
+    {
+      "id": "geometria-1-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "La biblioteca",
+      "title": "Longitud de la circunferencia: la biblioteca"
+    },
+    {
+      "id": "geometria-1-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "La biblioteca",
+      "title": "Área del círculo: la biblioteca"
+    },
+    {
+      "id": "geometria-1-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "La biblioteca",
+      "title": "Perímetro del paralelogramo: la biblioteca"
+    },
+    {
+      "id": "geometria-1-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "La biblioteca",
+      "title": "Área del paralelogramo: la biblioteca"
+    },
+    {
+      "id": "geometria-1-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "La biblioteca",
+      "title": "Perímetro del rombo: la biblioteca"
+    },
+    {
+      "id": "geometria-1-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "La biblioteca",
+      "title": "Área del rombo: la biblioteca"
+    },
+    {
+      "id": "geometria-1-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "La biblioteca",
+      "title": "Perímetro del trapecio: la biblioteca"
+    },
+    {
+      "id": "geometria-1-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "La biblioteca",
+      "title": "Área del trapecio: la biblioteca"
+    },
+    {
+      "id": "geometria-2-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "El huerto",
+      "title": "Perímetro del triángulo: el huerto"
+    },
+    {
+      "id": "geometria-2-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "El huerto",
+      "title": "Área del triángulo: el huerto"
+    },
+    {
+      "id": "geometria-2-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "El huerto",
+      "title": "Longitud de la circunferencia: el huerto"
+    },
+    {
+      "id": "geometria-2-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "El huerto",
+      "title": "Área del círculo: el huerto"
+    },
+    {
+      "id": "geometria-2-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "El huerto",
+      "title": "Perímetro del paralelogramo: el huerto"
+    },
+    {
+      "id": "geometria-2-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "El huerto",
+      "title": "Área del paralelogramo: el huerto"
+    },
+    {
+      "id": "geometria-2-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "El huerto",
+      "title": "Perímetro del rombo: el huerto"
+    },
+    {
+      "id": "geometria-2-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "El huerto",
+      "title": "Área del rombo: el huerto"
+    },
+    {
+      "id": "geometria-2-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "El huerto",
+      "title": "Perímetro del trapecio: el huerto"
+    },
+    {
+      "id": "geometria-2-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "El huerto",
+      "title": "Área del trapecio: el huerto"
+    },
+    {
+      "id": "geometria-3-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "La excursión",
+      "title": "Perímetro del triángulo: la excursión"
+    },
+    {
+      "id": "geometria-3-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "La excursión",
+      "title": "Área del triángulo: la excursión"
+    },
+    {
+      "id": "geometria-3-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "La excursión",
+      "title": "Longitud de la circunferencia: la excursión"
+    },
+    {
+      "id": "geometria-3-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "La excursión",
+      "title": "Área del círculo: la excursión"
+    },
+    {
+      "id": "geometria-3-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "La excursión",
+      "title": "Perímetro del paralelogramo: la excursión"
+    },
+    {
+      "id": "geometria-3-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "La excursión",
+      "title": "Área del paralelogramo: la excursión"
+    },
+    {
+      "id": "geometria-3-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "La excursión",
+      "title": "Perímetro del rombo: la excursión"
+    },
+    {
+      "id": "geometria-3-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "La excursión",
+      "title": "Área del rombo: la excursión"
+    },
+    {
+      "id": "geometria-3-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "La excursión",
+      "title": "Perímetro del trapecio: la excursión"
+    },
+    {
+      "id": "geometria-3-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "La excursión",
+      "title": "Área del trapecio: la excursión"
+    },
+    {
+      "id": "geometria-4-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "El taller",
+      "title": "Perímetro del triángulo: el taller"
+    },
+    {
+      "id": "geometria-4-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "El taller",
+      "title": "Área del triángulo: el taller"
+    },
+    {
+      "id": "geometria-4-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "El taller",
+      "title": "Longitud de la circunferencia: el taller"
+    },
+    {
+      "id": "geometria-4-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "El taller",
+      "title": "Área del círculo: el taller"
+    },
+    {
+      "id": "geometria-4-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "El taller",
+      "title": "Perímetro del paralelogramo: el taller"
+    },
+    {
+      "id": "geometria-4-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "El taller",
+      "title": "Área del paralelogramo: el taller"
+    },
+    {
+      "id": "geometria-4-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "El taller",
+      "title": "Perímetro del rombo: el taller"
+    },
+    {
+      "id": "geometria-4-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "El taller",
+      "title": "Área del rombo: el taller"
+    },
+    {
+      "id": "geometria-4-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "El taller",
+      "title": "Perímetro del trapecio: el taller"
+    },
+    {
+      "id": "geometria-4-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "El taller",
+      "title": "Área del trapecio: el taller"
+    },
+    {
+      "id": "geometria-5-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "La feria",
+      "title": "Perímetro del triángulo: la feria"
+    },
+    {
+      "id": "geometria-5-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "La feria",
+      "title": "Área del triángulo: la feria"
+    },
+    {
+      "id": "geometria-5-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "La feria",
+      "title": "Longitud de la circunferencia: la feria"
+    },
+    {
+      "id": "geometria-5-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "La feria",
+      "title": "Área del círculo: la feria"
+    },
+    {
+      "id": "geometria-5-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "La feria",
+      "title": "Perímetro del paralelogramo: la feria"
+    },
+    {
+      "id": "geometria-5-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "La feria",
+      "title": "Área del paralelogramo: la feria"
+    },
+    {
+      "id": "geometria-5-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "La feria",
+      "title": "Perímetro del rombo: la feria"
+    },
+    {
+      "id": "geometria-5-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "La feria",
+      "title": "Área del rombo: la feria"
+    },
+    {
+      "id": "geometria-5-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "La feria",
+      "title": "Perímetro del trapecio: la feria"
+    },
+    {
+      "id": "geometria-5-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "La feria",
+      "title": "Área del trapecio: la feria"
+    },
+    {
+      "id": "geometria-6-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "El club deportivo",
+      "title": "Perímetro del triángulo: el club deportivo"
+    },
+    {
+      "id": "geometria-6-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "El club deportivo",
+      "title": "Área del triángulo: el club deportivo"
+    },
+    {
+      "id": "geometria-6-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "El club deportivo",
+      "title": "Longitud de la circunferencia: el club deportivo"
+    },
+    {
+      "id": "geometria-6-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "El club deportivo",
+      "title": "Área del círculo: el club deportivo"
+    },
+    {
+      "id": "geometria-6-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "El club deportivo",
+      "title": "Perímetro del paralelogramo: el club deportivo"
+    },
+    {
+      "id": "geometria-6-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "El club deportivo",
+      "title": "Área del paralelogramo: el club deportivo"
+    },
+    {
+      "id": "geometria-6-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "El club deportivo",
+      "title": "Perímetro del rombo: el club deportivo"
+    },
+    {
+      "id": "geometria-6-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "El club deportivo",
+      "title": "Área del rombo: el club deportivo"
+    },
+    {
+      "id": "geometria-6-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "El club deportivo",
+      "title": "Perímetro del trapecio: el club deportivo"
+    },
+    {
+      "id": "geometria-6-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "El club deportivo",
+      "title": "Área del trapecio: el club deportivo"
+    },
+    {
+      "id": "geometria-7-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "La fiesta",
+      "title": "Perímetro del triángulo: la fiesta"
+    },
+    {
+      "id": "geometria-7-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "La fiesta",
+      "title": "Área del triángulo: la fiesta"
+    },
+    {
+      "id": "geometria-7-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "La fiesta",
+      "title": "Longitud de la circunferencia: la fiesta"
+    },
+    {
+      "id": "geometria-7-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "La fiesta",
+      "title": "Área del círculo: la fiesta"
+    },
+    {
+      "id": "geometria-7-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "La fiesta",
+      "title": "Perímetro del paralelogramo: la fiesta"
+    },
+    {
+      "id": "geometria-7-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "La fiesta",
+      "title": "Área del paralelogramo: la fiesta"
+    },
+    {
+      "id": "geometria-7-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "La fiesta",
+      "title": "Perímetro del rombo: la fiesta"
+    },
+    {
+      "id": "geometria-7-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "La fiesta",
+      "title": "Área del rombo: la fiesta"
+    },
+    {
+      "id": "geometria-7-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "La fiesta",
+      "title": "Perímetro del trapecio: la fiesta"
+    },
+    {
+      "id": "geometria-7-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "La fiesta",
+      "title": "Área del trapecio: la fiesta"
+    },
+    {
+      "id": "geometria-8-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "La clase",
+      "title": "Perímetro del triángulo: la clase"
+    },
+    {
+      "id": "geometria-8-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "La clase",
+      "title": "Área del triángulo: la clase"
+    },
+    {
+      "id": "geometria-8-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "La clase",
+      "title": "Longitud de la circunferencia: la clase"
+    },
+    {
+      "id": "geometria-8-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "La clase",
+      "title": "Área del círculo: la clase"
+    },
+    {
+      "id": "geometria-8-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "La clase",
+      "title": "Perímetro del paralelogramo: la clase"
+    },
+    {
+      "id": "geometria-8-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "La clase",
+      "title": "Área del paralelogramo: la clase"
+    },
+    {
+      "id": "geometria-8-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "La clase",
+      "title": "Perímetro del rombo: la clase"
+    },
+    {
+      "id": "geometria-8-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "La clase",
+      "title": "Área del rombo: la clase"
+    },
+    {
+      "id": "geometria-8-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "La clase",
+      "title": "Perímetro del trapecio: la clase"
+    },
+    {
+      "id": "geometria-8-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "La clase",
+      "title": "Área del trapecio: la clase"
+    },
+    {
+      "id": "geometria-9-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "El mercadillo",
+      "title": "Perímetro del triángulo: el mercadillo"
+    },
+    {
+      "id": "geometria-9-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "El mercadillo",
+      "title": "Área del triángulo: el mercadillo"
+    },
+    {
+      "id": "geometria-9-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "El mercadillo",
+      "title": "Longitud de la circunferencia: el mercadillo"
+    },
+    {
+      "id": "geometria-9-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "El mercadillo",
+      "title": "Área del círculo: el mercadillo"
+    },
+    {
+      "id": "geometria-9-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "El mercadillo",
+      "title": "Perímetro del paralelogramo: el mercadillo"
+    },
+    {
+      "id": "geometria-9-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "El mercadillo",
+      "title": "Área del paralelogramo: el mercadillo"
+    },
+    {
+      "id": "geometria-9-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "El mercadillo",
+      "title": "Perímetro del rombo: el mercadillo"
+    },
+    {
+      "id": "geometria-9-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "El mercadillo",
+      "title": "Área del rombo: el mercadillo"
+    },
+    {
+      "id": "geometria-9-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "El mercadillo",
+      "title": "Perímetro del trapecio: el mercadillo"
+    },
+    {
+      "id": "geometria-9-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "El mercadillo",
+      "title": "Área del trapecio: el mercadillo"
+    },
+    {
+      "id": "geometria-10-5",
+      "family": "geometria",
+      "variant": 4,
+      "context": "El campamento",
+      "title": "Perímetro del triángulo: el campamento"
+    },
+    {
+      "id": "geometria-10-6",
+      "family": "geometria",
+      "variant": 5,
+      "context": "El campamento",
+      "title": "Área del triángulo: el campamento"
+    },
+    {
+      "id": "geometria-10-7",
+      "family": "geometria",
+      "variant": 6,
+      "context": "El campamento",
+      "title": "Longitud de la circunferencia: el campamento"
+    },
+    {
+      "id": "geometria-10-8",
+      "family": "geometria",
+      "variant": 7,
+      "context": "El campamento",
+      "title": "Área del círculo: el campamento"
+    },
+    {
+      "id": "geometria-10-9",
+      "family": "geometria",
+      "variant": 8,
+      "context": "El campamento",
+      "title": "Perímetro del paralelogramo: el campamento"
+    },
+    {
+      "id": "geometria-10-10",
+      "family": "geometria",
+      "variant": 9,
+      "context": "El campamento",
+      "title": "Área del paralelogramo: el campamento"
+    },
+    {
+      "id": "geometria-10-11",
+      "family": "geometria",
+      "variant": 10,
+      "context": "El campamento",
+      "title": "Perímetro del rombo: el campamento"
+    },
+    {
+      "id": "geometria-10-12",
+      "family": "geometria",
+      "variant": 11,
+      "context": "El campamento",
+      "title": "Área del rombo: el campamento"
+    },
+    {
+      "id": "geometria-10-13",
+      "family": "geometria",
+      "variant": 12,
+      "context": "El campamento",
+      "title": "Perímetro del trapecio: el campamento"
+    },
+    {
+      "id": "geometria-10-14",
+      "family": "geometria",
+      "variant": 13,
+      "context": "El campamento",
+      "title": "Área del trapecio: el campamento"
+    }
+  ]
+}

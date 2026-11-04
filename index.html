@@ -98,8 +98,10 @@
         </details>
 
         <div class="config-box teacher-only hidden" id="teacherBox">
+          <button id="reportsHomeBtn" class="btn-mini" type="button">📊 Historial e informes del alumnado</button>
           <p class="label">🧑‍🏫 Panel del maestro</p>
           <p class="hint">Crea una sala, proyecta esta pantalla y deja que los alumnos entren con el código. Verás ranking, avance y rachas en directo.</p>
+          <p class="hint">🔒 Cada navegador usa una identidad anónima. Los códigos seguros tienen 8 caracteres. Al expulsar a un participante se bloquea su acceso a esa sala.</p>
         </div>
 
         <div class="config-box" id="nameBox">
@@ -111,6 +113,8 @@
         </div>
 
         <div class="config-box" id="durationBox">
+          <label class="learning-inline">🎯 Final de la partida<select id="endConditionSelect"><option value="time">Por tiempo</option><option value="unlimited">Sin tiempo</option><option value="questions">Número de preguntas resueltas</option><option value="correct">Número de aciertos sin ver solución</option></select></label>
+          <label class="learning-inline hidden" id="goalCountWrap">Objetivo<input id="goalCountInput" type="number" min="1" max="1000" value="10" /></label>
           <div class="inline-field duration-inline">
             <p class="label">⏱️ Duración</p>
             <select id="timePresetSelect">
@@ -128,8 +132,71 @@
 
         <div class="config-box hidden" id="problemsBox">
           <p class="label">📖 Banco de problemas</p>
-          <p class="hint">1320 plantillas con soluciones: enteros, fracciones y MCM/MCD. Escoge una familia y los tipos que quieres practicar.</p>
-          <label class="problem-family-label">Familia de problemas<select data-problem-extra="_family"><option value="enteros">🔢 Números enteros</option><option value="fracciones">🍰 Fracciones</option><option value="mcmMcd">🔁 MCM y MCD</option></select></label>
+          <p class="hint">1900 plantillas con soluciones. Escoge una familia y los tipos que quieres practicar. Durante el juego no se muestra qué operación hay que usar.</p>
+          <label class="problem-family-label">Familia de problemas<select data-problem-extra="_family"><option value="enteros">🔢 Números enteros</option><option value="fracciones">🍰 Fracciones</option><option value="mcmMcd">🔁 MCM y MCD</option><option value="porcentajes">💯 Porcentajes</option><option value="medidas">📏 Medidas y conversiones</option><option value="razonamiento">🧩 Razonamiento</option><option value="geometria">📐 Geometría</option><option value="compras">🛒 Dinero y compras</option><option value="proporcionalidad">⚖️ Proporcionalidad</option></select></label>
+          <div class="problem-extra-options hidden" data-problem-families="razonamiento geometria compras proporcionalidad">
+            <label class="learning-inline">Cifras de los datos<select data-problem-extra="_newDigits"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select></label>
+            <label data-problem-families="razonamiento">Variedad<select data-problem-extra="_reasonVariant"><option value="-1">Todas</option><option value="0">Datos que sobran</option><option value="1">Encontrar un dato que falta</option><option value="2">Dos preguntas encadenadas</option><option value="3">Leer y elegir el dato necesario</option></select></label>
+            <label data-problem-families="geometria">Figuras y preguntas<select data-problem-extra="_geometryVariant"><option value="-1">Todas</option><option value="0">Perímetro del cuadrado</option><option value="1">Área del cuadrado</option><option value="2">Perímetro del rectángulo</option><option value="3">Área del rectángulo</option><option value="4">Perímetro del triángulo</option><option value="5">Área del triángulo</option><option value="6">Longitud de la circunferencia</option><option value="7">Área del círculo</option><option value="8">Perímetro del paralelogramo</option><option value="9">Área del paralelogramo</option><option value="10">Perímetro del rombo</option><option value="11">Área del rombo</option><option value="12">Perímetro del trapecio</option><option value="13">Área del trapecio</option></select></label>
+            <label data-problem-families="geometria">Valor de π<select data-problem-extra="_geometryPi"><option value="3,14">3,14</option><option value="3">3 (iniciación)</option></select></label>
+            <label data-problem-families="geometria"><input type="checkbox" data-problem-extra="_geometryDecimals" checked> Permitir resultados decimales</label>
+            <p class="hint" data-problem-families="geometria">En círculos se usa el valor de π indicado, sin redondear. Con una cifra y π = 3,14, permite decimales para practicar círculos.</p>
+            <label data-problem-families="compras"><input type="checkbox" data-problem-extra="_newDecimals" /> Precios con céntimos</label>
+            <p class="hint">140 plantillas de geometría y 40 por cada otra familia de este bloque. Estas familias usan su propia variedad, no el selector de mezcla de operaciones. En las preguntas encadenadas, la segunda conserva la situación de la primera. Los dibujos no están a escala.</p>
+          </div>
+          <div class="problem-extra-options hidden" data-problem-families="medidas">
+            <p class="hint">40 plantillas por magnitud. Activa las que quieras alternar y elige unidades de origen y destino, o déjalas aleatorias.</p>
+            <div id="measureCategories" class="measure-categories"></div>
+            <div class="problem-digit-range">
+              <label>Cifras mínimas de la cantidad inicial<select data-problem-extra="_measureMinDigits" data-measure-digits></select></label>
+              <label>Cifras máximas de la cantidad inicial<select data-problem-extra="_measureMaxDigits" data-measure-digits></select></label>
+            </div>
+            <label class="toggle-line"><input type="checkbox" data-problem-extra="_measureDecimals" /> Permitir decimales exactos en datos y respuestas</label>
+            <label class="problem-family-label" id="measurePlacesWrap">Decimales máximos<select data-problem-extra="_measurePlaces"><option value="1">1 decimal</option><option value="2">2 decimales</option><option value="3">3 decimales</option></select></label>
+            <details class="problem-category">
+              <summary>🧩 Operaciones adicionales para los combinados</summary>
+              <div class="problem-category-body theory-type-buttons">
+                <label><input type="checkbox" data-problem-extra="_measure_suma" /> ➕ Sumas</label>
+                <label><input type="checkbox" data-problem-extra="_measure_resta" /> ➖ Restas</label>
+                <label><input type="checkbox" data-problem-extra="_measure_multiplicacion" /> ✖️ Multiplicaciones</label>
+                <label><input type="checkbox" data-problem-extra="_measure_division" /> ➗ Repartos</label>
+              </div>
+            </details>
+            <p class="hint">Para combinar, activa alguna operación adicional y elige «Solo combinados» o «Individuales y combinados». Cada problema trabaja una magnitud: no se suman metros con gramos. Se convierten las unidades antes de operar. En tiempo: segundos, minutos, horas, días y semanas; no meses variables. Sin redondeos.</p>
+          </div>
+          <div class="problem-extra-options hidden" data-problem-families="porcentajes">
+            <details class="problem-category">
+              <summary>💯 Tipos de porcentajes · 40 plantillas de cada tipo</summary>
+              <div class="problem-category-body theory-type-buttons">
+                <label><input type="checkbox" data-problem-extra="_percentage_parte" checked /> Calcular una parte</label>
+                <label><input type="checkbox" data-problem-extra="_percentage_descuento" checked /> Descuentos: precio final</label>
+                <label><input type="checkbox" data-problem-extra="_percentage_aumento" checked /> Aumentos: importe final</label>
+                <label><input type="checkbox" data-problem-extra="_percentage_relacion" checked /> ¿Qué porcentaje representa?</label>
+              </div>
+            </details>
+            <div class="problem-digit-range">
+              <label>Cifras mínimas de la cantidad inicial<select data-problem-extra="_percentageMinDigits"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></label>
+              <label>Cifras máximas de la cantidad inicial<select data-problem-extra="_percentageMaxDigits"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></label>
+            </div>
+            <div class="theory-type-buttons">
+              <label><input type="checkbox" data-problem-extra="_percentageBasic" checked /> Porcentajes básicos: 10, 20, 25, 50, 75 y 100 %</label>
+              <label><input type="checkbox" data-problem-extra="_percentageDecimals" /> Permitir resultados decimales exactos</label>
+            </div>
+            <label class="problem-family-label" id="percentagePlacesWrap">Decimales máximos<select data-problem-extra="_percentagePlaces"><option value="1">1 decimal</option><option value="2" selected>2 decimales</option></select></label>
+            <details class="problem-category">
+              <summary>🧩 Operaciones adicionales para los combinados</summary>
+              <div class="problem-category-body">
+                <div class="theory-type-buttons">
+                  <label><input type="checkbox" data-problem-extra="_percentage_suma" /> ➕ Sumas</label>
+                  <label><input type="checkbox" data-problem-extra="_percentage_resta" /> ➖ Restas</label>
+                  <label><input type="checkbox" data-problem-extra="_percentage_multiplicacion" /> ✖️ Multiplicaciones</label>
+                  <label><input type="checkbox" data-problem-extra="_percentage_division" /> ➗ Divisiones</label>
+                </div>
+                <p class="hint">En combinados se calcula primero el importe con todas las operaciones adicionales marcadas y después se aplica un tipo de porcentaje. Los factores y repartos son pequeños; las cifras se aplican a la cantidad inicial.</p>
+              </div>
+            </details>
+            <p class="hint">Sin porcentajes básicos pueden aparecer porcentajes enteros del 1 al 100 %. Importes exactos, sin redondear y con un máximo de dos decimales por tratarse de euros. Para combinar, marca al menos una operación adicional y elige «Solo combinados» o «Individuales y combinados».</p>
+          </div>
           <div class="problem-extra-options problem-digit-range" data-problem-families="fracciones"><label>Cifras del numerador<select data-problem-extra="_fractionNumerator"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select></label><label>Cifras del denominador<select data-problem-extra="_fractionDenominator"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select></label><p class="hint">Responde con una fracción como 3/4. Se aceptan fracciones equivalentes. Las restas no dan resultados negativos.</p></div>
           <div class="problem-extra-options" data-problem-families="mcmMcd"><div class="theory-type-buttons"><label><input type="checkbox" data-problem-extra="_mcmEnabled" checked /> 🔁 Mínimo común múltiplo</label><label><input type="checkbox" data-problem-extra="_mcdEnabled" checked /> 📦 Máximo común divisor</label></div><div class="problem-digit-range"><label>Cifras por número<select data-problem-extra="_theoryDigits"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select></label><label>Cantidad de números<select data-problem-extra="_theoryCount"><option value="2">2 números distintos</option><option value="3">3 números distintos</option><option value="4">4 números distintos</option></select></label></div><p class="hint">40 problemas de MCM, 40 de MCD y 40 que utilizan ambos. En combinados se aplican las cifras a los datos dados, no a los resultados intermedios.</p></div>
           <div class="problem-reading-options">
@@ -439,6 +506,23 @@
 <label class="op-row"><input class="op-toggle" type="checkbox" data-op="mcd" /><span class="op-name">📦 Máximo común divisor</span><span class="op-configs"><select class="op-config-select" data-setting-op="mcd" data-setting-key="digits" aria-label="Cifras por número en MCD"><option value="1" >1 cifra</option><option value="2" selected>2 cifras</option><option value="3" >3 cifras</option></select><select class="op-config-select" data-setting-op="mcd" data-setting-key="count" aria-label="Cantidad de números en MCD"><option value="2">2 números</option><option value="3">3 números</option><option value="4">4 números</option></select></span></label>
             </div>
           </details>
+          <details class="ops-dropdown conversion-config">
+            <summary>📏 Conversiones de magnitudes</summary>
+            <div id="measureCalculationRows" class="measure-calculation-rows">
+              <div class="measure-card"><label class="measure-enable"><input class="op-toggle" type="checkbox" data-op="convertLength" /> 📏 Longitud</label><div class="measure-fields"><label>Cifras iniciales<select class="op-config-select" data-setting-op="convertLength" data-setting-key="digits" data-measure-digits></select></label><label>De<select class="op-config-select" data-setting-op="convertLength" data-setting-key="from" data-measure-unit="longitud"></select></label><label>A<select class="op-config-select" data-setting-op="convertLength" data-setting-key="to" data-measure-unit="longitud"></select></label></div></div>
+              <div class="measure-card"><label class="measure-enable"><input class="op-toggle" type="checkbox" data-op="convertMass" /> ⚖️ Masa</label><div class="measure-fields"><label>Cifras iniciales<select class="op-config-select" data-setting-op="convertMass" data-setting-key="digits" data-measure-digits></select></label><label>De<select class="op-config-select" data-setting-op="convertMass" data-setting-key="from" data-measure-unit="masa"></select></label><label>A<select class="op-config-select" data-setting-op="convertMass" data-setting-key="to" data-measure-unit="masa"></select></label></div></div>
+              <div class="measure-card"><label class="measure-enable"><input class="op-toggle" type="checkbox" data-op="convertCapacity" /> 🧪 Capacidad</label><div class="measure-fields"><label>Cifras iniciales<select class="op-config-select" data-setting-op="convertCapacity" data-setting-key="digits" data-measure-digits></select></label><label>De<select class="op-config-select" data-setting-op="convertCapacity" data-setting-key="from" data-measure-unit="capacidad"></select></label><label>A<select class="op-config-select" data-setting-op="convertCapacity" data-setting-key="to" data-measure-unit="capacidad"></select></label></div></div>
+              <div class="measure-card"><label class="measure-enable"><input class="op-toggle" type="checkbox" data-op="convertTime" /> ⏱️ Tiempo</label><div class="measure-fields"><label>Cifras iniciales<select class="op-config-select" data-setting-op="convertTime" data-setting-key="digits" data-measure-digits></select></label><label>De<select class="op-config-select" data-setting-op="convertTime" data-setting-key="from" data-measure-unit="tiempo"></select></label><label>A<select class="op-config-select" data-setting-op="convertTime" data-setting-key="to" data-measure-unit="tiempo"></select></label></div></div>
+            </div>
+            <p class="hint">Responde solo el número en la unidad indicada. El ajuste general de decimales permite hasta 1, 2 o 3 decimales exactos en el resultado. Tiempo no usa meses ni años de duración variable. Las conversiones se muestran horizontales para conservar las unidades.</p>
+            <p id="conversionConfigHint" class="hint" aria-live="polite"></p>
+          </details>
+          <details class="ops-dropdown extension-config"><summary>🧠 Más retos de cálculo</summary><div class="learning-calculations">
+            <label><input class="op-toggle" type="checkbox" data-op="missing" /> Completar huecos <select class="op-config-select" data-setting-op="missing" data-setting-key="digits"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select><select class="op-config-select" data-setting-op="missing" data-setting-key="operator"><option value="0">Todas las operaciones</option><option value="1">Sumas</option><option value="2">Restas</option><option value="3">Multiplicaciones</option><option value="4">Divisiones exactas</option></select></label>
+            <label><input class="op-toggle" type="checkbox" data-op="compare" /> Comparar &lt; = &gt; <select class="op-config-select" data-setting-op="compare" data-setting-key="digits"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select><select class="op-config-select" data-setting-op="compare" data-setting-key="variant"><option value="0">Números</option><option value="1">Fracciones</option><option value="2">Metros y centímetros</option></select></label>
+            <label><input class="op-toggle" type="checkbox" data-op="power" /> Potencias <select class="op-config-select" data-setting-op="power" data-setting-key="digits"><option value="1">Base: 1 cifra</option><option value="2">Base: 2 cifras</option><option value="3">Base: 3 cifras</option></select><select class="op-config-select" data-setting-op="power" data-setting-key="exponentMax"><option value="2">Exponente hasta 2</option><option value="3">Exponente hasta 3</option><option value="4">Exponente hasta 4</option><option value="5">Exponente hasta 5</option></select></label>
+            <label><input class="op-toggle" type="checkbox" data-op="round" /> Redondeo <select class="op-config-select" data-setting-op="round" data-setting-key="digits"><option value="1">1 cifra entera</option><option value="2">2 cifras enteras</option><option value="3">3 cifras enteras</option><option value="4">4 cifras enteras</option><option value="5">5 cifras enteras</option><option value="6">6 cifras enteras</option></select><select class="op-config-select" data-setting-op="round" data-setting-key="place"><option value="0">Unidades</option><option value="1">Decenas</option><option value="2">Centenas</option><option value="3">Millares</option><option value="-1">Décimas</option><option value="-2">Centésimas</option><option value="-3">Milésimas</option></select></label>
+          </div><p class="hint">El redondeo es una aproximación pedida expresamente; no cambia las respuestas exactas de las demás actividades. En huecos escribe el número que falta; en comparaciones usa los botones &lt;, = y &gt; o esas teclas.</p></details>
           <div id="opsChips" class="ops-chips" aria-live="polite"></div>
         </div>
 
@@ -519,6 +603,9 @@
     <section id="arenaScreen" class="panel arena-screen hidden" aria-label="Arena de juego">
       <div class="arena-top">
         <button id="backBtn" class="btn-mini" type="button">🏠 Volver</button>
+        <span id="connectionIndicator" class="connection-indicator" role="status">● Local</span>
+        <button id="finishRoundBtn" class="btn-mini hidden" type="button">🏁 Terminar</button>
+        <button id="reportsArenaBtn" class="btn-mini hidden" type="button" aria-label="Informes del alumnado">📊</button>
         <div class="arena-spacer"><button id="problemFontBtn" class="btn-mini hidden" type="button" aria-label="Cambiar entre letra de imprenta y ligada escolar">Aa &middot; Imprenta</button></div>
         <div id="matchBadge" class="match-badge">Entrenamiento</div>
       </div>
@@ -583,10 +670,15 @@
     <h3>❓ Cómo funciona</h3>
     <ol>
       <li>Elige modo, tiempo y operaciones con sus cifras.</li>
+      <li>🎯 Puedes jugar por tiempo, sin límite, por preguntas resueltas o por aciertos. Las preguntas resueltas incluyen las que terminas con solución; los saltos no cuentan. En objetivos online cada alumno completa su meta y el anfitrión puede cerrar la ronda. En batalla local termina cuando uno alcanza el objetivo.</li>
+      <li>🧭 Pista ofrece primero orientación y luego un planteamiento, sin mostrar el resultado. Ver solución mantiene el enunciado y esa pregunta no da puntos. Al finalizar puedes repasar los errores sin cambiar la clasificación.</li>
+      <li>🧠 En comparaciones usa &lt;, = y &gt;. En el teclado numérico, − significa menor, × significa igual y + significa mayor. El teclado táctil sigue disponible.</li>
+      <li>📊 El anfitrión puede consultar y exportar a Excel el seguimiento acumulado de varias rondas y salas desde el mismo navegador. PDF abre una vista para imprimir o guardar como PDF. Los nombres iguales se agrupan; utiliza nombres distintos para alumnos distintos.</li>
       <li>📖 Elige Problemas y marca los tipos que quieres practicar. Puedes jugar con individuales (un tipo por problema), combinados (todos los tipos marcados en cada problema) o ambos. Los combinados necesitan al menos dos tipos.</li>
       <li>Usa mínimo y máximo de cifras: si coinciden, las cifras son fijas. Elige letra de imprenta o ligada escolar; el botón Aa también permite cambiarla durante la partida.</li>
       <li>En sumas y restas puedes elegir con llevadas, sin llevadas o ambas. Para empezar con 6 años, prueba Fácil y 1 cifra. Las restas con llevadas necesitan al menos 2 cifras. El reloj se lee como minutos:segundos, por ejemplo 2:50.</li>
-      <li>En problemas elige una familia: enteros, fracciones o MCM/MCD. Responde sin separadores de miles; en fracciones utiliza, por ejemplo, 3/4. «Ver solución» muestra los pasos sin sumar puntos. Dale más tiempo a la partida para poder leer.</li>
+      <li>En problemas elige una familia: enteros, fracciones, MCM/MCD, porcentajes o medidas. Responde sin separadores de miles; en fracciones utiliza, por ejemplo, 3/4. En porcentajes escribe solo el número, con coma si tiene decimales y sin el símbolo %. «Ver solución» muestra los pasos sin sumar puntos. Dale más tiempo a la partida para poder leer.</li>
+      <li>📏 En cálculo puedes activar conversiones de longitud, masa, capacidad y tiempo, y elegir unidades de origen y destino o dejarlas aleatorias. Responde solo el número en la unidad que aparece tras el signo ?. El ajuste de decimales permite hasta tres decimales exactos, nunca aproximados. En problemas de medidas los decimales se configuran por separado; los combinados convierten primero las unidades y después operan. Una semana son 7 días, un día 24 horas y una hora 60 minutos; no usamos meses ni años variables.</li>
       <li>Pulsa <strong>¡EMPEZAR EL COMBATE!</strong>.</li>
       <li>Escribe con el teclado y pulsa <strong>🚀 ¡ATACAR!</strong>.</li>
       <li>Acierto: <strong>+10</strong> puntos. Fallo: <strong>-5</strong> si activas Penalizar fallos. Los puntos nunca bajan de cero.</li>
@@ -606,6 +698,9 @@
     </ol>
     <button id="helpCloseBtn" class="btn-mini" type="button">Cerrar</button>
   </dialog>
+  <dialog id="hintDialog" class="learning-dialog"><h3>🧭 Pistas paso a paso</h3><div id="hintReading"></div><div id="hintContent"></div><div class="learning-actions"><button id="nextHintBtn" class="btn-mini" type="button">Siguiente pista</button><button id="hintSolutionBtn" class="btn-mini" type="button">Ver solución</button><button id="closeHintBtn" class="btn-mini" type="button">Volver a resolver</button></div></dialog>
+  <dialog id="reviewDialog" class="learning-dialog"><h3>🔎 Repasar errores</h3><p>Practica con las mismas preguntas. Este repaso no modifica la partida ni la puntuación.</p><div id="reviewContent"></div><button id="closeReviewBtn" class="btn-mini" type="button">Cerrar repaso</button></dialog>
+  <dialog id="reportsDialog" class="learning-dialog reports-dialog"><h3>📊 Seguimiento del alumnado</h3><p>Historial local de las rondas observadas en este navegador por el anfitrión. Conserva hasta 500 rondas, de distintas salas y contenidos. Los nombres iguales se agrupan: usa nombres distintos para alumnos distintos. No se envía a servicios de informes.</p><label>Periodo<select id="reportRange"><option value="all">Todo el historial</option><option value="today">Hoy</option><option value="7">Últimos 7 días</option><option value="30">Últimos 30 días</option></select></label><div id="reportsContent"></div><div class="learning-actions"><button id="exportExcelBtn" class="btn-mini" type="button">📗 Descargar Excel</button><button id="exportPdfBtn" class="btn-mini" type="button">📄 Imprimir / PDF</button><button id="clearReportsBtn" class="btn-mini" type="button">Borrar historial</button><button id="closeReportsBtn" class="btn-mini" type="button">Cerrar</button></div><p id="reportNotice" role="status"></p></dialog>
 
   <section id="resultsOverlay" class="results-overlay hidden" aria-live="polite">
     <div class="results-card">
@@ -614,6 +709,8 @@
       <p id="resultsSubtitle" class="results-subtitle"></p>
       <div id="resultsScores" class="results-scores"></div>
       <div class="results-actions">
+        <button id="reviewErrorsBtn" class="btn-mini hidden" type="button">🔎 Repasar errores</button>
+        <button id="reportsResultsBtn" class="btn-mini hidden" type="button">📊 Informe acumulado</button>
         <button id="rematchBtn" class="btn-main" type="button">🔄 Revancha</button>
         <button id="homeBtn" class="btn-mini" type="button">🏠 Volver al Dojo</button>
       </div>
@@ -623,7 +720,7 @@
   <div id="consentBanner" class="consent-banner hidden" role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
     <p>
       🍪 Usamos analítica opcional para mejorar la app. Si aceptas, activamos Google Analytics.
-      Además, la app guarda en este dispositivo tus ajustes y el Cuadro de los Grandes Maestros (localStorage).
+      Además, la app guarda en este dispositivo tus ajustes, el Cuadro de los Grandes Maestros y el historial de informes del anfitrión (localStorage). Puedes borrar los informes desde su panel. Las partidas online comparten nombres y progreso con la sala de Firebase.
     </p>
     <div class="consent-actions">
       <button id="acceptAnalyticsBtn" class="btn-mini" type="button">Aceptar analítica</button>
@@ -650,6 +747,15 @@
   <script src="problemas.js" charset="utf-8"></script>
   <script src="banco-problemas/ampliado-datos.js" charset="utf-8"></script>
   <script src="matematicas-extra.js" charset="utf-8"></script>
+  <script src="banco-problemas/porcentajes-datos.js" charset="utf-8"></script>
+  <script src="porcentajes.js" charset="utf-8"></script>
+  <script src="banco-problemas/medidas-datos.js" charset="utf-8"></script>
+  <script src="magnitudes.js" charset="utf-8"></script>
+  <script src="banco-problemas/aprendizaje-datos.js" charset="utf-8"></script>
+  <script src="geometria.js" charset="utf-8"></script>
+  <script src="ampliacion.js" charset="utf-8"></script>
+  <script src="seguimiento.js" charset="utf-8"></script>
+  <script src="aprendizaje-ui.js" charset="utf-8"></script>
   <script src="app.js" charset="utf-8"></script>
 </body>
 </html>
