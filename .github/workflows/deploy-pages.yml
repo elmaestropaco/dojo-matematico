@@ -43,10 +43,17 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Prepare public files only
+        shell: bash
+        run: |
+          mkdir -p _site
+          cp index.html *.js *.css _site/
+          cp -R assets banco-problemas _site/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
