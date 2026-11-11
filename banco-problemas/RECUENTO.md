@@ -21,6 +21,17 @@
 
 Generado con `node banco-problemas/compilar-banco.cjs`. Cada plantilla se cuenta una sola vez, segun sus etiquetas.
 
+## Geometria espacial
+
+- espacio: 40 plantillas.
+
+## Lectura y razonamiento
+
+- horarios: 40 plantillas.
+- datos: 40 plantillas.
+- estadistica: 40 plantillas.
+- investigacion: 40 plantillas.
+
 ## Familias ampliadas
 
 | Familia y tipos | Plantillas |
@@ -56,6 +67,6 @@ Generado con `node banco-problemas/compilar-banco.cjs`. Cada plantilla se cuenta
 | aprendizaje: compras | 40 |
 | aprendizaje: proporcionalidad | 40 |
 
-Total de la app: **1900 plantillas**.
+Total de la app: **2100 plantillas**.
 
 Las plantillas de porcentajes y medidas también permiten variantes combinadas con las operaciones adicionales seleccionadas. Estas variantes no se cuentan como nuevas plantillas.

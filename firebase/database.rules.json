@@ -40,6 +40,18 @@
         "rematchAt": {
           ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= now + 120000"
         },
+        "pausedAt": {
+          ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 120000"
+        },
+        "pausedTotal": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 86400000 && newData.val() % 1 === 0"
+        },
+        "pausedQuestion": {
+          ".validate": "newData.isString() && newData.val().length <= 1000"
+        },
+        "pauseRevealed": {
+          ".validate": "newData.isBoolean()"
+        },
         "expiresAt": {
           ".validate": "newData.isNumber() && newData.val() > now && newData.val() <= now + 86400000"
         },
@@ -51,8 +63,8 @@
         "players": {
           "$uid": {
             ".read": "auth !== null && $uid === auth.uid && root.child('secureRooms').child($room).child('schemaVersion').val() === 2 && root.child('secureRooms').child($room).child('expiresAt').val() > now && !root.child('secureRooms').child($room).child('blocked').child(auth.uid).exists()",
-            ".write": "auth !== null && $uid === auth.uid && newData.exists() && root.child('secureRooms').child($room).child('schemaVersion').val() === 2 && root.child('secureRooms').child($room).child('expiresAt').val() > now && !root.child('secureRooms').child($room).child('blocked').child(auth.uid).exists() && (data.exists() || ((root.child('secureRooms').child($room).child('status').val() === 'lobby' || root.child('secureRooms').child($room).child('status').val() === 'running') && newData.child('score').val() === 0 && newData.child('streak').val() === 0 && newData.child('operationIndex').val() === 0 && newData.child('correctCount').val() === 0 && newData.child('wrongCount').val() === 0 && newData.child('resolvedCount').val() === 0 && newData.child('roundSeed').val() === 0 && newData.child('isConnected').val() === true && newData.child('isFinished').val() === false && !newData.child('learningStatsJSON').exists() && !newData.child('pendingFollowUpFrom').exists() && !newData.child('lastAnswer').exists() && !newData.child('lastResult').exists() && !newData.child('lastActionAt').exists()))",
-            ".validate": "newData.hasChildren(['name', 'score', 'streak', 'operationIndex', 'correctCount', 'wrongCount', 'resolvedCount', 'roundSeed', 'isConnected', 'isFinished', 'lastSeenAt'])",
+            ".write": "auth !== null && $uid === auth.uid && newData.exists() && root.child('secureRooms').child($room).child('schemaVersion').val() === 2 && root.child('secureRooms').child($room).child('expiresAt').val() > now && !root.child('secureRooms').child($room).child('blocked').child(auth.uid).exists() && (data.exists() || ((root.child('secureRooms').child($room).child('status').val() === 'lobby' || root.child('secureRooms').child($room).child('status').val() === 'running') && newData.child('score').val() === 0 && newData.child('streak').val() === 0 && newData.child('operationIndex').val() === 0 && newData.child('correctCount').val() === 0 && newData.child('wrongCount').val() === 0 && newData.child('resolvedCount').val() === 0 && newData.child('roundSeed').val() === 0 && newData.child('isConnected').val() === true && newData.child('isFinished').val() === false && !newData.child('learningStatsJSON').exists() && !newData.child('assistedOperationIndex').exists() && !newData.child('pendingFollowUpFrom').exists() && !newData.child('lastAnswer').exists() && !newData.child('lastResult').exists() && !newData.child('lastActionAt').exists()))",
+            ".validate": "newData.hasChildren(['name', 'score', 'streak', 'operationIndex', 'correctCount', 'wrongCount', 'resolvedCount', 'roundSeed', 'isConnected', 'isFinished', 'lastSeenAt']) && (!newData.parent().parent().child('pausedAt').exists() || !data.exists() || (newData.child('score').val() === data.child('score').val() && newData.child('streak').val() === data.child('streak').val() && newData.child('operationIndex').val() === data.child('operationIndex').val() && newData.child('correctCount').val() === data.child('correctCount').val() && newData.child('wrongCount').val() === data.child('wrongCount').val() && newData.child('resolvedCount').val() === data.child('resolvedCount').val() && newData.child('isFinished').val() === data.child('isFinished').val() && newData.child('learningStatsJSON').val() === data.child('learningStatsJSON').val() && newData.child('lastResult').val() === data.child('lastResult').val() && newData.child('lastAnswer').val() === data.child('lastAnswer').val() && (newData.child('assistedOperationIndex').val() === data.child('assistedOperationIndex').val() || auth.uid === root.child('secureRooms').child($room).child('hostUid').val())))",
             "name": {
               ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100"
             },
@@ -99,6 +111,9 @@
               ".validate": "newData.isString() && newData.val().length <= 16000"
             },
             "pendingFollowUpFrom": {
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 100000 && newData.val() % 1 === 0"
+            },
+            "assistedOperationIndex": {
               ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 100000 && newData.val() % 1 === 0"
             },
             "$other": {

@@ -1,0 +1,286 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "espacio-1-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Volumen de un cubo: la biblioteca"
+    },
+    {
+      "id": "espacio-1-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Volumen de un prisma rectangular: la biblioteca"
+    },
+    {
+      "id": "espacio-1-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Cubitos por filas y capas: la biblioteca"
+    },
+    {
+      "id": "espacio-1-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "La biblioteca",
+      "title": "Capacidad de un depósito: la biblioteca"
+    },
+    {
+      "id": "espacio-2-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "El huerto escolar",
+      "title": "Volumen de un cubo: el huerto escolar"
+    },
+    {
+      "id": "espacio-2-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "El huerto escolar",
+      "title": "Volumen de un prisma rectangular: el huerto escolar"
+    },
+    {
+      "id": "espacio-2-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "El huerto escolar",
+      "title": "Cubitos por filas y capas: el huerto escolar"
+    },
+    {
+      "id": "espacio-2-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "El huerto escolar",
+      "title": "Capacidad de un depósito: el huerto escolar"
+    },
+    {
+      "id": "espacio-3-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Volumen de un cubo: la excursión"
+    },
+    {
+      "id": "espacio-3-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Volumen de un prisma rectangular: la excursión"
+    },
+    {
+      "id": "espacio-3-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Cubitos por filas y capas: la excursión"
+    },
+    {
+      "id": "espacio-3-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "La excursión",
+      "title": "Capacidad de un depósito: la excursión"
+    },
+    {
+      "id": "espacio-4-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "El taller de dibujo",
+      "title": "Volumen de un cubo: el taller de dibujo"
+    },
+    {
+      "id": "espacio-4-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "El taller de dibujo",
+      "title": "Volumen de un prisma rectangular: el taller de dibujo"
+    },
+    {
+      "id": "espacio-4-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "El taller de dibujo",
+      "title": "Cubitos por filas y capas: el taller de dibujo"
+    },
+    {
+      "id": "espacio-4-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "El taller de dibujo",
+      "title": "Capacidad de un depósito: el taller de dibujo"
+    },
+    {
+      "id": "espacio-5-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "La feria del colegio",
+      "title": "Volumen de un cubo: la feria del colegio"
+    },
+    {
+      "id": "espacio-5-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "La feria del colegio",
+      "title": "Volumen de un prisma rectangular: la feria del colegio"
+    },
+    {
+      "id": "espacio-5-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "La feria del colegio",
+      "title": "Cubitos por filas y capas: la feria del colegio"
+    },
+    {
+      "id": "espacio-5-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "La feria del colegio",
+      "title": "Capacidad de un depósito: la feria del colegio"
+    },
+    {
+      "id": "espacio-6-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "El club de lectura",
+      "title": "Volumen de un cubo: el club de lectura"
+    },
+    {
+      "id": "espacio-6-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "El club de lectura",
+      "title": "Volumen de un prisma rectangular: el club de lectura"
+    },
+    {
+      "id": "espacio-6-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "El club de lectura",
+      "title": "Cubitos por filas y capas: el club de lectura"
+    },
+    {
+      "id": "espacio-6-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "El club de lectura",
+      "title": "Capacidad de un depósito: el club de lectura"
+    },
+    {
+      "id": "espacio-7-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "La fiesta de fin de curso",
+      "title": "Volumen de un cubo: la fiesta de fin de curso"
+    },
+    {
+      "id": "espacio-7-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "La fiesta de fin de curso",
+      "title": "Volumen de un prisma rectangular: la fiesta de fin de curso"
+    },
+    {
+      "id": "espacio-7-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "La fiesta de fin de curso",
+      "title": "Cubitos por filas y capas: la fiesta de fin de curso"
+    },
+    {
+      "id": "espacio-7-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "La fiesta de fin de curso",
+      "title": "Capacidad de un depósito: la fiesta de fin de curso"
+    },
+    {
+      "id": "espacio-8-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "La clase de ciencias",
+      "title": "Volumen de un cubo: la clase de ciencias"
+    },
+    {
+      "id": "espacio-8-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "La clase de ciencias",
+      "title": "Volumen de un prisma rectangular: la clase de ciencias"
+    },
+    {
+      "id": "espacio-8-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "La clase de ciencias",
+      "title": "Cubitos por filas y capas: la clase de ciencias"
+    },
+    {
+      "id": "espacio-8-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "La clase de ciencias",
+      "title": "Capacidad de un depósito: la clase de ciencias"
+    },
+    {
+      "id": "espacio-9-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "El mercadillo escolar",
+      "title": "Volumen de un cubo: el mercadillo escolar"
+    },
+    {
+      "id": "espacio-9-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "El mercadillo escolar",
+      "title": "Volumen de un prisma rectangular: el mercadillo escolar"
+    },
+    {
+      "id": "espacio-9-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "El mercadillo escolar",
+      "title": "Cubitos por filas y capas: el mercadillo escolar"
+    },
+    {
+      "id": "espacio-9-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "El mercadillo escolar",
+      "title": "Capacidad de un depósito: el mercadillo escolar"
+    },
+    {
+      "id": "espacio-10-1",
+      "family": "espacio",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Volumen de un cubo: el campamento"
+    },
+    {
+      "id": "espacio-10-2",
+      "family": "espacio",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Volumen de un prisma rectangular: el campamento"
+    },
+    {
+      "id": "espacio-10-3",
+      "family": "espacio",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Cubitos por filas y capas: el campamento"
+    },
+    {
+      "id": "espacio-10-4",
+      "family": "espacio",
+      "variant": 3,
+      "context": "El campamento",
+      "title": "Capacidad de un depósito: el campamento"
+    }
+  ]
+}
