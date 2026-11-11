@@ -1,0 +1,48 @@
+/* Device-local overrides: never resize the fixed game grid or invert diagrams. */
+.arena-spacer { display: flex; align-items: center; justify-content: flex-end; gap: 6px; min-width: 0; }
+.accessibility-options { display: grid; gap: 16px; margin: 18px 0; }
+.accessibility-options label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+.accessibility-options input { flex: 0 0 auto; width: 22px; height: 22px; }
+.accessibility-options small { display: block; margin-top: 4px; }
+.report-filters { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,220px),1fr)); gap: 12px; margin: 16px 0; }
+.report-filters label { display: grid; gap: 6px; min-width: 0; }
+.report-filters select { width: 100%; min-width: 0; }
+.report-caveat { border-left: 4px solid currentColor; padding-left: 12px; font-size: .88rem; }
+.reports-dialog #reportsContent { min-width: 0; }
+.reports-dialog td { overflow-wrap: anywhere; }
+.insight-badge { display: inline-block; padding: 4px 8px; border: 1px solid currentColor; border-radius: 7px; font-weight: 700; white-space: nowrap; }
+.insight-badge[data-status="review"] { color: #921e16; background: #ffe9e6; }
+.insight-badge[data-status="supported"] { color: #654009; background: #fff0cf; }
+.insight-badge[data-status="building"] { color: #123f73; background: #e6f1ff; }
+.insight-badge[data-status="few"] { color: #343b43; background: #f1f3f5; }
+.insight-badge[data-status="secure"] { color: #14532d; background: #e4f6e9; }
+.insight-plan { padding: 14px; margin: 12px 0; border: 1px solid var(--border); border-radius: 12px; }
+.insight-plan h4 { margin: 0; overflow-wrap: anywhere; }
+body[data-board="true"] {
+  --bg-1: #fff; --bg-2: #fff; --container: #fff; --panel: #fff;
+  --text-main: #101010; --text-soft: #242424; --border: #333;
+  --accent-red: #951b12; --accent-gold: #ffe600; --accent-cyan: #004cad;
+  color: #101010; background: #fff;
+}
+body[data-board="true"] :is(.container,.hero-head,.panel,.player-panel,.answer-box,.teacher-hero,.teacher-stat-card,.teacher-card,.teacher-empty,.teacher-results-card,.podium-card,.teacher-ranking-row,.learning-dialog,.help-dialog,.config-box,.op-item,.insight-plan) {
+  background: #fff !important; color: #101010 !important; border-color: #333 !important; text-shadow: none !important;
+}
+body[data-board="true"] :is(.app-title,.subtitle,.hint,.teacher-student-name,.teacher-points,.teacher-medal,.teacher-last,.operation,.panel-timer,.player-name,.score,.podium-card strong,.podium-card small) { color: #101010 !important; text-shadow: none !important; }
+body[data-board="true"] :is(button,select,input,summary) { border-color: #333 !important; }
+body[data-board="true"] :is(button,select,input) { background: #fff !important; color: #101010 !important; text-shadow: none !important; }
+body[data-board="true"] :is(.btn-main,.btn-primary,.attack-btn,button[aria-pressed="true"],.teacher-card.leader) { background: #ffe600 !important; color: #101010 !important; }
+body[data-board="true"] .panel-timer { background: #fff !important; }
+body[data-board="true"] .teacher-clock {
+  background: radial-gradient(circle, #fff 0 62%, transparent 63%), conic-gradient(#101010 calc(var(--teacher-countdown-progress) * 360deg), #ddd 0) !important;
+  box-shadow: none;
+}
+body[data-board="true"] :is(.teacher-clock span,.teacher-clock strong,.floating-room-code strong,#connectionIndicator) { color: #101010 !important; text-shadow: none !important; }
+body[data-board="true"] :is(button:disabled,input:disabled) { opacity: .65; }
+body[data-board="true"] :focus-visible { outline: 3px solid #004cad !important; outline-offset: 3px; }
+body[data-board="true"] a { color: #004cad; }
+body[data-board="true"] .theme-icons button { border: 2px solid #333; }
+body[data-board="true"] .insight-badge { color: #101010; background: #fff; border: 2px solid #101010; }
+body[data-board="true"] .report-table-wrap th { background: #ffe600; color: #101010; }
+body[data-reduced-motion="true"] *,
+body[data-reduced-motion="true"] *::before,
+body[data-reduced-motion="true"] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

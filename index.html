@@ -17,11 +17,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;600;700&family=Noto+Color+Emoji&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="renovacion.css" />
+  <link rel="stylesheet" href="pizarra.css" />
 </head>
 <body>
   <div class="theme-panel" aria-label="Selector de tema">
     <div class="theme-label">Modo</div>
     <div class="theme-icons">
+      <button id="accessibilityBtn" class="btn-theme" type="button" aria-label="Accesibilidad y modo pizarra" aria-pressed="false" title="Accesibilidad y modo pizarra">🖥️</button>
       <button class="btn-theme js-theme" data-theme="light" style="background:#f8c94d;" title="Tema claro">☀️</button>
       <button class="btn-theme js-theme" data-theme="default" style="background:#da291c;" title="Tema ninja">🥷</button>
       <button class="btn-theme js-theme" data-theme="dark" style="background:#151826;" title="Tema oscuro">🌙</button>
@@ -41,6 +43,18 @@
     <section id="dojoScreen" class="panel dojo-screen active" aria-label="Configuración de partida">
       <div class="dojo-intro"><span class="section-eyebrow">TU ZONA DE ENTRENAMIENTO</span><h2>Un reto a tu medida</h2><p>Elige cómo jugar, prepara tu reto y entra al dojo.</p></div>
       <div class="settings-grid">
+        <details class="config-box session-tools" id="sessionToolsBox">
+          <summary>⭐ Mis sesiones y actividades <span>Guardar, buscar y reutilizar</span></summary>
+          <div class="session-tools-body">
+            <p class="hint">Guarda los ajustes de tu reto en este navegador. No se guardan nombres ni códigos de sala. Cargar una sesión no inicia la partida ni cambia tu modo de juego.</p>
+            <div class="session-save"><label for="sessionNameInput">Nombre de la sesión<input id="sessionNameInput" type="text" maxlength="60" placeholder="Por ejemplo: Fracciones de sexto" autocomplete="off" /></label><button id="saveSessionBtn" class="btn-mini" type="button">💾 Guardar ajustes actuales</button></div>
+            <div id="sessionList" class="session-list"></div>
+            <div class="session-search"><label for="activitySearch">🔎 Buscar actividades<input id="activitySearch" type="search" placeholder="Fracciones, perímetro, raíces…" /></label><label class="favorites-filter"><input id="favoritesOnly" type="checkbox" /> Solo favoritos</label></div>
+            <p id="activityResultCount" class="hint" aria-live="polite"></p>
+            <div id="activityResults" class="activity-results"></div>
+            <p id="sessionNotice" class="hint session-notice" role="status"></p>
+          </div>
+        </details>
         <div class="config-box">
           <p class="label"><span class="step-marker">1</span> Cómo quieres jugar</p>
           <div class="mode-buttons" role="radiogroup" aria-label="Modo de juego">
@@ -132,8 +146,10 @@
 
         <div class="config-box hidden" id="problemsBox">
           <p class="label">📖 Banco de problemas</p>
-          <p class="hint">1900 plantillas con soluciones. Escoge una familia y los tipos que quieres practicar. Durante el juego no se muestra qué operación hay que usar.</p>
+          <p class="hint">2100 plantillas con soluciones. Escoge una familia y los tipos que quieres practicar. Durante el juego no se muestra qué operación hay que usar.</p>
           <label class="problem-family-label">Familia de problemas<select data-problem-extra="_family"><option value="enteros">🔢 Números enteros</option><option value="fracciones">🍰 Fracciones</option><option value="mcmMcd">🔁 MCM y MCD</option><option value="porcentajes">💯 Porcentajes</option><option value="medidas">📏 Medidas y conversiones</option><option value="razonamiento">🧩 Razonamiento</option><option value="geometria">📐 Geometría</option><option value="compras">🛒 Dinero y compras</option><option value="proporcionalidad">⚖️ Proporcionalidad</option></select></label>
+          <details class="problem-extra-options hidden" id="literacyProblemOptions" data-problem-families="horarios datos estadistica investigacion"><summary>📊 Ajusta estos problemas</summary><div id="literacyProblemControls"></div></details>
+          <details class="problem-extra-options hidden" data-problem-families="espacio"><summary>📦 Ajusta los problemas de volumen</summary><div id="spatialProblemControls"></div></details>
           <div class="problem-extra-options hidden" data-problem-families="razonamiento geometria compras proporcionalidad">
             <label class="learning-inline">Cifras de los datos<select data-problem-extra="_newDigits"><option value="1">1 cifra</option><option value="2">2 cifras</option><option value="3">3 cifras</option></select></label>
             <label data-problem-families="razonamiento">Variedad<select data-problem-extra="_reasonVariant"><option value="-1">Todas</option><option value="0">Datos que sobran</option><option value="1">Encontrar un dato que falta</option><option value="2">Dos preguntas encadenadas</option><option value="3">Leer y elegir el dato necesario</option></select></label>
@@ -243,6 +259,9 @@
         </div>
 
         <div class="config-box" id="operationsBox">
+          <div class="operation-search"><label for="operationSearch">🔎 Buscar operaciones<input id="operationSearch" type="search" placeholder="Sumas, fracciones, volumen…" autocomplete="off" /></label><button id="clearOperationSearch" class="btn-mini" type="button">Limpiar</button></div>
+          <p id="operationSearchStatus" class="hint" role="status"></p>
+          <p id="operationSearchEmpty" class="hint hidden">No hay operaciones que coincidan. Prueba otra palabra o limpia la búsqueda.</p>
           <details id="opsDropdown" class="ops-dropdown">
             <summary id="opsSummary">🧮 Operaciones (0 activas)</summary>
             <p class="hint">Marca lo que quieres practicar y las cifras de cada número.</p>
@@ -523,6 +542,8 @@
             <label><input class="op-toggle" type="checkbox" data-op="power" /> Potencias <select class="op-config-select" data-setting-op="power" data-setting-key="digits"><option value="1">Base: 1 cifra</option><option value="2">Base: 2 cifras</option><option value="3">Base: 3 cifras</option></select><select class="op-config-select" data-setting-op="power" data-setting-key="exponentMax"><option value="2">Exponente hasta 2</option><option value="3">Exponente hasta 3</option><option value="4">Exponente hasta 4</option><option value="5">Exponente hasta 5</option></select></label>
             <label><input class="op-toggle" type="checkbox" data-op="round" /> Redondeo <select class="op-config-select" data-setting-op="round" data-setting-key="digits"><option value="1">1 cifra entera</option><option value="2">2 cifras enteras</option><option value="3">3 cifras enteras</option><option value="4">4 cifras enteras</option><option value="5">5 cifras enteras</option><option value="6">6 cifras enteras</option></select><select class="op-config-select" data-setting-op="round" data-setting-key="place"><option value="0">Unidades</option><option value="1">Decenas</option><option value="2">Centenas</option><option value="3">Millares</option><option value="-1">Décimas</option><option value="-2">Centésimas</option><option value="-3">Milésimas</option></select></label>
           </div><p class="hint">El redondeo es una aproximación pedida expresamente; no cambia las respuestas exactas de las demás actividades. En huecos escribe el número que falta; en comparaciones usa los botones &lt;, = y &gt; o esas teclas.</p></details>
+          <details class="ops-dropdown extension-config" id="calculationChallenges"><summary>🧭 Equivalencias, enteros y ángulos</summary><p class="hint">Estos retos tienen sus propios ajustes. Las equivalencias y divisiones por 10 pueden tener decimales exactos aunque el interruptor general esté desactivado. Enteros y recta numérica incluyen negativos. En ordenar escribe solo el número de la posición pedida.</p><div id="calculationChallengeControls" class="learning-calculations"></div></details>
+          <details class="ops-dropdown extension-config"><summary>📦 Volúmenes y espacio</summary><p class="hint">Medidas enteras de una a tres cifras. Responde en unidades cúbicas; son cálculos exactos, sin redondeo.</p><div id="spatialCalculationControls" class="learning-calculations"></div></details>
           <div id="opsChips" class="ops-chips" aria-live="polite"></div>
         </div>
 
@@ -547,10 +568,11 @@
 
         <details class="config-box advanced-options" id="gameOptionsBox"><summary>⚙️ Personaliza tu partida <span>Sonidos, rachas y reglas</span></summary><div class="advanced-options-body">
           <label class="toggle-line"><input id="muteToggle" type="checkbox" /> 🔇 Silenciar sonidos</label>
-          <label class="toggle-line"><input id="streakToggle" type="checkbox" checked /> 🔥 Activar rachas + eventos sorpresa</label>
+          <label class="toggle-line"><input id="streakToggle" type="checkbox" checked /> <span id="streakLabel">🔥 Activar rachas + eventos sorpresa</span></label>
           <label class="toggle-line"><input id="decimalsToggle" type="checkbox" /> 🔢 Activar decimales</label>
           <label class="toggle-line"><input id="negativeToggle" type="checkbox" /> ➖ Permitir resultados negativos</label>
           <label class="toggle-line"><input id="penaltyToggle" type="checkbox" /> ❌ Penalizar fallos (-5 puntos)</label>
+          <div class="dynamics-settings"><label class="toggle-line"><input id="progressiveToggle" type="checkbox" /> 📈 Dificultad progresiva (opcional)</label><p class="hint" id="progressiveRuleHint"></p><p class="hint">Hasta 3 niveles: +10 / +15 / +20 por acierto; combinadas avanzadas: +20 / +30 / +40. Se aumenta hasta dos cifras o niveles desde tus ajustes, dentro de los límites de cada actividad. Los retos fijos o que ya alcanzaron su límite no reciben aumentos ficticios. Las penalizaciones no cambian. Sin ruleta en progresiva; las rachas visuales se mantienen.</p><div id="teamSettings"><label class="toggle-line"><input id="teamsToggle" type="checkbox" /> 🏳️ Competir por equipos (salas online)</label><div id="teamDetails" class="hidden"><label>Número de equipos<select id="teamCountSelect"><option value="2">2 equipos</option><option value="3">3 equipos</option><option value="4">4 equipos</option></select></label><div id="teamNames" class="team-name-fields"></div><p class="hint">Reparto automático equilibrado al entrar. El anfitrión puede ajustarlo desde Equipos en la sala de espera. Clasificación por media de puntos por participante; también se muestra el total. No se cambian miembros durante la ronda.</p></div></div><p id="dynamicsNotice" class="hint" role="status"></p></div>
           <div id="decimalPlacesWrap" class="inline-field hidden">
             <p class="label">🎚️ Cantidad de decimales</p>
             <select id="decimalPlacesSelect">
@@ -574,6 +596,7 @@
           <button id="clearHallBtn" class="btn-mini" type="button">🧹 Limpiar</button>
         </div>
         <div class="hall-filters">
+          <select id="hallProgressFilter" aria-label="Dificultad del cuadro de marcas"><option value="fixed">Dificultad fija</option><option value="progressive">Dificultad progresiva</option></select>
           <select id="hallModeFilter">
             <option value="all" selected>Todos los modos</option>
             <option value="Entrenamiento">Solo entrenamiento</option>
@@ -606,7 +629,8 @@
         <span id="connectionIndicator" class="connection-indicator" role="status">● Local</span>
         <button id="finishRoundBtn" class="btn-mini hidden" type="button">🏁 Terminar</button>
         <button id="reportsArenaBtn" class="btn-mini hidden" type="button" aria-label="Informes del alumnado">📊</button>
-        <div class="arena-spacer"><button id="problemFontBtn" class="btn-mini hidden" type="button" aria-label="Cambiar entre letra de imprenta y ligada escolar">Aa &middot; Imprenta</button></div>
+        <button id="pauseRoundBtn" class="btn-mini hidden" type="button">⏸️ Pausar</button><button id="teamsArenaBtn" class="btn-mini hidden" type="button">🏳️ Equipos</button>
+        <div class="arena-spacer"><button id="accessibilityArenaBtn" class="btn-mini" type="button" aria-label="Accesibilidad y modo pizarra" aria-pressed="false" title="Accesibilidad y modo pizarra">🖥️</button><button id="problemFontBtn" class="btn-mini hidden" type="button" aria-label="Cambiar entre letra de imprenta y ligada escolar">Aa &middot; Imprenta</button></div>
         <div id="matchBadge" class="match-badge">Entrenamiento</div>
       </div>
       <button id="floatingRoomCode" class="floating-room-code hidden" type="button" aria-label="Copiar código de sala">
@@ -666,13 +690,20 @@
     <div class="sword sword-right">⚔️</div>
   </div>
 
+  <dialog id="roundPauseDialog" class="learning-dialog pause-dialog" aria-labelledby="pauseTitle"><h3 id="pauseTitle" tabindex="-1">⏸️ Partida en pausa</h3><p id="pauseClock"></p><label id="sharedPlayerWrap">Pregunta de un participante<select id="sharedPlayerSelect"></select></label><div id="sharedQuestion" class="shared-question"></div><p id="pauseNotice" role="status"></p><p class="hint">El reloj y las respuestas están bloqueados. Si se muestra la solución de tu pregunta, después podrás pasar a la siguiente sin sumar puntos.</p><div class="learning-actions"><button id="revealSharedBtn" class="btn-mini" type="button">💡 Mostrar solución a todos</button><button id="resumeRoundBtn" class="btn-mini" type="button">▶️ Continuar</button><button id="leavePauseBtn" class="btn-mini" type="button">🏠 Salir de la sala</button></div></dialog>
+  <dialog id="teamsDialog" class="learning-dialog teams-dialog"><h3>🏳️ Equipos de la sala</h3><div id="teamsBoard"></div><p id="teamsNotice" role="status"></p><button id="shuffleTeamsBtn" class="btn-mini" type="button">🔀 Repartir de nuevo (solo espera)</button><div id="teamsRoster" class="teams-roster"></div><button id="closeTeamsBtn" class="btn-mini" type="button">Cerrar equipos</button></dialog>
+  <button id="teamsSetupBtn" class="btn-mini hidden" type="button">🏳️ Equipos de la sala</button><button id="teamsResultsBtn" class="btn-mini hidden" type="button">🏳️ Clasificación por equipos</button>
   <dialog id="helpDialog" class="help-dialog">
     <h3>❓ Cómo funciona</h3>
     <ol>
       <li>Elige modo, tiempo y operaciones con sus cifras.</li>
+      <li>🖥️ El botón de pantalla abre el modo pizarra de alto contraste, movimiento reducido y pantalla completa. Son ajustes de este dispositivo: no cambian la sala ni la puntuación. El seguimiento ofrece filtros por alumno y contenido y un plan de repaso orientativo, no una nota.</li>
       <li>🎯 Puedes jugar por tiempo, sin límite, por preguntas resueltas o por aciertos. Las preguntas resueltas incluyen las que terminas con solución; los saltos no cuentan. En objetivos online cada alumno completa su meta y el anfitrión puede cerrar la ronda. En batalla local termina cuando uno alcanza el objetivo.</li>
       <li>🧭 Pista ofrece primero orientación y luego un planteamiento, sin mostrar el resultado. Ver solución mantiene el enunciado y esa pregunta no da puntos. Al finalizar puedes repasar los errores sin cambiar la clasificación.</li>
       <li>🧠 En comparaciones usa &lt;, = y &gt;. En el teclado numérico, − significa menor, × significa igual y + significa mayor. El teclado táctil sigue disponible.</li>
+      <li>📈 La dificultad progresiva es opcional: en individual se adapta a tus respuestas; en competición cambia por tramos comunes de cinco preguntas. Los aciertos normales valen 10/15/20 puntos; las combinadas avanzadas, 20/30/40. Los fallos no cuestan más por subir de nivel. Los retos fijos o en su límite no reciben bonificaciones ficticias.</li>
+      <li>⏸️ El anfitrión puede pausar toda la sala y explicar una pregunta. El reloj se congela. Si revela la solución de tu pregunta, después podrás pasarla sin sumar puntos.</li>
+      <li>🏳️ En online y Maestro hay de 2 a 4 equipos, con reparto automático y ajustes en la espera. Se clasifican por media de puntos por participante, además del total. Durante la ronda no se cambia el reparto de quienes ya están jugando.</li>
       <li>📊 El anfitrión puede consultar y exportar a Excel el seguimiento acumulado de varias rondas y salas desde el mismo navegador. PDF abre una vista para imprimir o guardar como PDF. Los nombres iguales se agrupan; utiliza nombres distintos para alumnos distintos.</li>
       <li>📖 Elige Problemas y marca los tipos que quieres practicar. Puedes jugar con individuales (un tipo por problema), combinados (todos los tipos marcados en cada problema) o ambos. Los combinados necesitan al menos dos tipos.</li>
       <li>Usa mínimo y máximo de cifras: si coinciden, las cifras son fijas. Elige letra de imprenta o ligada escolar; el botón Aa también permite cambiarla durante la partida.</li>
@@ -700,7 +731,7 @@
   </dialog>
   <dialog id="hintDialog" class="learning-dialog"><h3>🧭 Pistas paso a paso</h3><div id="hintReading"></div><div id="hintContent"></div><div class="learning-actions"><button id="nextHintBtn" class="btn-mini" type="button">Siguiente pista</button><button id="hintSolutionBtn" class="btn-mini" type="button">Ver solución</button><button id="closeHintBtn" class="btn-mini" type="button">Volver a resolver</button></div></dialog>
   <dialog id="reviewDialog" class="learning-dialog"><h3>🔎 Repasar errores</h3><p>Practica con las mismas preguntas. Este repaso no modifica la partida ni la puntuación.</p><div id="reviewContent"></div><button id="closeReviewBtn" class="btn-mini" type="button">Cerrar repaso</button></dialog>
-  <dialog id="reportsDialog" class="learning-dialog reports-dialog"><h3>📊 Seguimiento del alumnado</h3><p>Historial local de las rondas observadas en este navegador por el anfitrión. Conserva hasta 500 rondas, de distintas salas y contenidos. Los nombres iguales se agrupan: usa nombres distintos para alumnos distintos. No se envía a servicios de informes.</p><label>Periodo<select id="reportRange"><option value="all">Todo el historial</option><option value="today">Hoy</option><option value="7">Últimos 7 días</option><option value="30">Últimos 30 días</option></select></label><div id="reportsContent"></div><div class="learning-actions"><button id="exportExcelBtn" class="btn-mini" type="button">📗 Descargar Excel</button><button id="exportPdfBtn" class="btn-mini" type="button">📄 Imprimir / PDF</button><button id="clearReportsBtn" class="btn-mini" type="button">Borrar historial</button><button id="closeReportsBtn" class="btn-mini" type="button">Cerrar</button></div><p id="reportNotice" role="status"></p></dialog>
+  <dialog id="reportsDialog" class="learning-dialog reports-dialog"><h3>📊 Seguimiento del alumnado</h3><p>Historial local de las rondas observadas en este navegador por el anfitrión. Conserva hasta 500 rondas, de distintas salas y contenidos. Los nombres iguales se agrupan: usa nombres distintos para alumnos distintos. No se envía a servicios de informes.</p><div class="report-filters"><label>Periodo<select id="reportRange"><option value="all">Todo el historial</option><option value="today">Hoy</option><option value="7">Últimos 7 días</option><option value="30">Últimos 30 días</option></select></label><label>Dificultad<select id="reportDifficultyFilter"><option value="all">Todas las dificultades</option><option value="fixed">Fija</option><option value="progressive">Progresiva</option></select></label><label>Alumno<select id="reportStudentFilter"><option value="">Todo el alumnado</option></select></label><label>Contenido<select id="reportTopicFilter"><option value="">Todos los contenidos</option></select></label><label>Indicador<select id="reportStatusFilter"><option value="">Todos los indicadores</option><option value="review">Conviene repasar</option><option value="supported">Con apoyo</option><option value="building">Consolidando</option><option value="few">Pocos datos</option><option value="secure">Práctica sólida</option></select></label><label>Vista<select id="reportViewSelect"><option value="summary">Resumen por alumno</option><option value="content">Detalle por contenido</option><option value="plan">Plan de repaso</option></select></label></div><details class="report-caveat"><summary>Leer los indicadores y las exportaciones</summary><p>Indicadores orientativos, no notas ni diagnósticos. Menos de cinco observaciones: pocos datos. Los fallos cuentan intentos, incluidos reintentos; las pistas cuentan consultas. La autonomía mide aciertos sin pista frente a aciertos, soluciones y saltos registrados. No compara dificultades. Las explicaciones compartidas del maestro no cuentan como soluciones individuales. Los datos antiguos pueden no tener desglose. Excel y PDF respetan los filtros de periodo, dificultad, alumno, contenido e indicador y contienen las cuatro vistas.</p></details><div id="reportsContent"></div><div class="learning-actions"><button id="exportExcelBtn" class="btn-mini" type="button">📗 Descargar Excel</button><button id="exportPdfBtn" class="btn-mini" type="button">📄 Imprimir / PDF</button><button id="clearReportsBtn" class="btn-mini" type="button">Borrar historial</button><button id="closeReportsBtn" class="btn-mini" type="button">Cerrar</button></div><p id="reportNotice" role="status"></p></dialog>
 
   <section id="resultsOverlay" class="results-overlay hidden" aria-live="polite">
     <div class="results-card">
@@ -754,8 +785,22 @@
   <script src="banco-problemas/aprendizaje-datos.js" charset="utf-8"></script>
   <script src="geometria.js" charset="utf-8"></script>
   <script src="ampliacion.js" charset="utf-8"></script>
+  <script src="banco-problemas/lectura-datos.js" charset="utf-8"></script>
+  <script src="lectura-problemas.js" charset="utf-8"></script>
   <script src="seguimiento.js" charset="utf-8"></script>
   <script src="aprendizaje-ui.js" charset="utf-8"></script>
+  <script src="sesiones.js" charset="utf-8"></script>
+  <script src="sesiones-ui.js" charset="utf-8"></script>
+  <script src="retos-calculo.js" charset="utf-8"></script>
+  <script src="banco-problemas/espacio-datos.js" charset="utf-8"></script>
+  <script src="espacio.js" charset="utf-8"></script>
+  <script src="buscador-operaciones.js" charset="utf-8"></script>
+  <script src="dinamica.js" charset="utf-8"></script>
+  <script src="dinamica-ui.js" charset="utf-8"></script>
+  <dialog id="accessibilityDialog" class="learning-dialog" aria-labelledby="accessibilityTitle"><h3 id="accessibilityTitle">🖥️ Accesibilidad y modo pizarra</h3><p>Ajustes de este dispositivo. No cambian la sala, las operaciones, los puntos ni el tema guardado.</p><div class="accessibility-options"><label><input id="boardModeToggle" type="checkbox" /><span><strong>Modo pizarra de alto contraste</strong><small>Fondos blancos, texto oscuro y controles destacados para proyectar con mayor claridad.</small></span></label><label><input id="reduceMotionToggle" type="checkbox" /><span><strong>Reducir movimiento y vibración</strong><small>Sin sacudidas ni animaciones de ruleta. Los eventos y puntos se mantienen. También se respeta la preferencia de movimiento reducido del sistema.</small></span></label></div><div class="learning-actions"><button id="fullscreenBtn" class="btn-mini" type="button">Pantalla completa</button><button id="closeAccessibilityBtn" class="btn-mini" type="button">Cerrar</button></div><p id="accessibilityNotice" role="status"></p></dialog>
+  <script src="informes-contenido.js" charset="utf-8"></script>
+  <script src="informes-ui.js" charset="utf-8"></script>
+  <script src="accesibilidad.js" charset="utf-8"></script>
   <script src="app.js" charset="utf-8"></script>
 </body>
 </html>

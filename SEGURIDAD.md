@@ -1,6 +1,6 @@
 # Online protegido
 
-Actualizacion: 2026-11-05. El proyecto dojo-matematico ya tiene Authentication
+Actualizacion: 2026-11-11. El proyecto dojo-matematico ya tiene Authentication
 anonimo habilitado y las reglas privadas publicadas en su Realtime Database.
 No hay que abrir la base de datos ni usar reglas de prueba.
 
@@ -53,7 +53,7 @@ Pruebas ejecutadas para esta version:
 - Tres identidades reales aisladas: anfitrion y dos alumnos; progreso,
   estadisticas, bloqueo de suplantacion y lectura ajena, revancha, respuesta
   antigua rechazada, expulsion y reingreso autorizado.
-- 68 comprobaciones de autorizacion con Realtime Database Emulator.
+- 82 comprobaciones de autorizacion con Realtime Database Emulator.
 
 Las pruebas reales crean salas y cuentas anonimas desechables y las eliminan.
 No leen ni modifican salas del alumnado. Ejecucion explicita:
@@ -79,3 +79,16 @@ un error de permisos.
 Documentacion oficial:
 [Authentication anonimo](https://firebase.google.com/docs/auth/web/anonymous-auth)
 y [reglas de Realtime Database](https://firebase.google.com/docs/database/security).
+
+## Pausa y equipos (bloque 5)
+
+Reglas publicadas para los campos de pausa y el marcador de pregunta explicada.
+Durante una pausa se permiten presencia y reconexion, no cambios de puntuacion
+ni progreso. El anfitrion puede revelar y marcar una pregunta como explicada;
+ese marcador no concede puntos. Reanudar, terminar o revancha limpian la pausa.
+Los equipos se guardan en la configuracion de la sala, que solo puede editar
+el anfitrion. Las sesiones locales excluyen las asignaciones por UID.
+
+Las pruebas reales comprueban reparto, pausa/revelado/reanudacion, respuestas
+rechazadas en pausa y revancha desde pausa, con usuarios aislados. Recarga todos
+los dispositivos despues de publicar esta version. Ver DINAMICA.md.

@@ -32,7 +32,7 @@
       await requireOnline(this);
       for (let attempt = 0; attempt < 12; attempt++) {
         const code = newRoomCode(), room = { schemaVersion: 2, hostUid: this.uid(), mode, status: 'lobby', seed: randomSeed(), durationSeconds,
-          hostName: playerName(hostName || 'Profe'), config: JSON.stringify(config || {}), createdAt: window.firebase.database.ServerValue.TIMESTAMP, expiresAt: this.now() + ROOM_LIFETIME };
+          hostName: playerName(hostName || 'Profe'), config: JSON.stringify({...config,teamAssignments:{}}), createdAt: window.firebase.database.ServerValue.TIMESTAMP, expiresAt: this.now() + ROOM_LIFETIME };
         try { await this.roomRef(code).set(room); return { code, room }; }
         catch (error) { if (!permissionDenied(error) || attempt === 11) throw error; }
       }
@@ -55,22 +55,59 @@
         return { code: cleanCode, playerId: uid, isHost: room.hostUid === uid, isTeacher: false };
       } catch (error) { if (permissionDenied(error)) throw Error('Código incorrecto, sala cerrada o caducada, o acceso retirado por el anfitrión.'); throw error; }
     },
-    async startRoom(code) { await requireOnline(this); await this.roomRef(code).update({ status: 'running', startedAt: this.now() + 3000, expiresAt: this.now() + ROOM_LIFETIME }); },
+    async startRoom(code) { await requireOnline(this); await this.roomRef(code).update({ status: 'running', startedAt: this.now() + 3000, pausedAt: null, pausedTotal: 0, pausedQuestion: null, pauseRevealed: null, expiresAt: this.now() + ROOM_LIFETIME }); },
     async resetRoom(code, { config, durationSeconds } = {}) {
       await requireOnline(this);
       const ref = this.roomRef(code), snapshot = await ref.get(); if (!snapshot.exists()) throw Error('La sala no existe.');
       let seed = randomSeed(); if (seed === snapshot.val().seed) seed = (seed + 1) % 2147483647;
-      const patch = { status: 'lobby', seed, startedAt: null, rematchAt: this.now(), expiresAt: this.now() + ROOM_LIFETIME };
+      const patch = { status: 'lobby', seed, startedAt: null, pausedAt: null, pausedTotal: 0, pausedQuestion: null, pauseRevealed: null, rematchAt: this.now(), expiresAt: this.now() + ROOM_LIFETIME };
       if (Number.isFinite(Number(durationSeconds))) patch.durationSeconds = Number(durationSeconds);
       if (config) patch.config = JSON.stringify(config);
       for (const uid of Object.keys(snapshot.child('players').val() || {})) {
         const cleared = { score: 0, streak: 0, operationIndex: 0, correctCount: 0, wrongCount: 0, resolvedCount: 0, learningStatsJSON: null,
-          pendingFollowUpFrom: null, isFinished: false, roundSeed: seed, lastResult: null, lastAnswer: null, lastActionAt: null, lastSeenAt: this.now() };
+          pendingFollowUpFrom: null, assistedOperationIndex: null, isFinished: false, roundSeed: seed, lastResult: null, lastAnswer: null, lastActionAt: null, lastSeenAt: this.now() };
         for (const [key, value] of Object.entries(cleared)) patch[`players/${uid}/${key}`] = value;
       }
       await ref.update(patch);
     },
-    async finishRoom(code) { await requireOnline(this); await this.roomRef(code).update({ status: 'finished' }); },
+    async finishRoom(code) { await requireOnline(this); await this.roomRef(code).update({ status: 'finished', pausedAt:null, pausedQuestion:null, pauseRevealed:null }); },
+    async controlRound(code,action,question={}) {
+      await requireOnline(this);
+      const result=await transactRoom(this,code,room=>{
+        if(!room||room.hostUid!==this.uid()||room.status!=='running')return;
+        const now=Math.round(this.now());if(now<Number(room.startedAt||0))return;
+        if(action==='pause') { if(room.pausedAt)return room;room.pausedAt=now;room.pauseRevealed=false; }
+        else if(action==='resume') { if(!room.pausedAt)return room;room.pausedTotal=Math.min(86400000,(Number(room.pausedTotal)||0)+Math.round(Math.max(0,now-room.pausedAt)));delete room.pausedAt;delete room.pausedQuestion;delete room.pauseRevealed;return room; }
+        else if(!room.pausedAt)return;
+        if(action==='reveal'){
+          room.pauseRevealed=true;let q;try{q=JSON.parse(room.pausedQuestion);}catch{q={};}
+          for(const p of Object.values(room.players||{}))if(!p.isFinished&&p.operationIndex===q.index&&(q.followUpFrom!==undefined?p.pendingFollowUpFrom===q.followUpFrom:p.pendingFollowUpFrom===undefined||p.pendingFollowUpFrom===null))p.assistedOperationIndex=p.operationIndex;
+        }
+        else if(action==='pause'||action==='question') {
+          room.pausedQuestion=JSON.stringify({index:Math.max(0,Math.min(99999,Math.trunc(Number(question.index))||0)),...(Number.isInteger(question.followUpFrom)&&question.followUpFrom>=0?{followUpFrom:Math.min(99999,question.followUpFrom)}:{})});room.pauseRevealed=false;
+        } else return;
+        return room;
+      });
+      if(!result.committed)throw Error('La ronda cambió o todavía está en la cuenta atrás.');
+    },
+    async setTeams(code,{count=2,names,assignments,reshuffle=false,fillOnly=false}={},expectedSeed) {
+      await requireOnline(this);
+      const result=await transactRoom(this,code,room=>{
+        if(!room||room.hostUid!==this.uid()||(expectedSeed!==undefined&&room.seed!==expectedSeed))return;
+        if(room.status==='running'&&!fillOnly)return;
+        let cfg;try{cfg=JSON.parse(room.config);}catch{return;}
+        const opt=window.NinjaDynamics.options({...cfg,...(fillOnly?{}:{teamCount:count,teamNames:names||cfg.teamNames})});if(!cfg.teamsEnabled)return;
+        const current=fillOnly?cfg.teamAssignments||{}:assignments||cfg.teamAssignments||{};
+        cfg.teamCount=opt.teamCount;cfg.teamNames=opt.teamNames;cfg.teamAssignments=window.NinjaDynamics.assign(room.players,opt.teamCount,current,reshuffle&&!fillOnly);
+        room.config=JSON.stringify(cfg);return room;
+      });
+      return result.committed;
+    },
+    async saveLobbyConfig(code,config,expectedSeed) {
+      await requireOnline(this);
+      const result=await transactRoom(this,code,room=>{if(!room||room.status!=='lobby'||room.seed!==expectedSeed)return;let old={};try{old=JSON.parse(room.config);}catch{}room.config=JSON.stringify({...config,teamAssignments:old.teamAssignments||config.teamAssignments||{}});return room;});
+      return result.committed;
+    },
     async getRoom(code) { await requireOnline(this); return decodeRoom((await this.roomRef(code).get()).val()); },
     async updatePlayer(code, uid, patch, expectedSeed) {
       await requireOnline(this); if (uid !== this.uid()) throw Error('Solo puedes actualizar tu propio progreso.');
@@ -136,6 +173,15 @@
     if (!value) return null; const room = { ...value, players: {} };
     for (const [uid, raw] of Object.entries(value.players || {})) { let stats = {}; try { stats = JSON.parse(raw.learningStatsJSON || '{}'); } catch { /* Ignore untrusted malformed statistics. */ } room.players[uid] = { ...raw, learningStats: cleanStats(stats) }; delete room.players[uid].learningStatsJSON; }
     return room;
+  }
+  async function transactRoom(client,code,change) {
+    const ref=client.roomRef(code);let listener;
+    try {
+      const snapshot=await new Promise((resolve,reject)=>{listener=s=>resolve(s);ref.on('value',listener,reject);});
+      if(snapshot.val()?.hostUid!==client.uid())throw Error('Solo el anfitrion puede controlar la sala.');
+      // Keep the listener until commit: a one-shot read can release the SDK's cached node.
+      return await ref.transaction(room=>room?change(room):undefined,undefined,false);
+    } finally {if(listener)ref.off('value',listener);}
   }
   async function requireOnline(client) { if (!await client.init()) throw Error('Firebase no está configurado. Revisa firebase-config.js.'); }
   function loadScript(src, optional = false) {

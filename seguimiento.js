@@ -25,15 +25,26 @@
       players[key] = { name: String(p.name || 'Ninja'), score: count(p.score), correctCount: count(p.correctCount), wrongCount: count(p.wrongCount), learningStats: p.learningStats || previous?.learningStats || {}, isConnected: p.isConnected !== false };
     }
     const snapshot = { id, code: String(code), date: new Date(room.startedAt).toISOString(), mode: room.mode || 'online', activity: config.activity || 'calculo',
-      contents: config.activity === 'problemas' ? config.problemSettings?._family || 'enteros' : (config.enabledKeys || []).join(', '), endCondition: config.endCondition || 'time', goalCount: config.goalCount || 0, status: room.status, players };
+      contents: config.activity === 'problemas' ? config.problemSettings?._family || 'enteros' : (config.enabledKeys || []).join(', '), endCondition: config.endCondition || 'time', goalCount: config.goalCount || 0, progressiveEnabled:config.progressiveEnabled===true, teamsEnabled:config.teamsEnabled===true, teamNames:config.teamNames||[], teamAssignments:config.teamAssignments||{}, status: room.status, players };
     const updated = [...rounds.filter(r => r.id !== id), snapshot].sort((a, b) => a.date.localeCompare(b.date)).slice(-500);
     try { localStorage.setItem(STORAGE, JSON.stringify(updated)); volatileRounds = []; return true; } catch { volatileRounds = updated; return false; }
   }
   function topic(operation) {
+    const family = operation.problem?.family;
+    if (['geometria','espacio','horarios','datos','estadistica','investigacion'].includes(family)) {
+      const match = String(operation.problem.templateId || '').match(/-(\d+)$/);
+      if (match) return `problemas_${family}_v${Number(match[1])-1}`;
+    }
     return operation.problem ? `problemas_${operation.problem.family || 'enteros'}_${[...(operation.problem.categories || [operation.problem.category || 'mixto'])].sort().join('_')}` : operation.skillKind || operation.kind || 'calculo';
   }
   function topicLabel(key) {
+    const variant = key.match(/^problemas_(geometria|espacio|horarios|datos|estadistica|investigacion)_v(\d+)$/);
+    if (variant) {
+      const labels = variant[1] === 'geometria' ? root.NinjaGeometry?.names : variant[1] === 'espacio' ? root.NinjaSpatial?.variants : root.NinjaLiteracyProblems?.variants?.[variant[1]];
+      return 'Problemas · ' + (labels?.[Number(variant[2])] || `${variant[1]} · Tipo ${Number(variant[2])+1}`);
+    }
     const names = { enteros: 'Enteros', suma: 'Sumas', resta: 'Restas', multiplicacion: 'Multiplicaciones', division: 'Divisiones', fracciones: 'Fracciones', mcmMcd: 'MCM y MCD', mcm: 'MCM', mcd: 'MCD', porcentajes: 'Porcentajes', parte: 'Parte de una cantidad', descuento: 'Descuentos', aumento: 'Aumentos', relacion: 'Porcentaje de una parte', medidas: 'Medidas', longitud: 'Longitud', masa: 'Masa', capacidad: 'Capacidad', tiempo: 'Tiempo', razonamiento: 'Razonamiento', geometria: 'Geometría', compras: 'Dinero y compras', proporcionalidad: 'Proporcionalidad', add: 'Sumas', sub: 'Restas', mul: 'Multiplicaciones', div: 'Divisiones', round: 'Redondeo', missing: 'Huecos', compare: 'Comparaciones', power: 'Potencias' };
+    Object.assign(names, {horarios:'Horarios',datos:'Tablas y gráficos',estadistica:'Media y probabilidad',investigacion:'Investiga y razona',espacio:'Volúmenes y geometría espacial'});
     if (typeof OPERATION_LABELS !== 'undefined' && OPERATION_LABELS[key]) return OPERATION_LABELS[key];
     if (key.startsWith('problemas_')) return 'Problemas · ' + [...new Set(key.slice(10).split('_').map(k => names[k] || k))].join(' · ');
     return names[key] || key;
@@ -66,12 +77,12 @@
   function sheets(rounds = read()) {
     const summary = [['Alumno', 'Rondas', 'Puntos', 'Aciertos', 'Fallos', 'Precisión', 'Pistas', 'Soluciones', 'Saltos', 'Aciertos con pista']];
     const skills = [['Alumno', 'Contenido', 'Aciertos', 'Fallos', 'Precisión', 'Pistas', 'Soluciones', 'Saltos', 'Aciertos con pista']];
-    const detail = [['Fecha', 'Sala', 'Modo', 'Actividad', 'Contenidos', 'Alumno', 'Puntos', 'Aciertos', 'Fallos', 'Estado de ronda']];
+    const detail = [['Fecha', 'Sala', 'Modo', 'Actividad', 'Contenidos', 'Alumno', 'Puntos', 'Aciertos', 'Fallos', 'Estado de ronda', 'Dificultad', 'Equipo']];
     for (const row of aggregate(rounds)) {
       summary.push([row.name, row.rounds, row.score, row.correct, row.wrong, precision(row), row.hints, row.solutions, row.skips, row.assisted]);
       for (const [key, t] of Object.entries(row.topics)) skills.push([row.name, topicLabel(key), t.correct, t.wrong, precision(t), t.hints, t.solutions, t.skips, t.assistedCorrect]);
     }
-    for (const round of rounds) for (const p of Object.values(round.players || {})) detail.push([round.date, round.code, round.mode === 'teacher' ? 'Maestro' : 'Batalla online', round.activity === 'problemas' ? 'Problemas' : 'Cálculo', String(round.contents || '').split(', ').map(topicLabel).join(', '), p.name, count(p.score), count(p.correctCount), count(p.wrongCount), round.status === 'finished' ? 'Terminada' : 'Parcial']);
+    for (const round of rounds) for (const [uid,p] of Object.entries(round.players || {})) detail.push([round.date, round.code, round.mode === 'teacher' ? 'Maestro' : 'Batalla online', round.activity === 'problemas' ? 'Problemas' : 'Cálculo', String(round.contents || '').split(', ').map(topicLabel).join(', '), p.name, count(p.score), count(p.correctCount), count(p.wrongCount), round.status === 'finished' ? 'Terminada' : 'Parcial',round.progressiveEnabled?'Progresiva':'Fija',round.teamsEnabled?(round.teamNames?.[round.teamAssignments?.[uid]]||'Sin equipo'):'Individual']);
     return [{ name: 'Resumen', rows: summary }, { name: 'Por contenido', rows: skills }, { name: 'Rondas', rows: detail }];
   }
   // Uncompressed ZIP is enough for a small, dependency-free XLSX workbook.
@@ -92,8 +103,8 @@
     for (const part of [...entries, ...headers, end]) { result.set(part, cursor); cursor += part.length; }
     return result;
   }
-  function workbook(rounds = read()) {
-    const data = sheets(rounds), ns = 'http://schemas.openxmlformats.org/spreadsheetml/2006/main';
+  function workbook(rounds = read(), options = {}) {
+    const data = options.insights && root.NinjaInsights ? root.NinjaInsights.sheets(rounds, options.insights) : sheets(rounds), ns = 'http://schemas.openxmlformats.org/spreadsheetml/2006/main';
     const sheetXml = rows => `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="${ns}"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols><col min="1" max="2" width="30" customWidth="1"/><col min="3" max="${rows[0].length}" width="18" customWidth="1"/></cols><sheetData>${rows.map((row, index) => `<row r="${index + 1}">${row.map((v, col) => `<c r="${String.fromCharCode(65 + col)}${index + 1}" ${typeof v === 'number' ? '' : 't="inlineStr"'}>${typeof v === 'number' ? `<v>${v}</v>` : `<is><t xml:space="preserve">${escape(v)}</t></is>`}</c>`).join('')}</row>`).join('')}</sheetData><autoFilter ref="A1:${String.fromCharCode(64 + rows[0].length)}${rows.length}"/></worksheet>`;
     return zip([
       ['[Content_Types].xml', `<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/>${data.map((_, i) => `<Override PartName="/xl/worksheets/sheet${i + 1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join('')}</Types>`],
@@ -103,9 +114,9 @@
       ...data.map((s, i) => [`xl/worksheets/sheet${i + 1}.xml`, sheetXml(s.rows)])
     ]);
   }
-  function printHtml(rounds = read()) {
-    const data = sheets(rounds);
-    return `<!doctype html><html lang="es"><meta charset="utf-8"><title>Seguimiento del alumnado</title><style>body{font:12px Verdana,sans-serif;color:#163c36;margin:24px}h1{font-size:23px}table{border-collapse:collapse;width:100%;margin:16px 0 30px;table-layout:auto}th,td{border:1px solid #abc7bf;padding:6px;text-align:left;overflow-wrap:anywhere}th{background:#e3f2ec}tr{break-inside:avoid}h2{break-after:avoid}@page{size:A4 landscape;margin:12mm}@media print{button{display:none}}</style><h1>Dojo Matemático · Seguimiento del alumnado</h1><p>Datos guardados en este navegador. ${rounds.length} rondas. Los nombres iguales se agrupan; usa nombres distintos para alumnos distintos.</p><button onclick="window.print()">Imprimir / Guardar como PDF</button>${data.map(s => `<h2>${escape(s.name)}</h2><table><thead><tr>${s.rows[0].map(v => `<th>${escape(v)}</th>`).join('')}</tr></thead><tbody>${s.rows.slice(1).map(r => `<tr>${r.map(v => `<td>${escape(v)}</td>`).join('')}</tr>`).join('')}</tbody></table>`).join('')}</html>`;
+  function printHtml(rounds = read(), options = {}) {
+    const data = options.insights && root.NinjaInsights ? root.NinjaInsights.sheets(rounds, options.insights) : sheets(rounds);
+    return `<!doctype html><html lang="es"><meta charset="utf-8"><title>Seguimiento del alumnado</title><style>body{font:12px Verdana,sans-serif;color:#163c36;margin:24px}h1{font-size:23px}table{border-collapse:collapse;width:100%;margin:16px 0 30px;table-layout:auto}th,td{border:1px solid #abc7bf;padding:6px;text-align:left;overflow-wrap:anywhere}th{background:#e3f2ec}tr{break-inside:avoid}h2{break-after:avoid}@page{size:A4 landscape;margin:12mm}@media print{button{display:none}}</style><h1>Dojo Matemático · Seguimiento del alumnado</h1><p>Datos guardados en este navegador. ${rounds.length} rondas. Los nombres iguales se agrupan; usa nombres distintos para alumnos distintos. Indicadores orientativos, no notas ni diagnósticos; menos de cinco observaciones: pocos datos. Fallos: intentos, incluidos reintentos. Pistas: consultas. Autonomía: aciertos sin pista frente a aciertos, soluciones y saltos registrados. No compara dificultades; las explicaciones compartidas no cuentan como soluciones individuales. Los datos antiguos pueden no tener desglose. Los puntos en rondas de origen son totales de ronda, no por contenido.</p><button onclick="window.print()">Imprimir / Guardar como PDF</button>${data.map(s => `<h2>${escape(s.name)}</h2><table><thead><tr>${s.rows[0].map(v => `<th>${escape(v)}</th>`).join('')}</tr></thead><tbody>${s.rows.slice(1).map(r => `<tr>${r.map(v => `<td>${escape(v)}</td>`).join('')}</tr>`).join('')}</tbody></table>`).join('')}</html>`;
   }
   function clear() { localStorage.removeItem(STORAGE); volatileRounds = []; lastCleared = Date.now(); try { localStorage.setItem(CLEAR_EPOCH, String(lastCleared)); } catch { /* The in-memory cutoff still protects this session. */ } }
   root.NinjaLearning = { read, capture, record, aggregate, sheets, workbook, printHtml, clear, topic, topicLabel, precision };

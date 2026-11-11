@@ -10,13 +10,191 @@ Web app educativa de calculo mental con modo individual, batalla local, teclado 
 
 La app funciona sin backend para los modos locales.
 
+## Pizarra y Seguimiento (bloque 6)
+
+El boton de pantalla, en cabecera y durante la partida, abre Accesibilidad.
+Permite activar alto contraste para proyectar, reducir movimiento y vibracion,
+y abrir pantalla completa si el navegador lo permite. Se recuerda en este
+dispositivo sin cambiar el tema guardado, la sala ni los puntos. La preferencia
+de movimiento reducido del sistema tambien se respeta.
+
+Seguimiento ofrece filtros por periodo, dificultad, alumno, contenido e indicador;
+vistas de resumen, detalle y plan de repaso; y Excel/PDF con cuatro secciones.
+Los indicadores son orientativos, no notas ni diagnosticos. Conserva las 500
+rondas online observadas por el anfitrion en este navegador y agrupa nombres
+iguales. Los datos antiguos sin desglose se identifican como tales. No se
+sincronizan informes entre equipos ni se envian a otro servicio.
+
+Guia de interpretacion y limites: PIZARRA-SEGUIMIENTO.md. Pruebas:
+`node tests/insights.test.cjs`, `node tests/browser-smoke.cjs --accessibility-only`
+y `node tests/startup-live.cjs`. Este bloque no necesita cambios en Firebase.
+
 Para preparar un paquete limpio ejecuta `powershell -NoProfile -ExecutionPolicy Bypass -File .\crear-release.ps1`. Incluye la
 carpeta oculta `.github`, pero excluye configuracion local, dependencias y logs.
 La version protegida del online y sus comprobaciones se explican en `SEGURIDAD.md`.
 
+## Sesiones y actividades (bloque 1)
+
+Abre el bloque plegado **Mis sesiones y actividades**. Prepara una partida,
+escribe un nombre y pulsa Guardar ajustes actuales. Guarda hasta 30 sesiones
+en este navegador. Cargar recupera actividad, cifras, formato, duracion,
+objetivos y opciones didacticas; no empieza la partida ni cambia el modo.
+Una estrella marca sesiones o actividades favoritas. Guardar con el mismo
+nombre permite actualizar los ajustes, previa confirmacion. Eliminar tambien
+pide confirmacion.
+
+El buscador encuentra operaciones y familias de problemas sin distinguir
+mayusculas ni tildes. Pulsar una operacion la anade sin quitar las ya elegidas;
+pulsar una familia prepara sus ajustes. Solo favoritos filtra los accesos.
+No modifica las selecciones por el mero hecho de escribir o marcar una estrella.
+
+El bloque se integra en Crea tu partida online y en los ajustes de la siguiente
+ronda del maestro. Cargar no sustituye el codigo, no modifica una partida en
+curso y no permite a un alumno cambiar los ajustes del anfitrion. Las sesiones
+no incluyen nombres de jugadores, resultados, identidad ni credenciales. No se
+sincronizan entre dispositivos. Si el navegador bloquea o llena el almacenamiento,
+un aviso explica que los cambios permanecen solo en memoria hasta cerrar la pagina.
+
+Archivos: sesiones.js y sesiones-ui.js. Pruebas: node tests/sessions.test.cjs y
+node tests/browser-smoke.cjs --controls-only. Plan de siguientes bloques en
+PLAN-MEJORAS.md; la dificultad progresiva opcional del bloque 5 ya esta
+disponible y empieza desactivada por defecto.
+
+## Nuevos retos de calculo (bloque 2)
+
+En **Calculo > Equivalencias, enteros y angulos** hay seis actividades nuevas,
+todas desactivadas al principio y con el bloque plegado:
+
+- Multiplicar/dividir por 10, 100 y 1000: 1-3 cifras enteras y 0-3 decimales
+  iniciales; factor y operacion fijos o aleatorios. Dividir puede producir hasta
+  seis decimales exactos. No se redondea. Las cifras seleccionadas corresponden
+  a la parte entera del dato inicial.
+- Fraccion-decimal-porcentaje: seis direcciones, individuales o mezcladas.
+  Denominadores elegidos para producir decimales finitos, sin aproximaciones.
+  Si se pide fraccion hay que escribir numerador/denominador; se aceptan
+  equivalentes. Si se pide decimal o porcentaje hay que escribir el numero
+  decimal, con coma y sin %. La indicacion aparece durante cada reto.
+- Ordenar enteros: 3, 4 o 5 numeros distintos; orden ascendente o descendente.
+  Tras ordenarlos mentalmente se escribe solo el numero de la posicion pedida.
+  Las cifras son un limite de magnitud, no cifras minimas; se incluye el cero.
+- Valor absoluto: distancia al cero de enteros positivos, negativos o cero.
+- Recta numerica: identificar un punto con marcas igualmente espaciadas.
+  Las cifras limitan la magnitud de las etiquetas y el paso depende del nivel.
+- Angulos: complementarios, suplementarios, interiores de triangulos y vuelta
+  completa. Respuesta numerica en grados, sin escribir el simbolo.
+
+Son actividades con ajustes propios: pueden necesitar decimales o negativos
+aunque los interruptores generales esten apagados. Eso no activa decimales ni
+negativos en otras operaciones. La tecla menos aparece cuando la respuesta
+puede ser negativa. Equivalencias incluye la tecla /; tambien funcionan F y :.
+Se conservan el teclado tactil, el fisico y el numerico lateral.
+
+Todas tienen explicacion y pistas especificas; los dibujos no desaparecen al
+cambiar el formato de operaciones. Se pueden combinar con otros calculos,
+guardar como sesiones, marcar como favoritas y usar en online o maestro.
+Los selectores se comparten en la sala y pueden cambiarse para la siguiente
+ronda. Se mantienen los puntos y penalizaciones actuales. No se requiere
+modificar Firebase ni sus reglas.
+
+Motor y controles: retos-calculo.js. Pruebas: node tests/calculation-challenges.test.cjs
+y node tests/browser-smoke.cjs --challenges-only.
+
 ## Modo Problemas
 
-En la pantalla inicial, elige **Que quieres practicar > Problemas**. Mantiene las modalidades entrenamiento, batalla local, online y maestro. Incluye **1900 plantillas**: 600 de numeros enteros, 600 de fracciones, 120 de MCM/MCD, 160 de porcentajes, 160 de medidas y 260 de razonamiento, geometria, compras y proporcionalidad. Enteros y fracciones tienen 40 de cada operacion individual y 40 de cada una de las 11 combinaciones de dos, tres o cuatro operaciones. MCM/MCD tiene 40 individuales de cada concepto y 40 que utilizan ambos. El desglose esta en `banco-problemas/RECUENTO.md`. Los bloques de categoria estan plegados y conservan su altura propia al desplegar un vecino. Durante la pregunta solo aparece Lee y resuelve: no se muestra la operacion necesaria ni el numero de pasos como pista involuntaria.
+### Dinamica de Partidas (bloque 5)
+
+En Personaliza tu partida hay dos opciones nuevas, apagadas por defecto:
+progresion y equipos. Progresiva individual: tres aciertos seguidos sin pista
+suben nivel y dos fallos seguidos lo bajan, para la siguiente pregunta. En
+competicion el nivel sigue tramos comunes de cinco preguntas, no se adapta a
+cada alumno. Se respetan limites y tipos seleccionados. Los retos fijos o que
+ya estan en el limite no reciben bonificaciones de nivel ficticias.
+
+Los puntos normales son 10/15/20; las combinadas avanzadas y con fracciones
+conservan el doble: 20/30/40. Las penalizaciones no cambian. No hay ruleta en
+progresiva, pero siguen disponibles las animaciones de racha. Las marcas se
+separan por dificultad; los informes permiten filtrar y exportan dificultad
+y equipo por ronda.
+
+El anfitrion puede pausar la sala, mostrar la pregunta de un participante y
+revelar la solucion a todos. Se congela el reloj y se bloquean respuestas,
+tambien en la base de datos. Una pregunta explicada se puede pasar despues
+sin puntos y conserva esa marca al recargar. La revancha limpia la pausa.
+
+Equipos ofrece de dos a cuatro grupos con nombres editables, reparto automatico
+y ajustes manuales en espera. Los que llegan tarde se incorporan sin mover al
+resto durante la partida. Se ordenan por media de puntos por participante y
+se muestran tambien totales, aciertos, fallos y nombres. El maestro conserva
+las tarjetas individuales coloreadas por equipo y puede abrir la vista de
+equipos. Al final hay clasificacion por equipos e individual.
+
+Reglas de Firebase ya actualizadas y publicadas para dojo-matematico. Sube el
+release y recarga todos los dispositivos antes de jugar. Para otro proyecto
+hay que publicar firebase/database.rules.json. Detalles, excepciones y pruebas:
+DINAMICA.md. No es un sistema antitrampas de evaluacion.
+
+### Volumenes y Buscador (bloque 4)
+
+Calculo tiene un bloque plegado **Volumenes y espacio**: cubo y prisma
+rectangular, con medidas enteras de 1, 2 o 3 cifras, en cm, dm o m. Los
+resultados son exactos en unidades cubicas. Los interruptores de negativos
+y decimales no cambian estos datos enteros.
+
+Problemas incorpora **Volumenes y geometria espacial**, con 40 plantillas:
+cubos, prismas, cubitos por filas/capas y depositos en litros. Los ajustes
+empiezan plegados. Los depositos siempre tienen medidas interiores en dm y
+respuestas en litros (1 dm3 = 1 litro), aunque se elija otra unidad para los
+demas tipos. Los dibujos son esquemas, no a escala. Las soluciones conservan
+enunciado y dibujo.
+
+El buscador dentro de **Operaciones** filtra todos los grupos, incluidas
+conversiones, retos y volumenes, sin distinguir tildes ni mayusculas. Admite
+varias palabras, abre las coincidencias y no desmarca operaciones. Los chips
+conservan todas las activas. Limpiar o Escape recuperan el estado anterior
+de los desplegables. El buscador general de actividades sigue disponible.
+
+Se integran con sesiones, favoritos, informes, online y siguientes rondas del
+maestro. No requieren cambios en Firebase. Guia: banco-problemas/GUIA-ESPACIO.md.
+Pruebas: node tests/spatial.test.cjs y node tests/browser-smoke.cjs --spatial-only.
+El buscador tambien se comprueba con --controls-only.
+
+### Horarios, datos y razonamiento (bloque 3)
+
+Cuatro familias nuevas, con 40 plantillas cada una y ajustes plegados:
+
+- Horarios y duracion: minutos transcurridos, hora de llegada, hora de salida y
+  sesiones que terminan al dia siguiente. Las horas se eligen entre opciones;
+  las duraciones se responden en minutos.
+- Tablas y graficos: consultar un dato, comparar dos cantidades, calcular un
+  total y encontrar la mayor cantidad de un grafico. Los datos siguen visibles
+  al consultar la solucion; en batalla estrecha la tabla cambia de orientacion.
+- Media y probabilidad: medias de tres o cuatro datos, bolas de colores y dado
+  equilibrado. Las medias son enteras salvo que se activen decimales exactos
+  para cuatro datos. Probabilidad pide una fraccion y acepta equivalentes.
+- Investiga y razona: recuperar una cantidad inicial, comprobar si hay datos
+  suficientes, corregir un calculo y elegir los datos relevantes. Se alternan
+  preguntas resolubles y preguntas a las que no se puede dar un numero.
+
+Los niveles Iniciacion, Intermedio y Avanzado ajustan cantidades, cantidad de
+filas y precision de los horarios, no la velocidad lectora. Cada familia tiene
+su selector de tipos, independiente de la mezcla de operaciones aritmeticas.
+Las plantillas son diez contextos por cuatro estructuras, no 160 estructuras
+de razonamiento distintas. El total del banco es de 2100 plantillas.
+
+Las opciones se seleccionan con el tactil o el raton y se confirman con Enviar;
+el teclado fisico admite su numero y Enter. Volver a pulsar una opcion la
+mantiene seleccionada, sin concatenar digitos. Las opciones cambian de orden
+de forma reproducible para cada pregunta online. La solucion y la ultima
+respuesta del maestro muestran el texto, no solo el indice de opcion.
+
+Los tipos nuevos funcionan con sesiones guardadas, favoritos, preguntas por
+objetivos, pistas, repaso, informes y configuracion de la siguiente ronda en
+online/maestro. No cambian las reglas de Firebase ni las puntuaciones.
+Fuentes editables, campos y ejemplos en banco-problemas/GUIA-LECTURA.md.
+Pruebas: node tests/literacy.test.cjs y
+node tests/browser-smoke.cjs --literacy-only.
+
+En la pantalla inicial, elige **Que quieres practicar > Problemas**. Mantiene las modalidades entrenamiento, batalla local, online y maestro. Incluye **2100 plantillas**: 600 de numeros enteros, 600 de fracciones, 120 de MCM/MCD, 160 de porcentajes, 160 de medidas, 260 de razonamiento, geometria, compras y proporcionalidad 160 de horarios, lectura de datos, estadistica e investigacion y 40 de geometria espacial. Enteros y fracciones tienen 40 de cada operacion individual y 40 de cada una de las 11 combinaciones de dos, tres o cuatro operaciones. MCM/MCD tiene 40 individuales de cada concepto y 40 que utilizan ambos. El desglose esta en `banco-problemas/RECUENTO.md`. Los bloques de categoria estan plegados y conservan su altura propia al desplegar un vecino. Durante la pregunta solo aparece Lee y resuelve: no se muestra la operacion necesaria ni el numero de pasos como pista involuntaria.
 
 En enteros hay selectores Minimo y Maximo de cifras (1 a 9). Si coinciden, las cifras son fijas; si difieren, forman un intervalo. Se mantienen los limites de cada contexto. Los enunciados usan frases naturales y vocabulario accesible: Facil corresponde a un tipo de problema directo, Media pide razonamiento y Avanzada puede tener dos pasos. Para empezar a los 6 anos se recomienda Facil y una cifra. Responde solo con el numero, sin separadores de miles. Ver solucion explica los pasos sin sumar puntos.
 

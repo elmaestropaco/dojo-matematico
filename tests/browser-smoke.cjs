@@ -52,10 +52,15 @@ async function main() {
       await new Promise(r => setTimeout(r, 100));
     }
     const sizes = [[360, 740], [390, 844], [768, 1024], [1366, 768], [1920, 1080]];
+    const accessibilityOnly = process.argv.includes('--accessibility-only');
     const percentagesOnly = process.argv.includes('--percentages-only');
     const unitsOnly = process.argv.includes('--units-only');
     const learningOnly = process.argv.includes('--learning-only');
-    const controlsOnly = process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly;
+    const challengesOnly = process.argv.includes('--challenges-only');
+    const literacyOnly = process.argv.includes('--literacy-only');
+    const spatialOnly = process.argv.includes('--spatial-only');
+    const dynamicsOnly = process.argv.includes('--dynamics-only');
+    const controlsOnly = accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
     const advancedOnly = process.argv.includes('--advanced-only');
     const calculationsOnly = process.argv.includes('--calculations-only');
     const integerOnly = process.argv.includes('--integer-only');
@@ -545,6 +550,167 @@ async function main() {
       })()`);
       console.log('OK: '+views+' unit/measure layouts, all 160 templates, both fonts, exact answers, keyboard, persistence and online/teacher settings.');
     }
+    if (dynamicsOnly || process.argv.length === 2) {
+      await evaluate(`(()=>{
+        goHome();state.mode='single';state.activity='calculo';state.endCondition='time';state.allowNegative=false;state.decimalsEnabled=false;state.penalizeWrong=true;state.progressiveEnabled=true;state.streaksEnabled=true;Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.addNoCarry={enabled:true,digits:1};launchGame(['addNoCarry'],120);stopTimer();
+        for(let i=0;i<3;i++){const op=state.operationsByPlayer.get(0);state.players[0].input=String(op.answer);submitPlayerAnswer(0);}
+        const player=state.players[0],op=state.operationsByPlayer.get(0);if(player.score!==30||player.progressLevel!==2||op.progressTier!==2||getBasePoints(op)!==15||state.operationSettings.addNoCarry.digits!==1||state.eventStartTimeoutId)throw Error('Adaptive raise, reward, settings or roulette failed');
+        for(let i=0;i<2;i++){player.input=String(op.answer+1);submitPlayerAnswer(0);}if(player.score!==20||player.progressLevel!==1)throw Error('Adaptive errors changed penalty');player.input=String(op.answer);submitPlayerAnswer(0);if(player.score!==35||state.operationsByPlayer.get(0).progressTier!==1)throw Error('Question changed its reward after errors');
+        state.players[0].score=0;state.players[0].input=String(state.operationsByPlayer.get(0).answer+1);submitPlayerAnswer(0);if(state.players[0].score!==0)throw Error('Negative points returned');
+        const cfg=state.operationSettings.addNoCarry;state.mode='online';state.online={seed:321};for(const index of [0,4,5,9,10,20]){const a=createOnlineOperation(index),b=createOnlineOperation(index);if(JSON.stringify(a)!==JSON.stringify(b)||a.progressTier!==NinjaDynamics.indexTier(index))throw Error('Competition tier differs');}state.online=null;state.mode='single';
+        state.operationSettings.cubeVolume={enabled:true,digits:3,spaceUnit:0};const ceiling=withDynamicsLevel(3,()=>createOperation('cubeVolume'));if(ceiling.progressTier!==1||getBasePoints(ceiling)!==10)throw Error('Ceiling received fake bonus');
+        saveResultsToHall();document.getElementById('hallProgressFilter').value='fixed';renderHallOfFame();if(refs.hallBody.textContent.includes(player.name+':'))throw Error('Hall render');
+        if(!readHall().some(r=>r.progressiveEnabled))throw Error('Progressive hall flag lost');goHome();
+      })()`);
+      await evaluate(`(async()=>{
+        goHome();state.mode='online';state.activity='calculo';state.endCondition='questions';state.goalCount=1;state.progressiveEnabled=true;state.teamsEnabled=false;Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.addNoCarry={enabled:true,digits:1};const cfg=buildOnlineConfig(),now=Date.now();
+        const room={seed:76,status:'running',startedAt:now-2000,durationSeconds:60,config:JSON.stringify(cfg),players:{self:{name:'Race',score:0,streak:0,correctCount:0,wrongCount:0,resolvedCount:0,operationIndex:0,isConnected:true,isFinished:false}}};state.online={code:'W8K7N9X2',playerId:'self',isHost:false,isTeacher:false,active:true,seed:76,currentOperationIndex:0,correctCount:0,wrongCount:0,config:cfg,room};launchGame(['addNoCarry'],60);stopTimer();state.players[0].score=10;state.players[0].correctCount=1;state.online.correctCount=1;state.online.currentOperationIndex=1;
+        const old={enabled:NinjaOnline.enabled,update:NinjaOnline.updatePlayer,get:NinjaOnline.getRoom};NinjaOnline.enabled=true;NinjaOnline.updatePlayer=async()=>({committed:false});NinjaOnline.getRoom=async()=>({...room,pausedAt:now,pausedQuestion:JSON.stringify({index:0})});
+        try{await finishGame();stopTimer();if(!state.isRunning||state.players[0].score!==0||state.roundCompleted||!document.getElementById('roundPauseDialog').open)throw Error('Finish/pause race lost authoritative round');if(getBasePoints({kind:'combinedAdv',progressTier:3})!==40)throw Error('Advanced progression lost double points');}finally{NinjaOnline.enabled=old.enabled;NinjaOnline.updatePlayer=old.update;NinjaOnline.getRoom=old.get;goHome();}
+      })()`);
+      let views=0;
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const activity of ['calculo','problemas'])for(const tier of [1,2,3]){
+          const errors=await evaluate(`(async()=>{
+            goHome();state.mode=${JSON.stringify(mode)};state.activity=${JSON.stringify(activity)};state.orientation='face';state.endCondition='time';state.progressiveEnabled=true;state.streaksEnabled=false;state.problemSettings=NinjaProblems.normalize({_family:'espacio',_spaceDigits:1});Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.prismVolume={enabled:true,digits:1,spaceUnit:0};launchGame(getEnabledOperationKeys(),120);stopTimer();refs.consentBanner.classList.add('hidden');
+            state.players.forEach(p=>state.operationsByPlayer.set(p.id,withDynamicsLevel(${tier},()=>createOperation(${JSON.stringify(activity==='problemas'?'problem':'prismVolume')}))));repaintPlayers();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+            const errors=[];if(document.documentElement.scrollHeight>innerHeight+2||document.documentElement.scrollWidth>innerWidth+2)errors.push('page scroll');for(const panel of document.querySelectorAll('.player-panel')){const b=panel.getBoundingClientRect();for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),r=e.getBoundingClientRect();if(r.bottom>b.bottom+1||r.right>b.right+1||e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2)errors.push(q+' clipped');}const label=panel.querySelector('.event-inline'),answer=panel.querySelector('.answer-box');if(!label.dataset.progress||Math.min(label.getBoundingClientRect().bottom,answer.getBoundingClientRect().bottom)-Math.max(label.getBoundingClientRect().top,answer.getBoundingClientRect().top)>2)errors.push('level label overlaps answer');}return errors;
+          })()`);
+          if(errors.length){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'dynamics-failure.png'),Buffer.from(shot.data,'base64'));console.log(path.join(work,'dynamics-failure.png'));}
+          assert.deepEqual(errors,[],`Dynamics ${width}x${height} ${mode} ${activity} tier ${tier}`);views++;
+        }
+        const errors=await evaluate(`(async()=>{
+          goHome();state.mode='online';state.activity='calculo';state.endCondition='time';state.progressiveEnabled=true;state.teamsEnabled=true;state.teamCount=3;state.teamNames=['Rojos 🦊','Azules 🐬','Verdes 🌳','Dorados'];Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.addNoCarry={enabled:true,digits:1};
+          const cfg=buildOnlineConfig(),now=Date.now(),players=Object.fromEntries(Array.from({length:20},(_,i)=>[i===0?'self':'p'+i,{name:i===0?'Ana 🥷':'Participante '+i+' 🌟',score:i*10,correctCount:i,wrongCount:0,resolvedCount:i,operationIndex:0,roundSeed:42,isConnected:true}]));cfg.teamAssignments=NinjaDynamics.assign(players,3);const room={seed:42,status:'running',startedAt:now-3000,durationSeconds:60,pausedAt:now,pausedTotal:0,pausedQuestion:JSON.stringify({index:0}),config:JSON.stringify(cfg),players};
+          state.online={code:'W8K7N9X2',playerId:'self',isHost:false,isTeacher:false,active:true,seed:42,currentOperationIndex:0,correctCount:0,wrongCount:0,config:cfg,room,assigningTeams:true};launchGame(['addNoCarry'],60);stopTimer();const errors=[],p=state.players[0];p.score=999;state.online.syncedPauseAt=null;syncDynamicsRoom(room);if(p.score!==0)errors.push('in-flight points not reconciled');
+          const frozen=state.timeLeft,oldNow=NinjaOnline.now;NinjaOnline.now=()=>now+30000;if(roundRemaining(room)!==frozen)errors.push('paused time ran');const before=p.input;appendInputChar(p,'7');submitPlayerAnswer(0);if(p.input!==before||p.score!==0||!document.getElementById('roundPauseDialog').open)errors.push('paused input not blocked');
+          room.pauseRevealed=true;room.players.self.assistedOperationIndex=0;syncDynamicsRoom(room);if(!state.operationsByPlayer.get(0).solutionRevealed||!document.getElementById('sharedQuestion').textContent)errors.push('shared assistance lost');
+          delete room.pausedAt;room.pausedTotal=30000;syncDynamicsRoom(room);if(roundRemaining(room)!==frozen||document.getElementById('roundPauseDialog').open)errors.push('resume lost time');NinjaOnline.now=oldNow;submitPlayerAnswer(0);if(p.score!==0||state.online.currentOperationIndex!==1)errors.push('explained answer awarded points');
+          document.getElementById('teamsArenaBtn').click();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const dialog=document.getElementById('teamsDialog');if(!dialog.open||dialog.scrollWidth>dialog.clientWidth+2||document.querySelectorAll('#teamsBoard .team-card').length!==3||document.querySelectorAll('#teamsBoard .team-member-list span').length!==20)errors.push('team board or names missing');if([...document.querySelectorAll('#teamsRoster select')].some(s=>!s.disabled))errors.push('live team edit allowed');dialog.close();
+          room.status='finished';showResults();if(document.querySelectorAll('#teamFinalResults .team-card').length!==3||document.querySelectorAll('.results-score-item.is-self').length!==1)errors.push('final team/individual results missing');goHome();
+          state.progressiveEnabled=true;state.teamsEnabled=true;state.teamCount=3;state.teamAssignments={privateUid:0};document.getElementById('sessionNameInput').value='Bloque5 ${width}';saveNamedSession();const saved=sessionLibrary.list().find(s=>s.name==='Bloque5 ${width}');if(saved.config.teamAssignments||!saved.config.progressiveEnabled||saved.config.teamCount!==3)errors.push('session privacy/dynamics failed');state.progressiveEnabled=false;loadNamedSession(saved);if(!state.progressiveEnabled||state.teamCount!==3)errors.push('session progression lost');
+          state.mode='teacher';const teacherCount=${width>=768?60:30};room.players=Object.fromEntries(Array.from({length:teacherCount},(_,i)=>['t'+i,{name:'Nombre Largo Alumno '+i,score:i,correctCount:i,wrongCount:0,operationIndex:0,isConnected:true}]));cfg.teamAssignments=NinjaDynamics.assign(room.players,3);room.status='running';delete room.pausedAt;state.online={code:'W8K7N9X2',isHost:true,isTeacher:true,active:true,seed:42,config:cfg,room,assigningTeams:true};state.isRunning=true;showTeacherDashboard();renderTeacherDashboard(room);syncDynamicsRoom(room);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));fitTeacherGrid();if(refs.teacherGrid.children.length!==teacherCount||refs.teacherGrid.scrollHeight>refs.teacherGrid.clientHeight+2)errors.push('team teacher grid scroll');if([...refs.teacherGrid.children].some(card=>!card.style.boxShadow.includes('5px')))errors.push('teacher team colors missing');goHome();
+          state.progressiveEnabled=false;state.teamsEnabled=false;state.teamAssignments={};syncSettingsUIFromState();savePreferences();return errors;
+        })()`);
+        assert.deepEqual(errors,[],`Pause/teams ${width}x${height}`);
+      }
+      console.log('OK: '+views+' progressive layouts, adaptive scoring, fixed penalties, ceilings, shared competition, pause/reveal/resume UI, frozen clock, assistance, teams, results and private sessions.');
+    }
+    if (spatialOnly || process.argv.length === 2) {
+      const previews=await evaluate(`(()=>{
+        globalThis.spatialPreviews=[];
+        for(const kind of Object.keys(NinjaSpatial.defaults))for(let i=0;i<6;i++)spatialPreviews.push({activity:'calculo',op:decorateOperation(NinjaSpatial.generateCalculation(kind,{digits:3,spaceUnit:i%3},mulberry32(11+i)))});
+        const cfg=NinjaProblems.normalize({_family:'espacio',_spaceDigits:3});
+        for(let i=0;i<40;i++)spatialPreviews.push({activity:'problemas',cfg,op:decorateOperation(NinjaProblems.generate(cfg,i,123))});
+        return spatialPreviews.map((p,i)=>({i,activity:p.activity,kind:p.op.kind,id:p.op.problem?.templateId}));
+      })()`);
+      const reps=[...Object.keys({cubeVolume:1,prismVolume:1}).map(k=>previews.find(p=>p.kind===k).i),...[1,2,3,4].map(v=>previews.find(p=>p.id?.endsWith('-'+v)).i)];
+      let views=0;
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const activity of ['calculo','problemas'])for(const mode of ['single','duel'])for(const font of activity==='problemas'?['imprenta','ligada']:['imprenta']){
+          await evaluate(`goHome();state.online=null;state.mode=${JSON.stringify(mode)};state.orientation='face';state.activity=${JSON.stringify(activity)};state.problemFont=${JSON.stringify(font)};state.endCondition='time';state.problemSettings=NinjaProblems.normalize({_family:'espacio',_spaceDigits:3});Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.cubeVolume.enabled=true;state.operationSettings.prismVolume.enabled=true;launchGame(getEnabledOperationKeys(),180);stopTimer();refs.consentBanner.classList.add('hidden');document.fonts.load('400 20px "Escolar Ligada"');`);
+          const indexes=previews.filter(p=>p.activity===activity&&(width===1366||reps.includes(p.i))).map(p=>p.i);
+          for(const i of indexes)for(const solution of [false,true]){
+            const errors=await evaluate(`(async()=>{
+              const {op}=spatialPreviews[${i}];state.players.forEach(p=>state.operationsByPlayer.set(p.id,{...op,solutionRevealed:${solution}}));repaintPlayers();refreshOperationDisplays();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+              const errors=[];if(document.documentElement.scrollHeight>innerHeight+2||document.documentElement.scrollWidth>innerWidth+2)errors.push('page scroll');
+              for(const panel of document.querySelectorAll('.player-panel')){const b=panel.getBoundingClientRect();for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),r=e.getBoundingClientRect();if(r.bottom>b.bottom+1||r.right>b.right+1||e.scrollWidth>e.clientWidth+2||e.scrollHeight>e.clientHeight+2)errors.push(q+' clipped');}if(!${solution}&&!panel.querySelector('.spatial-diagram'))errors.push('diagram lost');if(${solution}&&op.problem&&(!panel.querySelector('.problem-question')||!panel.querySelector('.problem-final').textContent.includes(op.answerDisplay)))errors.push('question or solution lost');}
+              return errors;
+            })()`);
+            if(errors.length){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'spatial-failure.png'),Buffer.from(shot.data,'base64'));console.log(path.join(work,'spatial-failure.png'));}
+            assert.deepEqual(errors,[],`Spatial ${width}x${height} ${activity} ${mode} ${font} ${i} solution ${solution}`);views++;
+          }
+        }
+        console.log('Spatial layouts checked: '+width+'x'+height);
+      }
+      await evaluate(`(()=>{
+        goHome();state.mode='single';state.activity='calculo';state.endCondition='time';state.operationSettings.cubeVolume={enabled:true,digits:2,spaceUnit:0};launchGame(['cubeVolume'],60);stopTimer();const op=state.operationsByPlayer.get(0);for(const key of op.answerDisplay)document.querySelector('#numpad-0 [data-key="'+key+'"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));submitPlayerAnswer(0);if(state.players[0].score!==10)throw Error('Volume touch answer failed');
+        state.activity='problemas';state.problemSettings=NinjaProblems.normalize({_family:'espacio',_spaceVariant:3,_spaceDigits:3});state.online={seed:93};if(JSON.stringify(createOnlineOperation(12))!==JSON.stringify(createOnlineOperation(12)))throw Error('Spatial online mismatch');state.online=null;goHome();
+        document.getElementById('sessionNameInput').value='Depositos bloque 4';saveNamedSession();const saved=sessionLibrary.list().find(s=>s.name==='Depositos bloque 4');state.activity='calculo';state.problemSettings=NinjaProblems.normalize({_family:'enteros'});loadNamedSession(saved);if(state.activity!=='problemas'||state.problemSettings._spaceVariant!==3||state.problemSettings._spaceDigits!==3)throw Error('Spatial session lost');
+        state.mode='teacher';state.online={code:'W8K7N9X2',isHost:true,isTeacher:true,room:{status:'lobby'}};showTeacherDashboard();setTeacherConfigExpanded(true);loadNamedSession(saved);if(state.online.code!=='W8K7N9X2'||state.problemSettings._family!=='espacio')throw Error('Spatial teacher preset changed room');goHome();
+      })()`);
+      console.log('OK: '+views+' spatial layouts, cubes/prisms/layers/litres, both fonts, touch, sessions and next teacher round.');
+    }
+    if (literacyOnly || process.argv.length === 2) {
+      const previews=await evaluate(`(()=>{
+        globalThis.literacyPreviews=[];
+        for(const family of Object.keys(NinjaLiteracyProblems.labels)){
+          const cfg=NinjaProblems.normalize({_family:family,_literacyLevel:3,_literacyDecimals:true});
+          for(let i=0;i<40;i++)literacyPreviews.push({cfg,op:decorateOperation(NinjaProblems.generate(cfg,i,331))});
+        }
+        return literacyPreviews.map((p,i)=>({i,family:p.op.problem.family,id:p.op.problem.templateId}));
+      })()`);
+      const reps=Object.keys({horarios:1,datos:1,estadistica:1,investigacion:1}).flatMap(f=>[1,2,3,4].map(v=>previews.find(p=>p.family===f&&p.id.endsWith('-'+v)).i));
+      let views=0;
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const font of ['imprenta','ligada']){
+          await evaluate(`goHome();state.online=null;state.activity='problemas';state.mode=${JSON.stringify(mode)};state.problemFont=${JSON.stringify(font)};state.orientation='face';state.endCondition='time';state.problemSettings=literacyPreviews[0].cfg;launchGame(['problem'],180);stopTimer();refs.consentBanner.classList.add('hidden');document.fonts.load('400 20px "Escolar Ligada"');`);
+          for(const i of width===1366?previews.map(p=>p.i):reps)for(const solution of [false,true]){
+            const errors=await evaluate(`(async()=>{
+              const {cfg,op}=literacyPreviews[${i}];state.problemSettings=cfg;state.players.forEach(p=>state.operationsByPlayer.set(p.id,{...op,solutionRevealed:${solution}}));repaintPlayers();refreshOperationDisplays();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+              const errors=[];if(document.documentElement.scrollHeight>innerHeight+2||document.documentElement.scrollWidth>innerWidth+2)errors.push('page scroll');
+              for(const panel of document.querySelectorAll('.player-panel')){const b=panel.getBoundingClientRect();for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),r=e.getBoundingClientRect();if(r.bottom>b.bottom+1||r.right>b.right+1||e.scrollWidth>e.clientWidth+2||e.scrollHeight>e.clientHeight+2)errors.push(q+' clipped');}
+              if(op.choices&&panel.querySelectorAll('.choice-btn').length!==op.choices.length)errors.push('options lost');if(!op.choices&&panel.querySelector('.choices-input'))errors.push('choice keypad retained');if(op.requiresFractionInput&&!panel.querySelector('[data-key="/"]'))errors.push('fraction key lost');if(${solution}&&(!panel.querySelector('.problem-question')||!panel.querySelector('.problem-final').textContent.includes(op.answerLabel||op.answerDisplay)))errors.push('reading/answer lost');}
+              return errors;
+            })()`);
+            if(errors.length){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'literacy-failure.png'),Buffer.from(shot.data,'base64'));console.log(path.join(work,'literacy-failure.png'));}
+            assert.deepEqual(errors,[],`Literacy ${width}x${height} ${mode} ${font} ${i} solution ${solution}`);views++;
+          }
+        }
+        console.log('Literacy layouts checked: '+width+'x'+height);
+      }
+      await evaluate(`(()=>{
+        goHome();state.online=null;state.mode='single';state.activity='problemas';state.endCondition='time';state.problemSettings=NinjaProblems.normalize({_family:'investigacion',_investigacionVariant:1});launchGame(['problem'],180);stopTimer();
+        const op=state.operationsByPlayer.get(0);document.querySelector('#numpad-0 [data-key="'+op.answerDisplay+'"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));document.querySelector('#numpad-0 [data-key="'+op.answerDisplay+'"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));if(state.players[0].input!==op.answerDisplay)throw Error('Repeated choice appended');submitPlayerAnswer(0);if(state.players[0].score!==10)throw Error('Choice touch score failed');
+        state.players[0].input='';const current=state.operationsByPlayer.get(0);window.dispatchEvent(new KeyboardEvent('keydown',{key:current.answerDisplay}));window.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',code:'NumpadEnter'}));if(state.players[0].score!==20)throw Error('Choice keyboard score failed');
+        state.problemSettings=NinjaProblems.normalize({_family:'estadistica',_estadisticaVariant:3});state.online={seed:213};const fraction=createOnlineOperation(0);if(JSON.stringify(fraction)!==JSON.stringify(createOnlineOperation(0)))throw Error('Literacy online sequence differs');state.online=null;state.operationsByPlayer.set(0,fraction);repaintPlayers();for(const key of fraction.answerDisplay)document.querySelector('#numpad-0 [data-key="'+key+'"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));submitPlayerAnswer(0);if(state.players[0].score!==30)throw Error('Probability keypad score failed');
+        savePreferences();state.problemSettings=NinjaProblems.normalize({_family:'enteros'});applySavedPreferences();if(state.problemSettings._family!=='estadistica')throw Error('Literacy settings lost');goHome();
+      })()`);
+      console.log('OK: '+views+' literacy layouts, all 160 templates, both fonts, touch/physical choices, probability fraction, persistence and deterministic online.');
+    }
+    if (challengesOnly || process.argv.length === 2) {
+      const previews=await evaluate(`(()=>{
+        globalThis.calculationPreviews=[];
+        for(const kind of Object.keys(NinjaCalculationChallenges.defaults))for(let i=0;i<12;i++){
+          const cfg={...NinjaCalculationChallenges.defaults[kind],digits:3,inputPlaces:i%4,scalePower:i%4,challengeVariant:i%7,orderCount:5,orderDirection:i%2,angleType:i%5};
+          calculationPreviews.push(decorateOperation(NinjaCalculationChallenges.generate(kind,cfg,mulberry32(i+713))));
+        }
+        return calculationPreviews.map((p,i)=>({i,kind:p.kind}));
+      })()`);
+      const reps=[...new Set(previews.map(p=>p.kind))].flatMap(k=>previews.filter(p=>p.kind===k).slice(0,2).map(p=>p.i));
+      let views=0;
+      for(const [width,height] of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel']){
+          await evaluate(`goHome();state.online=null;state.activity='calculo';state.mode=${JSON.stringify(mode)};state.orientation='face';state.endCondition='time';state.allowNegative=false;state.decimalsEnabled=false;state.streaksEnabled=false;Object.values(state.operationSettings).forEach(c=>c.enabled=false);Object.keys(NinjaCalculationChallenges.defaults).forEach(k=>state.operationSettings[k].enabled=true);launchGame(getEnabledOperationKeys(),120);stopTimer();refs.consentBanner.classList.add('hidden');`);
+          const indexes=width===1366?previews.map(p=>p.i):reps;
+          for(const i of indexes)for(const solution of [false,true]){
+            const errors=await evaluate(`(async()=>{
+              const op=calculationPreviews[${i}];state.players.forEach(p=>state.operationsByPlayer.set(p.id,{...op,solutionRevealed:${solution}}));repaintPlayers();refreshOperationDisplays();
+              await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+              const errors=[];if(document.documentElement.scrollHeight>innerHeight+2||document.documentElement.scrollWidth>innerWidth+2)errors.push('page scroll');
+              for(const panel of document.querySelectorAll('.player-panel')){const b=panel.getBoundingClientRect();for(const q of ['.operation','.numpad','.action-row']){const e=panel.querySelector(q),r=e.getBoundingClientRect();if(r.bottom>b.bottom+1||r.right>b.right+1||e.scrollWidth>e.clientWidth+2||e.scrollHeight>e.clientHeight+2)errors.push(q+' clipped');}if(op.signedInput&&!panel.querySelector('[data-key="-"]'))errors.push('minus key missing');if(op.requiresFractionInput&&!panel.querySelector('[data-key="/"]'))errors.push('fraction key missing');if(!${solution}&&op.diagram&&!panel.querySelector('.calculation-diagram'))errors.push('diagram lost on refresh');}
+              return errors;
+            })()`);
+            if(errors.length){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'challenge-failure.png'),Buffer.from(shot.data,'base64'));console.log(path.join(work,'challenge-failure.png'));}
+            assert.deepEqual(errors,[],`Challenge ${width}x${height} ${mode} ${i} solution ${solution}`);views++;
+          }
+        }
+      }
+      await evaluate(`(()=>{
+        goHome();state.mode='single';state.activity='calculo';state.endCondition='time';state.online=null;state.decimalsEnabled=false;state.allowNegative=false;launchGame(['numberLine'],60);stopTimer();
+        const negative=Array.from({length:100},(_,i)=>NinjaCalculationChallenges.generate('numberLine',{digits:2},mulberry32(i+1))).find(o=>o.answer<0);
+        state.operationsByPlayer.set(0,decorateOperation(negative));repaintPlayers();for(const key of negative.answerDisplay)window.dispatchEvent(new KeyboardEvent('keydown',{key}));window.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',code:'NumpadEnter'}));if(state.players[0].score!==10)throw Error('Physical minus or scoring failed');
+        state.operationSettings.equivalence.enabled=true;const fraction=decorateOperation(NinjaCalculationChallenges.generate('equivalence',{challengeVariant:3},mulberry32(713)));state.operationsByPlayer.set(0,fraction);document.getElementById('numpad-0').innerHTML='';buildNumpad(document.getElementById('numpad-0'),0);repaintPlayers();
+        for(const key of fraction.answerDisplay)document.querySelector('#numpad-0 [data-key="'+key+'"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));submitPlayerAnswer(0);if(state.players[0].score!==20)throw Error('Touch fraction answer failed');
+        Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.angles.enabled=true;state.operationSettings.angles.angleType=3;state.online={seed:157};if(JSON.stringify(createOnlineOperation(8))!==JSON.stringify(createOnlineOperation(8)))throw Error('Online challenges diverge');state.online=null;
+        savePreferences();state.operationSettings.angles.angleType=0;applySavedPreferences();if(state.operationSettings.angles.angleType!==3)throw Error('Challenge preferences lost');goHome();
+      })()`);
+      console.log('OK: '+views+' challenge layouts, exact touch/physical answers, negative key, diagrams after refresh, persisted settings and deterministic online.');
+    }
     if (learningOnly || process.argv.length === 2) {
       const previews = await evaluate(`(() => {
         globalThis.learningPreviews=[];
@@ -639,6 +805,59 @@ async function main() {
     for (const [width,height] of sizes) {
       await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
       const errors=await evaluate(`(async()=>{
+        goHome();state.online=null;state.mode='single';state.activity='calculo';state.endCondition='questions';state.goalCount=12;
+        state.operationSettings.addNoCarry.enabled=true;state.operationSettings.addNoCarry.digits=3;
+        state.decimalsEnabled=true;state.decimalPlaces=2;refs.timePresetSelect.value='custom';refs.customMinInput.value='2';refs.customSecInput.value='15';
+        document.getElementById('sessionNameInput').value='Reto ${width} <b>⭐</b>';document.getElementById('saveSessionBtn').click();
+        const saved=sessionLibrary.list().find(s=>s.name==='Reto ${width} <b>⭐</b>'),errors=[];
+        if(!saved||document.querySelector('#sessionList b'))throw Error('Save or escaping failed');
+        state.mode='duel';state.goalCount=1;state.operationSettings.addNoCarry.enabled=false;state.operationSettings.addNoCarry.digits=1;refs.timePresetSelect.value='60';refs.player1Input.value='Ana';
+        const button=[...document.querySelectorAll('[data-session][data-action="load"]')].find(b=>b.dataset.session===saved.id);button.click();
+        if(state.mode!=='duel'||state.goalCount!==12||!state.operationSettings.addNoCarry.enabled||state.operationSettings.addNoCarry.digits!==3||refs.timePresetSelect.value!=='custom'||refs.customMinInput.value!=='2'||refs.customSecInput.value!=='15'||refs.player1Input.value!=='Ana')errors.push('preset restoration failed');
+        const favorite=[...document.querySelectorAll('[data-session][data-action="star"]')].find(b=>b.dataset.session===saved.id);favorite.click();
+        if(!NinjaSessions.create(localStorage).list().find(s=>s.id===saved.id).favorite)errors.push('favorite not persisted');
+        document.getElementById('activitySearch').value='raices';document.getElementById('activitySearch').dispatchEvent(new Event('input'));
+        if(document.querySelectorAll('.catalog-choice').length!==1)errors.push('accent-insensitive search failed');
+        if(!sessionLibrary.favorites().includes('calc:sqrt'))document.querySelector('[data-catalog="calc:sqrt"][data-action="star"]').click();document.getElementById('favoritesOnly').checked=true;document.getElementById('favoritesOnly').dispatchEvent(new Event('change'));
+        if(document.querySelectorAll('.catalog-choice').length!==1)errors.push('favorites filter failed');
+        document.querySelector('.catalog-choice').click();if(!state.operationSettings.sqrt.enabled||!state.operationSettings.addNoCarry.enabled||state.activity!=='calculo')errors.push('catalog lost existing selection');
+        state.isRunning=true;const old=state.activity;chooseCatalogActivity(sessionCatalog.find(i=>i.id==='problem:geometria'));if(state.activity!==old)errors.push('active round changed');state.isRunning=false;
+        state.mode='online';state.online={code:'W8K7N9X2',isHost:true,isTeacher:false,room:{status:'lobby'}};applyModeDependentUI();loadNamedSession(saved);
+        if(state.mode!=='online'||state.online.code!=='W8K7N9X2'||document.getElementById('sessionToolsBox').parentElement!==refs.onlineCreateMount)errors.push('online room or mounting changed');
+        state.online.isHost=false;state.goalCount=7;loadNamedSession(saved);if(state.goalCount!==7)errors.push('guest changed room settings');
+        state.online.isHost=true;state.mode='teacher';state.online.isTeacher=true;showTeacherDashboard();setTeacherConfigExpanded(true);loadNamedSession(saved);
+        if(state.mode!=='teacher'||state.online.code!=='W8K7N9X2'||state.goalCount!==12||refs.teacherConfigPanel.classList.contains('hidden')||document.getElementById('sessionToolsBox').parentElement!==refs.teacherConfigMount)errors.push('teacher next round preset failed');
+        goHome();state.activity='problemas';state.problemSettings=NinjaProblems.normalize({_family:'geometria',_geometryVariant:13,_geometryDecimals:false,_geometryPi:'3',_newDigits:3});
+        document.getElementById('sessionNameInput').value='Geometria ${width}';saveNamedSession();const geometry=sessionLibrary.list().find(s=>s.name==='Geometria ${width}');state.activity='calculo';state.problemSettings=NinjaProblems.normalize({_family:'enteros'});loadNamedSession(geometry);
+        if(state.activity!=='problemas'||state.problemSettings._family!=='geometria'||state.problemSettings._geometryVariant!==13||state.problemSettings._newDigits!==3||state.problemSettings._geometryDecimals!==false||state.problemSettings._geometryPi!=='3')errors.push('problem configuration restoration failed');
+        document.getElementById('sessionToolsBox').open=true;document.getElementById('activitySearch').value='';document.getElementById('favoritesOnly').checked=false;renderSessionCatalog();
+        await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+        if(document.documentElement.scrollWidth>innerWidth+2)errors.push('session tools horizontal overflow');
+        document.getElementById('sessionToolsBox').open=false;return errors;
+      })()`);
+      assert.deepEqual(errors,[],`Saved sessions ${width}x${height}`);
+    }
+    console.log('OK: saved sessions, favorites, search, safe names, five sizes, local/online/teacher, current round and guest guards.');
+    for(const [width,height] of sizes){
+      await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+      const errors=await evaluate(`(async()=>{
+        goHome();state.mode='single';state.activity='calculo';state.online=null;applyModeDependentUI();syncSettingsUIFromState();state.operationSettings.addNoCarry.enabled=true;syncSettingsUIFromState();updateOpsSummary();
+        const input=document.getElementById('operationSearch'),groups=[...refs.operationsBox.querySelectorAll('details')],errors=[];input.value='';input.dispatchEvent(new Event('input'));groups.forEach(g=>g.open=false);document.getElementById('opsDropdown').open=true;
+        const previous=groups.map(g=>g.open),before=JSON.stringify(state.operationSettings);
+        const visible=()=>[...refs.operationsBox.querySelectorAll('.op-toggle')].filter(e=>e.offsetParent!==null);
+        for(const [query,expected] of [['RAICES',['sqrt']],['conversion longitud',['convertLength']],['volumen',['cubeVolume','prismVolume']]]){input.value=query;input.dispatchEvent(new Event('input'));if(JSON.stringify(visible().map(e=>e.dataset.op).sort())!==JSON.stringify(expected.sort()))errors.push('wrong search '+query);}
+        input.value='zzzzzz';input.dispatchEvent(new Event('input'));if(visible().length||document.getElementById('operationSearchEmpty').classList.contains('hidden'))errors.push('empty search failed');
+        document.getElementById('clearOperationSearch').click();if(JSON.stringify(state.operationSettings)!==before||groups.some((g,i)=>g.open!==previous[i]))errors.push('filter changed settings/open state');
+        input.value='volumen';input.dispatchEvent(new Event('input'));const toggle=document.querySelector('[data-op="cubeVolume"]');if(!toggle.checked)toggle.click();if(!state.operationSettings.cubeVolume.enabled||!state.operationSettings.addNoCarry.enabled)errors.push('search selection lost other operations');
+        input.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));if(input.value||refs.operationsBox.querySelector('.operation-filtered-out'))errors.push('Escape failed');
+        groups.forEach(g=>g.open=false);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));if(document.documentElement.scrollWidth>innerWidth+2)errors.push('search horizontal overflow');return errors;
+      })()`);
+      assert.deepEqual(errors,[],`Operation search ${width}x${height}`);
+    }
+    console.log('OK: operation search across all groups, accent handling, no results, selection preservation, clear/Escape and restored disclosure state on five sizes.');
+    for (const [width,height] of sizes) {
+      await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+      const errors=await evaluate(`(async()=>{
         goHome();state.mode='online';state.online={code:'W8K7N9X2',isHost:true,isTeacher:false,active:false};
         showOnlineHostLobby('W8K7N9X2',true);
         await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
@@ -648,6 +867,46 @@ async function main() {
         goHome();return errors;
       })()`);
       assert.deepEqual(errors,[],`Room code ${width}x${height}`);
+    }
+    if(accessibilityOnly){
+      await evaluate("document.getElementById('accessibilityBtn').click();if(!document.getElementById('accessibilityDialog').open)throw Error('accessibility modal');document.getElementById('boardModeToggle').checked=true;document.getElementById('boardModeToggle').dispatchEvent(new Event('change'));document.getElementById('reduceMotionToggle').checked=true;document.getElementById('reduceMotionToggle').dispatchEvent(new Event('change'));document.getElementById('closeAccessibilityBtn').click();");
+      let views=0;
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const theme of ['light','default','dark'])for(const mode of ['single','duel'])for(const activity of ['calculo','problemas']){
+          const result=await evaluate(`(async()=>{
+            goHome();document.body.dataset.theme='${theme}';state.online=null;state.mode='${mode}';state.activity='${activity}';state.orientation='vertical';state.muted=true;state.streaksEnabled=false;state.progressiveEnabled=false;
+            Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.addNoCarry={enabled:true,digits:3};
+            state.problemSettings=NinjaProblems.normalize({_family:'geometria',_geometryVariant:3,_newDigits:2});
+            launchGame(['${activity==='problemas'?'problem':'addNoCarry'}'],60);stopTimer();refs.consentBanner.classList.add('hidden');
+            state.operationsByPlayer.forEach(op=>op.solutionRevealed=true);repaintPlayers();
+            await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+            const failures=[];
+            if(document.body.dataset.board!=='true'||!reducedMotionRequested())failures.push('settings lost');
+            if(getComputedStyle(document.body).backgroundColor!=='rgb(255, 255, 255)')failures.push('board background');
+            if(document.documentElement.scrollHeight>innerHeight+2)failures.push('page scroll');
+            for(const panel of document.querySelectorAll('.player-panel')){
+              const box=panel.getBoundingClientRect();
+              if(box.bottom>innerHeight+1||box.right>innerWidth+1)failures.push('panel outside');
+              for(const q of ['.operation','.answer-box','.numpad','.action-row']){const el=panel.querySelector(q),b=el.getBoundingClientRect();if(b.bottom>box.bottom+1||el.scrollHeight>el.clientHeight+2)failures.push(q+' clipped');}
+              if(getComputedStyle(panel).color!=='rgb(16, 16, 16)')failures.push('panel contrast');
+              if(getComputedStyle(panel.querySelector('.panel-timer')).backgroundColor!=='rgb(255, 255, 255)')failures.push('timer background');
+            }
+            document.getElementById('accessibilityArenaBtn').click();if(!document.getElementById('accessibilityDialog').open)failures.push('arena control');document.getElementById('closeAccessibilityBtn').click();
+            return failures;
+          })()`);
+          assert.deepEqual(result,[],`Pizarra ${width}x${height} ${theme} ${mode} ${activity}: ${result}`);views++;
+        }
+      }
+      await evaluate(`goHome();const values={correct:2,wrong:4,hints:1,solutions:0,skips:1,assistedCorrect:1};localStorage.setItem('ninja_math_learning_rounds_v1',JSON.stringify([{id:'board-test',date:new Date().toISOString(),code:'TESTCODE',players:{a:{name:'Paco 🥷',score:20,correctCount:2,wrongCount:4,learningStats:{addNoCarry:values}},b:{name:'Ana',score:100,correctCount:10,wrongCount:0,learningStats:{mul:{...values,correct:10,wrong:0,hints:0,skips:0,assistedCorrect:0}}}}}]));showLearningReports();`);
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        const result=await evaluate(`(()=>{const failures=[];for(const view of ['summary','content','plan']){document.getElementById('reportViewSelect').value=view;renderLearningReports();if(!document.getElementById('reportsContent').textContent.includes('Paco'))failures.push('missing student '+view);}document.getElementById('reportStatusFilter').value='review';renderLearningReports();if(document.getElementById('reportsContent').textContent.includes('Ana'))failures.push('status filter');document.getElementById('reportStatusFilter').value='';document.getElementById('reportTopicFilter').value='mul';renderLearningReports();if(document.getElementById('reportsContent').textContent.includes('Paco'))failures.push('topic filter');document.getElementById('reportTopicFilter').value='';renderLearningReports();const box=document.getElementById('reportsDialog').getBoundingClientRect();if(box.right>innerWidth+1||box.bottom>innerHeight+1)failures.push('dialog outside');if(document.documentElement.scrollWidth>innerWidth+1)failures.push('horizontal page overflow');return failures;})()`);
+        assert.deepEqual(result,[],`Report filters ${width}: ${result}`);
+      }
+      const reportShot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'content-report.png'),Buffer.from(reportShot.data,'base64'));
+      await evaluate("document.getElementById('reportsDialog').close();if(!JSON.parse(localStorage.getItem('ninja_math_accessibility_v1')).board)throw Error('settings not saved');document.body.dataset.board='false';initAccessibility();if(document.body.dataset.board!=='true')throw Error('settings not restored');");
+      console.log('OK: '+views+' high-contrast game views in all themes; reduced motion, device preferences, filtered reports in five sizes. Teacher suite below runs in board mode.');
     }
     let teacherViews = 0;
     for(const [width,height] of [[360,740],[768,1024],[1024,768],[1366,768],[1920,1080]]) {
