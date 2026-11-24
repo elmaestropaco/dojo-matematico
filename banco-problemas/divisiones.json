@@ -3106,6 +3106,706 @@
         },
         "respuesta": "12"
       }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-1",
+      "titulo": "Semillas por maceta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "La clase tiene {cantidadA} {unidadA}. Las reparte por igual entre {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas semillas pone en cada maceta?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "maceta",
+          "plural": "macetas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-2",
+      "titulo": "Tarjetas por equipo",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para un juego hay {cantidadA} {unidadA}. Se reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas tarjetas recibe cada equipo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tarjeta",
+          "plural": "tarjetas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "equipo",
+          "plural": "equipos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tarjeta",
+          "plural": "tarjetas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-3",
+      "titulo": "Botellas en cajas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para una excursión tienen {cantidadA} {unidadA} de agua. Las guardan por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas botellas guardan en cada caja?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "botella",
+          "plural": "botellas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "caja",
+          "plural": "cajas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "botella",
+          "plural": "botellas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-4",
+      "titulo": "Hojas por cuaderno",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller tienen {cantidadA} {unidadA}. Con ellas hacen {cantidadB} {unidadB} con el mismo número de hojas, sin que sobre ninguna. ¿Cuántas hojas lleva cada cuaderno?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuaderno",
+          "plural": "cuadernos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-5",
+      "titulo": "Cuentas por pulsera",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para una feria tienen {cantidadA} {unidadA} de colores. Las usan todas para hacer {cantidadB} {unidadB} iguales. ¿Cuántas cuentas lleva cada pulsera?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuenta",
+          "plural": "cuentas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuenta",
+          "plural": "cuentas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-6",
+      "titulo": "Tizas por estuche",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "La clase tiene {cantidadA} {unidadA}. Las guarda por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas tizas pone en cada estuche?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "estuche",
+          "plural": "estuches",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-7",
+      "titulo": "Libros por carro",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En la biblioteca trasladan {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos libros lleva cada carro?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "carro",
+          "plural": "carros",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-8",
+      "titulo": "Pinceles por mesa",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller hay {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos pinceles dejan en cada mesa?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pincel",
+          "plural": "pinceles",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mesa",
+          "plural": "mesas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pincel",
+          "plural": "pinceles",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-9",
+      "titulo": "Banderines por equipo",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para decorar tienen {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos banderines recibe cada equipo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "banderín",
+          "plural": "banderines",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "equipo",
+          "plural": "equipos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "banderín",
+          "plural": "banderines",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-10",
+      "titulo": "Pegatinas por sobre",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para un intercambio tienen {cantidadA} {unidadA}. Las reparten por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas pegatinas ponen en cada sobre?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
     }
   ]
 }

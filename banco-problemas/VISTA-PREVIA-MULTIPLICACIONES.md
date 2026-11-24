@@ -1,4 +1,4 @@
-# 42 plantillas: multiplicaciones
+# 52 plantillas: multiplicaciones
 
 Contenido editable: multiplicaciones.json. Los marcadores entre llaves son variables.
 
@@ -859,3 +859,203 @@ En el jardín de plantas aromáticas preparan 8 etiquetas al día para plantar n
 - Multiplicamos los días por la cantidad diaria: 5 × 8 = 40.
 
 Respuesta: **40 etiquetas**.
+
+## 43. Semillas en macetas
+ID: multiplicaciones-nuevo-20261124-1 | Dificultad: facil
+
+Para un experimento preparan {cantidadA} {unidadA}. En cada maceta ponen {cantidadB} {unidadB}. ¿Cuántas semillas utilizan en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | maceta / macetas, segun cantidadA. |
+| {unidadB} | semilla / semillas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para un experimento preparan 4 macetas. En cada maceta ponen 6 semillas. ¿Cuántas semillas utilizan en total?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 semillas**.
+
+## 44. Fotos de cada equipo
+ID: multiplicaciones-nuevo-20261124-2 | Dificultad: facil
+
+En una salida participan {cantidadA} {unidadA}. Cada equipo elige {cantidadB} {unidadB} para el mural. ¿Cuántas fotos eligen entre todos los equipos?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | equipo / equipos, segun cantidadA. |
+| {unidadB} | foto / fotos, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En una salida participan 4 equipos. Cada equipo elige 6 fotos para el mural. ¿Cuántas fotos eligen entre todos los equipos?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 fotos**.
+
+## 45. Botellas para las cajas
+ID: multiplicaciones-nuevo-20261124-3 | Dificultad: facil
+
+Para una jornada deportiva preparan {cantidadA} {unidadA}. En cada caja guardan {cantidadB} {unidadB} de agua. ¿Cuántas botellas guardan en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | caja / cajas, segun cantidadA. |
+| {unidadB} | botella / botellas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para una jornada deportiva preparan 4 cajas. En cada caja guardan 6 botellas de agua. ¿Cuántas botellas guardan en total?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 botellas**.
+
+## 46. Hojas en cuadernos
+ID: multiplicaciones-nuevo-20261124-4 | Dificultad: facil
+
+En el taller hacen {cantidadA} {unidadA} iguales. Cada cuaderno lleva {cantidadB} {unidadB}. ¿Cuántas hojas necesitan para todos los cuadernos?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | cuaderno / cuadernos, segun cantidadA. |
+| {unidadB} | hoja / hojas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En el taller hacen 4 cuadernos iguales. Cada cuaderno lleva 6 hojas. ¿Cuántas hojas necesitan para todos los cuadernos?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 hojas**.
+
+## 47. Cuentas de las pulseras
+ID: multiplicaciones-nuevo-20261124-5 | Dificultad: facil
+
+Para una feria hacen {cantidadA} {unidadA}. En cada pulsera colocan {cantidadB} {unidadB} de colores. ¿Cuántas cuentas utilizan en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | pulsera / pulseras, segun cantidadA. |
+| {unidadB} | cuenta / cuentas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para una feria hacen 4 pulseras. En cada pulsera colocan 6 cuentas de colores. ¿Cuántas cuentas utilizan en total?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 cuentas**.
+
+## 48. Tizas en estuches
+ID: multiplicaciones-nuevo-20261124-6 | Dificultad: facil
+
+La clase prepara {cantidadA} {unidadA} para dibujar en el patio. Guarda {cantidadB} {unidadB} en cada estuche. ¿Cuántas tizas guarda en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | estuche / estuches, segun cantidadA. |
+| {unidadB} | tiza / tizas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+La clase prepara 4 estuches para dibujar en el patio. Guarda 6 tizas en cada estuche. ¿Cuántas tizas guarda en total?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 tizas**.
+
+## 49. Libros en carros
+ID: multiplicaciones-nuevo-20261124-7 | Dificultad: facil
+
+La biblioteca utiliza {cantidadA} {unidadA} para llevar libros a las aulas. En cada carro coloca {cantidadB} {unidadB}. ¿Cuántos libros lleva en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | carro / carros, segun cantidadA. |
+| {unidadB} | libro / libros, segun cantidadB. |
+
+### Ejemplo resuelto
+
+La biblioteca utiliza 4 carros para llevar libros a las aulas. En cada carro coloca 6 libros. ¿Cuántos libros lleva en total?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 libros**.
+
+## 50. Tarjetas de cada mesa
+ID: multiplicaciones-nuevo-20261124-8 | Dificultad: facil
+
+Para un juego preparan {cantidadA} {unidadA}. Dejan {cantidadB} {unidadB} en cada mesa. ¿Cuántas tarjetas reparten en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | mesa / mesas, segun cantidadA. |
+| {unidadB} | tarjeta / tarjetas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para un juego preparan 4 mesas. Dejan 6 tarjetas en cada mesa. ¿Cuántas tarjetas reparten en total?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 tarjetas**.
+
+## 51. Banderines para los equipos
+ID: multiplicaciones-nuevo-20261124-9 | Dificultad: facil
+
+En una fiesta participan {cantidadA} {unidadA}. Cada equipo hace {cantidadB} {unidadB} para decorar. ¿Cuántos banderines hacen entre todos?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | equipo / equipos, segun cantidadA. |
+| {unidadB} | banderín / banderines, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En una fiesta participan 4 equipos. Cada equipo hace 6 banderines para decorar. ¿Cuántos banderines hacen entre todos?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 banderines**.
+
+## 52. Pegatinas en sobres
+ID: multiplicaciones-nuevo-20261124-10 | Dificultad: facil
+
+Para un intercambio preparan {cantidadA} {unidadA}. Ponen {cantidadB} {unidadB} en cada sobre. ¿Cuántas pegatinas reparten en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Número de grupos: de 1 a 999. |
+| {cantidadB} | Cantidad de cada grupo: de 1 a 99. |
+| {unidadA} | sobre / sobres, segun cantidadA. |
+| {unidadB} | pegatina / pegatinas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para un intercambio preparan 4 sobres. Ponen 6 pegatinas en cada sobre. ¿Cuántas pegatinas reparten en total?
+
+- Multiplicamos: 4 × 6 = 24.
+
+Respuesta: **24 pegatinas**.

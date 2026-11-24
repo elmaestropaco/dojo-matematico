@@ -1,0 +1,2222 @@
+[
+  {
+    "id": "razona-patrones-1-0",
+    "reasoning": "Continuar una serie",
+    "text": "En el colegio continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-1-1",
+    "reasoning": "Corregir un término",
+    "text": "En el colegio una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-1-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En el colegio alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-2-0",
+    "reasoning": "Continuar una serie",
+    "text": "En el campamento continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-2-1",
+    "reasoning": "Corregir un término",
+    "text": "En el campamento una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-2-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En el campamento alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-3-0",
+    "reasoning": "Continuar una serie",
+    "text": "En la biblioteca continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-3-1",
+    "reasoning": "Corregir un término",
+    "text": "En la biblioteca una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-3-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En la biblioteca alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-4-0",
+    "reasoning": "Continuar una serie",
+    "text": "En la feria continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-4-1",
+    "reasoning": "Corregir un término",
+    "text": "En la feria una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-4-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En la feria alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-5-0",
+    "reasoning": "Continuar una serie",
+    "text": "En la excursión continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-5-1",
+    "reasoning": "Corregir un término",
+    "text": "En la excursión una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-5-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En la excursión alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-6-0",
+    "reasoning": "Continuar una serie",
+    "text": "En el taller continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-6-1",
+    "reasoning": "Corregir un término",
+    "text": "En el taller una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-6-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En el taller alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-7-0",
+    "reasoning": "Continuar una serie",
+    "text": "En la fiesta continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-7-1",
+    "reasoning": "Corregir un término",
+    "text": "En la fiesta una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-7-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En la fiesta alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-8-0",
+    "reasoning": "Continuar una serie",
+    "text": "En el polideportivo continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-8-1",
+    "reasoning": "Corregir un término",
+    "text": "En el polideportivo una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-8-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En el polideportivo alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-9-0",
+    "reasoning": "Continuar una serie",
+    "text": "En el museo continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-9-1",
+    "reasoning": "Corregir un término",
+    "text": "En el museo una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-9-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En el museo alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-patrones-10-0",
+    "reasoning": "Continuar una serie",
+    "text": "En el huerto continúan esta serie sumando siempre la misma cantidad: 11, 15, 19, 23, ?. ¿Qué número sigue?",
+    "answer": "27",
+    "steps": [
+      "15 − 11 = 4",
+      "23 + 4 = 27"
+    ]
+  },
+  {
+    "id": "razona-patrones-10-1",
+    "reasoning": "Corregir un término",
+    "text": "En el huerto una serie debe aumentar siempre 4 unidades: 11, 15, 20, 23. El tercer término está equivocado. ¿Qué número debe ocupar su lugar?",
+    "answer": "19",
+    "steps": [
+      "15 + 4 = 19"
+    ]
+  },
+  {
+    "id": "razona-patrones-10-2",
+    "reasoning": "Alternar dos reglas",
+    "text": "En el huerto alternan dos reglas: sumar 4 y restar 2, una y otra vez. La serie empieza 11, 15, 13, 17. ¿Qué número sigue?",
+    "answer": "15",
+    "steps": [
+      "Después de sumar toca restar 2",
+      "17 − 2 = 15"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-1-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En el colegio puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-1-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En el colegio un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-1-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En el colegio hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-2-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En el campamento puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-2-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En el campamento un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-2-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En el campamento hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-3-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En la biblioteca puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-3-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En la biblioteca un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-3-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En la biblioteca hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-4-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En la feria puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-4-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En la feria un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-4-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En la feria hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-5-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En la excursión puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-5-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En la excursión un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-5-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En la excursión hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-6-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En el taller puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-6-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En el taller un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-6-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En el taller hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-7-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En la fiesta puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-7-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En la fiesta un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-7-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En la fiesta hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-8-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En el polideportivo puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-8-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En el polideportivo un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-8-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En el polideportivo hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-9-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En el museo puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-9-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En el museo un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-9-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En el museo hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-10-0",
+    "reasoning": "Conjuntos de ropa",
+    "text": "En el huerto puedes elegir una camiseta entre 3 distintas y un pantalón entre 4 distintos. Cualquier camiseta se puede combinar con cualquier pantalón. ¿Cuántos conjuntos diferentes puedes formar?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-10-1",
+    "reasoning": "Menús de tres platos",
+    "text": "En el huerto un menú lleva un primero, un segundo y un postre. Hay 3 primeros, 4 segundos y 3 postres. Todas las combinaciones están permitidas. ¿Cuántos menús diferentes puedes elegir?",
+    "answer": "36",
+    "steps": [
+      "3 × 4 × 3 = 36"
+    ]
+  },
+  {
+    "id": "razona-combinatoria-10-2",
+    "reasoning": "Caminos por etapas",
+    "text": "En el huerto hay 3 caminos distintos de A a B y 4 caminos distintos de B a C. Para ir de A a C pasas por B y eliges un camino de cada etapa. ¿Cuántos recorridos diferentes puedes hacer?",
+    "answer": "12",
+    "steps": [
+      "3 × 4 = 12"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-1-0",
+    "reasoning": "Mediana",
+    "text": "En el colegio registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-1-1",
+    "reasoning": "Moda única",
+    "text": "En el colegio registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-1-2",
+    "reasoning": "Rango",
+    "text": "En el colegio registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-2-0",
+    "reasoning": "Mediana",
+    "text": "En el campamento registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-2-1",
+    "reasoning": "Moda única",
+    "text": "En el campamento registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-2-2",
+    "reasoning": "Rango",
+    "text": "En el campamento registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-3-0",
+    "reasoning": "Mediana",
+    "text": "En la biblioteca registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-3-1",
+    "reasoning": "Moda única",
+    "text": "En la biblioteca registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-3-2",
+    "reasoning": "Rango",
+    "text": "En la biblioteca registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-4-0",
+    "reasoning": "Mediana",
+    "text": "En la feria registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-4-1",
+    "reasoning": "Moda única",
+    "text": "En la feria registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-4-2",
+    "reasoning": "Rango",
+    "text": "En la feria registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-5-0",
+    "reasoning": "Mediana",
+    "text": "En la excursión registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-5-1",
+    "reasoning": "Moda única",
+    "text": "En la excursión registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-5-2",
+    "reasoning": "Rango",
+    "text": "En la excursión registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-6-0",
+    "reasoning": "Mediana",
+    "text": "En el taller registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-6-1",
+    "reasoning": "Moda única",
+    "text": "En el taller registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-6-2",
+    "reasoning": "Rango",
+    "text": "En el taller registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-7-0",
+    "reasoning": "Mediana",
+    "text": "En la fiesta registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-7-1",
+    "reasoning": "Moda única",
+    "text": "En la fiesta registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-7-2",
+    "reasoning": "Rango",
+    "text": "En la fiesta registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-8-0",
+    "reasoning": "Mediana",
+    "text": "En el polideportivo registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-8-1",
+    "reasoning": "Moda única",
+    "text": "En el polideportivo registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-8-2",
+    "reasoning": "Rango",
+    "text": "En el polideportivo registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-9-0",
+    "reasoning": "Mediana",
+    "text": "En el museo registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-9-1",
+    "reasoning": "Moda única",
+    "text": "En el museo registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-9-2",
+    "reasoning": "Rango",
+    "text": "En el museo registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-10-0",
+    "reasoning": "Mediana",
+    "text": "En el huerto registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es la mediana, el dato central después de ordenarlos? ",
+    "answer": "7",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "Dato central = 7"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-10-1",
+    "reasoning": "Moda única",
+    "text": "En el huerto registran estos cinco datos: 5, 3, 3, 4, 3. ¿Cuál es la moda, el número que más se repite? ",
+    "answer": "3",
+    "steps": [
+      "Datos ordenados: 3, 3, 3, 4, 5",
+      "3 aparece tres veces: moda = 3"
+    ]
+  },
+  {
+    "id": "razona-resumenDatos-10-2",
+    "reasoning": "Rango",
+    "text": "En el huerto registran estos cinco datos: 7, 8, 5, 3, 7. ¿Cuál es el rango, la diferencia entre el mayor y el menor? ",
+    "answer": "5",
+    "steps": [
+      "Datos ordenados: 3, 5, 7, 7, 8",
+      "8 − 3 = 5"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-1-0",
+    "reasoning": "Temperaturas",
+    "text": "En el colegio la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-1-1",
+    "reasoning": "Ascensores",
+    "text": "En el colegio un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-1-2",
+    "reasoning": "Saldos",
+    "text": "En el colegio una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-2-0",
+    "reasoning": "Temperaturas",
+    "text": "En el campamento la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-2-1",
+    "reasoning": "Ascensores",
+    "text": "En el campamento un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-2-2",
+    "reasoning": "Saldos",
+    "text": "En el campamento una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-3-0",
+    "reasoning": "Temperaturas",
+    "text": "En la biblioteca la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-3-1",
+    "reasoning": "Ascensores",
+    "text": "En la biblioteca un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-3-2",
+    "reasoning": "Saldos",
+    "text": "En la biblioteca una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-4-0",
+    "reasoning": "Temperaturas",
+    "text": "En la feria la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-4-1",
+    "reasoning": "Ascensores",
+    "text": "En la feria un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-4-2",
+    "reasoning": "Saldos",
+    "text": "En la feria una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-5-0",
+    "reasoning": "Temperaturas",
+    "text": "En la excursión la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-5-1",
+    "reasoning": "Ascensores",
+    "text": "En la excursión un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-5-2",
+    "reasoning": "Saldos",
+    "text": "En la excursión una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-6-0",
+    "reasoning": "Temperaturas",
+    "text": "En el taller la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-6-1",
+    "reasoning": "Ascensores",
+    "text": "En el taller un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-6-2",
+    "reasoning": "Saldos",
+    "text": "En el taller una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-7-0",
+    "reasoning": "Temperaturas",
+    "text": "En la fiesta la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-7-1",
+    "reasoning": "Ascensores",
+    "text": "En la fiesta un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-7-2",
+    "reasoning": "Saldos",
+    "text": "En la fiesta una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-8-0",
+    "reasoning": "Temperaturas",
+    "text": "En el polideportivo la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-8-1",
+    "reasoning": "Ascensores",
+    "text": "En el polideportivo un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-8-2",
+    "reasoning": "Saldos",
+    "text": "En el polideportivo una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-9-0",
+    "reasoning": "Temperaturas",
+    "text": "En el museo la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-9-1",
+    "reasoning": "Ascensores",
+    "text": "En el museo un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-9-2",
+    "reasoning": "Saldos",
+    "text": "En el museo una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-10-0",
+    "reasoning": "Temperaturas",
+    "text": "En el huerto la temperatura es de -6 °C. Después sube 8 grados. ¿Cuál es la temperatura final, en °C?",
+    "answer": "2",
+    "steps": [
+      "-6 + 8 = 2"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-10-1",
+    "reasoning": "Ascensores",
+    "text": "En el huerto un ascensor está en la planta -3. La planta de la calle es 0. Sube 2 plantas. ¿En qué planta termina?",
+    "answer": "-1",
+    "steps": [
+      "-3 + 2 = -1"
+    ]
+  },
+  {
+    "id": "razona-enterosContexto-10-2",
+    "reasoning": "Saldos",
+    "text": "En el huerto una cuenta tiene un saldo de -3 euros. Ingresan 5 euros. No hay comisiones. ¿Cuál es el saldo final, en euros?",
+    "answer": "2",
+    "steps": [
+      "-3 + 5 = 2"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-1-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En el colegio un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-1-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En el colegio un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-1-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En el colegio una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-2-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En el campamento un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-2-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En el campamento un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-2-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En el campamento una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-3-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En la biblioteca un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-3-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En la biblioteca un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-3-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En la biblioteca una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-4-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En la feria un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-4-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En la feria un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-4-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En la feria una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-5-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En la excursión un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-5-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En la excursión un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-5-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En la excursión una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-6-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En el taller un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-6-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En el taller un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-6-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En el taller una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-7-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En la fiesta un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-7-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En la fiesta un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-7-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En la fiesta una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-8-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En el polideportivo un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-8-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En el polideportivo un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-8-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En el polideportivo una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-9-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En el museo un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-9-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En el museo un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-9-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En el museo una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-10-0",
+    "reasoning": "Precio antes de un descuento",
+    "text": "En el huerto un producto cuesta 1500 euros DESPUÉS de un descuento del 25 %. ¿Cuál era su precio antes del descuento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "El precio actual representa el 75 % del original",
+      "1500 × 100 ÷ 75 = 2000"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-10-1",
+    "reasoning": "Dos descuentos sucesivos",
+    "text": "En el huerto un producto cuesta inicialmente 2000 euros. Primero descuentan el 25 % del precio original. Después descuentan el 50 % del precio YA REBAJADO. ¿Cuánto cuesta al final, en euros?",
+    "answer": "750",
+    "steps": [
+      "2000 × 75 ÷ 100 = 1500",
+      "1500 × 50 ÷ 100 = 750"
+    ]
+  },
+  {
+    "id": "razona-porcentajesRetos-10-2",
+    "reasoning": "Cantidad antes de un aumento",
+    "text": "En el huerto una cantidad aumenta un 25 % y pasa a ser 2500 euros. ¿Cuál era la cantidad antes del aumento, en euros?",
+    "answer": "2000",
+    "steps": [
+      "La cantidad final representa el 125 % de la inicial",
+      "2500 × 100 ÷ 125 = 2000"
+    ]
+  },
+  {
+    "id": "razona-planificacion-1-0",
+    "reasoning": "Elegir transporte",
+    "text": "En el colegio debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-1-1",
+    "reasoning": "Organizar un horario",
+    "text": "En el colegio un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-1-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En el colegio necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-2-0",
+    "reasoning": "Elegir transporte",
+    "text": "En el campamento debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-2-1",
+    "reasoning": "Organizar un horario",
+    "text": "En el campamento un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-2-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En el campamento necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-3-0",
+    "reasoning": "Elegir transporte",
+    "text": "En la biblioteca debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-3-1",
+    "reasoning": "Organizar un horario",
+    "text": "En la biblioteca un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-3-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En la biblioteca necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-4-0",
+    "reasoning": "Elegir transporte",
+    "text": "En la feria debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-4-1",
+    "reasoning": "Organizar un horario",
+    "text": "En la feria un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-4-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En la feria necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-5-0",
+    "reasoning": "Elegir transporte",
+    "text": "En la excursión debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-5-1",
+    "reasoning": "Organizar un horario",
+    "text": "En la excursión un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-5-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En la excursión necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-6-0",
+    "reasoning": "Elegir transporte",
+    "text": "En el taller debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-6-1",
+    "reasoning": "Organizar un horario",
+    "text": "En el taller un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-6-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En el taller necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-7-0",
+    "reasoning": "Elegir transporte",
+    "text": "En la fiesta debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-7-1",
+    "reasoning": "Organizar un horario",
+    "text": "En la fiesta un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-7-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En la fiesta necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-8-0",
+    "reasoning": "Elegir transporte",
+    "text": "En el polideportivo debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-8-1",
+    "reasoning": "Organizar un horario",
+    "text": "En el polideportivo un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-8-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En el polideportivo necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-9-0",
+    "reasoning": "Elegir transporte",
+    "text": "En el museo debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-9-1",
+    "reasoning": "Organizar un horario",
+    "text": "En el museo un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-9-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En el museo necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-planificacion-10-0",
+    "reasoning": "Elegir transporte",
+    "text": "En el huerto debes llegar como muy tarde a las 12:23. Elige el autobús que llega MÁS TARDE sin superar esa hora.",
+    "choices": [
+      "Autobús 3: llega a las 12:20",
+      "Autobús 2: llega a las 12:10",
+      "Autobús 1: llega a las 12:00",
+      "Autobús 4: llega a las 12:30"
+    ],
+    "answer": "Autobús 3: llega a las 12:20",
+    "steps": [
+      "Hora límite: 12:23",
+      "Última llegada permitida: 12:20"
+    ]
+  },
+  {
+    "id": "razona-planificacion-10-1",
+    "reasoning": "Organizar un horario",
+    "text": "En el huerto un aula está disponible de 12:00 a 12:30, pero está ocupada de 12:10 a 12:20. Elige un hueco de 10 minutos dentro de la disponibilidad y sin solapamientos. Puedes empezar justo cuando termine la otra actividad.",
+    "choices": [
+      "12:10–12:20",
+      "12:05–12:15",
+      "12:20–12:30",
+      "12:25–12:35"
+    ],
+    "answer": "12:20–12:30",
+    "steps": [
+      "No podemos usar 12:10–12:20",
+      "Hueco válido: 12:20–12:30"
+    ]
+  },
+  {
+    "id": "razona-planificacion-10-2",
+    "reasoning": "Cumplir presupuesto y cantidad",
+    "text": "En el huerto necesitan al menos 9 cuadernos y pueden gastar como máximo 27 euros. Elige la única compra que cumple AMBAS condiciones.",
+    "choices": [
+      "9 cuadernos por 27 euros",
+      "8 cuadernos por 26 euros",
+      "7 cuadernos por 29 euros",
+      "10 cuadernos por 28 euros"
+    ],
+    "answer": "9 cuadernos por 27 euros",
+    "steps": [
+      "Cantidad mínima: 9; presupuesto máximo: 27",
+      "Compra válida: 9 cuadernos por 27 euros"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-1-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-1-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-1-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-2-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-2-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-2-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-3-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-3-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-3-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-4-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-4-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-4-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-5-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-5-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-5-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-6-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-6-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-6-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-7-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-7-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-7-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-8-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-8-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-8-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-9-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-9-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-9-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-10-0",
+    "reasoning": "Contar unidades cuadradas",
+    "text": "Cada cuadradito sombreado representa una unidad cuadrada. ¿Cuántas unidades cuadradas están sombreadas?",
+    "fallback": "La cuadrícula tiene 4 filas y 5 columnas. En la esquina superior derecha hay un rectángulo SIN sombrear de 2 filas y 1 columnas. Todo lo demás está sombreado.",
+    "answer": "18",
+    "steps": [
+      "4 × 5 = 20",
+      "20 − 2 × 1 = 18"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-10-1",
+    "reasoning": "Leer cantidades de un gráfico",
+    "text": "El gráfico muestra cuántas piezas hay en las cajas A, B y C. ¿Cuántas piezas hay entre las cajas A y C?",
+    "fallback": "Caja A: 3 piezas. Caja B: 4 piezas. Caja C: 6 piezas.",
+    "answer": "9",
+    "steps": [
+      "3 + 6 = 9"
+    ]
+  },
+  {
+    "id": "razona-lecturaVisual-10-2",
+    "reasoning": "Recorrer una cuadrícula",
+    "text": "Sigue el camino azul desde INICIO hasta FIN. Entre dos cruces vecinos hay 1 metro. ¿Cuántos metros recorres siguiendo todo el camino, no en línea recta?",
+    "fallback": "El camino avanza 4 tramos hacia la derecha, 2 hacia arriba y 3 hacia la izquierda. Cada tramo mide 1 metro.",
+    "answer": "9",
+    "steps": [
+      "4 + 2 + 3 = 9"
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-# 40 plantillas: sumas
+# 50 plantillas: sumas
 
 Contenido editable: sumas.json. Los marcadores entre llaves son variables.
 
@@ -822,3 +822,203 @@ Después de la actividad, en el jardín de plantas aromáticas tienen todavía 2
 - Sumamos la cantidad que queda y la que se utilizó: 24 + 12 = 36.
 
 Respuesta: **36 etiquetas**.
+
+## 41. Mensajes del colegio
+ID: sumas-nuevo-20261124-1 | Dificultad: facil
+
+El lunes el colegio recibe {cantidadA} {unidadA} en su buzón. El martes recibe {cantidadB} {unidadB} más. ¿Cuántos mensajes recibe entre los dos días?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | mensaje / mensajes, segun cantidadA. |
+| {unidadB} | mensaje / mensajes, segun cantidadB. |
+
+### Ejemplo resuelto
+
+El lunes el colegio recibe 25 mensajes en su buzón. El martes recibe 18 mensajes más. ¿Cuántos mensajes recibe entre los dos días?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 mensajes**.
+
+## 42. Semillas para el huerto
+ID: sumas-nuevo-20261124-2 | Dificultad: facil
+
+La clase guarda {cantidadA} {unidadA} para el huerto. Otra clase trae {cantidadB} {unidadB} para plantarlas juntas. ¿Cuántas semillas tienen ahora?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | semilla / semillas, segun cantidadA. |
+| {unidadB} | semilla / semillas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+La clase guarda 25 semillas para el huerto. Otra clase trae 18 semillas para plantarlas juntas. ¿Cuántas semillas tienen ahora?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 semillas**.
+
+## 43. Fotos de la excursión
+ID: sumas-nuevo-20261124-3 | Dificultad: facil
+
+En la excursión, un grupo hace {cantidadA} {unidadA} por la mañana y {cantidadB} {unidadB} por la tarde. ¿Cuántas fotos hace durante el día?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | foto / fotos, segun cantidadA. |
+| {unidadB} | foto / fotos, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En la excursión, un grupo hace 25 fotos por la mañana y 18 fotos por la tarde. ¿Cuántas fotos hace durante el día?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 fotos**.
+
+## 44. Piedras del camino
+ID: sumas-nuevo-20261124-4 | Dificultad: facil
+
+Para decorar un camino del huerto, el grupo recoge {cantidadA} {unidadA} lisas y {cantidadB} {unidadB} rugosas. ¿Cuántas piedras recoge en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | piedra / piedras, segun cantidadA. |
+| {unidadB} | piedra / piedras, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para decorar un camino del huerto, el grupo recoge 25 piedras lisas y 18 piedras rugosas. ¿Cuántas piedras recoge en total?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 piedras**.
+
+## 45. Entradas del teatro
+ID: sumas-nuevo-20261124-5 | Dificultad: facil
+
+El colegio vende {cantidadA} {unidadA} para una obra de teatro por internet y {cantidadB} {unidadB} en la puerta. ¿Cuántas entradas vende en total?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | entrada / entradas, segun cantidadA. |
+| {unidadB} | entrada / entradas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+El colegio vende 25 entradas para una obra de teatro por internet y 18 entradas en la puerta. ¿Cuántas entradas vende en total?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 entradas**.
+
+## 46. Vasos para la merienda
+ID: sumas-nuevo-20261124-6 | Dificultad: facil
+
+En una mesa hay {cantidadA} {unidadA} para la merienda. Traen {cantidadB} {unidadB} de otra clase. ¿Cuántos vasos hay ahora en la mesa?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | vaso / vasos, segun cantidadA. |
+| {unidadB} | vaso / vasos, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En una mesa hay 25 vasos para la merienda. Traen 18 vasos de otra clase. ¿Cuántos vasos hay ahora en la mesa?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 vasos**.
+
+## 47. Dibujos para el mural
+ID: sumas-nuevo-20261124-7 | Dificultad: facil
+
+Para un mural, una clase prepara {cantidadA} {unidadA} de animales y {cantidadB} {unidadB} de plantas. ¿Cuántos dibujos prepara para el mural?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | dibujo / dibujos, segun cantidadA. |
+| {unidadB} | dibujo / dibujos, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para un mural, una clase prepara 25 dibujos de animales y 18 dibujos de plantas. ¿Cuántos dibujos prepara para el mural?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 dibujos**.
+
+## 48. Marcapáginas solidarios
+ID: sumas-nuevo-20261124-8 | Dificultad: facil
+
+Un grupo prepara {cantidadA} {unidadA} para una feria. Otro grupo prepara {cantidadB} {unidadB}. ¿Cuántos marcapáginas reúnen entre los dos grupos?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | marcapáginas / marcapáginas, segun cantidadA. |
+| {unidadB} | marcapáginas / marcapáginas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Un grupo prepara 25 marcapáginas para una feria. Otro grupo prepara 18 marcapáginas. ¿Cuántos marcapáginas reúnen entre los dos grupos?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 marcapáginas**.
+
+## 49. Cuentos para leer
+ID: sumas-nuevo-20261124-9 | Dificultad: facil
+
+En el rincón de lectura hay {cantidadA} {unidadA}. La biblioteca presta a la clase {cantidadB} {unidadB} más. ¿Cuántos cuentos hay ahora en el rincón?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | cuento / cuentos, segun cantidadA. |
+| {unidadB} | cuento / cuentos, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En el rincón de lectura hay 25 cuentos. La biblioteca presta a la clase 18 cuentos más. ¿Cuántos cuentos hay ahora en el rincón?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 cuentos**.
+
+## 50. Tapones recogidos
+ID: sumas-nuevo-20261124-10 | Dificultad: facil
+
+En una campaña de reciclaje, una clase recoge {cantidadA} {unidadA} y otra recoge {cantidadB} {unidadB}. ¿Cuántos tapones reúnen entre las dos clases?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 999. |
+| {unidadA} | tapón / tapones, segun cantidadA. |
+| {unidadB} | tapón / tapones, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En una campaña de reciclaje, una clase recoge 25 tapones y otra recoge 18 tapones. ¿Cuántos tapones reúnen entre las dos clases?
+
+- Primero sumamos: 25 + 18 = 43.
+
+Respuesta: **43 tapones**.

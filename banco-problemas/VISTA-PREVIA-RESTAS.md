@@ -1,4 +1,4 @@
-# 40 plantillas: restas
+# 50 plantillas: restas
 
 Contenido editable: restas.json. Los marcadores entre llaves son variables.
 
@@ -819,3 +819,203 @@ Después de recibir un pedido de 24 etiquetas, en el jardín de plantas aromáti
 - Restamos el pedido a la cantidad actual: 90 - 24 = 66.
 
 Respuesta: **66 etiquetas**.
+
+## 41. Hojas para encuadernar
+ID: restas-nuevo-20261124-1 | Dificultad: facil
+
+El taller tiene {cantidadA} {unidadA} de papel. Usa {cantidadB} {unidadB} para hacer cuadernos. ¿Cuántas hojas le quedan?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | hoja / hojas, segun cantidadA. |
+| {unidadB} | hoja / hojas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+El taller tiene 38 hojas de papel. Usa 15 hojas para hacer cuadernos. ¿Cuántas hojas le quedan?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 hojas**.
+
+## 42. Plantas que faltan
+ID: restas-nuevo-20261124-2 | Dificultad: facil
+
+Para completar el huerto necesitan {cantidadA} {unidadA}. La clase ya ha plantado {cantidadB} {unidadB}. ¿Cuántas plantas les faltan para completar el huerto?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | planta / plantas, segun cantidadA. |
+| {unidadB} | planta / plantas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para completar el huerto necesitan 38 plantas. La clase ya ha plantado 15 plantas. ¿Cuántas plantas les faltan para completar el huerto?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 plantas**.
+
+## 43. Entradas disponibles
+ID: restas-nuevo-20261124-3 | Dificultad: facil
+
+Para una función hay {cantidadA} {unidadA} a la venta. El teatro ya ha vendido {cantidadB} {unidadB}. ¿Cuántas entradas quedan por vender?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | entrada / entradas, segun cantidadA. |
+| {unidadB} | entrada / entradas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para una función hay 38 entradas a la venta. El teatro ya ha vendido 15 entradas. ¿Cuántas entradas quedan por vender?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 entradas**.
+
+## 44. Piezas del puzle
+ID: restas-nuevo-20261124-4 | Dificultad: facil
+
+Un puzle tiene {cantidadA} {unidadA}. El grupo ya ha colocado {cantidadB} {unidadB}. ¿Cuántas piezas quedan por colocar?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | pieza / piezas, segun cantidadA. |
+| {unidadB} | pieza / piezas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Un puzle tiene 38 piezas. El grupo ya ha colocado 15 piezas. ¿Cuántas piezas quedan por colocar?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 piezas**.
+
+## 45. Libros que faltan por ordenar
+ID: restas-nuevo-20261124-5 | Dificultad: facil
+
+Hay que ordenar {cantidadA} {unidadA} en la biblioteca. La clase ya ha ordenado {cantidadB} {unidadB}. ¿Cuántos libros quedan por ordenar?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | libro / libros, segun cantidadA. |
+| {unidadB} | libro / libros, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Hay que ordenar 38 libros en la biblioteca. La clase ya ha ordenado 15 libros. ¿Cuántos libros quedan por ordenar?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 libros**.
+
+## 46. Pulseras de la feria
+ID: restas-nuevo-20261124-6 | Dificultad: facil
+
+Un puesto de la feria prepara {cantidadA} {unidadA}. Durante la mañana vende {cantidadB} {unidadB}. ¿Cuántas pulseras le quedan para la tarde?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | pulsera / pulseras, segun cantidadA. |
+| {unidadB} | pulsera / pulseras, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Un puesto de la feria prepara 38 pulseras. Durante la mañana vende 15 pulseras. ¿Cuántas pulseras le quedan para la tarde?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 pulseras**.
+
+## 47. Pelotas prestadas
+ID: restas-nuevo-20261124-7 | Dificultad: facil
+
+En el armario de deportes hay {cantidadA} {unidadA}. La maestra presta {cantidadB} {unidadB} para el recreo. ¿Cuántas pelotas quedan en el armario?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | pelota / pelotas, segun cantidadA. |
+| {unidadB} | pelota / pelotas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En el armario de deportes hay 38 pelotas. La maestra presta 15 pelotas para el recreo. ¿Cuántas pelotas quedan en el armario?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 pelotas**.
+
+## 48. Sobres por preparar
+ID: restas-nuevo-20261124-8 | Dificultad: facil
+
+El colegio tiene que preparar {cantidadA} {unidadA} para las familias. Ya ha preparado {cantidadB} {unidadB}. ¿Cuántos sobres le quedan por preparar?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | sobre / sobres, segun cantidadA. |
+| {unidadB} | sobre / sobres, segun cantidadB. |
+
+### Ejemplo resuelto
+
+El colegio tiene que preparar 38 sobres para las familias. Ya ha preparado 15 sobres. ¿Cuántos sobres le quedan por preparar?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 sobres**.
+
+## 49. Pegatinas del álbum
+ID: restas-nuevo-20261124-9 | Dificultad: facil
+
+Para completar un álbum necesitan {cantidadA} {unidadA}. En el álbum ya hay {cantidadB} {unidadB}. ¿Cuántas pegatinas les faltan?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | pegatina / pegatinas, segun cantidadA. |
+| {unidadB} | pegatina / pegatinas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para completar un álbum necesitan 38 pegatinas. En el álbum ya hay 15 pegatinas. ¿Cuántas pegatinas les faltan?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 pegatinas**.
+
+## 50. Tizas que quedan
+ID: restas-nuevo-20261124-10 | Dificultad: facil
+
+Para dibujar en el patio hay {cantidadA} {unidadA}. El grupo gasta {cantidadB} {unidadB}. ¿Cuántas tizas quedan sin gastar?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Cantidad que se añade o retira: de 1 a 9999. |
+| {unidadA} | tiza / tizas, segun cantidadA. |
+| {unidadB} | tiza / tizas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para dibujar en el patio hay 38 tizas. El grupo gasta 15 tizas. ¿Cuántas tizas quedan sin gastar?
+
+- Primero restamos: 38 - 15 = 23.
+
+Respuesta: **23 tizas**.

@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 require('../banco-problemas/datos.js');
 const engine = require('../problemas.js');
-assert.equal(globalThis.NinjaProblemBank.plantillas.length, 600);
+assert.equal(globalThis.NinjaProblemBank.plantillas.length, 640);
 const categories = ['suma', 'resta', 'multiplicacion', 'division'];
 const all = Object.fromEntries(categories.map(key => [key, { enabled: true, difficulty: 'todas', digitMode: 'intervalo', minDigits: 1, maxDigits: 9 }]));
 const individualCount = globalThis.NinjaProblemBank.plantillas.filter(t => t.etiquetas.length === 1).length;

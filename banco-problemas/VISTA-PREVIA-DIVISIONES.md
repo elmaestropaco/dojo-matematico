@@ -1,4 +1,4 @@
-# 42 plantillas: divisiones
+# 52 plantillas: divisiones
 
 Contenido editable: divisiones.json. Los marcadores entre llaves son variables.
 
@@ -859,3 +859,203 @@ En el jardín de plantas aromáticas disponen de 72 euros para plantar nuevas fl
 - Dividimos el dinero entre el precio de cada unidad: 72 ÷ 6 = 12.
 
 Respuesta: **12 etiquetas**.
+
+## 43. Semillas por maceta
+ID: divisiones-nuevo-20261124-1 | Dificultad: facil
+
+La clase tiene {cantidadA} {unidadA}. Las reparte por igual entre {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas semillas pone en cada maceta?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | semilla / semillas, segun cantidadA. |
+| {unidadB} | maceta / macetas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+La clase tiene 24 semillas. Las reparte por igual entre 6 macetas, sin que sobre ninguna. ¿Cuántas semillas pone en cada maceta?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 semillas**.
+
+## 44. Tarjetas por equipo
+ID: divisiones-nuevo-20261124-2 | Dificultad: facil
+
+Para un juego hay {cantidadA} {unidadA}. Se reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas tarjetas recibe cada equipo?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | tarjeta / tarjetas, segun cantidadA. |
+| {unidadB} | equipo / equipos, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para un juego hay 24 tarjetas. Se reparten por igual entre 6 equipos, sin que sobre ninguna. ¿Cuántas tarjetas recibe cada equipo?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 tarjetas**.
+
+## 45. Botellas en cajas
+ID: divisiones-nuevo-20261124-3 | Dificultad: facil
+
+Para una excursión tienen {cantidadA} {unidadA} de agua. Las guardan por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas botellas guardan en cada caja?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | botella / botellas, segun cantidadA. |
+| {unidadB} | caja / cajas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para una excursión tienen 24 botellas de agua. Las guardan por igual en 6 cajas, sin que sobre ninguna. ¿Cuántas botellas guardan en cada caja?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 botellas**.
+
+## 46. Hojas por cuaderno
+ID: divisiones-nuevo-20261124-4 | Dificultad: facil
+
+En el taller tienen {cantidadA} {unidadA}. Con ellas hacen {cantidadB} {unidadB} con el mismo número de hojas, sin que sobre ninguna. ¿Cuántas hojas lleva cada cuaderno?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | hoja / hojas, segun cantidadA. |
+| {unidadB} | cuaderno / cuadernos, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En el taller tienen 24 hojas. Con ellas hacen 6 cuadernos con el mismo número de hojas, sin que sobre ninguna. ¿Cuántas hojas lleva cada cuaderno?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 hojas**.
+
+## 47. Cuentas por pulsera
+ID: divisiones-nuevo-20261124-5 | Dificultad: facil
+
+Para una feria tienen {cantidadA} {unidadA} de colores. Las usan todas para hacer {cantidadB} {unidadB} iguales. ¿Cuántas cuentas lleva cada pulsera?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | cuenta / cuentas, segun cantidadA. |
+| {unidadB} | pulsera / pulseras, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para una feria tienen 24 cuentas de colores. Las usan todas para hacer 6 pulseras iguales. ¿Cuántas cuentas lleva cada pulsera?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 cuentas**.
+
+## 48. Tizas por estuche
+ID: divisiones-nuevo-20261124-6 | Dificultad: facil
+
+La clase tiene {cantidadA} {unidadA}. Las guarda por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas tizas pone en cada estuche?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | tiza / tizas, segun cantidadA. |
+| {unidadB} | estuche / estuches, segun cantidadB. |
+
+### Ejemplo resuelto
+
+La clase tiene 24 tizas. Las guarda por igual en 6 estuches, sin que sobre ninguna. ¿Cuántas tizas pone en cada estuche?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 tizas**.
+
+## 49. Libros por carro
+ID: divisiones-nuevo-20261124-7 | Dificultad: facil
+
+En la biblioteca trasladan {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos libros lleva cada carro?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | libro / libros, segun cantidadA. |
+| {unidadB} | carro / carros, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En la biblioteca trasladan 24 libros. Los reparten por igual entre 6 carros, sin que sobre ninguno. ¿Cuántos libros lleva cada carro?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 libros**.
+
+## 50. Pinceles por mesa
+ID: divisiones-nuevo-20261124-8 | Dificultad: facil
+
+En el taller hay {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos pinceles dejan en cada mesa?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | pincel / pinceles, segun cantidadA. |
+| {unidadB} | mesa / mesas, segun cantidadB. |
+
+### Ejemplo resuelto
+
+En el taller hay 24 pinceles. Los reparten por igual entre 6 mesas, sin que sobre ninguno. ¿Cuántos pinceles dejan en cada mesa?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 pinceles**.
+
+## 51. Banderines por equipo
+ID: divisiones-nuevo-20261124-9 | Dificultad: facil
+
+Para decorar tienen {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos banderines recibe cada equipo?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | banderín / banderines, segun cantidadA. |
+| {unidadB} | equipo / equipos, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para decorar tienen 24 banderines. Los reparten por igual entre 6 equipos, sin que sobre ninguno. ¿Cuántos banderines recibe cada equipo?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 banderines**.
+
+## 52. Pegatinas por sobre
+ID: divisiones-nuevo-20261124-10 | Dificultad: facil
+
+Para un intercambio tienen {cantidadA} {unidadA}. Las reparten por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas pegatinas ponen en cada sobre?
+
+| Variable | Valores o significado |
+| --- | --- |
+| {cantidadA} | Cantidad inicial o total: de 1 a 9999. |
+| {cantidadB} | Número de grupos: de 1 a 99. |
+| {unidadA} | pegatina / pegatinas, segun cantidadA. |
+| {unidadB} | sobre / sobres, segun cantidadB. |
+
+### Ejemplo resuelto
+
+Para un intercambio tienen 24 pegatinas. Las reparten por igual en 6 sobres, sin que sobre ninguna. ¿Cuántas pegatinas ponen en cada sobre?
+
+- Repartimos en partes iguales: 24 ÷ 6 = 4.
+
+Respuesta: **4 pegatinas**.

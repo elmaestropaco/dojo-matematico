@@ -1,0 +1,2210 @@
+{
+  "date": "2026-11-24",
+  "totalBank": 2530,
+  "sourceSummary": [
+    {
+      "file": "sumas",
+      "templates": 50
+    },
+    {
+      "file": "restas",
+      "templates": 50
+    },
+    {
+      "file": "multiplicaciones",
+      "templates": 52
+    },
+    {
+      "file": "divisiones",
+      "templates": 52
+    },
+    {
+      "file": "combinados",
+      "templates": 436
+    },
+    {
+      "file": "ampliado",
+      "templates": 720
+    },
+    {
+      "file": "porcentajes",
+      "templates": 160
+    },
+    {
+      "file": "medidas",
+      "templates": 160
+    },
+    {
+      "file": "aprendizaje",
+      "templates": 260
+    },
+    {
+      "file": "lectura",
+      "templates": 160
+    },
+    {
+      "file": "espacio",
+      "templates": 40
+    },
+    {
+      "file": "razonamiento",
+      "templates": 210
+    }
+  ],
+  "newTemplates": 180,
+  "reasoningStructures": 18,
+  "contextsPerStructure": 10,
+  "notes": "La longitud de lectura es descriptiva, no una edad ni un diagnóstico. Las comprobaciones automáticas no sustituyen revisión docente. Las pruebas de lenguaje y matemáticas de tests se ejecutan por separado sobre las familias anteriores.",
+  "rows": [
+    {
+      "id": "aula-repartos-1-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 24,
+      "reading": "breve",
+      "example": "En el huerto escolar tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-1-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 24,
+      "reading": "breve",
+      "example": "En el huerto escolar tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-1-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 29,
+      "reading": "breve",
+      "example": "En el huerto escolar necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-1-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 26,
+      "reading": "breve",
+      "example": "En el huerto escolar reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-2-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 23,
+      "reading": "breve",
+      "example": "En la biblioteca tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-2-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 23,
+      "reading": "breve",
+      "example": "En la biblioteca tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-2-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 28,
+      "reading": "breve",
+      "example": "En la biblioteca necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-2-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 25,
+      "reading": "breve",
+      "example": "En la biblioteca reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-3-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 24,
+      "reading": "breve",
+      "example": "En la jornada deportiva tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-3-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 24,
+      "reading": "breve",
+      "example": "En la jornada deportiva tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-3-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 29,
+      "reading": "breve",
+      "example": "En la jornada deportiva necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-3-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 26,
+      "reading": "breve",
+      "example": "En la jornada deportiva reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-4-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 25,
+      "reading": "breve",
+      "example": "En el taller de ciencias tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-4-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 25,
+      "reading": "breve",
+      "example": "En el taller de ciencias tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-4-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 30,
+      "reading": "breve",
+      "example": "En el taller de ciencias necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-4-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 27,
+      "reading": "breve",
+      "example": "En el taller de ciencias reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-5-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 24,
+      "reading": "breve",
+      "example": "En la feria solidaria tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-5-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 24,
+      "reading": "breve",
+      "example": "En la feria solidaria tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-5-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 29,
+      "reading": "breve",
+      "example": "En la feria solidaria necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-5-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 26,
+      "reading": "breve",
+      "example": "En la feria solidaria reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-6-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 23,
+      "reading": "breve",
+      "example": "En el campamento tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-6-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 23,
+      "reading": "breve",
+      "example": "En el campamento tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-6-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 28,
+      "reading": "breve",
+      "example": "En el campamento necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-6-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 25,
+      "reading": "breve",
+      "example": "En el campamento reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-7-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 25,
+      "reading": "breve",
+      "example": "En el taller de arte tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-7-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 25,
+      "reading": "breve",
+      "example": "En el taller de arte tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-7-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 30,
+      "reading": "breve",
+      "example": "En el taller de arte necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-7-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 27,
+      "reading": "breve",
+      "example": "En el taller de arte reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-8-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 23,
+      "reading": "breve",
+      "example": "En la excursión tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-8-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 23,
+      "reading": "breve",
+      "example": "En la excursión tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-8-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 28,
+      "reading": "breve",
+      "example": "En la excursión necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-8-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 25,
+      "reading": "breve",
+      "example": "En la excursión reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-9-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 25,
+      "reading": "breve",
+      "example": "En el aula de música tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-9-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 25,
+      "reading": "breve",
+      "example": "En el aula de música tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-9-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 30,
+      "reading": "breve",
+      "example": "En el aula de música necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-9-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 27,
+      "reading": "breve",
+      "example": "En el aula de música reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-10-0",
+      "family": "repartos",
+      "reasoning": 0,
+      "words": 25,
+      "reading": "breve",
+      "example": "En la fiesta del colegio tienen 43 piezas y guardan 8 en cada caja. Solo cuentan las cajas completamente llenas. ¿Cuántas cajas completas pueden llenar?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-repartos-10-1",
+      "family": "repartos",
+      "reasoning": 1,
+      "words": 25,
+      "reading": "breve",
+      "example": "En la fiesta del colegio tienen 43 piezas y guardan 8 en cada caja. ¿Cuántas piezas quedan fuera después de llenar todas las cajas posibles?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 3"
+      ]
+    },
+    {
+      "id": "aula-repartos-10-2",
+      "family": "repartos",
+      "reasoning": 2,
+      "words": 30,
+      "reading": "breve",
+      "example": "En la fiesta del colegio necesitan transportar 43 piezas. En cada caja caben como máximo 8 piezas. Quieren llevarlas todas, aunque la última caja no se llene. ¿Cuántas cajas necesitan?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Hace falta una caja adicional: 5 + 1 = 6"
+      ]
+    },
+    {
+      "id": "aula-repartos-10-3",
+      "family": "repartos",
+      "reasoning": 3,
+      "words": 27,
+      "reading": "breve",
+      "example": "En la fiesta del colegio reparten 43 piezas por igual entre 8 equipos. No parten las piezas y guardan las que sobren. ¿Cuántas piezas recibe cada equipo?",
+      "steps": [
+        "43 = 8 × 5 + 3",
+        "Respuesta pedida: 5"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-1-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 17,
+      "reading": "breve",
+      "example": "En el huerto escolar, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-1-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 19,
+      "reading": "breve",
+      "example": "En el huerto escolar tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-1-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 28,
+      "reading": "breve",
+      "example": "En el huerto escolar, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-2-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 16,
+      "reading": "breve",
+      "example": "En la biblioteca, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-2-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 18,
+      "reading": "breve",
+      "example": "En la biblioteca tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-2-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 27,
+      "reading": "breve",
+      "example": "En la biblioteca, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-3-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 17,
+      "reading": "breve",
+      "example": "En la jornada deportiva, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-3-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 19,
+      "reading": "breve",
+      "example": "En la jornada deportiva tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-3-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 28,
+      "reading": "breve",
+      "example": "En la jornada deportiva, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-4-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 18,
+      "reading": "breve",
+      "example": "En el taller de ciencias, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-4-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 20,
+      "reading": "breve",
+      "example": "En el taller de ciencias tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-4-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 29,
+      "reading": "breve",
+      "example": "En el taller de ciencias, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-5-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 17,
+      "reading": "breve",
+      "example": "En la feria solidaria, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-5-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 19,
+      "reading": "breve",
+      "example": "En la feria solidaria tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-5-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 28,
+      "reading": "breve",
+      "example": "En la feria solidaria, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-6-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 16,
+      "reading": "breve",
+      "example": "En el campamento, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-6-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 18,
+      "reading": "breve",
+      "example": "En el campamento tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-6-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 27,
+      "reading": "breve",
+      "example": "En el campamento, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-7-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 18,
+      "reading": "breve",
+      "example": "En el taller de arte, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-7-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 20,
+      "reading": "breve",
+      "example": "En el taller de arte tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-7-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 29,
+      "reading": "breve",
+      "example": "En el taller de arte, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-8-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 16,
+      "reading": "breve",
+      "example": "En la excursión, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-8-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 18,
+      "reading": "breve",
+      "example": "En la excursión tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-8-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 27,
+      "reading": "breve",
+      "example": "En la excursión, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-9-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 18,
+      "reading": "breve",
+      "example": "En el aula de música, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-9-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 20,
+      "reading": "breve",
+      "example": "En el aula de música tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-9-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 29,
+      "reading": "breve",
+      "example": "En el aula de música, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-10-0",
+      "family": "fraccionSentido",
+      "reasoning": 0,
+      "words": 18,
+      "reading": "breve",
+      "example": "En la fiesta del colegio, 2/7 de una colección son 6 tarjetas. ¿Cuántas tarjetas tiene la colección completa?",
+      "steps": [
+        "6 ÷ 2 = 3",
+        "3 × 7 = 21"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-10-1",
+      "family": "fraccionSentido",
+      "reasoning": 1,
+      "words": 20,
+      "reading": "breve",
+      "example": "En la fiesta del colegio tienen 21 tarjetas. Usan 2/7 del total en un mural. ¿Cuántas tarjetas quedan sin usar?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "21 − 6 = 15"
+      ]
+    },
+    {
+      "id": "aula-fraccionSentido-10-2",
+      "family": "fraccionSentido",
+      "reasoning": 2,
+      "words": 29,
+      "reading": "breve",
+      "example": "En la fiesta del colegio, un equipo usa 2/7 de 21 tarjetas y otro usa 2/7 de 35 tarjetas. ¿Cuántas tarjetas de diferencia hay entre las cantidades que usan?",
+      "steps": [
+        "21 ÷ 7 × 2 = 6",
+        "35 ÷ 7 × 2 = 10",
+        "10 − 6 = 4"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-1-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 53,
+      "reading": "breve",
+      "example": "En el huerto escolar dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-1-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 31,
+      "reading": "breve",
+      "example": "En el huerto escolar rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-1-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 33,
+      "reading": "breve",
+      "example": "En el huerto escolar cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-2-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 52,
+      "reading": "breve",
+      "example": "En la biblioteca dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-2-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 30,
+      "reading": "breve",
+      "example": "En la biblioteca rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-2-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En la biblioteca cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-3-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 53,
+      "reading": "breve",
+      "example": "En la jornada deportiva dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-3-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 31,
+      "reading": "breve",
+      "example": "En la jornada deportiva rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-3-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 33,
+      "reading": "breve",
+      "example": "En la jornada deportiva cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-4-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 54,
+      "reading": "breve",
+      "example": "En el taller de ciencias dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-4-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 32,
+      "reading": "breve",
+      "example": "En el taller de ciencias rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-4-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 34,
+      "reading": "breve",
+      "example": "En el taller de ciencias cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-5-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 53,
+      "reading": "breve",
+      "example": "En la feria solidaria dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-5-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 31,
+      "reading": "breve",
+      "example": "En la feria solidaria rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-5-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 33,
+      "reading": "breve",
+      "example": "En la feria solidaria cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-6-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 52,
+      "reading": "breve",
+      "example": "En el campamento dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-6-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 30,
+      "reading": "breve",
+      "example": "En el campamento rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-6-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En el campamento cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-7-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 54,
+      "reading": "breve",
+      "example": "En el taller de arte dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-7-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 32,
+      "reading": "breve",
+      "example": "En el taller de arte rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-7-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 34,
+      "reading": "breve",
+      "example": "En el taller de arte cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-8-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 52,
+      "reading": "breve",
+      "example": "En la excursión dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-8-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 30,
+      "reading": "breve",
+      "example": "En la excursión rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-8-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En la excursión cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-9-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 54,
+      "reading": "breve",
+      "example": "En el aula de música dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-9-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 32,
+      "reading": "breve",
+      "example": "En el aula de música rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-9-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 34,
+      "reading": "breve",
+      "example": "En el aula de música cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-10-0",
+      "family": "geometriaAplicada",
+      "reasoning": 0,
+      "words": 54,
+      "reading": "breve",
+      "example": "En la fiesta del colegio dibujan una figura en forma de L. Parte de un rectángulo de 11 cm de largo y 13 cm de alto y quita de una esquina un rectángulo de 8 cm de ancho y 5 cm de alto. ¿Cuál es el área de la figura que queda, en cm²?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-10-1",
+      "family": "geometriaAplicada",
+      "reasoning": 1,
+      "words": 32,
+      "reading": "breve",
+      "example": "En la fiesta del colegio rodean un huerto rectangular de 11 m de largo y 13 m de ancho. Dejan una entrada de 8 m sin valla. ¿Cuántos metros de valla necesitan?",
+      "steps": [
+        "2 × (11 + 13) = 48",
+        "48 − 8 = 40"
+      ]
+    },
+    {
+      "id": "aula-geometriaAplicada-10-2",
+      "family": "geometriaAplicada",
+      "reasoning": 2,
+      "words": 34,
+      "reading": "breve",
+      "example": "En la fiesta del colegio cubren un suelo rectangular de 11 m por 13 m. Dentro hay una zona de 8 m por 5 m que no se cubre. ¿Cuántos metros cuadrados deben cubrir?",
+      "steps": [
+        "11 × 13 = 143",
+        "8 × 5 = 40",
+        "143 − 40 = 103"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-1-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 23,
+      "reading": "breve",
+      "example": "En el huerto escolar una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-1-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 29,
+      "reading": "breve",
+      "example": "En el huerto escolar disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-1-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En el huerto escolar comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-2-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 22,
+      "reading": "breve",
+      "example": "En la biblioteca una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-2-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 28,
+      "reading": "breve",
+      "example": "En la biblioteca disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-2-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 31,
+      "reading": "breve",
+      "example": "En la biblioteca comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-3-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 23,
+      "reading": "breve",
+      "example": "En la jornada deportiva una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-3-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 29,
+      "reading": "breve",
+      "example": "En la jornada deportiva disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-3-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En la jornada deportiva comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-4-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 24,
+      "reading": "breve",
+      "example": "En el taller de ciencias una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-4-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 30,
+      "reading": "breve",
+      "example": "En el taller de ciencias disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-4-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 33,
+      "reading": "breve",
+      "example": "En el taller de ciencias comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-5-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 23,
+      "reading": "breve",
+      "example": "En la feria solidaria una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-5-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 29,
+      "reading": "breve",
+      "example": "En la feria solidaria disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-5-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En la feria solidaria comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-6-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 22,
+      "reading": "breve",
+      "example": "En el campamento una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-6-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 28,
+      "reading": "breve",
+      "example": "En el campamento disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-6-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 31,
+      "reading": "breve",
+      "example": "En el campamento comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-7-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 24,
+      "reading": "breve",
+      "example": "En el taller de arte una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-7-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 30,
+      "reading": "breve",
+      "example": "En el taller de arte disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-7-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 33,
+      "reading": "breve",
+      "example": "En el taller de arte comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-8-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 22,
+      "reading": "breve",
+      "example": "En la excursión una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-8-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 28,
+      "reading": "breve",
+      "example": "En la excursión disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-8-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 31,
+      "reading": "breve",
+      "example": "En la excursión comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-9-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 24,
+      "reading": "breve",
+      "example": "En el aula de música una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-9-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 30,
+      "reading": "breve",
+      "example": "En el aula de música disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-9-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 33,
+      "reading": "breve",
+      "example": "En el aula de música comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-10-0",
+      "family": "comprasDecision",
+      "reasoning": 0,
+      "words": 24,
+      "reading": "breve",
+      "example": "En la fiesta del colegio una caja de 5 cuadernos cuesta 40 euros. Todos tienen el mismo precio. ¿Cuánto cuesta cada cuaderno, en euros?",
+      "steps": [
+        "40 ÷ 5 = 8"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-10-1",
+      "family": "comprasDecision",
+      "reasoning": 1,
+      "words": 30,
+      "reading": "breve",
+      "example": "En la fiesta del colegio disponen de 43 euros para cuadernos que cuestan 8 euros cada uno. No pueden gastar más de su presupuesto. ¿Cuántos cuadernos pueden comprar como máximo?",
+      "steps": [
+        "43 = 8 × 5 + 3"
+      ]
+    },
+    {
+      "id": "aula-comprasDecision-10-2",
+      "family": "comprasDecision",
+      "reasoning": 2,
+      "words": 33,
+      "reading": "breve",
+      "example": "En la fiesta del colegio comparan dos ofertas para comprar exactamente 5 cuadernos iguales: sueltos cuestan 40 euros en total y el paquete cuesta 37 euros. ¿Cuántos euros ahorran si compran el paquete?",
+      "steps": [
+        "40 − 37 = 3"
+      ]
+    },
+    {
+      "id": "aula-estimacion-1-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 37,
+      "reading": "breve",
+      "example": "En el huerto escolar calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-1-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 37,
+      "reading": "breve",
+      "example": "En el huerto escolar preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-1-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 31,
+      "reading": "breve",
+      "example": "En el huerto escolar reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-2-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 36,
+      "reading": "breve",
+      "example": "En la biblioteca calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-2-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 36,
+      "reading": "breve",
+      "example": "En la biblioteca preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-2-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 30,
+      "reading": "breve",
+      "example": "En la biblioteca reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-3-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 37,
+      "reading": "breve",
+      "example": "En la jornada deportiva calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-3-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 37,
+      "reading": "breve",
+      "example": "En la jornada deportiva preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-3-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 31,
+      "reading": "breve",
+      "example": "En la jornada deportiva reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-4-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 38,
+      "reading": "breve",
+      "example": "En el taller de ciencias calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-4-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 38,
+      "reading": "breve",
+      "example": "En el taller de ciencias preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-4-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En el taller de ciencias reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-5-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 37,
+      "reading": "breve",
+      "example": "En la feria solidaria calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-5-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 37,
+      "reading": "breve",
+      "example": "En la feria solidaria preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-5-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 31,
+      "reading": "breve",
+      "example": "En la feria solidaria reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-6-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 36,
+      "reading": "breve",
+      "example": "En el campamento calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-6-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 36,
+      "reading": "breve",
+      "example": "En el campamento preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-6-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 30,
+      "reading": "breve",
+      "example": "En el campamento reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-7-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 38,
+      "reading": "breve",
+      "example": "En el taller de arte calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-7-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 38,
+      "reading": "breve",
+      "example": "En el taller de arte preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-7-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En el taller de arte reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-8-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 36,
+      "reading": "breve",
+      "example": "En la excursión calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-8-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 36,
+      "reading": "breve",
+      "example": "En la excursión preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-8-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 30,
+      "reading": "breve",
+      "example": "En la excursión reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-9-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 38,
+      "reading": "breve",
+      "example": "En el aula de música calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-9-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 38,
+      "reading": "breve",
+      "example": "En el aula de música preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-9-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En el aula de música reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-estimacion-10-0",
+      "family": "estimacion",
+      "reasoning": 0,
+      "words": 38,
+      "reading": "breve",
+      "example": "En la fiesta del colegio calculan una compra de 38 euros y otra de 23 euros. Redondea primero CADA cantidad a la decena más cercana (si acaba en 5, sube). ¿Cuál es la suma aproximada usando esas decenas?",
+      "steps": [
+        "38 ≈ 40; 23 ≈ 20",
+        "40 + 20 = 60"
+      ]
+    },
+    {
+      "id": "aula-estimacion-10-1",
+      "family": "estimacion",
+      "reasoning": 1,
+      "words": 38,
+      "reading": "breve",
+      "example": "En la fiesta del colegio preparan 8 paquetes con 38 piezas en cada uno. Para estimar el total, redondea solo 38 a la decena más cercana (si acaba en 5, sube) y multiplica por 8. ¿Qué estimación obtienes?",
+      "steps": [
+        "38 ≈ 40",
+        "40 × 8 = 320"
+      ]
+    },
+    {
+      "id": "aula-estimacion-10-2",
+      "family": "estimacion",
+      "reasoning": 2,
+      "words": 32,
+      "reading": "breve",
+      "example": "En la fiesta del colegio reparten 43 piezas en grupos de 8. El cociente entero indica el número de grupos completos y deja un resto. ¿Cuál es ese cociente entero, sin redondear?",
+      "steps": [
+        "8 × 5 ≤ 43 < 8 × 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-1-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 39,
+      "reading": "breve",
+      "example": "En el huerto escolar tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-1-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 39,
+      "reading": "breve",
+      "example": "En el huerto escolar tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-2-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 38,
+      "reading": "breve",
+      "example": "En la biblioteca tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-2-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 38,
+      "reading": "breve",
+      "example": "En la biblioteca tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-3-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 39,
+      "reading": "breve",
+      "example": "En la jornada deportiva tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-3-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 39,
+      "reading": "breve",
+      "example": "En la jornada deportiva tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-4-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 40,
+      "reading": "breve",
+      "example": "En el taller de ciencias tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-4-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 40,
+      "reading": "breve",
+      "example": "En el taller de ciencias tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-5-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 39,
+      "reading": "breve",
+      "example": "En la feria solidaria tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-5-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 39,
+      "reading": "breve",
+      "example": "En la feria solidaria tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-6-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 38,
+      "reading": "breve",
+      "example": "En el campamento tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-6-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 38,
+      "reading": "breve",
+      "example": "En el campamento tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-7-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 40,
+      "reading": "breve",
+      "example": "En el taller de arte tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-7-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 40,
+      "reading": "breve",
+      "example": "En el taller de arte tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-8-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 38,
+      "reading": "breve",
+      "example": "En la excursión tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-8-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 38,
+      "reading": "breve",
+      "example": "En la excursión tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-9-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 40,
+      "reading": "breve",
+      "example": "En el aula de música tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-9-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 40,
+      "reading": "breve",
+      "example": "En el aula de música tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    },
+    {
+      "id": "aula-inversa-10-0",
+      "family": "inversa",
+      "reasoning": 0,
+      "words": 40,
+      "reading": "breve",
+      "example": "En la fiesta del colegio tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 8 equipos, pero al final las reparten entre 16 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 8 = 6",
+        "48 ÷ 16 = 3"
+      ]
+    },
+    {
+      "id": "aula-inversa-10-1",
+      "family": "inversa",
+      "reasoning": 1,
+      "words": 40,
+      "reading": "breve",
+      "example": "En la fiesta del colegio tienen una cantidad fija de 48 fichas. Primero pensaban repartirlas por igual entre 16 equipos, pero al final las reparten entre 8 equipos. No añaden ni quitan fichas. ¿Cuántas fichas recibe cada equipo al final?",
+      "steps": [
+        "48 ÷ 16 = 3",
+        "48 ÷ 8 = 6"
+      ]
+    }
+  ]
+}

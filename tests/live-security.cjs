@@ -33,8 +33,26 @@ async function main() {
     const a = await actor(), b = await actor();
     assert.equal(await a.evaluate(`(async()=>{try{await NinjaOnline.getRoom(${JSON.stringify(code)});return false;}catch{return true;}})()`), true);
     const uidA = await a.evaluate(`(async()=>{const joined=await NinjaOnline.joinRoom(${JSON.stringify(code)},'Prueba A 🥷');return joined.playerId;})()`);
-    const uidB = await b.evaluate(`(async()=>{const joined=await NinjaOnline.joinRoom(${JSON.stringify(code)},'Prueba B 🌟');return joined.playerId;})()`);
+    const uidB = await b.evaluate(`(async()=>{const joined=await NinjaOnline.joinRoom(${JSON.stringify(code)},'Prueba A 🥷');return joined.playerId;})()`);
     assert.notEqual(uidA, uidB);
+    const names=await host.evaluate(`(async()=>Object.values((await NinjaOnline.getRoom(${JSON.stringify(code)})).players).map(p=>p.name))()`);
+    assert.equal(new Set(names).size,2);assert.ok(names.every(n=>n.includes('🥷')));
+    await b.evaluate(`NinjaOnline.leaveRoom(${JSON.stringify(code)},NinjaOnline.uid())`);
+    assert.equal(await host.evaluate(`(async()=>!(await NinjaOnline.getRoom(${JSON.stringify(code)})).players[${JSON.stringify(uidB)}].isConnected)()`),true);
+    await b.evaluate(`NinjaOnline.setPresence(${JSON.stringify(code)},NinjaOnline.uid())`);
+    await b.evaluate('NinjaOnline.db.goOffline()');
+    let disconnected=false;
+    for(let i=0;i<30;i++){
+      disconnected=await host.evaluate(`(async()=>!(await NinjaOnline.getRoom(${JSON.stringify(code)})).players[${JSON.stringify(uidB)}].isConnected)()`);
+      if(disconnected)break;await new Promise(r=>setTimeout(r,250));
+    }
+    assert.equal(disconnected,true,'onDisconnect must notify the host');
+    await b.evaluate(`NinjaOnline.db.goOnline();NinjaOnline.setPresence(${JSON.stringify(code)},NinjaOnline.uid())`);
+    console.log('OK: duplicate emoji names distinguished on host, explicit departure and real server disconnect; reconnection keeps the same identity.');
+    await b.evaluate(`NinjaOnline.cancelPresence(${JSON.stringify(code)},NinjaOnline.uid())`);
+    await b.evaluate('NinjaOnline.db.goOffline()');await new Promise(r=>setTimeout(r,500));
+    assert.equal(await host.evaluate(`(async()=>Boolean((await NinjaOnline.getRoom(${JSON.stringify(code)})).players[${JSON.stringify(uidB)}].isConnected))()`),true);
+    await b.evaluate(`NinjaOnline.db.goOnline();NinjaOnline.setPresence(${JSON.stringify(code)},NinjaOnline.uid())`);
     const first = await a.evaluate(`(async()=>{const code=${JSON.stringify(code)},room=await NinjaOnline.getRoom(code);const result=await NinjaOnline.updatePlayer(code,NinjaOnline.uid(),{score:10,correctCount:1,operationIndex:1,learningStats:{missing:{correct:1}}},room.seed);return {committed:result.committed,score:(await NinjaOnline.getRoom(code)).players[NinjaOnline.uid()].score};})()`);
     assert.deepEqual(first, { committed: true, score: 10 });
     const attacks = await b.evaluate(`(async()=>{const base='secureRooms/'+${JSON.stringify(code)},other=${JSON.stringify(uidA)};const attempts=[()=>NinjaOnline.db.ref(base+'/players/'+other+'/score').set(999),()=>NinjaOnline.db.ref(base+'/hostUid').set(NinjaOnline.uid()),()=>NinjaOnline.db.ref(base).update({status:'finished'}),()=>NinjaOnline.db.ref('secureRooms').get(),()=>NinjaOnline.db.ref('rooms').get()];const denied=[];for(const attempt of attempts){try{await attempt();denied.push(false);}catch{denied.push(true);}}return denied;})()`);
@@ -63,6 +81,19 @@ async function main() {
     assert.equal(await b.evaluate(`(async()=>{try{await NinjaOnline.joinRoom(${JSON.stringify(code)},'Prueba B');return false;}catch{return true;}})()`), true);
     await host.evaluate(`NinjaOnline.allowPlayer(${JSON.stringify(code)},${JSON.stringify(uidB)})`);
     assert.equal(await b.evaluate(`(async()=>{const result=await NinjaOnline.joinRoom(${JSON.stringify(code)},'Prueba B');return result.playerId===NinjaOnline.uid();})()`), true);
+    await host.evaluate(`attachOnlineSession({code:${JSON.stringify(code)},isHost:true,isTeacher:true,playerId:null,playerName:'Profe de prueba'});showTeacherDashboard();`);
+    await new Promise(r=>setTimeout(r,150));
+    await host.evaluate(`window.testConfirm=window.confirm;window.confirm=()=>true;const saved=sessionLibrary.save('Nueva ronda aplicada',{...buildOnlineConfig(),activity:'problemas',problemSettings:NinjaProblems.normalize({_family:'lecturaVisual',_aulaLevel:2,_showDrawings:false}),endCondition:'unlimited'});classroomMemory.sequence=[saved.id];classroomMemory.cursor=0;openClassroom();document.getElementById('sequenceNextBtn').click();`);
+    let prepared=false;
+    for(let i=0;i<50;i++){prepared=await host.evaluate('classroomMemory.cursor===1');if(prepared)break;await new Promise(r=>setTimeout(r,100));}
+    assert.equal(prepared,true,'Teacher sequence must prepare the round');
+    const sequence=await host.evaluate(`(async()=>{const r=await NinjaOnline.getRoom(${JSON.stringify(code)});return {sameCode:state.online.code===${JSON.stringify(code)},status:r.status,family:JSON.parse(r.config).problemSettings._family,players:Object.keys(r.players).length};})()`);
+    assert.deepEqual(sequence,{sameCode:true,status:'lobby',family:'lecturaVisual',players:2});
+    const shared=[];for(const pupil of [a,b])shared.push(await pupil.evaluate(`(async()=>{const r=await NinjaOnline.getRoom(${JSON.stringify(code)}),cfg=JSON.parse(r.config);applyOnlineConfig(cfg);state.online={seed:r.seed};const problem=createOnlineOperation(3),html=renderProblem(problem);applyOnlineConfig({...cfg,activity:'calculo',operationSettings:{sameBaseMixed:{enabled:true,exponentMax:6,negativeExponents:1}}});const power=createOnlineOperation(7);state.online=null;return {problem:problem.signature,answer:problem.answerDisplay,hidden:!html.includes('<svg'),power:power.signature,powerAnswer:power.answerDisplay};})()`));
+    assert.deepEqual(shared[0],shared[1]);assert.equal(shared[0].hidden,true);
+    console.log('OK: both real pupils generate the same new visual problem, data fallback and signed-exponent power after receiving the room settings.');
+    await host.evaluate("document.getElementById('classroomDialog').close();window.confirm=window.testConfirm;delete window.testConfirm;detachOnlineSession(false);goHome();");
+    console.log('OK: real teacher UI sequence changes the applied problem family while keeping the room code and both students; waits in the lobby.');
     console.log('OK: tres identidades reales aisladas; sala maestro, entradas, progreso, estadisticas, revancha, semilla antigua rechazada, suplantacion bloqueada, lectura/listado privado y expulsion/reingreso autorizado.');
     await host.evaluate(`NinjaOnline.deleteRoom(${JSON.stringify(code)})`); code = null;
     for (const a of actors) await a.evaluate('NinjaOnline.auth.currentUser?.delete()');

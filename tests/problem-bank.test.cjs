@@ -4,13 +4,13 @@ const path = require('node:path');
 const { validateBank } = require('../banco-problemas/validar-banco.cjs');
 const read = file => JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'banco-problemas', file), 'utf8'));
 const bank = read('sumas.json');
-assert.equal(bank.plantillas.length, 40);
-assert.equal(validateBank(bank).length, 40);
+assert.equal(bank.plantillas.length, 50);
+assert.equal(validateBank(bank).length, 50);
 assert.ok(bank.plantillas.every(template => template.etiquetas.length === 1 && template.etiquetas[0] === 'suma'));
 validateBank(read('plantilla-problema.json'));
 const subtractionBank = read('restas.json');
-assert.equal(subtractionBank.plantillas.length, 40);
-assert.equal(validateBank(subtractionBank).length, 40);
+assert.equal(subtractionBank.plantillas.length, 50);
+assert.equal(validateBank(subtractionBank).length, 50);
 assert.ok(subtractionBank.plantillas.every(template => template.etiquetas.length === 1 && template.etiquetas[0] === 'resta'));
 for (const file of ['multiplicaciones.json', 'divisiones.json']) {
   const extra = read(file);
@@ -22,13 +22,13 @@ assert.equal(combinedBank.plantillas.length, 436);
 assert.equal(validateBank(combinedBank).length, 436);
 assert.ok(combinedBank.plantillas.every(t => t.etiquetas.length >= 2 && t.enunciadoCompacto));
 const templates = [bank, subtractionBank, read('multiplicaciones.json'), read('divisiones.json'), combinedBank].flatMap(b => b.plantillas);
-assert.equal(templates.length, 600);
-assert.equal(new Set(templates.map(t => t.id)).size, 600);
-assert.equal(new Set(templates.map(t => t.enunciado)).size, 600);
+assert.equal(templates.length, 640);
+assert.equal(new Set(templates.map(t => t.id)).size, 640);
+assert.equal(new Set(templates.map(t => t.enunciado)).size, 640);
 const categories = ['suma', 'resta', 'multiplicacion', 'division'];
 for (let mask = 1; mask < 16; mask++) {
   const key = categories.filter((_, i) => mask & (1 << i)).sort().join(',');
-  assert.equal(templates.filter(t => [...t.etiquetas].sort().join(',') === key).length, 40, key);
+  assert.equal(templates.filter(t => [...t.etiquetas].sort().join(',') === key).length, categories.filter((_, i) => mask & (1 << i)).length === 1 ? 50 : 40, key);
 }
 
 for (const original of bank.plantillas) {
@@ -84,4 +84,4 @@ for (const name of ['cantidadA', 'cantidadB']) {
 }
 template.ejemplo.respuesta = '999999998000000001';
 validateBank(arithmetic);
-console.log('OK: 600 unique templates; 40 for every operation subset, editable template, bounds, placeholders, singulars, exact division and large integer products.');
+console.log('OK: 640 unique templates; 50 per individual operation and 40 per combined subset, editable template, bounds, placeholders, singulars, exact division and large integer products.');

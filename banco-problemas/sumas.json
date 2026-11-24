@@ -2726,6 +2726,646 @@
         },
         "respuesta": "36"
       }
+    },
+    {
+      "id": "sumas-nuevo-20261124-1",
+      "titulo": "Mensajes del colegio",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "El lunes el colegio recibe {cantidadA} {unidadA} en su buzón. El martes recibe {cantidadB} {unidadB} más. ¿Cuántos mensajes recibe entre los dos días?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "mensaje",
+          "plural": "mensajes",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mensaje",
+          "plural": "mensajes",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "mensaje",
+          "plural": "mensajes",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-2",
+      "titulo": "Semillas para el huerto",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "La clase guarda {cantidadA} {unidadA} para el huerto. Otra clase trae {cantidadB} {unidadB} para plantarlas juntas. ¿Cuántas semillas tienen ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-3",
+      "titulo": "Fotos de la excursión",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En la excursión, un grupo hace {cantidadA} {unidadA} por la mañana y {cantidadB} {unidadB} por la tarde. ¿Cuántas fotos hace durante el día?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "foto",
+          "plural": "fotos",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "foto",
+          "plural": "fotos",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "foto",
+          "plural": "fotos",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-4",
+      "titulo": "Piedras del camino",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para decorar un camino del huerto, el grupo recoge {cantidadA} {unidadA} lisas y {cantidadB} {unidadB} rugosas. ¿Cuántas piedras recoge en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "piedra",
+          "plural": "piedras",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "piedra",
+          "plural": "piedras",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "piedra",
+          "plural": "piedras",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-5",
+      "titulo": "Entradas del teatro",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "El colegio vende {cantidadA} {unidadA} para una obra de teatro por internet y {cantidadB} {unidadB} en la puerta. ¿Cuántas entradas vende en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-6",
+      "titulo": "Vasos para la merienda",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En una mesa hay {cantidadA} {unidadA} para la merienda. Traen {cantidadB} {unidadB} de otra clase. ¿Cuántos vasos hay ahora en la mesa?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "vaso",
+          "plural": "vasos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "vaso",
+          "plural": "vasos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "vaso",
+          "plural": "vasos",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-7",
+      "titulo": "Dibujos para el mural",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para un mural, una clase prepara {cantidadA} {unidadA} de animales y {cantidadB} {unidadB} de plantas. ¿Cuántos dibujos prepara para el mural?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "dibujo",
+          "plural": "dibujos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "dibujo",
+          "plural": "dibujos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "dibujo",
+          "plural": "dibujos",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-8",
+      "titulo": "Marcapáginas solidarios",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Un grupo prepara {cantidadA} {unidadA} para una feria. Otro grupo prepara {cantidadB} {unidadB}. ¿Cuántos marcapáginas reúnen entre los dos grupos?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "marcapáginas",
+          "plural": "marcapáginas",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "marcapáginas",
+          "plural": "marcapáginas",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "marcapáginas",
+          "plural": "marcapáginas",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-9",
+      "titulo": "Cuentos para leer",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el rincón de lectura hay {cantidadA} {unidadA}. La biblioteca presta a la clase {cantidadB} {unidadB} más. ¿Cuántos cuentos hay ahora en el rincón?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuento",
+          "plural": "cuentos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuento",
+          "plural": "cuentos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuento",
+          "plural": "cuentos",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-10",
+      "titulo": "Tapones recogidos",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En una campaña de reciclaje, una clase recoge {cantidadA} {unidadA} y otra recoge {cantidadB} {unidadB}. ¿Cuántos tapones reúnen entre las dos clases?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tapón",
+          "plural": "tapones",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tapón",
+          "plural": "tapones",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tapón",
+          "plural": "tapones",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
     }
   ]
 }

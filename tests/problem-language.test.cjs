@@ -19,7 +19,7 @@ for (const t of templates) {
     });
     assert.ok(!/[{}]|undefined|NaN/.test(text));
     for (const v of Object.values(t.variables).filter(v=>v.tipo==='concordancia')) {
-      assert.ok(!new RegExp(`(?<!\\d)1 ${v.plural}\\b`, 'u').test(text),t.id+': '+text);
+      if(v.singular!==v.plural)assert.ok(!new RegExp(`(?<!\\d)1 ${v.plural}\\b`, 'u').test(text),t.id+': '+text);
       const wrong=v.genero==='femenino'?'Cuántos':'Cuántas';
       assert.ok(!text.includes(`${wrong} ${v.plural}`),t.id);
     }

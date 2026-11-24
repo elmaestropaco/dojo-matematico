@@ -54,7 +54,7 @@ for (const variant of [0, 1, 2]) {
 }
 assert.equal(expansion.bank.length, 260);
 const allIds = [global.NinjaProblemBank, global.NinjaAdvancedProblemBank, global.NinjaPercentageProblemBank, global.NinjaMeasureProblemBank, global.NinjaLearningProblemBank].flatMap(b => b.plantillas.map(t => t.id));
-assert.equal(allIds.length, 1900); assert.equal(new Set(allIds).size, 1900);
+assert.equal(allIds.length, 1940); assert.equal(new Set(allIds).size, 1940);
 for (const family of Object.keys(expansion.families)) for (const digits of [1, 2, 3]) for (const decimals of [false, true]) {
   const cfg = { _family: family, _newDigits: digits, _newDecimals: decimals };
   const count = family === 'geometria' ? 140 : 40;

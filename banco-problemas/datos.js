@@ -2729,6 +2729,646 @@ globalThis.NinjaProblemBank = {
       }
     },
     {
+      "id": "sumas-nuevo-20261124-1",
+      "titulo": "Mensajes del colegio",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "El lunes el colegio recibe {cantidadA} {unidadA} en su buzón. El martes recibe {cantidadB} {unidadB} más. ¿Cuántos mensajes recibe entre los dos días?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "mensaje",
+          "plural": "mensajes",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mensaje",
+          "plural": "mensajes",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "mensaje",
+          "plural": "mensajes",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-2",
+      "titulo": "Semillas para el huerto",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "La clase guarda {cantidadA} {unidadA} para el huerto. Otra clase trae {cantidadB} {unidadB} para plantarlas juntas. ¿Cuántas semillas tienen ahora?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-3",
+      "titulo": "Fotos de la excursión",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En la excursión, un grupo hace {cantidadA} {unidadA} por la mañana y {cantidadB} {unidadB} por la tarde. ¿Cuántas fotos hace durante el día?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "foto",
+          "plural": "fotos",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "foto",
+          "plural": "fotos",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "foto",
+          "plural": "fotos",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-4",
+      "titulo": "Piedras del camino",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para decorar un camino del huerto, el grupo recoge {cantidadA} {unidadA} lisas y {cantidadB} {unidadB} rugosas. ¿Cuántas piedras recoge en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "piedra",
+          "plural": "piedras",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "piedra",
+          "plural": "piedras",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "piedra",
+          "plural": "piedras",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-5",
+      "titulo": "Entradas del teatro",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "El colegio vende {cantidadA} {unidadA} para una obra de teatro por internet y {cantidadB} {unidadB} en la puerta. ¿Cuántas entradas vende en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-6",
+      "titulo": "Vasos para la merienda",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En una mesa hay {cantidadA} {unidadA} para la merienda. Traen {cantidadB} {unidadB} de otra clase. ¿Cuántos vasos hay ahora en la mesa?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "vaso",
+          "plural": "vasos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "vaso",
+          "plural": "vasos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "vaso",
+          "plural": "vasos",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-7",
+      "titulo": "Dibujos para el mural",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Para un mural, una clase prepara {cantidadA} {unidadA} de animales y {cantidadB} {unidadB} de plantas. ¿Cuántos dibujos prepara para el mural?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "dibujo",
+          "plural": "dibujos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "dibujo",
+          "plural": "dibujos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "dibujo",
+          "plural": "dibujos",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-8",
+      "titulo": "Marcapáginas solidarios",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "Un grupo prepara {cantidadA} {unidadA} para una feria. Otro grupo prepara {cantidadB} {unidadB}. ¿Cuántos marcapáginas reúnen entre los dos grupos?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "marcapáginas",
+          "plural": "marcapáginas",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "marcapáginas",
+          "plural": "marcapáginas",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "marcapáginas",
+          "plural": "marcapáginas",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-9",
+      "titulo": "Cuentos para leer",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En el rincón de lectura hay {cantidadA} {unidadA}. La biblioteca presta a la clase {cantidadB} {unidadB} más. ¿Cuántos cuentos hay ahora en el rincón?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuento",
+          "plural": "cuentos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuento",
+          "plural": "cuentos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuento",
+          "plural": "cuentos",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
+      "id": "sumas-nuevo-20261124-10",
+      "titulo": "Tapones recogidos",
+      "etiquetas": [
+        "suma"
+      ],
+      "enunciado": "En una campaña de reciclaje, una clase recoge {cantidadA} {unidadA} y otra recoge {cantidadB} {unidadB}. ¿Cuántos tapones reúnen entre las dos clases?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tapón",
+          "plural": "tapones",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tapón",
+          "plural": "tapones",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "suma",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero sumamos: {cantidadA} + {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tapón",
+          "plural": "tapones",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 25,
+          "cantidadB": 18
+        },
+        "respuesta": "43"
+      },
+      "dificultad": "facil"
+    },
+    {
       "id": "resta-biblioteca-001",
       "titulo": "Libros que quedan",
       "dificultad": "facil",
@@ -5697,6 +6337,706 @@ globalThis.NinjaProblemBank = {
       }
     },
     {
+      "id": "restas-nuevo-20261124-1",
+      "titulo": "Hojas para encuadernar",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "El taller tiene {cantidadA} {unidadA} de papel. Usa {cantidadB} {unidadB} para hacer cuadernos. ¿Cuántas hojas le quedan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-2",
+      "titulo": "Plantas que faltan",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Para completar el huerto necesitan {cantidadA} {unidadA}. La clase ya ha plantado {cantidadB} {unidadB}. ¿Cuántas plantas les faltan para completar el huerto?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "planta",
+          "plural": "plantas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "planta",
+          "plural": "plantas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "planta",
+          "plural": "plantas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-3",
+      "titulo": "Entradas disponibles",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Para una función hay {cantidadA} {unidadA} a la venta. El teatro ya ha vendido {cantidadB} {unidadB}. ¿Cuántas entradas quedan por vender?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-4",
+      "titulo": "Piezas del puzle",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Un puzle tiene {cantidadA} {unidadA}. El grupo ya ha colocado {cantidadB} {unidadB}. ¿Cuántas piezas quedan por colocar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pieza",
+          "plural": "piezas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pieza",
+          "plural": "piezas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pieza",
+          "plural": "piezas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-5",
+      "titulo": "Libros que faltan por ordenar",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Hay que ordenar {cantidadA} {unidadA} en la biblioteca. La clase ya ha ordenado {cantidadB} {unidadB}. ¿Cuántos libros quedan por ordenar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-6",
+      "titulo": "Pulseras de la feria",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Un puesto de la feria prepara {cantidadA} {unidadA}. Durante la mañana vende {cantidadB} {unidadB}. ¿Cuántas pulseras le quedan para la tarde?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-7",
+      "titulo": "Pelotas prestadas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el armario de deportes hay {cantidadA} {unidadA}. La maestra presta {cantidadB} {unidadB} para el recreo. ¿Cuántas pelotas quedan en el armario?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pelota",
+          "plural": "pelotas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pelota",
+          "plural": "pelotas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pelota",
+          "plural": "pelotas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-8",
+      "titulo": "Sobres por preparar",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "El colegio tiene que preparar {cantidadA} {unidadA} para las familias. Ya ha preparado {cantidadB} {unidadB}. ¿Cuántos sobres le quedan por preparar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-9",
+      "titulo": "Pegatinas del álbum",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Para completar un álbum necesitan {cantidadA} {unidadA}. En el álbum ya hay {cantidadB} {unidadB}. ¿Cuántas pegatinas les faltan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-10",
+      "titulo": "Tizas que quedan",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Para dibujar en el patio hay {cantidadA} {unidadA}. El grupo gasta {cantidadB} {unidadB}. ¿Cuántas tizas quedan sin gastar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
       "id": "multiplicacion-001",
       "titulo": "Lápices en cajas",
       "dificultad": "facil",
@@ -8528,6 +9868,646 @@ globalThis.NinjaProblemBank = {
           "cantidadB": 8
         },
         "respuesta": "40"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-1",
+      "titulo": "Semillas en macetas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para un experimento preparan {cantidadA} {unidadA}. En cada maceta ponen {cantidadB} {unidadB}. ¿Cuántas semillas utilizan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "maceta",
+          "plural": "macetas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-2",
+      "titulo": "Fotos de cada equipo",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En una salida participan {cantidadA} {unidadA}. Cada equipo elige {cantidadB} {unidadB} para el mural. ¿Cuántas fotos eligen entre todos los equipos?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "equipo",
+          "plural": "equipos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "foto",
+          "plural": "fotos",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "foto",
+          "plural": "fotos",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-3",
+      "titulo": "Botellas para las cajas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para una jornada deportiva preparan {cantidadA} {unidadA}. En cada caja guardan {cantidadB} {unidadB} de agua. ¿Cuántas botellas guardan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "caja",
+          "plural": "cajas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "botella",
+          "plural": "botellas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "botella",
+          "plural": "botellas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-4",
+      "titulo": "Hojas en cuadernos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En el taller hacen {cantidadA} {unidadA} iguales. Cada cuaderno lleva {cantidadB} {unidadB}. ¿Cuántas hojas necesitan para todos los cuadernos?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuaderno",
+          "plural": "cuadernos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-5",
+      "titulo": "Cuentas de las pulseras",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para una feria hacen {cantidadA} {unidadA}. En cada pulsera colocan {cantidadB} {unidadB} de colores. ¿Cuántas cuentas utilizan en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuenta",
+          "plural": "cuentas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuenta",
+          "plural": "cuentas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-6",
+      "titulo": "Tizas en estuches",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "La clase prepara {cantidadA} {unidadA} para dibujar en el patio. Guarda {cantidadB} {unidadB} en cada estuche. ¿Cuántas tizas guarda en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "estuche",
+          "plural": "estuches",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-7",
+      "titulo": "Libros en carros",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "La biblioteca utiliza {cantidadA} {unidadA} para llevar libros a las aulas. En cada carro coloca {cantidadB} {unidadB}. ¿Cuántos libros lleva en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "carro",
+          "plural": "carros",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-8",
+      "titulo": "Tarjetas de cada mesa",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para un juego preparan {cantidadA} {unidadA}. Dejan {cantidadB} {unidadB} en cada mesa. ¿Cuántas tarjetas reparten en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "mesa",
+          "plural": "mesas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tarjeta",
+          "plural": "tarjetas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tarjeta",
+          "plural": "tarjetas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-9",
+      "titulo": "Banderines para los equipos",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "En una fiesta participan {cantidadA} {unidadA}. Cada equipo hace {cantidadB} {unidadB} para decorar. ¿Cuántos banderines hacen entre todos?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "equipo",
+          "plural": "equipos",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "banderín",
+          "plural": "banderines",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "banderín",
+          "plural": "banderines",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
+      }
+    },
+    {
+      "id": "multiplicaciones-nuevo-20261124-10",
+      "titulo": "Pegatinas en sobres",
+      "dificultad": "facil",
+      "etiquetas": [
+        "multiplicacion"
+      ],
+      "enunciado": "Para un intercambio preparan {cantidadA} {unidadA}. Ponen {cantidadB} {unidadB} en cada sobre. ¿Cuántas pegatinas reparten en total?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad de cada grupo",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "multiplicacion",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Multiplicamos: {cantidadA} × {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 4,
+          "cantidadB": 6
+        },
+        "respuesta": "24"
       }
     },
     {
@@ -11633,6 +13613,706 @@ globalThis.NinjaProblemBank = {
           "cantidadB": 6
         },
         "respuesta": "12"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-1",
+      "titulo": "Semillas por maceta",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "La clase tiene {cantidadA} {unidadA}. Las reparte por igual entre {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas semillas pone en cada maceta?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "maceta",
+          "plural": "macetas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "semilla",
+          "plural": "semillas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-2",
+      "titulo": "Tarjetas por equipo",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para un juego hay {cantidadA} {unidadA}. Se reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas tarjetas recibe cada equipo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tarjeta",
+          "plural": "tarjetas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "equipo",
+          "plural": "equipos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tarjeta",
+          "plural": "tarjetas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-3",
+      "titulo": "Botellas en cajas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para una excursión tienen {cantidadA} {unidadA} de agua. Las guardan por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas botellas guardan en cada caja?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "botella",
+          "plural": "botellas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "caja",
+          "plural": "cajas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "botella",
+          "plural": "botellas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-4",
+      "titulo": "Hojas por cuaderno",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller tienen {cantidadA} {unidadA}. Con ellas hacen {cantidadB} {unidadB} con el mismo número de hojas, sin que sobre ninguna. ¿Cuántas hojas lleva cada cuaderno?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "cuaderno",
+          "plural": "cuadernos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-5",
+      "titulo": "Cuentas por pulsera",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para una feria tienen {cantidadA} {unidadA} de colores. Las usan todas para hacer {cantidadB} {unidadB} iguales. ¿Cuántas cuentas lleva cada pulsera?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "cuenta",
+          "plural": "cuentas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "cuenta",
+          "plural": "cuentas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-6",
+      "titulo": "Tizas por estuche",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "La clase tiene {cantidadA} {unidadA}. Las guarda por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas tizas pone en cada estuche?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "estuche",
+          "plural": "estuches",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-7",
+      "titulo": "Libros por carro",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En la biblioteca trasladan {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos libros lleva cada carro?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "carro",
+          "plural": "carros",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-8",
+      "titulo": "Pinceles por mesa",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "En el taller hay {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos pinceles dejan en cada mesa?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pincel",
+          "plural": "pinceles",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "mesa",
+          "plural": "mesas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pincel",
+          "plural": "pinceles",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-9",
+      "titulo": "Banderines por equipo",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para decorar tienen {cantidadA} {unidadA}. Los reparten por igual entre {cantidadB} {unidadB}, sin que sobre ninguno. ¿Cuántos banderines recibe cada equipo?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "banderín",
+          "plural": "banderines",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "equipo",
+          "plural": "equipos",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "banderín",
+          "plural": "banderines",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
+      }
+    },
+    {
+      "id": "divisiones-nuevo-20261124-10",
+      "titulo": "Pegatinas por sobre",
+      "dificultad": "facil",
+      "etiquetas": [
+        "division"
+      ],
+      "enunciado": "Para un intercambio tienen {cantidadA} {unidadA}. Las reparten por igual en {cantidadB} {unidadB}, sin que sobre ninguna. ¿Cuántas pegatinas ponen en cada sobre?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Número de grupos",
+          "minimo": 1,
+          "maximo": 99
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "division",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Repartimos en partes iguales: {cantidadA} ÷ {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "division_exacta",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 24,
+          "cantidadB": 6
+        },
+        "respuesta": "4"
       }
     },
     {

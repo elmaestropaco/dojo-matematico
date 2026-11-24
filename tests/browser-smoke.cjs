@@ -52,7 +52,10 @@ async function main() {
       await new Promise(r => setTimeout(r, 100));
     }
     const sizes = [[360, 740], [390, 844], [768, 1024], [1366, 768], [1920, 1080]];
-    const accessibilityOnly = process.argv.includes('--accessibility-only');
+    const reasoningOnly = process.argv.includes('--reasoning-only');
+    const aulaOnly = process.argv.includes('--aula-only');
+    const fixesOnly = process.argv.includes('--fixes-only');
+    const accessibilityOnly = process.argv.includes('--accessibility-only') || fixesOnly;
     const percentagesOnly = process.argv.includes('--percentages-only');
     const unitsOnly = process.argv.includes('--units-only');
     const learningOnly = process.argv.includes('--learning-only');
@@ -60,7 +63,7 @@ async function main() {
     const literacyOnly = process.argv.includes('--literacy-only');
     const spatialOnly = process.argv.includes('--spatial-only');
     const dynamicsOnly = process.argv.includes('--dynamics-only');
-    const controlsOnly = accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
+    const controlsOnly = reasoningOnly || aulaOnly || accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
     const advancedOnly = process.argv.includes('--advanced-only');
     const calculationsOnly = process.argv.includes('--calculations-only');
     const integerOnly = process.argv.includes('--integer-only');
@@ -216,7 +219,7 @@ async function main() {
         indexes.add(longest[0].index);indexes.add(longest[1].index);
         indexes.add([...items].sort((a,b)=>b.t.pasos.length-a.t.pasos.length)[0].index);
       }
-      if(Object.keys(problemPreviews).length!==600)throw Error('Missing generated preview');
+      if(Object.keys(problemPreviews).length!==NinjaProblemBank.plantillas.length)throw Error('Missing generated preview');
       return [...indexes];
     })()`);
     let problemViews = 0;
@@ -230,7 +233,7 @@ async function main() {
         `);
         for (const font of ['imprenta', 'ligada']) {
         await evaluate(`state.problemFont=${JSON.stringify(font)};syncProblemControls();document.fonts.load('400 20px "Escolar Ligada"')`);
-        const indexes = width === 1366 && mode === 'single' ? Array.from({length:600}, (_,i)=>i) : representativeIndexes;
+        const indexes = width === 1366 && mode === 'single' ? Array.from({length:640}, (_,i)=>i) : representativeIndexes;
         for (const index of indexes) for (const solution of [false, true]) {
           const failures = await evaluate(`(async()=>{
             const target=NinjaProblemBank.plantillas[${index}];
@@ -867,6 +870,83 @@ async function main() {
         goHome();return errors;
       })()`);
       assert.deepEqual(errors,[],`Room code ${width}x${height}`);
+    }
+    if(reasoningOnly){
+      let views=0;const kinds=await evaluate('Object.keys(NinjaReasoning.defaults)'),families=await evaluate('Object.keys(NinjaReasoning.families)');
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const activity of ['calculo','problemas'])for(const key of activity==='calculo'?kinds:families)for(const option of activity==='calculo'?[1,3]:[0,1,2])for(const drawings of activity==='calculo'?[true]:[true,false]){
+          await evaluate(`goHome();state.online=null;state.reviewPractice=null;state.mode='${mode}';state.activity='${activity}';state.orientation='vertical';state.allowNegative=false;state.progressiveEnabled=false;state.muted=true;state.streaksEnabled=false;state.endCondition='time';Object.values(state.operationSettings).forEach(c=>c.enabled=false);
+            if('${activity}'==='calculo')state.operationSettings['${key}']={...state.operationSettings['${key}'],enabled:true,digits:${option},negativeExponents:1,exponentMax:6};
+            else state.problemSettings=NinjaProblems.normalize({_family:'${key}',_aulaLevel:3,_aulaVariant:${option},_showDrawings:${drawings}});
+            launchGame(['${activity==='calculo'?key:'problem'}'],60);stopTimer();refs.consentBanner.classList.add('hidden');`);
+          for(const phase of ['question','solution']){
+            if(phase==='solution')await evaluate('state.operationsByPlayer.forEach(op=>op.solutionRevealed=true);repaintPlayers();');
+            const errors=await evaluate(`(async()=>{await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];for(const panel of document.querySelectorAll('.player-panel')){const box=panel.getBoundingClientRect();for(const q of ['.operation','.answer-box','.numpad','.action-row']){const el=panel.querySelector(q),b=el.getBoundingClientRect();if(b.bottom>box.bottom+1||b.right>box.right+1||el.scrollHeight>el.clientHeight+2||el.scrollWidth>el.clientWidth+2)errors.push(q+' clipped '+el.scrollHeight+'/'+el.clientHeight);}}
+              if(document.documentElement.scrollHeight>innerHeight+2)errors.push('page scroll');if('${activity}'==='problemas'&&!${drawings}&&refs.playersWrap.querySelector('.operation svg'))errors.push('drawing not hidden');if('${key}'.startsWith('sameBase')&&!document.getElementById('decimalHint-0').textContent.includes('^'))errors.push('power instructions lost');if('${activity}'==='problemas'&&document.getElementById('decimalHint-0').textContent.includes('3/4'))errors.push('integer question asks for fraction');return errors;})()`);
+            assert.deepEqual(errors,[],`Reasoning ${width} ${mode} ${key} ${option} drawings=${drawings} ${phase}: ${errors}`);views++;
+            if(width===1366&&mode==='single'&&phase==='question'&&((key==='sameBaseMixed'&&option===3)||(key==='lecturaVisual'&&option===0&&!drawings))){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,key==='sameBaseMixed'?'reasoning-power.png':'reasoning-visual-text.png'),Buffer.from(shot.data,'base64'));}
+          }
+        }
+      }
+      await evaluate(`goHome();state.mode='single';state.activity='calculo';state.endCondition='unlimited';Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.sameBaseMul.enabled=true;launchGame(['sameBaseMul'],0);stopTimer();
+        let op={...NinjaReasoning.calculation('sameBaseMul',{negativeExponents:1},()=>0),data:{base:2,e:-3},answerFormat:'power',answerFraction:{numerator:'1',denominator:'8'},answerDisplay:'2^-3',expression:'2^2 / 2^5',signature:'test-power'};state.operationsByPlayer.set(0,decorateOperation(op));repaintPlayers();state.players[0].input='';for(const char of ['2','p','-','3'])window.dispatchEvent(new KeyboardEvent('keydown',{key:char,bubbles:true}));if(state.players[0].input!=='2^-3')throw Error('power keyboard');submitPlayerAnswer(0);if(state.players[0].score!==10)throw Error('power scoring');
+        op=NinjaReasoning.calculation('signedAdd',{digits:1},()=>0);state.operationsByPlayer.set(0,decorateOperation(op));repaintPlayers();if(document.querySelector('#numpad-0 [data-key="^"]'))throw Error('power key stayed');
+        goHome();state.mode='duel';state.activity='calculo';launchGame(['sameBaseMul'],0);stopTimer();for(const id of [0,1])state.operationsByPlayer.set(id,decorateOperation({...op,answerFormat:'power',data:{base:2,e:-3},answerFraction:{numerator:'1',denominator:'8'},answerDisplay:'2^-3',requiresFractionInput:true,signedInput:true}));repaintPlayers();state.players[1].input='2';for(const [key,code]of [['*','NumpadMultiply'],['-','NumpadSubtract'],['3','Numpad3']])window.dispatchEvent(new KeyboardEvent('keydown',{key,code,bubbles:true}));if(state.players[1].input!=='2^-3')throw Error('numeric pad exponent');submitPlayerAnswer(1);if(state.players[1].score!==10)throw Error('numeric pad score');
+        goHome();state.mode='online';state.online={code:'W8K7N9X2',active:true};updateFloatingRoomCode();if(!refs.floatingRoomCode.classList.contains('hidden'))throw Error('floating code overlays');state.online=null;goHome();
+        document.querySelector('[data-problem-extra="_showDrawings"]').checked=false;document.querySelector('[data-problem-extra="_showDrawings"]').dispatchEvent(new Event('change'));if(readPreferences().problemSettings._showDrawings!==false||buildOnlineConfig().problemSettings._showDrawings!==false)throw Error('drawing setting not shared/persisted');
+      `);
+      console.log('OK: '+views+' signed/power/problem layouts, optional drawings, all new variants, five sizes, negative exponent keyboard, input transitions, shared drawing preference and no floating code.');
+    }
+    if(aulaOnly){
+      let views=0;
+      const kinds=await evaluate('Object.keys(NinjaAula.defaults)'),families=await evaluate('Object.keys(NinjaAula.families)');
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const activity of ['calculo','problemas'])for(const key of activity==='calculo'?kinds:families)for(const level of [1,2,3]){
+          await evaluate(`goHome();state.online=null;state.reviewPractice=null;state.mode='${mode}';state.activity='${activity}';state.orientation='vertical';state.muted=true;state.streaksEnabled=false;state.progressiveEnabled=false;state.endCondition='time';Object.values(state.operationSettings).forEach(c=>c.enabled=false);
+            if('${activity}'==='calculo')state.operationSettings['${key}']={...state.operationSettings['${key}'],enabled:true,digits:${level}};
+            else state.problemSettings=NinjaProblems.normalize({_family:'${key}',_aulaLevel:${level},_aulaReading:${level%2}});
+            launchGame(['${activity==='calculo'?key:'problem'}'],60);stopTimer();refs.consentBanner.classList.add('hidden');`);
+          for(const phase of ['question','solution']){
+            if(phase==='solution')await evaluate('state.operationsByPlayer.forEach(op=>op.solutionRevealed=true);repaintPlayers();');
+            const errors=await evaluate(`(async()=>{await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];if(document.documentElement.scrollHeight>innerHeight+2)errors.push('page scroll');for(const panel of document.querySelectorAll('.player-panel')){const box=panel.getBoundingClientRect();for(const q of ['.operation','.answer-box','.numpad','.action-row']){const el=panel.querySelector(q),b=el.getBoundingClientRect();if(b.bottom>box.bottom+1||b.right>box.right+1||el.scrollHeight>el.clientHeight+2||el.scrollWidth>el.clientWidth+2)errors.push(q+' clipped '+el.scrollHeight+'/'+el.clientHeight);}}return errors;})()`);
+            assert.deepEqual(errors,[],`Aula ${width} ${mode} ${key} ${level} ${phase}: ${errors}`);views++;
+            if(width===1366&&mode==='single'&&key==='geometriaAplicada'&&level===3&&phase==='question'){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'aula-problem.png'),Buffer.from(shot.data,'base64'));}
+          }
+        }
+      }
+      await evaluate(`goHome();state.online=null;state.mode='single';state.activity='calculo';state.endCondition='unlimited';state.reviewPractice=null;Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.divisionRemainder.enabled=true;launchGame(['divisionRemainder'],0);stopTimer();
+        let op=state.operationsByPlayer.get(0);state.players[0].input=op.data.q+'/'+op.data.r;submitPlayerAnswer(0);if(state.players[0].score!==10)throw Error('remainder scoring');
+        op={kind:'divisionRemainder',challenge:true,answerFormat:'remainder',requiresFractionInput:true,answerDisplay:'3 R 0',answer:3,data:{n:12,d:4,q:3,r:0},expression:'12 / 4',signature:'testexact'};state.operationsByPlayer.set(0,decorateOperation(op));state.players[0].input='3/0';submitPlayerAnswer(0);if(state.players[0].score!==20)throw Error('zero remainder');
+        state.operationsByPlayer.set(0,decorateOperation({kind:'add',a:2,b:3,answer:5,signature:'key-transition'}));repaintPlayers();if(document.querySelector('#numpad-0 [data-key="/"]'))throw Error('remainder key stayed on addition');
+        state.operationsByPlayer.set(0,decorateOperation(op));repaintPlayers();if(document.querySelector('#numpad-0 [data-key="/"]').textContent!=='R')throw Error('remainder key missing');state.players[0].input='3';window.dispatchEvent(new KeyboardEvent('keydown',{key:'r',code:'KeyR',bubbles:true}));if(state.players[0].input!=='3/')throw Error('physical R');
+        goHome();state.mode='duel';state.activity='calculo';Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.addNoCarry.enabled=true;launchGame(['addNoCarry'],60);stopTimer();for(const id of [0,1])document.querySelector('#numpad-'+id+' [data-key="7"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,pointerId:id+1,pointerType:'touch',isPrimary:id===0}));if(state.players.some(p=>p.input!=='7'))throw Error('two simultaneous touches');goHome();
+      `);
+      await evaluate(`window._originalConfirm=window.confirm;window.confirm=()=>true;state.online=null;state.isRunning=false;const config={...buildOnlineConfig(),activity:'problemas',problemSettings:NinjaProblems.normalize({_family:'repartos'}),endCondition:'unlimited'};const session=sessionLibrary.save('Prueba de secuencia',config);classroomMemory.sequence=[session.id];classroomMemory.cursor=0;openClassroom();document.getElementById('sequenceNextBtn').click();`);
+      await new Promise(r=>setTimeout(r,100));
+      await evaluate(`if(classroomMemory.cursor!==1||state.problemSettings._family!=='repartos'||state.isRunning)throw Error('sequence auto start or load');
+        const exported={format:'dojo-aula',version:1,sessions:[{name:'Importada',config:{activity:'calculo',endCondition:'unlimited'}}],rounds:[{id:'import-test',date:'2026-11-24',players:{p:{name:'Paco',studentId:'class:p01',correctCount:2,learningStats:{add:{correct:2}}}}}]};const dt=new DataTransfer();dt.items.add(new File([JSON.stringify(exported)],'copia.json',{type:'application/json'}));document.getElementById('importAulaFile').files=dt.files;document.getElementById('importAulaFile').dispatchEvent(new Event('change'));`);
+      await new Promise(r=>setTimeout(r,150));
+      const aulaShot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'classroom-tools.png'),Buffer.from(aulaShot.data,'base64'));
+      await evaluate(`if(!sessionLibrary.list().some(s=>s.name==='Importada')||!NinjaLearning.read().some(r=>r.id==='import-test'))throw Error('import failed');document.getElementById('classroomDialog').close();window.confirm=window._originalConfirm;delete window._originalConfirm;
+        state.reviewErrors=[{playerId:0,name:'Paco',answer:'0',operation:decorateOperation({kind:'add',a:2,b:3,answer:5,signature:'review-test'})}];showErrorReview();document.getElementById('practiceErrorsBtn').click();stopTimer();if(!state.reviewPractice?.length||state.mode!=='single'||state.endCondition!=='questions')throw Error('error practice');state.players[0].input='5';submitPlayerAnswer(0);if(!state.roundCompleted)throw Error('review objective');goHome();state.reviewPractice=null;
+      `);
+      await evaluate(`window._originalConfirm=window.confirm;window._originalAlert=window.alert;window.confirm=()=>false;window.alert=()=>{};const other={code:'W8K7N9X2',playerId:'tab-test'};localStorage.setItem(classroomTabKey(other),JSON.stringify({token:'another-tab',at:Date.now()}));if(claimClassroomTab(other))throw Error('tab takeover without confirmation');window.confirm=()=>true;if(!claimClassroomTab(other)||!ownsClassroomTab(other))throw Error('confirmed takeover');releaseClassroomTab(other);window.confirm=window._originalConfirm;window.alert=window._originalAlert;delete window._originalConfirm;delete window._originalAlert;`);
+      console.log('OK: '+views+' new classroom layouts, both modes, five sizes, solutions, zero/nonzero remainders, two touch pointers, session sequence, JSON import, tab ownership and error practice.');
+    }
+    if(fixesOnly){
+      await evaluate(`goHome();state.activity='calculo';state.online=null;Object.values(state.operationSettings).forEach(c=>c.enabled=true);syncSettingsUIFromState();updateOpsSummary();
+        const keys=getEnabledOperationKeys();
+        for(const key of keys){const button=document.querySelector('[data-chip-remove="'+key+'"]');if(!button)throw Error('Missing chip '+key);button.click();if(state.operationSettings[key].enabled||document.querySelector('.op-toggle[data-op="'+key+'"]').checked)throw Error('Chip removal failed '+key);}
+        if(getEnabledOperationKeys().length||document.querySelector('.op-toggle:checked'))throw Error('Active after removing chips');
+        Object.keys(state.operationSettings).forEach(key=>setOperationEnabled(key,true));document.getElementById('clearActiveOperationsBtn').click();
+        if(getEnabledOperationKeys().length||document.querySelector('.op-toggle:checked')||Object.values(readPreferences().operationSettings).some(c=>c.enabled))throw Error('Clear all or persistence failed');
+        if(shouldShowOnlinePlayer({isConnected:false,lastSeenAt:Date.now()}))throw Error('Offline visible');
+        if(shouldShowOnlinePlayer({isConnected:true,lastSeenAt:Date.now()-100000}))throw Error('Stale visible');
+        if(!shouldShowOnlinePlayer({isConnected:true,lastSeenAt:Date.now()}))throw Error('Active hidden');
+      `);
+      console.log('OK: every operation removed individually and all at once, checkbox/state/storage synchronization; offline/stale presence filters.');
     }
     if(accessibilityOnly){
       await evaluate("document.getElementById('accessibilityBtn').click();if(!document.getElementById('accessibilityDialog').open)throw Error('accessibility modal');document.getElementById('boardModeToggle').checked=true;document.getElementById('boardModeToggle').dispatchEvent(new Event('change'));document.getElementById('reduceMotionToggle').checked=true;document.getElementById('reduceMotionToggle').dispatchEvent(new Event('change'));document.getElementById('closeAccessibilityBtn').click();");

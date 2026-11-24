@@ -2969,6 +2969,706 @@
         },
         "respuesta": "66"
       }
+    },
+    {
+      "id": "restas-nuevo-20261124-1",
+      "titulo": "Hojas para encuadernar",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "El taller tiene {cantidadA} {unidadA} de papel. Usa {cantidadB} {unidadB} para hacer cuadernos. ¿Cuántas hojas le quedan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "hoja",
+          "plural": "hojas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-2",
+      "titulo": "Plantas que faltan",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Para completar el huerto necesitan {cantidadA} {unidadA}. La clase ya ha plantado {cantidadB} {unidadB}. ¿Cuántas plantas les faltan para completar el huerto?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "planta",
+          "plural": "plantas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "planta",
+          "plural": "plantas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "planta",
+          "plural": "plantas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-3",
+      "titulo": "Entradas disponibles",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Para una función hay {cantidadA} {unidadA} a la venta. El teatro ya ha vendido {cantidadB} {unidadB}. ¿Cuántas entradas quedan por vender?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "entrada",
+          "plural": "entradas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-4",
+      "titulo": "Piezas del puzle",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Un puzle tiene {cantidadA} {unidadA}. El grupo ya ha colocado {cantidadB} {unidadB}. ¿Cuántas piezas quedan por colocar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pieza",
+          "plural": "piezas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pieza",
+          "plural": "piezas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pieza",
+          "plural": "piezas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-5",
+      "titulo": "Libros que faltan por ordenar",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Hay que ordenar {cantidadA} {unidadA} en la biblioteca. La clase ya ha ordenado {cantidadB} {unidadB}. ¿Cuántos libros quedan por ordenar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "libro",
+          "plural": "libros",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-6",
+      "titulo": "Pulseras de la feria",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Un puesto de la feria prepara {cantidadA} {unidadA}. Durante la mañana vende {cantidadB} {unidadB}. ¿Cuántas pulseras le quedan para la tarde?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pulsera",
+          "plural": "pulseras",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-7",
+      "titulo": "Pelotas prestadas",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "En el armario de deportes hay {cantidadA} {unidadA}. La maestra presta {cantidadB} {unidadB} para el recreo. ¿Cuántas pelotas quedan en el armario?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pelota",
+          "plural": "pelotas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pelota",
+          "plural": "pelotas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pelota",
+          "plural": "pelotas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-8",
+      "titulo": "Sobres por preparar",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "El colegio tiene que preparar {cantidadA} {unidadA} para las familias. Ya ha preparado {cantidadB} {unidadB}. ¿Cuántos sobres le quedan por preparar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "sobre",
+          "plural": "sobres",
+          "genero": "masculino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-9",
+      "titulo": "Pegatinas del álbum",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Para completar un álbum necesitan {cantidadA} {unidadA}. En el álbum ya hay {cantidadB} {unidadB}. ¿Cuántas pegatinas les faltan?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "pegatina",
+          "plural": "pegatinas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
+    },
+    {
+      "id": "restas-nuevo-20261124-10",
+      "titulo": "Tizas que quedan",
+      "dificultad": "facil",
+      "etiquetas": [
+        "resta"
+      ],
+      "enunciado": "Para dibujar en el patio hay {cantidadA} {unidadA}. El grupo gasta {cantidadB} {unidadB}. ¿Cuántas tizas quedan sin gastar?",
+      "variables": {
+        "cantidadA": {
+          "tipo": "entero",
+          "descripcion": "Cantidad inicial o total",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "cantidadB": {
+          "tipo": "entero",
+          "descripcion": "Cantidad que se añade o retira",
+          "minimo": 1,
+          "maximo": 9999
+        },
+        "unidadA": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadA",
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        },
+        "unidadB": {
+          "tipo": "concordancia",
+          "cantidad": "cantidadB",
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        }
+      },
+      "pasos": [
+        {
+          "id": "resultado1",
+          "operacion": "resta",
+          "operandos": [
+            "cantidadA",
+            "cantidadB"
+          ],
+          "explicacion": "Primero restamos: {cantidadA} - {cantidadB} = {resultado1}."
+        }
+      ],
+      "respuesta": {
+        "valor": "resultado1",
+        "unidad": {
+          "singular": "tiza",
+          "plural": "tizas",
+          "genero": "femenino"
+        }
+      },
+      "restricciones": [
+        {
+          "tipo": "mayor_o_igual",
+          "izquierda": "cantidadA",
+          "derecha": "cantidadB"
+        }
+      ],
+      "ejemplo": {
+        "valores": {
+          "cantidadA": 38,
+          "cantidadB": 15
+        },
+        "respuesta": "23"
+      }
     }
   ]
 }

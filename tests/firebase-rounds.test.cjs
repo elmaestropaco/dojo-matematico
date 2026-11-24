@@ -17,7 +17,7 @@ const db = { ref(path) { return {
     for (const [key, value] of Object.entries(patch)) setAt(path + '/' + key, value);
   },
   transaction: async callback => { const value = callback(valueAt(path)); if (value === undefined) return { committed: false }; setAt(path, value); return { committed: true }; },
-  onDisconnect: () => ({ update: async () => { disconnects++; } }),
+  onDisconnect: () => ({ update: async () => { disconnects++; }, cancel: async () => {} }),
   on: (_, fn) => { connectionListener = fn; }, off: () => { connectionListener = null; }, remove: async () => setAt(path, null)
 }; } };
 const database = () => db; database.ServerValue = { TIMESTAMP: { '.sv': 'timestamp' } };
@@ -41,6 +41,18 @@ const api = window.NinjaOnline; api.enabled = true; api.db = db; api.auth={curre
   const states = [], off = api.watchConnection(value => states.push(value)); connectionListener(snapshot(false)); connectionListener(snapshot(true)); off();
   assert.deepEqual(states, [false, true]); assert.equal(connectionListener, null);
   const rejoined = await api.joinRoom('ABCDEFGH', 'Paco 🥷'); assert.equal(rejoined.playerId, joined.playerId); assert.equal(Object.keys(root.secureRooms['ABCDEFGH'].players).length, 1);
+  await api.leaveRoom('ABCDEFGH',joined.playerId);
+  assert.equal(p.isConnected,false);
+  await api.heartbeat('ABCDEFGH',joined.playerId);assert.equal(p.isConnected,false);
+  await api.setPresence('ABCDEFGH',joined.playerId);assert.equal(p.isConnected,true);
+  const roster=root.secureRooms['ABCDEFGH'].players;
+  roster.second={...p,name:'paco 🥷'};roster.reserved={...p,name:'Paco 🥷 (1)'};
+  let room=await api.getRoom('ABCDEFGH');
+  const names=Object.values(room.players).map(p=>p.name.trim().toLocaleLowerCase('es'));
+  assert.equal(new Set(names).size,3);assert.equal(roster[joined.playerId].name,'Paco 🥷');
+  const previousName=room.players[joined.playerId].name;roster.second.isConnected=false;
+  room=await api.getRoom('ABCDEFGH');assert.equal(room.players[joined.playerId].name,previousName);
+  delete roster.second;delete roster.reserved;
   await api.removePlayer('ABCDEFGH', joined.playerId); const removed = await api.updatePlayer('ABCDEFGH', joined.playerId, { score: 999 }, seed);
   assert.equal(removed.committed, false); assert.equal(Object.keys(root.secureRooms['ABCDEFGH'].players).length, 0);
   root.secureRooms['ABCDEFGH'].players[joined.playerId] = { isConnected: false };

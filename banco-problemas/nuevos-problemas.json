@@ -1,0 +1,1266 @@
+{
+  "version": 1,
+  "idioma": "es",
+  "plantillas": [
+    {
+      "id": "aula-repartos-1-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "El huerto escolar",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-1-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "El huerto escolar",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-1-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "El huerto escolar",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-1-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "El huerto escolar",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-2-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-2-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-2-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-2-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "La biblioteca",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-3-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "La jornada deportiva",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-3-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "La jornada deportiva",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-3-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "La jornada deportiva",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-3-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "La jornada deportiva",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-4-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "El taller de ciencias",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-4-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "El taller de ciencias",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-4-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "El taller de ciencias",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-4-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "El taller de ciencias",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-5-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "La feria solidaria",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-5-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "La feria solidaria",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-5-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "La feria solidaria",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-5-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "La feria solidaria",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-6-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-6-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-6-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-6-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "El campamento",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-7-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "El taller de arte",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-7-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "El taller de arte",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-7-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "El taller de arte",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-7-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "El taller de arte",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-8-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-8-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-8-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-8-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "La excursión",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-9-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "El aula de música",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-9-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "El aula de música",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-9-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "El aula de música",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-9-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "El aula de música",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-repartos-10-0",
+      "family": "repartos",
+      "variant": 0,
+      "context": "La fiesta del colegio",
+      "title": "Grupos completos"
+    },
+    {
+      "id": "aula-repartos-10-1",
+      "family": "repartos",
+      "variant": 1,
+      "context": "La fiesta del colegio",
+      "title": "Lo que sobra"
+    },
+    {
+      "id": "aula-repartos-10-2",
+      "family": "repartos",
+      "variant": 2,
+      "context": "La fiesta del colegio",
+      "title": "Recipientes necesarios"
+    },
+    {
+      "id": "aula-repartos-10-3",
+      "family": "repartos",
+      "variant": 3,
+      "context": "La fiesta del colegio",
+      "title": "Cantidad por grupo"
+    },
+    {
+      "id": "aula-fraccionSentido-1-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "El huerto escolar",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-1-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "El huerto escolar",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-1-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "El huerto escolar",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-2-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-2-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-2-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-3-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "La jornada deportiva",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-3-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "La jornada deportiva",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-3-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "La jornada deportiva",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-4-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "El taller de ciencias",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-4-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "El taller de ciencias",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-4-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "El taller de ciencias",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-5-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "La feria solidaria",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-5-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "La feria solidaria",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-5-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "La feria solidaria",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-6-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-6-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-6-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-7-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "El taller de arte",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-7-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "El taller de arte",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-7-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "El taller de arte",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-8-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-8-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-8-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-9-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "El aula de música",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-9-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "El aula de música",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-9-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "El aula de música",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-fraccionSentido-10-0",
+      "family": "fraccionSentido",
+      "variant": 0,
+      "context": "La fiesta del colegio",
+      "title": "Encontrar el total"
+    },
+    {
+      "id": "aula-fraccionSentido-10-1",
+      "family": "fraccionSentido",
+      "variant": 1,
+      "context": "La fiesta del colegio",
+      "title": "La parte que queda"
+    },
+    {
+      "id": "aula-fraccionSentido-10-2",
+      "family": "fraccionSentido",
+      "variant": 2,
+      "context": "La fiesta del colegio",
+      "title": "Comparar partes de cantidades"
+    },
+    {
+      "id": "aula-geometriaAplicada-1-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "El huerto escolar",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-1-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "El huerto escolar",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-1-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "El huerto escolar",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-2-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-2-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-2-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-3-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "La jornada deportiva",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-3-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "La jornada deportiva",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-3-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "La jornada deportiva",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-4-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "El taller de ciencias",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-4-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "El taller de ciencias",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-4-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "El taller de ciencias",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-5-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "La feria solidaria",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-5-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "La feria solidaria",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-5-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "La feria solidaria",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-6-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-6-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-6-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-7-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "El taller de arte",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-7-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "El taller de arte",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-7-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "El taller de arte",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-8-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-8-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-8-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-9-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "El aula de música",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-9-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "El aula de música",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-9-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "El aula de música",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-geometriaAplicada-10-0",
+      "family": "geometriaAplicada",
+      "variant": 0,
+      "context": "La fiesta del colegio",
+      "title": "Área de una figura compuesta"
+    },
+    {
+      "id": "aula-geometriaAplicada-10-1",
+      "family": "geometriaAplicada",
+      "variant": 1,
+      "context": "La fiesta del colegio",
+      "title": "Valla con una entrada"
+    },
+    {
+      "id": "aula-geometriaAplicada-10-2",
+      "family": "geometriaAplicada",
+      "variant": 2,
+      "context": "La fiesta del colegio",
+      "title": "Superficie sin cubrir"
+    },
+    {
+      "id": "aula-comprasDecision-1-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "El huerto escolar",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-1-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "El huerto escolar",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-1-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "El huerto escolar",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-2-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-2-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-2-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-3-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "La jornada deportiva",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-3-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "La jornada deportiva",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-3-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "La jornada deportiva",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-4-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "El taller de ciencias",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-4-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "El taller de ciencias",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-4-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "El taller de ciencias",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-5-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "La feria solidaria",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-5-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "La feria solidaria",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-5-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "La feria solidaria",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-6-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-6-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-6-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-7-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "El taller de arte",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-7-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "El taller de arte",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-7-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "El taller de arte",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-8-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-8-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-8-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-9-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "El aula de música",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-9-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "El aula de música",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-9-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "El aula de música",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-comprasDecision-10-0",
+      "family": "comprasDecision",
+      "variant": 0,
+      "context": "La fiesta del colegio",
+      "title": "Precio por unidad"
+    },
+    {
+      "id": "aula-comprasDecision-10-1",
+      "family": "comprasDecision",
+      "variant": 1,
+      "context": "La fiesta del colegio",
+      "title": "Compra con presupuesto"
+    },
+    {
+      "id": "aula-comprasDecision-10-2",
+      "family": "comprasDecision",
+      "variant": 2,
+      "context": "La fiesta del colegio",
+      "title": "Ahorro entre ofertas"
+    },
+    {
+      "id": "aula-estimacion-1-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "El huerto escolar",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-1-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "El huerto escolar",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-1-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "El huerto escolar",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-2-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-2-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-2-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "La biblioteca",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-3-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "La jornada deportiva",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-3-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "La jornada deportiva",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-3-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "La jornada deportiva",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-4-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "El taller de ciencias",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-4-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "El taller de ciencias",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-4-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "El taller de ciencias",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-5-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "La feria solidaria",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-5-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "La feria solidaria",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-5-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "La feria solidaria",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-6-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-6-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-6-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "El campamento",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-7-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "El taller de arte",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-7-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "El taller de arte",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-7-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "El taller de arte",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-8-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-8-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-8-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "La excursión",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-9-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "El aula de música",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-9-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "El aula de música",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-9-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "El aula de música",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-estimacion-10-0",
+      "family": "estimacion",
+      "variant": 0,
+      "context": "La fiesta del colegio",
+      "title": "Estimar una suma"
+    },
+    {
+      "id": "aula-estimacion-10-1",
+      "family": "estimacion",
+      "variant": 1,
+      "context": "La fiesta del colegio",
+      "title": "Comprobar un producto"
+    },
+    {
+      "id": "aula-estimacion-10-2",
+      "family": "estimacion",
+      "variant": 2,
+      "context": "La fiesta del colegio",
+      "title": "Acotar una división"
+    },
+    {
+      "id": "aula-inversa-1-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "El huerto escolar",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-1-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "El huerto escolar",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-2-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "La biblioteca",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-2-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "La biblioteca",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-3-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "La jornada deportiva",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-3-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "La jornada deportiva",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-4-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "El taller de ciencias",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-4-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "El taller de ciencias",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-5-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "La feria solidaria",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-5-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "La feria solidaria",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-6-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "El campamento",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-6-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "El campamento",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-7-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "El taller de arte",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-7-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "El taller de arte",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-8-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "La excursión",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-8-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "La excursión",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-9-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "El aula de música",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-9-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "El aula de música",
+      "title": "Misma cantidad, menos grupos"
+    },
+    {
+      "id": "aula-inversa-10-0",
+      "family": "inversa",
+      "variant": 0,
+      "context": "La fiesta del colegio",
+      "title": "Misma cantidad, más grupos"
+    },
+    {
+      "id": "aula-inversa-10-1",
+      "family": "inversa",
+      "variant": 1,
+      "context": "La fiesta del colegio",
+      "title": "Misma cantidad, menos grupos"
+    }
+  ]
+}

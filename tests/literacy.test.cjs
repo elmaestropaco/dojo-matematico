@@ -37,5 +37,5 @@ for(const family of Object.keys(literacy.labels))for(let level=1;level<=3;level+
 }
 assert.equal(seen.size,160);assert.equal(literacy.bank.length,160);
 for(const f of Object.keys(literacy.labels))for(let variant=0;variant<4;variant++)assert.equal(engine.compatible({_family:f,[`_${f}Variant`]:variant}).length,10);
-const ids=[global.NinjaProblemBank,global.NinjaAdvancedProblemBank,global.NinjaPercentageProblemBank,global.NinjaMeasureProblemBank,global.NinjaLearningProblemBank,global.NinjaLiteracyProblemBank,global.NinjaSpatialProblemBank].flatMap(b=>b.plantillas.map(t=>t.id));assert.equal(ids.length,2100);assert.equal(new Set(ids).size,2100);
-console.log(`OK: ${count} literacy problems, ${choices} choice questions, 160 templates, clocks, midnight, tables/charts, exact means, probability fractions, inverse/insufficient/error tasks and 2100 unique templates.`);
+const ids=[global.NinjaProblemBank,global.NinjaAdvancedProblemBank,global.NinjaPercentageProblemBank,global.NinjaMeasureProblemBank,global.NinjaLearningProblemBank,global.NinjaLiteracyProblemBank,global.NinjaSpatialProblemBank].flatMap(b=>b.plantillas.map(t=>t.id));assert.equal(ids.length,2140);assert.equal(new Set(ids).size,2140);
+console.log(`OK: ${count} literacy problems, ${choices} choice questions, 160 templates, clocks, midnight, tables/charts, exact means, probability fractions, inverse/insufficient/error tasks and 2140 unique templates.`);
