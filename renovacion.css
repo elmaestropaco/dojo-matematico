@@ -94,6 +94,8 @@ body:not([data-theme="light"]) .connection-indicator[data-status="offline"] { co
 body.game-running .numpad.comparison-input { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 1fr; }
 .geometry-diagram { display: block; width: min(18em, 380px); height: 6em; max-height: 150px; max-width: 100%; margin: 0.2em auto; border-radius: 8px; background: #f1f8f4; font-family: "Atkinson Hyperlegible", sans-serif; }
 .teaching-explanation { display: block; font-size: 0.7em; line-height: 1.4; }
+.inline-root-sign { width: .65em; height: 1em; vertical-align: -.08em; fill: none; stroke: currentColor; stroke-width: 2; }
+.quadratic-solution { display: grid; gap: .18em; justify-items: center; width: 100%; font-size: .7em; line-height: 1.2; }
 body.game-running .panel-timer:is([data-mode="questions"], [data-mode="correct"], [data-mode="unlimited"]) { width: auto; min-width: 9ch; height: 26px; padding: 0 5px; border-radius: 18px; font-size: 0.7rem; }
 @media (max-width: 700px) {
   .learning-calculations { grid-template-columns: minmax(0, 1fr); }
@@ -208,6 +210,27 @@ body.game-running.problems-running .players-wrap.duel-face .player-panel:not(.re
 .operation-search { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; }
 .operation-search label { display: grid; gap: 6px; flex: 1 1 220px; min-width: 0; font-weight: 700; }
 .operation-search input { width: 100%; min-width: 0; box-sizing: border-box; font: inherit; padding: 10px 12px; border: 1px solid var(--border); border-radius: 9px; color: var(--text-main); background: var(--panel); }
+.number-group { min-width: 0; margin-top: 12px; }
+.number-group > summary { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; line-height: 1.5; padding: 12px; }
+.number-group > summary::before { content: ''; flex: 0 0 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); margin-right: 5px; }
+.number-group[open] > summary::before { transform: rotate(45deg); }
+.number-group > summary [data-number-count] { font-size: .82em; color: var(--text-soft); }
+.number-choice-grid > .op-row { display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; padding: 12px; }
+.number-choice-grid > .op-row > .op-config-select,
+.number-choice-grid > .op-row > .op-configs { grid-column: 1 / -1; width: 100%; min-width: 0; }
+.number-choice-grid .op-configs { justify-content: start; }
+.number-choice-grid .op-configs > * { flex: 1 1 130px; min-width: 0; }
+.number-choice-grid > * { min-width: 0; overflow-wrap: anywhere; }
+.domain-notice { padding: 12px; margin: 12px 0; border: 1px solid var(--border); border-radius: 12px; background: var(--panel); }
+.domain-notice p { margin: 0 0 10px; }
+#clearAllOperationsTop { border: 2px solid #c53548; color: #b32438; background: #fff2f3; }
+#clearAllOperationsTop:disabled { opacity: .55; }
+#operationClearNotice:empty { display: none; }
+@media (max-width: 560px) {
+  .operation-search label { flex-basis: 100%; }
+  .operation-search button { flex: 1 1 130px; white-space: normal; }
+  .number-group { padding: 8px; }
+}
 .operation-filtered-out { display: none !important; }
 #operationSearchStatus { margin: 10px 0 14px; }
 #spatialProblemControls { display: grid; gap: 12px; padding-top: 14px; }

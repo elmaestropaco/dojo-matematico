@@ -32,7 +32,7 @@ const OPERATION_LABELS = {
   convertMass: "Conversión de masa",
   convertCapacity: "Conversión de capacidad",
   convertTime: "Conversión de tiempo",
-  missing: 'Completar huecos', compare: 'Comparar cantidades', power: 'Potencias', round: 'Redondeo'
+  missing: 'Completar huecos', compare: 'Comparar cantidades', power: 'Calcular una potencia', round: 'Redondeo'
 };
 
 const SCORE_MIN = 0;
@@ -77,33 +77,33 @@ const state = {
   operationSettings: {
     ...JSON.parse(JSON.stringify(globalThis.NinjaSpatial?.defaults || {})),
     ...JSON.parse(JSON.stringify(globalThis.NinjaCalculationChallenges?.defaults || {})),
-    addNoCarry: { enabled: false, digits: 2 },
-    addCarry: { enabled: false, digits: 2 },
-    subNoBorrow: { enabled: false, digits: 2 },
-    subBorrow: { enabled: false, digits: 2 },
-    mul: { enabled: false, multiplicandMax: 2, factorMax: 2 },
-    div: { enabled: false, dividendMax: 2, divisorMax: 2 },
+    addNoCarry: { enabled: false, digits: 1 },
+    addCarry: { enabled: false, digits: 1 },
+    subNoBorrow: { enabled: false, digits: 1 },
+    subBorrow: { enabled: false, digits: 1 },
+    mul: { enabled: false, multiplicandMax: 1, factorMax: 1 },
+    div: { enabled: false, dividendMax: 1, divisorMax: 1 },
     divTables: { enabled: false },
-    divHard: { enabled: false, divisorMax: 2, maxDecimals: 2 },
-    combined: { enabled: false, digits: 2 },
-    combinedAdv: { enabled: false, digits: 2 },
-    fraction: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
-    fractionAdd: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
-    fractionSub: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
-    fractionMul: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
-    fractionDiv: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
-    fractionCombined: { enabled: false, numeratorMax: 2, denominatorMax: 2 },
-    percent: { enabled: false, digits: 2 },
-    sqrt: { enabled: false, digits: 2 },
-    primeFactors: { enabled: false, digits: 2 },
-    mcm: { enabled: false, digits: 2, count: 2 },
-    mcd: { enabled: false, digits: 2, count: 2 },
-    convertLength: { enabled: false, digits: 2, from: 0, to: 0 },
-    convertMass: { enabled: false, digits: 2, from: 0, to: 0 },
-    convertCapacity: { enabled: false, digits: 2, from: 0, to: 0 },
-    convertTime: { enabled: false, digits: 2, from: 0, to: 0 },
-    missing: { enabled: false, digits: 2, operator: 0 }, compare: { enabled: false, digits: 2, variant: 0 },
-    power: { enabled: false, digits: 2, exponentMax: 3 }, round: { enabled: false, digits: 2, place: 1 }
+    divHard: { enabled: false, divisorMax: 1, maxDecimals: 1 },
+    combined: { enabled: false, digits: 1 },
+    combinedAdv: { enabled: false, digits: 1 },
+    fraction: { enabled: false, numeratorMax: 1, denominatorMax: 1 },
+    fractionAdd: { enabled: false, numeratorMax: 1, denominatorMax: 1 },
+    fractionSub: { enabled: false, numeratorMax: 1, denominatorMax: 1 },
+    fractionMul: { enabled: false, numeratorMax: 1, denominatorMax: 1 },
+    fractionDiv: { enabled: false, numeratorMax: 1, denominatorMax: 1 },
+    fractionCombined: { enabled: false, numeratorMax: 1, denominatorMax: 1 },
+    percent: { enabled: false, digits: 1 },
+    sqrt: { enabled: false, digits: 1 },
+    primeFactors: { enabled: false, digits: 1 },
+    mcm: { enabled: false, digits: 1, count: 2 },
+    mcd: { enabled: false, digits: 1, count: 2 },
+    convertLength: { enabled: false, digits: 1, from: 0, to: 0 },
+    convertMass: { enabled: false, digits: 1, from: 0, to: 0 },
+    convertCapacity: { enabled: false, digits: 1, from: 0, to: 0 },
+    convertTime: { enabled: false, digits: 1, from: 0, to: 0 },
+    missing: { enabled: false, digits: 1, operator: 0 }, compare: { enabled: false, digits: 1, variant: 0 },
+    power: { enabled: false, digits: 1, exponentDigits: 1 }, round: { enabled: false, digits: 1, place: 1 }
   },
   displayMode: "horizontal",
   streaksEnabled: true,
@@ -209,6 +209,7 @@ init();
 
 function init() {
   populateMeasureControls();
+  initCalculationGroups();
   document.querySelector('.hero-head').appendChild(document.querySelector('.theme-panel'));
   setupOnlineNamePanel();
   setupOnlineCreatePanel();
@@ -660,6 +661,7 @@ function updateOpsSummary() {
   const incompatible = Object.keys(globalThis.NinjaUnits.kinds).filter(key => state.operationSettings[key].enabled && !globalThis.NinjaUnits.pairs(globalThis.NinjaUnits.kinds[key], state.operationSettings[key], state.decimalsEnabled ? state.decimalPlaces : 0).length);
   document.getElementById('conversionConfigHint').textContent = incompatible.length ? `⚠️ ${incompatible.map(key => OPERATION_LABELS[key]).join(', ')}: no hay conversiones exactas con esas unidades y cifras. Usa unidades distintas, aumenta las cifras o permite más decimales. Corrige estos ajustes antes de empezar.` : '';
   renderOpsChips(enabled);
+  if(typeof updateCalculationGroups==='function')updateCalculationGroups();
 }
 
 function setOperationEnabled(key, enabled) {
@@ -677,6 +679,7 @@ function clearActiveOperations() {
   document.querySelectorAll('.op-toggle').forEach(input => { input.checked = false; });
   updateOpsSummary();
   savePreferences();
+  const notice=document.getElementById('operationClearNotice');if(notice)notice.textContent='No hay operaciones activas. Las cifras y el texto de búsqueda se conservan.';
 }
 
 function renderOpsChips(enabledKeys) {
@@ -721,12 +724,13 @@ function renderOpsChips(enabledKeys) {
   if (enabledKeys.length) {
     const clear = document.createElement('button');
     clear.type = 'button'; clear.className = 'btn-mini'; clear.id = 'clearActiveOperationsBtn';
-    clear.textContent = 'Quitar todas'; clear.addEventListener('click', clearActiveOperations);
+    clear.textContent = 'Quitar todas las operaciones'; clear.addEventListener('click', clearActiveOperations);
     refs.opsChips.appendChild(clear);
   }
 }
 
 function formatOpConfigLabel(key, cfg) {
+  if(cfg.exponentDigits)return `${key==='power'?`Base: ${cfg.digits} cifra${cfg.digits===1?'':'s'} · `:''}Exponente: hasta ${10**cfg.exponentDigits-1}${cfg.negativeExponents?' · incluye negativos':''}`;
   if(globalThis.NinjaReasoning&&Object.hasOwn(NinjaReasoning.defaults,key)&&cfg.exponentMax)return `Exponentes ${cfg.negativeExponents?'−'+cfg.exponentMax:'0'} a ${cfg.exponentMax}`;
   if (globalThis.NinjaSpatial?.defaults[key]) return `${cfg.digits} cifras · ${['cm','dm','m'][cfg.spaceUnit]}³`;
   if (globalThis.NinjaCalculationChallenges?.defaults[key]) return key === 'equivalence' ? 'Equivalencias exactas' : key === 'angles' ? 'Ángulos en grados' : key === 'scaleTen' ? `${cfg.digits} cifras · ${cfg.inputPlaces} dec. · ${cfg.scalePower ? 10 ** cfg.scalePower : '10 / 100 / 1000'}` : `${cfg.digits} cifras${key === 'integerOrder' ? ` · ${cfg.orderCount} números` : ''}`;
@@ -1878,6 +1882,7 @@ function placeRouletteForMode() {
 }
 
 function buildNumpad(numpadEl, playerId) {
+  numpadEl.dataset.roots=String(state.operationsByPlayer.get(playerId)?.answerFormat==='roots');
   numpadEl.dataset.power=String(state.operationsByPlayer.get(playerId)?.answerFormat==='power');
   numpadEl.dataset.remainder=String(state.operationsByPlayer.get(playerId)?.answerFormat==='remainder');
   const operation = state.operationsByPlayer.get(playerId);
@@ -1907,6 +1912,7 @@ function buildNumpad(numpadEl, playerId) {
   }
   if (comparison) { keys = ['<', '=', '>']; numpadEl.classList.remove('fraction-input', 'with-negative'); }
   if(operation?.answerFormat==='power')keys=keys.map(key=>key===DECIMAL_SEPARATOR?'^':key);
+  if(operation?.answerFormat==='roots')keys.splice(keys.indexOf('0'),0,';');
   keys.forEach((key) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -1917,6 +1923,7 @@ function buildNumpad(numpadEl, playerId) {
     button.addEventListener('pointerdown', handleButtonAction);
     if (key === "/") button.title = operation?.answerFormat==='remainder'?'Cociente y resto: también puedes pulsar R, F o /':'Fracción: también puedes pulsar F o :';
     if(key==='^')button.title='Exponente: ^, P o × del teclado numérico';
+    if(key===';')button.title='Separar raíces: ;, S o + del teclado numérico';
     if (key === "x") button.title = "Producto: también puedes pulsar X o *";
     numpadEl.appendChild(button);
   });
@@ -2030,7 +2037,7 @@ function bindKeyboardSupport() {
     if (!player) return;
 
     const comparison = state.operationsByPlayer.get(playerId)?.comparison;
-    const inputKey = state.operationsByPlayer.get(playerId)?.answerFormat==='power'&&code==='NumpadMultiply'?'^':comparison && isNumpad && ['NumpadSubtract', 'NumpadMultiply', 'NumpadAdd'].includes(code) ? ({ NumpadSubtract: '<', NumpadMultiply: '=', NumpadAdd: '>' })[code] : extractInputKey(event);
+    const inputKey = state.operationsByPlayer.get(playerId)?.answerFormat==='roots'&&code==='NumpadAdd'?';':state.operationsByPlayer.get(playerId)?.answerFormat==='power'&&code==='NumpadMultiply'?'^':comparison && isNumpad && ['NumpadSubtract', 'NumpadMultiply', 'NumpadAdd'].includes(code) ? ({ NumpadSubtract: '<', NumpadMultiply: '=', NumpadAdd: '>' })[code] : extractInputKey(event);
     if (inputKey !== null) {
       event.preventDefault();
       if (!appendInputChar(player, inputKey)) return;
@@ -2062,6 +2069,9 @@ function appendInputChar(player, char) {
   if (options) { if (/^[1-9]$/.test(char) && Number(char) <= options.length) { player.input = char; return true; } return false; }
   if (/^[<=>]$/.test(char)) { if (!state.operationsByPlayer.get(player.id)?.comparison) return false; player.input = char; return true; }
   if (player.input.length >= MAX_INPUT_LENGTH) return false;
+  if(state.operationsByPlayer.get(player.id)?.answerFormat==='roots'){
+    const next=NinjaSecondary.appendRoot(player.input,char);if(next===null)return false;player.input=next;return true;
+  }
   if(char==='^'){if(state.operationsByPlayer.get(player.id)?.answerFormat!=='power'||!/^\d+$/.test(player.input))return false;player.input+='^';return true;}
 
   if (char === "x") {
@@ -2100,6 +2110,7 @@ function appendInputChar(player, char) {
 function extractInputKey(event) {
   const key = event.key || "";
   const code = event.code || "";
+  if(key===';'||key.toLowerCase()==='s')return ';';
   if(key==='^'||key.toLowerCase()==='p')return '^';
   if (/^[<=>]$/.test(key) || code === 'NumpadEqual') return code === 'NumpadEqual' ? '=' : key;
 
@@ -2134,7 +2145,7 @@ function submitPlayerAnswer(playerId) {
 
   const submittedAnswer = player.input;
   const numericInput = parsePlayerInput(player.input);
-  if (!['remainder','power'].includes(operation.answerFormat) && !operation.primeFactors && !operation.comparison && Number.isNaN(numericInput)) {
+  if (!['remainder','power','roots'].includes(operation.answerFormat) && !operation.primeFactors && !operation.comparison && Number.isNaN(numericInput)) {
     player.input = "";
     repaintPlayerInput(player.id);
     return;
@@ -2445,7 +2456,7 @@ function maybeNegate(value) {
 }
 
 function renderProblemText(text) {
-  return escapeHtml(text).replace(/(\d+)\^(-?\d+)/g,'$1<sup>$2</sup>').replace(/(\d+|\?)\/(\d+|\?)/g, (_, numerator, denominator) => fractionHtml({ numerator, denominator }));
+  return escapeHtml(text).replace(/(\d+|[a-zA-Z]|\))\^(-?\d+|\?)/g,'$1<sup>$2</sup>').replace(/(\d+|\?)\/(\d+|\?)/g, (_, numerator, denominator) => fractionHtml({ numerator, denominator })).replace(/[±Δ]/g,s=>`<span class="math-symbol">${s}</span>`).replace(/√/g,'<svg class="inline-root-sign" viewBox="0 0 32 48" role="img" aria-label="raíz cuadrada" focusable="false"><path d="M2 27 L9 23 L17 43 L29 3 L32 3" /></svg>');
 }
 
 function problemDiagramHtml(operation){return globalThis.NinjaReasoning?NinjaReasoning.visual(operation.problem,state.problemSettings._showDrawings):operation.problem?.diagram||'';}
@@ -2696,6 +2707,12 @@ function generateFractionArithmetic(kind, cfg) {
 }
 
 function operationSolutionHtml(operation) {
+  if(operation.kind==='quadraticEquation'){
+    const d=operation.data,den=2n*BigInt(d.a),minusB=-BigInt(d.b);
+    const steps=[`a=${d.a}, b=${d.b}, c=${d.c}`,`Δ=(${d.b})^2 − 4 × ${d.a} × (${d.c}) = ${d.delta}; √Δ=${d.sqrt}`,`x1=(${minusB} + ${d.sqrt})/${den} = ${NinjaSecondary.show(d.roots[0])}`,`x2=(${minusB} − ${d.sqrt})/${den} = ${NinjaSecondary.show(d.roots[1])}${d.delta==='0'?' (raíz doble)':''}`];
+    const formula=`<span>Fórmula: x = <span class="fraction-real"><span class="fraction-num">${renderProblemText('−b ± √(b^2 − 4ac)')}</span><span class="fraction-den">2a</span></span></span>`;
+    return `<span class="quadratic-solution">${renderProblemText(steps[0])}${formula}${steps.slice(1).map(step=>`<span>${renderProblemText(step)}</span>`).join('')}</span>`;
+  }
   if(operation.explanation&&globalThis.NinjaReasoning&&Object.hasOwn(NinjaReasoning.defaults,operation.kind))return `<span class="teaching-explanation">${renderProblemText(operation.explanation)}</span>`;
   if (operation.explanation) return `<span class="teaching-explanation">${escapeHtml(operation.explanation)}</span>`;
   if (operation.conversion && !operation.problem) return `<span class="conversion-solution"><small>${escapeHtml(operation.conversion.equivalence)}</small><strong>${escapeHtml(operation.conversion.equation)}</strong></span>`;
@@ -3052,9 +3069,9 @@ function repaintPlayers() {
       opEl.classList.add("pop");
       const pad = document.getElementById(`numpad-${player.id}`);
       const choiceKey = op.choices ? JSON.stringify(op.choices) : '';
-      if (pad && (pad.dataset.power !== String(op.answerFormat==='power') || pad.dataset.remainder !== String(op.answerFormat==='remainder') || pad.dataset.choiceKey !== choiceKey || pad.classList.contains('comparison-input') !== Boolean(op.comparison) || (!op.choices && pad.classList.contains('with-negative') !== Boolean(!op.comparison && (op.signedInput || state.activity !== 'problemas' && state.allowNegative))) || (!op.choices && Boolean(op.requiresFractionInput) && !pad.classList.contains('fraction-input')))) { pad.innerHTML = ''; buildNumpad(pad, player.id); pad.dataset.choiceKey = choiceKey; }
+      if (pad && (pad.dataset.roots !== String(op.answerFormat==='roots') || pad.dataset.power !== String(op.answerFormat==='power') || pad.dataset.remainder !== String(op.answerFormat==='remainder') || pad.dataset.choiceKey !== choiceKey || pad.classList.contains('comparison-input') !== Boolean(op.comparison) || (!op.choices && pad.classList.contains('with-negative') !== Boolean(!op.comparison && (op.signedInput || state.activity !== 'problemas' && state.allowNegative))) || (!op.choices && Boolean(op.requiresFractionInput) && !pad.classList.contains('fraction-input')))) { pad.innerHTML = ''; buildNumpad(pad, player.id); pad.dataset.choiceKey = choiceKey; }
       opEl.innerHTML = op.problem ? renderProblem(op) : op.solutionRevealed && (op.conversion || op.explanation) ? operationSolutionHtml(op) : op.solutionRevealed
-        ? op.answerFraction ? operationSolutionHtml(op) : op.html.replace("?", operationSolutionHtml(op))
+        ? op.answerFraction || op.explanation ? operationSolutionHtml(op) : op.html.replace("?", operationSolutionHtml(op))
         : op.html;
       opEl.title = op.solutionRevealed ? (op.expression || "") : "";
     }
@@ -3066,7 +3083,7 @@ function repaintPlayers() {
 
     const decimalHintEl = document.getElementById(`decimalHint-${player.id}`);
     if (decimalHintEl) {
-      const show = Boolean(op?.problem) || state.decimalsEnabled || Boolean(op?.answerFraction) || Boolean(op?.primeFactors) || Boolean(op?.comparison);
+      const show = Boolean(op?.inputHint) || Boolean(op?.problem) || state.decimalsEnabled || Boolean(op?.answerFraction) || Boolean(op?.primeFactors) || Boolean(op?.comparison);
       decimalHintEl.classList.toggle("hidden", !show);
       decimalHintEl.textContent = op?.conversion ? `📏 Responde solo el número en ${op.conversion.to} · ${op.conversion.decimalPlaces ? `Máx. ${op.conversion.decimalPlaces} dec. · usa coma` : 'Sin decimales'}` : op?.problem?.family === 'porcentajes' ? `💯 ${op.problem.unit === '%' ? 'Porcentaje: solo el número, sin %' : 'Respuesta en euros'} · ${op.problem.decimalPlaces ? `Máx. ${op.problem.decimalPlaces} dec. · usa coma` : 'Sin decimales'}` : op?.problem ? op.answerFraction ? `🍰 Responde como 3/4 · ${op.problem.unit} · tecla F o :` : `📖 Respuesta en ${op.problem.unit}` : op?.primeFactors
         ? "🧩 Producto de primos: 2 x 2 x 3. Usa X o *."
@@ -3414,6 +3431,9 @@ function savePreferences() {
 }
 
 function sanitizeOpSettingValue(settingKey, value) {
+  if(settingKey==='signedValues')return clamp(Math.trunc(value),0,1);
+  if(settingKey==='divisibilityRule')return clamp(Math.trunc(value),0,9);
+  if(settingKey==='scientificRange')return clamp(Math.trunc(value),1,9);
   if(settingKey==='negativeExponents')return clamp(Math.trunc(value),0,1);
   if (settingKey === 'spaceUnit') return clamp(Math.trunc(value), 0, 2);
   if (settingKey === 'challengeVariant') return clamp(Math.trunc(value), 0, 6);
@@ -3425,6 +3445,7 @@ function sanitizeOpSettingValue(settingKey, value) {
   if (settingKey === 'operator') return clamp(Math.trunc(value), 0, 4);
   if (settingKey === 'variant') return clamp(Math.trunc(value), 0, 2);
   if (settingKey === 'exponentMax') return clamp(Math.trunc(value), 1, 6);
+  if (settingKey === 'exponentDigits') return clamp(Math.trunc(value), 1, 3);
   if (settingKey === 'from' || settingKey === 'to') return clamp(value, 0, 7);
   if (settingKey === "maxDecimals") return clamp(value, 1, 3);
   return clamp(value, 1, 9);
@@ -3527,7 +3548,7 @@ function getWrongPenalty() {
 }
 
 function getBasePoints(operation) {
-  const base=['combinedAdv','fractionCombined','signedCombinedAdv','signedPowersCombined'].includes(operation?.kind)?20:10;
+  const base=['combinedAdv','fractionCombined','signedCombinedAdv','signedPowersCombined','powerCombinedAdv','quadraticEquation'].includes(operation?.kind)?20:10;
   return base*(1+Math.max(0,Math.min(2,(operation?.progressTier||1)-1))/2);
 }
 
@@ -3792,7 +3813,9 @@ function parsePlayerInput(text) {
 }
 
 function isCorrectOperationAnswer(text, operation) {
+  if(operation.answerFormat==='roots')return NinjaSecondary.correctRoots(text,operation);
   if(operation.answerFormat==='power'&&String(text).includes('^')){const match=String(text).match(/^(\d+)\^(-?\d+)$/);return Boolean(match&&BigInt(match[1])===BigInt(operation.data.base)&&BigInt(match[2])===BigInt(operation.data.e));}
+  if(operation.answerFormat==='power'&&!operation.answerFraction)return false;
   if(operation.answerFormat==='remainder'){
     const match=String(text).trim().match(/^(\d+)\s*(?:\/|[rR])\s*(\d+)$/);if(!match)return false;
     const q=BigInt(match[1]),r=BigInt(match[2]),d=BigInt(operation.data.d);

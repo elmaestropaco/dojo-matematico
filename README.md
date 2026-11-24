@@ -10,6 +10,49 @@ Web app educativa de calculo mental con modo individual, batalla local, teclado 
 
 La app funciona sin backend para los modos locales.
 
+## Algebra y mas calculos de ESO
+
+Version 2026.11.24-algebra-eso. Ocho tipos nuevos dentro de Mas retos: algebra y
+ESO: ecuaciones de primer grado, valor numerico de expresiones, ecuaciones de
+segundo grado con la formula, notacion cientifica, proporcionalidad directa e
+inversa, escalas, divisibilidad y Pitagoras. Cifras iniciales: 1 por defecto.
+
+Segundo grado admite dos raices exactas, en cualquier orden, separadas por ;.
+La tecla S o el + del bloque numerico permiten escribir ese separador. Se
+mantienen el teclado tactil, las fracciones y la coma decimal. Ver solucion
+muestra la formula con discriminante y las dos sustituciones. Se generan
+raices reales racionales o dobles, no aproximaciones de raices irracionales.
+
+Guia: CALCULO-ESO.md. Banco de problemas sin cambios: 2530 plantillas.
+No se requieren cambios de reglas de Firebase. Publica el release completo y
+recarga los dispositivos para compartir los nuevos generadores.
+
+## Organizacion del calculo
+
+Actualizacion 2026.11.24-calculo-mental: cifras iniciales a 1 en todos los
+calculos. Se conservan las preferencias guardadas; Todo a 1 cifra permite
+aplicar el cambio sin desmarcar operaciones. Los selectores de cantidades
+(por ejemplo, los 2 numeros de un MCM) no son selectores de cifras y se mantienen.
+
+En propiedades de potencias se eligen cifras del exponente: hasta 9, 99 o 999,
+con negativos opcionales. Productos/cocientes y potencia de potencia se responden
+como base^exponente. Sumas y combinadas grandes preguntan por un coeficiente
+con hueco para no exigir miles de cifras. Desarrollar el valor numerico de una
+potencia limita el exponente a 0-9; no acepta copiar la propia potencia como respuesta.
+
+Version 2026.11.24-organizacion. Las operaciones se agrupan en Naturales,
+Enteros y Potencias. Fracciones, decimales, porcentajes, magnitudes, tiempo
+y geometria tienen un bloque comun. No se duplican operaciones ni se pierden
+las cifras, sesiones o selecciones existentes.
+
+Borrar busqueda solo vacia el buscador. Quitar todas las operaciones desmarca
+todas, incluidas las filtradas o plegadas. Los chips mantienen su boton individual.
+Potencias incorpora sumas, restas, potencia de potencia y combinadas faciles y
+avanzadas. Los enteros permiten operandos de 1 a 9 cifras. Banco: 2530 plantillas.
+
+Guia de opciones, compatibilidad y pruebas: ORGANIZACION-CALCULO.md.
+No requiere cambios en Firebase; publica todos los archivos del nuevo release.
+
 ## Enteros, potencias y razonamiento
 
 Version 2026.11.24-enteros-potencias. Banco actual: **2530 plantillas**.
@@ -22,7 +65,7 @@ Tablas y fracciones escritas se conservan. La opcion se guarda en sesiones y
 se comparte con la sala. Se retira la llave flotante que tapaba Pista/Resolver;
 se mantienen el codigo del lobby y el del panel docente.
 
-En Mas retos de calculo hay un desplegable de Enteros y potencias: cuatro
+En la version anterior habia un desplegable de Enteros y potencias; ahora se separan: cuatro
 operaciones con signos, combinadas faciles/avanzadas, productos y cocientes
 de potencias de igual base y combinadas con enteros. Se elige si aparecen
 exponentes negativos. La respuesta puede ser 2^-3 o su valor exacto 1/8;

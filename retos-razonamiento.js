@@ -13,7 +13,7 @@
   const power=(base,e)=>e<0?rat(1,BigInt(base)**BigInt(-e)):rat(BigInt(base)**BigInt(e));
   const signed=n=>n<0?`(${n})`:String(n);
   function calculation(kind,cfg={},random=Math.random){
-    const pick=(a,b)=>a+Math.floor(random()*(b-a+1)),digits=clamp(cfg.digits,1,3,2),min=10**(digits-1),max=10**digits-1,number=()=>pick(min,max)*(pick(0,1)?-1:1);
+    const pick=(a,b)=>a+Math.floor(random()*(b-a+1)),digits=clamp(cfg.digits,1,9,2),min=10**(digits-1),max=10**digits-1,number=()=>pick(min,max)*(pick(0,1)?-1:1);
     let expression,n,answerFraction,data,explanation,answerFormat;
     if(kind.startsWith('signed')&&kind!=='signedPowersCombined'){
       let a=-pick(min,max),b=number(),c=number(),d=number();
@@ -22,7 +22,7 @@
         const divisor=pick(min,max),q=pick(1,Math.floor(max/divisor)),p=-divisor*q;
         n=(BigInt(a)-BigInt(b))*(BigInt(c)+BigInt(d))-BigInt(p)/BigInt(divisor);expression=`(${signed(a)} − ${signed(b)}) × (${signed(c)} + ${signed(d)}) − ${signed(p)} ÷ ${divisor}`;
         explanation=`Primero los paréntesis: ${a} − ${signed(b)} = ${a-b}; ${signed(c)} + ${signed(d)} = ${c+d}. Después el producto y la división: ${(BigInt(a)-BigInt(b))*(BigInt(c)+BigInt(d))} y ${p/divisor}. Finalmente restamos: ${n}.`;data={a,b,c,d,p,divisor};
-      }else if(kind==='signedCombinedEasy'){n=BigInt(a)+BigInt(b)*BigInt(c);expression=`${signed(a)} + ${signed(b)} × ${signed(c)}`;explanation=`Primero multiplicamos: ${signed(b)} × ${signed(c)} = ${b*c}. Después sumamos ${signed(a)}: ${n}.`;data={a,b,c};}
+      }else if(kind==='signedCombinedEasy'){n=BigInt(a)+BigInt(b)*BigInt(c);expression=`${signed(a)} + ${signed(b)} × ${signed(c)}`;explanation=`Primero multiplicamos: ${signed(b)} × ${signed(c)} = ${BigInt(b)*BigInt(c)}. Después sumamos ${signed(a)}: ${n}.`;data={a,b,c};}
       else{n=kind==='signedAdd'?BigInt(a)+BigInt(b):kind==='signedSub'?BigInt(a)-BigInt(b):BigInt(a)*BigInt(b);expression=`${signed(a)} ${{signedAdd:'+',signedSub:'−',signedMul:'×'}[kind]} ${signed(b)}`;explanation=`${expression} = ${n}. ${kind==='signedSub'?'Restar un entero equivale a sumar su opuesto.':kind==='signedMul'?'En un producto, signos iguales dan positivo y distintos, negativo.':'Al sumar signos distintos, restamos los valores absolutos y conservamos el signo del de mayor valor absoluto.'}`;data={a,b};}
       answerFraction=rat(n);
     }else{

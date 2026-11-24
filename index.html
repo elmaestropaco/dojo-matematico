@@ -261,7 +261,8 @@
         </div>
 
         <div class="config-box" id="operationsBox">
-          <div class="operation-search"><label for="operationSearch">🔎 Buscar operaciones<input id="operationSearch" type="search" placeholder="Sumas, fracciones, volumen…" autocomplete="off" /></label><button id="clearOperationSearch" class="btn-mini" type="button">Limpiar</button></div>
+          <div class="operation-search"><label for="operationSearch">🔎 Buscar operaciones<input id="operationSearch" type="search" placeholder="Naturales, enteros, potencias, fracciones…" autocomplete="off" /></label><button id="clearOperationSearch" class="btn-mini" type="button" title="Borra solo el texto de búsqueda; no desmarca operaciones">Borrar búsqueda</button><button id="clearAllOperationsTop" class="btn-mini" type="button">Quitar todas las operaciones</button></div>
+          <p id="operationClearNotice" class="hint" role="status"></p>
           <p id="operationSearchStatus" class="hint" role="status"></p>
           <p id="operationSearchEmpty" class="hint hidden">No hay operaciones que coincidan. Prueba otra palabra o limpia la búsqueda.</p>
           <details id="opsDropdown" class="ops-dropdown">
@@ -803,6 +804,9 @@
   <script src="ampliacion-aula.js" charset="utf-8"></script>
   <script src="banco-problemas/razonamiento-datos.js" charset="utf-8"></script>
   <script src="retos-razonamiento.js" charset="utf-8"></script>
+  <script src="organizacion-calculo.js" charset="utf-8"></script>
+  <script src="potencias-cifras.js" charset="utf-8"></script>
+  <script src="calculo-eso.js" charset="utf-8"></script>
   <script src="buscador-operaciones.js" charset="utf-8"></script>
   <script src="dinamica.js" charset="utf-8"></script>
   <script src="dinamica-ui.js" charset="utf-8"></script>

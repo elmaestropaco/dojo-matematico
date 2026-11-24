@@ -53,6 +53,9 @@ async function main() {
     }
     const sizes = [[360, 740], [390, 844], [768, 1024], [1366, 768], [1920, 1080]];
     const reasoningOnly = process.argv.includes('--reasoning-only');
+    const secondaryOnly = process.argv.includes('--secondary-only');
+    const exponentsOnly = process.argv.includes('--exponents-only');
+    if(exponentsOnly)await evaluate(`for(const [kind,cfg]of Object.entries(state.operationSettings))for(const key of NinjaExponentDigits.digitKeys)if(key in cfg&&cfg[key]!==1)throw Error('Non-mental default '+kind+':'+key);`);
     const aulaOnly = process.argv.includes('--aula-only');
     const fixesOnly = process.argv.includes('--fixes-only');
     const accessibilityOnly = process.argv.includes('--accessibility-only') || fixesOnly;
@@ -63,7 +66,7 @@ async function main() {
     const literacyOnly = process.argv.includes('--literacy-only');
     const spatialOnly = process.argv.includes('--spatial-only');
     const dynamicsOnly = process.argv.includes('--dynamics-only');
-    const controlsOnly = reasoningOnly || aulaOnly || accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
+    const controlsOnly = secondaryOnly || exponentsOnly || reasoningOnly || aulaOnly || accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
     const advancedOnly = process.argv.includes('--advanced-only');
     const calculationsOnly = process.argv.includes('--calculations-only');
     const integerOnly = process.argv.includes('--integer-only');
@@ -858,6 +861,34 @@ async function main() {
       assert.deepEqual(errors,[],`Operation search ${width}x${height}`);
     }
     console.log('OK: operation search across all groups, accent handling, no results, selection preservation, clear/Escape and restored disclosure state on five sizes.');
+    for(const [width,height] of sizes){
+      await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+      const errors=await evaluate(`(async()=>{
+        goHome();state.online=null;state.mode='single';state.activity='calculo';applyModeDependentUI();syncSettingsUIFromState();
+        const errors=[],box=refs.operationsBox,input=document.getElementById('operationSearch');input.value='';input.dispatchEvent(new Event('input'));
+        const keys=[...box.querySelectorAll('.op-toggle')].map(t=>t.dataset.op);
+        if(new Set(keys).size!==keys.length||Object.keys(state.operationSettings).some(k=>!keys.includes(k)))errors.push('lost/duplicated operation');
+        for(const [list,id]of [[NinjaNumberGroups.natural,'naturalNumbersGroup'],[NinjaNumberGroups.integer,'integerNumbersGroup'],[NinjaNumberGroups.powers,'powersOperationsGroup']])for(const key of list)if(!document.getElementById(id).querySelector('[data-op="'+key+'"]'))errors.push('wrong group '+key);
+        const savedDigits=state.operationSettings.addNoCarry.digits;setOperationEnabled('addNoCarry',true);setOperationEnabled('signedAdd',true);setOperationEnabled('powerPower',true);
+        input.value='potencias';input.dispatchEvent(new Event('input'));document.getElementById('clearOperationSearch').click();if(!state.operationSettings.addNoCarry.enabled)errors.push('search cleared selection');
+        input.value='enteros';input.dispatchEvent(new Event('input'));document.getElementById('clearAllOperationsTop').click();
+        if(getEnabledOperationKeys().length||box.querySelector('.op-toggle:checked')||Object.values(readPreferences().operationSettings).some(c=>c.enabled))errors.push('top clear did not clear all');
+        if(state.operationSettings.addNoCarry.digits!==savedDigits||input.value!=='enteros')errors.push('clear damaged settings/search');
+        setOperationEnabled('powerAdd',true);if(document.getElementById('operationClearNotice').textContent)errors.push('stale clear notice');
+        document.getElementById('clearOperationSearch').click();state.allowNegative=true;state.decimalsEnabled=true;updateOpsSummary();
+        if(document.getElementById('naturalDomainNotice').classList.contains('hidden'))errors.push('legacy flags hidden');
+        document.getElementById('usePureNaturalsBtn').click();if(state.allowNegative||state.decimalsEnabled||!state.operationSettings.powerAdd.enabled)errors.push('pure natural action');
+        for(const select of document.querySelectorAll('#integerNumbersGroup [data-setting-op^="signed"][data-setting-key="digits"]'))if(select.options.length!==9)errors.push('integer digit range');
+        box.querySelectorAll('details').forEach(d=>d.open=true);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+        if(document.documentElement.scrollWidth>innerWidth+2)errors.push('group horizontal overflow');
+        for(const el of box.querySelectorAll('select,button'))if(el.offsetParent!==null){const b=el.getBoundingClientRect();if(b.left<0||b.right>innerWidth+2)errors.push('control outside viewport');}
+        if(${width}===1366)window.scrollTo(0,box.offsetTop);
+        return errors.slice(0,10);
+      })()`);
+      assert.deepEqual(errors,[],`Number groups ${width}x${height}: ${errors}`);
+      if(width===1366){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'number-groups.png'),Buffer.from(shot.data,'base64'));}
+    }
+    console.log('OK: natural/integer/power/common groups, no lost operations, both clear actions, persistence, legacy flags and controls on five sizes.');
     for (const [width,height] of sizes) {
       await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
       const errors=await evaluate(`(async()=>{
@@ -870,6 +901,40 @@ async function main() {
         goHome();return errors;
       })()`);
       assert.deepEqual(errors,[],`Room code ${width}x${height}`);
+    }
+    if(secondaryOnly){
+      let views=0;
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const key of await evaluate('Object.keys(NinjaSecondary.defaults)'))for(const variant of [0,1,2])for(const digits of [1,3])for(const mode of ['single','duel']){
+          await evaluate(`goHome();state.online=null;state.reviewPractice=null;state.mode='${mode}';state.activity='calculo';state.orientation='vertical';state.progressiveEnabled=false;state.allowNegative=false;state.decimalsEnabled=false;state.muted=true;state.streaksEnabled=false;Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings['${key}']={...state.operationSettings['${key}'],enabled:true,digits:${digits},variant:${variant},signedValues:1,scientificRange:9};launchGame(['${key}'],60);stopTimer();refs.consentBanner.classList.add('hidden');`);
+          for(const solution of [false,true]){
+            const errors=await evaluate(`(async()=>{state.operationsByPlayer.forEach(op=>op.solutionRevealed=${solution});repaintPlayers();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];for(const panel of document.querySelectorAll('.player-panel')){const box=panel.getBoundingClientRect();for(const q of ['.operation','.answer-box','.numpad','.action-row']){const el=panel.querySelector(q),b=el.getBoundingClientRect();if(b.bottom>box.bottom+1||b.right>box.right+1||el.scrollHeight>el.clientHeight+2||el.scrollWidth>el.clientWidth+2)errors.push(q+' clipped '+el.scrollHeight+'/'+el.clientHeight);}}for(const op of state.operationsByPlayer.values()){if(!isCorrectOperationAnswer(op.answerDisplay,op))errors.push('invalid canonical answer');if(op.kind==='quadraticEquation'&&${solution}&&!document.getElementById('operation-0').textContent.includes('Fórmula'))errors.push('formula missing');}if(document.documentElement.scrollHeight>innerHeight+2)errors.push('page scroll');return errors;})()`);
+            assert.deepEqual(errors,[],`Secondary ${width} ${mode} ${key} variant=${variant} digits=${digits} solution=${solution}: ${errors}`);views++;
+            if(width===1366&&mode==='single'&&key==='quadraticEquation'&&variant===1&&digits===1&&solution){const shot=await send('Page.captureScreenshot',{format:'png'},sessionId);fs.writeFileSync(path.join(work,'quadratic-formula.png'),Buffer.from(shot.data,'base64'));}
+          }
+        }
+      }
+      await evaluate(`goHome();state.mode='single';state.activity='calculo';state.endCondition='unlimited';state.online=null;state.operationSettings.quadraticEquation={enabled:true,digits:1,variant:1,signedValues:1};launchGame(['quadraticEquation'],0);stopTimer();const op={...NinjaSecondary.generate('quadraticEquation',{digits:1}),data:{roots:[{numerator:'-1',denominator:'2'},{numerator:'1',denominator:'2'}]},answerDisplay:'-1/2;1/2'};state.operationsByPlayer.set(0,decorateOperation(op));repaintPlayers();state.players[0].input='';for(const key of ['-','1','f','2','s','0',',','5'])window.dispatchEvent(new KeyboardEvent('keydown',{key,bubbles:true}));if(state.players[0].input!=='-1/2;0,5')throw Error('roots physical keyboard');submitPlayerAnswer(0);if(state.players[0].score!==20)throw Error('roots scoring');
+        state.operationsByPlayer.set(0,decorateOperation(op));repaintPlayers();state.players[0].input='';for(const key of ['0',',','5',';','-','1','/','2'])document.querySelector('#numpad-0 [data-key="'+key+'"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,pointerId:1}));if(state.players[0].input!=='0,5;-1/2')throw Error('roots touch keyboard');submitPlayerAnswer(0);if(state.players[0].score!==40)throw Error('touch scoring');
+        goHome();state.mode='duel';launchGame(['quadraticEquation'],60);stopTimer();state.operationsByPlayer.set(1,decorateOperation(op));repaintPlayers();state.players[1].input='';for(const [key,code]of [['-','NumpadSubtract'],['1','Numpad1'],['/','NumpadDivide'],['2','Numpad2'],['+','NumpadAdd'],['0','Numpad0'],[',','NumpadDecimal'],['5','Numpad5']])window.dispatchEvent(new KeyboardEvent('keydown',{key,code,bubbles:true}));if(state.players[1].input!=='-1/2;0,5')throw Error('roots numpad');submitPlayerAnswer(1);if(state.players[1].score!==20)throw Error('numpad scoring');goHome();
+        state.operationSettings.quadraticEquation.variant=2;state.operationSettings.quadraticEquation.signedValues=1;savePreferences();if(readPreferences().operationSettings.quadraticEquation.variant!==2||buildOnlineConfig().operationSettings.quadraticEquation.signedValues!==1)throw Error('roots config round trip');`);
+      console.log('OK: '+views+' secondary layouts, all variants, five sizes, formula solutions, exact validation, physical/touch/numeric roots keyboards, scoring and configuration persistence.');
+    }
+    if(exponentsOnly){
+      await evaluate(`goHome();state.online=null;state.mode='single';state.activity='calculo';applyModeDependentUI();state.operationSettings.mul.enabled=true;state.operationSettings.mul.factorMax=9;state.operationSettings.sameBaseMul.exponentDigits=3;document.getElementById('mentalDefaultsBtn').click();if(state.operationSettings.mul.factorMax!==1||!state.operationSettings.mul.enabled||state.operationSettings.sameBaseMul.exponentDigits!==1||readPreferences().operationSettings.mul.factorMax!==1)throw Error('mental reset');for(const s of document.querySelectorAll('[data-setting-key="exponentDigits"]'))if(s.options.length!==(s.dataset.settingOp==='power'?1:3)||s.value!=='1')throw Error('exponent control');`);
+      let views=0;
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const key of await evaluate('NinjaNumberGroups.powers'))for(const digits of [1,2,3])for(const mode of ['single','duel']){
+          await evaluate(`goHome();state.mode='${mode}';state.activity='calculo';state.online=null;state.muted=true;state.progressiveEnabled=false;state.orientation='vertical';state.streaksEnabled=false;Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings['${key}']={...state.operationSettings['${key}'],enabled:true,digits:3,exponentDigits:${digits},negativeExponents:1};launchGame(['${key}'],60);stopTimer();refs.consentBanner.classList.add('hidden');`);
+          for(const solution of [false,true]){
+            const errors=await evaluate(`(async()=>{state.operationsByPlayer.forEach(op=>op.solutionRevealed=${solution});repaintPlayers();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];for(const panel of document.querySelectorAll('.player-panel')){const box=panel.getBoundingClientRect();for(const q of ['.operation','.answer-box','.numpad','.action-row']){const el=panel.querySelector(q),b=el.getBoundingClientRect();if(b.bottom>box.bottom+1||b.right>box.right+1||el.scrollHeight>el.clientHeight+2||el.scrollWidth>el.clientWidth+2)errors.push(q+' clipped');}}if(document.documentElement.scrollHeight>innerHeight+2)errors.push('page scroll');for(const op of state.operationsByPlayer.values())if(!isCorrectOperationAnswer(op.answerDisplay,op))errors.push('invalid canonical answer');return errors;})()`);
+            assert.deepEqual(errors,[],`Exponent digits ${width} ${mode} ${key} ${digits} solution=${solution}: ${errors}`);views++;
+          }
+        }
+      }
+      console.log('OK: '+views+' exponent-digit layouts, all power kinds, 9/99/999, solutions, exact answers, default controls and mental reset persistence.');
     }
     if(reasoningOnly){
       let views=0;const kinds=await evaluate('Object.keys(NinjaReasoning.defaults)'),families=await evaluate('Object.keys(NinjaReasoning.families)');

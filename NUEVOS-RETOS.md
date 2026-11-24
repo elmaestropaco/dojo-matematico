@@ -21,9 +21,9 @@ El ajuste afecta a problemas, no elimina rectas numericas esenciales del calculo
 
 ## Calculo con enteros
 
-En Mas retos de calculo, abre Enteros y potencias. Hay seis opciones independientes:
+En Operaciones, abre Numeros enteros. Hay seis opciones independientes:
 sumas, restas, multiplicaciones, divisiones exactas, combinadas faciles y avanzadas.
-Las cifras de los operandos van de 1 a 3 (2 por defecto). Los operandos admiten
+Las cifras de los operandos van de 1 a 9 (1 por defecto). Los operandos admiten
 signos positivos y negativos; los negativos se muestran entre parentesis.
 
 Las faciles combinan suma y producto respetando prioridad. Las avanzadas utilizan
@@ -36,8 +36,8 @@ los parentesis y signos se lean sin ambiguedad. El teclado incluye la tecla −.
 ## Potencias
 
 Opciones de multiplicar, dividir o combinar potencias de la misma base. Bases
-positivas de 2 a 9; nunca se generan bases cero. Exponente maximo en valor
-absoluto: de 1 a 6. Exponentes positivos y cero por defecto; opcionalmente,
+positivas de 2 a 9; nunca se generan bases cero. La interfaz actual permite
+1-3 cifras en exponentes: hasta 9, 99 o 999. Exponentes positivos y cero por defecto; opcionalmente,
 positivos y negativos. Sin negativos, los cocientes se construyen para que el
 exponente final no sea negativo tampoco.
 

@@ -2,7 +2,7 @@ function bindOperationSearch() {
   const input=document.getElementById('operationSearch'),box=document.getElementById('operationsBox');
   const clear=document.getElementById('clearOperationSearch'),status=document.getElementById('operationSearchStatus');
   const normalize=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es');
-  const entries=[...box.querySelectorAll('.op-toggle')].map(toggle=>({toggle,node:toggle.closest('.op-row, .measure-card, .challenge-config, .spatial-config')||toggle.closest('label'),text:normalize(OPERATION_LABELS[toggle.dataset.op]||'')}));
+  const entries=[...box.querySelectorAll('.op-toggle')].map(toggle=>({toggle,node:toggle.closest('.op-row, .measure-card, .challenge-config, .spatial-config')||toggle.closest('label'),text:normalize(`${OPERATION_LABELS[toggle.dataset.op]||''} ${toggle.closest('[data-search-terms]')?.dataset.searchTerms||''}`)}));
   const groups=[...box.querySelectorAll('details')].filter(group=>entries.some(e=>group.contains(e.node)));
   let previousOpen;
   function filter() {

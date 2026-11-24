@@ -8,7 +8,7 @@ function bindSessionTools() {
   const families = { enteros: 'Números enteros: sumas, restas, multiplicaciones y divisiones', fracciones: 'Fracciones', mcmMcd: 'Mínimo común múltiplo y máximo común divisor', porcentajes: 'Porcentajes', medidas: 'Medidas y conversiones', razonamiento: 'Razonamiento', geometria: 'Geometría: áreas y perímetros', compras: 'Dinero y compras', proporcionalidad: 'Proporcionalidad' };
   Object.assign(families,globalThis.NinjaAula?.families||{},globalThis.NinjaReasoning?.families||{});
   sessionCatalog = [
-    ...Object.entries(OPERATION_LABELS).map(([key, title]) => ({ id: `calc:${key}`, key, title, kind: 'calc', group: 'Cálculo' })),
+    ...Object.entries(OPERATION_LABELS).map(([key, title]) => ({ id: `calc:${key}`, key, title, kind: 'calc', group: `Cálculo · ${NinjaNumberGroups.domain(key)}` })),
     ...Object.entries(families).map(([key, title]) => ({ id: `problem:${key}`, key, title, kind: 'problem', group: 'Problemas' })),
     ...Object.entries(NinjaLiteracyProblems.labels).map(([key,title]) => ({ id: `problem:${key}`, key, title, kind: 'problem', group: 'Problemas' })),
     ...Object.entries(NinjaSpatial.labels).map(([key,title]) => ({ id: `problem:${key}`, key, title, kind: 'problem', group: 'Problemas' })),
