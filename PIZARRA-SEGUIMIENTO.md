@@ -33,8 +33,10 @@ se convierten automaticamente en historico del alumnado.
 
 Filtros: periodo, dificultad fija/progresiva, alumno, contenido e indicador.
 Los tres ultimos se aplican sobre los registros acumulados del periodo y
-dificultad escogidos. Los nombres iguales, ignorando mayusculas y espacios
-exteriores, se agrupan; usa nombres distintos para alumnos distintos.
+dificultad escogidos. Desde la version aula5 las nuevas capturas usan una
+identidad separada del nombre; el docente puede asignar referencias locales.
+Solo los registros antiguos sin identificador se agrupan por nombres iguales,
+ignorando mayusculas y espacios exteriores. Detalles en AULA.md.
 
 Vistas: resumen por alumno, detalle por contenido y plan de repaso. Para nuevas
 rondas se distingue el tipo seleccionado de calculo, y las estructuras de

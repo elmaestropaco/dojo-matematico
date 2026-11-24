@@ -28,6 +28,8 @@
     else if(family==='medidas')['_measureMinDigits','_measureMaxDigits'].forEach(key=>raise(result,key,9));
     else if(['horarios','datos','estadistica','investigacion'].includes(family))raise(result,'_literacyLevel',3);
     else if(family==='espacio')raise(result,'_spaceDigits',3);
+    else if(root.NinjaReasoning&&Object.hasOwn(root.NinjaReasoning.families,family))raise(result,'_aulaLevel',3);
+    else if(['repartos','fraccionSentido','geometriaAplicada','comprasDecision','estimacion','inversa'].includes(family))raise(result,'_aulaLevel',3);
     else raise(result,'_newDigits',3);
     return {settings:result,tier:1+growth};
   }

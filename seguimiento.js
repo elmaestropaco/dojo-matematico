@@ -22,7 +22,7 @@
       if (!p || !p.name) continue;
       const previous = players[key], attempts = count(p.correctCount) + count(p.wrongCount);
       if (previous && attempts < count(previous.correctCount) + count(previous.wrongCount)) continue;
-      players[key] = { name: String(p.name || 'Ninja'), score: count(p.score), correctCount: count(p.correctCount), wrongCount: count(p.wrongCount), learningStats: p.learningStats || previous?.learningStats || {}, isConnected: p.isConnected !== false };
+      players[key] = { name: String(p.name || 'Ninja'), studentId: typeof root.classroomIdentity==='function'?root.classroomIdentity(key):`uid:${key}`, score: count(p.score), correctCount: count(p.correctCount), wrongCount: count(p.wrongCount), learningStats: p.learningStats || previous?.learningStats || {}, isConnected: p.isConnected !== false };
     }
     const snapshot = { id, code: String(code), date: new Date(room.startedAt).toISOString(), mode: room.mode || 'online', activity: config.activity || 'calculo',
       contents: config.activity === 'problemas' ? config.problemSettings?._family || 'enteros' : (config.enabledKeys || []).join(', '), endCondition: config.endCondition || 'time', goalCount: config.goalCount || 0, progressiveEnabled:config.progressiveEnabled===true, teamsEnabled:config.teamsEnabled===true, teamNames:config.teamNames||[], teamAssignments:config.teamAssignments||{}, status: room.status, players };
@@ -31,6 +31,8 @@
   }
   function topic(operation) {
     const family = operation.problem?.family;
+    if(root.NinjaReasoning&&Object.hasOwn(root.NinjaReasoning.families,family))return `problemas_aplicados_${family}_v${operation.problem.data.v}`;
+    if(root.NinjaAula?.families[family])return `problemas_aplicados_${family}_v${operation.problem.data.v}`;
     if (['geometria','espacio','horarios','datos','estadistica','investigacion'].includes(family)) {
       const match = String(operation.problem.templateId || '').match(/-(\d+)$/);
       if (match) return `problemas_${family}_v${Number(match[1])-1}`;
@@ -38,6 +40,8 @@
     return operation.problem ? `problemas_${operation.problem.family || 'enteros'}_${[...(operation.problem.categories || [operation.problem.category || 'mixto'])].sort().join('_')}` : operation.skillKind || operation.kind || 'calculo';
   }
   function topicLabel(key) {
+    const applied=key.match(/^problemas_aplicados_([A-Za-z]+)_v(\d+)$/);
+    if(applied)return 'Problemas · '+(root.NinjaAula?.variants[applied[1]]?.[Number(applied[2])]||root.NinjaReasoning?.variants[applied[1]]?.[Number(applied[2])]||key);
     const variant = key.match(/^problemas_(geometria|espacio|horarios|datos|estadistica|investigacion)_v(\d+)$/);
     if (variant) {
       const labels = variant[1] === 'geometria' ? root.NinjaGeometry?.names : variant[1] === 'espacio' ? root.NinjaSpatial?.variants : root.NinjaLiteracyProblems?.variants?.[variant[1]];
@@ -61,7 +65,7 @@
   function aggregate(rounds = read()) {
     const all = new Map();
     for (const round of rounds) for (const p of Object.values(round.players || {})) {
-      const key = String(p.name).trim().toLocaleLowerCase('es');
+      const key = p.studentId || String(p.name).trim().toLocaleLowerCase('es');
       const row = all.get(key) || { name: p.name, rounds: 0, score: 0, correct: 0, wrong: 0, hints: 0, solutions: 0, skips: 0, assisted: 0, topics: {} };
       row.rounds++; row.score += count(p.score); row.correct += count(p.correctCount); row.wrong += count(p.wrongCount);
       for (const [topic, stats] of Object.entries(p.learningStats || {})) {
@@ -116,9 +120,22 @@
   }
   function printHtml(rounds = read(), options = {}) {
     const data = options.insights && root.NinjaInsights ? root.NinjaInsights.sheets(rounds, options.insights) : sheets(rounds);
-    return `<!doctype html><html lang="es"><meta charset="utf-8"><title>Seguimiento del alumnado</title><style>body{font:12px Verdana,sans-serif;color:#163c36;margin:24px}h1{font-size:23px}table{border-collapse:collapse;width:100%;margin:16px 0 30px;table-layout:auto}th,td{border:1px solid #abc7bf;padding:6px;text-align:left;overflow-wrap:anywhere}th{background:#e3f2ec}tr{break-inside:avoid}h2{break-after:avoid}@page{size:A4 landscape;margin:12mm}@media print{button{display:none}}</style><h1>Dojo Matemático · Seguimiento del alumnado</h1><p>Datos guardados en este navegador. ${rounds.length} rondas. Los nombres iguales se agrupan; usa nombres distintos para alumnos distintos. Indicadores orientativos, no notas ni diagnósticos; menos de cinco observaciones: pocos datos. Fallos: intentos, incluidos reintentos. Pistas: consultas. Autonomía: aciertos sin pista frente a aciertos, soluciones y saltos registrados. No compara dificultades; las explicaciones compartidas no cuentan como soluciones individuales. Los datos antiguos pueden no tener desglose. Los puntos en rondas de origen son totales de ronda, no por contenido.</p><button onclick="window.print()">Imprimir / Guardar como PDF</button>${data.map(s => `<h2>${escape(s.name)}</h2><table><thead><tr>${s.rows[0].map(v => `<th>${escape(v)}</th>`).join('')}</tr></thead><tbody>${s.rows.slice(1).map(r => `<tr>${r.map(v => `<td>${escape(v)}</td>`).join('')}</tr>`).join('')}</tbody></table>`).join('')}</html>`;
+    return `<!doctype html><html lang="es"><meta charset="utf-8"><title>Seguimiento del alumnado</title><style>body{font:12px Verdana,sans-serif;color:#163c36;margin:24px}h1{font-size:23px}table{border-collapse:collapse;width:100%;margin:16px 0 30px;table-layout:auto}th,td{border:1px solid #abc7bf;padding:6px;text-align:left;overflow-wrap:anywhere}th{background:#e3f2ec}tr{break-inside:avoid}h2{break-after:avoid}@page{size:A4 landscape;margin:12mm}@media print{button{display:none}}</style><h1>Dojo Matemático · Seguimiento del alumnado</h1><p>Datos guardados en este navegador. ${rounds.length} rondas. Las nuevas rondas usan identificadores; los datos antiguos sin identificador siguen agrupados por nombre. Indicadores orientativos, no notas ni diagnósticos; menos de cinco observaciones: pocos datos. Fallos: intentos, incluidos reintentos. Pistas: consultas. Autonomía: aciertos sin pista frente a aciertos, soluciones y saltos registrados. No compara dificultades; las explicaciones compartidas no cuentan como soluciones individuales. Los datos antiguos pueden no tener desglose. Los puntos en rondas de origen son totales de ronda, no por contenido.</p><button onclick="window.print()">Imprimir / Guardar como PDF</button>${data.map(s => `<h2>${escape(s.name)}</h2><table><thead><tr>${s.rows[0].map(v => `<th>${escape(v)}</th>`).join('')}</tr></thead><tbody>${s.rows.slice(1).map(r => `<tr>${r.map(v => `<td>${escape(v)}</td>`).join('')}</tr>`).join('')}</tbody></table>`).join('')}</html>`;
   }
   function clear() { localStorage.removeItem(STORAGE); volatileRounds = []; lastCleared = Date.now(); try { localStorage.setItem(CLEAR_EPOCH, String(lastCleared)); } catch { /* The in-memory cutoff still protects this session. */ } }
-  root.NinjaLearning = { read, capture, record, aggregate, sheets, workbook, printHtml, clear, topic, topicLabel, precision };
+  function mergeImported(rounds){
+    const clean=root.NinjaTransfer.history(rounds);
+    const byId=new Map(read().map(r=>[r.id,r]));
+    const observations=p=>count(p.correctCount)+count(p.wrongCount)+Object.values(p.learningStats||{}).reduce((n,s)=>n+count(s?.hints)+count(s?.solutions)+count(s?.skips),0);
+    for(const incoming of clean){
+      const old=byId.get(incoming.id);if(!old){byId.set(incoming.id,incoming);continue;}
+      const players={...old.players};
+      for(const [uid,p]of Object.entries(incoming.players)){const previous=players[uid];if(!previous||observations(p)>observations(previous)||(observations(p)===observations(previous)&&old.status!=='finished'&&incoming.status==='finished'))players[uid]=p;}
+      byId.set(incoming.id,{...old,status:old.status==='finished'||incoming.status==='finished'?'finished':old.status,players});
+    }
+    const merged=[...byId.values()].sort((a,b)=>a.date.localeCompare(b.date)).slice(-500);
+    volatileRounds=merged;try{localStorage.setItem(STORAGE,JSON.stringify(merged));volatileRounds=[];return true;}catch{return false;}
+  }
+  root.NinjaLearning = { read, capture, record, aggregate, sheets, workbook, printHtml, clear, topic, topicLabel, precision, mergeImported };
   if (typeof module !== 'undefined') module.exports = root.NinjaLearning;
 }(globalThis));

@@ -10,6 +10,85 @@ Web app educativa de calculo mental con modo individual, batalla local, teclado 
 
 La app funciona sin backend para los modos locales.
 
+## Enteros, potencias y razonamiento
+
+Version 2026.11.24-enteros-potencias. Banco actual: **2530 plantillas**.
+Se anaden 210 plantillas (21 estructuras con diez contextos): series,
+combinatoria, mediana/moda/rango, enteros en contexto, porcentajes inversos
+y sucesivos, planificacion y lectura visual.
+
+La casilla Mostrar dibujos permite ocultarlos sin perder los datos necesarios.
+Tablas y fracciones escritas se conservan. La opcion se guarda en sesiones y
+se comparte con la sala. Se retira la llave flotante que tapaba Pista/Resolver;
+se mantienen el codigo del lobby y el del panel docente.
+
+En Mas retos de calculo hay un desplegable de Enteros y potencias: cuatro
+operaciones con signos, combinadas faciles/avanzadas, productos y cocientes
+de potencias de igual base y combinadas con enteros. Se elige si aparecen
+exponentes negativos. La respuesta puede ser 2^-3 o su valor exacto 1/8;
+tecla tactil ^, letra P o multiplicar del bloque numerico para el exponente.
+
+Guia, limites y pruebas: NUEVOS-RETOS.md. No requiere cambios en Firebase.
+Recarga todos los equipos tras publicar; comprueba tambien la pizarra fisica.
+
+## Cinco bloques de ampliacion del aula
+
+Version 2026.11.24-aula5. Banco al cerrar esa tanda: **2320 plantillas**. Se anaden 180
+plantillas (18 razonamientos con diez contextos): divisiones con resto y su
+interpretacion, fracciones con sentido, geometria aplicada, compras, estimacion
+y reparto inverso. Nivel matematico y lectura breve/completa independientes.
+
+Cinco calculos nuevos: cociente/resto, fracciones equivalentes con huecos,
+comparacion de fracciones, suma/resta de duraciones y medidas compuestas.
+Mantienen teclado tactil, fisico y numerico. No necesitan activar decimales.
+
+El boton de libros abre herramientas plegadas: identificadores separados del
+nombre para informes, secuencia de sesiones sin cambiar el codigo de sala y
+copias JSON para trasladar sesiones e historial. Preparar una ronda no la
+inicia. El plan de informes puede preparar un repaso por contenido y los errores
+locales pueden convertirse en practica individual, sin cambiar la clasificacion.
+
+Guia completa, limites, privacidad y pruebas: **AULA.md**. Copia de seguridad
+anterior en backups. No requiere cambiar reglas ni configuracion Firebase.
+Recarga todos los dispositivos tras actualizar. La prueba en una pizarra fisica
+sigue siendo necesaria para comprobar su controlador y rendimiento reales.
+
+## Correcciones del 24 de noviembre de 2026
+
+- Operaciones: las cruces sincronizan todas las casillas del mismo tipo y las
+  preferencias. Quitar todas elimina tambien las operaciones de los grupos
+  de conversiones, retos y volumenes, aunque esten plegados o filtrados. No
+  borra las cifras configuradas. Limpiar en el buscador solo borra la busqueda.
+- Salas: salir de la partida envia desconexion sin depender de la semilla de ronda;
+  el marcador, la espera y el maestro excluyen perfiles desconectados. Se
+  avisa tambien al abandonar la pagina y se mantiene onDisconnect en Firebase.
+  Hay latidos cada 15 segundos y se ocultan presencias con mas de 90 segundos
+  sin senal, revisadas tambien cuando no llegan nuevos datos. Un cierre brusco
+  o un corte de red no garantiza una deteccion instantanea.
+- Nombres iguales: se distinguen con sufijos numericos en todos los clientes,
+  incluidos nombres con emojis y diferencias solo de mayusculas/espacios.
+  Se evitan colisiones con nombres que ya contienen esos sufijos. La identidad
+  sigue siendo el UID: volver con el mismo navegador recupera el perfil, no
+  crea otro. No se elimina el progreso almacenado al desconectarse. Los sufijos
+  se calculan con los perfiles presentes en la sala, incluidos los offline;
+  son identificadores de esa sala, no identificadores permanentes del alumno.
+- Banco: 40 historias nuevas, diez por operacion basica. Total: 2140 plantillas.
+  Los enteros tienen 50 por operacion individual y 40 por cada combinacion.
+  Fracciones y otras familias conservan sus cantidades anteriores.
+
+No se cambian reglas ni configuracion de Firebase. Recarga todos los equipos
+tras subir la actualizacion. Pruebas: `node tests/browser-smoke.cjs --fixes-only`,
+`node tests/firebase-rounds.test.cjs`, `node tests/problem-bank.test.cjs` y
+`node tests/problem-language.test.cjs`. La prueba opcional
+`node tests/live-security.cjs --live` usa cuentas anonimas y sala desechables.
+
+Comprobado el 2026-11-24: pruebas matematicas y de lenguaje; 4108 vistas de
+problemas enteros en cinco tamanos; operaciones, chips y preferencias; 114
+vistas del maestro sin scroll; y regresiones de progresion, equipos y pausa.
+Prueba real con tres identidades aisladas en Firebase: nombres duplicados con
+emojis, salida explicita, desconexion del servidor, reingreso, revancha y
+permisos. Las cuentas y la sala desechables se han eliminado al terminar.
+
 ## Pizarra y Seguimiento (bloque 6)
 
 El boton de pantalla, en cabecera y durante la partida, abre Accesibilidad.
@@ -179,7 +258,7 @@ Los niveles Iniciacion, Intermedio y Avanzado ajustan cantidades, cantidad de
 filas y precision de los horarios, no la velocidad lectora. Cada familia tiene
 su selector de tipos, independiente de la mezcla de operaciones aritmeticas.
 Las plantillas son diez contextos por cuatro estructuras, no 160 estructuras
-de razonamiento distintas. El total del banco es de 2100 plantillas.
+de razonamiento distintas. El total actual del banco es de 2530 plantillas.
 
 Las opciones se seleccionan con el tactil o el raton y se confirman con Enviar;
 el teclado fisico admite su numero y Enter. Volver a pulsar una opcion la
@@ -194,11 +273,11 @@ Fuentes editables, campos y ejemplos en banco-problemas/GUIA-LECTURA.md.
 Pruebas: node tests/literacy.test.cjs y
 node tests/browser-smoke.cjs --literacy-only.
 
-En la pantalla inicial, elige **Que quieres practicar > Problemas**. Mantiene las modalidades entrenamiento, batalla local, online y maestro. Incluye **2100 plantillas**: 600 de numeros enteros, 600 de fracciones, 120 de MCM/MCD, 160 de porcentajes, 160 de medidas, 260 de razonamiento, geometria, compras y proporcionalidad 160 de horarios, lectura de datos, estadistica e investigacion y 40 de geometria espacial. Enteros y fracciones tienen 40 de cada operacion individual y 40 de cada una de las 11 combinaciones de dos, tres o cuatro operaciones. MCM/MCD tiene 40 individuales de cada concepto y 40 que utilizan ambos. El desglose esta en `banco-problemas/RECUENTO.md`. Los bloques de categoria estan plegados y conservan su altura propia al desplegar un vecino. Durante la pregunta solo aparece Lee y resuelve: no se muestra la operacion necesaria ni el numero de pasos como pista involuntaria.
+En la pantalla inicial, elige **Que quieres practicar > Problemas**. Mantiene las modalidades entrenamiento, batalla local, online y maestro. Incluye **2530 plantillas**: 640 de numeros enteros, 600 de fracciones, 120 de MCM/MCD, 160 de porcentajes, 160 de medidas, 260 de razonamiento, geometria, compras y proporcionalidad 160 de horarios, lectura de datos, estadistica e investigacion y 40 de geometria espacial, mas 180 de razonamiento aplicado y 210 de series, datos y decisiones. Enteros tienen 50 de cada operacion individual y fracciones tienen 40; ambos tienen 40 de cada una de las 11 combinaciones de dos, tres o cuatro operaciones. MCM/MCD tiene 40 individuales de cada concepto y 40 que utilizan ambos. El desglose esta en `banco-problemas/RECUENTO.md`. Los bloques de categoria estan plegados y conservan su altura propia al desplegar un vecino. Durante la pregunta solo aparece Lee y resuelve: no se muestra la operacion necesaria ni el numero de pasos como pista involuntaria.
 
 En enteros hay selectores Minimo y Maximo de cifras (1 a 9). Si coinciden, las cifras son fijas; si difieren, forman un intervalo. Se mantienen los limites de cada contexto. Los enunciados usan frases naturales y vocabulario accesible: Facil corresponde a un tipo de problema directo, Media pide razonamiento y Avanzada puede tener dos pasos. Para empezar a los 6 anos se recomienda Facil y una cifra. Responde solo con el numero, sin separadores de miles. Ver solucion explica los pasos sin sumar puntos.
 
-Multiplicaciones tiene rangos independientes para Multiplicador 1 y Multiplicador 2; divisiones, para Dividendo y Divisor. Se guardan en el navegador y se comparten en las salas online. Las preferencias anteriores migran su rango comun a ambos operandos. En problemas de varios pasos se aplican a las cantidades dadas, segun el primer paso en que intervienen; un resultado intermedio no se recorta para forzar sus cifras. Las divisiones siempre son exactas. Algunos contextos tienen limites razonables (por ejemplo, personas por mesa); el contador muestra las plantillas compatibles con los ajustes actuales, no siempre las 600.
+Multiplicaciones tiene rangos independientes para Multiplicador 1 y Multiplicador 2; divisiones, para Dividendo y Divisor. Se guardan en el navegador y se comparten en las salas online. Las preferencias anteriores migran su rango comun a ambos operandos. En problemas de varios pasos se aplican a las cantidades dadas, segun el primer paso en que intervienen; un resultado intermedio no se recorta para forzar sus cifras. Las divisiones siempre son exactas. Algunos contextos tienen limites razonables (por ejemplo, personas por mesa); el contador muestra las plantillas compatibles con los ajustes actuales, no siempre las 640.
 
 El selector de mezcla ofrece Solo individuales (un tipo por problema), Solo combinados (todos los tipos marcados en cada problema) e Individuales y combinados. No se incluyen operaciones sin marcar. Los combinados necesitan al menos dos tipos seleccionados; su numero de pasos depende de la seleccion y los ajustes de dificultad por categoria se aplican a los individuales. Las cifras se asignan a cada cantidad segun la operacion que la utiliza primero. Los resultados intermedios pueden tener mas cifras.
 
@@ -216,7 +295,7 @@ Las salas online comparten configuracion, orden de plantillas y variantes numeri
 
 Consulta `banco-problemas/GUIA-Y-PLANTILLA.md`. Para comprobar los ejemplos ejecuta `node banco-problemas/validar-banco.cjs`; las pruebas del formato se ejecutan con `node tests/problem-bank.test.cjs`.
 
-Tras editar los JSON ejecuta `node banco-problemas/compilar-banco.cjs` y sube tambien el `datos.js` generado. Para comprobar el motor ejecuta `node tests/problems-mode.test.cjs`. Las pruebas de navegador verifican las 600 plantillas y sus soluciones con las dos letras en escritorio, y una seleccion de los textos mas largos y problemas de varios pasos en cinco tamanos, individual y batalla, junto al reloj, plegables y controles independientes de operandos.
+Tras editar los JSON ejecuta `node banco-problemas/compilar-banco.cjs` y sube tambien el `datos.js` generado. Para comprobar el motor ejecuta `node tests/problems-mode.test.cjs`. Las pruebas de navegador verifican las 640 plantillas y sus soluciones con las dos letras en escritorio, y una seleccion de los textos mas largos y problemas de varios pasos en cinco tamanos, individual y batalla, junto al reloj, plegables y controles independientes de operandos.
 
 El banco ampliado se edita en `banco-problemas/ampliado.json`; el compilador tambien reconstruye `ampliado-datos.js`. `matematicas-extra.js` contiene el motor racional exacto y MCM/MCD, y debe cargarse despues de `problemas.js` y antes de `app.js`. Ejecuta `node tests/advanced-math.test.cjs` para comprobar las nuevas familias y `node tests/browser-smoke.cjs --advanced-only` para sus vistas. El constructor `crear-banco-ampliado.cjs` reconstruye el catalogo inicial; no lo ejecutes sobre un banco ampliado editado sin guardar antes tus cambios.
 

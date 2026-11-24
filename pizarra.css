@@ -7,6 +7,10 @@
 .report-filters { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,220px),1fr)); gap: 12px; margin: 16px 0; }
 .report-filters label { display: grid; gap: 6px; min-width: 0; }
 .report-filters select { width: 100%; min-width: 0; }
+.learning-dialog, .help-dialog { touch-action: pan-y; overscroll-behavior: contain; }
+.report-table-wrap { touch-action: pan-x pan-y; }
+.visual-fallback { border-left: 3px solid var(--text-soft); padding-left: .4em; margin: .3em 0; font-size: .85em; line-height: 1.25; }
+body.game-running .operation.numeric-reasoning:has(.calculation-challenge) { font-size: clamp(1.4rem, 5dvh, 3.2rem); }
 .report-caveat { border-left: 4px solid currentColor; padding-left: 12px; font-size: .88rem; }
 .reports-dialog #reportsContent { min-width: 0; }
 .reports-dialog td { overflow-wrap: anywhere; }
@@ -18,6 +22,14 @@
 .insight-badge[data-status="secure"] { color: #14532d; background: #e4f6e9; }
 .insight-plan { padding: 14px; margin: 12px 0; border: 1px solid var(--border); border-radius: 12px; }
 .insight-plan h4 { margin: 0; overflow-wrap: anywhere; }
+.classroom-student { display: grid; grid-template-columns: minmax(0,1fr) minmax(100px,180px); gap: 12px; align-items: center; margin: 12px 0; overflow-wrap: anywhere; }
+#classroomDialog details { margin: 14px 0; padding: 12px; border: 1px solid var(--border); border-radius: 10px; }
+#classroomDialog summary { cursor: pointer; font-weight: 700; }
+#classroomDialog select, #classroomDialog input { max-width: 100%; }
+#classroomDialog ol { overflow-wrap: anywhere; }
+@media(max-width:950px){
+  body.game-running.problems-running .players-wrap:is(.duel-vertical,.duel-face) .answer-box { min-height: 0; padding: 2px; font-size: 1rem; line-height: 1; }
+}
 body[data-board="true"] {
   --bg-1: #fff; --bg-2: #fff; --container: #fff; --panel: #fff;
   --text-main: #101010; --text-soft: #242424; --border: #333;

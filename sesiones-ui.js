@@ -6,6 +6,7 @@ function bindSessionTools() {
   try { storage = window.localStorage; } catch { storage = { getItem() { throw Error('storage'); }, setItem() { throw Error('storage'); } }; }
   sessionLibrary = NinjaSessions.create(storage);
   const families = { enteros: 'Números enteros: sumas, restas, multiplicaciones y divisiones', fracciones: 'Fracciones', mcmMcd: 'Mínimo común múltiplo y máximo común divisor', porcentajes: 'Porcentajes', medidas: 'Medidas y conversiones', razonamiento: 'Razonamiento', geometria: 'Geometría: áreas y perímetros', compras: 'Dinero y compras', proporcionalidad: 'Proporcionalidad' };
+  Object.assign(families,globalThis.NinjaAula?.families||{},globalThis.NinjaReasoning?.families||{});
   sessionCatalog = [
     ...Object.entries(OPERATION_LABELS).map(([key, title]) => ({ id: `calc:${key}`, key, title, kind: 'calc', group: 'Cálculo' })),
     ...Object.entries(families).map(([key, title]) => ({ id: `problem:${key}`, key, title, kind: 'problem', group: 'Problemas' })),

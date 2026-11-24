@@ -2,6 +2,17 @@
 
 Inicio: 2026-11-11. Se implementa y comprueba un bloque antes de pasar al siguiente.
 
+La segunda tanda, solicitada el 2026-11-24, esta documentada en AULA.md:
+auditoria del banco, 180 problemas aplicados, cinco calculos nuevos, herramientas
+docentes (identidad, secuencia, transferencias y repaso) y estabilidad. Mantiene
+los seis bloques anteriores y no cambia las reglas de Firebase.
+
+Tercera tanda del 2026-11-24: NUEVOS-RETOS.md. 210 problemas (21 estructuras),
+dibujos opcionales con datos alternativos, cuatro operaciones con enteros,
+combinadas faciles y avanzadas, potencias de igual base con exponentes de ambos
+signos y combinadas con enteros. Codigo flotante retirado de la arena. Total
+actual: 2530 plantillas. Sin cambios en las reglas de Firebase.
+
 | Bloque | Alcance | Estado |
 | --- | --- | --- |
 | 1. Organizar el dojo | Sesiones guardadas con nombre, favoritas y buscador de actividades. | Completado y comprobado |
@@ -138,3 +149,21 @@ de alto contraste en cinco tamanos y tres temas, 114 vistas del maestro con
 todos los alumnos sin scroll, arranque local real sin Firebase y regresiones
 de aprendizaje y dinamica. No hay cambios de reglas Firebase ni nuevas
 plantillas: el banco mantiene 2100. Detalles en PIZARRA-SEGUIMIENTO.md.
+
+## Mantenimiento del 2026-11-24
+
+Correccion de la sincronizacion de chips, casillas y preferencias; boton Quitar
+todas que incluye los grupos plegados/filtrados; salida de sala independiente
+de la semilla, presencia con latidos y descarte visual de conexiones obsoletas;
+nombres repetidos diferenciados sin sustituir la identidad UID. Se conservan
+los datos de progreso al desconectarse y se recuperan al volver.
+
+40 nuevos enunciados naturales de enteros (10 por operacion), con concordancia,
+divisiones exactas, soluciones y cifras configurables. El banco actual alcanza
+2140 plantillas. No se anaden meros cambios de titulo ni se cuentan variantes
+numericas como plantillas nuevas. Sin cambios de reglas Firebase.
+
+Verificados: matematicas/lenguaje, 4108 vistas de problemas enteros, regresiones
+de dinamica y maestro, retirada de cada operacion y de todas, y prueba real
+de Firebase con tres identidades, nombres iguales con emojis, salida explicita,
+desconexion del servidor y reingreso. Copia de seguridad previa en backups.

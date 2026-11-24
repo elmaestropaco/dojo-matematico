@@ -1,6 +1,6 @@
 param(
     [string]$Fecha = (Get-Date -Format 'yyyyMMdd'),
-    [string]$Etiqueta = 'bloque6-pizarra-seguimiento'
+    [string]$Etiqueta = 'enteros-potencias-razonamiento'
 )
 $ErrorActionPreference = 'Stop'
 if ($Fecha -notmatch '^\d{8}$' -or $Etiqueta -notmatch '^[a-z0-9-]+$') { throw 'Fecha o etiqueta no valida.' }
@@ -10,7 +10,7 @@ $items = @('.github', 'assets', 'firebase', 'banco-problemas', 'tests', '.gitign
     'geometria.js', 'ampliacion.js', 'seguimiento.js', 'aprendizaje-ui.js', 'sesiones.js', 'sesiones-ui.js', 'retos-calculo.js', 'lectura-problemas.js', 'espacio.js', 'buscador-operaciones.js', 'dinamica.js', 'dinamica-ui.js', 'PLAN-MEJORAS.md',
     'firebase-config.example.js', 'firebase-online.js', 'index.html', 'README.md',
     'SEGURIDAD.md', 'DINAMICA.md', 'PIZARRA-SEGUIMIENTO.md', 'styles.css', 'renovacion.css', 'pizarra.css',
-    'accesibilidad.js', 'informes-contenido.js', 'informes-ui.js', 'crear-release.ps1')
+    'accesibilidad.js', 'informes-contenido.js', 'informes-ui.js', 'ampliacion-aula.js', 'retos-razonamiento.js', 'aula-datos.js', 'aula-ui.js', 'AULA.md', 'NUEVOS-RETOS.md', 'crear-release.ps1')
 $files = @($items | ForEach-Object {
     $item = Get-Item -LiteralPath (Join-Path $root $_) -Force
     if ($item.PSIsContainer) { Get-ChildItem -LiteralPath $item.FullName -File -Recurse -Force }

@@ -132,10 +132,29 @@
     async allowPlayer(code, uid) { await requireOnline(this); await this.roomRef(code).child(`blocked/${uid}`).remove(); },
     async deleteRoom(code) { await requireOnline(this); await this.roomRef(code).remove(); },
     watchConnection(callback) { const ref = this.db.ref('.info/connected'), listener = snap => callback(snap.val() === true); ref.on('value', listener); return () => ref.off('value', listener); },
+    async leaveRoom(code, uid) {
+      this.presenceToken = {};
+      await requireOnline(this); if (uid !== this.uid()) throw Error('Identidad de participante incorrecta.');
+      const ref = this.roomRef(code).child(`players/${uid}`);
+      await ref.update({ isConnected: false, lastSeenAt: this.now() });
+    },
+    async heartbeat(code, uid) {
+      await requireOnline(this); if (uid !== this.uid()) return;
+      // Never set isConnected here: an in-flight heartbeat must not revive a departed pupil.
+      await this.roomRef(code).child(`players/${uid}`).update({ lastSeenAt: this.now() });
+    },
+    async cancelPresence(code, uid) {
+      const token=this.presenceToken={};
+      await requireOnline(this);if(uid!==this.uid()||this.presenceToken!==token)return;
+      await this.roomRef(code).child(`players/${uid}`).onDisconnect().cancel();
+    },
     async setPresence(code, uid) {
+      const token = this.presenceToken = {};
       await requireOnline(this); if (uid !== this.uid()) throw Error('Identidad de participante incorrecta.');
       const ref = this.roomRef(code).child(`players/${uid}`), snapshot = await ref.get(); if (!snapshot.val()?.name) return;
+      if (this.presenceToken !== token) return;
       await ref.onDisconnect().update({ isConnected: false, lastSeenAt: window.firebase.database.ServerValue.TIMESTAMP });
+      if (this.presenceToken !== token) return;
       await ref.update({ isConnected: true, lastSeenAt: this.now() });
     },
     subscribeRoom(code, callback, onError) {
@@ -172,6 +191,23 @@
   function decodeRoom(value) {
     if (!value) return null; const room = { ...value, players: {} };
     for (const [uid, raw] of Object.entries(value.players || {})) { let stats = {}; try { stats = JSON.parse(raw.learningStatsJSON || '{}'); } catch { /* Ignore untrusted malformed statistics. */ } room.players[uid] = { ...raw, learningStats: cleanStats(stats) }; delete room.players[uid].learningStatsJSON; }
+    // Stable UID ordering makes simultaneous equal names distinct on every device.
+    // Keep offline profiles in the grouping so leaving/rejoining does not change suffixes.
+    const groups = new Map(), used = new Set();
+    const normal = name => String(name).normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('es');
+    for (const [uid, p] of Object.entries(room.players).sort(([a],[b]) => a < b ? -1 : a > b ? 1 : 0)) {
+      const key = normal(p.name), group = groups.get(key) || [];
+      group.push([uid,p]); groups.set(key, group); used.add(key);
+    }
+    for (const group of groups.values()) {
+      if (group.length < 2) continue;
+      let suffix = 1;
+      for (const [,p] of group) {
+        let candidate;
+        do { candidate = `${p.name} (${suffix++})`; } while (used.has(normal(candidate)));
+        p.name = candidate; used.add(normal(candidate));
+      }
+    }
     return room;
   }
   async function transactRoom(client,code,change) {

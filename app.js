@@ -227,8 +227,17 @@ function init() {
   bindOperationSearch();
   initDynamicsUI();
   initAccessibility();
+  initClassroomTools();
   if (window.ResizeObserver) new ResizeObserver(fitTeacherGrid).observe(refs.teacherGrid);
   window.addEventListener('resize', fitTeacherGrid);
+  window.addEventListener('pagehide', () => {
+    const session = state.online;
+    if (session?.playerId && window.NinjaOnline?.enabled && ownsClassroomTab(session)) {releaseClassroomTab(session);window.NinjaOnline.leaveRoom(session.code, session.playerId).catch(() => {});}
+  });
+  window.addEventListener('pageshow', event => {
+    const session = state.online;
+    if (event.persisted && session?.playerId && window.NinjaOnline?.enabled) {if(claimClassroomTab(session))window.NinjaOnline.setPresence(session.code, session.playerId).catch(() => {});else{detachOnlineSession(false);goHome();}}
+  });
 }
 
 function populateMeasureControls() {
@@ -238,6 +247,8 @@ function populateMeasureControls() {
   const familySelect = document.querySelector('[data-problem-extra="_family"]');
   Object.entries(globalThis.NinjaLiteracyProblems.labels).forEach(([key,title]) => familySelect.add(new Option(title,key)));
   Object.entries(globalThis.NinjaSpatial.labels).forEach(([key,title]) => familySelect.add(new Option(title,key)));
+  Object.entries(globalThis.NinjaAula.families).forEach(([key,title]) => familySelect.add(new Option(title,key)));
+  Object.entries(globalThis.NinjaReasoning.families).forEach(([key,title]) => familySelect.add(new Option(title,key)));
   document.getElementById('calculationChallengeControls').innerHTML = globalThis.NinjaCalculationChallenges.controls();
   const api = globalThis.NinjaUnits;
   const emojis = { longitud: '📏', masa: '⚖️', capacidad: '🧪', tiempo: '⏱️' };
@@ -323,9 +334,7 @@ function bindSettingsUI() {
   document.querySelectorAll(".op-toggle").forEach((input) => {
     input.addEventListener("change", () => {
       const key = input.dataset.op;
-      state.operationSettings[key].enabled = input.checked;
-      updateOpsSummary();
-      savePreferences();
+      setOperationEnabled(key, input.checked);
     });
   });
 
@@ -515,6 +524,8 @@ function moveCreateItems(target, { includeStart } = { includeStart: true }) {
 }
 
 function syncProblemControls() {
+  const aulaVariant=document.getElementById('aulaVariant');
+  if(aulaVariant){const names=globalThis.NinjaAula?.variants[state.problemSettings._family]||globalThis.NinjaReasoning?.variants[state.problemSettings._family]||[];aulaVariant.innerHTML='<option value="-1">Todos, alternando razonamientos</option>'+names.map((name,i)=>`<option value="${i}">${escapeHtml(name)}</option>`).join('');}
   const problems = state.activity === "problemas";
   const family = state.problemSettings._family || 'enteros';
   document.querySelectorAll('[data-problem-extra]').forEach(control => {
@@ -535,7 +546,7 @@ function syncProblemControls() {
   refs.problemFontSelect.value = state.problemFont;
   refs.body.dataset.problemFont = state.problemFont;
   refs.problemFontBtn.classList.toggle("hidden", !problems || state.mode === "teacher");
-  refs.problemMixSelect.closest('label').classList.toggle('hidden', Boolean(globalThis.NinjaExpansion?.families[family] || globalThis.NinjaLiteracyProblems?.labels[family] || globalThis.NinjaSpatial?.labels[family]));
+  refs.problemMixSelect.closest('label').classList.toggle('hidden', Boolean(globalThis.NinjaExpansion?.families[family] || globalThis.NinjaLiteracyProblems?.labels[family] || globalThis.NinjaSpatial?.labels[family] || globalThis.NinjaAula?.families[family] || globalThis.NinjaReasoning?.families[family]));
   refs.problemFontBtn.textContent = state.problemFont === "ligada" ? "Aa · Ligada" : "Aa · Imprenta";
   for (const control of document.querySelectorAll("[data-problem-key]")) {
     const base = state.problemSettings[control.dataset.problemKind];
@@ -651,6 +662,23 @@ function updateOpsSummary() {
   renderOpsChips(enabled);
 }
 
+function setOperationEnabled(key, enabled) {
+  if (!state.operationSettings[key]) return;
+  state.operationSettings[key].enabled = enabled === true;
+  document.querySelectorAll('.op-toggle').forEach(input => {
+    if (input.dataset.op === key) input.checked = enabled === true;
+  });
+  updateOpsSummary();
+  savePreferences();
+}
+
+function clearActiveOperations() {
+  Object.values(state.operationSettings).forEach(config => { config.enabled = false; });
+  document.querySelectorAll('.op-toggle').forEach(input => { input.checked = false; });
+  updateOpsSummary();
+  savePreferences();
+}
+
 function renderOpsChips(enabledKeys) {
   refs.opsChips.innerHTML = "";
   if (enabledKeys.length === 0) {
@@ -660,7 +688,7 @@ function renderOpsChips(enabledKeys) {
 
   enabledKeys.forEach((key) => {
     const configLabel = formatOpConfigLabel(key, state.operationSettings[key]);
-    const emoji = key.startsWith("add") ? "➕"
+    const emoji = key.startsWith("sameBase") || key === "signedPowersCombined" ? "⚡" : key.startsWith("signed") ? "🔢" : key.startsWith("add") ? "➕"
       : key.startsWith("sub") ? "➖"
       : key === "mul" ? "✖️"
       : key === "divTables" ? "🔁"
@@ -683,19 +711,23 @@ function renderOpsChips(enabledKeys) {
   });
 
   refs.opsChips.querySelectorAll("[data-chip-remove]").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
       const key = btn.getAttribute("data-chip-remove");
-      if (!key || !state.operationSettings[key]) return;
-      state.operationSettings[key].enabled = false;
-      const toggle = document.querySelector(`.op-toggle[data-op="${key}"]`);
-      if (toggle) toggle.checked = false;
-      updateOpsSummary();
-      savePreferences();
+      setOperationEnabled(key, false);
     });
   });
+  if (enabledKeys.length) {
+    const clear = document.createElement('button');
+    clear.type = 'button'; clear.className = 'btn-mini'; clear.id = 'clearActiveOperationsBtn';
+    clear.textContent = 'Quitar todas'; clear.addEventListener('click', clearActiveOperations);
+    refs.opsChips.appendChild(clear);
+  }
 }
 
 function formatOpConfigLabel(key, cfg) {
+  if(globalThis.NinjaReasoning&&Object.hasOwn(NinjaReasoning.defaults,key)&&cfg.exponentMax)return `Exponentes ${cfg.negativeExponents?'−'+cfg.exponentMax:'0'} a ${cfg.exponentMax}`;
   if (globalThis.NinjaSpatial?.defaults[key]) return `${cfg.digits} cifras · ${['cm','dm','m'][cfg.spaceUnit]}³`;
   if (globalThis.NinjaCalculationChallenges?.defaults[key]) return key === 'equivalence' ? 'Equivalencias exactas' : key === 'angles' ? 'Ángulos en grados' : key === 'scaleTen' ? `${cfg.digits} cifras · ${cfg.inputPlaces} dec. · ${cfg.scalePower ? 10 ** cfg.scalePower : '10 / 100 / 1000'}` : `${cfg.digits} cifras${key === 'integerOrder' ? ` · ${cfg.orderCount} números` : ''}`;
   if (!cfg) return "";
@@ -763,6 +795,7 @@ function ensureConversionSettings() {
 }
 
 function startGame() {
+  state.reviewPractice=null;state.reviewPracticeIndex=0;
   if (!ensureConversionSettings()) return;
   const enabledKeys = getEnabledOperationKeys();
   if (enabledKeys.length === 0) {
@@ -889,6 +922,7 @@ async function startHostedOnlineRoom() {
 }
 
 async function handleRematch() {
+  if(state.reviewPractice?.length&&state.mode==='single'){state.reviewPracticeIndex=0;launchGame(['review'],0);return;}
   if (state.mode === "online" && state.online?.code && !state.online?.isHost) {
     goHome();
     return;
@@ -951,8 +985,10 @@ async function resetHostedOnlineRoom() {
     } else {
       showOnlineHostLobby(state.online.code);
     }
+    return true;
   } catch (error) {
     alert(formatOnlineError("No se pudo preparar la revancha", error));
+    return false;
   } finally {
     state.resettingRoom = false;
   }
@@ -995,10 +1031,7 @@ function hideOnlineHostLobby() {
 
 function updateFloatingRoomCode(code = state.online?.code) {
   if (!refs.floatingRoomCode || !refs.floatingRoomCodeText) return;
-  const isTeacherRoom = state.mode === "teacher";
-  const isOnlineArena = state.mode === "online" && state.online?.active;
-  const visible = Boolean(code && (isTeacherRoom || isOnlineArena));
-  refs.floatingRoomCode.classList.toggle("hidden", !visible);
+  refs.floatingRoomCode.classList.add('hidden');
   refs.floatingRoomCodeText.textContent = code || "------";
 }
 
@@ -1087,7 +1120,9 @@ function buildOnlineConfig() {
 }
 
 function attachOnlineSession(session) {
-  detachOnlineSession(false);
+  if(typeof claimClassroomTab==='function'&&!claimClassroomTab(session))return false;
+  detachOnlineSession(Boolean(state.online&&state.online.code!==session.code));
+  if(typeof refreshClassroomTab==='function')refreshClassroomTab(session);
   state.online = {
     ...session,
     active: false,
@@ -1109,6 +1144,18 @@ function attachOnlineSession(session) {
     goHome(); alert(formatOnlineError('Se ha cerrado el acceso a esta sala', error));
   });
   const activeSession = state.online;
+  state.online.presenceTimer = setInterval(() => {
+    if (state.online !== activeSession) return;
+    if(typeof ownsClassroomTab==='function'&&!ownsClassroomTab(activeSession)){detachOnlineSession(false);goHome();return;}
+    if(typeof refreshClassroomTab==='function')refreshClassroomTab(activeSession);
+    if (activeSession.room) {
+      if (activeSession.isTeacher) renderTeacherDashboard(activeSession.room);
+      else if (activeSession.room.status === 'lobby') renderOnlineLobby(activeSession.room);
+      else if (activeSession.active) updateOnlineLeaderboard(activeSession.room);
+    }
+    if (!activeSession.playerId || activeSession.connected === false) return;
+    window.NinjaOnline.heartbeat(activeSession.code, activeSession.playerId).catch(() => {});
+  }, 15000);
   if (window.NinjaOnline.watchConnection) state.online.unsubscribeConnection = window.NinjaOnline.watchConnection(connected => {
     if (state.online !== activeSession) return;
     state.online.connected = connected; updateConnectionIndicator();
@@ -1118,10 +1165,14 @@ function attachOnlineSession(session) {
 
 function detachOnlineSession(markOffline = true) {
   if (!state.online) return;
+  const ownsTab=typeof ownsClassroomTab!=='function'||ownsClassroomTab(state.online);
+  if(typeof releaseClassroomTab==='function')releaseClassroomTab(state.online);
+  clearInterval(state.online.presenceTimer);
   if (typeof state.online.unsubscribe === "function") state.online.unsubscribe();
   if (typeof state.online.unsubscribeConnection === 'function') state.online.unsubscribeConnection();
-  if (markOffline && state.online.code && state.online.playerId && window.NinjaOnline?.enabled) {
-    window.NinjaOnline.updatePlayer(state.online.code, state.online.playerId, { isConnected: false }, state.online.room?.seed).catch(() => {});
+  if(!markOffline && state.online.playerId && window.NinjaOnline?.enabled && window.NinjaOnline.cancelPresence)window.NinjaOnline.cancelPresence(state.online.code,state.online.playerId).catch(()=>{});
+  if (markOffline && ownsTab && state.online.code && state.online.playerId && window.NinjaOnline?.enabled) {
+    window.NinjaOnline.leaveRoom(state.online.code, state.online.playerId).catch(() => {});
   }
   state.online = null;
   updateConnectionIndicator();
@@ -1131,6 +1182,15 @@ function handleOnlineRoomUpdate(room) {
   if (!state.online || !room) return;
   const previousStatus = state.online.room?.status;
   state.online.room = room;
+  const ownName = room.players?.[state.online.playerId]?.name;
+  if (ownName && !state.online.isTeacher) {
+    state.online.playerName = ownName;
+    if (state.online.active && state.players[0]) {
+      state.players[0].name = ownName;
+      const label = refs.playersWrap.querySelector('.player-name');
+      if (label) label.textContent = ownName;
+    }
+  }
 
   if (room.config) {
     try {
@@ -1306,8 +1366,7 @@ function clonePlain(value) {
 }
 
 function updateOnlineLeaderboard(room) {
-  const players = Object.values(room.players || {}).sort((a, b) => (b.score || 0) - (a.score || 0));
-  if (players.length === 0) return;
+  const players = Object.values(room.players || {}).filter(shouldShowOnlinePlayer).sort((a, b) => (b.score || 0) - (a.score || 0));
   refs.matchBadge.textContent = `🌐 Sala ${state.online.code} · ${players.map((p) => `${p.name}: ${p.score || 0}`).join(" · ")}`;
   updateFloatingRoomCode();
 }
@@ -1527,7 +1586,10 @@ function showTeacherPodiumResults(players) {
 
 function shouldShowOnlinePlayer(player) {
   if (!player) return false;
-  return player.isConnected !== false;
+  if (player.isConnected === false) return false;
+  const lastSeen = Number(player.lastSeenAt);
+  const now = window.NinjaOnline?.now ? window.NinjaOnline.now() : Date.now();
+  return !Number.isFinite(lastSeen) || lastSeen <= 0 || now - lastSeen <= 90000;
 }
 
 async function handleRemovePlayerClick(event) {
@@ -1816,6 +1878,8 @@ function placeRouletteForMode() {
 }
 
 function buildNumpad(numpadEl, playerId) {
+  numpadEl.dataset.power=String(state.operationsByPlayer.get(playerId)?.answerFormat==='power');
+  numpadEl.dataset.remainder=String(state.operationsByPlayer.get(playerId)?.answerFormat==='remainder');
   const operation = state.operationsByPlayer.get(playerId);
   numpadEl.classList.toggle('choices-input', Boolean(operation?.choices));
   if (operation?.choices) {
@@ -1832,7 +1896,7 @@ function buildNumpad(numpadEl, playerId) {
   const fractionsEnabled = Boolean(operation?.requiresFractionInput) || (state.activity === 'problemas' && state.problemSettings._family === 'fracciones') || Boolean(state.operationSettings.equivalence?.enabled) || getEnabledOperationKeys().some((key) => FRACTION_OPERATION_KEYS.includes(key));
   const factorsEnabled = state.activity !== "problemas" && Boolean(state.operationSettings.primeFactors.enabled);
   numpadEl.classList.toggle("fraction-input", fractionsEnabled || factorsEnabled);
-  const negatives = state.activity !== "problemas" && (state.allowNegative || state.operationsByPlayer.get(playerId)?.signedInput);
+  const negatives = Boolean(operation?.signedInput || (state.activity !== "problemas" && state.allowNegative));
   numpadEl.classList.toggle("with-negative", negatives);
   let keys = negatives
     ? ["7", "8", "9", "4", "5", "6", "1", "2", "3", "-", DECIMAL_SEPARATOR, "0"]
@@ -1842,15 +1906,17 @@ function buildNumpad(numpadEl, playerId) {
     keys = ["7", "8", "9", fractionsEnabled ? "/" : "x", "4", "5", "6", both ? "x" : DECIMAL_SEPARATOR, "1", "2", "3", ...(both ? [DECIMAL_SEPARATOR] : []), "0", ...(negatives ? ["-"] : [])];
   }
   if (comparison) { keys = ['<', '=', '>']; numpadEl.classList.remove('fraction-input', 'with-negative'); }
+  if(operation?.answerFormat==='power')keys=keys.map(key=>key===DECIMAL_SEPARATOR?'^':key);
   keys.forEach((key) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "key-btn";
     button.dataset.player = String(playerId);
     button.dataset.key = key;
-    button.textContent = key === "x" ? "\u00D7" : key;
+    button.textContent = key === '/' && operation?.answerFormat === 'remainder' ? 'R' : key === "x" ? "\u00D7" : key;
     button.addEventListener('pointerdown', handleButtonAction);
-    if (key === "/") button.title = "Fracción: también puedes pulsar F o :";
+    if (key === "/") button.title = operation?.answerFormat==='remainder'?'Cociente y resto: también puedes pulsar R, F o /':'Fracción: también puedes pulsar F o :';
+    if(key==='^')button.title='Exponente: ^, P o × del teclado numérico';
     if (key === "x") button.title = "Producto: también puedes pulsar X o *";
     numpadEl.appendChild(button);
   });
@@ -1964,7 +2030,7 @@ function bindKeyboardSupport() {
     if (!player) return;
 
     const comparison = state.operationsByPlayer.get(playerId)?.comparison;
-    const inputKey = comparison && isNumpad && ['NumpadSubtract', 'NumpadMultiply', 'NumpadAdd'].includes(code) ? ({ NumpadSubtract: '<', NumpadMultiply: '=', NumpadAdd: '>' })[code] : extractInputKey(event);
+    const inputKey = state.operationsByPlayer.get(playerId)?.answerFormat==='power'&&code==='NumpadMultiply'?'^':comparison && isNumpad && ['NumpadSubtract', 'NumpadMultiply', 'NumpadAdd'].includes(code) ? ({ NumpadSubtract: '<', NumpadMultiply: '=', NumpadAdd: '>' })[code] : extractInputKey(event);
     if (inputKey !== null) {
       event.preventDefault();
       if (!appendInputChar(player, inputKey)) return;
@@ -1996,6 +2062,7 @@ function appendInputChar(player, char) {
   if (options) { if (/^[1-9]$/.test(char) && Number(char) <= options.length) { player.input = char; return true; } return false; }
   if (/^[<=>]$/.test(char)) { if (!state.operationsByPlayer.get(player.id)?.comparison) return false; player.input = char; return true; }
   if (player.input.length >= MAX_INPUT_LENGTH) return false;
+  if(char==='^'){if(state.operationsByPlayer.get(player.id)?.answerFormat!=='power'||!/^\d+$/.test(player.input))return false;player.input+='^';return true;}
 
   if (char === "x") {
     const operation = state.operationsByPlayer.get(player.id);
@@ -2011,6 +2078,7 @@ function appendInputChar(player, char) {
   }
 
   if (char === "-") {
+    if(state.operationsByPlayer.get(player.id)?.answerFormat==='power'&&/^\d+\^$/.test(player.input)){player.input+='-';return true;}
     if ((!state.allowNegative && !state.operationsByPlayer.get(player.id)?.signedInput) || player.input !== "") return false;
     player.input = "-";
     return true;
@@ -2032,10 +2100,11 @@ function appendInputChar(player, char) {
 function extractInputKey(event) {
   const key = event.key || "";
   const code = event.code || "";
+  if(key==='^'||key.toLowerCase()==='p')return '^';
   if (/^[<=>]$/.test(key) || code === 'NumpadEqual') return code === 'NumpadEqual' ? '=' : key;
 
   if (/^[0-9]$/.test(key)) return key;
-  if (key === "/" || key === ":" || key.toLowerCase() === "f" || code === "NumpadDivide") return "/";
+  if (key === "/" || key === ":" || key.toLowerCase() === "f" || key.toLowerCase() === 'r' || code === "NumpadDivide") return "/";
   if (key.toLowerCase() === "x" || key === "*" || key === "\u00D7" || key === "\u00B7" || code === "NumpadMultiply") return "x";
   if (key === "-" || code === "NumpadSubtract") return "-";
 
@@ -2065,7 +2134,7 @@ function submitPlayerAnswer(playerId) {
 
   const submittedAnswer = player.input;
   const numericInput = parsePlayerInput(player.input);
-  if (!operation.primeFactors && !operation.comparison && Number.isNaN(numericInput)) {
+  if (!['remainder','power'].includes(operation.answerFormat) && !operation.primeFactors && !operation.comparison && Number.isNaN(numericInput)) {
     player.input = "";
     repaintPlayerInput(player.id);
     return;
@@ -2169,6 +2238,10 @@ function generateNewOperationForPlayer(playerId, enforceDifferentInDuel) {
 
 function generateAtLevel(level,callback) { return typeof withDynamicsLevel === "function" ? withDynamicsLevel(level,callback) : callback(); }
 function createOperation(kind) {
+  if(state.reviewPractice?.length && state.mode==='single'){
+    const original=state.reviewPractice[(state.reviewPracticeIndex++||0)%state.reviewPractice.length];
+    return decorateOperation({...clonePlain(original),requiresFractionInput:original.requiresFractionInput||FRACTION_OPERATION_KEYS.includes(original.skillKind||original.kind)||original.problem?.family==='fracciones',solutionRevealed:false,hintStage:0});
+  }
   const operation = typeof createProgressiveOperation === "function" ? createProgressiveOperation(kind) : createBaseOperation(kind);
   if (kind !== "problem") operation.skillKind = kind;
   return operation;
@@ -2372,13 +2445,15 @@ function maybeNegate(value) {
 }
 
 function renderProblemText(text) {
-  return escapeHtml(text).replace(/(\d+)\/(\d+)/g, (_, numerator, denominator) => fractionHtml({ numerator, denominator }));
+  return escapeHtml(text).replace(/(\d+)\^(-?\d+)/g,'$1<sup>$2</sup>').replace(/(\d+|\?)\/(\d+|\?)/g, (_, numerator, denominator) => fractionHtml({ numerator, denominator }));
 }
+
+function problemDiagramHtml(operation){return globalThis.NinjaReasoning?NinjaReasoning.visual(operation.problem,state.problemSettings._showDrawings):operation.problem?.diagram||'';}
 
 function renderProblem(operation) {
   const p = operation.problem;
   const literacyClass = globalThis.NinjaLiteracyProblems?.labels[p.family] ? ' literacy-paper' : globalThis.NinjaSpatial?.labels[p.family] ? ' literacy-paper spatial-paper' : '';
-  const question = `<p class="problem-question"><span class="problem-full">${renderProblemText(p.text)}</span><span class="problem-compact">${renderProblemText(p.compactText)}</span></p>${p.diagram || ''}`;
+  const question = `<p class="problem-question"><span class="problem-full">${renderProblemText(p.text)}</span><span class="problem-compact">${renderProblemText(p.compactText)}</span></p>${problemDiagramHtml(operation)}`;
   if (operation.solutionRevealed) {
     return `<div class="problem-paper problem-review${literacyClass} ${p.family ? 'advanced-paper' : ''}" data-family="${escapeHtml(p.family || 'enteros')}"><section class="problem-review-reading"><span class="problem-review-label">📖 Enunciado</span>${question}</section><section class="problem-review-working"><span class="problem-review-label">💡 Solución paso a paso</span><ol class="problem-steps">${p.steps.map((step, index) => {
       const equation = p.calculations[index];
@@ -2621,6 +2696,7 @@ function generateFractionArithmetic(kind, cfg) {
 }
 
 function operationSolutionHtml(operation) {
+  if(operation.explanation&&globalThis.NinjaReasoning&&Object.hasOwn(NinjaReasoning.defaults,operation.kind))return `<span class="teaching-explanation">${renderProblemText(operation.explanation)}</span>`;
   if (operation.explanation) return `<span class="teaching-explanation">${escapeHtml(operation.explanation)}</span>`;
   if (operation.conversion && !operation.problem) return `<span class="conversion-solution"><small>${escapeHtml(operation.conversion.equivalence)}</small><strong>${escapeHtml(operation.conversion.equation)}</strong></span>`;
   if (operation.primeFactors) return operation.primeFactors.join(" &#215; ");
@@ -2932,6 +3008,7 @@ function gcdInt(a, b) {
 }
 
 function getEnabledOperationKeys() {
+  if(state.reviewPractice?.length&&state.mode==='single')return ['review'];
   if (state.activity === "problemas") return window.NinjaProblems?.compatible(state.problemSettings, { mix: state.problemMix }).length ? ["problem"] : [];
   return Object.keys(state.operationSettings).filter((key) => state.operationSettings[key].enabled);
 }
@@ -2969,12 +3046,13 @@ function repaintPlayers() {
       opEl.closest('.player-panel').classList.toggle('reviewing-problem', Boolean(op.problem && op.solutionRevealed));
       opEl.classList.toggle("problem-operation", Boolean(op.problem));
       opEl.classList.toggle('challenge-operation', Boolean(op.challenge));
+      opEl.classList.toggle('numeric-reasoning',Boolean(globalThis.NinjaReasoning&&Object.hasOwn(NinjaReasoning.defaults,op.kind)));
       opEl.classList.remove("pop");
       opEl.offsetHeight;
       opEl.classList.add("pop");
       const pad = document.getElementById(`numpad-${player.id}`);
       const choiceKey = op.choices ? JSON.stringify(op.choices) : '';
-      if (pad && (pad.dataset.choiceKey !== choiceKey || pad.classList.contains('comparison-input') !== Boolean(op.comparison) || (!op.choices && pad.classList.contains('with-negative') !== Boolean(!op.comparison && state.activity !== 'problemas' && (state.allowNegative || op.signedInput))) || (!op.choices && Boolean(op.requiresFractionInput) && !pad.classList.contains('fraction-input')))) { pad.innerHTML = ''; buildNumpad(pad, player.id); pad.dataset.choiceKey = choiceKey; }
+      if (pad && (pad.dataset.power !== String(op.answerFormat==='power') || pad.dataset.remainder !== String(op.answerFormat==='remainder') || pad.dataset.choiceKey !== choiceKey || pad.classList.contains('comparison-input') !== Boolean(op.comparison) || (!op.choices && pad.classList.contains('with-negative') !== Boolean(!op.comparison && (op.signedInput || state.activity !== 'problemas' && state.allowNegative))) || (!op.choices && Boolean(op.requiresFractionInput) && !pad.classList.contains('fraction-input')))) { pad.innerHTML = ''; buildNumpad(pad, player.id); pad.dataset.choiceKey = choiceKey; }
       opEl.innerHTML = op.problem ? renderProblem(op) : op.solutionRevealed && (op.conversion || op.explanation) ? operationSolutionHtml(op) : op.solutionRevealed
         ? op.answerFraction ? operationSolutionHtml(op) : op.html.replace("?", operationSolutionHtml(op))
         : op.html;
@@ -2999,7 +3077,7 @@ function repaintPlayers() {
       if (globalThis.NinjaExpansion?.families[op?.problem?.family]) decimalHintEl.textContent = `📖 Responde solo el número · ${op.problem.unit}`;
       if (op?.inputHint) decimalHintEl.textContent = op.inputHint;
       if (op?.choices) decimalHintEl.textContent = 'Elige una opción y pulsa enviar. Teclado: escribe su número.';
-      else if (op?.requiresFractionInput) decimalHintEl.textContent = 'Responde con una fracción. Se aceptan equivalentes. Tecla F o : para /.';
+      else if (op?.requiresFractionInput && !op?.inputHint) decimalHintEl.textContent = 'Responde con una fracción. Se aceptan equivalentes. Tecla F o : para /.';
       else if (globalThis.NinjaLiteracyProblems?.labels[op?.problem?.family]) decimalHintEl.textContent = `📖 Responde solo el número${op.problem.unit ? ` en ${op.problem.unit}` : ''}${op.answerFraction?.denominator !== '1' ? ' · usa coma' : ''}`;
     }
   });
@@ -3056,7 +3134,7 @@ function repaintPlayerInput(playerId) {
   const player = state.players.find((p) => p.id === playerId);
   const answerEl = document.getElementById(`answer-${playerId}`);
   if (!player || !answerEl) return;
-  answerEl.textContent = player.input || "_";
+  answerEl.textContent = state.operationsByPlayer.get(playerId)?.answerFormat==='remainder' ? player.input.replace('/', ' R ') || '_' : player.input || "_";
   document.querySelectorAll(`#numpad-${playerId} .choice-btn`).forEach(button => button.setAttribute('aria-pressed', String(button.dataset.key === player.input)));
 }
 
@@ -3196,6 +3274,7 @@ function showResults() {
     });
     refs.resultsTitle.textContent = "🎯 ¡COMBATE TERMINADO!";
     refs.resultsSubtitle.textContent = "Tu resultado ya está guardado en el Cuadro de los Grandes Maestros.";
+    if(state.reviewPractice?.length){refs.resultsTitle.textContent='🎯 Repaso terminado';refs.resultsSubtitle.textContent='Esta práctica no modifica la clasificación ni guarda marcas.';}
   }
 
   if(typeof appendTeamResults==="function")appendTeamResults();
@@ -3203,6 +3282,7 @@ function showResults() {
 }
 
 function saveResultsToHall() {
+  if(state.reviewPractice?.length)return;
   const hall = readHall();
   const now = new Date();
   const modeLabel = state.mode === "single" ? "Entrenamiento"
@@ -3274,7 +3354,7 @@ function applySavedPreferences() {
       Object.keys(state.operationSettings[opKey]).forEach((settingKey) => {
         const current = state.operationSettings[opKey][settingKey];
         if (typeof current === "boolean") {
-          state.operationSettings[opKey][settingKey] = Boolean(saved[settingKey]);
+          state.operationSettings[opKey][settingKey] = saved[settingKey] === true;
           return;
         }
         const next = Number(saved[settingKey]);
@@ -3334,6 +3414,7 @@ function savePreferences() {
 }
 
 function sanitizeOpSettingValue(settingKey, value) {
+  if(settingKey==='negativeExponents')return clamp(Math.trunc(value),0,1);
   if (settingKey === 'spaceUnit') return clamp(Math.trunc(value), 0, 2);
   if (settingKey === 'challengeVariant') return clamp(Math.trunc(value), 0, 6);
   if (settingKey === 'angleType') return clamp(Math.trunc(value), 0, 4);
@@ -3343,7 +3424,7 @@ function sanitizeOpSettingValue(settingKey, value) {
   if (settingKey === 'place') return clamp(Math.trunc(value), -3, 6);
   if (settingKey === 'operator') return clamp(Math.trunc(value), 0, 4);
   if (settingKey === 'variant') return clamp(Math.trunc(value), 0, 2);
-  if (settingKey === 'exponentMax') return clamp(Math.trunc(value), 2, 5);
+  if (settingKey === 'exponentMax') return clamp(Math.trunc(value), 1, 6);
   if (settingKey === 'from' || settingKey === 'to') return clamp(value, 0, 7);
   if (settingKey === "maxDecimals") return clamp(value, 1, 3);
   return clamp(value, 1, 9);
@@ -3395,7 +3476,8 @@ function clearHallOfFame() {
 }
 
 function goHome() {
-  ["roundPauseDialog","teamsDialog"].forEach(id=>document.getElementById(id)?.close());
+  if(state.reviewReturnSettings){Object.assign(state,state.reviewReturnSettings);state.reviewReturnSettings=null;state.reviewPractice=null;state.reviewPracticeIndex=0;}
+  ["roundPauseDialog","teamsDialog","classroomDialog"].forEach(id=>document.getElementById(id)?.close());
   captureLearningRound();
   if (state.online?.isHost && state.online.room?.status === 'running' && window.NinjaOnline?.enabled) {
     const closing = state.online;
@@ -3445,7 +3527,7 @@ function getWrongPenalty() {
 }
 
 function getBasePoints(operation) {
-  const base=operation?.kind==='combinedAdv'||operation?.kind==='fractionCombined'?20:10;
+  const base=['combinedAdv','fractionCombined','signedCombinedAdv','signedPowersCombined'].includes(operation?.kind)?20:10;
   return base*(1+Math.max(0,Math.min(2,(operation?.progressTier||1)-1))/2);
 }
 
@@ -3710,6 +3792,12 @@ function parsePlayerInput(text) {
 }
 
 function isCorrectOperationAnswer(text, operation) {
+  if(operation.answerFormat==='power'&&String(text).includes('^')){const match=String(text).match(/^(\d+)\^(-?\d+)$/);return Boolean(match&&BigInt(match[1])===BigInt(operation.data.base)&&BigInt(match[2])===BigInt(operation.data.e));}
+  if(operation.answerFormat==='remainder'){
+    const match=String(text).trim().match(/^(\d+)\s*(?:\/|[rR])\s*(\d+)$/);if(!match)return false;
+    const q=BigInt(match[1]),r=BigInt(match[2]),d=BigInt(operation.data.d);
+    return r<d && q*d+r===BigInt(operation.data.n);
+  }
   if (operation.answerFormat === 'fraction' && !/^\d+\/\d+$/.test(text)) return false;
   if (operation.answerFormat === 'decimal' && text.includes('/')) return false;
   if (operation.comparison) return text === operation.answerSymbol;
