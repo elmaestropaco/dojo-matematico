@@ -129,3 +129,5 @@ No requiere cambiar las reglas de Firebase.
 El workflow de Pages usa un nombre de artefacto unico por ejecucion e intento,
 y espera a que sus metadatos esten disponibles antes de desplegar. Evita los
 fallos de paquete no visible aun y paquetes duplicados tras reintentar.
+Preparacion y despliegue se ejecutan en trabajos separados; el despliegue
+recibe el nombre del paquete realmente generado, tambien al reintentar.
