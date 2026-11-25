@@ -5,6 +5,7 @@ function initWorksheetUI(){
   const dialog=document.createElement('dialog');dialog.id='worksheetDialog';dialog.className='learning-dialog worksheet-dialog';dialog.setAttribute('aria-labelledby','worksheetTitle');
   dialog.innerHTML=`<div class="sheet-heading"><div><span class="section-eyebrow">PRACTICA TAMBIÉN EN PAPEL</span><h3 id="worksheetTitle">📄 Generador de fichas PDF</h3></div><button id="sheetClose" class="btn-mini" type="button">Cerrar</button></div>
     <p>Prepara ejercicios nuevos sin cambiar tu partida. Al imprimir, elige <strong>Guardar como PDF</strong>. Todo se genera en este navegador.</p>
+    <div class="sheet-options"><label>Multiplicación en el PDF<select id="sheetMultiplicationSymbol"><option value="x">x</option><option value="·">·</option></select></label><label>División en el PDF<select id="sheetDivisionSymbol"><option value="/">/</option><option value=":">:</option></select></label></div>
     <div class="sheet-options"><label>Título de la ficha<input id="sheetName" maxlength="100" value="Mi entrenamiento matemático"></label><label>Contenido<select id="sheetSource"><option value="calculo">Cálculo</option><option value="problemas">Problemas</option><option value="ambos">Cálculo y problemas</option></select></label><label>Reparto<select id="sheetDistribution"><option value="balanced">Misma cantidad de cada tipo</option><option value="mixed">Mixto aleatorio (cantidad total)</option></select></label><label><span id="sheetQuantityLabel">Ejercicios de cada tipo</span><input id="sheetQuantity" type="number" min="1" max="200" step="1" value="5"></label><label>Formato de operaciones<select id="sheetFormat"><option value="horizontal">Horizontal</option><option value="vertical">Vertical</option><option value="mixed">Mezclado</option></select></label><label>Máximo por fila<select id="sheetColumns"><option value="0" selected>Automático (hasta 5)</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></label><label>Renglones para resolver<select id="sheetLines"><option value="0">Sin renglones extra</option><option value="2" selected>2</option><option value="4">4</option><option value="6">6</option></select></label><label class="sheet-check"><input id="sheetSolutions" type="checkbox" checked> Añadir soluciones con pasos al final</label></div>
     <p class="hint">El ancho se ajusta automáticamente sin partir las expresiones. La ficha sigue el orden de los bloques de la plataforma. Vertical se aplica a sumas, restas, multiplicaciones y divisiones básicas. Fracciones, ecuaciones y otros retos conservan su notación. Máximo: 200 ejercicios por ficha.</p>
     <details class="sheet-extra"><summary>🔢 Decimales y signos en cálculo</summary><div class="sheet-options"><label class="sheet-check"><input id="sheetDecimals" type="checkbox"> Activar decimales</label><label>Decimales<select id="sheetPlaces"><option>1</option><option>2</option><option>3</option></select></label><label class="sheet-check"><input id="sheetNegative" type="checkbox"> Permitir negativos en operaciones básicas</label></div><p class="hint">Los retos de enteros tienen sus propios signos. Las soluciones son exactas y no se redondean; un producto decimal puede necesitar más cifras decimales.</p></details>
@@ -42,6 +43,7 @@ function loadWorksheetFromGame(){
   worksheetDraft={selected:new Set(),settings:sheetClone(state.operationSettings),problemSettings:sheetClone(state.problemSettings),problemVariants:{},html:null};
   sheetEl('sheetSource').value=state.activity;sheetEl('sheetFormat').value=state.displayMode==='mixed'?'mixed':state.displayMode;sheetEl('sheetDecimals').checked=state.decimalsEnabled;sheetEl('sheetPlaces').value=String(state.decimalPlaces);sheetEl('sheetNegative').checked=state.allowNegative;
   sheetEl('sheetDrawings').checked=state.problemSettings._showDrawings!==false;
+  sheetEl('sheetMultiplicationSymbol').value=state.multiplicationSymbol;sheetEl('sheetDivisionSymbol').value=state.divisionSymbol;
   for(const key of getEnabledOperationKeys())worksheetDraft.selected.add('calc:'+key);
   const family=state.problemSettings._family||'enteros';
   if(family==='enteros'){if(state.problemMix==='combinados')worksheetDraft.selected.add('problem:combinados');else for(const key of ['suma','resta','multiplicacion','division'])if(state.problemSettings[key]?.enabled)worksheetDraft.selected.add('problem:'+key);}
@@ -131,7 +133,9 @@ function worksheetCalculation(key,seed){
     });
   }finally{Object.assign(state,snapshot);}
 }
-function worksheetQuestion(op,format){
+function worksheetNotation(){return NinjaNotation.options({multiplicationSymbol:sheetEl('sheetMultiplicationSymbol').value,divisionSymbol:sheetEl('sheetDivisionSymbol').value});}
+function worksheetQuestion(op,format){return NinjaNotation.html(worksheetQuestionRaw(op,format),worksheetNotation());}
+function worksheetQuestionRaw(op,format){
   const esc=NinjaWorksheets.escape;
   if(op.problem){const p=op.problem,diagram=NinjaReasoning.visual(p,sheetEl('sheetDrawings').checked);return`<p class="problem-question">${renderProblemText(p.text)}</p><div class="diagram">${diagram}</div>${op.choices?`<ol>${op.choices.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>`:''}${op.followUp?.problem?`<p class="problem-question">b) ${renderProblemText(op.followUp.problem.text)}</p>`:''}`;}
   if(['add','sub','mul','div'].includes(op.kind)&&Number.isFinite(op.a)&&Number.isFinite(op.b)){
@@ -147,7 +151,8 @@ function worksheetQuestion(op,format){
   const instruction=op.answerFormat==='roots'?'Halla las dos raíces reales (o indica la raíz doble).':op.answerFormat==='power'?'Expresa el resultado como una potencia con la misma base.':op.primeFactors?'Escribe el producto de factores primos.':op.answerFormat==='remainder'?'Indica cociente y resto.':op.comparison?'Escribe <, = o >.':op.inputHint?.replace(/Tecla.*$/i,'').replace(/tecla.*$/i,'')||'';
   return`<div class="math-question">${question}</div>${op.diagram?`<div class="diagram">${op.diagram}</div>`:''}${op.choices?`<ol>${op.choices.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>`:''}${instruction?`<p class="print-note">${esc(instruction)}</p>`:''}`;
 }
-function worksheetSolution(op){
+function worksheetSolution(op){return NinjaNotation.html(worksheetSolutionRaw(op),worksheetNotation());}
+function worksheetSolutionRaw(op){
   if(op.problem){const p=op.problem,answer=op.answerLabel??op.answerDisplay??(op.answerFraction?NinjaWorksheets.show(op.answerFraction):op.answerExact??op.answer);return`<ol class="problem-steps">${p.steps.map((s,i)=>`<li>${renderProblemText(s)}${p.calculations[i]?`<div>${renderProblemText(p.calculations[i])}</div>`:''}</li>`).join('')}</ol><p class="answer-final">Respuesta: ${renderProblemText(String(answer))} ${escapeHtml(p.unit||'')}</p>${op.followUp?.problem?`<h4>Apartado b)</h4>${worksheetSolution(op.followUp)}`:''}`;}
   const exact=NinjaWorksheets.arithmetic(op);
   if(exact){

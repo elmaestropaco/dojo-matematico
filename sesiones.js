@@ -4,7 +4,7 @@
   function cleanConfig(value) {
     const config = {};
     if (!value || typeof value !== 'object') return config;
-    for (const key of ['progressiveEnabled','teamsEnabled','teamCount','teamNames','activity', 'endCondition', 'goalCount', 'problemMix', 'problemSettings', 'operationSettings', 'displayMode', 'streaksEnabled', 'decimalsEnabled', 'decimalPlaces', 'allowNegative', 'penalizeWrong', 'timePreset', 'customMinutes', 'customSeconds']) {
+    for (const key of ['multiplicationSymbol','divisionSymbol','progressiveEnabled','teamsEnabled','teamCount','teamNames','activity', 'endCondition', 'goalCount', 'problemMix', 'problemSettings', 'operationSettings', 'displayMode', 'streaksEnabled', 'decimalsEnabled', 'decimalPlaces', 'allowNegative', 'penalizeWrong', 'timePreset', 'customMinutes', 'customSeconds']) {
       if (Object.hasOwn(value, key)) config[key] = JSON.parse(JSON.stringify(value[key], (k, v) => ['__proto__', 'constructor', 'prototype'].includes(k) ? undefined : v));
     }
     return config;

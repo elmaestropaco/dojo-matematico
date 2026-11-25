@@ -56,6 +56,16 @@ Puedes escribir un titulo; nombre y fecha quedan en blanco para rellenarlos
 en papel. No se copian nombres del alumnado ni codigos de sala. La ficha no
 incluye los tipos de operacion encima de los problemas.
 
+## Simbolos de las operaciones
+
+En el generador hay selectores de multiplicacion (x o punto medio) y division
+(/ o :). Parten de la eleccion de la partida al cargarla, pero cambiarlos en
+la ficha no modifica el juego. Se aplican a preguntas y soluciones antes de
+medir las filas, por lo que el ancho automatico tiene en cuenta el simbolo.
+La barra de las fracciones, la x de una ecuacion, las horas y las escalas no se
+convierten. Solo se cambia la representacion: el motor matematico no se toca.
+Las disposiciones verticales de division conservan su caja tradicional.
+
 ## Problemas
 
 Hay problemas individuales de suma/resta/producto/division, combinados y

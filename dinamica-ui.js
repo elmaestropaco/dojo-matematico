@@ -102,6 +102,7 @@ function syncDynamicsStatus(){
     if(Number.isInteger(q.followUpFrom)&&op.followUp)op=decorateOperation(op.followUp);
     board.innerHTML=op.problem?renderProblem({...op,solutionRevealed:Boolean(room.pauseRevealed)}):`${op.html}${op.choices?`<ol>${op.choices.map(choice=>`<li>${escapeHtml(choice)}</li>`).join('')}</ol>`:''}${room.pauseRevealed?`<section class="shared-working">${operationSolutionHtml(op)}</section>`:''}`;
     board.dataset.questionKey=key;
+    if(globalThis.NinjaNotation)board.innerHTML=NinjaNotation.html(board.innerHTML,state);
   }
   if(!dialog.open){dialog.showModal();document.getElementById('pauseTitle').focus({preventScroll:true});}
 }

@@ -12,6 +12,12 @@ La app funciona sin backend para los modos locales.
 
 ## Generador de fichas PDF
 
+Version 2026.11.25-simbolos: selectores visuales de multiplicacion (x o punto
+medio) y division (/ o :) junto al formato de operaciones. Se guardan en
+preferencias/sesiones y se comparten con la sala online. El generador PDF
+permite elegirlos de forma independiente para ejercicios y soluciones.
+No cambian resultados, fracciones, variables algebraicas ni respuestas del teclado.
+
 Correccion 2026.11.25-fichas-orden-utf8: tildes del generador restauradas y
 orden didactico explicito compartido entre selector, ficha y soluciones.
 

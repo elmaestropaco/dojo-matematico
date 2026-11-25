@@ -53,6 +53,7 @@ async function main() {
     }
     const sizes = [[360, 740], [390, 844], [768, 1024], [1366, 768], [1920, 1080]];
     const reasoningOnly = process.argv.includes('--reasoning-only');
+    const notationOnly = process.argv.includes('--notation-only');
     const worksheetsOnly = process.argv.includes('--worksheets-only');
     if(worksheetsOnly)await evaluate('window.sheetOriginalSettings=JSON.parse(JSON.stringify(state.operationSettings));window.sheetOriginalProblems=JSON.parse(JSON.stringify(state.problemSettings));');
     const secondaryOnly = process.argv.includes('--secondary-only');
@@ -68,7 +69,7 @@ async function main() {
     const literacyOnly = process.argv.includes('--literacy-only');
     const spatialOnly = process.argv.includes('--spatial-only');
     const dynamicsOnly = process.argv.includes('--dynamics-only');
-    const controlsOnly = worksheetsOnly || secondaryOnly || exponentsOnly || reasoningOnly || aulaOnly || accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
+    const controlsOnly = notationOnly || worksheetsOnly || secondaryOnly || exponentsOnly || reasoningOnly || aulaOnly || accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
     const advancedOnly = process.argv.includes('--advanced-only');
     const calculationsOnly = process.argv.includes('--calculations-only');
     const integerOnly = process.argv.includes('--integer-only');
@@ -903,6 +904,19 @@ async function main() {
         goHome();return errors;
       })()`);
       assert.deepEqual(errors,[],`Room code ${width}x${height}`);
+    }
+    if(notationOnly){
+      await evaluate(`goHome();state.online=null;state.activity='calculo';const m=document.getElementById('multiplicationSymbolSelect'),d=document.getElementById('divisionSymbolSelect');m.value='\u00b7';d.value=':';m.dispatchEvent(new Event('change'));d.dispatchEvent(new Event('change'));if(readPreferences().multiplicationSymbol!=='\u00b7'||buildOnlineConfig().divisionSymbol!==':')throw Error('notation persistence');const saved=sessionLibrary.save('Notation',{...buildOnlineConfig()});state.multiplicationSymbol='x';state.divisionSymbol='/';loadNamedSession(saved);if(state.multiplicationSymbol!=='\u00b7'||state.divisionSymbol!==':')throw Error('notation session');
+        const markup=NinjaNotation.html('<span data-url="/keep/x"><span class="fraction-real"><span class="fraction-num">1</span><span class="fraction-den">2</span></span> &#247; <b>3x = 4</b> \u00d7 2</span>',state);const temp=document.createElement('div');temp.innerHTML=markup;if(!temp.textContent.includes(':')||!temp.textContent.includes('\u00b7')||!temp.textContent.includes('3x')||temp.querySelector('.fraction-den').textContent!=='2'||temp.firstChild.getAttribute('data-url')!=='/keep/x')throw Error('notation changed fraction/variable/attribute');
+        document.getElementById('worksheetHomeBtn').click();sheetEl('sheetMultiplicationSymbol').value='x';sheetEl('sheetDivisionSymbol').value='/';const mul={kind:'mul',a:7,b:8,answer:56},div={kind:'div',a:8,b:2,answer:4};if(!worksheetQuestion(mul,'horizontal').includes(' x ')||!worksheetQuestion(div,'horizontal').includes(' / '))throw Error('PDF default notation');sheetEl('sheetMultiplicationSymbol').value='\u00b7';sheetEl('sheetDivisionSymbol').value=':';if(!worksheetQuestion(mul,'vertical').includes('\u00b7')||!worksheetQuestion(div,'horizontal').includes(':')||!worksheetSolution(mul).includes('\u00b7')||!worksheetSolution(div).includes(':'))throw Error('PDF chosen notation');worksheetDraft.selected=new Set(['calc:mul','calc:div','calc:fractionDiv']);sheetEl('sheetQuantity').value='2';generateWorksheet();if(!worksheetDraft.html||!worksheetDraft.html.includes('\u00b7')||!worksheetDraft.html.includes('fraction-real'))throw Error(sheetEl('sheetNotice').textContent);if(state.multiplicationSymbol!=='\u00b7'||state.divisionSymbol!==':')throw Error('PDF changed game notation');sheetEl('sheetClose').click();`);
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        for(const mode of ['single','duel'])for(const solution of [false,true]){
+          const errors=await evaluate(`(async()=>{goHome();state.online=null;state.mode='${mode}';state.activity='calculo';state.muted=true;state.streaksEnabled=false;state.multiplicationSymbol='\u00b7';state.divisionSymbol=':';Object.values(state.operationSettings).forEach(c=>c.enabled=false);state.operationSettings.mul.enabled=true;launchGame(['mul'],60);stopTimer();state.operationsByPlayer.forEach((_,id)=>state.operationsByPlayer.set(id,decorateOperation({kind:id===1?'div':'mul',a:8,b:2,answer:id===1?4:16,solutionRevealed:${solution},explanation:'8 \u00d7 2 = 16; 8 \u00f7 2 = 4.'})));repaintPlayers();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const errors=[];for(const el of document.querySelectorAll('.operation')){const text=el.textContent;if(text.includes('\u00d7')||text.includes('\u00f7'))errors.push('unchanged operator');if(el.scrollWidth>el.clientWidth+2||el.scrollHeight>el.clientHeight+2)errors.push('clipped math');}if(document.documentElement.scrollHeight>innerHeight+2)errors.push('page scroll');return errors;})()`);assert.deepEqual(errors,[],`Notation ${width} ${mode} solution=${solution}`);
+        }
+      }
+      await evaluate(`goHome();applyOnlineConfig({activity:'calculo',multiplicationSymbol:'x',divisionSymbol:'/'});if(state.multiplicationSymbol!=='x'||state.divisionSymbol!=='/')throw Error('online notation');`);
+      console.log('OK: notation in game/questions/solutions/PDF, fractions and algebra protected, session/preferences/online config and 20 layouts on five sizes.');
     }
     if(worksheetsOnly){
       const original=await evaluate(`goHome();state.online=null;state.activity='calculo';state.operationSettings=JSON.parse(JSON.stringify(window.sheetOriginalSettings));state.problemSettings=JSON.parse(JSON.stringify(window.sheetOriginalProblems));document.getElementById('worksheetHomeBtn').click();JSON.stringify({settings:state.operationSettings,problems:state.problemSettings,prefs:localStorage.getItem(STORAGE_PREFS),mode:state.mode,display:state.displayMode,index:state.problemIndex})`);

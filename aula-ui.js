@@ -1,4 +1,4 @@
-const DOJO_VERSION='2026.11.25-fichas-orden-utf8';
+const DOJO_VERSION='2026.11.25-simbolos';
 let classroomMemory={identities:{},sequence:[],cursor:0};
 const classroomTabToken=`${Date.now()}-${Math.random().toString(36).slice(2)}`;
 function classroomTabKey(session){return session?.playerId?`ninja_math_active_tab_v1:${session.playerId}:${session.code}`:null;}

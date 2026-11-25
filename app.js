@@ -106,6 +106,7 @@ const state = {
     power: { enabled: false, digits: 1, exponentDigits: 1 }, round: { enabled: false, digits: 1, place: 1 }
   },
   displayMode: "horizontal",
+  multiplicationSymbol: 'x', divisionSymbol: '/',
   streaksEnabled: true,
   decimalsEnabled: false,
   decimalPlaces: 1,
@@ -216,6 +217,7 @@ function init() {
   applySavedPreferences();
   state.problemSettings = window.NinjaProblems.normalize(state.problemSettings);
   bindSettingsUI();
+  initNotationControls();
   bindKeyboardSupport();
   bindLearningUI();
   applySavedTheme();
@@ -641,6 +643,8 @@ function syncSettingsUIFromState() {
   refs.muteToggle.checked = state.muted;
   refs.streakToggle.checked = state.streaksEnabled;
   refs.displayModeSelect.value = state.displayMode;
+  document.getElementById('multiplicationSymbolSelect').value=state.multiplicationSymbol;
+  document.getElementById('divisionSymbolSelect').value=state.divisionSymbol;
   refs.decimalPlacesSelect.value = String(state.decimalPlaces);
   refs.decimalPlacesWrap.classList.toggle("hidden", !state.decimalsEnabled);
   refs.customTimeWrap.classList.toggle("hidden", refs.timePresetSelect.value !== "custom");
@@ -1115,6 +1119,7 @@ function buildOnlineConfig() {
     problemSettings: clonePlain(state.problemSettings),
     operationSettings: clonePlain(state.operationSettings),
     displayMode: state.displayMode,
+    multiplicationSymbol: state.multiplicationSymbol, divisionSymbol: state.divisionSymbol,
     streaksEnabled: state.streaksEnabled,
     decimalsEnabled: state.decimalsEnabled,
     decimalPlaces: state.decimalPlaces,
@@ -1338,6 +1343,7 @@ function launchOnlineGame(room) {
 }
 
 function applyOnlineConfig(config) {
+  if(globalThis.NinjaNotation)Object.assign(state,NinjaNotation.options(config));
   if (globalThis.NinjaDynamics) Object.assign(state,globalThis.NinjaDynamics.options(config));
   state.teamAssignments = config.teamAssignments || {};
   state.endCondition = ['unlimited', 'questions', 'correct'].includes(config.endCondition) ? config.endCondition : 'time';
@@ -1920,7 +1926,7 @@ function buildNumpad(numpadEl, playerId) {
     button.className = "key-btn";
     button.dataset.player = String(playerId);
     button.dataset.key = key;
-    button.textContent = key === '/' && operation?.answerFormat === 'remainder' ? 'R' : key === "x" ? "\u00D7" : key;
+    button.textContent = key === '/' && operation?.answerFormat === 'remainder' ? 'R' : key === "x" ? state.multiplicationSymbol : key;
     button.addEventListener('pointerdown', handleButtonAction);
     if (key === "/") button.title = operation?.answerFormat==='remainder'?'Cociente y resto: también puedes pulsar R, F o /':'Fracción: también puedes pulsar F o :';
     if(key==='^')button.title='Exponente: ^, P o × del teclado numérico';
@@ -3075,6 +3081,7 @@ function repaintPlayers() {
         ? op.answerFraction || op.explanation ? operationSolutionHtml(op) : op.html.replace("?", operationSolutionHtml(op))
         : op.html;
       opEl.title = op.solutionRevealed ? (op.expression || "") : "";
+      if(globalThis.NinjaNotation){opEl.innerHTML=NinjaNotation.html(opEl.innerHTML,state);opEl.title=NinjaNotation.text(opEl.title,state);}
     }
     const solutionButton = refs.playersWrap.querySelector(`.solution-btn[data-player="${player.id}"]`);
     if (solutionButton) {
@@ -3097,6 +3104,7 @@ function repaintPlayers() {
       if (op?.choices) decimalHintEl.textContent = 'Elige una opción y pulsa enviar. Teclado: escribe su número.';
       else if (op?.requiresFractionInput && !op?.inputHint) decimalHintEl.textContent = 'Responde con una fracción. Se aceptan equivalentes. Tecla F o : para /.';
       else if (globalThis.NinjaLiteracyProblems?.labels[op?.problem?.family]) decimalHintEl.textContent = `📖 Responde solo el número${op.problem.unit ? ` en ${op.problem.unit}` : ''}${op.answerFraction?.denominator !== '1' ? ' · usa coma' : ''}`;
+      if(globalThis.NinjaNotation)decimalHintEl.textContent=NinjaNotation.text(decimalHintEl.textContent,state);
     }
   });
 
@@ -3357,6 +3365,7 @@ function applySavedPreferences() {
   if (typeof prefs.allowNegative === "boolean") state.allowNegative = prefs.allowNegative;
   if (typeof prefs.penalizeWrong === "boolean") state.penalizeWrong = prefs.penalizeWrong;
   if (["horizontal", "vertical", "mixed"].includes(prefs.displayMode)) state.displayMode = prefs.displayMode;
+  if(globalThis.NinjaNotation)Object.assign(state,NinjaNotation.options(prefs));
 
   const parsedDecimalPlaces = Number(prefs.decimalPlaces);
   if (Number.isFinite(parsedDecimalPlaces)) {
@@ -3420,6 +3429,7 @@ function savePreferences() {
     allowNegative: state.allowNegative,
     penalizeWrong: state.penalizeWrong,
     displayMode: state.displayMode,
+    multiplicationSymbol: state.multiplicationSymbol, divisionSymbol: state.divisionSymbol,
     operationSettings: state.operationSettings,
     player1Name: refs.player1Input.value || "",
     player2Name: refs.player2Input.value || "",
