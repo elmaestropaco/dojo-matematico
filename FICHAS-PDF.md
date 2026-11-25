@@ -1,6 +1,6 @@
 # Fichas de practica y PDF
 
-Version 2026.11.25-fichas-pdf. En la pantalla inicial, Tu dojo, tambien en papel
+Version 2026.11.25-fichas-auto. En la pantalla inicial, Tu dojo, tambien en papel
 abre un generador independiente de la partida y del historial de informes.
 
 ## Preparar la ficha
@@ -12,7 +12,7 @@ abre un generador independiente de la partida y del historial de informes.
 3. Misma cantidad de cada tipo utiliza una cantidad POR TIPO: 5 ejercicios de
    tres tipos generan 15. Mixto aleatorio utiliza una cantidad TOTAL y no
    garantiza que aparezcan todos los tipos ni igual cantidad de cada uno.
-4. Ajusta formato horizontal/vertical/mezclado, 1-3 ejercicios por fila y
+4. Ajusta formato horizontal/vertical/mezclado, maximo por fila y
    renglones. Los problemas ocupan todo el ancho para facilitar la lectura.
 5. Decide si quieres soluciones explicadas. Empiezan en una pagina nueva
    DESPUES de todos los ejercicios, con la misma numeracion.
@@ -26,6 +26,27 @@ la disposicion de dividendo a la izquierda y divisor/cociente a la derecha.
 Fracciones, combinadas, ecuaciones y demas retos conservan su notacion.
 En pantallas pequenas la vista previa apila tarjetas para que se lean; el
 PDF mantiene los ejercicios por fila que has elegido.
+
+El maximo por fila es Automatico (hasta 5) por defecto. El generador mide los
+anchos reales con las fuentes y notacion de impresion, no cuenta caracteres:
+cinco sumas pequenas pueden compartir una fila, mientras que una combinada
+larga puede ocuparla entera. Elegir un maximo manual de 1-5 solo limita la
+cantidad; nunca fuerza a meter una expresion que no cabe. Si una expresion
+supera todo el ancho A4, se ajusta su letra para mantenerla en una linea.
+Los problemas y las instrucciones siguen permitiendo parrafos de varias lineas.
+El ajuste se recalcula al cargar la ficha y antes de imprimir.
+
+Las preguntas se ordenan por el orden real de los controles de la plataforma:
+naturales, enteros, potencias, algebra/ESO, contenidos comunes y problemas.
+La seleccion aleatoria sigue determinando cantidades y ejercicios, no el orden
+de estos bloques. Se renumera la ficha completa y las respuestas mantienen
+esa misma numeracion. En problemas no se muestra la operacion que resuelve cada uno.
+
+Las soluciones estan en una hoja separada de la vista previa, despues de todos
+los ejercicios. En impresion se fuerza el comienzo de esa hoja en pagina nueva,
+aunque sobre espacio al final de la ultima pagina de preguntas. No hay respuestas
+pegadas al ultimo ejercicio. Cerrar permanece en la cabecera fija del generador
+mientras te desplazas; no aparece en el PDF.
 
 Puedes escribir un titulo; nombre y fecha quedan en blanco para rellenarlos
 en papel. No se copian nombres del alumnado ni codigos de sala. La ficha no

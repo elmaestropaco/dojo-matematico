@@ -12,6 +12,12 @@ La app funciona sin backend para los modos locales.
 
 ## Generador de fichas PDF
 
+Actualizacion 2026.11.25-fichas-auto: ancho medido automaticamente en A4,
+hasta cinco ejercicios cortos por fila y expresiones largas sin partir.
+Orden de bloques como en la plataforma, con numeracion y soluciones sincronizadas.
+Las soluciones son una hoja separada tambien en la vista previa y comienzan en
+pagina nueva al imprimir. Cerrar queda visible arriba durante el desplazamiento.
+
 Version 2026.11.25-fichas-pdf. En la pantalla inicial, Abrir generador PDF
 prepara fichas con calculos, problemas o ambos. Tiene seleccion independiente,
 buscador, ajustes por operacion, cantidad por tipo o total aleatorio, formato
