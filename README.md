@@ -10,6 +10,22 @@ Web app educativa de calculo mental con modo individual, batalla local, teclado 
 
 La app funciona sin backend para los modos locales.
 
+## Generador de fichas PDF
+
+Version 2026.11.25-fichas-pdf. En la pantalla inicial, Abrir generador PDF
+prepara fichas con calculos, problemas o ambos. Tiene seleccion independiente,
+buscador, ajustes por operacion, cantidad por tipo o total aleatorio, formato
+horizontal/vertical, renglones y soluciones explicadas en paginas finales.
+
+Genera una vista previa; Imprimir / Guardar PDF abre el dialogo del navegador,
+donde se elige Guardar como PDF. No descarga automaticamente un archivo sin
+ese dialogo. Tambien se puede abrir la ficha en otra pestana. Funciona en
+local, sin Firebase, servicios externos ni librerias PDF descargadas.
+
+Hasta 200 ejercicios. No modifica la partida ni las preferencias guardadas.
+Las soluciones aritmeticas se calculan con fracciones exactas y BigInt, sin
+redondear productos grandes. Guia y limites: FICHAS-PDF.md.
+
 ## Algebra y mas calculos de ESO
 
 Version 2026.11.24-algebra-eso. Ocho tipos nuevos dentro de Mas retos: algebra y

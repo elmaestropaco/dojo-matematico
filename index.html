@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="renovacion.css" />
   <link rel="stylesheet" href="pizarra.css" />
+  <link rel="stylesheet" href="fichas.css" />
 </head>
 <body>
   <div class="theme-panel" aria-label="Selector de tema">
@@ -42,6 +43,7 @@
 
     <section id="dojoScreen" class="panel dojo-screen active" aria-label="Configuración de partida">
       <div class="dojo-intro"><span class="section-eyebrow">TU ZONA DE ENTRENAMIENTO</span><h2>Un reto a tu medida</h2><p>Elige cómo jugar, prepara tu reto y entra al dojo.</p></div>
+      <section class="worksheet-entry" aria-label="Fichas de práctica"><div><h2>📄 Tu dojo, también en papel</h2><p>Crea fichas de cálculo y problemas, con soluciones paso a paso al final.</p></div><button id="worksheetHomeBtn" class="btn-mini" type="button">Abrir generador PDF</button></section>
       <div class="settings-grid">
         <details class="config-box session-tools" id="sessionToolsBox">
           <summary>⭐ Mis sesiones y actividades <span>Guardar, buscar y reutilizar</span></summary>
@@ -817,6 +819,8 @@
   <dialog id="classroomDialog" class="learning-dialog" aria-labelledby="classroomTitle"><h3 id="classroomTitle">📚 Herramientas del aula</h3><details><summary>👥 Identificadores del alumnado</summary><p>El nombre puede cambiar. Por defecto se usa la identidad del navegador; puedes asignar una referencia como grupoA-07. Usa la misma referencia para la misma persona en otro ordenador y referencias distintas para alumnos distintos. Se guarda solo en este equipo docente y se aplica a nuevas capturas, no reasigna el histórico por nombre.</p><div id="classroomRoster"></div></details><details><summary>🗂️ Secuencia de rondas</summary><p>Añade sesiones guardadas. Preparar siguiente mantiene la sala y espera a que el anfitrión pulse Empezar. No cambia una ronda en curso.</p><label>Sesión<select id="sequenceSessionSelect"></select></label><div class="learning-actions"><button id="sequenceAddBtn" class="btn-mini" type="button">Añadir ronda</button><button id="sequenceNextBtn" class="btn-mini" type="button">Preparar siguiente</button><button id="sequenceClearBtn" class="btn-mini" type="button">Vaciar secuencia</button></div><ol id="classroomSequence"></ol></details><details><summary>💾 Exportar e importar</summary><p>Copia local de sesiones, identificadores e historial. Incluye datos del alumnado: guárdala de forma privada. No contiene credenciales ni permite entrar en salas. Se conservan como máximo 500 rondas y 30 sesiones.</p><button id="exportAulaBtn" class="btn-mini" type="button">Descargar copia JSON</button><label>Importar copia<input id="importAulaFile" type="file" accept=".json,application/json" /></label></details><p id="classroomNotice" role="status"></p><button id="closeClassroomBtn" class="btn-mini" type="button">Cerrar</button></dialog>
   <script src="aula-datos.js" charset="utf-8"></script>
   <script src="aula-ui.js" charset="utf-8"></script>
+  <script src="fichas-pdf.js" charset="utf-8"></script>
+  <script src="fichas-ui.js" charset="utf-8"></script>
   <script src="app.js" charset="utf-8"></script>
 </body>
 </html>

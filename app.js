@@ -229,6 +229,7 @@ function init() {
   initDynamicsUI();
   initAccessibility();
   initClassroomTools();
+  initWorksheetUI();
   if (window.ResizeObserver) new ResizeObserver(fitTeacherGrid).observe(refs.teacherGrid);
   window.addEventListener('resize', fitTeacherGrid);
   window.addEventListener('pagehide', () => {

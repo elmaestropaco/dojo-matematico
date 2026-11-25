@@ -53,6 +53,8 @@ async function main() {
     }
     const sizes = [[360, 740], [390, 844], [768, 1024], [1366, 768], [1920, 1080]];
     const reasoningOnly = process.argv.includes('--reasoning-only');
+    const worksheetsOnly = process.argv.includes('--worksheets-only');
+    if(worksheetsOnly)await evaluate('window.sheetOriginalSettings=JSON.parse(JSON.stringify(state.operationSettings));window.sheetOriginalProblems=JSON.parse(JSON.stringify(state.problemSettings));');
     const secondaryOnly = process.argv.includes('--secondary-only');
     const exponentsOnly = process.argv.includes('--exponents-only');
     if(exponentsOnly)await evaluate(`for(const [kind,cfg]of Object.entries(state.operationSettings))for(const key of NinjaExponentDigits.digitKeys)if(key in cfg&&cfg[key]!==1)throw Error('Non-mental default '+kind+':'+key);`);
@@ -66,7 +68,7 @@ async function main() {
     const literacyOnly = process.argv.includes('--literacy-only');
     const spatialOnly = process.argv.includes('--spatial-only');
     const dynamicsOnly = process.argv.includes('--dynamics-only');
-    const controlsOnly = secondaryOnly || exponentsOnly || reasoningOnly || aulaOnly || accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
+    const controlsOnly = worksheetsOnly || secondaryOnly || exponentsOnly || reasoningOnly || aulaOnly || accessibilityOnly || process.argv.includes('--controls-only') || percentagesOnly || unitsOnly || learningOnly || challengesOnly || literacyOnly || spatialOnly || dynamicsOnly;
     const advancedOnly = process.argv.includes('--advanced-only');
     const calculationsOnly = process.argv.includes('--calculations-only');
     const integerOnly = process.argv.includes('--integer-only');
@@ -901,6 +903,35 @@ async function main() {
         goHome();return errors;
       })()`);
       assert.deepEqual(errors,[],`Room code ${width}x${height}`);
+    }
+    if(worksheetsOnly){
+      const original=await evaluate(`goHome();state.online=null;state.activity='calculo';state.operationSettings=JSON.parse(JSON.stringify(window.sheetOriginalSettings));state.problemSettings=JSON.parse(JSON.stringify(window.sheetOriginalProblems));document.getElementById('worksheetHomeBtn').click();JSON.stringify({settings:state.operationSettings,problems:state.problemSettings,prefs:localStorage.getItem(STORAGE_PREFS),mode:state.mode,display:state.displayMode,index:state.problemIndex})`);
+      let views=0;
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        const errors=await evaluate(`(async()=>{const errors=[];sheetEl('sheetSource').value='ambos';sheetEl('sheetSearch').value='';filterWorksheetCatalog();sheetEl('sheetCatalog').querySelectorAll('details').forEach(d=>d.open=true);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const box=sheetEl('worksheetDialog').getBoundingClientRect();if(box.right>innerWidth+1||box.bottom>innerHeight+1)errors.push('dialog outside');if(sheetEl('worksheetDialog').scrollWidth>sheetEl('worksheetDialog').clientWidth+2)errors.push('horizontal overflow');for(const el of sheetEl('worksheetDialog').querySelectorAll('input,select,button'))if(el.offsetParent!==null){const b=el.getBoundingClientRect();if(b.left<box.left||b.right>box.right+1)errors.push('control outside');}return errors;})()`);
+        assert.deepEqual(errors,[],`Worksheet controls ${width}: ${errors}`);views++;
+      }
+      const all=await evaluate(`(()=>{sheetEl('sheetSource').value='ambos';sheetEl('sheetQuantity').value='1';sheetEl('sheetDistribution').value='balanced';sheetEl('sheetProblemMin').value='1';sheetEl('sheetProblemMax').value='1';sheetEl('sheetCarry').value='ambas';worksheetDraft.selected=new Set(worksheetEntries.map(e=>e.id));generateWorksheet();return {ok:Boolean(worksheetDraft.html),notice:sheetEl('sheetNotice').textContent,count:worksheetDraft.items?.length,types:worksheetEntries.length};})()`);
+      assert.equal(all.ok,true,all.notice);assert.equal(all.count,all.types);
+      const allHtml=await evaluate('worksheetDraft.html');fs.writeFileSync(path.join(work,'all-worksheet-types.html'),allHtml);
+      await evaluate(`if(!worksheetQuestion({kind:'add',a:1.2,b:2},'vertical').includes('2,0'))throw Error('decimal columns not aligned');sheetEl('sheetDecimals').checked=true;sheetEl('sheetPlaces').value='2';worksheetDraft.settings.addNoCarry.digits=3;worksheetDraft.settings.subNoBorrow.digits=3;for(let i=0;i<40;i++){const add=worksheetCalculation('addNoCarry',i+90),sub=worksheetCalculation('subNoBorrow',i+90);if(hasAdditionCarry(Math.round(add.a*100),Math.round(add.b*100))||hasSubtractionBorrow(Math.round(sub.a*100),Math.round(sub.b*100)))throw Error('decimal carry rule');}sheetEl('sheetDecimals').checked=false;`);
+      await evaluate(`sheetEl('sheetName').value='Ficha <script>alert(1)</script>';sheetEl('sheetSource').value='calculo';worksheetDraft.selected=new Set(['calc:addNoCarry','calc:mul','calc:quadraticEquation']);sheetEl('sheetQuantity').value='3';sheetEl('sheetDistribution').value='balanced';sheetEl('sheetFormat').value='vertical';generateWorksheet();if(!worksheetDraft.html||worksheetDraft.items.length!==9)throw Error(sheetEl('sheetNotice').textContent);for(const key of worksheetDraft.selected)if(worksheetDraft.items.filter(i=>i.key===key).length!==3)throw Error('unbalanced PDF');if(!worksheetDraft.html.includes('class="vertical"'))throw Error('vertical format missing');if(!worksheetDraft.html.includes('&lt;script&gt;'))throw Error('unsafe title');`);
+      for(const [width,height]of sizes){
+        await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},sessionId);
+        const errors=await evaluate(`(async()=>{await new Promise(r=>setTimeout(r,60));const doc=sheetEl('sheetPreview').contentDocument,errors=[];if(!doc.querySelector('.solutions'))errors.push('missing final solutions');if(doc.querySelectorAll('.exercise').length!==9)errors.push('missing exercises');if(doc.documentElement.scrollWidth>doc.documentElement.clientWidth+2)errors.push('preview horizontal overflow');return errors;})()`);
+        assert.deepEqual(errors,[],`Worksheet preview ${width}: ${errors}`);views++;
+      }
+      await evaluate(`if(sheetEl('sheetPrint').disabled)throw Error('print button not ready');let printed=false;sheetEl('sheetPreview').contentWindow.print=()=>printed=true;sheetEl('sheetPrint').click();if(!printed)throw Error('print action');`);
+      await evaluate(`sheetEl('sheetName').value='Ficha para imprimir';sheetEl('sheetSource').value='ambos';worksheetDraft.selected=new Set(['calc:div','calc:quadraticEquation','problem:suma']);sheetEl('sheetQuantity').value='8';sheetEl('sheetDistribution').value='balanced';sheetEl('sheetFormat').value='vertical';sheetEl('sheetColumns').value='2';sheetEl('sheetLines').value='2';generateWorksheet();if(!worksheetDraft.html||worksheetDraft.items.length!==24||!worksheetDraft.html.includes('long-division'))throw Error(sheetEl('sheetNotice').textContent);`);
+      const pdfHtml=await evaluate('worksheetDraft.html');const pdfPath=path.join(work,'worksheet-print.html');fs.writeFileSync(pdfPath,pdfHtml);
+      const {targetId:printTarget}=await send('Target.createTarget',{url:pathToFileURL(pdfPath).href});const {sessionId:printSession}=await send('Target.attachToTarget',{targetId:printTarget,flatten:true});
+      for(let i=0;i<50;i++){const r=await send('Runtime.evaluate',{expression:'document.readyState==="complete" && document.querySelectorAll(".exercise").length===24',returnByValue:true},printSession);if(r.result.value===true)break;await new Promise(r=>setTimeout(r,50));}
+      const pdf=await send('Page.printToPDF',{printBackground:true,preferCSSPageSize:true},printSession);const bytes=Buffer.from(pdf.data,'base64');assert.equal(bytes.subarray(0,5).toString(),'%PDF-');assert.ok(bytes.length>10000);const pages=(bytes.toString('latin1').match(/\/Type\s*\/Page\b/g)||[]).length;assert.ok(pages>=2,'solutions need a new page');fs.writeFileSync(path.join(work,'practice-worksheet.pdf'),bytes);await send('Target.closeTarget',{targetId:printTarget});
+      await evaluate(`sheetEl('sheetSolutions').checked=false;generateWorksheet();if(worksheetDraft.html.includes('class="solutions"'))throw Error('solutions off');sheetEl('sheetDistribution').value='mixed';sheetEl('sheetQuantity').value='17';generateWorksheet();if(worksheetDraft.items.length!==17)throw Error('mixed quantity');sheetEl('sheetQuantity').value='0';generateWorksheet();if(worksheetDraft.html||!sheetEl('sheetPrint').disabled)throw Error('invalid count accepted');sheetEl('sheetQuantity').value='1';worksheetDraft.selected=new Set(['problem:resta']);sheetEl('sheetCarry').value='con';sheetEl('sheetProblemMin').value='1';sheetEl('sheetProblemMax').value='1';generateWorksheet();if(worksheetDraft.html||!sheetEl('sheetNotice').textContent.includes('compatibles'))throw Error('invalid borrow not caught');sheetEl('sheetCarry').value='ambas';sheetEl('sheetSource').value='calculo';worksheetDraft.selected=new Set(['calc:div']);worksheetDraft.settings.div={enabled:true,dividendMax:1,divisorMax:2};sheetEl('sheetDecimals').checked=false;generateWorksheet();if(worksheetDraft.html||!sheetEl('sheetNotice').textContent.includes('decimales'))throw Error('invalid division not caught');
+        sheetEl('sheetSearch').value='ecuaciones';filterWorksheetCatalog();sheetEl('sheetSelectVisible').click();if(!worksheetDraft.selected.has('calc:quadraticEquation'))throw Error('search selection');sheetEl('sheetClearTypes').click();if(worksheetDraft.selected.size)throw Error('clear sheet selection');sheetEl('sheetClose').click();`);
+      const unchanged=await evaluate(`JSON.stringify({settings:state.operationSettings,problems:state.problemSettings,prefs:localStorage.getItem(STORAGE_PREFS),mode:state.mode,display:state.displayMode,index:state.problemIndex})`);assert.equal(unchanged,original,'worksheet generation changed game or stored preferences');
+      console.log('OK: '+all.types+' worksheet types; '+views+' responsive views, exact solutions, vertical/horizontal math, mixed/equal counts, no game mutation, validation and real A4 PDF with '+pages+' pages. PDF: '+path.join(work,'practice-worksheet.pdf'));
     }
     if(secondaryOnly){
       let views=0;
