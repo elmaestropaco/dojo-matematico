@@ -59,8 +59,21 @@
     const result=distribution==='balanced'?keys.flatMap(key=>Array(quantity).fill(key)):Array.from({length:count},()=>keys[Math.floor(random()*keys.length)]);
     for(let i=result.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}return result;
   }
+  const groups=[
+    {label:'Números naturales',keys:['addNoCarry','addCarry','subNoBorrow','subBorrow','mul','div','divTables','divisionRemainder','combined','combinedAdv','sqrt','primeFactors','mcm','mcd','missing','compare','round']},
+    {label:'Números enteros',keys:['signedAdd','signedSub','signedMul','signedDiv','signedCombinedEasy','signedCombinedAdv','integerOrder','absoluteValue','numberLine']},
+    {label:'Operaciones con potencias',keys:['power','powerAdd','powerSub','sameBaseMul','sameBaseDiv','powerPower','powerCombinedEasy','powerCombinedAdv','sameBaseMixed','signedPowersCombined']},
+    {label:'Contenidos comunes',keys:['fraction','fractionAdd','fractionSub','fractionMul','fractionDiv','fractionCombined','fractionGap','fractionCompare','divHard','percent','equivalence','scaleTen','convertLength','convertMass','convertCapacity','convertTime','timeArithmetic','mixedMeasures','angles','cubeVolume','prismVolume']},
+    {label:'Álgebra y ESO',keys:['linearEquation','quadraticEquation','algebraValue','scientificNotation','proportion','scaleCalc','divisibility','pythagoras']}
+  ];
+  function category(key){
+    if(key.startsWith('problem:'))return{groupOrder:5,groupLabel:'Problemas',typeOrder:0};
+    const kind=key.replace(/^calc:/,'');let index=groups.findIndex(group=>group.keys.includes(kind));if(index<0)index=3;
+    const group=groups[index],order=group.keys.indexOf(kind);return{groupOrder:index,groupLabel:group.label,typeOrder:order<0?1000:order};
+  }
+  function calculationKeys(keys){return keys.map((key,index)=>({key,index,...category(key)})).sort((a,b)=>a.groupOrder-b.groupOrder||a.typeOrder-b.typeOrder||a.index-b.index).map(item=>item.key);}
   function ordered(items){
-    return items.map((item,index)=>({...item,originalIndex:index})).sort((a,b)=>(a.groupOrder??99)-(b.groupOrder??99)||(a.typeOrder??99)-(b.typeOrder??99)||a.originalIndex-b.originalIndex).map((item,index)=>({...item,number:index+1}));
+    return items.map((item,index)=>({...item,...(/^(calc|problem):/.test(item.key||'')?category(item.key):{}),originalIndex:index})).sort((a,b)=>(a.groupOrder??99)-(b.groupOrder??99)||(a.typeOrder??99)-(b.typeOrder??99)||a.originalIndex-b.originalIndex).map((item,index)=>({...item,number:index+1}));
   }
   function layoutDocument(){
     const questions=document.querySelector('.questions');if(!questions)return;
@@ -114,6 +127,6 @@
     const layoutScript=`const relayout=${layoutDocument.toString()};relayout();window.addEventListener('beforeprint',relayout);window.addEventListener('afterprint',relayout);window.addEventListener('resize',()=>requestAnimationFrame(relayout));document.fonts?.ready.then(relayout);`;
     return `<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="worksheet-id" content="${escape(options.id||'')}"><title>${escape(options.title||'Ficha de práctica')}</title><style>${css}</style></head><body><div class="toolbar"><button type="button" onclick="window.print()">Imprimir / Guardar como PDF</button><p>En el diálogo de impresión elige Guardar como PDF. Las soluciones están al final.</p></div><main class="paper"><header><h1>${escape(String(options.title||'Ficha de práctica').slice(0,100))}</h1><div class="student-line"><span>Nombre:</span><span>Fecha:</span></div><p>${items.length} ejercicios · Lee y resuelve. Usa el espacio para tus cálculos.</p><p class="sheet-id">Dojo Matemático · Ficha ${escape(options.id||'')}</p></header><section class="questions" data-max-columns="${columns}" aria-label="Ejercicios">${rows.join('')}</section></main>${solutions}<script>${layoutScript}</script></body></html>`;
   }
-  root.NinjaWorksheets={escape,numeric,evaluate,arithmetic,plan,documentHtml,decimal,show,random,ordered};
+  root.NinjaWorksheets={escape,numeric,evaluate,arithmetic,plan,documentHtml,decimal,show,random,ordered,groups,category,calculationKeys};
   if(typeof module!=='undefined')module.exports=root.NinjaWorksheets;
 }(globalThis));

@@ -12,6 +12,9 @@ La app funciona sin backend para los modos locales.
 
 ## Generador de fichas PDF
 
+Correccion 2026.11.25-fichas-orden-utf8: tildes del generador restauradas y
+orden didactico explicito compartido entre selector, ficha y soluciones.
+
 Actualizacion 2026.11.25-fichas-auto: ancho medido automaticamente en A4,
 hasta cinco ejercicios cortos por fila y expresiones largas sin partir.
 Orden de bloques como en la plataforma, con numeracion y soluciones sincronizadas.

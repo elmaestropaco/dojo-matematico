@@ -15,5 +15,8 @@ const items=[{number:1,problem:false,questionHtml:'12 + 9 = ?',solutionHtml:'21'
 const html=sheets.documentHtml(items,{title:'</title><script>alert(1)</script>',columns:3,solutions:true});assert.ok(html.includes('&lt;script&gt;'));assert.ok(!html.includes('<script>alert'));assert.ok(html.indexOf('class="paper solutions"')>html.indexOf('class="questions"'));assert.ok(html.includes('break-before:page'));assert.ok(html.includes('size:A4'));assert.ok(html.includes('2. Solución'));
 assert.ok(!sheets.documentHtml(items,{solutions:false}).includes('class="paper solutions"'));assert.throws(()=>sheets.documentHtml([]));
 const sorted=sheets.ordered([{groupOrder:1,typeOrder:0,key:'integer'},{groupOrder:0,typeOrder:2,key:'mul'},{groupOrder:0,typeOrder:1,key:'add'}]);assert.deepEqual(sorted.map(i=>i.key),['add','mul','integer']);assert.deepEqual(sorted.map(i=>i.number),[1,2,3]);
+const teachingOrder=['addNoCarry','addCarry','subNoBorrow','subBorrow','mul','div','combined','combinedAdv','signedAdd','signedSub','signedMul','signedDiv','signedCombinedEasy','signedCombinedAdv','powerAdd','powerSub','sameBaseMul','sameBaseDiv'];
+assert.deepEqual(sheets.calculationKeys([...teachingOrder].reverse()),teachingOrder);
+const scrambled=['calc:linearEquation','calc:convertLength','calc:sameBaseMul','calc:signedAdd','calc:addNoCarry'];assert.deepEqual(sheets.ordered(scrambled.map(key=>({key}))).map(i=>i.key),[...scrambled].reverse());
 assert.ok(html.includes('</section></main><main class="paper solutions">'));assert.ok(html.includes('data-max-columns="3"'));
 console.log(`OK: ${cases} exact basic calculations, large products, fractions, decimal arithmetic, carry/borrow steps, balanced/random distribution, bounded sheets, safe titles and separate final solutions.`);

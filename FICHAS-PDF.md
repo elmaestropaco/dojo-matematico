@@ -1,6 +1,6 @@
 # Fichas de practica y PDF
 
-Version 2026.11.25-fichas-auto. En la pantalla inicial, Tu dojo, tambien en papel
+Version 2026.11.25-fichas-orden-utf8. En la pantalla inicial, Tu dojo, tambien en papel
 abre un generador independiente de la partida y del historial de informes.
 
 ## Preparar la ficha
@@ -37,7 +37,11 @@ Los problemas y las instrucciones siguen permitiendo parrafos de varias lineas.
 El ajuste se recalcula al cargar la ficha y antes de imprimir.
 
 Las preguntas se ordenan por el orden real de los controles de la plataforma:
-naturales, enteros, potencias, algebra/ESO, contenidos comunes y problemas.
+naturales, enteros, potencias, contenidos comunes, algebra/ESO y problemas.
+Dentro de cada bloque se explicita el orden de los tipos: sumas, restas,
+productos, divisiones y combinadas faciles/avanzadas, antes de otros retos.
+El selector y el documento comparten esta misma lista; no se ordenan por nombre
+ni por el orden en que se marcaron las casillas.
 La seleccion aleatoria sigue determinando cantidades y ejercicios, no el orden
 de estos bloques. Se renumera la ficha completa y las respuestas mantienen
 esa misma numeracion. En problemas no se muestra la operacion que resuelve cada uno.
@@ -111,6 +115,7 @@ La aplicacion de partida no se modifica por generar una ficha.
 
 ```text
 node tests/fichas-pdf.test.cjs
+node tests/encoding.test.cjs
 node tests/browser-smoke.cjs --worksheets-only
 node tests/startup-live.cjs
 ```
