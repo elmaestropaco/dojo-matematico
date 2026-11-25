@@ -99,3 +99,7 @@ los 96 tipos actuales, cinco tamanos, formatos, estado inalterado y un PDF A4
 real mediante Chrome. Se conservan las pruebas del panel maestro y sus tarjetas.
 Publicar todos los archivos del release y recargar los dispositivos.
 No requiere cambiar las reglas de Firebase.
+
+El workflow de Pages usa un nombre de artefacto unico por ejecucion e intento,
+y espera a que sus metadatos esten disponibles antes de desplegar. Evita los
+fallos de paquete no visible aun y paquetes duplicados tras reintentar.

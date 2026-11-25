@@ -1,4 +1,4 @@
-name: Deploy GitHub Pages
+﻿name: Deploy GitHub Pages
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -53,8 +54,35 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: _site
+
+      - name: Wait for artifact metadata
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          node --input-type=module <<'NODE'
+          const { GITHUB_API_URL, GITHUB_REPOSITORY, GITHUB_RUN_ID, GH_TOKEN, PAGES_ARTIFACT_NAME } = process.env;
+          const url = `${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts?per_page=100`;
+          let ready = false;
+          for (let attempt = 1; attempt <= 18; attempt++) {
+            const response = await fetch(url, {
+              headers: { Authorization: `Bearer ${GH_TOKEN}`, Accept: 'application/vnd.github+json' }
+            });
+            if (!response.ok) throw new Error(`Artifact metadata request failed: HTTP ${response.status}`);
+            const result = await response.json();
+            ready = result.artifacts.some(artifact => artifact.name === PAGES_ARTIFACT_NAME && !artifact.expired);
+            if (ready) { console.log('Pages artifact is available.'); break; }
+            console.log(`Waiting for Pages artifact metadata (${attempt}/18).`);
+            await new Promise(resolve => setTimeout(resolve, 5000));
+          }
+          if (!ready) throw new Error('Pages artifact is still unavailable after waiting.');
+          NODE
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}

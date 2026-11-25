@@ -1,6 +1,6 @@
 param(
     [string]$Fecha = (Get-Date -Format 'yyyyMMdd'),
-    [string]$Etiqueta = 'generador-fichas-pdf'
+    [string]$Etiqueta = 'generador-fichas-pdf-despliegue'
 )
 $ErrorActionPreference = 'Stop'
 if ($Fecha -notmatch '^\d{8}$' -or $Etiqueta -notmatch '^[a-z0-9-]+$') { throw 'Fecha o etiqueta no valida.' }
